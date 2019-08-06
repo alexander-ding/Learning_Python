@@ -18,118 +18,120 @@ jupyter:
    :keywords: python, installation, script, introduction, ipython, console, quick introduction
 ```
 
-# An Informal Introduction to Python
-Now that you have the Anaconda distribution of Python installed on your machine, let's write some simple Python code! We are going to forego writing a full Python script for now, and instead make use of a convenient tool for doing quick code scratchwork. The IPython console was installed as a part of Anaconda; it will allow us to build incrementally off of snippets of code, instead of having to execute an entire script all at once. 
+# 非正式的Python介绍
+现在你下载好了Anaconda版本的Python，让我们来写一些简单的Python代码吧！我们暂时先不写完整的Python脚本，而只用一个方便的工具——IPython命令行——来快速地写一些简单的代码。Anaconda一并安装了IPython命令行；这将帮助你一步步增加代码片段，而不是要一次性执行整个脚本。
 
-Let's open an IPython console. Open your terminal if you are a Mac/Linux user, or start `cmd.exe` if you are a Windows user. Now type `ipython` into the console and hit `<Enter>`. You should see the following display on your screen:
+让我们打开IPython命令行。如果你是Mac或者Linux用户，打开你的命令行；如果你是Windows用户，打开 `cmd.exe`。输入 `ipython` 并敲击回车，你应该可以在屏幕上看到接下来的内容：
 
 ![IPython console example](attachments/ipython_0.PNG)
 
-We can type small pieces of Python code into this console, and then simply hit `<Enter>` to have the CPython interpreter execute our code immediately within the IPython console!
+我们可以输入简短的Python代码片段并输入回车来让CPython直译器在IPython命令行中瞬间执行你的代码。
 
-Let's acquaint ourselves with Python's numbers, strings, and lists. In doing so, we will learn about the Python standard library, and how to make use of its modules, like the math module. IPython's autocompletion and documentation-display utilities will provide a nice means for exploring the library and the functionality built into the different types of Python objects. A quick glimpse at Python's strings and lists will hint at the common interface Python provides for working with sequences of objects, while highlighting some of the nice features of these all-important data types. 
+让我们熟悉一下Python的数字（number），字符串（string），和列表（list）。在这个过程中，我们会了解Python的标准库以及如何使用它其中的模组，如math模组。IPython提供的自动完成和说明文档显示功能会帮助我们探索标准库和其中Python物体（object）的功能。瞥一眼Python的string和list会给我们对Python的通用界面产生印象，同时也会演示这些极其重要的数据类型的方便特征。
 
-## Dabbling with Numbers 
-Time to execute some Python code that performs simple arithmetic. Typing `2 + 3` into the IPython console and hitting the `<ENTER>` key, you should see the following input and output in the console:
+## 玩玩数字
+是时候执行一些做简单算术的Python代码了。在IPython命令行中输入 `2 + 3` 并回车，你应该能看到接下来的输入和输出：
 
 ```python
 2 + 3
 ```
 
-This console session is persistent, meaning that we can define a variable and then reference it in our code later on within this console session. Let's define the variable `x` and assign it to the integer `10` (please follow along in the IPython console)
+这个命令行进程是持久性的，也就是说我们定义的变量可以在这个进程之后的代码里调用。让我们定义变量 `x` 并给予其数值整数 `10` （请在命令行中跟随本教程）
 
 ```python
 x = 10
 ```
 
-We can check the contents of `x` in this console by simply entering `x` in the next line and hitting `<ENTER>`:
+我们可以在这个命令行里查看 `x` 的内容。在下一行中输入 `x` 并回车：
 
 ```python
 x
 ```
 
-Now, let's use `x` in a quadratic equation $x^{2} + 2x + 3$, and compute this total.
+现在，让我们在二次方程 $x^{2} + 2x + 3$ 中调用 `x`，并计算结果。
 
 ```python
 x**2 + 2*x + 3
 ```
 
-Python's "standard library", the various tools and functions that come packaged as part of the core language, includes plenty of familiar mathematical functions. As a matter of organization, Python stores these mathematical functions away in a module named "math". To make use of this math module, we must import it into our code. 
+Python的“标准库”——也就是和Python核心语言一起包装的各种工具和函数——包含了很多常见的数学函数。为了整理和结构，Python将这些数学函数存在一个叫做“math”的模组里。以调用这个math模组，我们必须要在代码里导入（import）这个模组。
 
 ```python
 import math
 ```
 
-Having imported it, the term `math` now refers to the math module in our code. IPython provides a nice way for us to see a list of all the functions that are provided by the math module. To utilize this, type into the console `math.` (note the trailing period) and then hit `<TAB>`. You should see this list appear:
+在导入完之后，`math` 这个单词现在指我们代码里的math模组。IPython提供了一个很方便的查看math模组所有函数的方法。在命令行中输入 `math.`（注意在单词后面的点）并敲击 `<TAB>`。你应该看到接下来的这个列表:
 
 
 ![Displaying the contents of the math module](attachments/ipython_math.PNG)
 
 
-In general, hitting `<TAB>` will cue IPython to try to autocomplete code for you. This menu displays all the valid things that you could type after `math.`. Looking at the functions starting with "s", we see `sqrt()`. This is the square root function. To see autocompletion in action, type `math.sq` and then hit `<TAB>`. You should see the code autocomplete to `math.sqrt`.
+总体来讲，敲击 `<TAB>` 会告诉IPython来尝试自动完成你的代码。这个列表显示了所有合法的可以在 `math.` 之后输入的内容。在“s”打头的函数中，我们可以看到 `sqrt()`。这就是一个求平方根的函数。输入 `math.sq` 然后在敲击 `<TAB>` 以演示自动完成。你应该可以看到你的代码自动完成成了 `math.sqrt`。
 
-Let's use this function to compute $\sqrt{100}$:
+让我们用这个函数来计算 $\sqrt{100}$：
 
 ```python
 math.sqrt(100)
 ```
 
-You might wonder why the result displayed as `10.0` and not simply as `10`; in Module 2 we will see that these are two different *types* of numbers in the Python language. The former is called a floating-point number, indicating the presence of its decimal point, whereas the latter is an integer. The `math.sqrt` function is defined such that it always returns its results as floating-point numbers.
+你可能会好奇为什么计算的结果显示的是 `10.0` 而非 `10`；在模组2中我们会发现这两个输出是两种不一样的数据*类型*。前者被称为浮点数，名字表明了它的小数点，而后者则是一个整数。函数 `math.sqrt` 的定义使得它永远会返回一个浮点数。
 
-In the case that we want to make frequent use of a certain function from the math module, it'd be nice to avoid having to type out the math module prefix, `math.`, repeatedly. We can accomplish this by importing an individual function from the math module. Let's import the factorial function from the math module.
+当我们想要经常使用math模组里的某个函数时，我们可能会希望不需要每次都要打出math模组的前缀，`math.`。我们可以从math模组导入单独的函数来达成这个目的。让我们从math模组导入阶乘（factorial）函数。
 
 ```python
 from math import factorial
 ```
 
-We can now make use of the `factorial` function in our code. Recall that 5-factorial is $5! = 5\times 4\times 3\times 2\times 1 = 120$  
+我们现在可以在代码里直接调用 `factorial` 函数。5的阶乘是 $5! = 5\times 4\times 3\times 2\times 1 = 120$  
 
 ```python
 factorial(5)
 ```
 
-## Messing with Strings
-In the context of code, written text is referred to as a string of characters, or string for short. Python is an excellent language for doing text-processing work as it provides many convenient, efficient functions for working with strings. 
+## 试试字符串
+在写代码的时候，我们将书面文字理解为一连串的字符，也就是字符串（String）。因为Python提供了很多方便，高效的字符串处理函数，所以它很适合于文本处理工作。
 
-To begin, we simply form a string by typing characters between quotation marks:
+让我们先通过在双引号之间敲击字符来创建第一个字符串吧：
 
 ```python
 "the cat in the hat"
 ```
 
-Single quotes also work:
+单引号也能用：
 
 ```python
 'the dog in the sash'
 ```
 
-If you use single quotes to form a string, then that string is able to contain the double-quote as a character (and vice versa):
+译者注：记得切换到英文输入法的引号''和""。中文的‘’和“”是不会被识别的。
+
+如果你是用单引号来创建一个字符串，那么那个字符串就可以包括双引号（反之亦然）：
 
 ```python
 'He picked up the phone, "Hello? What do you want?" Bob was a rather impolite dude.'
 ```
 
-There are designated special characters that allow us to affect the way a string is formatted when it is printed to the string. For example, if `\n` ever occurs in a string, it is treated as a single character that indicates a line-break. This will only manifest if such a string is fed to the built-in `print` function, which informs the computer to print text to a user's screen.
+当然，我们也有专门的特殊字符来帮助我们改变一个字符串的被打印出时的格式。比如说，如果 `\n` 出现在字符串的任何一个地方，它会被当为一个代表回车的字符。这仅仅会在你将这个字符串送到自带的 `print` 函数(一个告诉计算机去将文本显示在用户电脑屏幕上的函数）中才会显现，
 
-Let's create a string that will display as three separate lines, when printed to the screen.
+让我们创建一个会被 `print` 时会显示为三行文字的字符串。
 
 ```python
 print("I like to talk to dogs.\nI like to talk to cats.\nWhat's my deal?")
 ```
 
-Of course, strings are useful beyond merely containing text! Let's explore some ways to manipulate strings. First, we'll write a string and assign it to a variable named `sentence`:
+当然，字符串的作用远远不及仅仅存储文本！让我们探索一些操作字符串的方法。首先，我们将创建一个字符串并将其存储到一个名为 `sentence` 的变量:
 
 ```python
 sentence = "Who would have thought that we were robots all along?"
 ```
 
-Let's see how many characters are in this string by checking the "length" of this sequence of characters:
+让我们通过字符串的"length"（长度）来查看这个字符串有多少字符吧：
 
 ```python
 len(sentence)
 ```
 
-We can access the first 4 characters in the string, the last 6 characters, or a few characters in the middle by "slicing" the string:
+我们可以通过切片（slice）这个字符串来查看它的前四个字符，最后六个字符，或者中间的几个字符。
 
 ```python
 sentence[:4]
@@ -143,54 +145,54 @@ sentence[-6:]
 sentence[5:22]
 ```
 
-We can also check to see if some other string is contained within our string. Is the string `"robot"` contained within `sentence`?
+我们也可以查看是否我们的这个字符串是否包含其它的某个的字符串。字符串 `"robot"` 是否在 `sentence` 里面呢（is `"robot"` **in** `sentence`）？
 
 ```python
 "robot" in sentence
 ```
 
-As a quick way to check out the built-in functions that strings have available to them, we can make use of IPython's autocompletion feature once again. Type `sentence.` (including the trailing period) and then hit `<TAB>`. A menu of functions should appear as so:
+为了快速查看所有字符串可以调用的自带函数，我们可以再次使用IPython的自动完成功能。输入 `sentence.`（不要漏掉最后的点）并敲击 `<TAB>`。我们会看到一列表的函数：
 
 
 ![Built-in functions for a string](attachments/ipython_string.PNG)
 
 
-Let's use the count function to tally the number of lowercase w's in `sentence`
+让我们用名为count的函数来数一下 `sentence` 中有多少小写的w。
 
 ```python
 sentence.count('w')
 ```
 
-Let's see what the replace function does. IPython provides a great utility for looking up the documentation for a function by simply putting two question marks after the function name. For example:
+让我们看看replace函数是做什么用的。IPython提供一个很方便的看看函数说明文档的功能，只需在函数名后输入两个问号。例：
 
 ![Looking up documentation for a function](attachments/ipython_doc1.PNG)
 
-Putting our newfound understanding of the string's replace function, let's replace "robot" with "computer":
+利用我们刚得到的对字符串replace函数的理解，让我们用“computer”来代替“robot”:
 
 ```python
 sentence.replace("robot", "computer")
 ```
 
-## Playing with Lists
-A list is one of several types of containers that are built into Python's standard library. It can hold a sequence of Python objects. We can create a list of numbers: 
+## 玩玩列表
+列表（list）是所有Python标准库的容器中的一种。它可以存储一序列的Python对象（object）。我们可以创建一列表的数字：
 
 ```python
 [-1, 1/3, 10*2, 7-1]
 ```
 
-A list can contain any type of Python object; it can store a mix of numbers, strings, other lists, and much more!
+列表可以存储任何类型的Python对象；它可以存储或混合数字，字符串，其它列表，和任何其他类型的对象。
 
 ```python
 [1, 2, "a", 0.5, "apple and orange"]
 ```
 
-You can join lists together, which is known as concatenation.
+你可以将两个列表粘连（concatenate）到一起。
 
 ```python
 [1, 2, 3] + ["a", "b", "c"]
 ```
 
-Like a string, a list is sequential in nature and we can access the items in a list by specifying its position in the sequence. This is known as "indexing" the list; the index of the first item in a sequence is always 0.
+像字符串一样，列表本质上也是一个序列（sequence），所以我们可以通过项目在列表中的位置来访问它。这个位置叫做项目的索引（index）；一个序列首项的索引永远都是0.
 
 ```python
 my_list = [10, 20, 30, 40, 50, 60]
@@ -204,13 +206,13 @@ my_list[0]
 my_list[1]
 ```
 
-Negative integers can be used to index relative to the end (right-side) of the list.
+你可以使用负整数来相对于列表结尾（右边）来索引。
 
 ```python
 my_list[-1]
 ```
 
-You can change an entry in a list by assigning it to a new value.
+你也可以通过对列表中的项目赋值来修改列表的内容。
 
 ```python
 -5 in my_list
@@ -228,13 +230,13 @@ my_list
 -5 in my_list
 ```
 
-We can also access multiple items in a list at once by slicing the list, like we did with the string.
+我们也同样可以通过切片（slice）这个列表来存取其中的多个项目，就像之前的字符串一样。
 
 ```python
 my_list[:3]
 ```
 
-This slice can be used to update the first three entries of the list
+这个切片出的结果也可以被用来更新列表的前三项内容。
 
 ```python
 my_list[:3] = "abc"
@@ -244,7 +246,7 @@ my_list[:3] = "abc"
 my_list
 ```
 
-To wrap up this quick demo, let's append an new entry to the end of this list.
+作为这个展示的结尾，让我们在这个列表的结尾附加（append）一个新项目。
 
 ```python
 my_list.append("moo")
