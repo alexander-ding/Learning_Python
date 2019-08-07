@@ -18,63 +18,63 @@ jupyter:
    :keywords: python, introduction, IDE, PyCharm, VSCode, Jupyter, recommendation, tools
 ```
 
-# Setting Up a Development Environment
-## What You Will Learn
+# 设置开发环境
+## 你将学到什么
 
-- An IDE is a sophisticated text editor that allows you edit, run, and debug code. 
-- The Python shell is an interface for typing Python code and executing it directly in your computer's terminal.
-- The IPython shell is a much nicer version of the Python shell - it provides syntax highlighting, autocompletion, and other features.
-- The Jupyter Notebook is a powerful tool for prototyping and experimenting with code, as well as visualizing data and writing nicely-formatted text. We will be using this throughout the course.
+- 集成开发环境（IDE）是一套允许你编辑，运行，和调试代码的复杂的文本编辑器。
+- Python壳（shell）是一个用以输入和直接在计算机命令行中运行Python代码的接口。
+- IPython壳是一个更加完善的Python壳版本——它提供语法高亮，自动完成，和其它功能。
+- Jupyter记事本是一个强大的编写，实验新代码的工具。它同时也可以用来可视化数据和编写格式化的文本。我们将会在本资源中经常使用它。
 
 
-## Integrated Development Environments
-In Section 1 of this module, we learned that a Python script is simply a text file that contains Python code. Aside from using a `.py` suffix for the filename, there is nothing that differentiates this sort of file from any other text file. That being said, it is not a good idea to use a simple text editor to write Python code (and it is a big mistake use word-processing software, like Microsoft Word, to do so). Instead we want an "integrated development environment" (IDE) that will facilitate our code-writing. 
+## 集成开发环境（IDE）
+在本模组的第一节中，我们了解了Python脚本仅仅是包含Python代码的文本文件这一事实。除了使用 `.py` 为文件后缀名之外，Python脚本对比其它文本文件没有什么特殊的特征。虽然如此，一般来说用简单的文本编辑器来编写Python代码并不有效（而使用类似Microsoft Word的文字处理软件也是万万不可取的）。我们需要一个“集成开发环境”（IDE）来帮助我们开发代码。
 
-First and foremost, a good IDE will provide a text editor that will:
+首先，一个好的IDE会提供一个拥有如下功能的文本编辑器：
 
-- check your code for syntax errors (a misspelled function name, a reference to an undefined variable, etc)
-- colorize your code so that it is easy to distinguish, for instance, numbers from character strings.
-- enable you to easily look up documentation and definitions for functions that you are using.
-- autocomplete the names of variables and functions as you are typing them.
+- 检查你的代码以找出并标记语法错误（拼错的函数名，调用不存在的变量，等等）
+- 彩色化你的代码使其更容易分辨。比如说，这可以帮助你区分数字和字符串。
+- 让你可以轻松地查阅函数的定义和说明文件。
+- 在你输入变量和函数时自动完成它们的名字。
 
-An IDE also often provides debugging tools so that you can test your code; it will also typically interface with version-control software, like Git, so that you can keep track of versions of your code as you modify it. We will not discuss these useful, but more advanced features here.
+一个IDE同时也经常提供调试工具来帮助你测试你的代码；它也经常会提供一个和像Git这样的版本控制软件（version-control software）的交互接口来帮助你在修改代码的同时跟踪代码的版本。虽然它们很有用，我们在这里并不会讨论这些更高级的功能。
 
-### Recommended IDEs
-There are many excellent IDEs that can be configured to work well with Python. Two IDEs that we endorse are:
+### 推荐的IDE
+市面上有很多很棒的IDE可以调试以配合Python使用。我们在这里推荐两个IDE：
  
-[PyCharm](https://www.jetbrains.com/pycharm/download): A powerful IDE dedicated to Python.
+[PyCharm](https://www.jetbrains.com/pycharm/download): 一个专门针对Python的强大IDE。
 
-**Pros**
+**好处**
 
-- works well out-of-the-box
-- long-supported by professionals and thus is very reliable
-- highly configurable
-- fully-featured
+- 下载即用，无需太多设置就很好用
+- 有职业人员的长期支持，因此很可靠
+- 可以进行深层次的设置
+- 全功能
 
-**Cons**
+**坏处**
 
- - can be resource-heavy, especially for a laptop
- - may be overwhelming to new users (but has good documentation and tutorials)
+ - 特别对手提电脑来说可能很耗资源
+ - 对新用户而言可能会难易上手（但它有很好的教程和说明文件）
  
-[Visual Studio Code](https://code.visualstudio.com/) with the [Python extension](https://code.visualstudio.com/docs/languages/python): A lightweight, highly customizable IDE.
+[Visual Studio Code](https://code.visualstudio.com/) 以及它的 [Python拓展](https://code.visualstudio.com/docs/languages/python): 一个轻便，宜定制的IDE。
 
-**Pros**
+**好处**
 
-- lightweight and elegant 
-- works with many different languages, so you only need to familiarize yourself with one IDE
-- a huge number of extensions can be downloaded to add functionality to the editor; these are created by a large community of open-source developers.
+- 轻便优雅 
+- 支持很多不同的语言，这样你只需要学习一个IDE
+- 有极其多的拓展可供下载以提供编辑器新功能；这些拓展是由一个大社区的开源开发者编写的。
 
-**Cons**
+**坏处**
 
-- currently less polished and less powerful than PyCharm, although Microsoft is now formally supporting the Python extension
-- can require some tinkering to get features working
+- PyCharm暂时比起更完善和强大，但注意Microsoft现在正式支持Python拓展了
+- 可能需要细微的调试才能使用某些功能
 
 
 <div class="alert alert-info">
 
-**Takeaway**:
+**经验**:
 
-Integrated Development Environments (IDEs) provide powerful tools for helping you write well-formatted and typo-free code. We recommend using PyCharm Community Edition or Visual Studio Code (with the Python extension installed) for your Python IDE. 
+集成开发环境（IDE）提供强大的工具来帮助你编写格式化和无拼写错误的代码。本资源建议你使用PyCharm Community Edition或Visual Studio Code（加上Python拓展）作为你的Python IDE。
 </div>
 
 
@@ -82,6 +82,6 @@ Integrated Development Environments (IDEs) provide powerful tools for helping yo
 
 **Jupyter Lab**:
 
-[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html) is a new IDE that is being developed by the same team that develops the Jupyter Notebook. It aims to mix the polish and power of a traditional IDE, along with the convenience and great utility of the notebook environment. As of writing this, Jupyter Lab is still in the beta release phase. Given the massive popularity of Jupyter Notebook, Jupyter Lab will likely become a widely used IDE, quickly. 
+[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html)是由Jupyter Notebook团队开发的一个全新的IDE。它的设计宗旨是为了将传统IDE的完善和强大和记事本环境的方便和好用。在编写本文时，Jupyter Lab还在beta测试期。鉴于Jupyter Notebook的流行度，Jupyter Lab也很有可能会很快成为一个常用的IDE。
 
 </div>
