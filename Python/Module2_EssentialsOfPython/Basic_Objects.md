@@ -312,19 +312,19 @@ True
 ```
 如果你不记住这一课，你未来绝对会导致一些严重，难查的bug。最后，在Python（以及任何其它编程语言）中做和数字有关的工作时，你一定要理解浮点数的有限精度是一个错误源，就像测量工具的不精确一眼，也因此在错误分析的时候要考虑到（如果你需要做错误分析的话）。
 
-Python's [decimal module](https://docs.python.org/3.0/library/decimal.html) can be used to define higher (or lower) precision numbers than permitted by the standard 8-byte floats. Furthermore, all arithmetic involving decimal numbers from this module is guaranteed to be *exact*, meaning that `0.1 + 0.1 + 0.1 - 0.3` would be exactly `0.`. There is also a built-in [fractions module](https://docs.python.org/3/library/fractions.html#module-fractions), which provides tools for working with exact representations of rational numbers. Although we will not be using them here, it is very important to keep in mind that these modules exist and that floating point numbers are not the only way around the number line in Python. 
+你可以用Python的[decimal模组](https://docs.python.org/3.0/library/decimal.html)来定义比标准8字节的浮点数更高（或更低）精度的数字。任何使用这个模组的数学计算都会是*完全精确*的，也就是说 `0.1 + 0.1 + 0.1 - 0.3` 正好是 `0.`。Python还有一个自带的[fractions模组](https://docs.python.org/3/library/fractions.html#module-fractions)提供精确表达和操作有理数的工具。虽然我们不会在本资源中使用这些模组，你也应该知道这些模组的存在以及浮点数并不是唯一的选择这事实。
 <!-- #endregion -->
 
 <!-- #region -->
-### Complex Numbers
-In mathematics, a "complex number" is a number with the form $a + bi$, where $a$ and $b$ are real-valued numbers, and $i$ is defined to be the number that satisfies the relationship $i^2 = -1$. Because no real-valued number satisfies this relationship, $i$ is called the "imaginary number". 
+### 复数
+在数学中，一个“复数”（complex number）是任何 $a + bi$ 形式的数字（$a$ 和 $b$ 为实数，$i$ 的定义为满足 $i^2 = -1$ 关系的数）。因为没有任何实数满足上述关系，$i$ 被称为“虚数”。
 
-Weirdo electrical engineers use the symbol $j$ in place of $i$, which is why Python displays the complex number $2 + 3i$ as `2+3j` (this is actually because $i$ typically denotes current; we like electrical engineers too).
+奇奇怪怪的电气工程师用符号 $j$ 来代替 $i$，所以Python会将复数 $2 + 3i$ 打印成 `2+3j`（实际原因是 $i$ 一般用来表达电流；我们还是要爱护电气工程师的）。
 
-Along with the `a + bj` syntax,  built-in type `complex` can be used to create complex-type numbers: 
+除了 `a + bj` 语法之外，内置的 `complex` 类可以用来创造复数类数字：
 
 ```python
-# creating complex numbers
+# 创造复数
 >>> 2 + 3j
 (2+3j)
 
