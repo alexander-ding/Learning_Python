@@ -19,90 +19,90 @@ jupyter:
 ```
 
 <!-- #region -->
-# Basic Object Types
+# 基本对象类型
 
 <div class="alert alert-warning">
 
-**Note**: 
+**注**: 
 
-There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.
+在本资源各处会有一些阅读理解练习。这些题目旨在帮助读者活学活用文中的知识点。练习题的答案可以在本页底部找到。
 </div>
 
-You will see the term "object" be used frequently throughout this text. In Python, the term "object" is quite the catch-all; including numbers, strings of characters, lists, functions - a Python object is essentially anything that you can assign to a variable. That being said, there are different *types* of objects: Python treats integers as a different *type* of object than a string, for instance. 
+本文会经常使用“对象”这一单词。在Python中，“对象”包含了很多东西：数字，字符串，列表，函数，等等。简单来讲，一个Python对象是任何可以赋值给函数的东西。尽管如此，对象是分*类型*（type）的：比如说在Python眼中，整数（integer）和字符串（string）的*类型*是不一样的。
 
-The different object types have manifestly different purposes and thus have different built-in functions available to them. Here, we will review some of the basic types that are built into Python, as a natural entry point to writing code. We will cover:
+不同类型的对象为了不同的目的而存在，而因此也有着不同的内置函数。在这里，我们想复习Python自带的一些基本类型并以此写一些代码。我们将会讨论：
 
-- numbers (integers, floating-point numbers, and complex numbers)
-- booleans
-- the "null" type
-- strings
-- lists
+- 数字（整数，浮点数，复数）（number（integer，float-point number，complex number））
+- 布尔值（真或否）（boolean）
+- “空”值类（the "null" type）
+- 字符串（string）
+- 列表（list）
 
-The built-in function `isinstance` will allow us to check if an object is of a given type. You can also use the built-in `type` function to check an object's type. For example, the following code checks if an object is an integer:
+Python自带的 `isinstance` 函数允许我们检测一个对象是否是某一类型。你也可以用自带的 `type` 函数来查看一个对象的类型。比如说，下面的代码会检测一个对象是否是整数：
 
 ```python
-# assign the variable `x` to the integer 1
+# 对变量 `x` 赋值整数 1
 >>> x = 1  
 
-# checking the type of `x`
+# 查看 `x` 的类型
 >>> type(x)
 int
 
-# verifying that `x` is an integer-type object
+# 检测 `x` 是否是整数类（integer）
 >>> isinstance(x, int)
 True
 ```
 
-In a later module, you will learn "object-oriented" programming, which will allow you to create your own, customized objects!
+在后面一个模组中，你将学习“面对对象”的编程模式。这将允许你创建你自己的定制对象种类！
 <!-- #endregion -->
 
 <!-- #region -->
-## Number Types
-Python has three basic types of numbers: integers, "floating-point" numbers, and complex numbers. Familiar mathematical symbols can be used to perform arithmetic on all of these numbers (comparison operators like "greater than" are not defined for complex numbers):
+## 数字类型
+Python有三种基本的数字类型：整数（integer），浮点数（floating-point number），和复数（complex number）。你可以使用你熟悉的数学运算符来对这三种数字进行算术操作（像“大于”这种比较性的运算符没有定义如何处理复数）:
 
-| Operation  | Description |
-| ------------- |:-------------:|
-| `x + y` | Sum of two numbers |   
-| `x - y` | Difference of two numbers |   
-| `x * y` | Product of two numbers |   
-| `x / y` | Quotient of two numbers |   
-| `x // y` | Quotient of two numbers, returned as an integer | 
-| `x % y` | `x` "modulo": `y`: The remainder of `x / y` |
-| `x ** y` | `x` raised to the power `y` |
-| `-x` | A negated number |
-| `abs(x)` | The absolute value of a number |
-| `x == y` | Check if two numbers have the same value |
-| `x != y` | Check if two numbers have different values |
-| `x > y` | Check if `x` is greater than `y` |
-| `x >= y` | Check if `x` is greater than or equal to `y` |
-| `x < y` | Check if `x` is less than `y` |
-| `x <= y` | Check if `x` is less than or equal to `y` |
+| 操作  | 描述 |
+| ---- |:----:|
+| `x + y` | 求两数相加的结果 |   
+| `x - y` | 求两数相减的结果 |   
+| `x * y` | 求两数相乘的结果 |   
+| `x / y` | 求两数相除的结果 |   
+| `x // y` | 求两数相除的整数商 | 
+| `x % y` | 求两数的模（`x` modulo: `y`，也就是 `x / y` 的余数）|
+| `x ** y` | 求 `x` 的幂 `y` |
+| `-x` | 求负数 |
+| `abs(x)` | 求数的绝对值 |
+| `x == y` | 检测两数是否等值 |
+| `x != y` | 检测两数是否不等值 |
+| `x > y` | 检测 `x` 是否大于 `y` |
+| `x >= y` | 检测 `x` 是否大于或等于 `y` |
+| `x < y` | 检测 `x` 是否小于 `y` |
+| `x <= y` | 检测 `x` 是否小于或等于 `y` |
 
-These operations obey the familiar order of operations from your mathematics class, with parentheses available for association:
+这些运算符和你平时在数学课上见到的运算顺序一样，在没有括号的情况下遵循先乘除后加减。
 
 ```python
-# multiplication takes precedence over addition
+# 先乘除后加减
 >>> 1 + 2 * 3
 7
 
-# grouping operations with parentheses
+# 用括号更改运算顺序
 >>> (1 + 2) * 3
 9
 
-# finding the remainder of division
+# 求余数
 >>> 11 % 5
 1
 
-# checking an inequality
+# 检测不等式是否成立+
 >>> (2 ** 3) < (2 ** 4)
 True
 ```
 
-It should be noted that in many other programming languages, including the out-dated Python 2, dividing two integers would always return an integer - even if mathematically the result should be a fraction. In Python 3, *the quotient of two integers will always return a floating-point number* (i.e. a number that includes a decimal point):
+请注意：在很多其他的编程语言中（包括Python 2），两个整数相除永远都会返回一个整数——就算数学上的结果应该是个分数。在Python 3中，*两个整数相除永远都会返回一个浮点数*（一个包含小数点的数字）：
 
 ```python
-# In many other languages, 3 / 2 returns the integer 1.
-# In Python 3, division always returns a floating-point number:
+# 在很多别的语言中，3 / 2 会返回整数 1
+# 在Python 3中，除法返回一个浮点数
 >>> 3 / 2
 1.5
 
@@ -110,10 +110,10 @@ It should be noted that in many other programming languages, including the out-d
 2.0
 ```
 
-The `//` operator is known as the "floor-divide" operator: it performs division between two numbers and returns the result as an integer by discarding any decimal-places for that number (thus returning the "floor" of that number). This can be used to perform the integer-division traditionally used in other programming languages:
+运算符 `//` 英文叫做“floor-divide”（直译“地板除”）：它取两数相除之后去尾（去掉浮点数小数点后的数字）得到的整数（因为浮点数取整可以往上入——4.5入到5——或者往下舍——4.5舍到4——，所以去尾被称为地板除）。这可以用来进行很多其他语言中传统的整数相除：
 
 ```python
-# floor-division
+# “地板除“
 >>> 1 // 3  # 0.3333.. -> 0
 0
 >>> 3 // 2  # 1.5 -> 1
@@ -123,14 +123,14 @@ The `//` operator is known as the "floor-divide" operator: it performs division 
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Understanding the modulo operator**
+**阅读理解：理解模运算符**
 
-The modulo operator, `%`, is not commonly seen in mathematics textbooks. It is, however, a very useful operation to have at our disposal. `x % y` (said as x "mod" y in programmer's jargon) returns the *remainder* of `x / y`. For example: 
+模运算符 `%` 在数学教材中并不常见。但是它在我们手中是很有用的一个运算符。`x % y` (读作 x “mod” y）返回 `x / y` 的余数。比如说：
 
-- $\frac{3}{2} = 1 + \frac{1}{2}$. 2 "goes into" 3 one time, leaving a remainder of 1. Thus `3 % 2` returns `1`
-- $\frac{9}{3} = 3$. 3 "goes into" 9 three times, and leaves no remainder. Thus `9 % 3` returns `0`
+- $\frac{3}{2} = 1 + \frac{1}{2}$. 3 中可以去除一个 2，最后余下 1，所以 `3 % 2` 返回 `1`
+- $\frac{9}{3} = 3$. 9 中可以去除三个 3，什么都不余下。所以 `9 % 3` 返回 `0`
 
-Given this description of the "mod" operator, simplify the following by hand, and then use the IPython console to check your work:
+根据以上对模运算符的解释，先自己猜测下方表达式的结果，并用IPython命令行检查你的答案:
 
 1. `1 % 5`
 2. `2 % 5`
@@ -141,22 +141,21 @@ Given this description of the "mod" operator, simplify the following by hand, an
 7. `22 % 5`
 6. `22 % 6`
 
-Now, given any integer, `n`, what are the possible values that `n % 2` can return? See if you can come up with a simple rule for explaining the behavior of `n % 2`.
+假设 `n` 是任何整数，`n % 2` 可能返回那些哪些数值？尝试简明的解释 `n % 2` 的行为。
 
 </div>
 
 <!-- #region -->
-### Python's math module
-The standard library's math module provides us with many more mathematical functions, like logarithms and trigonometric functions. A complete listing of them [can be found in the official Python documentation](https://docs.python.org/3/library/math.html#number-theoretic-and-representation-functions). This module must be imported into your code in order to use its functions:
+### Python的math模组
+标准库的math模组为我们提供更多的数学函数，像对数（logarithm）和三减函数。完整的列表[可以在Python官网上找到](https://docs.python.org/3/library/math.html#number-theoretic-and-representation-functions)。要使用math模组里的函数，你必须先导入它。
 
 ```python
-# using the `math` module to use 
-# additional mathematical functions
+# 使用 `math` module 里面的数学函数
 >>> import math
 >>> math.sqrt(4.)
 2.0
 
-# base-10 log
+# 以10为底的对数
 >>> math.log10(10.)
 1.0
 
@@ -167,46 +166,46 @@ The standard library's math module provides us with many more mathematical funct
 <!-- #endregion -->
 
 <!-- #region -->
-### Integers
-As in traditional mathematics, an integer is any "whole" number: $\dots, -3, -2, -1, 0, 1, 2, 3, \dots$. 
+### 整数
+像传统数学一样，一个整数是任何没有小数点的数字：$\dots, -3, -2, -1, 0, 1, 2, 3, \dots$。
 
-Integers belong to the built-in type `int`, which can be used to convert objects to integers:
+整数属于内置类 `int`，而 `int` 则可以用来将其它对象转化成整数：
 
 ```python
 >>> type(-3)
 int
 
-# `1.3` is not an integer-type object
+# `1.3` 不是整数对象
 >>> isinstance(1.3, int)
 False
 
-# converting a string to an integer
+# 将字符串转化成整数
 >>> int("10")
 10
 
-# converting a floating-point number to an integer
+# 将浮点数转化成整数
 >>> int(1.3)
 1
 ```
 
-You can create as large an integer as you'd like; Python will allocate as much memory as needed (and ultimately, as is available) to store an integer's exact value:
+你的整数想多大都可以；Python会分配相应该数字所需的内存来完好存储它（并不会失去精度）。当然，说到底这还是受有多少内存可用的限制:
 
 ```python
-# you can make an integer as large as you'd like
+# 你可以创建一个很大的整数
 >>> large_int = 281938481039848500192847576920
 ```
 
-Integers have some built-in functions available to them, which are detailed in the [official documentation](https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types). The utility of these will likely be quite obscure to new programmers. Just note that they are here for now.
+整数有一些内置的函数可用。完整的介绍可以在[官方说明文档](https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types)中找到。很多这些函数的作用可能对新手而言比较难以理解。现在你只需要知道这些函数存在就行。
 <!-- #endregion -->
 
 <!-- #region -->
-### Floating-Point Numbers
-A "floating-point" number is a number with a decimal point. Referred to as a "float" for short, this can be used to represent any number, up to a limited number of digits.
+### 浮点数
+一个浮点数（floating-point number，或float）是一个有小数点的数字。这可以用来表达任何数字，但其精度受数字位数的限制。
 
-These objects belong to the built-in type `float`, which can be used to convert objects to floats:
+这些对象属于内置类 `float`，而 `float` 则可以用来将其它对象转化成浮点数：
 
 ```python
-# examples of "floating-point" numbers
+# 几个浮点数的例子
 >>> 100. ** 0.5
 10.0
 
@@ -219,103 +218,99 @@ These objects belong to the built-in type `float`, which can be used to convert 
 >>> type(-2.1)
 float
 
-# the integer 10 is not a float-type object
+# 整数 10 并不是浮点数
 >>> isinstance(10, float)
 False
 
-# including a decimal makes the number a float
+# 但加上一个小数点会让其成为浮点数
 >>> isinstance(10., float)
 True
 
-# converting a string to a floating-point number
+# 将字符串转化成浮点数
 >>> float("10.456")
 10.456
 
-# converting an integer to a floating-point number
+# 将整数转化成浮点数
 >>> float(-22)
 -22.0
 ```
 
-Floats have a couple of built-in functions available to them, as detailed in the [official documentation](https://docs.python.org/3/library/stdtypes.html#additional-methods-on-float).
+浮点数有几个内置的函数可用。具体内容在[官方说明文件](https://docs.python.org/3/library/stdtypes.html#additional-methods-on-float)中可以查阅。
 <!-- #endregion -->
 
 <!-- #region -->
-#### Scientific Notation
-A float can also be created using familiar scientific notation. The character `e` is used to represent $\times 10$, and the proceeding number is the exponent. Here are some examples of traditional scientific notation, and their corresponding representation in Python:
+#### 科学计数法
+浮点数也可以用常见的科学计数法来创建。字符 `e` 用来代表 $\times 10$，而在这字符后的数字就是幂。这里有几个传统的科学计数法例子和它们对应的Python表达式：
 
 $1.38 \times 10^{-4} \rightarrow$ `1.38e-04`
 
 $-4.2 \times 10^{10} \rightarrow$ `-4.2e10`
 
-Python will automatically display a float that possesses many digits in scientific notation:
+Python将自动用科学计数法来显示位数比较多的浮点数：
 ```python
-# python will display many-digit numbers using 
-# scientific notation
->>> 0.0000001  # seven leading-zeros
+# Python会用科学计数法来显示多位浮点数
+>>> 0.0000001  # 7个前置0
 1e-07
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-#### Understanding Numerical Precision
-Whereas a Python integer can be made to be as large as you'd like, a floating-point number is *limited in the number of digits it can store*. That is, your computer will only use a set amount of memory, 8 bytes (32 bits) on most machines, to store the value of a floating-point number. 
+#### 理解数字精度
+虽然Python整数可以无限制大小，浮点数的精度*限制于它能存储多少位数*。具体来讲，你的电脑只会用某固定量的内存（在大部分机器上是8字节，也就是32位）来储存一个浮点数的值。
 
-In effect, this means that a float can only be represented with a *numerical precision* of approximately 16 decimal places, when that number is written in scientific notation. The computer will not be able to reliably represent a number's digits beyond those accounted for by the allotted 8 bytes. For instance, the following Python integer is defined with 100 digits, but when this number is converted to a  float, it only retains 15 decimal places in scientific notation:  
+实际操作时，这意味着一个浮点数大概只能存储16位有效数字的*数值精度*。计算机并不能保证存这8字节之外的位数精度。比如说，接下来的代码定义了一个100位的整数。但当这个整数被转化乘浮点数后，它只能保存16位的有效数字：
+
 ```python
-# Demonstrating the finite-precision of a float.
+# 演示浮点数的有限精度
 
-# An integer with 100 digits - Python will use as
-# much memory as needed to store an integer
->>> int("1"*100)  # creates a string with 100 1s and makes it an int
+# 一个100位的整数
+# Python会分配足够多的的内存来存储这个整数
+>>> int("1"*100)  # 创建一个含有100个“1”的字符串并将其转化成整数
 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 
-# Converted to a float, it retains only 
-# 16 decimal places, when written in scientific
-# notation. This is the precision permitted by 
-# 8 bytes of memory.
->>> float("1"*100)  # creates a string with 100 1s and makes it a float
+# 当将同样的字符串转化成浮点数时，
+# 它只能存储16位的有效数字
+# 这也就是8字节内存能存储的大小
+>>> float("1"*100)  # 创建一个含有100个“1”的字符串并将其转化成浮点数
 1.111111111111111e+99
 ```
-The computer cannot keep track of those last 84 decimal places because doing so would require more than 8 bytes of memory to store the entire value of that float. If you had been diligently counting stars in the sky (perhaps across many universes, this number far exceeds the estimated number of stars in our universe), you would have just lost track of over $1\times10^{83}$ of them simply by converting your integer count to a float! 
+计算机无法存储最后84位数字的原因是这样做会需要远超于8字节的内存去存储整个浮点数。假如你在数星星的话，用浮点数而不是整数来存储这个数字会让你漏掉其中整整 $1\times10^{83}$ 个！
 
-As such, attempting to modify a floating point number in decimal places beyond its numerical precision does not have any effect:
+因此，试图用超过浮点数精度的数值去修改该浮点数并不会有任何效果：
 
 ```python
-# changing a float beyond its precision has no effect 
+# 用超过浮点数精度的数值去修改该浮点数并不会有任何效果
 >>> 1. + 1e-16
 1.0
 ```
 
-Even in light of this discussion on float precision, you may be shocked and dismayed to see the following outcome of float arithmetic:
+就算有了以上对浮点精度的讨论做铺垫，你也很可能会惊讶于以下浮点运算的结果：
 
 ```python
-# the finite-precision of floats 
-# result in non-obvious behavior
+# 这令人意外的结果源自浮点数的有限精度
 >>> 0.1 + 0.1 + 0.1 - 0.3 == 0.
 False
 
-# the effects of having finite numerical precision
+# 浮点数的有限精度的效果
 >>> 0.1 + 0.1 + 0.1 - 0.3
 5.551115123125783e-17
 ```
-This is not a quirk of Python; this is a [well-understood](https://docs.python.org/3/tutorial/floatingpoint.html) aspect of dealing with floating-point numbers with limited numerical precision. To accommodate this, don't check if two floats are "equal". Rather, you should check if they are "close enough in value".
-Let me emphasize this:
+这并不是什么Python的奇怪点；这是一个已经被[完全理解](https://docs.python.org/3/tutorial/floatingpoint.html)的操作有限精确度浮点数的结果。为了应对这个问题，不要检查两个浮点数是否“相同”。你应该检查两个浮点数是否“够相近”。
+让我重点强调一下：
 
- **You should never check to see if two floats are exactly equal in value. Instead, you should only check that two floats are approximately equal to one another**. 
-
-The `math` module has a very nice function for this; `math.isclose` will check if the relative difference between two numbers is less than $1 \times 10^{-9}$. You can change this tolerance value along with the type of tolerance-checking used by the function; see its documentation [here](https://docs.python.org/3/library/math.html#math.isclose). Because in the previous example we compare values that are close to 0, we will check if their absolute difference is sufficiently small:
+ **你永远不应该检查两个浮点数是否完全相同。你应该检查两个浮点数是否足够相近**。
+`math` 模组有一个解决这个需求的函数；`math.isclose` 会检查两个数字之间的差是否小于 $1 \times 10^{-9}$。你可以设置修改这个函数使用的容忍值；详见此函数的[文档](https://docs.python.org/3/library/math.html#math.isclose)。因为在之前的例子中我们对比的数值都很接近0，我们将检查它们的差的绝对值是否够小：
 
 ```python
-# checking if two float values are "almost equal"
+# 检查两个浮点数是否“足够接近”
 >>> import math
 
-# check: 
+# 检查
 # | (0.1 + 0.1 + 0.1 - 0.3) - 0 | < 1x10^{-9}
 >>> math.isclose((0.1 + 0.1 + 0.1 - 0.3), 0., abs_tol=1e-9)
 True
 ```
-If you do not heed this lesson, it is inevitable that you will end up with serious, hard-to-find bugs in your code. Lastly,
-when doing numerical work in Python (and any other programming language), you must understand that the finite numerical precision of floating-point numbers is a source of error, akin to error associated with imprecision with a measuring device, and should be accounted for in your analysis (if error analysis is warranted).
+如果你不记住这一课，你未来绝对会导致一些严重，难查的bug。最后，在Python（以及任何其它编程语言）中做和数字有关的工作时，你一定要理解浮点数的有限精度是一个错误源，就像测量工具的不精确一眼，也因此在错误分析的时候要考虑到（如果你需要做错误分析的话）。
 
 Python's [decimal module](https://docs.python.org/3.0/library/decimal.html) can be used to define higher (or lower) precision numbers than permitted by the standard 8-byte floats. Furthermore, all arithmetic involving decimal numbers from this module is guaranteed to be *exact*, meaning that `0.1 + 0.1 + 0.1 - 0.3` would be exactly `0.`. There is also a built-in [fractions module](https://docs.python.org/3/library/fractions.html#module-fractions), which provides tools for working with exact representations of rational numbers. Although we will not be using them here, it is very important to keep in mind that these modules exist and that floating point numbers are not the only way around the number line in Python. 
 <!-- #endregion -->

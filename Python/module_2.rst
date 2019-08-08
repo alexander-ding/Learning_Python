@@ -1,19 +1,19 @@
-Module 2: The Essentials of Python
-==================================
-This module is designed to introduce you to the essential elements of Python. We will begin by studying the basic types of objects that are built-in to Python, which will enable us to work with numbers, text, and containers that can store a collection of objects. Lists, tuples, and strings all store *sequences* of objects (characters, in the case of strings), as such Python provides a common interface for working with these types; your ability to manipulate sequences of data will be a cornerstone for nearly all STEM work that you do in Python.
+模组2：Python基础
+============
+本模组旨在像你介绍Python最基础的一些元素。我们会首先学习Python自带的最基本的对象。这将允许我们来对数字，文本，和可以存储复数对象的容器进行操作。列表（list），元组（tuple），和字符串（string）都可以存储一*序列*的对象（字符串存储的对象就是字符），所以Python提供了一个用来操作这些对象的通用接口；操作这些数据序列的技能是几乎任何Python科学类工作的奠基石。
 
-Having introduced Python's basic types of objects and the means for working with sequences, we will formally discuss the process of assigning variables to these objects. It is not uncommon to assign multiple variables to the same object; Python's treatment of multiple "references" to a single object will be resolved here, and in doing so we will distinguish *mutable* objects from *immutable* objects.
+在介绍过Python基本的对象类型和操作序列的方法好，我们会正式讨论给这些对象设置变量的过程。你将会经常见到将同一个对象对应多个变量的情况；Python对待同一个对象拥有多个“引用”（reference）的方法将在这里被解释清楚，在这个过程共我们将会区分*可变*对象和*不可变*对象。
 
-Armed with our growing toolkit of Python objects, and our newfound understanding of how to reference them with variables, we proceed to learn how to control the flow of logic within our code. "if", "else", and "else-if" statements are defined so that we can have branches of code be executed only if user-specified conditions are met (e.g. if a student's grade is below 65, execute code to email that student a warning). "while-loops" and "for-loops" permit us to execute blocks of code repeatedly (e.g. for each student in this list, execute the code to compute that student's average score). These so-called control-flow tools will greatly improve our ability to write useful code.
+学会了越来越多对Python对象的操作方法，以及我们对如何用变量引用Python对象的理解后，我们将会学习如何控制我们代码中的逻辑流程。我们将使用“if”，“else”，和“else-if”语句来让计算机只在某些用户设置的条件达成时才执行代码的某个枝干（例，当学生A的成绩低于65分时，执行代码来发一篇email以警告学生）。“while-loop”（while循环）和“for-loop”（for循环）则允许我们重复执行代码区块（例，为列表中的每一个学生计算该学生的平均成绩）。这些叫做控制流（control-flow）的工具将会大幅提升我们写有效代码的能力。
 
-Coming off our discussion of for-loops, we take the opportunity to discuss some niceties of the Python language that arise when working with objects that are iterable (e.g. can be iterated over in a for-loop). Niceties is actually an understatement; these tricks of the trade will greatly bolster our ability to write clean, concise, and efficient code. We will pay particular attention to generator comprehension statements, which will allow us to process long sequences of data without having to hold all of the data in memory. You will be glad to have these tricks and tools in your repertoire.
+讨论完for循环后，我们将花些时间探索一些Python语言对于可迭代（iterable）（你可以非正式地理解为“可以通过一个for循环迭代的”）对象提供的一些方便之处。说方便其实有点轻描淡写了；这些小技巧将会极大幅度提升我们编写干净，简短，和高效率的代码。我们将会仔细探讨发生器理解语句（generator comprehension statement）。这将允许我们处理长序列的数据而不需要将整套数据都存在内存中。我相信在最后你会庆幸你会这些技能和工具。
 
-Returning to a more traditional paradigm of programming languages, we will learn how to define our own functions. This will allow us to encapsulate code for reuse and invoke the code on-demand by "calling" the function that contains that code. Functions enable us to write code that is modular and to construct powerful algorithms by relying on these functions.
+回到更传统的编程语言模式，我们会学习如何定义我们自己的函数。这将允许我们包装并在未来碎尸通过调用（call）函数来运行其中的代码。函数将允许我们将代码模组化并利用这些函数创造强大的算法。
 
-Finally, we will return to our initial endeavor of learning about the various types of objects that are built-in to Python, adding dictionaries, sets, and other types of collections to our inventory. Now that we are much more familiar with the language as a whole, we can concern ourselves with more nuanced, but extremely important matters. This involves discussing the efficiency of the algorithms used under the hood by its different data structures. For example, it will become clear that checking if an object is contained in a set is *much* more efficient than checking for membership in a list. Using the right tool for a given task is of manifest importance.
+最后，我们会回到我们最初的任务：学习不同种类的Python自带对象。这次，我们会额外学习词典（dictionary），集合（set），和其它类型的集（collection）。现在我们对Python的理解应该提升了很多，所以我们可以思考一些更加微妙但极其重要的事情。其中之一就是我们会讨论不同算法在不同数据结构下的效率。比如说，你将学到查看一个对象是否在某集合中比查看是否在某列表中快*很多*。对任何一个任务采取正确的工具会对你的效率产生明确的影响。
 
-Although far from comprehensive, this module will acquaint you with the many of the essential elements of Python, along with the niceties that make the language easy to use. The objective here is to equip the reader with the tools needed to write clear and efficient code, that is particularly effective for data science applications. It is paramount that writing code in Python does not feel like stacking a bunch black boxes together; for this reason, a considerable amount of detail is included here. I hope that a reasonable balance has been struck such that this text is still easy to read and that its key "takeaways" are readily distilled.
-  
+虽然本模组不可能面面俱到，但它会帮助你熟悉很多最重要最基础的Python元素，以及那些使得这门语言易用的一些方便点。最终的目的还是帮助读者了解编写易读有效的代码所需的工具，特别是和数据科学应用有关的代码。在写代码时你不应该感觉像是在将一个个你不懂为什么会可用的黑箱叠加在一起；因此，本模组会包含很多的细节。我希望在本文中平衡了易读性和深度，来帮助读者带走最重要的一些知识点。
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
