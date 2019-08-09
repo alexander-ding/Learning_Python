@@ -321,7 +321,7 @@ True
 
 奇奇怪怪的电气工程师用符号 $j$ 来代替 $i$，所以Python会将复数 $2 + 3i$ 打印成 `2+3j`（实际原因是 $i$ 一般用来表达电流；我们还是要爱护电气工程师的）。
 
-除了 `a + bj` 语法之外，内置的 `complex` 类可以用来创造复数类数字：
+除了 `a + bj` 格式之外，内置的 `complex` 类可以用来创造复数：
 
 ```python
 # 创造复数
@@ -341,22 +341,21 @@ complex
 True
 ```
 
-Note that `j` is not, by itself, reserved as a special placeholder for $i$. Rather, `j` must be preceded immediately with a numerical literal (i.e. you cannot use a variable) in order for the Python interpreter to treat it as a complex number.
+请注意，`j` 自身并不是代表 $i$ 的特殊字符。只有在一个数字常量（numerical literal）（不是变量的数字）后的 `j` 才会被Python直译器理解为复数。
 
 ```python
-# `j` by itself is treated like any other character
+# 仅仅 'j' 本身并没有什么特殊含义
 >>> j
-NameError: name 'j' is not defined
+NameError: name 'j' is not defined（名字 'j' 未定义）
 
-# `1j` is interpreted as the imaginary number
+# 而 `1j` 会被理解为虚数
 >>> (1j) ** 2
 (-1+0j)
 ```
 
-You can access `a` and `b` from `a + bj`, the real and imaginary parts of the complex number, respectively.
+你分别可以获取 `a + bj` 中的 `a` 和 `b`，也就是复数的实数（real）和虚数（imaginary）部分。
 ```python
-# Accessing the real and imaginary parts of
-# a complex number.
+# 获取复数的实数和虚数部分
 >>> x = complex(1.2, -3.4)
 >>> x.real
 1.2
@@ -364,15 +363,15 @@ You can access `a` and `b` from `a + bj`, the real and imaginary parts of the co
 -3.4
 ```
 
-The `cmath` ("complex math") module provides a collection of mathematical functions defined for complex numbers. For a complete listing of these functions, refer to the [official documentation](https://docs.python.org/3/library/cmath.html#module-cmath).
+`cmath`（“complex math”）模组定义了一组复数的数学函数。完整的列表可以在[官方说明文件](https://docs.python.org/3/library/cmath.html#module-cmath)找到。
 <!-- #endregion -->
 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Working with numbers in Python**
+**阅读理解：操作Python数字**
 
-1\. In Python, performing an arithmetic operation, such as addition or multiplication, on two integers will return an integer, and performing an operation on two floats will return a float:
+1\. 在Python中，对两个整数进行类似加或乘的算术会返回一个整数，而对两个浮点数进行运算会返回一个浮点数：
 ```python
 >>> 2 * 3
 6
@@ -381,37 +380,37 @@ The `cmath` ("complex math") module provides a collection of mathematical functi
 6.0
 ```
 
-For which operation, among `+ - * / **`, does this *not* hold?
+上述语句对 `+ - * / **` 这些运算符中哪个*不*成立？
 <!-- #endregion -->
 
-2\. What type of number will be returned if you perform a mathematical operation using an integer and a floating-point number? Does this hold for all the arithmetic operations? Determine this by trial and error.
+2\. 对一个整数和一个浮点数进行数学运算会返回哪种数字？是否所有的运算符都遵循这一规律？请在命令行中进行尝试以得到答案。
 
-3\. Given the function $f(x) = e^{|x - 2|}$, make use of the `math` module to compute $f(-0.2)$.
+3\. 定义 $f(x) = e^{|x - 2|}$。使用 `math` 模组来运算 $f(-0.2)$。
 
-4\. Using Python's syntax for scientific notation, write an expression that verifies that one trillion divided by one billion is equal to one thousand
+4\. 使用Python的科学计数法语法来确认一万亿处以十亿等于一千。
 </div>
 
 <!-- #region -->
-### Augmented Assignment Statements
-Python provides a nice "shortcut" for updating a variable via an arithmetic operation. For example, suppose you want to increase the value of `x` by 1. Currently, we would update `x` as follows:
+### 赋值语句的简写
+Python提供了一些方便你通过数学运算符更新函数的方式。假设你想要将 `x` 的值增加 1，你可能会如此操作：
 ```python
-# incrementing `x` by 1
+# 将 `x` 增加 1
 >>> x = 5
 >>> x = x + 1
 >>> x 
 6
 ```
 
-We can make use of a special assignment operation `+=` to perform this update in an abbreviated way.
+我们可以利用一个特殊的赋值符 `+=` 来简写这个更新操作。
 ```python
-# using `+=` to increment `x` by 1
+# 使用 `+=` 来将 `x` 增加 1
 >>> x = 5
->>> x += 1  # equivalent to: `x = x + 1`
+>>> x += 1  # 这和 `x = x + 1` 等值
 >>> x
 6
 ```
 
-`+=` is a type of *augmented assignment statement*. In general, an augmented assignment performs a mathematical operation on a variable, and then updates that variable using the result. Augmented assignment statements are available for all of the arithmetic operations. Assuming `x` and `n` are both types of numbers, the following summarizes the available arithmetic augmented assignment statements that we can perform on `x`, using `n`:
+`+=` 是一种*增强的赋值语句*（augmented assignment statement）。总的来讲，一个增强的赋值语句会对一个函数进行某种数学运算，并对用运算的结果更新该函数。每个算术运算符都有着相对应的增强的赋值语句。假设 `x` 和 `n` 为数字，那么以下列表将总结我们可以对用 `n` 对 `x` 进行的增强的算术赋值语句：
 
 - `x += n` $\rightarrow$ `x = x + n`
 - `x -= n` $\rightarrow$ `x = x - n`
@@ -422,59 +421,59 @@ We can make use of a special assignment operation `+=` to perform this update in
 <!-- #endregion -->
 
 <!-- #region -->
-### Improving The Readability of Numbers
-Python version 3.6 introduced the ability to include underscores between the digits of a number as a visual delimiter. This character can be used to improve the readability of long numbers in your code. For example the number `662607004` can be rewritten as `662_607_004`, using `_` to delimit digits separated by orders of one thousand. Leading, trailing, or multiple underscores in a row are not allowed; otherwise this character can be included anywhere within a numerical literal.
+### 提升数字的可读性
+Python 3.6版本提供了在数字位数之间插入下划线来视觉上划分的功能。这个符号可以用来提升多位数的可读性。比如说，利用 `_` 来区分每三位的数字，`662607004` 可以被重写成为 `662_607_004`。下划线不能出现在首位，尾位，或另一个下划线旁边；但除此以外这个符号可以出现在数字常量中间的任何位置。
 
 ```python
-# examples of using `_` as a visual delimiter in numbers
->>> 1_000_000  # this is nice!
+# 利用 `_` 来视觉上划分数字
+>>> 1_000_000  # 这很实用！
 1000000
 
-# this is gross but is permitted
+# 这看起来挺恶心的，但这是合法的Python代码
 >>> 2_3_4.5_6_7  
 234.567
 
-# underscores work with all variety of numerical literals
+# 你可以在任何类型的数字中插入下划线
 >>> 10_000j  
 10000j
 ```
 
 <div class="alert alert-warning">
 
-**Compatibility Warning**
+**兼容性警告**
 
-The permitted use of the underscore character, `_`, in numerical literals was introduced in Python 3.6. Thus utilizing this syntax in your code will render it incompatible with Python 3.5 and earlier. 
+在数字常量中插入下划线 `_` 的功能是在Python 3.6版本加入的。如果你使用此功能，那你的代码会和Python 3.5和更早的版本不兼容。
 
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-## The Boolean Type
-There are two boolean-type objects: `True` and `False`; they belong to the built-in type `bool`. We have already seen that the `isinstance` function either returns `True` or `False`, as a given object either is or isn't an instance of a specific type. 
+## 布尔类
+Python有两种布尔类（boolean）的对象：`True`（真）和 `False`（否）；它们属于内置的 `bool` 类型。我们在之前已经看到 `isinstance` 函数根据一个对象是否是某类的实例（instance）而返回 `True` 或 `False`。
 
 ```python
-# the two boolean-objects: `True` and `False`
+# 两种布尔类的对象：`True` 和 `False`
 >>> type(True)
 bool
 
-# `False` is a boolean-type object
+# `False` 是一个布尔类的对象
 >>> isinstance(False, bool)
 True
 ```
-`True` and `False` must be specified with capital letters in Python. These should not be confused with strings; note that there are no quotation marks used here.
+在Python中，`True` 和 `False` 必须要首字母大写。请不要将它们和字符串搞混；注意布尔值并两边没有引号。
 
-### Logic Operators
-Python provides familiar operators for performing basic boolean logic: 
+### 逻辑运算符
+Python提供常见的布尔逻辑的操作符：
 
-| Logic Operation | Symbolic Operator            
-| --------------- | ------------------- |
-| `and`           | `&`                 | 
-| `or`            | <code>&#124;</code> |          
+| 逻辑运算名称 | 运算符号            
+| ------------ | -------- |
+| `and`（逻辑与）     | `&`                 | 
+| `or` （逻辑或）     | <code>&#124;</code> |          
 <!-- #endregion -->
 
 <!-- #region -->
 ```python
-# demonstrating boolean-logic operators
+# 演示布尔逻辑运算符
 >>> True or False
 True
 
@@ -485,24 +484,26 @@ False
 True
 ```
 
-Operator symbols are available in place of the reserved words `and` and `or`:
+译者注：原文因为 `not`（逻辑否）在英文中很好理解没有多讨论。读者只需知道 `not` 返回输入的布尔值的反值。
+
+你也可以使用 `and` 和 `or` 对应的运算符号：
 ```python
-# demonstrating the symbolic logic operators
->>> False | True  # equivalent to: `False or True`
+# 演示逻辑运算符
+>>> False | True  # 和 `False or True` 等值
 True
 
->>> False & True  # equivalent to: `False and True`
+>>> False & True  # 和 `False and True` 等值
 False
 ```
-That being said, it is generally more "Pythonic" (i.e. in-vogue with Python users) to favor the use of the word-operators over the symbolic ones. 
+一般来讲，使用运算名称，而不是符号，是更加“Pythonic”（也就是说在Python编程者更时兴）。
 
-Multiple logic operators can be used in a single line and parentheses can be used to group expressions:
+你可以在同行使用多个逻辑运算符，并使用括号来细述运算顺序：
 ```python
 >>> (True or False) and True
 True
 ```
 
-Comparison statements used in basic mathematics naturally return boolean objects.
+一些基本的比大小语句自然会返回布尔类的对象。
 ```python
 >>> 2 < 3
 True
@@ -514,12 +515,12 @@ False
 False
 ```
 
-The `bool` type has additional utilities, which will be discussed in the "Conditional Statements" section.
+`bool` 类有着其它方便操作的方法。我们将在“条件语”小节讨论它们。
 <!-- #endregion -->
 
 <!-- #region -->
-### Boolean Objects are Integers
-The two boolean objects `True` and `False` formally belong to the `int` type in addition to `bool`,  and are associated with the values `1` and `0`, respectively:
+### 布尔值对象其实就是整数
+`True` 和 `False` 这两个布尔值对象正式上是 `int` 类型的成员，分别对应 `1` 和 `0`：
 
 ```python
 >>> isinstance(True, int)
@@ -535,47 +536,48 @@ True
 0
 ```
 
-As such, they can be used in mathematical expressions interchangeably with `1` and `0`  
+因此，在数学运算中它们和 `1` 和 `0` 的作用一样：
 ```python
->>> 3*True - False  # equivalent to: 3*1 + 0 
+>>> 3*True - False  # 和 3*1 + 0 等值
 3
 
->>> True / False  # equivalent to: 1 / 0
+>>> True / False  # 和 1 / 0 等值
 ---------------------------------------------------------------------------
 ZeroDivisionError                         Traceback (most recent call last)
 <ipython-input-4-f8487d9d0863> in <module>()
 ----> 1 True / False
 
 ZeroDivisionError: division by zero
+（因为除以零所以直译器报错）
 ```
 
-The purpose of having `True` and `False` double as integers is beyond the scope of this section. It is simply useful to be aware of these facts so that this behavior is not completely alien to you as you begin to write code in Python.
+为何 `True` 和 `False` 同时也是整数的原因超出了本节的纲领。熟悉这一特征会让你在写Python代码的时候避免一些错误。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Boolean expressions**
+**阅读理解：布尔表达式**
 
-1\. Assuming `x` is a an integer-type, write a comparison statement that will return `True` if `x` is an even number, and `False` otherwise. (Hint: recall the purpose of the `%` operator)
+1\. 假设 `x` 是整数类。编写一个表达式，在 `x` 是偶数时返回 `True`，其它情况返回 `False`。（提示：回忆 `%` 运算符的功能）
 
-2\. Assuming `x` and `y` are both real-valued numbers (i.e. not complex numbers), write a line of code that will return `False` if: `x` and `y` are within 0.9 of one another, and `x` is a positive number. (Hint: try writing the expression that will return `True` for this condition, and then negate it)
+2\. 假设 `x` 和 `y` 都是实数（也就是不是复数的数字）。编写一行代码，在以下情况中返回 `False`：`x` 和 `y` 相差小于0.9，且 `x` 大于零。（提示：尝试先编写在以上情况会返回 `True` 的代码，然乎再取反）
 
-3\. Write an expression that returns `True` if `x` is a boolean-type object or a float-type object.
+3\. 编写一个表达式，当 `x` 是布尔类型或浮点类型对象时返回 `True`。
 
 </div>
 
 <!-- #region -->
-## The None-Type
-There is a simple type, `NoneType` that has exactly one object: `None`. `None` is used to represent "null"... nothing.
+## None类型
+`NoneType`（None类型）仅仅只有一个对象：`None`。`None` 用来表达“无”/“空”，也就是什么都没有的意思。
 ```python
-# `None` is the *only* object belonging to NoneType
+# `None` 是*唯一*属于于NoneType的对象
 >>> type(None)
 NoneType
 ```
-As such, instead of checking if an object belongs to NoneType, you should simply check if the object is `None`. Python reserves `is` as an operation that checks if two objects are identical. This is different than `==`, which checks if two objects are associated with the same value or state:
+因此，与其检查某对象是否属于NoneType，你应该直接检查该对象是否就是 `None`。Python保留 `is` 为检查两个对象是否相同的运算符。这和检查两个对象是否有着同样的值或态的 `==` 运算符不一样：
 ```python
-# Check if an object "is" None, instead
-# of checking if it is of NoneType
+# 检查对象是否*是*（is）None，而不是
+# 检查对象是否是NoneType类的实例
 >>> x = 22
 
 >>> x is None
@@ -589,14 +591,15 @@ True
 >>> y is None
 True
 ```
-`None` appears frequently, and is often used as a placeholder in code. Here is a simple example where `None` could be useful; don't worry that this code may not make perfect sense to you yet:
+译者注：`x is not None` 和 `not (x is None)` 等值，但前者因更符合英文语法而所以被支持。
+
+`None` 经常出现，作为占位符使用。以下代码将演示 `None` 在实际操作中的用法；如果你并不能完全理解这代码，不要担心：
 
 ```python
-# Demonstrating the use of `None` as a placeholder
+# 演示将 `None` 作为占位符的用法
 
-# In this code, we want to get the first
-# item in a list that is greater than 10, and notify
-# the user if there is no such number
+# 在本代码中，我们想要找到列表中第一个大于10的物件
+# 如果该物件不存在，我们将如实告诉用户
 
 large_num = None
 
@@ -612,42 +615,41 @@ if large_num is None:
 <!-- #endregion -->
 
 <!-- #region -->
-## Strings
-### Introducing the string type
-The string type is used to store written characters. A string can be formed using:
+## 字符串
+### 字符串类型简介
+字符串（string）类型被用于存储多个字符。你可以用一下语法创建字符串：
 
-- single quotes: `'Hello world'`
-- double quotes: `"Hello world"`
-- triple quotes: `"""Hello world"""` or `'''Hello world'''` 
+- 单引号：`'Hello world'`
+- 双引号：`"Hello world"`
+- 三引号：`"""Hello world"""` 或 `'''Hello world'''`
 
 ```python
-# Strings contain written characters, even those
-# not found in the english alphabet!
+# 字符串可以存储任何字符，
+# 不仅仅是英文字母表中的字母！
 >>> "hello, 你好, Olá, 123"
 'hello, 你好, Olá, 123'
 ```
-By default, Python 3 uses [UTF-8 unicode](https://docs.python.org/3/howto/unicode.html#unicode-howto) to represent this wide variety of characters. Don't worry about this detail beyond making note of it, for now.
+Python 3默认使用[UTF-8 unicode](https://docs.python.org/3/howto/unicode.html#unicode-howto)来表达这些多样化的字符。暂时没必要太过关注这个细节，知道它存在就行。
 
-Strings belong to the built-in `str` type, which can be used to convert non-string objects into strings.
+字符串属于内置的 `str` 类型。`str` 则可以用来将非字符串对象转化成字符串。
 ```python
-# the type `str`
+# `str` 类型
 >>> type("hello")
 str
 
 >>> isinstance("83", str)
 True
 
-# Using the type `str` to convert non-string objects
-# into strings.
+# 利用 `str` 类型来将非字符串对象转化成字符串
 >>> str(10.34)
 '10.34'
 
 >>> str(True)
 'True'
 ```
-Once a string is formed, it cannot be changed (without creating an entirely new string). Thus a given string object cannot be "mutated" - a string is an *immutable* object.
+当一个字符串被创建后，它的值无法被改变（除非你创建一个全新的字符串）。因此，任何一个字符串都无法被“改变”——字符串是*不可变*（immutable）的对象。
 
-As the string stores a *sequence* of characters, Python provides a means for accessing individual characters and subsequences of characters from a string:
+因为Python存储一*序列*（sequence）的字符，Python提供了调用字符串中单个字符和子字符串的工具：
 ```python
 >>> sentence = "The cat in the hat."
 >>> sentence[0]
@@ -655,24 +657,24 @@ As the string stores a *sequence* of characters, Python provides a means for acc
 >>> sentence[0:3]
 'The'
 ```
-Strings are not the only sequence-type in Python; lists and tuples are examples of sequences as well. We will reserve a separate section to learn about the common interface that Python has for all of its types that are sequential in nature, including the "indexing" and "slicing" demonstrated here.
+字符串并不是Python中唯一的序列类；列表（list）和元组（tuple）也同样时序列的一种。我们在未来将专门花一节课来讨论Python提供的通用序列操作。这包括了以上展示的“索引“（indexing）和”切片“（slicing）。
 
-### String essentials
-We will only scratch the surface with strings, touching on some essentials. Please refer to the [official Python tutorial](https://docs.python.org/3/tutorial/introduction.html#strings) for a more extensive, but still informal, overview of strings.
+### 字符串基础
+我们只会学习一些字符串的基础。如果你想要一个更全面的非正式字符串教程，请查阅[官方Python教程](https://docs.python.org/3/tutorial/introduction.html#strings)。
 
-In a string, `\n` is treated as a single character. It denotes a new-line in a string, and will be rendered thusly when the string is printed. Similarly, `\t` will render as a tab-character.
+在字符串中，`\n` 被视为一个字符。它代表着字符串的一个新行（new-line）。在打印时也会如此显示。相似的 `\t` 会显示成一个tab字符。
 
 ```python
-# using `\n` to create a newline
+# 使用 `\n` 来创建新行
 >>> print("hi...\n...bye")
 hi...
 ...bye
 ```
 
-Using triple quotes allows you to write a block-string, meaning that you can include text on multiple lines, and it is all still treated as one string:
+三引号将允许你写一整块字符串，也就是说你可以在多行中编写同一个字符串：
 
 ```python
-# using triple-quotes to write a multi-line string
+# 使用三引号来编写一个多行字符串
 >>> x = """ I am a string.
 I am part of the same string.
     me... too!"""
@@ -682,146 +684,147 @@ I am part of the same string.
  
 ```
 
-Python's strings have a large number of fantastic, built-in functions available to them. It is *very important* that you familiarize yourself with these functions by looking over [the official documentation](https://docs.python.org/3/library/stdtypes.html#string-methods). To demonstrate a few of these:
+Python的字符串有着大量很有用的内置函数。熟悉了解这些函数会*极其重要*。详见[官方说明文件](https://docs.python.org/3/library/stdtypes.html#string-methods)。以下是其中一些函数的演示：
 ```python
-# demonstrating a few of the built-in functions for strings
->>> "hello".capitalize()
+# 演示几个字符串的内置函数
+>>> "hello".capitalize() # 译者注：首字母大写
 'Hello'
 
-# join a list of strings, using "..."
+# 使用“...”来讲多个字符串连接在一起
 >>> "...".join(["item1", "item2", "item3"])
 'item1...item2...item3'
 
-# split a string wherever ", " occurs
+# 每当“, ”出现时切分字符串
 >>> 'item1, item2, item3'.split(", ")
 ['item1', 'item2', 'item3']
 
-# does this string end with ".py"?
+# 该字符串是否以“.py”结尾?
 >>> "script.py".endswith(".py")
 True
 
-# does this string start with "sc"?
+# 该字符串是否以“sc”打头?
 >>> "script.py".startswith("sc")
 True
 
-# insert objects into a string, in its 
-# "formatting" fields {}
+# 在格式位 {} 中将对象转化为字符串并插入
 >>> "x: {}, y: {}, z: {}".format(3.2, 8.4, -1.0)
 'x: 3.2, y: 8.4, z: -1.0'
 
-# Are the characters in the string
-# numerical digits?
+# 该字符串的字符是否时数字位数？
 >>> "7".isdigit()
 True
 
 ```
 
-### Formatting strings
-Python provides multiple syntaxes for formatting strings; these permit us to do things like programmatically inject the values of variables into strings, align fields using whitespace, and control the number of decimal places with which numbers are displayed in a string. This section is designed to simply expose the reader to the different varieties of string-formatting. 
+### 格式化字符串
+Python提供多种设置字符串格式的语法；利用这些语法，我们可以轻松地将变量数值插入到字符串中，利用空格对齐行列，并控制字符串显示小数点后几位数。本节旨在向读者展示这些不同的字符串格式。
 
-[pyformat.info](https://pyformat.info) is the best resource to consult to see an exhaustive (but still intuitive) treatment of string-formatting in Python. You can also refer to the official documentation [here](https://docs.python.org/3/library/string.html#format-examples).
+如果你想要完整（但仍然易懂）的Python字符串格式教程，请查阅[pyformat.info](https://pyformat.info)。你也可以查阅[官方教程](https://docs.python.org/3/library/string.html#format-examples)。
 
-In Python 3, you can leverage the `format` method towards this end:
+在Python 3中，你可以使用 `format` 方法来格式化字符串：
 
 ```python
-# using `format` to replace placeholders with values
+# 使用 `format` 来用函数值代替占位符
 >>> "{name} is {age} years old".format(name="Bruce", age=80)
 'Bruce is 80 years old'
 
-# padding a string with leading-spaces so that it has at least 8 characters
+# 以下语法会前置空格来保证字符串至少有8字符长
 >>> "{item:>8}".format(item="stew")
 '   stew'
 ```
-Note that you may encounter the use of the cryptic `%` operator to format strings to the same effect:
+你有时可能会见到别人用 `%` 运算符来格式化字符串：
 
 ```python
-# using `%` to  format strings (avoid this)
+# 使用 `%` 来格式化字符串（注意不要使用此方法）
 >>> name = "Selina"
 >>> "My name is %s" % name
 'My name is Selina'
 ```
-this is a relic of Python 2; it is recommend that you avoid this formatting syntax.
+这是Python 2的遗留物；你应注意避免使用此语法。
 
-If you are using Python 3.6 or beyond, then you have the luxury of being able to use f-strings, which provide a supremely convenient means for formatting strings. Here is an example of an f-string in action:
+如果你在用Python 3.6和之后的版本，你可以使用f-string（f字符串），一种很方便格式化字符串的方法。以下是一个f字符串的范例：
 
 ```python
-# an example of an 'f-string'
+# 'f字符串' 范例
 >>> batman = 12
 >>> catwoman = 10
 >>> f"Batman has {batman} apples. Catwoman has {catwoman} apples. Together, they have {batman + catwoman} apples"
 'Batman has 12 apples. Catwoman has 10 apples. Together, they have 22 apples'
 ```
 
-See that an f-string has a special syntax; an f-string is denoted by preceding the opening quotation mark with the lowercase f character:
+请注意f字符串是一种特殊语法；在第一个引号前输入小写字符f来使用f字符串：
 ```python
-# this is a typical empty string
+# 这是一个常见的空字符串
 >>> ""
 ''
 
-# this is an empty f-string
+# 这是一个空的f字符串
 >>> f""
 ''
 ```
 
-An f-string is special because it permits us to write Python code *within* a string; any expression within curly brackets, `{}`, will be executed as Python code, and the resulting value will be converted to a string and inserted into the f-string at that position.
+f字符串的特殊之处在于它允许我们在字符串*中*编写Python代码；任何在 `{}` 的表达式都会作为Python代码被执行，其结果将会被转化成字符串并插入在 `{}` 在f字符串中的位置。
 
 ```python
 >>> x = 7.9
 >>> f"x is a {type(x)}-number. Its value is {x}. The statement 'x is greater than 5' is {x > 5}"
 "x is a <class 'float'>-number. Its value is 7.9. The statement 'x is greater than 5' is True"
+（“x是一个浮点数类数字。它的值为7.9。表达式’x大于5‘为真”）
 ```
 
-As seen in the preceding examples, this permits us to elegantly include variables in our strings and even do things like call functions within the string construction syntax.
+如例中所见，这将允许我们优雅地在字符串建立时中插入变量甚至调用函数的输出。
 
 <div class="alert alert-warning">
 
-**f-string Compatibility**: 
+**f字符串兼容性**: 
 
-The 'f-string' syntax was introduced in Python 3.6. It is not available in earlier versions of Python.
+f字符串是Python 3.6才加入的新语法。它在之前的Python版本不可用。
 </div>
 
-### Official documentation for strings
-It is highly recommended that you take time to read over all of the functions that are built-in to a string.
+### 字符串的官方说明文档
+本文强烈建议读者花些时间了解所有字符串的自带函数。
 
-- [Built-in functions for strings](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Formatting strings](https://docs.python.org/3/library/string.html#format-examples)
+- [字符串自带函数](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [格式化字符串](https://docs.python.org/3/library/string.html#format-examples)
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Strings**
+**阅读理解：字符串**
 
-To answer some of the following questions, you will need to peruse the documentation for the built-in functions of strings. It may take a bit of experimentation to understand the documentation's use of square-brackets to indicate optional inputs for a function.
+为了回答以下问题，你会需要查阅字符串内置函数的说明文件。你可能需要进行一些尝试才能理解说明文档的“[]”格式（用于表达函数的可选输入）。
 
-1\. Use a function that will take the string `"cat"`, and returns the string `"   cat    "` (which has a length of 11, including the letters c, a, t). Now, change the way you call the function so that it returns `"----cat----"` instead. 
+1\. 使用一个函数，在输入字符串 `"cat"` 时返回字符串 `"    cat    "`（输出的长度为11个字符；这包含字符c，a，t）。之后，修改你调用该函数的方法以返回 `"----cat----"`。
 
-2\. Replace the first three periods of this string with a space-character: `"I.am.aware.that.spaces.are.a.thing"`
+2\. 用空格代替以下字符串的前三个句号：`"I.am.aware.that.spaces.are.a.thing"`
 
 
-3\. Remove the whitespace from both ends of: `"  basket    "` 
+3\. 去除该字符串两边的所有空格：`"  basket    "`。
 
 <!-- #region -->
-4\. Create a string that will print as (the second line begins with a tab-character):
+4\. 创建一个打印时会如下显示的字符串（第二行打头的是一个tab符号）：
 ```
 Hello
 	over there
 ```
 
-5\. Convert the integer `12` to the string `"12"`.
+5\. 将整数 `12` 转化成字符串 `"12"`。
 
-6\. Only kids 13 and up are allowed to see Wayne's World. Given the variables `name` (a string) and `age` (an integer), use an f-string that will display: "NAME is old enough to watch the movie: BOOL", where NAME is to be replaced with the kid's name, and BOOL should be `True` if the kid is at least 13 years old, and `False` otherwise.
+6\. 只有13岁和以上的孩子可以观看电影《反斗智多星》。假设你有函数 `name`（字符串）和 `age`（整数）。使用f字符串来显示："NAME is old enough to watch the movie: BOOL"（“NAME可以看这电影：BOOL”）。用NAME应该用孩子的名字来代替，而BOOL在孩子至少13岁以上时应为 `True`，不然是 `False`。
 
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-## Lists
-A `list` is a type of Python object that allows us to store a sequence of other objects. One of its major utilities is that it provides us with means for updating the contents of a list later on. 
+## 列表
+一个 `list`（列表）是一个允许我们存储一序列的Python对象的对象。列表的一大功能就是我们在未来可以更新列表中的内容。
 
-A list object is created using square-brackets, and its contents are separated by commas: `[item1, item2, ..., itemN]`. Its contents need not be of the same type of object.
+你可以用方括号来创建列表，并用逗号区分其中的项目：`[item1, item2, ..., itemN]`。它的项目可以是各种不同的类型。
+
+译者注：注意使用英文的方括号和逗号。
 
 ```python
-# a list-type object stores a sequence of other objects
+# 列表对象可以存储一序列的其它对象
 >>> [3.5, None, 3.5, True, "hello"]
 [3.5, None, 3.5, True, 'hello']
 
@@ -831,140 +834,139 @@ list
 >>> isinstance([1, 2], list)
 True 
 
-# constructing an empty list
+# 空列表
 >>> []
 []
 
-# constructing a list with only one member
+# 只有一个项目的列表
 >>> ["hello"]
 ["hello"]
 ```
 
-You can also include variables, equations, and other Python expressions in the list constructor; Python will simplify these expressions and construct the list with the resulting objects.
+你也可以在创建列表时使用变量，公式，和其它Python表达式；Python会计算这些表达式并用计算的结果作为列表的内容。
 ```python
-# the list constructor will simplify expressions 
-# and store their resulting objects
+# 创建列表时会计算表达式并储存计算后的输出对象
 >>> x = "hello"
 >>> [2 < 3, x.capitalize(), 5**2, [1, 2]]
 [True, 'Hello', 25, [1, 2]]
 ```
 
-The built-in `list` type can be used to convert other types of sequences (and more generally, any *iterable* object, which we will discuss later) into a list:
+内置的 `list` 类型可以用来将其它任何类型的序列（更广义来讲，任何*可迭代*的对象——我们会在之后讨论）转化成列表：
 ```python
-# `list` forms a list out of the contents of other sequences
+# `list` 利用其它序列的内容来创建新列表
 >>> list("apple")
 ['a', 'p', 'p', 'l', 'e']
 ```
-### Lists are sequences
-Like a string, the ordering of a list's contents matters, meaning that a list is sequential in nature.
+### 列表是序列
+就像字符串一样，列表内容的排列顺序是很重要的。这也就是说，列表是序列性（sequential）的。
 ```python
-# A list's ordering matters
+# 列表是分顺序的
 >>> [1, "a", True] == [1, True, "a"]
 False
 ```
 
-Thus a list supports the same mechanism for accessing its contents, via indexing and slicing, as does a string. Indexing and slicing will be covered in detail in the next section.
+因此，像字符串一样，你可以通过索引（indexing）和切片（slicing）来访问列表的内容。我们将在下一节中更具体地介绍索引和切片。
 ```python
-# Accessing the contents of a list with indexing and slicing
+# 通过索引和切片来访问列表的内容
 >>> x = [2, 4, 6, 8, 10]
 
-# `x` contains five items
+# `x` 里有5个物件
 >>> len(x)
 5
 
-# access the 0th item in the list via "indexing"
+# 通过索引来访问列表的第0个物件
 >>> x[0]
 2
 
-# access a subsequence of the list via "slicing"
+# 通过切片来访问列表的子序列
 >>> x[1:3]
 [4, 6]
 ```
 
-### Lists can be "mutated"
-We will encounter other types of containers in Python, what makes the list stand out is that the *contents of a list can be changed after the list has already been constructed*. Thus a list is an example of a *mutable* object.
+### 列表是可变的
+我们会在之后遇到其它的Python容器。使得列表不同的是*列表的内容可以在列表创建后被修改*。因此，列表是*可变*对象的一种。
 ```python
-# changing a list after it has been constructed
+# 在列表被创建后修改它
 >>> x = [2, 4, 6, 8, 10]
 >>> y = [2, 4, 6, 8, 10] 
 
-# "set" the string 'apple' into position 1 of `x` 
+# 将列表 `x` 第1位的物件“设置”（set）成字符串 'apple'
 >>> x[1] = "apple"
 >>> x
 [2, 'apple', 6, 8, 10]
 
-# replace a subsequence of `y`
+# 修改 `y` 的子序列
 >>> y[1:4] = [-3, -4, -5]
 >>> y
 [2, -3, -4, -5, 10]
 ```
 
-The built-in list-functions "append" and "extend" allow us to add one item and multiple items to the end of a list, respectively:
+自带的列表函数“append”和“extend”将允许我们分别在列表结尾添加一个和多个的物件：
 ```python
 >>> x = [2, 4, 6, 8, 10]
 
-# use `append` to add a single object to the end of a list
+# 用 `append` 在列表结尾添加一个对象
 >>> x.append("moo")
 >>> x
 [2, 4, 6, 8, 10, 'moo']
 
-# use `extend` to add a sequence of items to the end of a list
+# 用 `extend` 在列表结尾添加一序列的对象
 >>> x.extend([True, False, None])
 >>> x
 [2, 4, 6, 8, 10, 'moo', True, False, None]
 ```
 
-The "pop" and "remove" functions allow us to remove an item from a list based on its position in the list, or by specifying the item itself, respectively.
+"pop" 和 "remove" 函数允许我们分别根据物件在列表中的位置和值来将它们从列表中移出。
 ```python
 >>> x = ["a", "b", "c", "d"]
 
-# pop the position-1 item out from a list
-# `pop` will return the item that gets removed.
+# 将列表中位置1的物件“pop”（跳）出来
+# `pop` 会返回被移出的物件
 >>> x.pop(1) 
 'b'
 
 >>> x
 ['a', 'c', 'd']
 
-# remove the object "d" from the list
+# 将对象 "d" 从列表中移出
 >>> x.remove("d")
 >>> x
 ['a', 'c']
 ```
 
-### Official documentation for lists
-It is highly recommended that you take time to read over all of the functions that are built-in to a list. These are all designed to allow us to either inspect or mutate the contents of a list.
+### 列表的官方说明文档
+本文强烈建议读者花些时间了解所有列表的自带函数。这些函数都旨在帮助我们查看或修改列表的内容。
 
-- [Built-in functions for a list](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
+- [列表的内置函数](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Lists**
+**阅读理解：列表**
 
-To answer some of the following questions, you will need to peruse the documentation for the built-in functions of lists.
+为了回答以下问题，你会需要查阅列表内置函数的说明文件。
 
-1\. Create a list whose sole entry is the `None` object.
+1\. 创建一个列表，其唯一的物件是 `None` 对象。
 
-2\. Assign to the variable `k` a list that contains an integer, a boolean, and a string, in that order. Then, add two more entries to the end of the list: a float and a complex number.  
+2\. 向变量 `k` 赋值一个内容为一个整数，一个布尔值，和一个字符串（顺序也是如此）的列表。然后在列表结尾添加两个项目：一个浮点数和一个复数。
 
-3\. Alphabetize the list of names: `["Jane", "Adam", "Ryan", "Bob", "Zordon", "Jack", "Jackenzie"]`. 
+3\. 根据字母顺序排序以下列表：`["Jane", "Adam", "Ryan", "Bob", "Zordon", "Jack", "Jackenzie"]`。
 
 </div>
 
 <!-- #region -->
-## Summary
-The term "object" is a catch-all in Python, meaning anything that we can assign to a variable. Objects behave differently from one another according to what "type" a given object is. 
+## 总结
+“对象”（object）在Python中泛指任何可以赋值于一个变量的东西。对象根据其“类型”（type）不同会有不同的行为。
 
-We reviewed several fundamental object types in Python:
+我们复习了Python几种不同的基本对象类型：
 
-- `int`, `float`, `complex`: the numerical types
-- `bool`: the boolean type. `True` and `False` are the only boolean-type objects
-- `NoneType`: the "null" type; `None` is *the only object that belongs to this type*
-- `str`: the string type
-- `list`: the list type
+- `int`，`float`，`complex`：数字类型
+- `bool`：布尔（boolean）类型。其唯二的布尔类对象为 `True` 和 `False`
+- `NoneType`：“空”类；`None` 是*唯一的这类对象*
+- `str`：字符串类
+- `list`：列表类
 
-The built-in function `type` permits us to check the type of any object:
+Python自带的 `type` 函数允许我们查看任何对象的类型：
 ```python
 >>> type(3.2)
 float
@@ -973,20 +975,20 @@ float
 bool
 ```
 
-The built-in function `isinstance` should be used to check if an object is of a specific type:
+我们应该用自带的 `isinstance` 函数来查看一个对象是否属于某类型：
 ```python
 >>> x = 2 + 3
 >>> isinstance(x, int)
 True
 ```
-The only exception to this is if you want to check if an object is of the type `NoneType`, since this is only possible if the object is  `None`; thus it is "cleaner" to directly check this:
+唯一例外的是当你想要检查某个对象是否属于 `NoneType` 类型，因为这类型只有 `None` 一个对象；因此，如下直接检查会更加“干净”：
 ```python
 >>> x = None
 >>> x is None
 True
 ```
 
-Objects of different types have different built-in functions available to them:
+不同类型的对象有着不同的内置函数可用：
 ```python
 >>> x = "I am a farmer.. moo"
 >>> x.upper()
@@ -1002,17 +1004,17 @@ Objects of different types have different built-in functions available to them:
 [1, 2, 3]
 ```
 
-You should leverage the official documentation, for which links were provided throughout this section, whenever you are wondering how to best do a specific task with a given type of object.
+当你在试图寻找操作某类型对象的最佳方法时，你应当查阅官方说明文档（本节多次提供其链接）。
 
-As a final reminder, we saw that that an integer in Python is able to hold a value with arbitrarily-many digits. A floating-point number, on the other hand, is restricted in the number of "significant" digits it can hold. Thus, where it is perfectly fine to check if two integers are exactly equal:
+最后，Python整数类可以存储任意多的位数，而浮点数只能存储有限的“有效”位数。因此，你可以直接检查两个整数是否完全相等：
 ```python
-# checking if two integers are equal is great!
+# 检查两个整数是否完全相等没有任何问题！
 >>> 2 + 2 == 4
 True
 ```
-you should never rely on two floats being exactly equal. Instead, check if they are close in value:
+但你不应该检测两个浮点数是否完全相等。你应该检查它们的值是否足够接近：
 ```python
-# checking if two floats are equal is lame!
+# 检查两个浮点数是否完全相等会有一些奇怪的结果！
 >>> 0.1 + 0.1 + 0.1 - 0.3 == 0.
 False
 
@@ -1020,37 +1022,37 @@ False
 True
 ```
 
-It is very important to remember this issue of the limited numerical precision of a floating point number.
+切记浮点数的有限精度问题。
 <!-- #endregion -->
 
-## Links to Official Documentation
+## 官方说明文档的链接
 
-- [Integers](https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types)
-- [Floating point numbers](https://docs.python.org/3/library/stdtypes.html#additional-methods-on-float)
-- [The standard library's math module](https://docs.python.org/3/library/math.html#number-theoretic-and-representation-functions)
-- [The standard library's complex-valued math module](https://docs.python.org/3/library/cmath.html#module-cmath)
-- [Strings](https://docs.python.org/3/library/stdtypes.html#string-methods)
-   - [String tutorial](https://docs.python.org/3/tutorial/introduction.html#strings)
-   - [Formatting strings](https://docs.python.org/3.4/library/string.html#format-examples)
-- [Lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
-
-
-## Reading Comprehension Exercise Solutions:
+- [整数](https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types)
+- [浮点数](https://docs.python.org/3/library/stdtypes.html#additional-methods-on-float)
+- [标准库的math模组](https://docs.python.org/3/library/math.html#number-theoretic-and-representation-functions)
+- [标准库的复数math模组](https://docs.python.org/3/library/cmath.html#module-cmath)
+- [字符串](https://docs.python.org/3/library/stdtypes.html#string-methods)
+   - [字符串教程](https://docs.python.org/3/tutorial/introduction.html#strings)
+   - [字符串格式](https://docs.python.org/3.4/library/string.html#format-examples)
+- [列表](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
 
 
-**Understanding the modulo operator: Solution**
+## 阅读理解答案：
 
-If `n` is an integer, then 2 will divide into it evenly, and thus there is no remainder. If `n` is odd, then `n / 2` must have a remainder of 1. Thus:
 
-- `n % 2 ` = 0 if `n` is an even number
-- `n % 2 ` = 1 if `n` is an odd number
+**理解模运算符：解**
+
+如果 `n` 是偶数，那么它将被2整除，所以余数为0。如果 `n` 是单数，那 `n / 2` 的余数为1。所以：
+
+- `n % 2 ` = 0 当 `n` 是偶数
+- `n % 2 ` = 1 当 `n` 是单数
 
 <!-- #region -->
-**Working with numbers in Python: Solution**
+**操作Python数字：解**
 
-1\. The division operator, `/`, will return a floating-point number even if it is operating on two integer-type numbers.
+1\. 除法操作符 `/` 永远都会返回浮点数，就算它在将两个整数相除。
 
-2\. For all of the arithmetic operations, `+ - * / **`, operating on a floating-point number and an integer will return a floating-point number:
+2\. 所有算术运算符 `+ - * / **` 对一个整数一个浮点数操作时都会返回一个浮点数：
 ```python
 >>> 2 * 3.0
 6.0
@@ -1059,7 +1061,7 @@ If `n` is an integer, then 2 will divide into it evenly, and thus there is no re
 1.0
 ```
 
-3\. Given the function $f(x) = e^{|x - 2|}$, make use of the `math` module to compute $f(-0.2)$.
+3\. 设函数 $f(x) = e^{|x - 2|}$。用 `math` 模组来计算 $f(-0.2)$。
 ```python
 >>> from math import exp
 >>> x = -0.2
@@ -1067,9 +1069,9 @@ If `n` is an integer, then 2 will divide into it evenly, and thus there is no re
 9.025013499434122
 ```
 
-4\. Using Python's syntax for scientific notation, write an expression that verifies that one trillion divided by one billion is equal to one thousand.
+4\. 使用Python的科学计数法语法来确认一万亿处以十亿等于一千。
 
-> As cautioned above, we should avoid checking to see if two floating point numbers are exactly equal, and instead simply ensure that they are close in value. Keep in mind that a number written Python's using scientific syntax will produce a float. 
+> 如上文所警示的一样，我们应该避免检查两个浮点数是否完全相等。我们应该检查两浮点数是否足够相近。注意在Python中用科学计数法写出的数字会是浮点类的。
 
 ```python
 >>> from math import isclose
@@ -1079,34 +1081,34 @@ True
 <!-- #endregion -->
 
 <!-- #region -->
-**Boolean expressions: Solutions**
+**布尔表达式：解**
 ```python
-# 1. Write an a comparison-statement that will return 
-#    True if x is an even number
+# 1. 编写一个表达式，在 `x` 是偶数时返回 `True`，
+#    其它情况返回 `False`。
 x%2 == 0
 ```
 
 ```python
-# 2. Write a line of code that will return False if: 
-#    x and y are within 0.9 of one another, and x is a positive number. 
+# 2. 编写一行代码，在以下情况中返回 `False`：
+#    `x` 和 `y` 相差小于0.9，且 `x` 大于零。
 not (abs(x - y) < 0.9 and 0 < x)
-# alternatively,
+# 或者
 abs(x - y) > 0.9 or 0 > x
 ```
 
 ```python
-# 3. Write an expression that returns True if 
-#    x is a boolean-type object or a float-type object
+# 3. 编写一个表达式，当 `x` 是布尔类型
+#    或浮点类型对象时返回 `True`。
 isinstance(x, bool) or isinstance(x, float)
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-**Strings: Solutions**
+**字符串：解**
 
 ```python
-# 1.  Use a function that will take the string "cat" 
-#     and returns the string "   cat    "
+# 1.  使用一个函数，在输入字符串 `"cat"` 时
+#     返回字符串 `"    cat    "`
 >>> "cat".center(11)
 '    cat    '
 
@@ -1115,15 +1117,13 @@ isinstance(x, bool) or isinstance(x, float)
 ```
 
 ```python
-# 2. Replace the first three periods of this string with 
-#    a space-character: 
+# 2. 用空格代替以下字符串的前三个句号：
 >>> "I.am.aware.that.spaces.are.a.thing".replace(".", " ", 3)
 'I am aware that.spaces.are.a.thing'
 ```
 
 ```python
-# 3. Remove the whitespace from both ends 
-#    of: "  basket    "
+# 3. 去除该字符串两边的所有空格：`"  basket    "`
 >>> "  basket    ".strip()
 'basket'
 ```
@@ -1136,19 +1136,20 @@ Hello
 ```
 
 ```python
-# 5. Convert the integer 12 to the string "12"
+# 5. 将整数 `12` 转化成字符串 `"12"`。
 >>> str(12)
 '12'
 ```
 
-Only kids 13 and up are allowed to see Wayne's World. Given the variables `name` (a string) and `age` (an integer), use an f-string that will display: "NAME is old enough to watch the movie: BOOL", where NAME is to be replaced with the kid's name, and BOOL should be `True` if the kid is at least 13 years old, and `False` otherwise. Use the example `name = "Alfred"`, `age = 10`.
+只有13岁和以上的孩子可以观看电影《反斗智多星》。假设你有函数 `name`（字符串）和 `age`（整数）。使用f字符串来显示："NAME is old enough to watch the movie: BOOL"（“NAME可以看这电影：BOOL”）。用NAME应该用孩子的名字来代替，而BOOL在孩子至少13岁以上时应为 `True`，不然是 `False`。为测试我们使用 `name = "Alfred"`，`age = 10`.
 
 ```python
-# 6. Use an f-string that will display: 
-# "NAME is old enough to watch the movie: BOOL", 
-# where NAME is to be replaced with the kid's name, 
-# and BOOL should be `True` if the kid is at least 
-# 13 years old, and `False` otherwise.
+# 6. 只有13岁和以上的孩子可以观看电影《反斗智多星》。
+#    假设你有函数 `name`（字符串）和 `age`（整数）。
+#    使用f字符串来显示："NAME is old enough to watch 
+#    the movie: BOOL"（“NAME可以看这电影：BOOL”）。
+#    用NAME应该用孩子的名字来代替，而BOOL在孩子至少13岁以上
+#    时应为 `True`，不然是 `False`。
 >>> name = "Alfred"
 >>> age = 10
 >>> f"{name} is old enough to watch the movie: {age >= 13}"
@@ -1158,19 +1159,18 @@ Only kids 13 and up are allowed to see Wayne's World. Given the variables `name`
 <!-- #endregion -->
 
 <!-- #region -->
-**Lists: Solutions**
+**列表：解**
 
 ```python
-# Create a list whose sole entry is the None object.
+# 创建一个列表，其唯一的物件是 `None` 对象。
 >>> [None]
 [None]
 ```
 
 ```python
-# 2. Assign the variable k to a list that contains an 
-#    integer, a boolean, and a string, in that order. 
-#    Then, add two more entries to the end of the 
-#    list - a float and a complex number.
+# 2. 向变量 `k` 赋值一个内容为一个整数，一个布尔值，
+#    和一个字符串（顺序也是如此）的列表。然后在列表结尾
+#    添加两个项目：一个浮点数和一个复数。
 >>> k = [4, False, "moo"]
 >>> k.extend([3.14, complex(9, -2)])
 >>> k
@@ -1178,13 +1178,13 @@ Only kids 13 and up are allowed to see Wayne's World. Given the variables `name`
 ```
 
 ```python
-# 3. Alphabetize the list of names:
+# 3. 根据字母顺序排序以下列表：
 >>> names = ["Jane", "Adam", "Ryan", "Bob", "Zordon", "Jack", "Jackenzie"]
 
-# The documentation for `sort` says that the sorting happens "in-place". This
-# means that the original list is replaced by the sorted list. The alternative
-# would be that `sort` returns a new, sorted list, without changing the list
-# assigned to `names`.
+# `sort` 的说明文档说排序是“in-place”（当场）的，
+# 这意思就是原本的列表会被新的排序好的列表代替。
+# 如果不是“in-place”的话，那可能 `sort` 会返回一个排序好
+# 的列表，而不修改原本名为 `names` 的列表。
 >>> names.sort()
 >>> names
 ['Adam', 'Bob', 'Jack', 'Jackenzie', 'Jane', 'Ryan', 'Zordon']

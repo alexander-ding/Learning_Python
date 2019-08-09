@@ -19,7 +19,7 @@ jupyter:
 ```
 
 
-# Conditional Statements
+# 条件语
 
 <div class="alert alert-warning">
 
