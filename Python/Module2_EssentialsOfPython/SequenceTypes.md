@@ -19,43 +19,43 @@ jupyter:
 ```
 
 <!-- #region -->
-# Sequence Types
+# 序列类型
 
 <div class="alert alert-warning">
 
-**Note**: 
+**注**：
 
-There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.
+本文各处的阅读理解练习旨在帮助你练习使用文章中的知识点。练习题的答案可以在本页结尾找到。
 </div>
 
-The following objects are all example of sequences:
+下列对象都是序列（sequence）的种类：
 ```python
-# examples of sequences
+# 序列的例子
 
-# a list
+# 列表（list）
 [0, None, -2, 1]
 
-# a string
+# 字符串（string）
 "hello out there"
 
-# a tuple
+# 元组（tuple）
 ("a", False, 0, 1)
 
-# a NumPy array
+# NumPy数组
 numpy.ndarray([0.2, 0.4, 0.6, 0.8])
 ```
 
-Being able to work with sequences of objects/data is so important that it warrants us to take our first (relatively) deep dive into Python. The preceding reading introduced Python lists and strings, two important objects that are built into the Python language. Although quite distinct from one another in terms of what they can contain, *lists and strings are both types of sequences* - they store a finite collection of objects whose ordering matters (e.g. `"cat"` and `"tac"` should be considered distinct strings). As such, lists, strings, and the other sequence types in Python all share a common interface for allowing users to inspect, retrieve, and summarize their contents.
+因为操作对象/数据序列的能力极其重要，我们第一课（相对）深入的Python探讨将会学习序列类型。前面的阅读向读者介绍的Python的列表和字符串。虽然两者能存储的内容不同，*列表和字符串都是一种序列*——它们能够存储一组有限的有顺序的对象（比如说 `"cat"` 和 `"tac"`，虽然成员字符相同，是两个不一样的字符串）。因此，列表，字符串，和其它Python的序列类型共享一个常用的接口来帮助用户查阅，调用，和总结它们的内容。
 
-In this section, we will:
+在本节中，我们将：
 
-- Introduce tuples, the last built-in sequence type that we have yet to encounter. 
-- Demonstrate the common interface that can be used to inspect and summarize the contents of a sequence.
-- Detail the all-important indexing scheme used by Python, which will allow us to access specific items or subsequences from a sequence.
+- 介绍元组——我们将见到的最后一种内置序列类型。
+- 展示用来查阅和总结序列内容的通用接口。
+- 细致讨论Python的检索系统。我们可以用它来查阅序列具体的项目或子序列。
 <!-- #endregion -->
 
 <!-- #region -->
-## Tuples
+## 元组
 The last built-in sequence type that we have yet to encounter is the `tuple` type. A tuple is very similar to a list, in that it can store a sequence of arbitrary objects (a mix of numbers, strings, lists, other tuples, etc.). Where lists are constructed using square-brackets, tuples use parentheses:
 
 ```python
