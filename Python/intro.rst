@@ -46,7 +46,7 @@ TODO
 ------
 一下这些人对PLYMI有着显著的贡献，提供了练习题和答案还有有价值的意见：
 
-- Alex Ding （GitHub:`@alexding123 <https://github.com/alexding123>`_)
+- Alex Ding (GitHub:`@alexding123 <https://github.com/alexding123>`_)
 - AJ Federici (GitHub:`@Federici <https://github.com/AFederici>`_)
 - Annabelle Lew (GitHub:`@AnnabelleLew <https://github.com/AnnabelleLew>`_)
 - Petar Griggs (GitHub:`@petarmhg <https://github.com/petarmhg>`_)
