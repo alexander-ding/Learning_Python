@@ -56,16 +56,15 @@ numpy.ndarray([0.2, 0.4, 0.6, 0.8])
 
 <!-- #region -->
 ## 元组
-The last built-in sequence type that we have yet to encounter is the `tuple` type. A tuple is very similar to a list, in that it can store a sequence of arbitrary objects (a mix of numbers, strings, lists, other tuples, etc.). Where lists are constructed using square-brackets, tuples use parentheses:
+最后一个我们还未讨论的内置序列类型叫做 `tuple`（元组）类型。元组和列表相似，都可以存储任何对象（数字，字符串，列表，其它元组，或多种对象，等等）。和列表的方括号不同的是元组由圆括号创建：
 
 ```python
-# creating a tuple
->>> x = (1, "a", 2)  # tuple with 3 entries
+# 创建元组
+>>> x = (1, "a", 2)  # 有三个物件的元组
 
-# (3) does not make a tuple with one entry
-# you must provide a trailing comma in this 
-# instance 
->>> y = (3,)         # a tuple with 1 entry
+# (3) 并不能创建只有一个物件的元组
+# 在这个情况下，你必须在最后添加一个额外的逗号
+>>> y = (3,)         # 有一个对象的元组
 
 >>> type(x)
 tuple
@@ -76,36 +75,36 @@ True
 
 <div class="alert alert-warning">
 
-**Checking multiple types**: 
+**检查多种类型**: 
 
-`isinstance` can be used to check multiple types at once, by supplying it a tuple of types. That is,
+通过输入一个包含多类型的元组，你可以用 `isinstance` 来一次性检查多种类型。如下：
 ```python
 isinstance(x, (tuple, list, str))
 ```
 
-Will check if `x` is a tuple *or* a list *or* a string. 
+这将检查 `x` 是否是元组*或*列表*或*字符串。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-Unlike a list, *once a tuple is formed, it cannot be changed*. That is, a tuple is *immutable*, whereas a list is *mutable*. Tuples generally consume less memory than do lists, since it is known that a tuple will not change in size. Furthermore, tuples come in handy when you want to ensure that a sequence of data cannot be changed by subsequent code.
+和列表不同的是，*当你创建元组之后，你无法修改它*。也就是说，元组是*不可变*（immutable）的，而列表是*可变*（mutable）的。元组一般相比列表会使用更少的内存，因为我们提前知道元组的大小不会改变。另外一个元组的好用点在于它保证存储的数据不会被之后的代码给改变。
 
 ```python
-# the contents of a list can be changed: it is "mutable"
+# 列表的内容可以被修改；列表是“可变”的
 >>> x = [1, "moo", None] 
 >>> x[0] = 2
 >>> x
 [2, 'moo', None]
 
-# the contents of a tuple cannot be changed: it is "immutable"
->>> y = (1, "moo", None)  # (a, b, ...) creates a tuple
+# 元组的内容不可以被修改；元组是“不可变”的
+>>> y = (1, "moo", None)  # (a, b, ...) 创建一个元组
 >>> y[0] = 2
 TypeError: 'tuple' object does not support item assignment
 ```
 
-`tuple` can be used to convert other sequences (other iterables, more generally) into tuples. `str` and `list` behave similarly.
+你可以用 `tuple` 来将其它序列（或广义来讲，其它任何可迭代物）转化成元组。这和 `str` 和 `list` 的行为类似。
 ```python
-# `tuple` can create a tuple out of other sequences
+# `tuple` 可以利用其它序列来创建元组
 >>> x = [2, 4, 8]
 >>> y = tuple(x)
 
@@ -118,12 +117,12 @@ TypeError: 'tuple' object does not support item assignment
 <!-- #endregion -->
 
 <!-- #region -->
-## Working with sequences
-The following summarizes the common interface that is shared by Python's different types of sequence, which includes lists, tuples, and strings. This interface allows you to inspect, summarize, join, and retrieve members from any variety of sequence.
+## 操作序列
+下文将总结不同Python序列类型（包括列表，元组，和字符串）的通用界面。此界面将允许你查看，总结，合并，和获取序列的成员。
 
-**Checking if an object is contained within a sequence:** `obj in seq`
+**检查某对象是否为序列成员：**`obj in seq`
 ```python
-# using 'in' and 'not in' for membership checking
+# 利用 'in' 和 'not in' 在检查是否为成员
 >>> x = (1, 3, 5)
 
 >>> 3 in x
@@ -135,44 +134,42 @@ False
 >>> 0 not in x
 True
 
-# strings can also test for sub-sequence membership
+# 你可以检查字符串是否为其它字符串的子序列
 >>> "cat" in "the cat in the hat"
 True
 
-# you cannot test for sub-sequence membership in other
-# types of sequences
+# 而其它序列类型不支持子序列检查
 >>> [1, 2] in [1, 2, 3, 4]
 False
 
-# the list [1, 2] must be an element of the list
-# to be seen as a member
+# 只有当 [1, 2] 为列表中的项目时才会被视作列表成员
 >>> [1, 2] in [None, [1, 2], None]
 True
 ```
 
-**Concatenating sequences:** `seq1 + seq2`
+**连接序列：**`seq1 + seq2`
 ```python
-# concatenating sequences with '+'
->>> [1, 2] + [3, 4]  # creates a new list
+# 通过 '+' 来连接两个序列
+>>> [1, 2] + [3, 4]  # 这将创建一个新序列
 [1, 2, 3, 4]
 
 >>> "c" + "at"
 "cat"
 ```
 
-**Repeated concatenation of a sequence:** `n*seq1` or `seq1*n`
+**重复连接某序列：**`n*seq1` 或 `seq1*n`
 ```python
-# equivalent to `cat + cat + cat`
->>> "cat" * 3   # creates a new string
+# 和 `cat + cat + cat` 等值
+>>> "cat" * 3   # 创建一个新字符串
 'catcatcat'
 
->>> 4 * (1, 5)  # creates a new tuple
+>>> 4 * (1, 5)  # 创建一个新元组
 (1, 5, 1, 5, 1, 5, 1, 5)
 ```
 
-**Asking for the number of members in a sequence:** `len(seq)`
+**检查序列成员数：**`len(seq)`
 ```python
-# getting the length of a sequence
+# 查看序列的长度
 >>> len("dog")
 3
 
@@ -183,24 +180,24 @@ True
 0
 ```
 
-**Getting the index of the first occurrence of** `x` **in a sequence**: `seq.index(x)`
+**查看序列中** `x` **第一次出现的位置的索引**：`seq.index(x)`
 ```python
->>> "cat cat cat".index("t")  # 't' first occurs at index-2 
+>>> "cat cat cat".index("t")  # 't' 第一次出现在索引（index）2
 2
 
-# `index` doesn't look within sequences contained by the outer sequence
-# e.g. it sees 1, 2, and "moo", not 1, 2, "m", "o", "o"
+# `index` 并不会检查序列中包含的成员序列
+# 例，它会检查 1，2，和 "moo"，而不是1，2，“m”，“o”，“o”
 >>> [1, 2, "moo"].index("m")
 ValueError: 'm' is not in list
 ```
 
-**Counting the number of occurrences of** `x` **in a sequence**: `seq.count(x)`
+**返回序列中** `x` **出现的次数**: `seq.count(x)`
 ```python
 >>> "the cat in the hat".count("h")
 3
 
-# `count` doesn't look within sequences contained by the outer sequence
-# thus is doesn't "see" the 1 within `[1, 2]`.
+# `count` 不会检查序列中包含的成员序列
+# 因此，它不会“看到” `[1, 2]` 中的 1。
 >>> [1, [1, 2], "111", 1].count(1)  
 2
 ```
@@ -208,19 +205,19 @@ ValueError: 'm' is not in list
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Basics of sequences**
+**阅读理解：序列基础**
 
-1\. Change the list `[True, None, 22]` into a tuple.
+1\. 将列表 `[True, None, 22]` 转化成元组。
 
-2\. How many sequence-types have we discussed thus far? Which of these produce objects that are immutable? Which of these produce objects that are mutable? For those types that are mutable, write a piece of example code that mutates an object.
+2\. 到现在，我们讨论了多少个序列类型？其中哪些创建不可变对象？哪些创建可变对象？在可变类型中选择一个并编写修改其对象的范例代码。
 
 </div>
 
 <!-- #region -->
-### Introducing Indexing and Slicing
-We can access individual items from a sequence by specifying the *index* of that item. Python ascribes the 1st entry in a sequence index-0, the second entry index-1, and so on.
+### 索引和切片简介
+我们可以通过提供序列中单个成员的*索引*（index）来访问此物件。Python序列的第一个成员的索引是0，第二个是1，如此下去。
 ```python
-# accessing individual items from a sequence via indexing
+# 通过索引来访问序列的单个物件
 >>> x = "abcdefg"
 >>> x[0]
 "a"
@@ -229,16 +226,16 @@ We can access individual items from a sequence by specifying the *index* of that
 "c"
 ```
 
-We can also "slice" a sequence, specifying a start-index and stop-index, and return a subsequence of the items contained within the slice:
+我们也可以切片（“slice”）序列，也就是提供起始索引和结尾索引，来返回其中包含的子序列：
 ```python
-# "slicing" a sequence produces a subsequence of its contents 
->>> x[0:3] # include items 0, 1, 2 (3 is excluded) 
+# 通过“切片”来提供序列内容的子序列
+>>> x[0:3] # 这子序列包含索引为0，1，2（注意不包含3）的项目
 "abc"
 ```
-It is critical to have a good grasp of how to access a sequence's members and subsequences by using indexing and slicing. This indexing scheme will also appear in our work with NumPy arrays. We will proceed by providing a detailed rundown of Python's indexing and slicing mechanisms.
+熟练访问序列成员和子序列是极其重要的技能。这索引功能也会在我们操作NumPy数组（array）时出现。接下来，让我们来具体描述Python的索引和切片功能。
 
-### Indexing
-Python allows you to retrieve individual members of a sequence by specifying the *index* of that member, which is the integer that uniquely identifies that member's position in the sequence. *Python implements 0-based indexing for its sequences*, and also permits the use of negative integers to count from the end of the sequence. Consider the string `"Python"`. The following diagram displays the indices for this sequence:
+### 索引
+Python允许你通过序列中单个成员的*索引*（index），一个识别成员在序列中未知的独特整数，来获取该成员。*Python使用从0开始的索引模式*，并允许你是用负数来从序列结尾往开头数。拿字符串 `"Python"` 来说，接下来的图表将显示该序列的索引：
 ```
  +---+---+---+---+---+---+
  | P | y | t | h | o | n |
@@ -247,9 +244,9 @@ Python allows you to retrieve individual members of a sequence by specifying the
   -6  -5  -4  -3  -2  -1
 ```
 
-The first row of numbers gives the position of the indices 0…5 in the string; the second row gives the corresponding negative indices. 
+第一行的数字提供了字符串0到5的索引；第二行提供了对应的负索引。
 
-**Positive Indices** 
+**正索引** 
 
 - 0 $\rightarrow$ P
 - 1 $\rightarrow$ y
@@ -258,7 +255,7 @@ The first row of numbers gives the position of the indices 0…5 in the string; 
 - 4 $\rightarrow$ o
 - 5 $\rightarrow$ n
 
-**Negative Indices** 
+**负索引** 
 
 - -6 $\rightarrow$ P
 - -5 $\rightarrow$ y
@@ -267,23 +264,23 @@ The first row of numbers gives the position of the indices 0…5 in the string; 
 - -2 $\rightarrow$ o
 - -1 $\rightarrow$ n
 
-Given this indexing scheme, Python reserves the use of square brackets following a variable name or object, as the "get-item" syntax: `seq[index]`.
+通过此索引模式，Python保留变量名或对象后的方括号语法来允许用户“获取成员”：`seq[index]`。
 
 ```python
-# Demonstrating indexing into sequences
+# 演示序列索引
 >>> x = [1, 2, 3, 4]
 
-# this is known as the "get-item" syntax
->>> x[0]     # indexing starts at 0
+# 这叫做“获取成员”语法。
+>>> x[0]     # 索引从0开始
 1
 
->>> x[-4]    # each entry has a positive index and negative index
+>>> x[-4]    # 每个成员都有着对应的正索引和负索引
 1
 
->>> x[-1]     # negative indexing is relative to the end of the sequence
+>>> x[-1]     # 负索引是相对序列结尾而言的
 4
 
->>> "cat"[2]  # you can index directly into a sequence-object
+>>> "cat"[2]  # 你可以直接检索序列对象
 't'
 
 >>> (True, False)[-1]
@@ -292,14 +289,14 @@ False
 
 <div class="alert alert-info">
 
-**Takeaway**:
+**经验**：
 
-To "index into" a sequence is to retrieve a single member by specifying an integer index, that indicates the place of that member in the sequence: `seq[index]`. Python uses a zero-based indexing system, meaning that the first element in a sequence is located at position 0. Negative indices allow you to refer to an item's position relative to the end of the list.  
+去对一个序列“索引”指的是通过提供序列中单个成员的索引，一个表达成员在序列中位置的整数，来获取它：`seq[index]`。Python使用一个从0开始的索引系统，也就是说序列中第一个成员是索引0。负索引允许你通过对象相对序列结尾的位置来获取它。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-### Slicing
+### 切片
 Slicing a sequence allows us to retrieve a subsequence of items, based on the indexing scheme that we reviewed in the preceeding subsection. Specifying a slice consists of:
 
 - A start-index: the sequence-position where the slice begins (this item is *included* in the slice).
