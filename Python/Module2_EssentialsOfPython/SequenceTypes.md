@@ -478,7 +478,7 @@ x = (0, 2, 4, 6, 8)
 - [可变序列类](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
 
 <!-- #region -->
-## 阅读理解练习解：
+## 阅读理解答案：
 
 **序列基础**
 

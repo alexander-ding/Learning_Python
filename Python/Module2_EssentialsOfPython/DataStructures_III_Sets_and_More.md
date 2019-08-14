@@ -19,8 +19,8 @@ jupyter:
 ```
 
 
-# Data Structures (Part III): Sets & the Collections Module
-## The "Set" Data Structure
+# 数据结构（第三部分）：集和集合模组
+## 集数据结构
 The `set` type describes an *unordered* collection of *unique* objects. It is useful for:
 
 - Filtering out "repeat" objects in a collection, producing only its unique members.
