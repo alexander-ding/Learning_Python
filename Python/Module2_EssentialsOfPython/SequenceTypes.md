@@ -297,16 +297,16 @@ False
 
 <!-- #region -->
 ### 切片
-Slicing a sequence allows us to retrieve a subsequence of items, based on the indexing scheme that we reviewed in the preceeding subsection. Specifying a slice consists of:
+我们可以利用类似前文索引的切片（slicing）来获取列表的子序列。一个切片（slice）包含了以下的部分：
 
-- A start-index: the sequence-position where the slice begins (this item is *included* in the slice).
-- A stop-index: the sequence-position where the slice ends (this item is *excluded* from the slice).
-- A step-size, which permits us to take every item within the start & stop bounds, or every *other* item, and so on. It is important to note that a negative step-size permits us to traverse a sequence *in reveresed order*. 
+- 起始索引（start-index）：切片第一个物件的索引（索引指向的成员将*会被包含*在该切片中）。
+- 结尾索引（stop-index）：切片结尾的索引（索引指向的成员*不会被包含*在切片中）。
+- 步距（step-size）：这将允许我们获取起始和结尾中的每个成员，或者每*两个*成员，或每*n个*成员。负步距将允许从结尾往开始*反向*获取每n个成员。
 
-The basic syntax for slicing is: `seq[start:stop:step]`, using colons to separate the start, stop, and step values.
+切片的基本语法为：`seq[start:stop:step]`。注意使用冒号":"来分别起始，结尾，和步距。
 
 ```python
-# demonstrating the basics of slicing a sequence
+# 演示序列切片
 >>> seq = "abcdefg"
 
 # start:0, stop:4, step:1
@@ -318,28 +318,28 @@ The basic syntax for slicing is: `seq[start:stop:step]`, using colons to separat
 'bcd'
 
 # start:1, stop:5, step:2
->>> seq[0:5:2] # get every other entry within [start, stop)
+>>> seq[0:5:2] # 获取 [start, stop) 中的每两个成语
 'ace'
 
-# starting and stopping at the same index produces an empty sequence
+# start和stop同一个索引时会得到空序列
 # start:0, stop:0, step:1
 >>> seq[0:0:1]
 ''
 ```
 
-Slicing provides sensible default start, stop, and step values. Their default values are:
+切片默认的start，stop，和step值都很实用。具体如下：
 
 - start: 0
 - stop: `len(seq)`
 - step: 1
 
-You can omit any of these values or specify `None` in that entry to use the default value. You can omit the second colon entirely, and the slice will use a step-size of 1.  
+对其中任何一个值，你可以通过不提供值或提供 `None` 来使用默认值。你也可以不提供第二个冒号和后面的步距来使用默认的步距1。
 ```python
-# using default start, stop, and step values
+# 使用默认的start, stop, and step值
 >>> seq = "abcdefg"
 
 # start: 0, stop: 7, step: 1 
->>> seq[:]  # equivalent: `seq[None:None]`
+>>> seq[:]  # 和 `seq[None:None]` 等值
 'abcdefg'
 
 # start: 0, stop: 7, step: 2
@@ -347,36 +347,36 @@ You can omit any of these values or specify `None` in that entry to use the defa
 'aceg'
 ```
 
-Negative values can also be used in a slice. Specifying a negative step-value instructs the slice to traverse the sequence *in reverse order*. In this case, the default start and stop values will change so that `seq[::-1]` produces the sequence in reverse.
+你也可以在切片中使用负数。负步距将会*反向*迭代选中的序列。在这个情况下，默认的起始和结尾索引将会改变以让 `seq[::-1]` 提供该序列的反向版本。
 
 ```python
-# using a negative step size reverses the order of the sequence
+# 使用负步距来提供序列的反向版本
 >>> seq[::-1]
 'gfedcba'
 ```
 
-As we saw with using negative indices, specifying negative start/stop values in a slice permits us to indicate indices relative to the end of the list. 
+和负索引一般，在切片中使用负起始或结尾值允许我们表达相对于序列结尾的位置。
 ```python
-# a slice returning the last two values of the sequence
+# 该切片将返回序列的最后两个值
 >>> seq[-2:]
 'fg'
 
-# a slice returning all but the last two values of the sequence
+# 该其诶安将返回除了最后两个值之外的列表序列
 >>> seq[:-2]
 'abcde'
 ```
 
-Although the colon-syntax for slicing, `seq[start:stop:step]`, appears nearly ubiquitously in Python code, it is important to know that there is a built-in `slice` object that Python uses to form slices. It accepts the same start, stop, and step values, and produces the same sort of slicing behavior:
+虽然切片的冒号语法 `seq[start:stop:step]` 在Python代码中随处可见，你应知道 Python 由一个内置的 `slice` 对象来创建切片。它接受一样的start，stop，和step值，并提供一样的切片行为：
 ```python
-# using the `slice` object explicitly
+# 显性使用 `slice` 对象
 >>> seq = "abcdefg"
 >>> seq[slice(0, 3, 1)]
 'abc'
 ```
 
-This gives you the ability to work with slices in more creative ways in your code, since it allows you to assign a variable to a slice.
+这将允许你在代码中做一些更加有意思的事情，因为你可以将变量赋值为切片对象。
 ```python
-# using the `slice` object to slice several sequences
+# 使用 `slice` 对象来切片多个序列
 >>> seq1 = "apple"
 >>> seq2 = (1, 2, 3, 4, 5)
 >>> seq3 = [True, False, None]
@@ -395,59 +395,60 @@ This gives you the ability to work with slices in more creative ways in your cod
 
 <div class="alert alert-info">
 
-**Takeaway**:
+**经验**：
 
-To "slice" a sequence is to retrieve a subsequence by specifying a start-index (included), a stop-index (excluded), and a step value. Negative values can be supplied for these, and default values are available as well. The common slicing syntax `seq[start:stop:step]` is actually just a nice shorthand for using a `slice` object: `seq[slice(start, stop, step)]`.  
+“切片”一个序列指的就是通过指定起始索引（被包含），结尾索引（不被包含），和步距。你可以提供负值，也可以使用默认的值。常见的 `seq[start:stop:step]` 语法其实就是使用 `slice` 对象的简写：`seq[slice(start, stop, step)]`。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-#### Handling out-of-bounds indices
-Attempting to get a member from a sequence using an out-of-bounds index will raise an `IndexError`:
+#### 处理超界索引
+试图使用某个超界的索引来获取序列成员会导致一个 `IndexError`：
 ```python
->>> x = [0, 1, 2, 3, 4, 5] # x only contains 6 items
->>> x[6]  # try to access the 7th item in `x`
+>>> x = [0, 1, 2, 3, 4, 5] # `x` 只有6个成员
+>>> x[6]  # 试图获取 `x` 的第7个成员
 IndexError: list index out of range
 
 >>> x[-7]
 IndexError: list index out of range
 ```
 
-However, specifying an out-of-bounds start or stop value for a slice does not raise an error. Instead, the nearest valid start/stop value is used instead:
+但注意，在切片中提供超界的起始或结尾索引并不会导致错误。Python反而会使用最接近的合法起始或结尾值：
+
 ```python
-# no bounds checking is used for slicing
+# 切片并不要求索引在界限内
 >>> x[:10000]
 [0, 1, 2, 3, 4, 5]
 ```
 
 <div class="alert alert-warning">
 
-**Warning!**
+**警告！**
 
-The lack of bounds-checking for slices can be a major source of errors when starting out with Python. Just because your code isn't raising an error does not mean that you have computed the correct start/stop values for your slice!
+当入门Python时，切片不检查索引不超界这一特征可能会成为一大错误源。代码不报错不代表你代码计算的起始和结尾索引是正确的！
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Indexing and Slicing Sequences**
+**阅读理解：索引和切片序列**
 
-In Python, a **sequence** is any ordered collection of objects whose contents can be accessed via "indexing". A sub-sequence can be accessed by "slicing" the sequence. You saw, in the required reading, that Python's lists and strings are both examples of sequences. The following questions will help you explore the power of sequence indexing and slicing.
+在Python中，一个**序列**（sequence）指任何包含对象的有序集合。你可以通过“索引”（indexing）来获取其中的成员，你也可以通过“切片”（slicing）来获取其中的子序列。你也在阅读本文时了解了Python的列表和字符串也都是序列这一事实。接下来的阅读理解题目将会帮助你探索序列索引和切片的强大性。
 
-Given the tuple: 
+设元组：
 ```python
 x = (0, 2, 4, 6, 8)
 ```
-Slice or index into `x` to produce the following:
+对 `x` 切片或索引来获取以下：
 
 1. `0`
-2. `8` (using a negative index)
-3. `(2, 4, 6)` (using a slice-object)
+2. `8`（使用负索引）
+3. `(2, 4, 6)`（使用切片）
 4. `(4,)`
-5. `4` 
-6. `4` (using a negative index)
-7. `(6, 8)` (using a negative index for the start of the slice)
+5. `4`
+6. `4`（使用负索引）
+7. `(6, 8)`（切片并使用负起始索引）
 8. `(2, 6)`
 9. `(8, 6, 4, 2)`
 
@@ -456,38 +457,38 @@ Slice or index into `x` to produce the following:
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Checking Your General Understanding**
+**阅读理解：检查你的理解**
 
-Write a piece of code for each of the following tasks. If the task is impossible/ill-posed explain why.
+为下列每个任务编写一组代码来完成它。如果你认为任务不可能或要求不合理，请解释为什么。
 
-1) Using the string "blogosphere", slicing, and repeat-concatenation, create the string: 'boopeeboopeeboopeeboopeeboopee'. (hint: how would you slice "blogosphere" to produce "boopee", think step-size)
+1) 设字符串 "blogosphere"，通过切片和多次粘连，创建字符串：'boopeeboopeeboopeeboopeeboopee'。（提示：你该如何切片 "blogosphere" 来获得 "boopee" 呢？步距）
 
-2) Assume that a tuple, `x`, contains the item `5` in it at least once. Find where that first entry is, and change it to `-5`. For example `(1, 2, 5, 0, 5)` $\rightarrow$ `(1, 2, -5, 0, 5)`.
+2) 设元组 `x` 包含对象 `5` 至少一次。找出该对象第一次出现的位置，并将其修改成 `-5`。比如说，`(1, 2, 5, 0, 5)` $\rightarrow$ `(1, 2, -5, 0, 5)`。
 
-3) Given a sequence, `x`, and a valid negative index for `x`, `neg_index`, find the corresponding positive-value for that index. That is, if `x = "cat"`, and `neg_index = -3`, which is the negative index that would return `"c"`, then you would want to return the index `0`. 
+3) 设序列 `x` 和 `x` 的一个合法的负索引 `neg_index`，找出该索引对应的正值。比如说，如果 `x = "cat"`，`neg_index = -3`（也就是 `"c"` 的负索引），那你应该返回索引 `0`。
 
 </div>
 
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Sequences](https://docs.python.org/3/library/stdtypes.html#typesseq)
-- [Tuples](https://docs.python.org/3/library/stdtypes.html#tuple)
-- [Immutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
-- [Mutable Sequence Types](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
+- [序列](https://docs.python.org/3/library/stdtypes.html#typesseq)
+- [元组](https://docs.python.org/3/library/stdtypes.html#tuple)
+- [不可变序列类](https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types)
+- [可变序列类](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types)
 
 <!-- #region -->
-## Reading Comprehension Exercise Solutions:
+## 阅读理解练习解：
 
-**Basics of sequences**
+**序列基础**
 
 ```python
-# 1. Change the list [True, None, 22] into a tuple.
+# 1. 将列表 `[True, None, 22]` 转化成元组
 >>> tuple([True, None, 22])
 (True, None, 22)
 ```
 
-2\. We have been introduced to three Python types that are sequential in nature: strings, lists, and tuples. Among these, lists are the only mutable objects. We can demonstrate this by simply appending a new element to the end of a list that has already been constructed.
+2\. 我们介绍了三种序列性的Python类型：字符串，列表，和元组。在这其中，列表是唯一的可变对象。我们可以通过在一个已经创建的列表结尾附加新成员来演示它的可变性。
 ```python
 >>> x = [1, 2, 3]
 >>> x
@@ -500,7 +501,7 @@ Write a piece of code for each of the following tasks. If the task is impossible
 <!-- #endregion -->
 
 <!-- #region -->
-**Indexing and Slicing Sequences: Solutions**
+**索引和切片序列：解**
 
 1. `x[0]`
 2. `x[-1]`
@@ -512,17 +513,17 @@ Write a piece of code for each of the following tasks. If the task is impossible
 8. `x[1:4:2]`
 9. `x[:0:-1]`
 
-**Checking Your General Understanding: Solutions**
+**检查你的理解：解**
 
-1) "boopee" is every-other letter in "blogosphere", thus slicing this sequence with a step-size of 2, `"blogosphere"[::2]`, returns "boopee". We can then use `seq*n` to repeat this sequence five times. Thus the solution is
+1) “boopee”也就是“blogosphere”的每两个字母，因此使用步距2来切片该序列，`"blogosphere"[::2]`，会返回“boopee”。我们可以使用 `seq*n` 来重复该序列5此。因此解是
 ```python
 >>> "blogosphere"[::2]*5
 'boopeeboopeeboopeeboopeeboopee'
 ```
 
-2) Tuples are immutable objects. This means that their content cannot be changed once it is created. Thus this question is ill-posed! How clever am I for writing that question? I feel so clever. Wow. I'm great.
+2) 元组是不可变的。这意味着在创建后它们的内容是不可以被修改的。因此该任务不可能完成！写这个问题的我得有多聪明呢？我感觉自己贼聪明。哇，我真棒。
 
-If that question was posed in terms of a *list*, then the solution would be:
+如果以上问题要求你修改一个*列表*，那解为：
 ```python
 >>> x = [1, 2, 5, 0, 5]
 >>> x[x.index(5)] = -5
@@ -530,7 +531,7 @@ If that question was posed in terms of a *list*, then the solution would be:
 [1, 2, -5, 0, 5]
 ```
 
-3) Refer to the "index" diagram to see that this is the simple relationship between positive and negative indices for a given sequence: 
+3) 查阅之前的索引图表来理解以下正索引和负索引的简单关系：
 ```python
 pos_index = neg_index + len(x)
 ```
