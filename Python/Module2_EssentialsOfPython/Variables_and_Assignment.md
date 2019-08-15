@@ -119,7 +119,7 @@ TypeError: 'tuple' object does not support item assignment
  - [布尔值](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#The-Boolean-Type)
  - ["冻结"集](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython%2FDataStructures_III_Sets_and_More.html#%E9%9B%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)（frozen-set）
 
-**Some mutable objects**
+**一些可变对象**
 
  - [列表](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists)
  - [词典](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)
