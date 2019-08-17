@@ -18,108 +18,108 @@ jupyter:
    :keywords: generator, range, list comprehension, generator comprehension, nested comprehensions, inline for-loop, filtered, iterator
 ```
 
-# Generators & Comprehension Expressions
+# 生成器和理解表达式
 <div class="alert alert-warning">
 
-**Note**:
+**注**：
 
-There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.
+本文各处的阅读理解练习旨在帮助你练习使用文章中的知识点。练习题的答案可以在本页结尾找到。
 </div>
 
 
-## Introducing Generators
-Now we introduce an important type of object called a **generator**, which allows us to generate arbitrarily-many items in a series, without having to store them all in memory at once.  
+## 生成器简介
+现在，让我们介绍一种重要的对象，**生成器**（generator）。它允许我们生成（generate）任意长度的序列，并不需要同时在内存中存储其所有的成员。
 
 <div class="alert alert-info">
 
-**Definition**:
+**定义**：
 
-A **generator** is a special kind of iterator, which stores the instructions for how to *generate* each of its members, in order, along with its current state of iterations. It generates each member, one at a time, only as it is requested via iteration.
+**生成器**是一种特殊的迭代器。它存储如何顺序*生成*新成员的指示以及迭代的内态。它在收到请求后会一次一个生成其成员。
 </div>
 
-Recall that that a list readily stores all of its members; you can access any of its contents via indexing. A generator, on the other hand, *does not store any items*. Instead, it stores the instructions for generating each of its members, and stores its iteration state; this means that the generator will know if it has generated its second member, and will thus generate its third member the next time it is iterated on. 
+请回忆列表已经存储其所有成员这一事实；你可以通过迭代访问其任何成员。于列表不同的是生成器*不存储任何成员*。它存储如何生成新成员的指示以及它迭代的内态；这意味着如果生成器已经生成了第二个成员，它会知道这一点并在下次迭代时生成第三个成员。
 
-The whole point of this is that you can use a generator to produce a long sequence of items, without having to store them all in memory.
+太长不读的版本就是说你可以用生成器来生成长序列的项目并不需要将它们全部同时储存在内存中。
 
 <!-- #region -->
-### The `range` generator
-An extremely popular built-in generator is `range`, which, given the values: 
+### `range` 生成器
+`range` 是一个很常用的内置生成器。它接受以下输入值：
 
-- 'start' (inclusive, default=0)
-- 'stop' (exclusive)
-- 'step' (default=1) 
+- 'start'（包括数字本身，默认为0）
+- 'stop'（不包括数字本身）
+- 'step'（默认为1）
 
-will generate the corresponding sequence of integers (from start to stop, using the step size) upon iteration. Consider the following example usages of `range`:
+并以此在迭代时生成对应的整数序列（从start到stop，步距为step）。看看以下的 `range` 使用范例：
 ```python
-# start: 2  (included)
-#  stop: 7  (excluded)
-#  step: 1  (default)
+# start: 2（包含）
+#  stop: 7（不包含）
+#  step: 1（默认）
 for i in range(2, 7):
     print(i)
-# prints: 2.. 3.. 4.. 5.. 6
+# 打印：2.. 3.. 4.. 5.. 6
 ```
 ***
 ```python
-# start:  1  (included)
-#  stop: 10  (excluded)
+# start:  1（包含）
+#  stop: 10（不包含）
 #  step:  2
 for i in range(1, 10, 2):
     print(i)
-# prints: 1.. 3.. 5.. 7.. 9
+# 打印：1.. 3.. 5.. 7.. 9
 ```
 ***
 ```python
-# A very common use case!
-# start:  0  (default, included)
-#  stop:  5  (excluded)
-#  step:  1  (default)
+# 一个很常见的使用范例！
+# start:  0（默认，包含）
+#  stop:  5（不包含）
+#  step:  1（默认）
 for i in range(5):
     print(i)
-# prints: 0.. 1.. 2.. 3.. 4
+# 打印：0.. 1.. 2.. 3.. 4
 ```
 
-Because `range` is a generator, the command `range(5)` will simply store the instructions needed to produce the sequence of numbers 0-4, whereas the list `[0, 1, 2, 3, 4]` stores all of these items in memory at once. For short sequences, this seems to be a rather paltry savings; this is not the case for long sequences. The following graph compares the memory consumption used when defining a generator for the sequence of numbers $0-N$ using `range`, compared to storing the sequence in a list:
+因为 `range` 是一个生成器，指令 `range(5)` 仅仅只会存储用来生成包含数字0-4的序列的指示，和会同时在内存中存储所有数字的列表 `[0, 1, 2, 3, 4]` 不同。对短列表而言，节省的内存可能很不可观，但是在处理长序列就很重要了。以下的图表对比了使用 `range` 来定义一个生成数字序列 $0-N$ 和使用列表存储该序列的内存使用情况：
 
 ![Memory consumption figure](attachments/Mem_Consumption_Generator.png)
 
-Given our discussion of generators, it should make sense that the memory consumed simply by defining `range(N)` is independent of $N$, whereas the memory consumed by the list grows linearly with $N$ (for large $N$).
+根据上文对生成器的讨论，你应该理解为什么定义 `range(N)` 使用的内存和 $N$ 的大小无关，而列表使用的内存根据 $N$ 线性增长（假设 $N$ 比较大）。
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-`range` is a built-in generator, which generates sequences of integers.
+`range` 是一个内置的生成器，其生成整数序列。
 </div>
 
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Using `range`**:
+**阅读理解：使用 `range`**：
 
-Using `range` in a for-loop, print the numbers 10-1, in sequence.
+在一个for循环中使用 `range`  来打印数字10-1（按此顺序）。
 
 </div>
 
 <!-- #region -->
-## Creating your own generator: generator comprehensions
-Python provides a sleek syntax for defining a simple generator in a single line of code; this expression is known as a **generator comprehension**. The following syntax is extremely useful and will appear very frequently in Python code:
+## 创建你自己的生成器：生成器理解
+Python提供了一个轻便的用一行代码定义简单生成器的语法；这种表达式叫做*生成器理解*（generator comprehension）。以下语法极其有用，且在Python代码中非常常见：
 
 <div class="alert alert-info">
-**Definition**: 
+**定义**：
 
-The syntax 
+语法
 <br>
 `(<expression> for <var> in <iterable> [if <condition>])`
 <br>
-specifies the general form for a **generator comprehension**. This produces a generator, whose instructions for generating its members are provided within the parenthetical statement. 
+描述了**生成器理解**的一般形式。这将创建一个生成器，其生成成员的指示由括号中的语句提供。
 </div>
 
-Written in a long form, the pseudo-code for 
+用伪代码来写，以下代码
 ```
 (<expression> for <var> in <iterable> if <condition>)
 ``` 
-is:
+的长形式为：
 
 ```
 for <var> in <iterable>:
@@ -127,37 +127,37 @@ for <var> in <iterable>:
         yield <expression>
 ```
 
-The following expression defines a generator for all the even numbers in 0-99:
+以下的表达式定义了一个0-99之间所有偶数的生成器：
 ```python
-# when iterated over, `even_gen` will generate 0.. 2.. 4.. ... 98
+# 当被迭代时，`even_gen` 将生成 0.. 2.. 4.. ... 98
 even_gen = (i for i in range(100) if i%2 == 0)
 ```
 
-The `if <condition>` clause in the generator expression is optional. The generator comprehension 
+生成器中的 `if <condition>` 句段是可选的。以下的生成器理解
 ```
 (<expression> for <var> in <iterable>)
 ``` 
-corresponds to:
+对应着：
 
 ```
 for <var> in <iterable>:
     yield <expression>
 ```
 
-For example:
+比如说：
 ```python
-# when iterated over, `example_gen` will generate 0/2.. 9/2.. 21/2.. 32/2
+# 当被迭代时，`example_gen` 将生成 0/2.. 9/2.. 21/2.. 32/2
 example_gen = (i/2 for i in [0, 9, 21, 32])
 
 for item in example_gen:
     print(item)
-# prints: 0.0.. 4.5.. 10.5.. 16.0
+# 打印：0.0.. 4.5.. 10.5.. 16.0
 ```
 
-`<expression>` can be any valid single-line of Python code that returns an object:
+`<expression>` 可以是任何合法的返回一个对象的单行Python代码：
 ```python
 ((i, i**2, i**3) for i in range(10))
-# will generate:
+# 会生成：
 # (0, 0, 0)
 # (1, 1, 1)
 # (2, 4, 8)
@@ -170,7 +170,7 @@ for item in example_gen:
 # (9, 81, 729)
 ```
 
-This means that `<expression>` can even involve inline if-else statements!
+这意味着 `<expression>` 甚至可以使用单行的if-else语句！
 ```python
 (("apple" if i < 3 else "pie") for i in range(6))
 # will generate:
@@ -184,93 +184,93 @@ This means that `<expression>` can even involve inline if-else statements!
 
 <div class="alert alert-info">
 
-**Takeaway**:  
+**经验**：
 
-A generator comprehension is a single-line specification for defining a generator in Python. It is absolutely essential to learn this syntax in order to write simple and readable code.
+生成器理解是Python单行定义生成器的语法。这个语法对于编写简单和易读代码是不可替代的。
 </div>
 
 <div class="alert alert-warning">
 
-**Note**:  
+**注**：
 
-Generator comprehensions are **not** the only method for defining generators in Python. One can define a generator similar to the way one can define a function (which we will encounter soon). [See this section of the official Python tutorial](https://docs.python.org/3/tutorial/classes.html#generators) if you are interested in diving deeper into generators.
+生成器理解并*不是*唯一定义Python生成器的方法。你可以用类似定义函数（我们会在后文讨论）类似的方法定义生成器。[详见本节Python官方教程](https://docs.python.org/3/tutorial/classes.html#generators)来深入了解生成器。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Writing a Generator Comprehension**:
+**阅读理解：编写生成器理解**:
 
-Using a generator comprehension, define a generator for the series:
+使用生成器理解，定义一个会生成以下序列的生成器：
 ```
 (0, 2).. (1, 3).. (2, 4).. (4, 6).. (5, 7)
 ```
 
-Note that (3, 5) is *not* in the series.
+注意 (3, 5) 并*不*在序列中。
 
-Iterate over the generator and print its contents to verify your solution.
+迭代该生成器并打印其内容以确认你的答案。
 
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-### Storing generators
-Just like we saw with the `range` generator, defining a generator using a comprehension does *not* perform any computations or consume any memory beyond defining the rules for producing the sequence of data. See what happens when we try to print this generator:
+### 存储生成器
+就像 `range` 一样，利用生成器理解来定义生成器*不会*进行任何运算或使用除了储存生成数据序列的规则的内存。请注意我们打印此生成器时会发生什么：
 ```python
-# will generate 0, 1, 4, 9, 25, ..., 9801
+# 将会生成 0, 1, 4, 9, 25, ..., 9801
 >>> gen = (i**2 for i in range(100))
 >>> print(gen)
 <generator object <genexpr> at 0x000001E768FE8A40>
 ```
-This output simply indicates that `gen` stores a generator-expression at the memory address `0x000001E768FE8A40`; this is simply where the instructions for generating our sequence of squared numbers is stored. `gen` will not produce any results until we iterate over it. For this reason, generators cannot be inspected in the same way that lists and other sequences can be. You **cannot** do the following:
+此输入仅仅显示 `gen` 在内存位置 `0x000001E768FE8A40` 存储了一个生成器；这仅仅是存储生成平方数指示的内存位置。`gen` 在我们迭代它之前并不会生成任何结果。因此，你无法像查看列表和其它序列一样来查看生成器。以下的代码**不合法**：
 ```python
-# you **cannot** do the following...
+# 以下的行为**不合法**
 >>> gen = (i**2 for i in range(100))
 
-# query the length of a generator
+# 检查生成器的长度
 >>> len(gen)
 TypeError: object of type 'generator' has no len()
     
-# index into a generator
+# 索引生成器
 >>> gen[2]
 TypeError: 'generator' object is not subscriptable
 ```
 
-The sole exception to this is the `range` generator, for which all of these inspections are valid.
+以上的规则唯一的例外就是 `range` 生成器。你可以对它进行以上的操作。
 <!-- #endregion -->
 
 <!-- #region -->
-### Consuming generators
-We can feed this to any function that accepts iterables. For instance, we can feed `gen` to the built-in `sum` function, which sums the contents of an iterable:
+### 消耗生成器
+我们可以将生成器输入到任何接受可迭代数的函数中。比如说，我们可以将 `gen` 输入到内置的 `sum` 函数中。该函数会求可迭代物成员的和：
 ```python
 >>> gen = (i**2 for i in range(100))
->>> sum(gen)  # computes the sum 0 + 1 + 4 + 9 + 25 + ... + 9801
+>>> sum(gen)  # 求和：0 + 1 + 4 + 9 + 25 + ... + 9801
 328350
 ```
-This computes the sum of the sequence of numbers *without ever storing the full sequence of numbers in memory*. In fact, only two numbers need be stored during any given iteration of the sum: the current value of the sum, and the number being added to it.
+这在*从来不在内存中储存整个数字序列*的情况下计算以上数据序列的和。事实上，在任何一轮迭代的时候，Python只需要存储两个数字：到这一步为止的和以及下一步增加的数字。
 
-What happens if we run this command a second time:
+如果我们第二次执行这个命令：
 ```python
-# computes the sum of ... nothing!
-# `gen` has already been consumed!
+# 求和...为空！
+# `gen` 已经被消耗了！
 >>> sum(gen)
 0
 ```
-It may be surprising to see that the sum now returns 0. This is because **a generator is exhausted after it is iterated over in full**. You must redefine the generator if you want to iterate over it again; fortunately, defining a generator requires very few resources, so this is not a point of concern.
+你可能惊讶于sum现在返回0这一事实。这是因为**当生成器被完全迭代过后它会消耗殆尽**。你必须重新定义该生成器来重新迭代它；幸运的是，定义一个生成器花的资源很少，所以你不需要去担心资源消耗。
 
-You can also check for membership in a generator, but this also consumes the generator:
+你也可以检查某对象是否属于生成器的一部分，但这么做会消耗（consume）这个生成器：
 
 ```python
-# checking for membership consumes a generator until
-# it finds that item (consuming the entire generator
-# if the item is not contained within it)
+# 检查某个对象是否为生成器成员会消耗生成器
+# 直到对象被找到（如果对象不为生成器成员，
+# 那整个生成器都会被消耗）
 >>> gen = (i for i in range(1, 11))
->>> 5 in gen  # first 5 elements are consumed 
+>>> 5 in gen  # 前5个成员被消耗
 True
 
-# 1-5 are no longer contained in gen
-# this check consumes the entire generator!
+# 1-5 已经不在gen中了
+# 因此这个检查会消耗整个生成器！
 >>> 5 in gen  
 False
 
@@ -280,31 +280,31 @@ False
 
 <div class="alert alert-info">
 
-**Takeaway**:
+**经验**：
 
-A generator can only be iterated over once, after which it is exhausted and must be re-defined in order to be iterated over again.
+生成器只能被迭代一次。在这之后它会被消耗殆尽。你必须要重新定义新的生成器来再次迭代。
 </div>
 
 <!-- #endregion -->
 
 <!-- #region -->
-### Chaining comprehensions
-Because generators are iterables, they can be fed into subsequent generator comprehensions. That is, they can be "chained" together.
+### 连锁理解
+因为生成器是可迭代物，你可以将它们输入到另一层的生成器理解中。也就是说你在“连锁”（chain）它们。
 ```python
-# chaining two generator comprehensions
+# 连锁两个生成器理解
 
-# generates 400.. 100.. 0.. 100.. 400 
+# 生成 400.. 100.. 0.. 100.. 400 
 >>> gen_1 = (i**2 for i in [-20, -10, 0, 10, 20])
 
-# iterates through gen_1, excluding any numbers whose absolute value is greater than 150
+# 迭代gen_1，除去任何绝对值大于150的值
 >>> gen_2 = (j for j in gen_1 if abs(j) <= 150)
 
-# computing 100 + 0 + 100
+# 计算 100 + 0 + 100
 >>> sum(gen_2)
 200
 ```
 
-This is equivalent to:
+这等值于：
 
 ```python
 total = 0
@@ -313,13 +313,13 @@ for i in [-20, -10, 0, 10, 20]:
     if j <= 150:
         total += j
 
-# total is now 200
+# total现在是200
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-### Using generator comprehensions on the fly
-A feature of Python, that can make your code supremely readable and intuitive, is that generator comprehensions can be fed *directly* into functions that operate on iterables. That is,
+### 直接使用生成器理解
+Python支持你*直接*将生成器理解输入进使用可迭代物的函数。这将使你的代码极其可读易懂。比如说：
 
 ```python
 >>> gen = (i**2 for i in range(100))
@@ -327,23 +327,22 @@ A feature of Python, that can make your code supremely readable and intuitive, i
 328350
 ```
 
-can be simplified as:
+可以被简化为：
 
 ```python
 >>> sum(i**2 for i in range(100))
 328350
 ```
 
-If you want your code to compute the finite harmonic series: $\sum_{k=1}^{100} \frac{1}{n} = 1 + \frac{1}{2} + ... + \frac{1}{100}$, you can simply write:
+如果你想要你的代码来计算有限的谐波系列：$\sum_{k=1}^{100} \frac{1}{n} = 1 + \frac{1}{2} + ... + \frac{1}{100}$，你可以直接写：
 ```python
 >>> sum(1/n for n in range(1, 101))
 5.187377517639621
 ```
 
-This convenient syntax works for any function that expects an iterable as an argument, such as the `list` function and `all` function:
+这方便的语法可以在任何使用可迭代物的函数中做输入，如 `list` 函数和 `all` 函数：
 ```python
-# providing generator expressions as arguments to functions
-# that operate on iterables
+# 将生成器表达式直接输入进使用可迭代物的函数中
 >>> list(i**2 for i in range(10))
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
@@ -355,26 +354,26 @@ True
 ```
 <div class="alert alert-info">
 
-**Takeaway**:
+**经验**：
 
-A generator comprehension can be specified directly as an argument to a function, wherever a single iterable is expected as an input to that function.
+你可以将生成器理解语句直接作为任何需要可迭代物的函数输入。
 </div>
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Using Generator Comprehensions on the Fly**:
+**阅读理解：直接使用生成器理解**:
 
-In a single line, compute the sum of all of the odd-numbers in 0-100.
+在一行内计算0-100之间所有奇数之和。
 
 </div>
 
 <!-- #region -->
-## Iterating over generators using `next`
-The built-in function `next` allows you manually "request" the next member of a generator, or more generally, any kind of *iterator*. Calling `next` on an exhausted iterator will raise a `StopIteration` signal.
+## 使用 `next` 迭代生成器
+内置函数 `next` 允许我们手动“请求”生成器（或任何*迭代器*（iterator））的下一个成员。对一个消耗殆尽的迭代器调用 `next` 会导致 `StopIteration` 信号。
 
 ```python
-# consuming an iterator using `next`
+# 使用 `next` 消耗迭代器
 >>> short_gen = (i/2 for i in [1, 2, 3])
 
 >>> next(short_gen)
@@ -395,22 +394,21 @@ Traceback (most recent call last)
 StopIteration:
 ```
 
-This is a great tool for retrieving content from a generator, or any iterator, without having to perform a for-loop over it.
+这方便你在不使用for循环的情况下获取生成器或任何迭代器的成员。
 <!-- #endregion -->
 
 <!-- #region -->
-### Iterables vs. Iterators
-This subsection is *not* essential to your basic understanding of the material. I am including it to prevent this text from being misleading to those who already know quite a bit about Python. **This is a bit advanced, feel free to skip it...**
+### 可迭代物 vs. 迭代器
+本小节并不是理解本资源的*关键*内容。包含本小节的目的是为了不误导已经对Python有一些了解的读者。**本小节内容比较深入，请随意跳过...**
 
-There is a bit of confusing terminology to be cleared up: an iterable is not the same thing as an iterator.
+让我们来解释清楚一些易混的术语：可迭代物和迭代器是不一样的。
 
-An *iterator* object stores its current state of iteration and "yields" each of its members in order, on demand via `next`, until it is exhausted. As we've seen, a generator is an example of an iterator. We now must understand that every iterator is an iterable, but not every iterable is an iterator.
+一个*迭代器*对象存储着迭代过程当前的内态并在收到通过 `next` 的要求时顺序“提供”（yield）它的成员，直到它消耗殆尽。像我们所见，生成器是迭代器的一种。请注意，每一个迭代器都是可迭代物，但不是每一个可迭代物都是迭代器。
 
-An *iterable* is an object that *can* be iterated over but does not necessarily have all the machinery of an iterator. For example, sequences (e.g lists, tuples, and strings) and other containers (e.g. dictionaries and sets) do not keep track of their own state of iteration. Thus you cannot call `next` on one of these outright: 
+一个*可迭代物*是任何*可以*被迭代的对象，但它不一定有着迭代器全部的功能。比如说，序列（如列表，元组，和字符串）和其它容器（如词典和集）并不会存储其迭代过程的内态。因此你不能直接对其调用 `next`：
 
 ```python
-# a list is an example of an iterable that is *not*
-# an iterator - you cannot call `next` on it.
+# 列表是可迭代物，但*不是*迭代器——你不能对其调用 `next`。
 >>> x = [1, 2, 3]
 >>> next(x)
 ---------------------------------------------------------------------------
@@ -420,12 +418,12 @@ TypeError                                 Traceback (most recent call last)
 
 TypeError: 'list' object is not an iterator
 ```
-In order to iterate over, say, a list you must first pass it to the built-in `iter` function. This function will return an *iterator* for that list, which stores its state of iteration and the instructions to yield each one of the list's members:
+为了迭代如列表这样的可迭代物，你必须先将其输入到内置的 `iter` 函数中。这个函数会返回该列表的一个*迭代器*，其存储着它迭代的内态以及提供列表每一个成员的指示：
 ```python
-# any iterable can be fed to `iter`
-# to produce an iterator for that object
+# 任何可迭代物都可以被输入进 `iter` 中
+# 来得到该对象的一个迭代器
 >>> x = [1, 2, 3]
->>> x_it = iter(x)  # `x_it` is an iterator
+>>> x_it = iter(x)  # `x_it` 是一个迭代器
 >>> next(x_it)
 1
 >>> next(x_it)
@@ -433,29 +431,29 @@ In order to iterate over, say, a list you must first pass it to the built-in `it
 >>> next(x_it)
 3
 ```
-In this way, a list is an *iterable* but not an *iterator*, which is also the case for tuples, strings, sets, and dictionaries.
+所以说列表是*可迭代物*但不是*迭代器*。这一点和元组，字符串，集，和词典一样。
 
-Python actually creates an iterator "behind the scenes", whenever you perform a for-loop over an iterable like a list. It feeds that iterable to `iter`, and then proceeds to call `next` on the resulting iterator for each of the for-loop's iterations.
+每当你for循环一个如列表的迭代器时，Python其实会在“幕后”创建一个迭代器。它将可迭代物输入进 `iter` 中，并在for循环每轮的迭代时对返回的迭代器调用 `next`。
 <!-- #endregion -->
 
 <!-- #region -->
-## List & Tuple Comprehensions
-Using generator comprehensions to initialize lists is so useful that Python actually reserves a specialized syntax for it, known as the list comprehension. A **list comprehension** is a syntax for constructing a list, which exactly mirrors the generator comprehension syntax:
+## 列表和元组理解
+因为使用生成器理解来初始化列表的流程极其有用，Python专门为其定义了专门的语法，叫做列表理解（list comprehension）。**列表理解**是一种创建列表的语法，和发生器理解语法完全类似：
 
 ```
 [<expression> for <var> in <iterable> {if <condition}]
 ```
 
-For example, if we want to create a list of square-numbers, we can simply write:
+比如说，如果我们想要创建一列表的平方数，我们可以直接写：
 ```python
-# a simple list comprehension
+# 简单的列表理解
 >>> [i**2 for i in range(10)]
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
 
-This produces the exact same result as feeding the `list` function a generator comprehension. However, using a list comprehension is slightly more efficient than is feeding the `list` function a generator comprehension.
+这将创建和用将生成器理解输入到 `list` 函数中一样的结果。但是，使用列表理解比将生成器理解输入到 `list` 中稍微更高效一点。
 
-Let's appreciate how economical list comprehensions are. The following code stores words that contain the letter "o", in a list:
+让我们来体会一下列表理解的实惠之处。以下代码将在一个列表中储存包含字母“o”的字符串：
 ```python
 words_with_o = []
 word_collection = ['Python', 'Like', 'You', 'Mean', 'It']
@@ -465,7 +463,7 @@ for word in word_collection:
         words_with_o.append(word)
 ```
 
-This can be written in a single line, using a list comprehension:
+你可以使用列表理解来将以上代码在一行中实现：
 ```python
 >>> word_collection = ['Python', 'Like', 'You', 'Mean', 'It']
 >>> words_with_o = [word for word in word_collection if "o" in word.lower()]
@@ -473,27 +471,27 @@ This can be written in a single line, using a list comprehension:
 ['Python', 'You']
 ```
 
-Tuples can be created using comprehension expressions too, but we must explicitly invoke the `tuple` constructor since parentheses are already reserved for defining a generator-comprehension.
+你也可以用理解语句来创建元组，但是你必须要使用 `tuple` 构造器来做到这一点，因为括号已经为生成器理解保留了。
 ```python
-# creating a tuple using a comprehension expression
+# 使用理解表达式来创建元组
 >>> tuple(i**2 for i in range(5))
 (0, 1, 4, 9, 16)
 ```
 
 <div class="alert alert-info">
 
-**Takeaway**:
+**经验**：
 
- The comprehensions-statement is an extremely useful syntax for creating simple and complicated lists and tuples alike.
+理解语句是为创建简单和复杂的列表和元组都极其有用的语法。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-### Nesting comprehensions
-It can be useful to nest comprehension expressions within one another, although this should be used sparingly.
+### 嵌套理解语句
+你可以在一个理解表达式中嵌套（nest）另外一个理解表达式，但请注意不要滥用这一功能。
 ```python
-# Nested list comprehensions.
-# This creates a 3x4 "matrix" (list of lists) of zeros.
+# 嵌套列表理解。
+# 这创建了一个大小为3x4内容为0的的“矩阵“（存有多个列表的列表）。
 >>> [[0 for col in range(4)] for row in range(3)]
 [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 ```
@@ -501,18 +499,18 @@ It can be useful to nest comprehension expressions within one another, although 
 
 <div class="alert alert-info">
 
-**Reading Comprehension: List Comprehensions**:
+**阅读理解：列表理解**：
 
-Use a list comprehension to create a list that contains the string "hello" 100 times.
+使用列表理解来的创建一个包含100个字符串”hello“的列表。
 
 </div>
 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Fancier List Comprehensions**:
+**阅读理解：高级的列表理解**：
 
-Use the inline `if-else` statement (discussed earlier in this module), along with a list comprehension, to create the list:
+使用单行的 `if-else` 语句（在本模组前文讨论过）以及列表理解来创建以下列表：
 
 ```python
 ['hello',
@@ -532,22 +530,22 @@ Use the inline `if-else` statement (discussed earlier in this module), along wit
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Tuple Comprehensions**:
+**阅读理解：元组理解s**：
 
-Use a tuple-comprehension to extract comma-separated numbers from a string, converting them into a tuple of floats. I.e. `"3.2,2.4,99.8"` should become `(3.2, 2.4, 99.8)`. You will want to use the built-in string function [str.split](https://docs.python.org/3/library/stdtypes.html#str.split).
+使用元组理解来提出字符串中由逗号隔开的数字，并将其转化成一元组的浮点数。如，`"3.2,2.4,99.8"` 应被转化成 `(3.2, 2.4, 99.8)`。你应该会想要使用内置的字符串函数[str.split](https://docs.python.org/3/library/stdtypes.html#str.split)。
 
 </div>
 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Translating a For-Loop**:
+**阅读理解：翻译for循环**：
 
-Replicate the functionality of the the following code by writing a list comprehension.
+使用列表理解来复制以下代码的功能。
 ```python
-# skip all non-lowercased letters (including punctuation)
-# append 1 if lowercase letter is "o"
-# append 0 if lowercase letter is not "o"
+# 跳过所有非小写字母（包括标点符号）
+# 如果小写字母是“o”就在列表结尾添加1
+# 如果小写字母不是“o”就在列表结尾添加0
 out = []
 for i in "Hello. How Are You?":
     if i.islower():
@@ -560,60 +558,60 @@ for i in "Hello. How Are You?":
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Memory Efficiency**:
+**阅读理解：内存效率**：
 
-Is there any difference in performance between the following expressions?
+以下两个表达式的效率有任何区别么？
 
 ```python
-# feeding `sum` a generator comprehension
+# 将生成器理解输入到 `sum` 中
 sum(1/n for n in range(1, 101))
 ```
 
 ```python
-# feeding `sum` a list comprehension
+# 将列表理解输入到 `sum` 中
 sum([1/n for n in range(1, 101)])
 ```
 
-Is one expression preferable over the other? Why?
+以上有一个表达式优于另外一个吗？为什么？
 
 </div>
 <!-- #endregion -->
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Generator definition](https://docs.python.org/3/glossary.html#term-generator)
+- [生成器定义](https://docs.python.org/3/glossary.html#term-generator)
 - [range](https://docs.python.org/3/library/stdtypes.html#typesseq-range)
-- [Generator comprehension expressions](https://docs.python.org/3/tutorial/classes.html#generator-expressions)
-- [Iterator definition](https://docs.python.org/3/glossary.html#term-iterator)
+- [生成器理解表达式](https://docs.python.org/3/tutorial/classes.html#generator-expressions)
+- [迭代器定义](https://docs.python.org/3/glossary.html#term-iterator)
 - [next](https://docs.python.org/3/library/functions.html#next)
 - [iter](https://docs.python.org/3/library/functions.html#iter)
-- [List comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
-- [Nested list comprehensions](https://docs.python.org/3/tutorial/datastructures.html#nested-list-comprehensions)
+- [列表理解](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+- [嵌套列表理解](https://docs.python.org/3/tutorial/datastructures.html#nested-list-comprehensions)
 
 
-## Reading Comprehension Exercise Solutions:
+## 阅读理解答案：
 
 <!-- #region -->
-**Using range: Solution**
+**使用 `range`：解**
 ```python
-# start=10, stop=0 (excluded), step-size=-1
+# start=10，stop=0（不包含），step-size=-1
 >>> for i in range(10, 0, -1):
->>>     print(i, end=" ") # the "end" parameter is to avoid each value taking up a new line
+>>>     print(i, end=" ") # "end" 参数是用来避免每个值使用新行
 10 9 8 7 6 5 4 3 2 1 
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-**Writing a Generator Comprehension: Solution**
+**编写生成器理解：解**
 ```python
 >>> g = ((n, n+2) for n in range(6) if n != 3)
->>> list(g) # convert into a list to print values
+>>> list(g) # 转化成列表来打印其中的值
 [(0, 2), (1, 3), (2, 4), (4, 6), (5, 7)]
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-**Using Generator Comprehensions on the Fly: Solution**
+**直接使用生成器理解：解n**
 ```python
 >>> sum(range(1, 101, 2))
 2500
@@ -628,15 +626,15 @@ or
 <!-- #endregion -->
 
 <!-- #region -->
-**List Comprehensions: Solution**
+**列表理解：解**
 ```python
 >>> ["hello" for i in range(100)]
-['hello', 'hello', ..., 'hello', 'hello'] # 100 hello's
+['hello', 'hello', ..., 'hello', 'hello'] # 100个hello
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-**Fancier List Comprehensions: Solution**
+**高级的列表理解：解**
 ```python
 >>> [("hello" if i%2 == 0 else "goodbye") for i in range(10)]
 ['hello', 'goodbye', 'hello', 'goodbye', 'hello', 'goodbye', 'hello', 'goodbye', 'hello', 'goodbye']
@@ -644,7 +642,7 @@ or
 <!-- #endregion -->
 
 <!-- #region -->
-**Tuple Comprehension: Solution**
+**元组理解：解**
 ```python
 >>> string_of_nums = "3.2, 2.4, 99.8"
 >>> tuple(float(i) for i in string_of_nums.split(","))
@@ -653,7 +651,7 @@ or
 <!-- #endregion -->
 
 <!-- #region -->
-**Translating a For-Loop: Solution**
+**翻译for循环：解**
 ```python
 >>> out = [(1 if i is "o" else 0) for i in "Hello. How Are You?" if i.islower()]
 >>> out
@@ -661,6 +659,6 @@ or
 ```
 <!-- #endregion -->
 
-**Memory Efficiency: Solution**
+**内存效率：解**
 
-It is preferable to use the generator expression `sum(1/n for n in range(1, 101))`, rather than the list comprehension `sum([1/n for n in range(1, 101)])`. Using a list comprehension unnecessarily creates a list of the one hundred numbers, in memory, before feeding the list to `sum`. The generator expression need only produce a single value at a time, as `sum` iterates over it.
+生成器表达式 `sum(1/n for n in range(1, 101))` 比起列表理解 `sum([1/n for n in range(1, 101)])` 更优。使用列表理解会不必要的在内存中创建有100个数字的列表，然后再将其输入到 `sum` 中。生成器表达式则在 `sum` 迭代时每次只生成一个数值。
