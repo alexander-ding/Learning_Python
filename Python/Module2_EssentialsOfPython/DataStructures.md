@@ -19,131 +19,131 @@ jupyter:
 ```
 
 <!-- #region -->
-# Data Structures (Part I): Introduction
-Here we survey Python's built-in data structures. You should already be familiar with its lists and tuples, two data structures that facilitate working with sequential data. Two other critical, built-in data structures to be introduced are:
+# 数据结构（第一部分）：简介
+我们在此介绍Python内置的数据结构（data structure）。你应该已经了解了列表和元组，两个帮助处理序列数据的数据结构。我们将会介绍另外两个重要的内置数据结构：
 
-- dictionary: a mapping from "keys" to "values"
-- sets: an unordered collection of items that can be used to perform set-algebraic operations (e.g. union and intersection) 
+- 词典（dictionary）：一一对应“键”（key）和“值”（value）
+- 集（set）：用来进行集运算（如并集和交集）的无序项目集合
 
-These data structures are not merely convenient constructs with some nice pre-written functionality; they also provide an interface to some optimized core utilities that have been written in C (or whatever language your Python interpreter is written in). For example, let's write a function that checks if an item is contained within an iterable:
+这些数据结构不仅仅是一些有着好用核心功能的方便构造题；它们同时也提供了用C（或对应的该Python直译器编译用的语言）编译的高效核心功能的接口。比如说，让我们来编写一个检查某对象是否为可迭代物成员的函数：
 
 ```python
 def is_in(seq, target):
-    """ Returns True if `target` is contained in `seq`."""
+    """ 如果 `target` 在 `seq` 中则返回真"""
     for item in seq:
         if item == target:
             return True
     return False
 ```
 
-This function mirrors the C-algorithm that Python uses "under the hood" for checking for membership in a list (assuming you are using the CPython interpreter, which you almost definitely are). Because their function is implemented "at a lower level", and need not be interpreted, we expect it to be faster than ours:
+以上函数和Python在“幕后”使用的C语言成员检测算法（当然，这是假设你在使用CPython直译器，但极大可能是这个情况）是一样的。因为CPython直译的函数是在“更底层”实现的，因此不需要被直译，它比我们在Python中定义的函数更快：
 ```python
 >>> x = [1, "moo", 3, True, 5, None, 7, 8]
 
->>> is_in(x, -1)  # takes 980 nanoseconds on my machine
+>>> is_in(x, -1)  # 在我的机子上花了 980 纳秒
 False
 
->>> -1 in x       # takes 320 nanoseconds on my machine
+>>> -1 in x       # 在我的机子上花了 320 纳秒
 False
 ```
-Here, Python's built-in sequence-membership function is 3x faster than using our own function. Furthermore, it will be important to know the advantages provided by each of the data structures. For instance, testing for membership in a set is even faster than is checking for membership in a list:
+在此，Python的内置成员检测函数比我们的版本快了三倍。同时，我们应该了解各个数据结构的优势。比如说，集（set）的成员检测比列表还要快：
 
 ```python
-# test for membership in a list
->>> -1 in [1, "moo", 3, True, 5, None, 7, 8]  # takes 295 nanoseconds on my machine
+# 在列表中检测是否为成员
+>>> -1 in [1, "moo", 3, True, 5, None, 7, 8]  # 在我的机子上花了 295 纳秒
 False
 
-# test for membership in a set
->>> -1 in {1, "moo", 3, True, 5, None, 7, 8}  # takes 65 nanoseconds on my machine
+# 在集中检测是否为成员
+>>> -1 in {1, "moo", 3, True, 5, None, 7, 8}  # 在我的机子上花了 65 纳秒
 False
 ```
-We get a 4.5x speedup in our membership test just by using a set instead of a list, because the use of a set permits Python to use an entirely different algorithm for checking for membership. On our end, we merely replaced square brackets with curly braces! Hopefully this is sufficient motivation for learning about Python's data structures and the algorithms that they utilize "under the hood".
+通过使用集而不是列表，我们得到了4.5倍的速度优化。这是因为集允许Python使用一个完全不同的成员检测算法。在Python程序员的角度上，我们仅仅将方括号替换成了花括号！我希望以上范例为你提供了足够学习Python数据结构和“幕后”使用的算法的动力。
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-Python's data structures come with a wealth of built-in functionality. Furthermore, understanding where each data structure "shines" is critical for writing efficient Python code. It is not necessary to memorize this information, but you should know that it exists and should be referenced frequently.
+Python的数据结构有着自己内置的功能。同时，理解每个数据结构适合的工作对编写高效的Python代码极其重要。你不需要死记这些信息，但是你应该知道这些信息存在并经常参考它。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-## Describing Algorithm Complexity
-In order to meaningfully compare the relative efficiency of algorithms, it is useful to summarize how algorithms "scale" with problem size. Two sorting algorithms may be comparable when sorting tens of items, and yet they may have wildly different performances when sorting thousands of items. 
+## 描述算法复杂度
+为了有意义地比较算法的效率，总结算法在问题大小变化时如何表现是很有用的信息。两个排序算法可能在排列几十个项目时速度相当，但它们完全可能在排列几千个项目时有着很不一样的效率。
 
-"Big-O" notation allows us to denote how an algorithm's run time scales against problem size. Specifically, it signifies the "worst-case scenario" performance of an algorithm. 
+“大O”符号（big-O notation）允许我们表达算法在问题大小变化时运算时间如何改变。具体来讲，它代表着算法在“最坏情况下”的表现。
 
-Let's take, for instance, the `is_in` function that we wrote at the beginning of this section. In it, we iterate over a collection to check if it contains a specific item. The worst-case scenario for this algorithm is when the item is not a member of the collection at all - we have to iterate over the entire collection before we can conclude that it does not possess our item. So if we increase the collection to be $n$ times larger in size, it should take $n$ times as long to iterate over it to determine that the item is not a member of the collection (again, dealing with the worst-case scenario). Because the worst-case scenario run time of `is_in` scales linearly with the size of the collection, $n$, we denote it's run time complexity, using big-O notation, as $\mathcal{O}(n)$.
+比如说，拿在本节开始写的 `is_in` 函数来讲，我们迭代了一个集合并检查它是否有着某个项目。这个算法的最坏情况就是当项目并不是集合的成员——我们需要迭代整个集合才能确定它并不拥有我们要找的项目。所以如果我们将该集合的大小扩大 $n$ 倍，那它会花 $n$ 倍长的时间来迭代整个集合并决定一个项目不是其成员（在此同样假设最坏情况）。因为 `is_in` 的最坏情况的运行时间和集合的大小 $n$ 呈现线性关系，所以我们用大O符号来说该算法的运行时间复杂度为 $\mathcal{O}(n)$。
 
-Now suppose we did a truly terrible job writing a membership algorithm, and performed a nested iteration over our collection:
+现在，假设我们写的成员检查函数很糟糕，并进行了嵌套迭代：
 
 ```python
 def is_in_slow(seq, target):
-    """ Returns True if `target` is contained in `seq`."""
+    """ 如果 `target` 为 `seq` 成员，返回真。"""
     for item in seq:
-        # for each item in seq, iterate over seq in its entirety!
+        # 我们为seq中的项目重新迭代整个seq！
         for item2 in seq:
             if item == target:
                 return True
     return False
 ```
 
-For each item in `seq` we iterate over `seq` again, thus in the worst-case scenario we need to iterate over $n$ items, $n$ separate times - a total of $n^{2}$ "steps" in our algorithm. Thus we would say that `is_in_slow` is a $\mathcal{O}(n^{2})$ algorithm: whereas doubling size of `seq` would increase the run time of our $\mathcal{O}(n)$ algorithm by a factor of 2 (linear scaling), it would increase the run time of this $\mathcal{O}(n^{2})$ algorithm by 4 (quadratic scaling).
+为 `seq` 中的每个项目我们重新迭代 `seq` 一次，因此在最坏情况下我们需要迭代 $n$ 个成员 $n$ 次——总共在算法中走了 $n^{2}$ “步”。因此，我们说 `is_in_slow` 是一个 $\mathcal{O}(n^{2})$ 的算法：当我们将 `seq` 的大小翻倍时，我们的 $\mathcal{O}(n)$ 算法会花两倍多的时间（线性增加），而我们的 $\mathcal{O}(n^{2})$ 算法会花四倍多的时间（平方增加）。
 
-Here is a more formal description of this notation:
+以下是大O符号更加正式的定义：
 <div class="alert alert-block alert-info"> 
-**"Big-O" Notation**: Suppose that $n$ denotes the "size" of the input to an algorithm, and that the mathematical expression $f(n)$ describes how many computational steps the algorithm must take in its *worst-case scenario*, given that input. Then the algorithm's run time complexity can be denoted using the **"Big-O"** notation: $\mathcal{O}(f(n))$.
+**“大O”符号**（big-O notation）：假设 $n$ 代表着算法输入的“大小”，数学表达式 $f(n)$ 描述该算法在*最坏情况*下需要花多少计算步骤处理大小为 $n$ 的输入，那么算法的运行时间复杂度用**“大O”符号**表达则为 $\mathcal{O}(f(n))$。
 </div>
 
-A few important notes:
+几个重要的点：
 
-- We only care about the "highest-order" term in $f(n)$. That is, $\mathcal{O}(n + n^{2})$ should just be written as $\mathcal{O}(n^{2})$.
-- We never care about constant factors in our scaling. That is, even if an algorithm iterates over a sequence twice, its big-O complexity should be written as $\mathcal{O}(n)$, rather than $\mathcal{O}(2n)$.
-- An algorithm whose run time *does not depend on the size of its input* is a $\mathcal{O}(1)$ algorithm. 
-  - Example: a function that returns the second element from a list.
-- There are more nuanced methods for analyzing algorithm complexity than solely considering the worst-case scenario, which can be overly pessimistic. Know that  "big-O" notation can be used to convey mean performance, [amortized](https://en.wikipedia.org/wiki/Amortized_analysis) performance, and other types of analysis. Here, we will simply stick to the worst-case analysis.
+- 我们仅仅在乎 $f(n)$ 最高次数的项。也就是说，$\mathcal{O}(n + n^{2})$ 应被写为 $\mathcal{O}(n^{2})$。
+- 我们永远不在乎关系中的常数。也就是说，就算一个算法迭代某序列两次，它的大O复杂度应该被写为 $\mathcal{O}(n)$，而不是 $\mathcal{O}(2n)$。
+- 一个运行时间*不根据输入大小而改变*的算法是一个 $\mathcal{O}(1)$ 算法。
+  - 例：一个返回列表中第二个成员的函数。
+- 我们有其它更加微妙，不仅仅考虑最坏情况的分析算法复杂度的方法，因为最坏情况分析可能太过悲观。知道“大O”符号“也可以用来代表平均表现，[摊销](https://en.wikipedia.org/wiki/Amortized_analysis)（amortized）表现，和其它分析类型。在此，我们仅仅使用最坏情况分析。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-We will be using the "big-O" notation, $\mathcal{O}(f(n))$, to summarize the performance of the algorithms used by Python's data structures. 
+我们将会使用“大O”符号 $\mathcal{O}(f(n))$ 来总结Python数据结构使用的算法的表现。
 </div>
 
 
-## Sequential Data Structures: Lists and Tuples
-The "Sequence Types" section already introduced lists and tuples. Recall that both provide the same interface for accessing and summarizing the contents of a heterogeneous sequence of objects. However, a list can be mutated - updated, removed from, and added to - whereas a tuple cannot be mutated. Thus a list is *mutable*, whereas a tuple is *immutable*. Here you will find a summary of the algorithmic complexities of many of the built-in functions that work on sequential data structures.
+## 序列性数据结构：列表和元组
+“序列类型”小节已经介绍了列表和元组。请回忆这两个数据结构都提供了相同的互动界面来调用和总结其为一序列不同对象的内容。但是，列表是可以被改变的——你可以对其更新，删除，并添加项目——而元组不可变。因此列表*可变*，而元组*不可变*。在本节你将会找到很多操作序列数据结构的内置函数的算法复杂度。
 
-For a complete rundown of the functions available to Python's list, go [here](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists).
+你可以在[这里](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)找到所有的Python列表函数。
 
-#### List/Tuple Complexities
-Let `seq` represent a **list or tuple** of length $n$; $i$ and $j$ are integers drawn randomly from the interval $[0, n-1]$; $k$ is the length of any subsequence involved in the operation. The following is a summary of the complexities associated with various common operations using lists and tuple (according to their implementations in CPython):
+#### 列表/元组复杂度
+设 `seq` 为长度为 $n$ 的**列表或元组**；$i$ 和 $j$ 为从区间 $[0, n-1]$ 中随意抽取的整数；$k$ 为任何在此操作中使用的子序列的长度。以下为各种常见的列表和元组操作（根据CPython的实现）的复杂度：
 
-|Operation| Complexity | Explanation |
+|操作| 复杂度 | 解释 |
 |---|---|---|
-|`len(seq)`|O(1)| Return the number of items in the sequence |
-|`seq[i]`| O(1) | Retrieve any item from the sequence |
-|`seq[i:j]`| O(k) | Retrieve a length-k slice from the sequence |
-|`for item in seq..`| O(n) | Iterate over the sequence |
-|`obj in seq`| O(n) | Check if `obj` is a member of `seq` |
-|`seq.count(obj)`| O(n) | Count the number of occurrences of `obj` in `seq` |
-|`seq.index(obj)`| O(n)| Return position-index of `obj` in `seq` |
+|`len(seq)`| O(1)| 返回序列中项目的数量 |
+|`seq[i]`| O(1) | 从序列中获取单个项目 |
+|`seq[i:j]`| O(k) | 从序列中获取长度k的切片 |
+|`for item in seq..`| O(n) | 迭代序列 |
+|`obj in seq`| O(n) | 检查 `obj` 是否为 `seq` 的成员 |
+|`seq.count(obj)`| O(n) | 返回 `obj` 在 `seq` 出现的次数 |
+|`seq.index(obj)`| O(n)| 返回 `obj` 在 `seq` 中的索引 |
 
 
-#### List Complexities
-Here we consider some mutating operations, like `append`, that are available to lists and not tuples. It is important to note that lists are implemented such that: 
+#### 列表复杂度
+我们在此考虑一些列表可用而元组不可用的改变序列的操作，如 `append`。请注意列表的实现导致：
 
-- operations that add-to or remove-from the *end* of the list are $\mathcal{O}(1)$
-- operations that add-to or remove-from the *beginning* of the list are $\mathcal{O}(n)$
+- 在列表*结尾*添加或删除项目的操作为 $\mathcal{O}(1)$
+- 在列表*开头*添加或删除项目的操作为 $\mathcal{O}(n)$
 
-Let `my_list` represent a list of length $n$, and `i` is an integer drawn randomly from the interval $[0, n-1]$. The following is a summary of the complexities associated with various operations using a list (according to its implementation in CPython):
+设 `my_list` 为长度为 $n$ 的列表，而 `i` 为从区间 $[0, n-1]$ 随意抽取的整数。以下为列表各种操作（在CPython实现中）的复杂度：
 
-|Operation| Complexity | Explanation |
+|操作| 复杂度 | 解释 |
 |---|---|---|
-|`my_list[i] = obj`| O(1) | Set the ith entry of the list with a new object. |
-|`my_list.append(obj)`| O(1) | Append a new object to the end of the list. |
-|`my_list.pop()`| O(1) | Remove the object from the *end* of the list. |
-|`my_list.pop(0)`| O(n) | Remove the object from the *beginning* of the list. |
-|`my_list.sort()`| O(nlog(n)) | Return a sorted version of the list. |
+|`my_list[i] = obj`| O(1) | 将列表第i位的项目设为新对象。|
+|`my_list.append(obj)`| O(1) | 在列表结尾添加新对象。|
+|`my_list.pop()`| O(1) | 删除在列表*结尾*的对象。|
+|`my_list.pop(0)`| O(n) | 删除在列表*开头*的对象。|
+|`my_list.sort()`| O(nlog(n)) | 返回同列表的顺序版本。|
 
