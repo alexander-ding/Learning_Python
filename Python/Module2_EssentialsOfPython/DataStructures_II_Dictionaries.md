@@ -18,102 +18,102 @@ jupyter:
    :keywords: dictionary, complexity, key, value, iteration, get item, hashing, lookup, interview preparation
 ```
 
-#  Data Structures (Part II): Dictionaries
-Python's dictionary allows you to store key-value pairs, and then pass the dictionary a key to quickly retrieve its corresponding value. Specifically, you construct the dictionary by specifying one-way mappings from key-objects to value-objects. **Each key must map to exactly one value**, meaning that a key must be unique. 
+# 数据结构（第二部分）：词典
+Python的词典（dictionary）允许你储存键值对（key-value pair），然后向词典输入键可以快速地获取其对应的值。具体来讲，你通过描述从键到值的单向对应关系来创建词典。**每个键应该只对应一个值**，也就是说每个键都应该是唯一的。
 
 
 <!-- #region -->
-Let's create the following mapping of grocery-to-price:
+让我们来创建以下食物到价格的对应关系：
 
 - "cheese" $\rightarrow$ 2.53, 
 - "milk" $\rightarrow$ 3.40, 
 - "frozen pizza" $\rightarrow$ 8.01
 
 ```python
-# use a dictionary to map groceries to prices: item-name -> price 
+# 使用一个词典来将食物来对应价格：名字 -> 价格
 >>> items_to_prices = {"cheese": 2.53, "milk": 3.40, "frozen pizza": 8.01}
 
-# looking up the price of "frozen pizza"
+# 查看 "frozen pizza" 的价格
 >>> items_to_prices["frozen pizza"]
 8.01
 ```
 
-Python's dictionary is a shining star among its data structures; it is compact, fast, versatile, and extremely useful. It can be used to create a wide variety of mappings.
+Pythond的词典是其数据结构中一颗闪耀的星；它紧凑，快速，通用，并非常有用。你可以用它来创建多种多样的对应关系。
 
 ```python
-# keep track of whether or not a 3D coordinate fell into some region in space
-# map (x, y, z) coordinates to "is in a region": (x, y, z) -> True/False
+# 记录某3D坐标是否处于空间中某区域之中
+# 将 (x, y, z) 坐标对应到“是否在区域中”：(x, y, z) -> True/False
 >>> point_to_region = {(0.1, 2.2, 3):False, (-10., 0, 4.5):True, (4.3, 1.0, 9.5):False}
 >>> point_to_region[(-10., 0, 4.5)]
 True
 
-# map student-name to exam scores: name -> scores
+# 将学生名字对应到考试成绩中：名字 -> 成绩
 >>> name_to_scores = {"Ryan S": [65, 50, 80], "Nick S": [100, 99, 90]}
 >>> name_to_scores["Ryan S"]
 [65, 50, 80]
 ```
 
- It is important to note outright that the time it takes for dictionary to take a key and retrieve a value *does not depend on the size of the dictionary.* That is the complexity for a dictionary look-up is $\mathcal{O}(1)$! It accomplishes this by making use of a technique known as [hashing](https://en.wikipedia.org/wiki/Hash_function).
+我们应该立刻指出：在词典中查找某键对应的值的速度*并不会根据词典大小改变。*也就是说，词典查找的复杂度为 $\mathcal{O}(1)$！它通过一个知名的[哈希算法](https://en.wikipedia.org/wiki/Hash_function)技巧来达到这一点。
 
-These are all instances of the built-in `dict` type:
+以下为所有内置 `dict` 类型的实例:
 ```python
 >>> type(items_to_prices)
 dict
 ```
-We will be discussing the essentials of the dictionary. It is highly recommended that you refer to the official Python documentation for a [complete rundown of all the functions available to the dictionary](https://docs.python.org/3/library/stdtypes.html#dict).
+我们会在下文讨论词典的基础。本文强烈建议你阅读Python官方说明文档来查看[所有词典可用的函数](https://docs.python.org/3/library/stdtypes.html#dict).
 <!-- #endregion -->
 
 <!-- #region -->
-## Dictionary Basics
-### Constructing a dictionary
-A nice syntax for creating a dictionary is to specify key-value pairs inside "curly braces": `{key1:value1, key2:value2, ...}`. As an example, let's construct a dictionary that maps types of foods to "fruit" or "vegetable". We'll start by mapping "apple" to "fruit", and "carrot" to "vegetable"
+## 词典基础
+### 创建词典
+你可以通过在“花括号”中输入键值对来创建词典：`{key1:value1, key2:value2, ...}`。作为范例，让我们创建一个将食物名字对应到 "fruit" 或 "vegetable" 的词典吧。我们首先将 "apple" 对应到 "fruit"，"carrot" 对应到 "vegetable"
 ```python
-# use `{key1:value1, key2:value2, ...} to create a dictionary that maps:
+# 使用 `{key1:value1, key2:value2, ...}` 来创建词典：
 #  "apple" -> "fruit"
 # "carrot" -> "vegetable
 >>> fruit_or_veggie = {"apple":"fruit", "carrot":"vegetable"} 
 
-# create an empty dictionary
+# 创建空词典
 >>> {}
 {}
 ```
-You can also use `dict` as a constructor to create the dictionary. It can be fed an iterable of key-value pairs, each of which is packed in a sequence, such as a tuple. 
+你也可以使用 `dict` 来作为构造器来创建词典。你可以向其输入有着键值对（由类似元组的序列代表）的可迭代物。
 
 ```python
-# use `dict` to create a dictionary that maps:
+# 使用 `dict` 来创建词典：
 #  "apple" -> "fruit"
 # "carrot" -> "vegetable
 >>> fruit_or_veggie = dict([("apple", "fruit"), ("carrot", "vegetable")])
 
-# use `dict` to create an empty dictionary:
+# 使用 `dict` 来创建空词典
 >>> dict()
 {}
 ```
-Lastly, Python also supports a dictionary-comprehension syntax, which mirrors the generator/list comprehension syntax covered earlier in this module:
+最后，Python也支持词典理解语法，其与本模组之前讨论的生成器/列表理解语法类似：
 
 ```
 {key:value for key, value in <iterable of key-value pairs> [if bool(<condition>)]}
 ```
 
 ```python
-# use the 'dictionary comprehension' syntax to create a dictionary that maps:
+# 使用“词典理解”语法来创建词典
 #  "apple" -> "fruit"
 # "carrot" -> "vegetable
 >>> {k:v for k,v in [("apple", "fruit"), ("carrot", "vegetable")]}
 {'apple': 'fruit', 'carrot': 'vegetable'}
 ```
 
-### Retrieving a value, given a key
-Now we can use this dictionary to "look up" if an item is a fruit or a veggie. Dictionaries support the same square-bracket "get-item" syntax as a list/tuple, but here a valid key is used as the index:
+### 返回键对应的值
+现在我们可以使用词典来“查找”某项目是水果还是蔬菜。词典支持和列表/元组一样的方括号“获取项目”语法，但与其使用索引我们使用一个合法的键：
 ```python
-# get the value associated with the key "apple"
+# 获取键 "apple" 对应的值
 >>> fruit_or_veggie["apple"]
 "fruit"
 ```
 
-`KeyError` will be raised if you try to look-up a key that doesn't exist:
+尝试查找不存在的键会导致 `KeyError`：
 ```python
-# "grape" hasn't been specified as a key
+# "grape" 并没有作为键被定义
 >>> fruit_or_veggie["grape"]
 ---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
@@ -123,19 +123,19 @@ KeyError                                  Traceback (most recent call last)
 KeyError: 'grape'
 ```
 
-### Adding more key-value mappings
-Once created, a dictionary can have a new key-value pair be "set" using `my_dict[new_key] = new_value`:
+### 添加额外的键值对应
+在词典创建后，你可以通过 `my_dict[new_key] = new_value` 在其中设定额外的的键值对：
 ```python
-# set the mapping "banana" -> "fruit"
+# 设定对应 "banana" -> "fruit"
 >>> fruit_or_veggie["banana"] = "fruit"
 >>> fruit_or_veggie
 {'apple': 'fruit', 'banana': 'fruit', 'carrot': 'vegetable'}
 ```
-If the key already exists, the mapping for that key will simply be updated.
+如果键已经存在的话，那该键对应的值将被更新。
 
-The `update` function can be used to add multiple key-value pairs at once. This function can be passed another dictionary or an iterable of key-value sequences
+你可以使用 `update` 函数来一次性添加多个键值对。该函数接受另外一个词典或成员为键值对序列的可迭代物
 ```python
-# adding multiple key-value pairs to the dictionary
+# 向词典添加多个键值对
 >>> fruit_or_veggie.update([("grape", "fruit"), ("onion", "vegetable")])
 >>> fruit_or_veggie
 {'apple': 'fruit',
@@ -148,19 +148,20 @@ The `update` function can be used to add multiple key-value pairs at once. This 
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Dictionary Basics**
+**阅读理解：词典基础**
 
-Given the tuple of student names `("Ashley", "David", "Edward", "Zoe")`, and their corresponding exam grades `(0.92, 0.72, 0.88, 0.77)`, create a dictionary that maps: name $\rightarrow$ grade. Then, update Zoe's grade to `.79`. Lastly, add a new student, Ryan, whose grade is 0.34. 
+设含有学生名的元组 `("Ashley", "David", "Edward", "Zoe")` 以及他们对应的考试成绩 `(0.92, 0.72, 0.88, 0.77)`，创建一个词典来对应：名字 $\rightarrow$ 成绩。然后，将Zoe的成绩更新为 `.79`。最后添加一个新学生Ryan，其成绩为0.34。
+
+译者注：原作者名为Ryan，是位自黑达人。
 
 </div>
 
 <!-- #region -->
-## What Can a Dictionary Store?
-Although the preceding example only involves a mappings from strings to strings, *the keys and values of a dictionary can be heterogeneous in type*:
+## 词典可以储存什么？
+虽然前文的例子中仅仅将字符串对应字符串，但是*词典的键和值的类型可以相异*：
 
 ```python
-# demonstrates the wide variety of object types that can be used as
-# keys and values in a dictionary
+# 演示词典可以使用的多种多样的键值类型
 >>> example_dict = {-1:10, "moo":True, (1, 2):print, 3.4:"cow", False:[]}
 >>> example_dict[-1]
 10
@@ -178,32 +179,32 @@ True
 []
 ```
 
-To be specific, a dictionary's contents are dictated by the following rules:
+具体来讲，词典的内容应遵循以下规则：
 
-- A dictionary *key* must be an *immutable* object (more precisely, it must be [hashable](https://docs.python.org/3/glossary.html#term-hashable); don't worry about this detail). 
-- A dictionary *value* can be any object (even the dictionary itself! Try this, it's cool!)
+- 词典的*键*必须是*不可变*的对象（更加精确地讲，他必须是[可哈希](https://docs.python.org/3/glossary.html#term-hashable)（hashable）的；不要太在意这个细节）。
+- 词典的*值*可以是任何对象（甚至可以是同一个词典！试试看，这挺酷的！）
 
 <div class="alert alert-warning">
 
-**Recall**: 
+**回忆**：
 
-A mutable object can be changed after it is created. An immutable object cannot be changed.
+可变对象在被创建后是可以被修改的。不可变对象则不能被修改。
 </div>
 
-Thus valid keys can be the following types:
+所以合法的键可以是以下类型：
 
- - numbers (integers, floating-point numbers, complex numbers)
- - strings
- - tuples (if the tuple contains anything, it must be other immutable objects)
- - boolean values
- - [frozenset](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#Set-operations) objects
+ - 数字（整数，浮点数，复数）
+ - 字符串
+ - 元组（但元组中的成员也必须是不可变对象）
+ - 布尔值
+ - [冻集](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#Set-operations)（frozenset）对象
  
-Trying to use a mutable object as a key is problematic since that object could be changed *after* it was already used as a key. Thus the dictionary would have to "detect" this change and recreate its "lookup scheme" for the changed key. Values, on the other hand, can be mutable because the details of a given value-object have no impact on how the dictionary retrieves it.
+使用可变对象作为键的问题在于该对象在作为键使用*之后*可以被改变。因此，词典会需要“检测”到这个变化并为变化后的键重新创建它的“查找方式”。而值可以是可变对象，因为值对象的细节并不影响词典如何查找该值。
  
-In accordance with this discussion will get a `TypeError` if you try to use a list as a key, since lists are mutable:
+如上所述，如果你试图使用列表来作为键，你会收到一个 `TypeError`，因为列表是可变的：
 ```python
-# trying to use a list as a key 
-# this raises an error because lists are mutable
+# 试图将列表作为键使用
+# 因为列表是可变的，这会报错
 >>> bad_dict = {[]:1}
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
@@ -213,25 +214,24 @@ TypeError                                 Traceback (most recent call last)
 TypeError: unhashable type: 'list'
 ```
 
-### Numerical Precision & Dictionary Keys
-Care must be taken when using floating-point numbers as a key in a dictionary, [due to its limited numerical precision](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision). For the same reason that you ought not rely on two floats being equal, you should not assume that two floats will produce the same hash, when stored as a key:
+### 数字精度和词典键
+在使用浮点数作为词典键时需小心，因为浮点数的[精度有限](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision)。和你不应该检查两个浮点数是否完全相同的原因一样，你不能保证两个浮点数作为键时会有相同的哈希值：
 
 ```python
-# the folly of using a floating-point number as a key
-# in a dictionary
+# 将浮点数作为词典键使用导致的尴尬情况
 >>> x = {}
 >>> x[(0.1 + 0.1 + 0.1) - 0.3] = "apple"
 >>> x[0.0]
 KeyError: 0
 ```
 
-An acceptable way of accommodating the use of a float as a key, depending on the use case, is to first round the floating point number to normalize it to a lower precision:
+根据使用情况，一种可以接受的使用浮点数作为值的方法是先将浮点数四舍五入到一个更低的精度：
 
 ```python
-# rounding a float before using it as a key
+# 现将浮点数四舍五入再将其用为键
 >>> x = {}
 
-# round the float to its 2nd decimal place
+# 将浮点数四舍五入到小数点后第二位
 >>> float_key = round((0.1 + 0.1 + 0.1) - 0.3, 2)
 >>> x[float_key] = "apple"
 >> x[0.0]
@@ -240,78 +240,78 @@ An acceptable way of accommodating the use of a float as a key, depending on the
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-A dictionary key must be an immutable object. A dictionary value can be any object.
+词典的键必须是不可变对象。词典的值可以是任何对象。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-### Inspecting a Dictionary
-The dictionary provides tooling for inspecting and iterating over its keys and values. We will use the following dictionary for our examples:
+### 检查词典
+词典提供了一些检查和迭代其键和值的工具。我们在范例中将会使用以下词典：
 
 ```python
 >>> example_dict = {"key1":"value1", "key2":"value2", "key3":"value3"}
 ```
 
-**Inspecting a dictionary's keys**
+**检查词典的键**
 
-The dictionary itself can be used to iterate over its keys:
+你可以直接使用词典本身来迭代它的键：
 ```python
-# iterating over a dictionary produces its keys
+# 迭代词典会迭代它的键
 >>> [i for i in example_dict]
 ['key1', 'key2', 'key3']
 ```
 
-You can also use the dictionary to test for membership among its keys:
+你也可以使用词典本身来检测某对象是否为它的键：
 
 ```python
-# checking if an object is among a dictionary's keys
+# 检查某对象是否是词典的键
 >>> "key3" in example_dict
 True
 
-# you *cannot* use this to check for membership among its valus
+# 你*不能*用这个方法检查词典的值
 >>> "value3" in example_dict
 False
 ```
-`len` counts the number of keys in the dictionary:
+`len` 会返回词典有多少个键：
 ```python
 >>> len(example_dict)
 3
 ```
 
-`example_dict.keys()` also returns an iterable over the dictionary's keys, and thus can be used to exactly the same effect as the dictionary itself in these preceding examples.
+`example_dict.keys()` 也会返回一个词典键的可迭代物，也因此可以用来达到和之前范例直接使用词典一样的效果。
 
-**Inspecting a dictionary's values**
+**检查词典的值**
 
-`example_dict.values()` can be iterated over to produce that dictionary's values:
+迭代 `example_dict.values()` 会提供词典的值：
 ```python
-# iterating over a dictionary's values
+# 迭代词典的值
 >>> [i for i in example_dict.values()]
 ['value1', 'value2', 'value3']
 ```
 
-You can also use this to test for membership among the dictionary's values:
+你也可以使用这个函数来检查某对象是否为词典的值：
 
 ```python
-# checking if an object is among a dictionary's values
+# 检查某对象是否为词典的值
 >>> "value1" in example_dict.values()
 True
 ```
 
-**Inspecting a dictionary's key-value pairs**
+**检查词典的键值对**
 
-`example_dict.items()` can be iterated over to produce that dictionary's key-value pairs (which are packed into tuples):
+迭代 `example_dict.items()` 会返回词典的键值对（它们被打包在元组中）：
 ```python
-# iterating over a dictionary produces its keys
+# 迭代词典的items会返回它的键值对
 >>> [i for i in example_dict.items()]
 [('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3')]
 ```
 
-You can also use this to test for membership among the dictionary's key-value pairs:
+你也可以用这个函数来检测某对象是否为词典的键值对：
 
 ```python
-# checking if a key-value pair exists in a dictionary
+# 检查某对象是否为词典的键值对
 >>> ('key1', 'value1') in example_dict.items()
 True
 ```
@@ -319,52 +319,52 @@ True
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Inverting a Dictionary**
+**阅读理解：反向词典**
 
-Write a function that inverts a dictionary. For example, if you were given `x = {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}`, you would produce the dictionary `inverted_x = {'v1': 'k1', 'v2': 'k2', 'v3': 'k3'}`.
+编写一个函数来将词典反向。比如说，如果函数收到 `x = {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}`，那你应返回词典 `inverted_x = {'v1': 'k1', 'v2': 'k2', 'v3': 'k3'}`。
 
 </div>
 
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Inspecting a Dictionary**
+**阅读理解：检查词典**
 
-Assume we are working with a dictionary whose values are all *unique* numbers. Write a function that returns the *key* that maps to the *largest* value in the dictionary. 
+假设我们收到一个值为*互不相同*的数字的词典，编写一个返回对应词典中*最大*值的*键*的函数。
 
-Next, generalize your solution for a dictionary whose values are not necessarily unique. Return a tuple of all of the keys that map to that max value.
+然后，修改你的函数来处理值可能重复的词典。返回包含所有对应最大值的键的元组。
 </div>
 
 
-### Time Complexities of the Dictionary's Functions
-In addition to being flexible and versatile, the dictionary's functions manage to be quite efficient as well. The following is a summary of the time complexities associated with various common operations using a dictionary (according to its implementation in CPython) - note all the $\mathcal{O}(1)$ operations!
+### 词典函数的时间复杂性
+除了灵活和通用之外，词典的函数也相对高效。以下为词典常见操作（在CPython实现中）的时间复杂性——请注意 $\mathcal{O}(1)$ 操作的数量！
 
-Let `example_dict` represent a dictionary with $n$ key-value pair mappings.
+设 `example_dict` 为一个有 $n$ 个键值对的词典。
 
-The following are $\mathcal{O}(1)$ operations:
+以下为 $\mathcal{O}(1)$ 的操作：
 
-- Return the number of keys in the dictionary: `len(example_dict)` 
-- Check if the key is in the dictionary, and return the value if it is: `example_dict[key]` 
-- Set a key-value mapping: `example_dict[key] = value` 
-- Check if an object is among the dictionary's keys: `obj in example_dict` 
-- Check if a pair of objects are among the dictionary's key-value pairs: `(obj1, obj2) in example_dict.items()`
+- 返回词典键的数量：`len(example_dict)` 
+- 检查某对象是否为词典的键，如果是的话返回它对应的值：`example_dict[key]` 
+- 设定一个键值对应：`example_dict[key] = value` 
+- 检查某对象是否为词典的键：`obj in example_dict` 
+- 检查某对对象是否为词典的键值对：`(obj1, obj2) in example_dict.items()`
 
-The following are $\mathcal{O}(n)$ operations:
+以下为 $\mathcal{O}(n)$ 的操作：
 
-- Check if an object is among the dictionary's values: `obj in example_dict.values()`
-- Iterate over the dictionary's keys/values/key-value pairs
+- 检查某对象是否为词典的值：`obj in example_dict.values()`
+- 迭代词典所有的键/值/键值对
 
 <!-- #region -->
-### Are Dictionaries Ordered? A Word of Warning
-Unlike Python's sequences, the dictionary has no inherent ordering... that is, until Python 3.6 came out. 
+### 词典是否有序？一句警告
+和Python的序列不同的是，词典没有任何内在的顺序，但这是在Python 3.6之前了。
 
-Prior to Python 3.6, a dictionary had no ordering associated with it. If you iterated over a dictionary's keys, values, or key-value pairs, you had no guarantee about the *order* in which these items would be produced. `[i for i in example_dict]` could produce a list of keys with different ordering each time the code was run; you were only guaranteed that the list would contain all of the dictionary's keys: 
+在Python 3.6之前，词典并没有任何顺序。如果你迭代一个词典的键，值，或键值对，你不会得到任何项目*顺序*的保证。`[i for i in example_dict]` 可能在每次运行时返回顺序不同的键列表；你唯一得到的保证是列表会包含词典所有的键：
 
 ```python
-# in Python 3.5 and earlier, dictionaries were unordered
+# 在Python 3.5和之前，词典是无序 的
 >>> example_dict = {"key1":"value1", "key2":"value2", "key3":"value3"}
 
-# this can produce lists with different orders
+# 这可能会返回排序不同的列表
 >>> [i for i in example_dict]
 ["key1", "key3", "key2"]
 
@@ -377,65 +377,63 @@ Prior to Python 3.6, a dictionary had no ordering associated with it. If you ite
 ...
 ```
 
-The dictionary was [reimplemented in Python 3.6](https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation) so that it will consume roughly 25% less memory than before (which is a big deal!). The catch is that this new implementation entails that the dictionary's various iterables (e.g. `dict.keys()`, `dict.values()`, `dict.items()`) will always yield their items according to the order in which they were added to the dictionary.
+词典在[Python 3.6中重新实现](https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation)，使得它相比以前会少使用大约25%的内存（这是一个很大的提升！）。随之而来的变化就是新的实现导致了词典的各种可迭代物（如 `dict.keys()`，`dict.values()`，`dict.items()`）每次都会根据添加到词典中顺序返回对象。
 
 ```python
-# in Python 3.6 and beyond dictionaries are ordered according to the order in
-# which key-value pairs were added to the dictionary by the user
+# 在Python 3.6和之后词典根据键值对添加的顺序来排序
 >>> example_dict = {"key1":"value1", "key2":"value2", "key3":"value3"}
 
-# this will always produce the same ordering of keys
+# 这永远都会返回一样顺序的键
 >>> [i for i in example_dict]
 ["key1", "key2", "key3"]
 ```
 
-This is great, right? Wrong! If you write code in Python 3.6 that relies on the fact that dictionaries are ordered, your algorithm will almost certainly produce the wrong results if you run it using Python 3.5 or earlier! Worst of all, it very unlikely that this will raise any error in your code so the bug will persist silently - this is very tough to catch!
+这很棒，对吧？不对！如果你在Python 3.6中编写基于词典排序的代码，那么你的算法在Python 3.5和以前几乎一定会导致错误的结果！最差的是，这很可能在你的代码中根本不报错，所以这个bug会静默地持续下去——这很难抓到！
 
-**Unless you make explicit that your code is incompatible with versions of Python prior to Python 3.6, write your code as if the dictionary is unordered!** 
+**如果你没有明显标记你的代码和Python 3.6之前的版本不兼容，编写代码的时候假装词典并不归序！**
 
-If you do want to use an ordered dictionary, make use of `collections.OrderedDict`, which behaves like just like the standard dictionary but is guaranteed to maintain ordering regardless of what version of Python you are using.  
+如果你真的想要使用一个顺序的词典，用 `collections.OrderedDict`。它的行为和正常的词典一模一样，但它不管什么Python版本都保证顺序。
 
 ```python
 from collections import OrderedDict
 >>> ordered = OrderedDict([('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3')])
 
-# this will always produce the same result, regardless of what
-# version of Python is being used
+# 这永远都会返回相同的结果，不论Python版本
 >>> [i for i in ordered]
 ["key1", "key2", "key3"]
 ```
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-No matter what version of Python you are using, write your code as if the Python dictionary is unordered. If you do want to use an ordered dictionary, your code should make use of `collections.OrderedDict`.
+不管你在用什么Python版本，在编写代码的时候假装Python词典是无序的。如果你真的想要一个有序的词典，你的代码应该使用 `collections.OrderedDict`。
 </div>
 <!-- #endregion -->
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Dictionaries](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
-  - [Dictionaries tutorial](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
-- [Definition of 'hashable'](https://docs.python.org/3/glossary.html#term-hashable)
-- [Dictionary view objects](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects)
+- [词典](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+  - [词典教程](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+- [“可哈希”的定义](https://docs.python.org/3/glossary.html#term-hashable)
+- [词典视阈对象](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects)（dictionary view objects）
 
 
-## Reading Comprehension Solutions
+## 阅读理解答案
 
 <!-- #region -->
-**Dictionary Basics: Solutions**
+**词典基础：解**
 
-Given the tuple of student names `(Ashley, David, Edward, Zoe)`, and their corresponding exam grades `(0.92, 0.72, 0.88, 0.77)`, create a dictionary that maps: name $\rightarrow$ grade. 
+设包含学生名字的元组 `(Ashley, David, Edward, Zoe)` 以及对应的成绩 `(0.92, 0.72, 0.88, 0.77)`，创建一个词典：name $\rightarrow$ grade。
 
-Then, update Zoe's grade to `.79`. Lastly, add a new student, Ryan, whose grade is 0.34. 
+然后，将Zoe的成绩更新为 `.79`。最后，添加一个新学生Ryan，其成绩为 0.34。
 
 ```python
 names = ("Ashley", "David", "Edward", "Zoe")
 scores = (0.92, 0.72, 0.88, 0.77)
 ```
 
-Here is a basic, but verbose solution. It is too long and its logic is complicated by the use of `index`.
+这是一个基本但冗长的解法。它太长，且其逻辑使因为使用了 `index` 而没必要地复杂化了。
 
 ```python
 # basic solution for creating `grades`
@@ -446,24 +444,24 @@ for index in range(len(names)):
     grades[name] = value
 ```
 
-You should make use of the function [zip](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html#zip) to pair the names and scores together in an iterable, and create the dictionary using a comprehension expression.
+你应该使用函数[zip](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html#zip)来将名字和成绩打包到一个可迭代物中国呢，并利用理解表达式来创建词典。
 
 ```python
-# much better solution for creating `grades`
+# 好很多的创建 `grades` 的方式
 grades = {student:value for student, value in zip(names, scores)}
 
-# updating Zoe's grade
+# 更新Zoe的成绩
 grades["Zoe"] = 0.79
 
-# adding Ryan's grade
+# 添加Ryan的成绩
 grades["Ryan"] = 0.34
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-**Inverting a Dictionary: Solution**
+**反向词典：解**
 ```python
-# simple solution: using a for-loop
+# 简单解：使用for循环
 x = {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}
 inverted_x = {}
 for key, value in x.items():
@@ -471,17 +469,17 @@ for key, value in x.items():
 ```
 
 ```python
-# better solution: using a dictionary-comprehension
+# 更好的解：使用词典理解
 inverted_x = {value:key for key, value in x.items()}
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-**Inspecting a Dictionary: Solution**
+**检查词典：解**
 
-Assume we are working with a dictionary whose values are all *unique* numbers. Write a function that returns the key that maps to the *largest* value in the dictionary. 
+假设我们收到一个值为*互不相同*的数字的词典，编写一个返回对应词典中*最大*值的键的函数。
 
-The solution that you should be able to arrive at is:
+你应该能够写出的解为：
 
 ```python
 # solution
@@ -496,12 +494,12 @@ def max_key(x):
 'c'
 ```
 
-The downside of this is that it iterates over `x` twice: once via `max` and once via the for-loop. The optimal solution for this only involves a single iteration, however it requires advanced concepts that are beyond the scope of the material presented here. We include the ideal solution for posterity: 
+这个函数的不利之处在于它迭代了 `x` 两次；一次由 `max` 一次由for循环。这个问题的最优解仅仅迭代一次，但它用到了在这里提供的材料之外的进阶概念。我们在此为子孙后代提供最优解：
 
-You can provide the `max` function with "key" argument, which accepts the function that should be used to evaluate the "value" for each iteration, which is used to discern the max element. Here, we pass it the built-in dictionary-function [get](https://docs.python.org/3/library/stdtypes.html#dict.get), which takes in a dictionary's key as an argument, and returns the corresponding value from the mapping. Thus `max` will iterate over each key of `x`, and discern the maximum value by comparing the value returned by each `x.get(key)` (which is effectively the same as `x[key]`). 
+你可以为 `max` 函数提供“key”参数。这个参数接受用来计算每轮迭代的“值”（这个值就是 `max` 函数用来找出最大值的参考）的函数。在此，我们向其输入内置的词典函数[get](https://docs.python.org/3/library/stdtypes.html#dict.get)。它接受词典的键为参数并返回对应的值。所以 `max` 会迭代 `x` 的每一个值并通过对比每个 `x.get(key)`（这和 `x[key]` 一样有效率）来寻找最大值。
 
 ```python
-# optimal solution (for the sake of completeness)
+# 最优解（在此为完整性提供）
 def max_key_optimal(x):
     return max(x, key=x.get)
 ```
@@ -510,9 +508,9 @@ def max_key_optimal(x):
 'd'
 ```
 
-You can read more about this `key` parameter [here](https://docs.python.org/3/howto/sorting.html#key-functions).
+你可以在[这里](https://docs.python.org/3/howto/sorting.html#key-functions)阅读 `key` 参数。
 
-Next, generalize your solution for a dictionary whose values are not necessarily unique. Return a tuple of the keys that map to that max value.
+接下来，让你的解可以处理词典有重复值的情况。返回成员为对应最大值的键的元组。
 
 ```python
 def get_maxes(dictionary):
