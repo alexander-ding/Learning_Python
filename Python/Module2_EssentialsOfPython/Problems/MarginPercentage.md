@@ -19,89 +19,88 @@ jupyter:
 ```
 
 <!-- #region -->
-# Within Margin Percentage
+# 错误范围内百分比
 
->An algorithm is required to test out what percentage of the parts that a factory is producing fall within a safety margin of the design specifications. Given a list of values recording the metrics of the manufactured parts, a list of values representing the desired metrics required by the design, and a margin of error allowed by the design, compute what fraction of the values are within the safety margin (`<=`)
+>我们需要设计一个算法来测试某工厂制造的零件有多少百分比属于设计规格的可接受范围内。函数接受一列表的零件度量，一列表的设计规格的理想度量，以及一个可以接受的错误范围。返回有多少部分的零件属于安全范围内（`<=`）。
 
 ``` Python
-# example behavior
+# 范例行为
 >>> within_margin_percentage(desired=[10.0, 5.0, 8.0, 3.0, 2.0],
 ...                          actual= [10.3, 5.2, 8.4, 3.0, 1.2],
 ...                          margin=0.5)
 0.8
 ```
 
-See that $4/5$ of the values fall within the margin of error: $1.2$ deviates from $2$ by more than $0.5$. 
+注意 $4/5$ 的值都处于错误范围内：$1.2$ 离 $2$ 差的超过 $0.5$。
 
-Complete the following function; consider the edge case where `desired` and `actual` are empty lists.
+完成以下的函数；请考虑 `desired` 和 `actual` 是空列表的边缘情况。
 
 ```python
 def within_margin_percentage(desired, actual, margin):
-    """ Compute the percentage of values that fall within
-        a margin of error of the desired values
+    """ 计算多少部分的值属于期望值的错误范围内
         
         Parameters
         ----------
         desired: List[float]
-            The desired metrics
+            期望值
         
         actual: List[float]
-            The corresponding actual metrics. 
-            Assume `len(actual) == len(desired)`
+            对应的实际值
+            假设 `len(actual) == len(desired)`
         
         margin: float
-            The allowed margin of error
+            可接受的错误范围
         
         Returns
         -------
         float
-            The fraction of values where |actual - desired| <= margin
+            多少部分的值满足 |actual - desired| <= margin
     """
-    # YOUR CODE HERE
+    # 你的代码
     pass
 ```
 
-You will want to be familiar with [comparison operators](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#Comparison-Operations), [control flow](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html), and [indexing lists](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Introducing-Indexing-and-Slicing) lists to solve this problem.
+你会需要熟悉[对比操作符](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#Comparison-Operations)，[控制流](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html)，和[列表索引](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Introducing-Indexing-and-Slicing)来解决本问题。
 
-## Solution
-This problem can solved by simply looping over the pairs of actual and desired values and tallying the pairs that fall within the margin:
+## 解
+本题可以通过简单地循环实际和可接受值对并数多少对属于安全范围内来解决：
 ``` Python
 def within_margin_percentage(desired, actual, margin):
-    """ Compute the percentage of values that fall within
-        a margin of error of the desired values
+    """ 计算多少部分的值属于期望值的错误范围内
         
         Parameters
         ----------
         desired: List[float]
-            The desired metrics
+            期望值
         
         actual: List[float]
-            The actual metrics
+            对应的实际值
+            假设 `len(actual) == len(desired)`
         
         margin: float
-            The allowed margin of error
+            可接受的错误范围
         
         Returns
         -------
         float
-            The fraction of values where |actual - desired| <= margin
+            多少部分的值满足 |actual - desired| <= margin
     """
-    count = 0  # tally of how values are within margin
+    count = 0  # 计算多少值属于范围内
     total = len(desired)
     for i in range(total):
         if abs(desired[i] - actual[i]) <= margin:
-            count += 1  # Equivalent to `count = count + 1`
+            count += 1  # 等值于 `count = count + 1`
     return count / total if total > 0 else 1.0
 ```
 
-See that we handle the edge case where `desired` and `actual` are empty lists: the [inline if-else statement](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#Inline-if-else-statements) `count / total if total > 0 else 1` will return `1` when `total` is 0: 
+注意我们处理了 `desired` 和 `actual` 是空列表的边缘情况：[单行if-else语法](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#Inline-if-else-statements) `count / total if total > 0 else 1` 将在 `total` 为0时返回1:
 ```python
 >>> within_margin_percentage([], [], margin=0.5)
 1.0
 ```
-which is arguably the appropriate behavior for this scenario (no values fall outside of the margin). Had we not anticipated this edge case, `within_margin_percentage([], [], margin=0.5)` would raise `ZeroDivisionError`.
+这个行为按理说是这种情况下的正确行为（因为没有任何值在安全范围外面）。如果我们没有处理这个边缘情况，`within_margin_percentage([], [], margin=0.5)` 会导致 `ZeroDivisionError`。
 
-It is also possible to write this solution using the built-in `sum` function and a [generator comprehension](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Creating-your-own-generator:-generator-comprehensions) that filters out those pairs of items that fall outside of the desired margin:
+你也可能会使用内置的 `sum` 函数和[生成器理解](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Creating-your-own-generator:-generator-comprehensions)来过滤在安全范围外的项目对：
 
 ```python
 def within_margin_percentage(desired, actual, margin):
@@ -110,5 +109,5 @@ def within_margin_percentage(desired, actual, margin):
     return  count / total if total > 0 else 1.0
 ```
 
-It is debatable whether this refactored solution is superior to the original one - it depends largely on how comfortable you, and anyone else who will be reading your code, are with the generator comprehension syntax.
+后者是否强于前者是有待商榷——这取决于你和任何其它会阅读你的代码的人有多熟悉生成器理解语法。
 <!-- #endregion -->

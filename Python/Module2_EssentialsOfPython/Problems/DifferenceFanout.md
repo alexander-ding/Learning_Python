@@ -20,9 +20,9 @@ jupyter:
 
 
 <!-- #region -->
-# Difference Fanout
+# 扇出差
 
-Given a list of numbers, for each number generate a list of the differences between it and $n_{fanout}$ (known as the **fanout** value) following numbers in the list. Return a list of all the lists generated for each number. For members in the list that have fewer than $n_{fanout}$ following members, calculate as many differences as possible. For example, suppose we want to compute the difference fanout on the list `[3, 2, 4, 6, 1]` with a fanout value of 3. Then we would compute:
+设一列表的数字，为每个数字生成它与它在列表后 $n_{fanout}$（叫做**扇出**（fanout）值）个数字之间的差的列表。返回一个列表，其成员为为每一个数字产生的列表（也就是说返回的是成员为列表的列表）。如果列表成员之后的成员数小于 $n_{fanout}$ 的话，计算尽可能多的差。比如说，假设我们想要计算列表 `[3, 2, 4, 6, 1]` 的扇出差，且扇出值为3，那我们应该计算：
 
  - $3 \rightarrow [2 - 3, 4 - 3, 6 - 3]$
  - $2 \rightarrow [4 - 2, 6 - 2, 1 - 2]$
@@ -31,39 +31,36 @@ Given a list of numbers, for each number generate a list of the differences betw
  - $1 \rightarrow []$
  
 ``` Python
-# example behavior
+# 范例行为
 >>> difference_fanout([3, 2, 4, 6, 1], 3)
 [[-1, 1, 3], [2, 4, -1], [2, -3], [-5], []]
 ```
 
-You will want to know about [lists](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists), [indexing & slicing](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Introducing-Indexing-and-Slicing) lists, and [for-loops](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ForLoops.html) to solve this problem.
+你会想要先阅读本文对[列表](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists)，[索引和切片](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Introducing-Indexing-and-Slicing)列表，以及[for循环](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ForLoops.html)的讨论，然后再解决本问题。
 
-For extra credits (and some extra fun!), try to write your function only using [list comprehension](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#List-&-Tuple-Comprehensions). 
+如果想要获得额外分（以及额外的乐趣！）的话，尝试仅仅使用[列表理解](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#List-&-Tuple-Comprehensions)来编写你的函数。
 
-## Solution: difference_fanout using for-loops
-We will naturally tackle this problem by performing nested for-loops. The outermost for-loop will loop over each number in the list. We will refer to this number as the "base number". We will want the inner for-loop to iterate ahead of the base number so that we can compute the differences between it and its $n_{fanout}$ neighbors. We will need to take care re-initialize our intermediate list of differences for each new base number, otherwise each subtraction will get appended to one long list. 
-
+## 解：使用for循环计算扇出差
+我们将会使用最直接了当的嵌套for循环来解决本问题。外层for循环会迭代列表中的每一个数字。我们这个数字将其称为“基础数”（base number）。我们将想要内层for循环迭代基础数之后的数字，这样我们可以计算基础数和它 $n_{fanout}$ 的邻居们的差。我们将会为每一个基础数重新初始化中间的列表，不然每个差都会被附加到一个很长的列表后。
 ```python
 def difference_fanout(l, fanout):
-    """ Return a list of differences for 
-        each value with its following terms
+    """ 返回一列表，每个成员为值和在它后面的成员之间的差
         
         Parameters
         ----------
         l: List[Number]
-            Input list of base numbers.
+            基础数的输入列表
             
         fanout: int
-            Number of neighbors to compute differences against.
+            和多少个邻居计算差
         
         Returns
         -------
         List[List[Number]]
     """
-    all_fanouts = []  # will store each list of fanouts
+    all_fanouts = []  # 会储存每一个扇出差的列表
     for i, base_number in enumerate(l):
-        # `base_fanout` will store the differences between 
-        # the base number's successive neighbors and base number
+        # `base_fanout` 会储存基础数和它之后邻居的差
         base_fanout = []  
         for neighbor in l[i+1: i+1+fanout]:
             base_fanout.append(neighbor - base_number)
@@ -72,25 +69,24 @@ def difference_fanout(l, fanout):
     return all_fanouts
 ```
 
-Note our use of [enumerate](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#Enumerating-iterables); this permits us to simultaneously access our base number, which we use in the subtraction, as well as its index-position within the list `l`, which we use to determine the neighbors. 
+请注意我们使用了[enumerate](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#Enumerating-iterables)；这允许我们同时访问我们的基础数（来求差）以及它在列表 `l` 中的索引（来确定它的邻居是哪些）。
 
-Next, you may be concerned that our inner-loop will attempt to iterate beyond the end of the list. Consider the case in which `base_number` is the final element in `l`, thus `l[i+1: i+1+fanout]` would be equivalent to `l[len(l): len(l)+fanout]` - the stopping point for this slice clearly reaches beyond the extent of `l` (assuming `fanout > 0`). Fortunately, this is not an oversight on our part. While indexing a list outside of its bounds will raise an error, recall that [a slice will automatically limit itself to be within bounds of a given sequence](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Handling-out-of-bounds-indices). That is, `l[i+1: i+1+fanout]` actually behaves like `l[min(i, len(l)-1): min(len(l), i+1+fanout)]` (assuming we are dealing only with positive indices and non-empty lists). Thus our inner-loop will naturally limit itself. In the case that `base_number` is the final element in `l`, the inner-loop will exit immediately, leaving `base_fanout` empty. Although somewhat obscure, this is an important aspect of Python's slicing mechanism to keep in mind.
+你可能会担心我们的内循环会试图迭代列表结尾之后的数字。考虑 `base_number` 为 `l` 的最后成员的情况。那么 `l[i+1: i+1+fanout]` 等值于 `l[len(l): len(l)+fanout]`——这个切片的结尾索引明显超过了 `l` 的长度（假设 `fanout > 0`）。幸运的是，这并不是我们的疏忽。虽然索引列表范围外的成员会导致错误，但是请回忆：[切片会自动将其限制在序列的边界之中](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Handling-out-of-bounds-indices)。也就是说，`l[i+1: i+1+fanout]` 其实行为和 `l[min(i, len(l)-1): min(len(l), i+1+fanout)]` 一样（假设我们仅仅在处理正索引和非空的列表）。因此我们的内循环会自然地限制自身。在 `base_number` 是 `l` 最后成员的情况下，内循环会立刻退出，使得 `base_fanout` 为空。虽然有一点费解，但是这是一个值得记忆的Python切片特征。
 
-## Solution: difference_fanout using list comprehensions
-We can make judicious use of nested [list comprehensions](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#List-&-Tuple-Comprehensions) to simplify our solution. Although the syntax may appear to be convoluted at first glance, it permits us proceed without worrying about initializing multiple empty lists and appending to them at the right points in our nested for-loops
+## 解：使用列表理解计算扇出差
+我们可以审慎地使用嵌套[列表理解](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#List-&-Tuple-Comprehensions)来简化我们的答案。虽然这语法可能第一眼看上去有一点复杂，但是它允许我们不用担心初始化多个列表并在嵌套for循环中正确的地方向它们附加内容
 
 ``` Python
 def difference_fanout(l, fanout):
-    """ Return a list of differences for 
-        each value with its following terms
+    """ 返回一列表，每个成员为值和在它后面的成员之间的差
         
         Parameters
         ----------
         l: List[Number]
-            Input list
+            基础数的输入列表
             
         fanout: int
-            Number of neighbors to compute difference with
+            和多少个邻居计算差
         
         Returns
         -------
@@ -100,31 +96,29 @@ def difference_fanout(l, fanout):
             for i,base in enumerate(l)]
 ```
 
-See that the outermost list comprehension loops over the base number, as did the outer for-loop in the prior solution, and that the innermost list comprehension plays the same roll as the inner for-loop.
+注意最外层的列表理解迭代了基础数，如上一个答案的外层for循环一般，而里层的列表理解达成了和上一个答案的里层for循环一样的目的。
 
-There are fewer potential points of failure in this solution, as its conciseness removes the "moving parts" that had to be managed in the previous solution. This should help demonstrate the power of the comprehension expression syntax.  
+在本解中可能的错误点比前一个答案少，因为其简短性去除了之前答案需要处理的“中间部分”。这应该演示了理解表达式语法的强大。
 
-## Extension
-Recall from [earlier](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Functions-are-Objects) that functions are, under the hood, just objects with some special operations that allow you to "call" a function. This means that you can pass other functions as parameters into a function. It is especially powerful, since it enables us to generalize the purposes of our functions. For example, we don't have to limit our function to just computing the **difference** between members and their following terms; we can apply **any** *binary operation*. Instead of finding the difference, we can calculate the sum or product or even concatenate two strings for a list of string. The possibilities are limitless. 
+## 扩展
+回忆[前文](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Functions-are-Objects)，函数在幕后实际上就是有一些允许你“调用”函数的特殊操作的对象。这意味着你可以将函数作为参数输入到别的函数中。它极其强大，因为这将允许我们扩大我们函数的运用目的。比如说，我们不需要限制我们的函数来仅仅计算成员和之后项目的**差**；我们可以使用**任何***二元运算*。与其计算差，我们可以计算和或乘积或甚至在字符串列表的情况下粘连字符串。我们有着无限的可能性。
 
-Armed with this knowledge, we can generalize the code.
+记住这知识之后，我们可以归纳我们的代码。
 ```Python
 def apply_fanout(l, fanout, op):
-    """ Return a list of outputs for each value 
-        after applying a binary operation between 
-        the value and its following terms
+    """ 返回一个列表，每个成员为值和在它后面的成员之间
+        进行二元运算的结果
         
         Parameters
         ----------
         l: List[Any]
-            Input list
+            输入列表
         
         fanout: int
-            Number of neighbors to apply the operation with
+            和多少个邻居进行运算
         
         op: Callable[[Any, Any], Any]
-            Any binary operation to be applied to fanout-pairs
-            of elements in `l`.
+            任何用来对 `l` 中对象组成的扇出对操作的二元运算
         
         Returns
         -------
@@ -133,7 +127,7 @@ def apply_fanout(l, fanout, op):
     return [[op(neighbor, base) for neighbor in l[i+1:i+1+fanout]] 
             for i,base in enumerate(l)]
 ```
-Now, we can rewrite `difference_fanout` simply as
+现在，我们可以简单地重写 `difference_fanout` 为：
 ``` Python
 def subtract(a, b): 
     return a - b
@@ -141,5 +135,5 @@ def subtract(a, b):
 def difference_fanout(l, fanout):
     return apply_fanout(l, fanout, subtract)
 ```
-We can easily change `subtract` to some other function for a totally different use. 
+我们可以轻松地将 `subtract` 换成其它函数来达到完全不同的目的。
 <!-- #endregion -->
