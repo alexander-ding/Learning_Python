@@ -21,50 +21,50 @@ jupyter:
 
 # 数据结构（第三部分）：集和集合模组
 ## 集数据结构
-The `set` type describes an *unordered* collection of *unique* objects. It is useful for:
+`set` （集）类是一个成员为*互不相同*的对象的*无序*集合。它在以下情况有用：
 
-- Filtering out "repeat" objects in a collection, producing only its unique members.
-- Quickly checking for membership, as a $\mathcal{O}(1)$ operation.
-- Efficiently comparing two sets of objects; e.g. if one set is a "subset" of another.
+- 过滤集合中“重复”的成员并仅仅返回其中不重复的成员。
+- 快速（$\mathcal{O}(1)$）检查对象是否为成员。
+- 高效地对比两个集；如检查一个集是否为另外一个的“子集”（subset）。
 
-A set uses a "hashing" scheme for keeping track of its contents. Thus, like a dictionary's keys, a set can only store *immutable* objects so that its hashes will never become invalid. Unlike the other data structures that we have encountered, *there is no mechanism for retrieving an individual item from a set*. That is, there is no index or key that can be used to retrieve an individual member from a set. 
+集使用“哈希”（hashing）算法来记录它的成员。因此，像词典的键一样，集只能储存*不可变*的对象来保证对象的哈希值不会无效。和我们遇到的其它数据结构不同，*你无法从集中获取单独的成员*。也就是说，没有任何索引或键可以用来获取集中的单个成员。
 
-Python's sets also support many familiar set-algebra operations, like taking the union or intersection of sets, as we will see below. For an exhaustive listing of the functions available to sets, please consult [the official documentation on sets](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset).
+Python的集也支持了常见的集合代数操作，如并集（union）或交集运算，如下所见。你可以咨询[集的官方说明文档](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)来查看所有可用的集函数。
 
 <!-- #region -->
-### Creating a set
-You can initialize a set using the syntax: `{item1, item2, ...}`. Please note that this is distinct from the the dictionary-initialization syntax, which uses a colon to indicate key-value pairs:
+### 创建集
+你可以用以下语法初始化集：`{item1, item2, ...}`。请注意这和使用冒号表达键值对的词典初始化语法不同：
 
 ```python
-# initializing a set containing various immutable objects
+# 初始化有着各种不可变对象的集
 >>> {1, 3.4, "apple", False, (1, 2, 3)}
 {False, 1, (1, 2, 3), 3.4, 'apple'}
 ```
-A set can be constructed using the generator-comprehension syntax:
+你可以使用生成器理解语法来创建一个集：
 ```python
-# initialization via set-comprehension
+# 使用集理解来初始化
 >>> {i**2 for i in range(5) if i != 3}
 {0, 1, 4, 16}
 ```
 
-And, like the `list`, `tuple`, and `dict` types, the `set` type can be used to construct a set from an iterable. Note that you must use `set()` if you want to create an empty set, using `{}` creates an empty *dictionary*:
+同时，和 `list`，`tuple`，和 `dict` 类型类似，`set` 类型可以接受可迭代物来创建集。请注意你必须使用 `set()` 来创建一个空集，因为 `{}` 会创建一个空*词典*：
 ```python
-# introducing the `set` type
+# 介绍 `set` 类型
 >>> type({2, 4, 6})
 set
 
-# using `set` to consume an iterable to construct a set
+# 使用 `set` 消耗一个可迭代物来创建集
 >>> set(range(4))
 {0, 1, 2, 3}
 
-# creating an empty set
->>> set()  # specifying `{}` would create an empty *dictionary*
+# 创建空集
+>>> set()  # 如果使用 `{}` 则会创造一个*词典*
 set()
 ```
 
-Redundant items are "ignored" when constructing or adding to a set. Thus *constructing a set is a great way to extract the unique items from a collection*: 
+在创建或往集里面添加内容时会“无视”重复的项目。所以说，*创建集是一个很棒的从集合中抽取独特对象的方法*：
 ```python
-# filter repeat-items from a collection by feeding it into a set
+# 通过输入到集中过滤集合中重复的对象
 >>> x = [1, 2, 1, 2, 1, "moo", "moo"]
 >>> set(x)
 {1, 2, 'moo'}
@@ -73,94 +73,94 @@ Redundant items are "ignored" when constructing or adding to a set. Thus *constr
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Set Creation**
+**阅读理解：创建集**
 
-Use a set to find all of the unique letters in the string `"The cat in the hat"`. Ignore all non-letter characters and lowercase all letters.
+使用集来找到字符串 `"The cat in the hat"` 中所有的独特的字母。无视所有不是字母的字符，并将所有字母小写化。
 
 </div>
 
 <!-- #region -->
-### Set operations
-Sets support membership-checking ($\mathcal{O}(1)$) along with iteration ($\mathcal{O}(n)$). Note that sets are unordered; thus the order of iteration is effectively random:
+### 集操作
+集支持成员检测为（$\mathcal{O}(1)$）以及迭代（$\mathcal{O}(n)$）。注意集是无序的；所以迭代顺序实际上是随机的：
 ```python
-# checking membership in a set
+# 检查集成员
 >>> 2 in {1, 2, 3}
 True
 
-# iterating over a set (the order of iteration is random)
+# 迭代集（迭代顺序是随机的）
 >>> [i for i in {"a", "b", "c"}]
 ['b', 'c', 'a']
 ```
-Python also provides the set-theoretic operations of union, intersection, and the relations of set equality and set inclusion. These can be invoked using operator symbols or by calling functions on the set explicitly. 
+Python也支持集合代数操作：并集（union），交集（intersectino），和等值（equality）和子集（subset）关系。你可以通过操作符或通过显性调用集函数来进行这些操作。
 
-For an exhaustive list of the functions available to the set, please [refer to the official Python documentation](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset).
+请[查阅Python官方说明文档](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)来阅读集函数的完整列表。
 
 ```python
-# demonstrating set-comparison operations
+# 演示集对比操作
 >>> x = {"a", "b", "c", "d"}
 >>> y = {"a", "b", "e"}
 
-# union: items in x or y, or both
->>> x | y  # or x.union(y)
+# 并集：在x或y或全部两个集当中的项目
+>>> x | y  # 等值于 x.union(y)
 {'a', 'b', 'c', 'd', 'e'}
 
-# intersection: items in both x and y
->>> x & y  # or x.intersection(y)
+# 交集：在x和y中的项目
+>>> x & y  # 等值于 x.intersection(y)
 {'a', 'b'}
 
-# difference: items in x but not in y
->>> x - y  # or x.difference(y)
+# 差：在x而不在y中的项目
+>>> x - y  # 等值于 x.difference(y)
 {'c', 'd'}
 
-# symmetric difference: in x or y, but not in both
->>> x ^ y  # or x.symmetric_difference
+# 对称差：在x或y但不是全部两个的项目
+>>> x ^ y  # 等值于 x.symmetric_difference(y)
 {'c', 'd', 'e'}
 
-# check if set_1 is a superset of set_2
+# 检查set_1是否为set_2的超集（superset）
 >>> {1, 2, 3, 4} >= {1, 2}
 True
 
-# check if set_1 and set_2 are equivalent sets
+# 检查set_1和set_2是否为相同的集
 >>> {1, 2, 3, 4} == {1, 2}
 False
 ```
 
-A set is a *mutable* object; it can be updated after it was created:
+集是一个*可变*对象；你可以在创建后修改它：
 ```python
-# sets are mutable
+# 集是可变的
 
-# add a single member to `x`
+# 往 `x` 中添加一个成员
 >>> x.add("dog")
 
-# update `x` by adding members of an iterable
+# 通过添加可迭代物中的成员来更新 `x`
 >>> x.update([1, 2, 3])
 
-# remove a member of `x`
+# 删除 `x` 的一个成员
 >>> x.remove("a")
 >>> x
 {1, 2, 3, 'b', 'c', 'd', 'dog'}
 ```
-Because it is mutable, a set cannot be used as a dictionary-key, nor can a set be a member of another set. Python provides an immutable version of the set, `frozenset`, which has all of the functions of a set other than those that mutate the set:
+因为集是可变的，它不能作为词典的键，也不能作为另外一个集的成员。Python提供了一个不可变版本的集，叫做 `frozenset`。它有着集所有除了变化集的操作函数：
 ```python
-# `frozenset` is an immutable version of a Python set
+# `frozenset` 是Python集的不可变版本
 >>> frozenset(x)
 frozenset({1, 2, 3, 'b', 'c', 'd', 'dog'})
 ```
 
 <div class="alert alert-info"> 
 
-**Takeaway**: 
+**经验**：
 
-Python's set is an unordered collection of unique, immutable objects. It is an excellent tool for extracting the unique members from a collection of items. The set provides  $\mathcal{O}(1)$ membership-checking along with a suite of set-algebra operations for comparing sets. `frozenset` is an immutable version of the set.
+Python的集的成员为一集合的互不相同，不可变的对象。它是从项目集合中获取不重复的成员很棒的方法。集提供了 $\mathcal{O}(1)$ 的成员检测以及一组对比集的集合代数操作。`frozenset` 是集的不可变版本。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Set Comparisons**
+**阅读理解：对比集**
 
-Given the enrollment lists for class-A and class-B, find the students enrolled in both classes. Produce the result as a sorted list of names. 
+设课A和课B的学生，寻找在同时上两个课的同学名单。返回排序过的名字列表。
 
 ```python
 >>> classA = ["Bohr", "Curie", "David", "Euler", "Fermi", "Feynman", "Gauss", "Heisenberg", "Noether"]
@@ -170,30 +170,30 @@ Given the enrollment lists for class-A and class-B, find the students enrolled i
 </div>
 <!-- #endregion -->
 
-## The Collections Module
-Python provides a number of valuable, optimized data structures in its ["collections" module](https://docs.python.org/3/library/collections.html). It is recommended that the reader take some time to peruse this module. Here, we will briefly show off some of the utilities of its data structures. 
+## collections模组
+Python在其[“collections”模组](https://docs.python.org/3/library/collections.html)提供一系列优化过的实用数据结构。本文建议读者花一些时间去细读该模组。我们将在这里快速展示一下其中数据结构的用处。
 
-Refer to the [official documentation](https://docs.python.org/3/library/collections.html) for a complete listing of the functions available to these data structures.
+请查阅[官方说明文档](https://docs.python.org/3/library/collections.html)来阅读所有这些数据结构可用的函数。
 
 <!-- #region -->
 ### Named-Tuple
-A named tuple allows you to form a tuple whose members are named. Thus the user can access a member by name or via index. Otherwise the named tuple behaves just like a typical tuple. This facilitates clean, readable code.
+一个命名元组（namedtuple）允许你创建成员有名字的元组。因此你可以通过名字或者索引来访问其中的成员。除此之外命名元组和正常元组的行为完全一样。这将帮助你编写干净易读的代码。
 
-Suppose, for instance, you want to keep track of the 3D-position and time of an event. You can use a named-tuple so that each space and time coordinate can be referenced "by name". In this way, the reader doesn't have to keep in mind that element-3 of your tuple corresponds to time:
+比如说，假设你想要储存某事件的3D坐标以及时间，你可以使用命名元组来“根据名字”调用其空间和时间坐标。通过这个方式，代码的读者不需要记住元组的索引3代表着时间坐标这一设定：
 
 ```python
-# demonstrate the use of named tuple
+# 演示命名元组
 >>> from collections import namedtuple
 
-# Define a tuple that holds a space-time coordinate.
-# Here we define the tuple to have four entries, named 
-# 'x', 'y', 'z', and 't', in order.
+# 定义储存时空坐标的元组。
+# 我们如此顺序定义元组的四个成员，名字为
+# 'x'，'y'，'z'，和 't'。
 >>> space_time_coord = namedtuple("space_time_coord", ['x', 'y', 'z', 't'])
 
-# `r` is a particular space-time coordinate (an instance of our named tuple)
+# `r` 是某一个时空点（我们定义的命名元组的一个实例）
 >>> r = space_time_coord(1.5, 2.3, 5.1, 100.2)
 
->>> r.x  # access the x coordinate "by name"; this is more descriptive than `r[0]`
+>>> r.x  # “通过名字”访问x坐标；这比 `r[0]` 更加易懂
 1.5
 
 >>> r.y
@@ -205,7 +205,7 @@ Suppose, for instance, you want to keep track of the 3D-position and time of an 
 >>> r.t  
 100.2
 
-# you can also access contents by indexing/slicing
+# 你也可以通过索引/切片来访问其内容
 >>> r[3]  
 100.2
 
@@ -215,52 +215,51 @@ Suppose, for instance, you want to keep track of the 3D-position and time of an 
 <!-- #endregion -->
 
 <!-- #region -->
-### Default Dictionary
-A default dictionary allows you to specify a Python function, $f$ that will be used as a "default value" for that dictionary. The default value will be whatever $f()$ returns. That is, whenever you try to access a key that does not exist in the dictionary, instead of raising `KeyError`, the mapping $key \rightarrow f()$ will be created in the dictionary:
+### 默认词典
+默认词典（defaultdict）允许你提供一个Python函数 $f$ 来作为该词典的“默认值”，其默认值为 $f()$ 返回的值。也就是说，每当你试图访问在词典中不存在的键时，词典会创建 $key \rightarrow f()$ 的对应关系而不会导致 `KeyError`：
 
 ```python
-# demonstrate the behavior of the `defaultdict`
+# 演示 `defaultdict` 的行为
 >>> from collections import defaultdict
 
->>> example_default_dict = defaultdict(list)  # will map any missing key to `list()`
->>> example_default_dict  # an empty default dictionary
+>>> example_default_dict = defaultdict(list)  # 会将任何不存在的键对应到 `list()`
+>>> example_default_dict  # 空默认词典
 defaultdict(list, {})
 
-# "apple" is not a key, so the default mapping "apple" -> list() is created
-# and this value is returned
+# "apple" 并不是一个存在的键，所以词典将创建默认对应关系 "apple" -> list()
+# 并返回对应的值
 >>> example_default_dict["apple"]  
 []
 
-# this mapping now exists in the dictionary
+# 现在这个对应关系在词典中存在
 >>> example_default_dict 
 defaultdict(list, {'apple': []})
 ```
 
-Suppose you want to use a dictionary as a grade book, which maps $name \rightarrow grades$. With a standard dictionary, you have to worry about encountering a student for the first time:
+假设你想要将一个词典当作成绩簿来使用，其对应关系为 $名字 \rightarrow 成绩（多个）$。在使用标准词典时，你会需要担心第一次输入某学生成绩的情况：
 ```python
-# using a vanilla dictionary to store: name -> list of grades
-student = "Ryan"
-grade = 52  # I failed the test...
+# 使用标准词典来储存：名字 -> 成绩列表
+student = "Ryan" # 译者注：这是原作者的名字
+grade = 52  # 我不合格...
 
-# standard dictionary usage
+# 标准词典的用法
 gradebook = {}
 
-# if student isn't in the gradebook, enter that student 
-# along with an empty list as the grades
+# 如果学生不在成绩簿来使用，将学生先作为空列表输入
 if student not in gradebook:
     gradebook[student] = []
 
-gradebook[student].append(grade)  # append the grade to that student's list of grades
+gradebook[student].append(grade)  # 在列表最后添加学生的成绩
 ```
-The default dictionary's behavior exactly accommodates this initialization process (when providing `list` as the initialization function):
+默认词典的行为（当你向初始化函数提供 `list` 时）完全满足以上的初始化过程：
 
 ```python
-# using a default dictionary to store: name -> list of grades
+# 使用默认词典来储存：名字 -> 成绩列表
 >>> gradebook = defaultdict(list)
 
-# Because "Susan" doesn't exist in the dictionary
-# `list()` creates an empty list, as a default value,
-# which we can immediately append her grade to
+# 因为 "Susan" 在词典中并不存在
+# `list()` 创建一个空列表来作为默认值
+# 然后我们可以立刻向其添加她的成绩
 >>> gradebook["Susan"].append(84)
 
 >>> gradebook
@@ -269,58 +268,58 @@ defaultdict(list, {'Susan': [84]})
 <!-- #endregion -->
 
 <!-- #region -->
-### Counter
-Python's counter data structure is designed for tallying the unique objects that it encounters. It essentially creates a dictionary that maps: $obj \rightarrow count$. Suppose you want to study the distribution of words used in a body of text; counter is perfect for this application:
+### 计数器
+Python的计数器（counter）数据结构旨在计算它遇到的独特的对象数。它基本创建了词典，其对应：$对象 \rightarrow 遭遇次数$。假设你想要了解在某文本中单词的分布，计数器是此应用完美的解决方案：
 ```python
-# demonstrate the `Counter` data structure
+# 演示 `Counter` 数据结构
 >>> from collections import Counter
 
-# Note: We will "normalize" our text by making it all lowercase. 
-# We will then split the string by its spaces, storing the resulting 
-# tokens in a list. For real text, we would also want to remove punctuation
+# 注：我们将会“标准化“我们的文本，使其全部都为小写。
+# 我们将会根据空格区分单个单词，并将得到的单词存在列表中
+# 如果我们在使用真正的文本，我们也会想要删除标点符号
 >>> text_1 = "The cat in the hat"
 >>> text_1 = text_1.lower().split()
 >>> text_1
 ['the', 'cat', 'in', 'the', 'hat']
 
->>> word_distr = Counter(text_1)  # tally the unique objects in `text_1`
+>>> word_distr = Counter(text_1)  # 数 `text_1` 中独特对象的出现次数
 >>> word_distr
 Counter({'cat': 1, 'hat': 1, 'in': 1, 'the': 2})
 
-# feed additional items to the counter by "update"
+# 利用“update”来输入更多的对象
 >>> text_2 = "The apple in the tree"
 >>> text_2 = text_2.lower().split()
 >>> word_distr.update(text_2)
 >>> word_distr
 Counter({'apple': 1, 'cat': 1, 'hat': 1, 'in': 2, 'the': 4, 'tree': 1})
 
-# get the top-2 most common words, along with their counts
+# 获取2个最常见的单词以及它们的出现次数
 >>> word_distr.most_common(2)
 [('the', 4), ('in', 2)]
 
-# get the count for the word "tree"
+# 获取单词“tree”的出现次数
 >>> word_distr["tree"]
 1
 ```
 
-`Counter` accepts any iterable of immutable objects:
+`Counter` 接受任何成员为不可变对象的可迭代物：
 ```python
 >>> Counter([0, 0, "moo", (None, None), (None, None), (None, None)])
 Counter({(None, None): 3, 0: 2, 'moo': 1})
 ```
-Refer to the [official documentation](https://docs.python.org/3/library/collections.html#counter-objects) for a complete listing of all the nice functions that `Counter` has access to.
+请查阅[官方说明文档](https://docs.python.org/3/library/collections.html#counter-objects)来阅读 `Counter` 可用的棒棒的函数。
 <!-- #endregion -->
 
 <!-- #region -->
-### The deque
-Like the list, Python's deque is a mutable, sequential data structure. What distinguishes the deque is that:
+### 双队列
+像列表一样，Python的双队列（deque）是一个可变的序列性的数据结构。双队列不同的点在于：
 
- - Mutating either the beginning or the end of a deque is $\mathcal{O}(1)$, whereas mutating the beginning of a list is $\mathcal{O}(n)$. As such, the deque has unique functions to take advantage of this, like `appendleft`.
- - The downside of the preceding feature is that *accessing items near the middle of the deque is* $\mathcal{O}(n)$, whereas it is $\mathcal{O}(1)$ for lists and tuples.
+ - 修改双队列的开头或者结尾都是 $\mathcal{O}(1)$，而修改列表开头是 $\mathcal{O}(n)$。因此，deque有着独特的函数来利用这一优势，如 `appendleft`。
+ - 以上功能的坏处在于*获取双队列靠近中间的对象是* $\mathcal{O}(n)$，而列表和元组是 $\mathcal{O}(1)$。
 
-A complete rundown of the deque's functionality can be found [here](https://docs.python.org/3/library/collections.html#deque-objects).
+你可以在[这里](https://docs.python.org/3/library/collections.html#deque-objects)找到双列表的完整功能。
 
-The deque is included in Python's `collections` module, and thus must be imported:
+双列表属于Python `collections` 模组的成员，因此你需要导入它：
 ```python
 >>> from collections import deque
 >>> my_deque = deque([1,2,3])
@@ -330,21 +329,21 @@ deque([0, 1, 2, 3])
 ```
 <!-- #endregion -->
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Sets and frozen sets](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
-  - [Tutorial on sets](https://docs.python.org/3/tutorial/datastructures.html#sets)
-- [The collections module](https://docs.python.org/3/library/collections.html)
+- [集和冻集](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
+  - [集教程](https://docs.python.org/3/tutorial/datastructures.html#sets)
+- [collections模组](https://docs.python.org/3/library/collections.html)
 
 
-## Reading Comprehension Solutions
+## 阅读理解答案
 
 <!-- #region -->
-**Set Creation: Solution**
+**创建集：解**
 
-Use a set to find all of the unique letters in the string `"The cat in the hat"`. Ignore all non-letter characters and lowercase all letters.
+使用集来找到字符串 `"The cat in the hat"` 中所有的独特的字母。无视所有不是字母的字符，并将所有字母小写化。
 
-We can use the built-in string functions [isalpha](https://docs.python.org/3/library/stdtypes.html#str.isalpha) and [lower](https://docs.python.org/3/library/stdtypes.html#str.lower) to filter out non-letter characters, and to lowercase the letters.
+我们可以使用内置的字符串函数[isalpha](https://docs.python.org/3/library/stdtypes.html#str.isalpha)和[lower](https://docs.python.org/3/library/stdtypes.html#str.lower)来过滤非字母字符并小写化所有字母。
 
 ```python
 >>> sentence = "The cat in the hat"
@@ -354,15 +353,15 @@ We can use the built-in string functions [isalpha](https://docs.python.org/3/lib
 <!-- #endregion -->
 
 <!-- #region -->
-**Set Comparisons: Solution**
+**对比集：解**
 
-Given the roster for class-A and class-B, find the students enrolled in both classes. Produce the result as a sorted list.
+根据课A和课B的名单表，找到同时在两个班的学生名单。返回排序过的名字列表。
 
 ```python
 >>> classA = ["Bohr", "Curie", "David", "Euler", "Gauss", "Heisenberg", "Noether"]
 >>> classB = ["Bohm", "Bohr", "Einstein", "Fermi", "Gauss", "Hopper", "Montalcini"]  
 ```
-We can find the entries common to both lists by constructing sets from them, and then taking the intersection of those sets. The result is a set,  which is an iterable. Thus it can be fed to the built-in function [sorted](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#Functions-that-act-on-iterables), to produce a sorted list of names.
+我们可以通过使用这两个列表创建集然后求交集来找出两个列表通用的名字。结果为一个集，而集是一种可迭代物。因此我们可以将其输入进内置的函数[sorted](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#Functions-that-act-on-iterables)并返回排序过的名字列表。
 
 ```python
 >>> sorted(set(classA) & set(classB))
