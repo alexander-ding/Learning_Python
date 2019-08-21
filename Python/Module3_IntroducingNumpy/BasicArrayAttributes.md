@@ -19,10 +19,10 @@ jupyter:
 ```
 
 <!-- #region -->
-# Basic Array Attributes
-Armed with our understanding of multidimensional NumPy arrays, we now look at methods for programmatically inspecting an array's attributes (e.g. its dimensionality). It is especially important to understand what an array's "shape" is.
+# 基本的数组属性
+有了我们对NumPy多维数组的理解后，我们现在来了解一些使用代码来查看数组属性（例如维度）的方法吧。理解数组的“形状”（shape）是什么极其重要。
 
-We will use the following array to provide context for our discussion:
+我们将使用以下的数组来进行讨论：
  
 ```python
 >>> import numpy as np
@@ -35,18 +35,18 @@ We will use the following array to provide context for our discussion:
 ...                           [[16, 17, 18, 19],
 ...                            [20, 21, 22, 23]]])
 ```
-According to the preceding discussion, it is a 3-dimensional array structured such that:
+根据之前的讨论，这是一个有着一下结构的3维数组：
 
- - axis-0 discerns which of the  **3 sheets** to select from.
- - axis-1 discerns which of the **2 rows**, in any sheet, to select from.
- - axis-2 discerns which of the **4 columns**, in any sheet and row, to select from.
+ - 轴0描述从**3页**中选中哪一个。
+ - 轴1描述从任何一页中的**2行**中选中哪一个。
+ - 轴2描述从任何一页和行中的**4列**中选中哪一个。
 
 **ndarray.ndim**: 
 
-The number of axes (dimensions) of the array.
+数组的轴（维度）数。
 
 ```python
-# dimensionality of the array
+# 数组的维度
 >>> example_array.ndim
 3
 ```
@@ -55,43 +55,43 @@ The number of axes (dimensions) of the array.
 <!-- #region -->
 **ndarray.shape**:
 
-A tuple of integers indicating the number of elements that are stored along each dimension of the array. For a 2D-array with $N$ rows and $M$ columns, shape will be $(N, M)$. The length of this shape-tuple is therefore equal to the number of dimensions of the array.
+成员为代表数组每个维度的项目数量的整数元组。如果一个2维数组有着 $N$ 行和 $M$ 列，那么形状将是 $(N, M)$。所以这个形状元组的长度等于数组的维度。
 
 ```python
-# shape of the array
+# 数组的形状
 >>> example_array.shape
 (3, 2, 4)
 ```
 
 **ndarray.size**:
 
-The total number of elements of the array. This is equal to the product of the elements of the array's shape.
+这个数组总共的成员数。这等于数组形状的每个数的乘积。
 ```python
-# size of the array: the number of elements it stores
+# 数组的大小：数组中存了多少个成员
 >>> example_array.size
 24
 ```
 
 **ndarray.dtype**:
 
-An object describing the data type of the elements in the array. Recall that NumPy's ND-arrays are *homogeneous*: they can only posses numbers of a uniform data type. 
+描述数组成员的数据类型的对象。请回忆，NumPy的N维数组都是*同种类*（homogenous）的：它们只能拥有同样数据类型的数字。
 
 ```python
-# `example_array` contains integers, each of which are stored using 32 bits of memory
+# `example_array` 存储整数。每个整数使用32比特（bit）的内存
 >>> example_array.dtype
 dtype('int32') 
 ```
 
 **ndarray.itemsize**:
 
-The size, in bytes (8 bits is 1 byte), of each element of the array. For example, an array of elements of type `float64` has itemsize 8 $(= \frac{64}{8})$, while an array of type `complex32` has itemsize 4 $(= \frac{32}{8})$.
+数组每个成员的大小，单位是字节（byte）（1字节等于8比特）。比如说，类型为 `float64` 的数组的itemsize就是8 $(= \frac{64}{8})$，而类型为 `complex32` 的数组的itemsize就是4 $(= \frac{32}{8})$。
 ```python
-# each integer in `example_array` is represented using 4 bytes (32 bits) of memory
+# `example_array` 的每个整数占用4字节（32比特）的内存
 >>> example_array.itemsize
 4
 ```
 <!-- #endregion -->
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Array attributes](https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#array-attributes)
+- [数组属性](https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#array-attributes)
