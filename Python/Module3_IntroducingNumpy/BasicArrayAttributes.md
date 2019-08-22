@@ -74,7 +74,7 @@ jupyter:
 
 **ndarray.dtype**:
 
-描述数组成员的数据类型的对象。请回忆，NumPy的N维数组都是*同种类*（homogenous）的：它们只能拥有同样数据类型的数字。
+描述数组成员的数据类型的对象。请回忆，NumPy的N维数组都是*同质*（homogenous）的：它们只能拥有同样数据类型的数字。
 
 ```python
 # `example_array` 存储整数。每个整数使用32比特（bit）的内存
