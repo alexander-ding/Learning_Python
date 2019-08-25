@@ -19,9 +19,9 @@ jupyter:
 ```
 
 <!-- #region -->
-# Advanced Indexing
+# 进阶索引
 
-We conclude our discussion of indexing into N-dimensional NumPy arrays by understanding advanced indexing. Unlike basic indexing, which allows us to access distinct elements and regular slices of an array, advanced indexing is significantly more flexible. For example, arrays of integers can be used to access arbitrary and even repeated entries from an array,
+我们将通过理解进阶索引来为我们对索引N维NumPy数组的讨论收尾。和允许我们访问数组单个成员和规则切片的基础索引不同，进阶索引相比灵活很多。比如说，我们可以使用整数数组来作为索引访问数组任意多甚至重复的成员：
 
 ```python
 >>> import numpy as np
@@ -30,8 +30,7 @@ We conclude our discussion of indexing into N-dimensional NumPy arrays by unders
 ...               [3, 4, 5],
 ...               [6, 7, 8]])
 
-# Construct the following 2D array
-# from the contents of `x`:
+# 利用 `x` 的成员来创建以下2维数组：
 #
 #     [[x[0, 0], x[0, 1]],
 #      [x[2, 2], x[2, 2]]]
@@ -46,14 +45,12 @@ array([[0, 1],
        [8, 8]])
 ```
 
-Additionally, it permits the use of *boolean-valued* arrays as indices, 
+同时，它允许我们使用*布尔值*数组来作为索引：
 
 ```python
-# Use a boolean-valued array to access
-# the diagonal values of an array
+# 使用布尔值数组来访问数组对角线的值
 
-# Specify `True` wherever we want to access 
-# the entry of `x`
+# 在我们想要访问的 `x` 的成员的位置提供 `True`
 >>> bool_index = np.array([[ True, False, False],
 ...                        [False,  True, False],
 ...                        [False, False,  True]])
@@ -62,7 +59,7 @@ Additionally, it permits the use of *boolean-valued* arrays as indices,
 array([0, 4, 8])
 ```
 
-Unlike basic indexing, advanced indexing always produces a copy of the underlying data.
+和基础索引不同，进阶索引永远都会返回内置数据的复制品。
 ```python
 >>> np.shares_memory(x, x[rows, cols])
 False
@@ -70,36 +67,36 @@ False
 >>> np.shares_memory(x, x[bool_index])
 False
 ```
-The flexibility permitted by advanced indexing makes it a difficult topic to treat exhaustively without delving into somewhat terse and abstract notation. It is best to refer to [the official documentation](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing) for such a treatment of the topic. Here, we will discuss the essential aspects of advanced indexing, with the aim of the discussion being  both thorough and accessible.
+进阶索引提供的灵活性使得它很难在不深入理解一些抽象极短的符号的情况下完整地讨论。如果读者想要一个追求完整性的讨论，请参阅[官方说明文档](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing)。在这里，我们将会尽可能平衡深入性和易读性地讨论进阶索引的核心功能。
 <!-- #endregion -->
 
 <div class="alert alert-info"> 
 
-**Advanced Indexing**: 
+**进阶索引**：
 
-Given an $N$-dimensional array, `x`, `x[index]` invokes **advanced indexing** whenever `index` is:
+设 $N$ 维数组 `x`，当 `index` 为以下之一时，`x[index]` 使用**进阶索引**（advanced indexing）：
 
-- an integer-type or boolean-type `numpy.ndarray`
-- a `tuple` with at least one *sequence*-type object as an element (e.g. a list, tuple, or ndarray)
+- 整数或布尔类的 `numpy.ndarray`
+- 一个至少有着一个*序列*类型对象（比如说列表，元组，或ndarray）成员的 `tuple`
 
-Accessing the contents of an array via advanced indexing *always returns a copy of those contents*, whereas basic indexing returns a view.
+通过进阶索引访问这些成员**永远都会返回数据的复制品*，而基础索引返回一个视阈。
 
 </div>
 
 <!-- #region -->
-## Integer Array Indexing
+## 整数数组索引
 
-### Indexing into 1-Dimensional Arrays
-Using an integer-type array as an index allows us to access the contents of an array arbitrarily, permitting items to be accessed out of order, and even repeatedly. Consider the following 1-dimensional array.
+### 索引一维数组
+使用整数数组作为索引允许我们任意——无序甚至重复地——访问数组成员。设以下1维数组：
 
 ```python
 y = np.array([ 0, -1, -2, -3, -4, -5])
 ```
 
-See that we can access an arbitrary number of the array's contents in an unpatterned way, which is not permissible via basic index:
+我们可以无规律地访问任意多的数组成员；这在使用基础索引时是不允许的：
 
 ```python
-# advanced indexing with an integer-array
+# 使用整数数组进行进阶索引
 >>> index = np.array([2, 4, 0, 4, 4, 4])
 >>> y[index]
 array([-2, -4,  0, -4, -4, -4])
@@ -107,7 +104,7 @@ array([-2, -4,  0, -4, -4, -4])
 
 <!-- #endregion -->
 
-The instruction for accessing the contents of `y` in this way is straight-forward to interpret. Each entry of the index-array is used to access an element from `y`, as illustrated here:
+使用这种方法访问 `y` 成员的规则很容易理解。整数数组的每一个成员都被用来访问 `y` 的一个成员，如下：
 
 
 \begin{equation}
@@ -126,26 +123,26 @@ The instruction for accessing the contents of `y` in this way is straight-forwar
 \end{equation}
 
 
-This returns a *copy* of the data, as do all occurrences of advanced indexing.
+和所有进阶索引的结果一样，这将返回数据的*复制品*。
 
 <!-- #region -->
 ```python
-# advanced indexing returns a copy
+# 进阶索引返回复制品
 >>> np.shares_memory(y, y[index])
 False
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-The indexing array can have an arbitrary shape; *the resulting array will match that shape*.
+索引数组可以有着任意的形状；*返回的数组会有着相同的形状*。
 
 ```python
-# utilizing a 2D-array as an index
+# 使用2维数组作为索引
 >>> index_2d = np.array([[ 1,  2,  0],
 ...                      [ 5,  5,  5],
 ...                      [ 2,  3,  4]])
 
-# the resulting shape matches the shape of the indexing array
+# 返回的数组形状于索引数组一样
 >>> y[index_2d]
 array([[-1, -2,  0],
        [-5, -5, -5],
@@ -175,15 +172,15 @@ array([[-1, -2,  0],
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**Reading Comprehension: Integer Array Indexing (1-D)**
+**阅读理解：整数数组索引（1维）**
 
-Given the following array:
+设以下数组：
 
 ```python
 y = np.array([ 0, -1, -2, -3, -4, -5])
 ```
 
-Use advanced indexing, using an integer-array, to produce the following arrays:
+通过进阶索引，使用一个整数数组索引来产生以下数组：
 
 ```python
 # 1
@@ -206,14 +203,14 @@ array([[-2],
 <!-- #endregion -->
 
 <!-- #region -->
-### Indexing into N-Dimensional Arrays
+### 索引N维数组
 
-In the preceding examples, working with a 1-dimensional array, we specified a single index-array to access the contents along the only dimension of that array. As you may guess, in order to perform this variety of indexing on an $N$-dimensional array, we must specify $N$ index-arrays; one for each dimension. 
+在之前处理1维数组的例子中，我们提供了一个索引数组来通过数组唯一的维度访问其成员。你可能也猜到了，为了用相似的方法访问 $N$ 维数组，我们必须提供 $N$ 个索引数组；每个对应一个维度。
 
-Each of the $N$ index-arrays must have the same shape, and their common shape determines the shape of the resulting array. The corresponding entries of each of the $N$ index-arrays are used to specify a specific array element to be accessed. For example, consider the following 3-dimensional array whose elements we will be accessing:
+所有 $N$ 个索引数组必须有着一样的形状，而且它们共享的形状决定了返回数组的形状。所有 $N$ 个索引数组的对应成员将用来作为索引来访问数组的一个具体的成员。比如说，设以下3维数组：
 
 ```python
-# Indexing a 3D array using integer index-arrays
+# 使用整数索引数组索引一个3维数组
 >>> z = np.array([[[ 0,  1,  2,  3],
 ...                [ 4,  5,  6,  7],
 ...                [ 8,  9, 10, 11]],
@@ -223,22 +220,22 @@ Each of the $N$ index-arrays must have the same shape, and their common shape de
 ...                [20, 21, 22, 23]]])
 ```
 
-We specify three index-arrays; the indices to be accessed along axis-0, axis-1, and axis-2, respectively. Suppose we want to produce the array: `array([ 3, 23,  4])`. The layout of these elements is as follows:
+我们输入三个索引数组，分别对应着在轴0，轴1，和轴2的该访问的索引。如果我们项返回数组：`array([ 3, 23,  4])`，这些成员的位置如下：
 
-- `3`: sheet-0, row-0, column-3
-- `23`: sheet-1, row-2, column-3
-- `4`: sheet-0, row-1, column-0
+- `3`：页0，行0，列3
+- `23`：页1，行2，列3
+- `4`：页0，行1，列0
 
-Each index-array must have a shape (3,) in order to produce the result of the appropriate shape. The index-array supplied for axis-0 must be `np.array([0, 1, 0])` in order to select sheet-0 for `3`, sheet-1 for `23`, and then sheet-0 for `4`. The other index-arrays are formed similarly. 
+每个索引数组必须有着形状 (3,) 来返回正确形状的数组。为轴0输入的数组必须是 `np.array([0, 1, 0])` 来为 `3` 选择页0，为 `23` 选择页1，和为 `4` 选择页0。另外两个索引数组也是相似的。
 
 ```python
-# specifies subsequent sheets to access
+# 描述每个成员的页
 >>> ind0 = np.array([0, 1, 0])
 
-# specifies subsequent rows to access
+# 描述每个成员的行
 >>> ind1 = np.array([0, 2, 1])
 
-# specifies subsequent columns to access
+# 描述每个成员的列
 >>> ind2 = np.array([3, 3, 0])
 
 >>> z[ind0, ind1, ind2]
@@ -246,7 +243,7 @@ array([ 3, 23,  4])
 ```
 <!-- #endregion -->
 
-Formally, the index-arrays are traversed simultaneously using [row-major ordering](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html), and each combination of integer-indices is used to index into `z` and populate the corresponding element in the resulting array.
+正式来讲，索引数组将通过[行优先顺序](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html)被遍历，而每一个整数索引的组合将被用来索引 `z` 并填入返回数组的对应位置。
 
 
 \begin{equation}
@@ -281,7 +278,7 @@ out[2] \\
 
 <!-- #region -->
 ```python
-# Using integer index-arrays to produce a shape(2, 2) result
+# 使用整数索引数组来返回一个形状为 (2, 2) 的数组
 >>> ind0 = np.array([1, 1, 0, 1]).reshape(2, 2)
 >>> ind1 = np.array([1, 2, 0, 0]).reshape(2, 2)
 >>> ind2 = np.array([1, 3, 1, 3]).reshape(2, 2)
@@ -311,9 +308,9 @@ array([[17, 23],
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**Reading Comprehension: Integer Array Indexing (N-D)**
+**阅读理解：整数数组索引（N维）**
 
-Given the following array:
+设以下数组：
 
 ```python
 >>> z = np.array([[[ 0,  1,  2,  3],
@@ -325,7 +322,7 @@ Given the following array:
 ...                [20, 21, 22, 23]]])
 ```
 
-Use advanced indexing, using integer-arrays, to produce the following arrays:
+通过进阶索引，使用整数数组索引来返回以下数组：
 
 ```python
 # 1
@@ -343,25 +340,25 @@ array([[ 0, 23],
 
 <div class="alert alert-info"> 
 
-**Takeaway:**
+**经验**：
 
-An $N$-dimensional array's contents can be accessed by supplying $N$ index-arrays of integers; one for each axis of data. The index-arrays must have the same shape as one another, and this common shape determines the shape of the resulting array. This is a form of advanced indexing, and thus a copy of the parent array's data is created.
+$N$ 维数组的成员可以通过输入 $N$ 个整数的索引数组来访问，每个索引对应着数据的一个轴。索引数组之间形状必须相同，而它们共享的形状决定了返回数组的形状。这是进阶索引的一种，因此这将创建一份父数组的复制品。
 
 </div>
 
 <!-- #region -->
-## Boolean-Array Indexing
-NumPy also permits the use of a boolean-valued array as an index, to perform advanced indexing on an array. In its simplest form, this is an extremely intuitive and elegant method for selecting contents from an array based on logical conditions.
+## 布尔数组索引
+NumPy也支持使用布尔值数组来作为索引的进阶索引数组的方法。在最简单的情况下，这是一个非常易懂优雅的根据逻辑条件选中数组成员的方法。
 
 ```python
-# advanced indexing using a boolean-array
+# 使用布尔数组进行进阶索引
 >>> x = np.array([[[-0.26,  0.49,  0.18],
 ...                [ 0.43,  0.3 ,  0.29]],
 ...        
 ...               [[-0.44,  0.3 ,  0.28],
 ...                [ 0.27, -0.09, -0.13]]])
 
-# `True` wherever `x` is positive
+# 当 `x` 为正数时是 `True`
 >>> bool_ind = x > 0
 >>> bool_ind
 array([[[False,  True,  True],
@@ -376,15 +373,15 @@ array([ 0.49,  0.18,  0.43,  0.3 ,  0.29,  0.3 ,  0.28,  0.27])
 >>> np.shares_memory(x, x[bool_ind])
 False
 ```
-In its simplest form, boolean indexing behaves as follows: Suppose `x` is an $N$-dimensional array, and `ind` is a boolean-value  array *of the same shape as* `x`. Then `x[ind]` returns a 1-dimensional array, which is formed by traversing `x` and `ind` using [row-major ordering](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html). Wherever an element of `ind` is `True`, the corresponding entry of `x` is added to the end of the resulting array. Refer to the preceding example and convince yourself that this is the behavior that is exhibited.
+在最简单的情况下，布尔索引的行为如下：设 `x` 为 $N$ 维数组，`ind` 为一个和 `x` *一样形状*的布尔数组。那么 `x[ind]` 将返回一个1维数组，根据使用[行优先顺序](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html)遍历 `x` 和 `ind` 产生。每当 `ind` 的一个成员为 `True` 时，就往返回数组添加 `x` 的对应成员。请检查以上范例来确认这个行为是否如这里所描述一样。
 <!-- #endregion -->
 
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**Reading Comprehension: Boolean Indexing**
+**R阅读理解：布尔索引**
 
-Given the following array:
+设以下数组：
 
 ```python
 >>> h = np.array([[ 0.01,  0.03,  0.1 ,  0.25],
@@ -392,21 +389,21 @@ Given the following array:
 ...               [-0.29,  0.13, -0.26,  0.33]])
 ```
 
-Use boolean array-indexing and NumPy's [logical functions](https://docs.scipy.org/doc/numpy/reference/routines.logic.html) to select the contents of `h` that satisfy the following conditions. Because you are dealing with floating-point numbers, [you should not require that two values are exactly equal](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision); rather, make use of the function [numpy.isclose](https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html).
+使用布尔数组索引和NumPy的[逻辑函数](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)来选中 `h` 满足一下条件的成员。因为你在处理浮点数，[你不应该检查两值完全相等](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision)；反而，使用函数[numpy.isclose](https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html)。
 
-1. All negative entries in `h`
-2. All entries in `h` "equal" to `0.01` or `0.33`
-3. All entries of `h` that fall within the domain `(0.1, 0.3) 
+1. 所有 `h` 的负成员
+2. 所有 `h` “等于” `0.01` 或 `0.33` 的成员
+3. 所有 `h` 在域 `(0.1, 0.3)` 之间的成员。
 
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-#### Converting a Boolean Index-Array to Integer index-arrays: numpy.where
-The function [numpy.where](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html) can be used to take a boolean-valued array, and produce the *tuple* of index-arrays that access the `True` entries of that array, via integer array indexing (discussed at the beginning of this section).
+#### 将布尔索引数组转化为整数索引数组：numpy.where
+函数[numpy.where](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html)可以用来接受一个布尔值数组并返回一*元组*的通过整数数组索引（在本节开头讨论过）访问数组中为 `True` 的成员的索引数组。
 
 ```python
-# demonstrating `np.where`
+# 演示 `np.where`
 >>> bool_ind
 array([[[False,  True,  True],
         [ True,  True,  True]],
@@ -420,43 +417,41 @@ array([[[False,  True,  True],
  array([1, 2, 0, 1, 2, 1, 2, 0], dtype=int64))
 ```
 
-In this example, a tuple of three integer-valued index-arrays are returned, one for each dimension of `bool_ind`. See that index-arrays indicate the `True` entries of `bool_ind`. Furthermore, recall that `bool_ind` was created to access the positive entries of `x`; the tuple of index-arrays can thus be used to the exact same end.
+本例返回了三个整数索引数组的元组，每个数组对应 `bool_ind` 的一个维度。这些索引数组描述了 `bool_ind` 中为 `True` 的位置。同时，请回忆，`bool_ind` 是为了访问 `x` 中正数而创建的数组；这个函数返回的索引数组元组也可以用来达成相同的目的。
 
 ```python
 >>> ind0, ind1, ind2 = np.where(bool_ind)
 >>> x[ind0, ind1, ind2]
 array([ 0.49,  0.18,  0.43,  0.3 ,  0.29,  0.3 ,  0.28,  0.27])
 
-# unpacking the arrays is not necessary, you can
-# use the tuple as an index
+# 没有必要解包这些数组。你可以之间将元组作为索引使用
 >>> x[np.where(bool_ind)]
 array([ 0.49,  0.18,  0.43,  0.3 ,  0.29,  0.3 ,  0.28,  0.27])
 ```
 
-`np.where` is particularly useful when we want insight into *where* specific conditions are met within an array. Suppose, for instance, we want to know which sheets in `x` contain values greater than 0.4:
+`np.where` 在我们想要了解数组的*哪里*（where）满足了某个特殊条件时很有用。比如说，假设我们想要知道 `x` 中的哪些页包含了大于0.4的值：
 
 ```python
-# which sheets in `x` contain a value
-# greater than 0.4?
+# `x` 的哪些页包含大于0.4的值？
 
 >>> ind0, ind1, ind2 = np.where(x > 0.4)
 
-# get rid of redundant answers
+# 删除重复的答案
 >>> np.unique(ind0)
 array([0], dtype=int64)
 
-# only sheet-0 contains such values
+# 只有页0有这样的值
 ```
 <!-- #endregion -->
 
-Armed with NumPy's suite of [logical functions](https://docs.scipy.org/doc/numpy/reference/routines.logic.html), boolean-array indexing provides a sleek interface for accessing the particular contents of an array, irrespective of the array's shape and the layout of its contents. This method of indexing is especially powerful in the context of performing augmented updates to an array, which is the subject of the following subsection.
+有着对NumPy[逻辑函数](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)的理解，布尔数组索引为访问数组成员提供了一个方便，不在乎数组形状和内容格式的操作界面。这种索引方法在对数组进行进行增强更新时极其有用。我们将在下一小节讨论它。
 
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**Reading Comprehension: numpy.where**
+**阅读理解：numpy.where**
 
-Given the array 
+设数组：
 
 ```python
 >>> b = np.array([[False, False,  True],
@@ -464,22 +459,22 @@ Given the array
 ...               [ True,  True, False]], dtype=bool)
 ```
 
-*Predict* what the output of `np.where(b)` is. 
+*预测* `np.where(b)` 的输出是什么。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-## In-Place & Augmented Assignments via Advanced Indexing
+## 通过进阶索引进行原地和增强赋值
 
-Although advanced indexing does not produce a [*view* of the underlying data](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array), it can still be used to facilitate in-place and augmented assignments to regions of an array. Suppose, for instance, that you want to threshold the contents of an array such that all of its negative-valued entries are replaced with 0. Boolean indexing makes this task trivial to perform via in-place assignment:
+虽然进阶索引不提供[内置数据的*视阈*](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array)，它依然可以用来帮助我们对数组其中的区域进行原地和增强赋值。比如说，假设你想要对数组进行阀值操作，使得其所有负成员都被0代替。通过原地复制，布尔索引将会使得这个工作极其轻松：
 
 ```python
-# assignment via advanced indexing
+# 通过进阶索引赋值
 >>> x = np.array([[ 0.38, -0.16,  0.38, -0.41, -0.04],
 ...               [-0.47, -0.01, -0.18, -0.5 , -0.49],
 ...               [ 0.02,  0.4 ,  0.33,  0.33, -0.13]])
 
-# set all negative entries of `x` to 0 (broadcasting is used)
+# 将所有 `x` 的负成员设为0（这里自动使用了广播）
 >>> x[x < 0] = 0
 >>> x
 array([[ 0.38,  0.  ,  0.38,  0.  ,  0.  ],
@@ -487,16 +482,16 @@ array([[ 0.38,  0.  ,  0.38,  0.  ,  0.  ],
        [ 0.02,  0.4 ,  0.33,  0.33,  0.  ]])
 ```
 
-We also demonstrate the use of integer-valued index-arrays to perform an augmented assignment.
+我们也将演示使用整数索引数组来进行增强赋值的方法。
 ```python
-# augmented assignment via integer-arrays
+# 通过整数数组进行增强赋值
 >>> ind0 = np.array([0, -1])
 >>> ind1 = np.array([0, 1])
 >>> x[ind0, ind1]
 array([ 0.38, 0.4])
 
-# equivalent: x[ 0, 0] *= 100
-#             x[-1, 1] *= 100
+# 等值于：x[ 0, 0] *= 100
+#        x[-1, 1] *= 100
 >>> x[ind0, ind1] *= 100
 
 >>> x
@@ -507,16 +502,16 @@ array([[  38.,   0. , 0.38 ,   0.,  0.  ],
 <!-- #endregion -->
 
 <!-- #region -->
-Recall that redundant entries in an array can be specified via integer array indexing. An augmented assignment *will only be performed once on redundant entries*.  
+请回忆，你可以通过整数数组索引来访问数组中重复的成员。增强赋值*只会为重复成员进行一次*。
 
 ```python
 >>> y = np.array([4, 6, 8])
 
-# y[0] is accessed three times and y[2] one time
+# y[0]被访问了三次，而y[2]被访问了一次
 >>> y[np.array([0, 0, 0, 2])]
 array([4, 4, 4, 8])
 
-# the augmented update is only applied once to y[0]
+# 增强更新仅仅对y[0]进行一次
 >>> y[np.array([0, 0, 0, 2])] += 1
 >>> y
 array([5, 6, 9])
@@ -526,9 +521,9 @@ array([5, 6, 9])
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**Reading Comprehension: Assignment via advanced indexing**
+**阅读理解：使用进阶索引赋值**
 
-Given the array 
+设数组：
 
 ```python
 >>> x = np.array([[ 0.58,  0.05,  0.84,  0.21],
@@ -537,16 +532,16 @@ Given the array
 ...               [ 0.84,  0.76,  0.25,  0.07]])
 ```
 
-Replace the diagonal elements of `x` with `(-1, -2, -3, -4)`, and add `1` to all values in `x` that are greater than `0.8`.
+将 `x` 的对角线成员代替为 `(-1, -2, -3, -4)`，并对 `x` 中所有大于 `0.8` 的成员加 `1`。
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-## Combining Basic and Advanced Indexing Schemes
-Integer- and boolean-valued arrays can be used in conjunction with `slice`, `numpy.newaxis`, and `int` objects to form indices that combine basic and advanced indexing schemes. 
+## 混合使用基础和进阶索引
+整数和布尔值数组可以和 `slice`，`numpy.newaxis`，以及 `int` 对象混合使用来创建同时使用基础和进阶索引模式的索引。
 
 ```python
-# combining advanced and basic indexing techniques
+# 混合使用进阶和基础索引技巧
 >>> z = np.array([[[ 0,  1,  2,  3],
 ...                [ 4,  5,  6,  7],
 ...                [ 8,  9, 10, 11]],
@@ -557,27 +552,27 @@ Integer- and boolean-valued arrays can be used in conjunction with `slice`, `num
 
 >>> ind0 = np.array([True, False])
 
-# select sheet-0, all rows, last column
+# 选中页0，所有行，和最后一列
 >>> z[ind0, :, -1]
 array([[ 3,  7, 11]])
 ```
 <!-- #endregion -->
 
-The rules for resolving the various possible combinations of basic and advanced indexing are nontrivial. Refer to the [official NumPy documentation](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing) for a detailed description for these rules. In practice, basic and advanced indexing can typically be used independently from one another.
+处理混合基础和进阶索引的规则不能被简短地在此讨论。请查看[官方NumPy说明文档](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing)来仔细阅读这些规则。实际操作中，基础和进阶索引一般都会单独使用。
 
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Advanced Indexing](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing)
-- [Logical Functions](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)
+- [进阶索引](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing)
+- [逻辑函数](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)
 - [numpy.where](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html)
-- [Combining Basics and Advanced Indexing](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing)
+- [混合基础和进阶索引](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing)
 
 
-## Reading Comprehension Solutions
+## 阅读理解答案：
 
 <!-- #region -->
-**Integer Array Indexing (1-D): Solution**
+**整数数组索引（1维）：解**
 
 ```python
 y = np.array([ 0, -1, -2, -3, -4, -5])
@@ -613,7 +608,7 @@ array([[-2],
 <!-- #endregion -->
 
 <!-- #region -->
-**Integer Array Indexing (N-D): Solution**
+**整数数组索引（N维）：解**
 
 ```python
 >>> z = np.array([[[ 0,  1,  2,  3],
@@ -666,9 +661,9 @@ array([ 0.25,  0.22,  0.15,  0.13])
 <!-- #endregion -->
 
 <!-- #region -->
-**numpy.where: Solution**
+**numpy.where：解**
 
-Given the array 
+设数组：
 
 ```python
 >>> b = np.array([[False, False,  True],
@@ -676,9 +671,9 @@ Given the array
 ...               [ True,  True, False]], dtype=bool)
 ```
 
-*Predict* what the output of `np.where(b)` is. 
+*预测* `np.where(b)` 的输出是什么。
 
-This will return a tuple of two integer-valued index-arrays. These contain the indices, along axis-0 and axis-1 respectively, where `b` contains the value `True`. The indices are ordered by traversing `b` in row-major order. It returns:
+这将会返回一个有着两个整数索引数组的元组。它们分别包含着 `b` 的成员值为 `True` 的位置对应轴0和轴1的索引。这些索引的顺序是根据行优先顺序遍历 `b` 产生的。这将返回：
 
 ```python
 (array([0, 1, 2, 2], array([2, 1, 0, 1])
@@ -686,7 +681,7 @@ This will return a tuple of two integer-valued index-arrays. These contain the i
 <!-- #endregion -->
 
 <!-- #region -->
-**Assignment via advanced indexing**
+**使用进阶索引赋值：解**
 
 ```python
 >>> x = np.array([[ 0.58,  0.05,  0.84,  0.21],
