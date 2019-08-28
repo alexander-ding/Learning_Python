@@ -19,30 +19,30 @@ jupyter:
 ```
 
 <!-- #region -->
-# Introduction to Object Oriented Programming
+# 面向对象编程简介
 
-Our first foray into the essentials of Python introduced us to the [basic object types: numbers, strings, and lists](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html). Likewise, our discussion of NumPy was centered around the [N-dimensional array](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html). These types of objects are distinguished in large part by the different functions that are bound to them. Functions bound to objects are known as **methods**. For example, where a string possesses methods designed to manipulate its sequence of characters, a NumPy array possesses methods for operating on the numerical data bound to that array.
+我们首次对Python基础的探索向我们介绍了[基础对象类型：数字，字符串，和列表](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html)。相似的，我们对NumPy的讨论也是围绕着[N维数组](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html)展开的。这些对象类型之间很大的区别和它们绑定的不同函数。绑定（bound）到数组上的函数叫做**方法**（method）。比如说，字符串有着多个旨在操作其储存的字符序列的方法，而NumPy数组有着很多操作数组内置数字数据的方法。
 
 ```python
-# Different types of objects can possess different methods 
+# 不同类型的对象可以储存不同的方法
 
 >>> string = "hello world"
->>> string.capitalize() # use the string-method `capitalize`
+>>> string.capitalize() # 使用字符串方法 `capitalize`
 'Hello world'
 
 >>> import numpy as np
 >>> array = np.array([[0, 1, 2],
 ...                   [3, 4, 5]])
->>> array.sum()  # use the array-method `sum`
+>>> array.sum()  # 使用数组方法 `sum`
 15
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-More generally, an object can possess data, known as **attributes**, which summarize information about that object. For example, the array-attributes `ndim` and `shape` provide information about the indexing-layout of that array's numerical data.
+更加广义来讲，对象可以拥有总结关于对象信息的**属性**（attribute）。比如说，数组属性 `ndim` 和 `shape` 提供了关于数组数字数据索引布局的信息。
 
 ```python
-# accessing an object's attributes
+# 访问对象的属性
 >>> array.ndim
 2
 >>> array.shape
@@ -51,39 +51,38 @@ More generally, an object can possess data, known as **attributes**, which summa
 <!-- #endregion -->
 
 <!-- #region -->
-In this module, we will learn to define our own, customized object types with distinct collections of attributes and methods. In this way, we will be using Python as an "objected oriented" programming language; this will greatly expand our capabilities as Python users, and deepen our understanding of the language itself.
+在本模组中，我们将学习如何定义我们自己的，可自定义的，有着不同集合的属性和方法的对象类型。通过这么做·，我们将将Python作为一个“面对对象”（object-oriented）编程语言使用；这将大幅提升我们作为Python用户的能力并让我们更加深入地理解Python这门语言。
 
-As a sneak peek example, let's create our own class of objects known as `Rectangle`:
+作为一个预览，让我们创建我们自己的名为 `Rectangle` 的类（class）：
 
 ```python
 class Rectangle:
-    """ A Python object that describes the properties of a rectangle """
+    """ 一个描述长方形特性的Python对象 """
     def __init__(self, width, height, center=(0.0, 0.0)):
-        """ Sets the attributes of a particular instance of `Rectangle`.
+        """ 设置某个 `Rectangle` 实例的属性。
 
             Parameters
             ----------
             width : float
-                The x-extent of this rectangle instance.
+                这个长方形实例的x长度。
 
             height : float
-                The y-extent of this rectangle instance.
+                这个长方形实例的y长度。
 
             center : Tuple[float, float], optional (default=(0, 0))
-                The (x, y) position of this rectangle's center"""
+                这个长方形的中心的 (x, y) 位置"""
         self.width = width    
         self.height = height  
         self.center = center
     
     def __repr__(self):
-        """ Returns a string to be used as a printable representation 
-            of a given rectangle."""
+        """ 返回在打印某个长方形时使用的字符串。"""
         return "Rectangle(width={w}, height={h}, center={c})".format(h=self.height,
                                                                      w=self.width,
                                                                      c=self.center)
 
     def compute_area(self):
-        """ Returns the area of this rectangle 
+        """ 返回长方形的面积
 
             Returns
             -------
@@ -91,8 +90,7 @@ class Rectangle:
         return self.width * self.height
 
     def compute_corners(self):
-        """ Computes the (x, y) corner-locations of this rectangle, starting with the
-            'top-right' corner, and proceeding clockwise. 
+        """ 计算这个长方形的四角的 (x, y) 位置，首先返回“左上”角，然后顺时针继续。
 
             Returns
             -------
@@ -103,59 +101,58 @@ class Rectangle:
         return [(cx + x, cy + y) for x,y in ((dx, dy), (dx, -dy), (-dx, -dy), (-dx, dy))]
 ```
 
-An instance of this `Rectangle` class is an individual rectangle whose *attributes* include its width, height, and center-location. Additionally, we can use the rectangle's *methods* (its attributes that are functions) to compute its area and the locations of its corners. 
+这个 `Rectangle` 类的一个实例（instance）是一个*属性*包括长度，高度，和中心坐标的单个长方形。同时，我们可以使用这个长方形的*方法*（它为函数的属性）来计算它的面积和四角的坐标。
 <!-- #endregion -->
 
 <!-- #region -->
 ```python
-# create a rectangle of width 4, height 10, centered at (0, 0)
-# here __init__ is executed and the width/height/center attributes are set
+# 创建一个长度为4，高度为0，中心为 (0, 0) 的长方形
+# 这将执行 __init__ 方法并设置它的width/height/center属性
 >>> rect1 = Rectangle(4, 10)  
 
-# the __repr__ method defines how a rectangle instance will be displayed here
-# in the console
+# __repr__ 方法定义了长方形实例在命令行中将如何显示
 >>> rect1  
 Rectangle(width=4, height=10, center=(0, 0))
 
-# compute the area for this particular rectangle
->>> rect1.compute_area()      
+# 计算这个长方形的面积
+>>> rect1.compute_area()
 40
 
-# compute the corner-locations of this rectangle
->>> rect1.compute_corners()   
+# 计算这个长方形的四角坐标
+>>> rect1.compute_corners()
 [(2.0, 5.0), (2.0, -5.0), (-2.0, -5.0), (-2.0, 5.0)]
 ```
 <!-- #endregion -->
 
-Just like any other Python object that we have encountered, we can put our `Rectangle`s in lists, store them as values in dictionaries, pass them to functions, reference them with multiple variables, and so on.
+就像我们遭遇过的任何其它Python对象一样，我们可以将我们的 `Rectangle` 实例放在字符串中，存储为词典的值，作为参数输入到函数中，使用多个变量引用它们，等等。
 
-Popular STEM, data analysis, and machine learning Python libraries rely heavily on the ability to define custom classes of Python objects. For example, [pandas](https://pandas.pydata.org/) defines a spreadsheet-like `DataFrame` class; [PyTorch](https://pytorch.org/), [MXNet](https://mxnet.incubator.apache.org/), and [TensorFlow](https://www.tensorflow.org/) each define tensor classes that are capable of [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation), which is critically important for training neural networks. Understanding Python's class system will greatly improve your ability to leverage libraries like these (Shameless plug: refer to [MyGrad](https://mygrad.readthedocs.io) if you are interested in seeing a simple pure-Python/NumPy implementation of an auto-differentiation library). 
+流行的科学，数据分析，和机器学习Python模组都很依赖定义Python自定义类的能力。比如说，[pandas](https://pandas.pydata.org/)定义了一个类似表格的 `DataFrame` 类；[PyTorch](https://pytorch.org/)，[MXNet](https://mxnet.incubator.apache.org/)，和[TensorFlow](https://www.tensorflow.org/)都定义了能够[自动求导数](https://en.wikipedia.org/wiki/Automatic_differentiation)的张量类；这对训练神经网络极其重要。理解Python的类系统会将大幅提升你使用像以上这些的模组（无耻广告：如果你对自动求导的进行纯Python/NumPy实现的模组感兴趣，请查阅[MyGrad](https://mygrad.readthedocs.io)模组——译者注：这是作者自己写的模组，很厉害的哦！）。
 
-Moving forward, we will discuss the essential *class definition*, which will permit us to  define our own class (a.k.a. type) of object. Next, we will learn about creating distinct *instances* of a given object type and about defining methods. This will lead to our first encounter with *special methods*, which enable us to affect how our object type behaves with Python's various operators. For example, we can define how the `+` operator interacts with our objects. Lastly, we will briefly discuss the concept of class inheritance. 
-
-<div class="alert alert-info">
-
-**Takeaway:**
-
-The goal of this module is to understand how to define and utilize our own class of Python objects. This will greatly mature our understanding of Python as an object-oriented language, and will expand our ability to fully leverage all of Python's features.  
-
-</div>
-
-## Class vs Type: An Important Note on Terminology
-Before proceeding any further, it is worthwhile to draw our attention to the fact that the terms "type" and "class" are practically synonymous in Python. Thus far, we have only encountered the term "type" to distinguish objects from one another, e.g. `1` belongs to the type `int` and `"cat"` belongs to the type `str`. However, we will soon study *class* definitions for making new types objects, and soon introduce functions like `issubclass` into our lexicon. That being said, know that *class* and *type* mean the same thing! There are historical reasons for the coexistence of these two terms, but [since Python 2.2](https://www.python.org/download/releases/2.2/descrintro/) concepts of type and class have been unified.
-
-In practice, people tend to reserve the word "type" to refer to built-in types (e.g. `int` and `str`) and "class" to refer to user-defined types. Again, in the modern versions of Python, these terms carry no practical distinction.
-
+在本模组，我们将会讨论*类定义*的基础；这将允许我们定义自己的对象类（class）（也就是类型（type））。然后，我们将学习如何创建某个对象类型的不同的*实例*并定义方法。这将导致我们初次见到*特殊方法*；它们将允许我们修改我们对象类型在配合各种Python操作符时的行为。比如说，我们可以定义 `+` 操作符会如何和我们的对象互动。最后，我们将快速地讨论类继承（class inheritance）的概念。
 
 <div class="alert alert-info">
 
-**Takeaway:**
+**经验**：
 
-The terms "type" and "class" are synonymous; they both refer to the encapsulating definition of a specific type/class of Python object, with all of its attributes. Although they are not treated synonymously within the Python language - we will write class definitions, not type definitions, and we will use `type` to inspect an object and not `class` - these distinctions are merely relics of versions of Python long passed.
+本模组旨在理解如何定义和使用我们自己的Python对象类。这将极大地成熟化我们对Python作为一门面向对象语言的理解并提升我们完整使用Python所有功能的能力。 
+
+</div>
+
+## 类vs类型：关于术语的重要注释
+在我们深入讨论之前，我们应该花一些时间来了解术语“类型”（type）和“类”（class）在Python的实际操作中是同义的。到现在为止，我们仅仅使用过术语“类型”来将对象互相区分。比如说，`1` 术语类型 `int`，而 `"cat"` 术语类型 `str`。但是，我们将马上学习用来创造新类型对象的*类*定义并学习如 `issubclass` 的函数。虽然如此，请记住，*类*和*类型*指的是同一个东西！存在两个不同术语的历史遗留，但是[Python 2.2之后](https://www.python.org/download/releases/2.2/descrintro/)类型和类的概念被完全统一了。
+
+在实际操作中，人们一般使用“类型”一词来指内置的类型（如 `int` 和 `str`），而“类”则指用户定义的类型。最后重申一遍，在Pythond的现代版本中，这两次并没有任何实际的区别。
+
+
+<div class="alert alert-info">
+
+**经验**：
+
+ 两个术语“类型”和“类”是同义的；它们都指着对某一类型/类的Python对象的包装定义。虽然它们在Python语言中不能互换——我们将编写类定义，而不是类型定义，而我们将使用 `type` 而不是 `class` 来检查对象——但这些区别仅仅是早期Python版本的遗留物而已。
 
 </div>
 
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Python Tutorial: A First Look at Classes](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes)
+- [Python教程：类的初体验](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes)
