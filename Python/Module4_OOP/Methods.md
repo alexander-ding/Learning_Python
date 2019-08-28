@@ -19,96 +19,90 @@ jupyter:
 ```
 
 <!-- #region -->
-# Methods
+# 方法
 
-Recall that a method is an attribute of a class that is a function. For example, "append" is a method that is defined for the `list` class and "capitalize" is a method of the `str` (string) class. 
+请回忆，方法就是一个是函数的类属性。比如说，“append”是一个为 `list` 类定义的方法，而“capitalize”是 `str`（字符串）类的方法。
 
 ```python
-# create an instance of the `list` class/type
-# and invoke the instance method `append`
+# 创建 `list` 类/类型的实例并调用实例方法 `append`
 >>> a = [1, 2, 3]
 >>> a.append(-1)
 >>> a
 [1, 2, 3, -1]
 
-# create an instance of the `str` class/type
-# and invoke the instance method `capitalize`
+# 创建 `str` 类/类型的实例并调用实例方法 `capitalize`
 >>> b = "moo"
 >>> b.capitalize()
 'Moo'
 ```
 
-Here we will encounter three varieties of methods:
+在这里我们会遭遇三种不同的方法：
 
-- instance methods
-- class methods
-- static methods
+- 实例方法（instance method）
+- 类方法（class method）
+- 静态方法（static method）
 
-whose differences are relatively minor but are important to understand. The functions "append" and "capitalize" are both examples of instance methods, specifically, as they are designed to be invoked by a particular list instance and string instance, respectively.
+它们之间的区别相对而言很小，但是这些区别很重要。函数“append”和“capitalize”都是实例方法的例子，因为它们旨在分别被某个列表实例和字符串实例调用。
 
-We have already worked with the instance method `__init__`, which is special in that it is reserved by Python to be executed whenever class-initialization is invoked. Similarly, the special instance method `__add__` informs how an object interacts with the `+` operator. For example, `float.__add__` specifies that `+` will sum the values of `float` instances, whereas `list.__add__` specifies that `+` will concatenate `list` instances together. We will conclude our discussion of methods by surveying a number of these special methods - they will greatly bolster our ability to define convenient, user-friendly classes.
+我们已经见过实例方法 `__init__` 了。因为它被Python保留，所以它是一个特殊方法，会在实例类初始化时被自动调用。相似的，特殊实例方法 `__add__` 将告诉对象如何和 `+` 操作符交互。比如说，`float.__add__` 指示了 `+` 将会将两个 `float` 实例的值相加，而 `list.__add__` 指示了 `+` 会将两个 `list` 实例粘连在一起。我们将会通过了解一些这种特殊方法来为我们对方法的讨论结尾——这将大幅度地提升我们定义方便，对用户友善地类的能力。
 <!-- #endregion -->
 
 <!-- #region -->
-## Instance Methods
-An *instance method* is defined whenever a function definition is specified within the body of a class. This may seem trivial but there is still a significant nuance that must be cleared up, which is that '`self`' is the defacto first-argument for any instance method. This is something that we encountered when working with `__init__`. Let's proceed naively so that we will hit a very common error, which will bring this matter to light. We begin by creating a class with an instance method that simply accepts one argument and then returns that argument unchanged:
+## 实例方法
+*实例方法*（instance method）是任何在类主体代码中的函数定义。我们必须要撇清一个看起来琐碎但是很重要的细节：'`self`' 是实际上任何实例方法的第一个参数。这是我们在操作 `__init__` 时遇到的一个细节。让我们单纯地编写代码以遭遇一个常见的错误来演示以上细节的重要性。我们首先创建一个有着一个接受一个参数并直接返回该参数的实例方法的类：
 
 ```python
 class Dummy:
     def func(x): 
-        """ An instance method that returns `x` unchanged. 
-            This is a bad version of this instance method!"""
+        """ 一个直接 `x` 的实例方法。 
+            这是一个有问题的实例方法版本！"""
         return x
 ```   
 
-We can call this method from the class object `Dummy` itself, and it will behave as-expected:
+我们可以通过类对象 `Dummy` 本身调用这个函数，而它的行为会和定义的一样：
 ```python
 >>> Dummy.func(2)
 2
 ```
-but something strange happens when we try to call `func` from an instance of `Dummy`:
+但是当我们试图从 `Dummy` 的实例调用 `func` 时发生了一些奇怪的事情：
 ```python
-# calling `func` from an instance of `Dummy` produces
-# an unexpected error
+# 从 `Dummy` 的实例调用 `func` 导致了一个预期之外的错误
 >>> inst = Dummy()
 >>> inst.func(2)
 TypeError: func() takes 1 positional argument but 2 were given
 ```
-At first glance, this error message doesn't seem to make any sense. It is indeed true that `func` only accepts one argument - we specified that it should accept the argument `x` in its function definition. How is it that `inst.func(2)` specifies *two* arguments? It seems like we are solely passing `2` to our method. Herein lies an extremely important detail:
+第一眼看上去，这个错误信息完全不讲道理。`func` 确实只接受一个参数——我们在函数定义时让其接受一个参数 `x`。但调用 `inst.func(2)` 怎么会提供*两个*参数呢？看起来，我们仅仅向我们的方法输入了 `2`。在这里藏着一个重要的细节：
 <!-- #endregion -->
 
 <!-- #region -->
 <div class="alert alert-warning">
 
-**Important!**
+**重要**！
 
-When you call an instance method (e.g. `func`) from an instance object (e.g. `inst`), Python automatically passes that instance object as the first argument, in addition to any other arguments that were passd in by the user.
+当你从一个实例对象（如 `inst`）调用一个实例方法（如 `func`）时，Python会在用户提供的参数之外自动将该实例对象作为第一个参数输入到函数中。
 
 </div>
 
-So according to this, `inst` is being passed as the argument `x` and we are attempting to pass `2` as a second argument to the method; this explains the error message complaining about passing `func` two arguments. By this logic we should be able to call `a.func()` and see that `inst` is being passed as the argument `x` - recall that `func` is defined to simply return `x` unchanged. Let's confirm this:
+根据以上，`inst` 被作为参数 `x` 被输入，而我们在试图将 `2` 作为第二个参数输入到方法中；这解释了向 `func` 输入两个函数的错误。根据这个逻辑，我们应该能够调用 `a.func()` 并发现 `inst` 是作为参数 `x` 输入——请回忆，`func` 的定义使得它直接返回 `x`。让我们确定这个：
 
 ```python
-# verifying that `inst` is being passed as the first argument 
-# of the instance-method `func`
+# 确认 `inst` 是被作为第一个参数输入到实例方法 `func`
 
-# note the memory address of the Dummy-instance `inst`
+# 请注意 Dummy 实例 `inst` 的内存地址
 >>> inst
 <__main__.Dummy at 0x284f0008da0>
 
-# `inst.func()` automatically receives `inst` as the 
-# input argument, which is then returned unchanged
+# `inst.func()` 自动接受 `inst` 为输入参数，并直接返回它
 >>> inst.func()
 <__main__.Dummy at 0x284f0008da0>
 
-# `inst` is indeed being passed to, and
-# returned by, `func`
+# `inst` 确实被输入到并返回于 `func`
 >>> out = inst.func()
 >>> inst is out
 True
 ```
 
-*Note that this "under the hood" behavior only occurs when the method is being called from an instance*; this is why we didn't face this issue when invoking `func` from `Dummy` - `Dummy` is a class object, not an instance. Thus, `inst.func()` is equivalent to `Dummy.func(inst)`:
+*请注意，这个“幕后”的行为仅仅在方法通过实例调用的情况才会发生*；这就是为什么我们通过 `Dummy` 调用 `func` 时没有遇到这个问题——`Dummy` 是一个类对象，不是一个实例。因此，`inst.func()` 等值于 `Dummy.func(inst)`：
 
 ```python
 >>> out = Dummy.func(inst)
@@ -116,15 +110,15 @@ True
 True
 ```
 
-In its current form, there is no way for us to pass an argument to `func` when we are calling it from an instance of `Dummy`. To solve this issue, we will refactor our definition of `func` to anticipate the passing of the instance object as the first argument.
+在现在的情况下，我们没有任何办法在从 `Dummy` 实例调用 `func` 时向其输入一个参数。为了解决这个问题，我们将重构 `func` 的定义来预知实例对象将作为第一个参数输入的这一点。
 <!-- #endregion -->
 
 <!-- #region -->
-### The `self` Argument
-We will want to define our instance methods in a way that anticipates that Python will automatically pass an instance object as the first argument. Thus if we want our method to accept $N$ external argument, we should define its signature to have $N+1$ arguments, with the understanding that Python will pass the instance object as the first argument. The accepted convention is to call this first argument `self`. There is no significance to this name beyond it being the widely-adopted convention among Python users; "self" is meant to indicate that the instance object is passing itself as the first argument of the method. Consider the following example:
+### `self` 参数
+我们将想要定义我们的实例方法来提前预知Python会自动将实例对象作为第一个参数输入到方法这一点。因此，如果我们想要我们的方法接受 $N$ 个外部参数，我们应该定义它的签名来有着 $N+1$ 个参数，因为我们知道Python会将实例作为第一个参数输入。广泛使用的传统是将这个第一个参数叫做 `self`。这个名字没有任何特殊的意义，仅仅是它是Python用户广泛使用的传统；“self”旨在指出实例对象在将自己作为第一个参数输入到方法中一事。设以下范例：
 
 ```python
-# demonstrate the use of `self` in instance arguments
+# 演示 `self` 在实例参数中的作用
 class Number:
     def __init__(self, value):
         self.value = value
@@ -134,61 +128,60 @@ class Number:
 ```
 
 ```python
-# calls __init__, setting self.value = 4.0
+# 调用 __init__，设 self.value = 4.0
 >>> x = Number(4.0)
 
-# `x` gets passed to `self`
+# `x` 输入为 `self` 参数
 >>> x.add(2.0)
 6.0
 
-# Calling the instance method from the class object.
-# We must explicitly pass an object to `self`
+# 从类对象调用这个实例方法。我们必须显式地为 `self` 输入一个对象
 >>> Number.add(x, 2.0)
 6.0
 ```
 
-Note the utility of having `self` be automatically passed in as an argument to both `__init__` and `add`. An instance method is meant to have access to the instance object that is calling it - when you call `capitalize` from a string instance, it is obvious that you want to capitalize *that* specific string. It would be tedious and redundant if Python did not manage that automatically. 
+请注意将 `self` 自动作为参数输入到 `__init__` 和 `add` 的有用之处。实例方法旨在能够访问调用它的实例对象——当你从一个字符串实例调用 `capitalize` 时，你当然想要它大小*该*字符串。如果Python不自动这么做，每次输入实例本身将会很乏味和重复。
 
-Next, we will see that we can also define class-methods, which automatically have *class objects* get passed as their first arguments, and static methods, which do not have any objects passed to them under the hood.
+接下来，我们将注意我们也可以定义类方法和静态方法。类方法会自动将*类对象*作为第一个参数输入，而静态方法不会自动在幕后输入任何对象。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Invoking Instance Methods**
+**阅读理解：调用实例方法**
 
-Rewrite `Dummy` so that its instance method `func` accepts two arguments: the instance object that Python automatically passes and the argument `x`, which we want `func` to return unchanged. Create an instance of `Dummy` and call `func` from this instance and pass it the string `"hi"`, what will be returned? What will happen if you try to call `Dummy.func("hi")`? Why? How can we modify this call from `Dummy` itself so that the method will work as desired? 
+重写 `Dummy` 使得它的实例方法 `func` 接受两个参数：Python自动输入的实例对象和我们想要 `func` 直接返回的参数 `x`。创建一个 `Dummy` 的实例，从这个实例调用 `func`，并向其输入字符串 `"hi"`。这会返回什么呢？当你试图调用 `Dummy.func("hi")` 时会发生什么呢？为什么？我们该如何修改这个直接从 `Dummy` 进行的调用来使得这个方法会像我们希望的一样操作呢？
 
 </div>
 
 <!-- #region -->
-## Class Methods
-A class method is similar to an instance method, but it has a *class object* passed as its first argument. Recall that, when an instance method is called from an instance object, that instance object is automatically passed as the first argument to the method. By contrast, when a *class method* is called from a either a class object or an instance object, the class object is automatically passed as the first argument to the method. Instead of calling this first argument `self`, the convention is to name it `cls`.
+## 类方法
+一个类方法类似于实例方法，但它会自动将*类对象*作为第一个参数输入。请回忆，当实例方法从实例对象中调用时，它会自动将实例对象作为方法的第一个参数输入。相比之下，当一个*类方法*从类对象或实例对象调用时，它将自动将类对象作为方法的第一个参数输入。与其叫这个第一个参数 `self`，传统是将其称为 `cls`。
 
-To define a class method you must *decorate* the method definition with a special built-in decorator `classmethod`. We have not discussed decorators. Suffice it to know that this simply "tags" the method, so that Python knows to treat it like a class method instead of an instance method. The following demonstrates this decoration process:
+为了定义一个类方法，你必须使用一个特殊的内置装饰器 `classmethod` 来*装饰*（decorate）该方法定义。我们还没有讨论装饰器。现在你只需要知道它们会“标记”该方法，使得Python知道该将其作为一个类方法而不是实例方法对待。以下演示了装饰的过程：
 
 ```python
 class Dummy:
     
     @classmethod
     def class_func(cls):
-        """ A class method defined to simply 
-            return `cls` unchanged"""
+        """ 定义来直接返回 `cls` 的类方法
+        """
         return cls
 ```
 
 ```python
-# `Dummy` gets passed as `cls` automatically.
-#  We defined `class_func` to return `cls` unchanged
+# `Dummy` 会自动作为 `cls` 输入。
+#  我们定义 `class_func` 使其直接返回 `cls` 而不做修改
 >>> Dummy.class_func()
 __main__.Dummy
 
-# `Dummy.class_func()` returns `Dummy`
+# `Dummy.class_func()` 返回 `Dummy`
 >>> out = Dummy.class_func()
 >>> out is Dummy
 True
 
-# `Dummy` gets passed as `cls` automatically
-# even when `class_func` is called from an instance
+# 就算我们从实例中调用 `class_func`，`Dummy` 也会自动作为
+# `cls` 被输入
 >>> inst = Dummy()
 >>> inst.class_func()
 >>> inst.class_func()
@@ -197,35 +190,34 @@ __main__.Dummy
 <!-- #endregion -->
 
 <!-- #region -->
-`dict.fromkeys` is an example of a class method that takes in an iterable, and returns a dictionary whose keys are the elements of that iterable, and whose values all default to `None`.
+`dict.fromkeys` 是一个接受可迭代物并返回键为可迭代物成员，值都默认为 `None` 的词典的类方法。
 
 ```python
 >>> dict.fromkeys("abcd")
 {'a': 2.3, 'b': 2.3, 'c': 2.3, 'd': 2.3}
 ```
 
-It is sensible that this is a class method rather than an instance method, as the method creates a brand new dictionary from scratch. It need only have access to the `dict` object (i.e. the `cls` argument) so that it can construct the dictionary. The following is what an implementation of `fromkeys` could look like, were we to define `dict` ourselves: 
+这作为一个类方法而不是实例方法是很合理的，因为这个方法会凭空创建一个新词典。它只需要能够调用 `dict` 对象（也就是 `cls` 参数）就能创建这个词典。以下是如果我们自己定义 `dict` 类的话 `fromkeys` 的可能实现：
 
 ```python
 class dict:
-    # assume all other dictionary methods are defined here
+    # 假设所有其他的词典方法都在这里定义了
     @classmethod
     def fromkeys(cls, iterable, value=None):
-        """ Creates a dictionary whose keys are the elements of `iterable`. All 
-        keys map to `value`.
+        """ 创建一个词典，其键为 `iterable` 的成员。所有值这些键都是`value`。
         
         Parameters
         ----------
         iterable: Iterable[Hashable]
-            An iterable of valid dictionary keys (i.e. any object that is hashable).
+            成员为合法词典键（也就是任何可哈希的对象）的可迭代物。
         
         value : Optional[Any]
-            The value that all of the keys will map to. Defaults to `None`.
+            所有键会对应的值。默认是 `None`。
         
         Returns
         -------
         dict """
-        new_dict = cls()  # equivalent to `dict()`: creates a new dictionary instance
+        new_dict = cls()  # 等值于 `dict()`：创建一个新的词典实例
         for key in iterable:
             new_dict[key] = value
         return new_dict
@@ -233,23 +225,21 @@ class dict:
 <!-- #endregion -->
 
 <!-- #region -->
-## Static Methods
-A static method is simply a method whose arguments must all be passed explicitly by the user. That is, Python doesn't pass anything to a static method automatically. The built-in decorator `staticmethod` is used to distinguish a method as being static rather than an instance method.
+## 静态方法
+静态方法就是所有参数都需要用户显式输入的方法。也就是说，Python不会向静态方法输入任何参数。你可以使用内置的装饰器 `staticmethod` 来将一个静态方法和实例方法区分。
 
 ```python
 class Dummy:
 
     @staticmethod
     def static_func():
-        """ A static method defined to always returns 
-            the string `'hi'`"""
+        """ 永远返回 `'hi'` 的静态方法
+        """
         return 'hi'
 ```
 
 ```python
-# A static method can be called from a class object
-# or an instance object; nothing gets passed to it 
-# automatically.
+# 静态方法可以从类对象或实例对象调用；没有任何自动向其输入的参数。
 >>> Dummy.static_func()
 'hi'
 
@@ -259,14 +249,14 @@ class Dummy:
 ```
 <!-- #endregion -->
 
-## Reading Comprehension Solutions
+## 阅读理解答案：
 
 <!-- #region -->
-**Invoking Instance Methods: Solution**
+**调用实例方法：解**
 
-Rewrite `Dummy` so that its instance method `func` accepts two arguments: the instance object that Python automatically passes and the argument `x`, which we want `func` to return unchanged.
+重写 `Dummy` 使得它的实例方法 `func` 接受两个参数：Python自动输入的实例对象和我们想要 `func` 直接返回的参数 `x`。
 
-> We will rewite func to accept an argument called 'self', which will accept the instance object that is passed "under the hood" , and 'x'. As you will see in the reading, the name argument 'self' is simply used by convention.  
+> 我们将重写 `func` 来接受名为“self”的参数，其将接受“幕后”输入的实例对象和“x”。就像你在阅读中所见的一样，参数的名字“self”仅仅是传统而已。
 
 ```python
 class Dummy:
@@ -274,20 +264,20 @@ class Dummy:
         return x
 ```
 
-Create an instance of `Dummy` and call `func` from this instance and pass it the string `"hi"`.
+创建一个 `Dummy` 的实例，从这个实例调用 `func`，并向其输入字符串 `"hi"`。
 
 ```python
 >>> inst = Dummy()
->>> inst.func("hi")  # `inst` is passed to the argument `self`
+>>> inst.func("hi")  # `inst` 被输入到参数 `self` 中
 'hi'
 ```
 
-What will happen if you try to call `Dummy.func("hi")`? Why?
+当你试图调用 `Dummy.func("hi")` 时会发生什么呢？为什么？
 
-> This will raise an error, which complains that func expects two arguments, and that we have only passed it one. Indeed, we will have only passed it the object "hi" and nothing else. Dummy is a class object, not an instance object. Thus Python does not do anything special "under the hood" when we call Dummy.func. We must pass something to the self argument. Because this particular method doesn't do anything with self, we can just pass it None, or any other object, really.
+> 这将导致一个错误，其反应 `func` 期待两个参数但只收到了一个。确实，我们仅仅向其输入了对象 "hi"。Dummy是一个类对象，而不是实例对象。因此，在调用Dummy.func时Python不会自动在“幕后”做任何特别的事情。我们必须为self参数输入些什么。因为这个方法不会使用self做任何事情，我们可以向其输入None，或其它任何对象。
 
 ```python
-# Dummy.func("hi") would raise an error
+# Dummy.func("hi") 会导致一个错误
 >>> Dummy(None, "hi")
 'hi'
 ```
