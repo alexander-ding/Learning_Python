@@ -20,14 +20,14 @@ jupyter:
 
 
 <!-- #region -->
-# Defining a New Class of Object
+# 定义新对象类
 
-This section will introduce the basic syntax for defining a new class (a.k.a. type) of  Python object. Recall that the phrase `def` is used to denote the definition of a function. Similarly, `class` is used to denote the beginning of a class definition. The body of the class definition, which is the indented region below a `class` statement, is used to define the class' various **attributes**.
+本节将介绍定义新Python对象类（也就是类型）的基础语法。请回忆，`def` 关键词用来标示函数的定义。相似的，`class` 关键词用来标示类定义的开始。类定义的主体部分，也就是 `class` 语句下方的锁进区域，则用来定义类的各种**属性**。
 
-The following defines a new class of object, named `MyGuy`, specifying four attributes `x`, `y`, `z`, and `f`
+以下定义了一类新的对象，名叫 `MyGuy`，并提供4个属性 `x`，`y`，`z`，和 `f`
 
 ```python
-# defining a new class/type of object
+# 定义一类/类型新的对象
 class MyGuy:
     x = 1 + 2
     y = [2, 4, 6]
@@ -36,10 +36,10 @@ class MyGuy:
     def f():
         return 3
 
-# leaving the indented region ends the class definition
+# 离开锁进区域将终止类定义
 ```
 
-Once this definition for a new class of object is executed, you can proceed to reference that object in your code. Here, we will access the various attributes of `MyGuy`.
+当这个新对象类的定义被执行后，你可以在代码中引用该对象。在这里，我们将访问 `MyGuy` 的各种属性。
 
 ```python
 >>> MyGuy.x
@@ -55,34 +55,34 @@ Once this definition for a new class of object is executed, you can proceed to r
 <function __main__.MyGuy.f>
 ```
 
-See that all of the attributes can be accessed using the "dot" syntax: `object.attribute_name`. The attribute `f` is a function, thus we can call it and it will evaluate as expected:
+请注意，所有的属性都可以通过“点”语法访问：`object.attribute_name`。属性 `f` 是一个函数，所以我们可以调用它来让它如预期一般执行：
 
 ```python
-# calling the attribute f
+# 调用属性 f
 >>> MyGuy.f()
 3
 ```
 
-An object attribute that is also a function is referred to as a **method**. Thus `f` is a method of `MyGuy`.
+同时是函数的对象属性被称为**方法**。所以，`f` 是 `MyGuy` 的一个方法。
 
-`MyGuy` is the singular class object that embodies our class definition. It is akin to `list`, `str`, and `int`. We will use `MyGuy` to create objects that are *instances* of our class, in the same way that `"cat"` is an instance of `str`. More on this soon. 
+`MyGuy` 是单个包含我们类定义的类对象。它类似于 `list`，`str`，和 `int`。我们将使用 `MyGuy` 来创建为我们类*实例*的对象，就像 `"cat"` 是 `str` 的实例一样。我们将在之后对此深入讨论。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Takeaway:**
+**经验**：
 
-The `class` expression denotes the definition of a new class of object, which entails defining the attributes of that class. An attribute can "bind" to that class other Python objects (integers, strings, lists, etc), including functions. Attributes that are functions are called *methods*. The syntax `obj.attr` is the dot syntax for "getting" the attribute named `attr` from the object named `obj`.  
+`class` 表达式标示了新对象类的定义，而定义类代表着定义类的属性。一个属性可以向该类“绑定”其它Python对象（整数，字符串，列表，等等），包括函数。为函数的属性叫做*方法*。语法 `obj.attr` 是用来从名为 `obj` 的对象“获取”名为 `attr` 的属性的点语法。
 
 </div>
 
 <!-- #region -->
-## The General Form of a Class Definition
-The general form for a class definition is simply a collection of attribute definitions, which either take the form of variable assignments or function definitions, resulting in the formation of a new class of object, with its attributes and methods:
+## 类定义的一般形式
+类定义的一般形式就是属性定义——要么是变量赋值或函数定义——的集合。这将创建一类新的对象并提供它的属性和方法：
 
 ```python
 class ClassName:
-    """ class docstring """
+    """ 类的说明字符串（docstring）"""
     <statement-1>
     .
     .
@@ -90,15 +90,13 @@ class ClassName:
     <statement-N>
 ```
 
-where each `<statement-j>` defines an attribute (e.g. `z = "hi"` defines the attribute `z`, or a function definition creates a method) for that class of object. 
+每个 `<statement-j>` 为该类对象定义一个属性（例：`z = "hi"` 定义属性 `z`，而函数定义则创建一个方法）。
 
-Similar to function definitions, class definitions can contain effectively arbitrary Python code, and the definition has its own [scope](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Scope.html); however, *any* variables assigned within the class definition will be available as attributes. 
+就像函数定义一样，类定义在可以包含基本任何Python代码，且其定义有着属于自己的[作用域](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Scope.html)；但是，*任何*在类定义中赋值的变量都可以作为属性来调用。
 
 ```python
-# Any variable assigned within a class definition becomes
-# available as an attribute for that class of object, even
-# a variable defined in a for-loop becomes an attribute of 
-# that class.
+# 任何在类定义中赋值的变量将作为对象类的属性可用。
+# 就算是在for循环中定义的变量也将成为类的属性。
 
 class Dummy:
     cnt = 0
@@ -110,8 +108,8 @@ class Dummy:
         # i = 10
         cnt += i
     
-    # last iteration of loop assigns i = 10
-    # thus i is an attribute of Dummy with value 10
+    # 最后一次迭代赋值了 i = 10
+    # 因此 i 是 Dummy 的属性之一，其值为 10
 ```
 
 ```python
@@ -125,45 +123,47 @@ class Dummy:
 
 <div class="alert alert-warning">
 
-**Naming Classes of Objects:**
+**命名对象类**：
 
-The convention for naming a new class/type of object is to use "camel-casing". Thus if I wanted to call my class of objects "pizza shop", I would use the name `PizzaShop`. This is in contrast to variable names, function names, and *instances* of a class object (still to be introduced), where convention dictates the use of lower-case letters and underscores in place of spaces (snake-case).  
+命名新对象类/类型的传统是使用“驼峰式大小写风格“（camel-casing）。因此如果我想叫我的对象类”pizza shop“，那么我会使用名字 `PizzaShop`。这和使用小写字母和下划线替代空格的蛇大小写风格（snake-case）变量名，函数名，和类对象的*实例*（即将介绍）的名字不同。
+
+译者注：camel-case直接将多个单词首字母大写拼接在一起而不使用空格，而snake-case用下划线串联多个小写单词。如：pizza shop的camel case是PizzaShop，而它的snake case是pizza_shop。
 
 </div>
 
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Create Your Own Class of Object**
+**阅读理解：创建你自己的对象类**
 
-Create a definition for the class of object named `Dog`. This class should have two attributes: "name" and "speak". The "name" attribute should bind a string to the object (the name of the dog). The "speak" attribute should be a *method*, that takes a string as an input argument and returns that string with `"*woof*"` added to either end of it (e.g. `"hello"` -> `"*woof* hello *woof*"`)
+创建名为 `Dog` 对象类的定义。这个类应该有两个属性：“name”和“speak”。“name”属性应该向对象绑定一个字符串（也就是狗的名字）。“speak”属性应该是一额*方法*，其接受一个字符串并返回该字符串在两边添加了 `"*woof*"` 的版本（如 `"hello"` -> `"*woof* hello *woof*"`）。
 
 </div>
 
 <!-- #region -->
-## Working with Object Attributes
-Attempting to access an undefined attribute from an object will raise an `AttributeError`:
+## 操作对象属性
+试图访问对象未定义的属性将会返回一个 `AttributeError`：
 
 ```python
 >>> MyGuy.apple
 AttributeError: type object 'MyGuy' has no attribute 'apple'
 ```
 
-We can use built-in function `hasattr` to inspect if an object possesses a particular attribute:
+我们可以使用内置的函数 `hasattr` 来检查对象是否有某个属性：
 
 ```python
-# demonstrating `hasattr`
->>> hasattr(MyGuy, "apple")  # MyGuy.apple is not defined
+# 演示 `hasattr`
+>>> hasattr(MyGuy, "apple")  # MyGuy.apple 未定义
 False
 
->>> hasattr(MyGuy, "x")      # MyGuy.x is defined
+>>> hasattr(MyGuy, "x")      # MyGuy.x 已定义
 True
 ```
 
-In addition to using the dot-syntax for accessing attributes, the built-in function `getattr` can be used to the same effect:
+除了使用点语法来访问属性之外，内置的 `getattr` 函数也可以用在达成一样的结果：
 
 ```python
-# demonstrating `getattr`
+# 演示 `getattr`
 >>> MyGuy.x
 3
 
@@ -171,11 +171,11 @@ In addition to using the dot-syntax for accessing attributes, the built-in funct
 3
 ```
 
-It may be surprising to discover that new attributes can be bound (or "set") to the object *after* that class of object has already been defined. This can be done using the builtin-function `setattr`:
+你可能会惊讶于你可以在对象类定义*之后*向其绑定（或“设置”（set））新属性的事实。你可以通过内置函数 `setattr` 达到这个目的：
 
 ```python
-# use `setattr` to bind the attribute `apple` to `MyGuy` 
->>> hasattr(MyGuy, "apple")  # MyGuy.apple is not defined
+# 使用 `setattr` 来将属性 `apple` 绑定到 `MyGuy` 上
+>>> hasattr(MyGuy, "apple")  # MyGuy.apple 未定义
 False
 
 >>> setattr(MyGuy, "apple", "red")
@@ -183,44 +183,45 @@ False
 'red'
 ```
 
-Attributes can be defined/set even less formally, using a simple assignment syntax:
+你可以使用简单的赋值语法更加不正式地定义/设置属性：
+
 ```python
->>> hasattr(MyGuy, "grape")  # MyGuy.grape is not defined
+>>> hasattr(MyGuy, "grape")  # MyGuy.grape 未定义
 False
 
-# set the attribute `grape` to `MyGuy` 
->>> MyGuy.grape = "purple"  # define and set the attribute 'grape' 
+# 向 `MyGuy` 设置  `grape`
+>>> MyGuy.grape = "purple"  # 定义且设置属性 'grape'
 >>> MyGuy.grape
 'purple'
 
->>> MyGuy.x = -1  # set the attribute 'x' with a new value
+>>> MyGuy.x = -1  # 为属性 'x' 设置一个新值
 >>> MyGuy.x
 -1
 ```
 
-It may seem like the class definition is reduced to a mere formality, since attributes can be set to an object at so casually. Although Python is known for permitting this loosey-goosey style of coding, know that it is generally bad form to create attributes for a class of object outside of its designated definition.  
+因为你可以如此随意地向对象设置属性，类定义可能看起来仅仅只是一个正式仪式了。虽然Python为支持这种很随意的代码而出名，但是请注意在对象类定义区域外面创建新属性一般来说是不好的形式。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Takeaway:**
+**经验**：
 
-`hasattr`, `getattr`, and `setattr` are built-in functions that allow us to, by the name of an attribute, check to see if it exists, access its value, and set its value, respectively. Python's objects are shockingly flexible in that their attributes can be created outside of the formal space of the class definition. That being said, we should be civilized and treat the class definition as a formal contract/specification whenever possible.
+`hasattr`，`getattr`，和 `setattr` 是支持我们通过属性名字来分别检查属性是否存在，访问属性值，和设置属性值的内置函数。Python对象十分灵活，因为它们支持在类定义区域外面创建属性，但是我们应该文明做人，并在可能的情况下将类定义的区域作为正式的合约看待。
 
 </div>
 
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Python Tutorial: Class Objects](https://docs.python.org/3/tutorial/classes.html#class-objects)
+- [Python教程：类对象](https://docs.python.org/3/tutorial/classes.html#class-objects)
 
 
-## Reading Comprehension Solutions
+## 阅读理解答案：
 
 <!-- #region -->
-**Set Creation: Solution**
-    
-Create a definition for the class of object named `Dog`. This class should have two attributes: "name" and "speak". The "name" attribute should bind a string to the object (the name of the dog). The "speak" attribute should be a *method*, that takes a string as an input argument and returns that string with `"*woof*"` added to either end of it (e.g. `"hello"` -> `"*woof* hello *woof*"`)
+**创建你自己的对象类：解**
+
+创建名为 `Dog` 对象类的定义。这个类应该有两个属性：“name”和“speak”。“name”属性应该向对象绑定一个字符串（也就是狗的名字）。“speak”属性应该是一额*方法*，其接受一个字符串并返回该字符串在两边添加了 `"*woof*"` 的版本（如 `"hello"` -> `"*woof* hello *woof*"`）。
 
 ```python
 class Dog:
