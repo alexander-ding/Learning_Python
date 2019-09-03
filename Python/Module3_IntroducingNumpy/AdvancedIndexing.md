@@ -379,7 +379,7 @@ False
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**R阅读理解：布尔索引**
+**阅读理解：布尔索引**
 
 设以下数组：
 
@@ -399,7 +399,7 @@ False
 <!-- #endregion -->
 
 <!-- #region -->
-#### 将布尔索引数组转化为整数索引数组：numpy.where
+### 将布尔索引数组转化为整数索引数组：numpy.where
 函数[numpy.where](https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html)可以用来接受一个布尔值数组并返回一*元组*的通过整数数组索引（在本节开头讨论过）访问数组中为 `True` 的成员的索引数组。
 
 ```python
