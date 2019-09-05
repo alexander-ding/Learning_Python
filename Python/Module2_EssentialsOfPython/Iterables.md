@@ -43,7 +43,7 @@ jupyter:
 ## 操作可迭代物的函数
 以下是一些有用的操作可迭代物的函数：
 
- - `list`, `tuple`, `dict`, `set`：利用可迭代物的内容来分别创建一个列表，元组，[词典](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)，或[集](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)。
+ - `list`, `tuple`, `dict`, `set`：利用可迭代物的内容来分别创建一个列表，元组，[词典](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)，或[集](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#集数据结构)。
  - `sum`：求可迭代物内容德的和。
  - `sorted`：返回列表，其成员为顺序排列可迭代物的内容。
  - `any`：迭代可迭代物。如果可迭代物中*任何*（any）一个成员满足 `bool(item)` 为 `True`，立刻返回 `True` 并终止迭代。

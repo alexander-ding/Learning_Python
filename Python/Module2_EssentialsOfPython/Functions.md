@@ -87,7 +87,7 @@ def <function name>(<function signature>):
  
 Python同样保留 `return` 语句来表达函数的终止；如果遇到了 `return`，那程序将立即终止函数的执行并返回 `return` 右边的对象。
 
-请注意，和if语句和for循环一样，`def` 语句必须由冒号结尾，且函数的主体代码必须[由空格限定](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope)：
+请注意，和if语句和for循环一样，`def` 语句必须由冒号结尾，且函数的主体代码必须[由空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)：
 <!-- #endregion -->
 
 <!-- #region -->
@@ -489,7 +489,7 @@ def f(**args):
     return args
 ```
 
-因为Python无法预先知道 `f` 会收到多少个关键词参数，所以所有收到的关键词参数都会被打包成一个*词典*（dictionary）。词典允许你通过关键词（将其转化成字符串）查询并设置关键词对应的值。这个词典被赋值到变量 `args` 上。我们会在[后面一节](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)专门讨论词典。
+因为Python无法预先知道 `f` 会收到多少个关键词参数，所以所有收到的关键词参数都会被打包成一个*词典*（dictionary）。词典允许你通过关键词（将其转化成字符串）查询并设置关键词对应的值。这个词典被赋值到变量 `args` 上。我们会在[后面一节](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)专门讨论词典。
 
 ```python
 >>> f()            # 向 `f` 输入0个参数

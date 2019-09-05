@@ -20,7 +20,7 @@ jupyter:
 
 <!-- #region -->
 # Python的“Itertools”
-Python的[itertools模组](https://docs.python.org/3/library/itertools.html)提供了一套核心的快速，高效使用使用内存的创建迭代器的工具。我会将在本节快速的展示一些itertool的工具。大部分这些函数会创建[生成器](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html)，因此我们将会需要迭代它们才能展示它们的使用方法。此模组极其有用——本文强烈建议你花一些时间去了解该模组的内容。
+Python的[itertools模组](https://docs.python.org/3/library/itertools.html)提供了一套核心的快速，高效使用使用内存的创建迭代器的工具。我会将在本节快速的展示一些itertool的工具。大部分这些函数会创建[生成器](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html)，因此我们将会需要迭代它们才能展示它们的使用方法。此模组极其有用——本文强烈建议你花一些时间去了解该模组的内容。
 
 Python有三个属于itertools的内置函数 `range`，`enumerate`，`zip`，但因为它们极其有用，所以Python会自动让你可以使用这些函数，而不需要导入它们。熟练使用 `range`，`enumerate`，和 `zip` 是很重要的技能。
 

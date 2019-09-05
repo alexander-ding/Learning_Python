@@ -71,7 +71,7 @@ True
 True
 ```
 
-Python 允许你连接多个对比运算符来创建”复式“（compound）对比：
+Python允许你连接多个对比运算符来创建“复式”（compound）对比：
 
 ```python
 >>> 2 < 3 < 1  # 等值于 (2 < 3) and (3 < 1)
@@ -114,7 +114,7 @@ True
 
 <!-- #region -->
 ## `bool` 和非布尔类对象的真值
-请回忆两个布尔对象 `True` 和 `False` 严格来讲即属于 `bool` 也属于 `int` 类型，并分别有着值 `1` 和 `0` 这一事实：
+请回忆两个布尔对象 `True` 和 `False` 严格来讲即属于 `bool` 也属于 `int` 类型，并分别有着值 `1` 和 `0` 这些知识点：
 
 ```python
 >>> isinstance(True, int)
@@ -153,7 +153,7 @@ False
 任何非0的Python整数对应 `True`：
 
 ```python
-# 非0值最后评判为 `True`
+# 非0值最后计算为 `True`
 >>> bool(2)
 True
 ```
@@ -190,7 +190,7 @@ else:
     status = "dead"
 ```
 
-每个 `if`，`elif`，和 `else` 语句必须由冒号结尾，且其中所有语句都必须由[空格限定](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope)。
+每个 `if`，`elif`，和 `else` 语句必须由冒号结尾，且其中所有语句都必须由[空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)。
 
 以下的伪代码演示条件语句的通用模版：
 
@@ -279,7 +279,7 @@ elif len(x) > 40:
 # `x` 现在为 'abcabcabc'
 ```
 
-请注意在一个if-elif-else语句中只有其中一段可以被执行；要么“if”区块的代码被执行，要么一个“elif”区块的代码被执行，要么“else”区块的代码被执行。但是，背靠背的if语句是完全独立于对方的。因此它们的代码区块可以被在一次运行中都执行（假设它们对应的条件语句都最后为 `True`）。
+请注意在一个if-elif-else语句中只有其中一段可以被执行；要么“if”区块的代码被执行，要么一个“elif”区块的代码被执行，要么“else”区块的代码被执行。但是，背靠背的if语句是完全独立于对方的。因此它们的代码区块可能在单次运行中都被执行（假设它们对应的条件语句都最后为 `True`）。
 
 ```python
 # 连续的if语句是互相独立的
@@ -326,7 +326,7 @@ if my_list:
 
 <!-- #region -->
 ### 单行的if-else语句
-Python支持一个有限制版本的一行长的if-else语句。以下代码：
+Python支持一个单行版本的if-else语句，其功能比较有限。以下代码：
 
 ```python
 if num >= 0:
@@ -350,7 +350,7 @@ sign = "positive" if num >=0 else "negative"
 表达式 `A if <condition> else B` 当 `bool(<condition>)` 为 `True` 时返回 `A`，不然该表达式会返回 `B`。
 </div>
 
-和完整的“if-elif-else”表达式对比，这个语法是极其受限制的——它不允许“elif”语句，也不允许if/else之间多行的代码块。
+和完整的“if-elif-else”表达式对比，这个语法是极其受限制的——它不允许“elif”语句，也不允许if/else之间有多行的代码块。
 
 单行if-else语句可以在任何地方使用，不仅仅是在赋值语句的右侧。这有时很方便：
 ```python
@@ -367,7 +367,7 @@ sign = "positive" if num >=0 else "negative"
 >>> "a" if x == 1 else "b"
 'b'
 ```
-我们将在讨论列表理解语句（list comprehension statement）时注意到这个语法很有用的地方。但请注意谨慎使用这一语法。比如说，不要在数学表达式中使用单行if-else语句，因为最后的结果令人抓狂：
+我们将在讨论列表理解语句（list comprehension statement）时注意到这个语法很有用的地方，但请注意谨慎使用这一语法。比如说，不要在数学表达式中使用单行if-else语句，因为最后的代码令人抓狂：
 
 ```python
 # 永远不要这么做，永远！
@@ -377,7 +377,7 @@ sign = "positive" if num >=0 else "negative"
 
 <!-- #region -->
 ## 短路逻辑表达式
-在对条件语句有了更深刻的理解之后，我们将扩展我们对Python逻辑表达式的研究来讨论短路（short-circuiting）。在Python中，一个逻辑表达式会从左到右运算，并在表达式结果确定的那一步就返回，并*不会运算表达式剩下的部分*。也就是说，表达式可以*短路*。
+在对条件语句有了更深刻的理解之后，我们将扩展我们对Python逻辑表达式的研究来讨论短路（short-circuiting）。在Python中，一个逻辑表达式会从左到右运算，并在表达式结果确定的那一步就返回，且*不会运算表达式剩下的部分*。也就是说，表达式可以*短路*。
 
 比如说，`and` 运算仅仅会在它两边的表达式都为 `True` 时才会返回 `True`。因此，表达式 `False and <anything>` 一定会返回 `False`；同时，这个表达式会返回 `False` 而*不运算* `bool(<anything>)`。
 
@@ -401,7 +401,7 @@ ZeroDivisionError                         Traceback (most recent call last)
 ZeroDivisionError: division by zero
 ```
 
-在实际操作中，你可以通过短路来浓缩你的代码。假设我们代码的一节在处理变量 `x`，其可能是一个[数字](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types)或[字符串](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Strings)。假设我们当 `x` 是全大写的字符串时想要有特殊的处理方式。以下代码
+在实际操作中，你可以通过短路来浓缩你的代码。假设我们代码的一节在处理变量 `x`，其可能是一个[数字](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#数字类型)或[字符串](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#字符串)。假设我们当 `x` 是全大写的字符串时想要有特殊的处理方式。以下代码
 
 ```python
 # 这在 `x` 不是字符串时会报错
@@ -425,7 +425,7 @@ if isinstance(x, str) and x.isupper():
     # 对此大写字符串进行操作
 ```
 
-请注意如果 `x` 不是字符串，那 `isinstance(x, str)` 会返回 `False`；因此 `isinstance(x, str) and x.isupper()` 会短路并直接返回 `False`，从来不运算 `bool(x.isupper())`。这是这种检查任务的推荐方法。这代码对比等值的多层if语句更简短和可读。
+请注意如果 `x` 不是字符串，那 `isinstance(x, str)` 会返回 `False`；因此 `isinstance(x, str) and x.isupper()` 会短路并直接返回 `False`，且不运算 `bool(x.isupper())`。这是这种检查任务的推荐结局方法。这代码对比等值的多层if语句更简短和可读。
 <!-- #endregion -->
 
 <!-- #region -->
@@ -453,7 +453,7 @@ if x.isupper() and isinstance(x, str):
 - ['if'语句](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement)
 
 
-## 阅读理解答案：
+## 阅读理解答案
 
 <!-- #region -->
 **条件语句：解**

@@ -197,7 +197,7 @@ True
  - 字符串
  - 元组（但元组中的成员也必须是不可变对象）
  - 布尔值
- - [冻集](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#Set-operations)（frozenset）对象
+ - [冻集](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#集操作)（frozenset）对象
  
 使用可变对象作为键的问题在于该对象在作为键使用*之后*可以被改变。因此，词典会需要“检测”到这个变化并为变化后的键重新创建它的“查找方式”。而值可以是可变对象，因为值对象的细节并不影响词典如何查找该值。
  
@@ -215,7 +215,7 @@ TypeError: unhashable type: 'list'
 ```
 
 ### 数字精度和词典键
-在使用浮点数作为词典键时需小心，因为浮点数的[精度有限](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision)。和你不应该检查两个浮点数是否完全相同的原因一样，你不能保证两个浮点数作为键时会有相同的哈希值：
+在使用浮点数作为词典键时需小心，因为浮点数的[精度有限](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#理解数字精度)。和你不应该检查两个浮点数是否完全相同的原因一样，你不能保证两个浮点数作为键时会有相同的哈希值：
 
 ```python
 # 将浮点数作为词典键使用导致的尴尬情况
@@ -444,7 +444,7 @@ for index in range(len(names)):
     grades[name] = value
 ```
 
-你应该使用函数[zip](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html#zip)来将名字和成绩打包到一个可迭代物中国呢，并利用理解表达式来创建词典。
+你应该使用函数[zip](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html#zip)来将名字和成绩打包到一个可迭代物中国呢，并利用理解表达式来创建词典。
 
 ```python
 # 好很多的创建 `grades` 的方式

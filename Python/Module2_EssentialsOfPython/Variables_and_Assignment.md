@@ -113,18 +113,18 @@ TypeError: 'tuple' object does not support item assignment
 
 **一些不可变对象**
 
- - [数字](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types)（整数，浮点数，复数）
- - [字符串](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Strings)
- - [元组](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Tuples) 
- - [布尔值](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#The-Boolean-Type)
- - ["冻结"集](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython%2FDataStructures_III_Sets_and_More.html#%E9%9B%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)（frozen-set）
+ - [数字](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#数字类型)（整数，浮点数，复数）
+ - [字符串](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#字符串)
+ - [元组](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#元组) 
+ - [布尔值](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#布尔类)
+ - ["冻结"集](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython%2FDataStructures_III_Sets_and_More.html#集数据结构)（frozen-set）
 
 **一些可变对象**
 
- - [列表](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists)
- - [词典](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)
- - [集](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)
- - [NumPy数组](https://www.pythonlikeyoumeanit.com/module_3.html)
+ - [列表](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#列表)
+ - [词典](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)
+ - [集](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#集数据结构)
+ - [NumPy数组](https://cn.pythonlikeyoumeanit.com/module_3.html)
 
 <!-- #region -->
 ## 多个变量引用一个可变对象

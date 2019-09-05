@@ -45,7 +45,7 @@ for <var> in <iterable>:
     一区块代码
 ```
 
-`<var>` 指代任何合法的变量身份（variable-identifier）， `<iterable>` 则是任何**可迭代物**。我们会在下一节中更正式地讨论迭代物；现在你只需要知道任何序列都是可迭代物这一事实就行了。`for` 语句必须由一个冒号结尾，且for循环的主体必须由[空格限定](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope)。
+`<var>` 指代任何合法的变量身份（variable-identifier）， `<iterable>` 则是任何**可迭代物**。我们会在下一节中更正式地讨论迭代物；现在你只需要知道任何序列都是可迭代物这一事实就行了。`for` 语句必须由一个冒号结尾，且for循环的主体必须由[空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)。
 
 for循环的行为如下：
 

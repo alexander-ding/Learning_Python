@@ -361,7 +361,7 @@ deque([0, 1, 2, 3])
 >>> classA = ["Bohr", "Curie", "David", "Euler", "Gauss", "Heisenberg", "Noether"]
 >>> classB = ["Bohm", "Bohr", "Einstein", "Fermi", "Gauss", "Hopper", "Montalcini"]  
 ```
-我们可以通过使用这两个列表创建集然后求交集来找出两个列表通用的名字。结果为一个集，而集是一种可迭代物。因此我们可以将其输入进内置的函数[sorted](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#Functions-that-act-on-iterables)并返回排序过的名字列表。
+我们可以通过使用这两个列表创建集然后求交集来找出两个列表通用的名字。结果为一个集，而集是一种可迭代物。因此我们可以将其输入进内置的函数[sorted](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#操作可迭代物的函数)并返回排序过的名字列表。
 
 ```python
 >>> sorted(set(classA) & set(classB))
