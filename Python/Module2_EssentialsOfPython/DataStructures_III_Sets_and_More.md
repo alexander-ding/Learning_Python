@@ -21,7 +21,7 @@ jupyter:
 
 # 数据结构（第三部分）：集和集合模组
 ## 集数据结构
-`set` （集）类是一个成员为*互不相同*的对象的*无序*集合。它在以下情况有用：
+`set`（集）类是一个成员为*互不相同*的对象的*无序*集合。它在以下情况有用：
 
 - 过滤集合中“重复”的成员并仅仅返回其中不重复的成员。
 - 快速（$\mathcal{O}(1)$）检查对象是否为成员。
@@ -29,11 +29,11 @@ jupyter:
 
 集使用“哈希”（hashing）算法来记录它的成员。因此，像词典的键一样，集只能储存*不可变*的对象来保证对象的哈希值不会无效。和我们遇到的其它数据结构不同，*你无法从集中获取单独的成员*。也就是说，没有任何索引或键可以用来获取集中的单个成员。
 
-Python的集也支持了常见的集合代数操作，如并集（union）或交集运算，如下所见。你可以咨询[集的官方说明文档](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)来查看所有可用的集函数。
+Python的集也支持了常见的集合代数操作，如并集（union）或交集（intersection）运算，如下所见。你可以阅读[集的官方说明文档](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)来查看所有可用的集函数。
 
 <!-- #region -->
 ### 创建集
-你可以用以下语法初始化集：`{item1, item2, ...}`。请注意这和使用冒号表达键值对的词典初始化语法不同：
+你可以用以下语法初始化集：`{item1, item2, ...}`。请注意，这和使用冒号表达键值对的词典初始化语法不同：
 
 ```python
 # 初始化有着各种不可变对象的集
@@ -81,7 +81,7 @@ set()
 
 <!-- #region -->
 ### 集操作
-集支持成员检测为（$\mathcal{O}(1)$）以及迭代（$\mathcal{O}(n)$）。注意集是无序的；所以迭代顺序实际上是随机的：
+集支持成员检测为（$\mathcal{O}(1)$）以及迭代（$\mathcal{O}(n)$）。注意集是无序的，所以迭代顺序实际上是随机的：
 ```python
 # 检查集成员
 >>> 2 in {1, 2, 3}
@@ -91,7 +91,7 @@ True
 >>> [i for i in {"a", "b", "c"}]
 ['b', 'c', 'a']
 ```
-Python也支持集合代数操作：并集（union），交集（intersectino），和等值（equality）和子集（subset）关系。你可以通过操作符或通过显性调用集函数来进行这些操作。
+Python也支持集合代数操作：并集（union），交集（intersectino），等值（equality），和子集（subset）关系。你可以通过操作符或通过显性调用集函数来进行这些操作。
 
 请[查阅Python官方说明文档](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)来阅读集函数的完整列表。
 
@@ -140,7 +140,7 @@ False
 >>> x
 {1, 2, 3, 'b', 'c', 'd', 'dog'}
 ```
-因为集是可变的，它不能作为词典的键，也不能作为另外一个集的成员。Python提供了一个不可变版本的集，叫做 `frozenset`。它有着集所有除了变化集的操作函数：
+因为集是可变的，它不能作为词典的键，也不能作为另外一个集的成员。Python提供了一个不可变版本的集，叫做 `frozenset`。它有着集所有除了修改集的操作函数：
 ```python
 # `frozenset` 是Python集的不可变版本
 >>> frozenset(x)
@@ -151,7 +151,7 @@ frozenset({1, 2, 3, 'b', 'c', 'd', 'dog'})
 
 **经验**：
 
-Python的集的成员为一集合的互不相同，不可变的对象。它是从项目集合中获取不重复的成员很棒的方法。集提供了 $\mathcal{O}(1)$ 的成员检测以及一组对比集的集合代数操作。`frozenset` 是集的不可变版本。
+Python的集的成员为互不相同，不可变的对象的集合。它是从对象集合中获取不重复的成员的好方法。集提供了 $\mathcal{O}(1)$ 的成员检测以及一组对比集的集合代数操作。`frozenset` 是集的不可变版本。
 </div>
 <!-- #endregion -->
 
@@ -160,7 +160,7 @@ Python的集的成员为一集合的互不相同，不可变的对象。它是�
 
 **阅读理解：对比集**
 
-设课A和课B的学生，寻找在同时上两个课的同学名单。返回排序过的名字列表。
+设课A和课B的学生，寻找同时有着这两门课的同学名单。返回排序过的名字列表。
 
 ```python
 >>> classA = ["Bohr", "Curie", "David", "Euler", "Fermi", "Feynman", "Gauss", "Heisenberg", "Noether"]
@@ -171,13 +171,13 @@ Python的集的成员为一集合的互不相同，不可变的对象。它是�
 <!-- #endregion -->
 
 ## collections模组
-Python在其[“collections”模组](https://docs.python.org/3/library/collections.html)提供一系列优化过的实用数据结构。本文建议读者花一些时间去细读该模组。我们将在这里快速展示一下其中数据结构的用处。
+Python在其[“collections”模组](https://docs.python.org/3/library/collections.html)提供一系列优化过的实用数据结构。本文建议读者花一些时间去细读该模组。我们将在这里快速展示其中包含的数据结构的用处。
 
 请查阅[官方说明文档](https://docs.python.org/3/library/collections.html)来阅读所有这些数据结构可用的函数。
 
 <!-- #region -->
 ### Named-Tuple
-一个命名元组（namedtuple）允许你创建成员有名字的元组。因此你可以通过名字或者索引来访问其中的成员。除此之外命名元组和正常元组的行为完全一样。这将帮助你编写干净易读的代码。
+一个命名元组（namedtuple）允许你创建有名字的成员的元组。这样，你可以通过名字或者索引来访问其中的成员。除此之外命名元组和正常元组的行为完全一样。这将帮助你编写干净易读的代码。
 
 比如说，假设你想要储存某事件的3D坐标以及时间，你可以使用命名元组来“根据名字”调用其空间和时间坐标。通过这个方式，代码的读者不需要记住元组的索引3代表着时间坐标这一设定：
 
@@ -232,7 +232,7 @@ defaultdict(list, {})
 []
 
 # 现在这个对应关系在词典中存在
->>> example_default_dict 
+>>> example_default_dict
 defaultdict(list, {'apple': []})
 ```
 
@@ -245,13 +245,13 @@ grade = 52  # 我不合格...
 # 标准词典的用法
 gradebook = {}
 
-# 如果学生不在成绩簿来使用，将学生先作为空列表输入
+# 如果学生不在成绩簿中，将学生先作为空列表输入
 if student not in gradebook:
     gradebook[student] = []
 
 gradebook[student].append(grade)  # 在列表最后添加学生的成绩
 ```
-默认词典的行为（当你向初始化函数提供 `list` 时）完全满足以上的初始化过程：
+默认词典的行为（当你向初始化函数提供 `list` 时）完全代替了以上的初始化过程：
 
 ```python
 # 使用默认词典来储存：名字 -> 成绩列表
@@ -269,7 +269,7 @@ defaultdict(list, {'Susan': [84]})
 
 <!-- #region -->
 ### 计数器
-Python的计数器（counter）数据结构旨在计算它遇到的独特的对象数。它基本创建了词典，其对应：$对象 \rightarrow 遭遇次数$。假设你想要了解在某文本中单词的分布，计数器是此应用完美的解决方案：
+Python的计数器（counter）数据结构旨在计算它遇到的独特的对象数。基本上，它就是创建了一个对应 $对象 \rightarrow 遭遇次数$ 的词典。假设你想要了解在某文本中单词的分布，计数器是完美的解决方案：
 ```python
 # 演示 `Counter` 数据结构
 >>> from collections import Counter
@@ -307,14 +307,14 @@ Counter({'apple': 1, 'cat': 1, 'hat': 1, 'in': 2, 'the': 4, 'tree': 1})
 >>> Counter([0, 0, "moo", (None, None), (None, None), (None, None)])
 Counter({(None, None): 3, 0: 2, 'moo': 1})
 ```
-请查阅[官方说明文档](https://docs.python.org/3/library/collections.html#counter-objects)来阅读 `Counter` 可用的棒棒的函数。
+请查阅[官方说明文档](https://docs.python.org/3/library/collections.html#counter-objects)来阅读 `Counter` 的棒棒的可用函数。
 <!-- #endregion -->
 
 <!-- #region -->
 ### 双队列
-像列表一样，Python的双队列（deque）是一个可变的序列性的数据结构。双队列不同的点在于：
+像列表一样，Python的双队列（deque）是一个可变的序列性数据结构。双队列不同的点在于：
 
- - 修改双队列的开头或者结尾都是 $\mathcal{O}(1)$，而修改列表开头是 $\mathcal{O}(n)$。因此，deque有着独特的函数来利用这一优势，如 `appendleft`。
+ - 修改双队列的开头或者结尾都是 $\mathcal{O}(1)$，而修改列表开头是 $\mathcal{O}(n)$。因此，双队列有着独特的函数来利用这一优势，如 `appendleft`。
  - 以上功能的坏处在于*获取双队列靠近中间的对象是* $\mathcal{O}(n)$，而列表和元组是 $\mathcal{O}(1)$。
 
 你可以在[这里](https://docs.python.org/3/library/collections.html#deque-objects)找到双列表的完整功能。
@@ -361,7 +361,7 @@ deque([0, 1, 2, 3])
 >>> classA = ["Bohr", "Curie", "David", "Euler", "Gauss", "Heisenberg", "Noether"]
 >>> classB = ["Bohm", "Bohr", "Einstein", "Fermi", "Gauss", "Hopper", "Montalcini"]  
 ```
-我们可以通过使用这两个列表创建集然后求交集来找出两个列表通用的名字。结果为一个集，而集是一种可迭代物。因此我们可以将其输入进内置的函数[sorted](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#Functions-that-act-on-iterables)并返回排序过的名字列表。
+我们可以通过使用这两个列表创建集然后求交集来找出两个列表通用的名字。结果为一个集，而集是一种可迭代物。因此我们可以将其输入进内置的函数[sorted](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#操作可迭代物的函数)并返回排序过的名字列表。
 
 ```python
 >>> sorted(set(classA) & set(classB))

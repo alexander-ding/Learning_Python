@@ -27,10 +27,10 @@ jupyter:
 
 当我们输入简短的Python代码片段并输入回车时，CPython直译器会在IPython命令行中瞬间执行你的代码。
 
-让我们熟悉一下Python的数字（number），字符串（string），和列表（list）。在这个过程中，我们会了解Python的标准库的一些模组，如math模组。IPython提供的自动完成和说明文档显示功能会帮助我们探索标准库和其中Python对象（object）的功能。尝试使用Python的字符串和列表会帮助我们对Python的通用界面产生印象，并演示这些基本数据类型的方便特征。
+让我们熟悉一下Python的数字（number），字符串（string），和列表（list）。在这个过程中，我们会了解Python标准库的一些模组，如math模组。IPython提供的自动完成和说明文档显示功能会帮助我们探索标准库和其中Python对象（object）的功能。尝试使用Python的字符串和列表会帮助我们对Python的通用界面产生印象，并演示这些基本数据类型的方便特征。
 
 ## 玩玩数字
-是时候执行一些做简单算术的Python代码了。在IPython命令行中输入 `2 + 3` 并回车，你应该能看到接下来的输入和输出：
+是时候执行一些简单算术的Python代码了。在IPython命令行中输入 `2 + 3` 并敲击回车，你应该能看到接下来的输入和输出：
 
 ```python
 2 + 3
@@ -66,7 +66,7 @@ import math
 ![Displaying the contents of the math module](attachments/ipython_math.PNG)
 
 
-一般来说，敲击 `<TAB>` 会让IPython去尝试自动完成你的代码。这个列表显示了所有可以在 `math.` 之后输入的内容。在“s”打头的函数中，我们可以看到 `sqrt()`。这就是一个求平方根的函数。输入 `math.sq` 然后在敲击 `<TAB>` ，你会看到IPython将自动完成你的代码成 `math.sqrt`。
+一般来说，敲击 `<TAB>` 会使IPython尝试自动完成你的代码。这个列表显示了所有可以在 `math.` 之后输入的内容。在“s”打头的函数中，我们可以看到 `sqrt()`。这就是一个求平方根的函数。输入 `math.sq` 然后在敲击 `<TAB>` ，你会看到IPython将自动完成你的代码成 `math.sqrt`。
 
 让我们用这个函数来计算 $\sqrt{100}$：
 
@@ -74,9 +74,9 @@ import math
 math.sqrt(100)
 ```
 
-你可能会好奇为什么计算的结果显示的是 `10.0` 而非 `10`；在模组2中我们会了解这两个输出是两种不一样的数据*类型*。前者被称为浮点数，浮点指其小数点，而后者则是一个整数。函数 `math.sqrt` 的定义使得它永远都会返回浮点数。
+你可能会好奇为什么计算的结果显示的是 `10.0` 而非 `10`；在模组2中我们会了解这两个输出是两种不一样的数据*类型*。前者被称为浮点数，因为小数点是一个漂浮的点，而后者则是一个整数。函数 `math.sqrt` 的定义使得它永远都会返回浮点数。
 
-当我们想要经常使用math模组里的某个函数时，我们可能会希望不需要每次都要打出math模组的前缀，`math.`。我们可以通过从math模组导入单独的函数来达成这个目的。我们将从math模组导入阶乘（factorial）函数。
+当我们想要经常使用math模组里的某个函数时，我们可能希望不需要每次都要打出math模组的前缀 `math.`。我们可以通过从math模组导入单独的函数来达成这个目的。我们将从math模组导入阶乘（factorial）函数。
 
 ```python
 from math import factorial
@@ -89,7 +89,7 @@ factorial(5)
 ```
 
 ## 试试字符串
-在写代码的时候，我们将书面文字理解为一连串的字符，也就是字符串（string）。因为Python提供了很多方便，高效的字符串处理函数，所以它很适合于文本处理工作。
+在代码中，我们将文字理解为一连串的字符，也就是字符串（string）。因为Python提供了很多方便，高效的字符串处理函数，所以它很适合于文本处理工作。
 
 让我们先通过在双引号之间敲击字符来创建第一个字符串吧：
 
@@ -103,35 +103,35 @@ factorial(5)
 'the dog in the sash'
 ```
 
-译者注：记得切换到英文输入法的引号''和""。中文的‘’和“”是不会被识别的。
+译者注：记得切换到英文输入法的引号 '' 和 "" 。中文的 ‘’ 和 “” 是不会被识别的。
 
-如果你是用单引号来创建一个字符串，那么那个字符串就可以包括双引号（反之亦然）：
+如果你使用单引号来创建一个字符串，那么那个字符串就可以含有双引号（反之亦然）：
 
 ```python
 'He picked up the phone, "Hello? What do you want?" Bob was a rather impolite dude.'
 ```
 
-当然，我们也有专门的特殊字符来帮助我们改变一个字符串的被打印出时的格式。比如说，如果 `\n` 出现在字符串中，它会被当为一个代表回车的字符。这仅仅会在你使用自带的 `print` 函数(一个告诉计算机去将文本显示在用户电脑屏幕上的函数）来打印这个字符串时才会显示，
+当然，我们也有专门的特殊字符来帮助我们改变一个字符串的被打印出时的格式。比如说，如果 `\n` 出现在字符串中，它会被当为一个代表回车的字符。这仅仅会在你使用自带的 `print` 函数（一个指示计算机将文本显示在用户电脑屏幕上的函数）来打印这个字符串时才会显示，
 
-让我们创建一个会被 `print` 时会显示为三行文字的字符串。
+让我们创建一个会被 `print` 显示为三行文字的字符串。
 
 ```python
 print("I like to talk to dogs.\nI like to talk to cats.\nWhat's my deal?")
 ```
 
-当然，字符串的作用远远不及仅仅存储文本！让我们探索一些操作字符串的方法。首先，我们将创建一个字符串并将其存储到一个名为 `sentence` 的变量:
+当然，字符串的作用远远不及仅仅存储文本！让我们探索一些操作字符串的方法。首先，我们将创建一个字符串并将其存储到一个名为 `sentence` 的变量中:
 
 ```python
 sentence = "Who would have thought that we were robots all along?"
 ```
 
-让我们通过字符串的"length"（长度）来查看这个字符串有多少字符吧：
+让我们通过字符串的“length”（长度）来查看这个字符串有几个字符吧：
 
 ```python
 len(sentence)
 ```
 
-我们可以通过切片（slice）这个字符串来查看它的前四个字符，最后六个字符，或者中间的几个字符。
+我们可以通过切片（slice）这个字符串来查看它的前四个字符，最后六个字符，或者中间的字符。
 
 ```python
 sentence[:4]
@@ -145,7 +145,7 @@ sentence[-6:]
 sentence[5:22]
 ```
 
-我们也可以查看是否我们的这个字符串是否包含其它的某个的字符串。字符串 `"robot"` 是否在 `sentence` 里面呢（is `"robot"` **in** `sentence`）？
+我们也可以查看是否我们的这个字符串是否包含其它的某个的字符串。字符串 `"robot"` 是否在 `sentence` 中呢（is `"robot"` **in** `sentence`）？
 
 ```python
 "robot" in sentence
@@ -157,13 +157,13 @@ sentence[5:22]
 ![Built-in functions for a string](attachments/ipython_string.PNG)
 
 
-让我们用名为count的函数来数一下 `sentence` 中有多少小写的w。
+让我们用名为count的函数来数 `sentence` 中有多少小写的w。
 
 ```python
 sentence.count('w')
 ```
 
-让我们看看replace函数是做什么用的。IPython提供一个很方便的看看函数说明文档的功能，只需在函数名后输入两个问号。例：
+让我们看看replace函数是做什么用的。IPython提供一个很方便的看看函数说明文档的功能，只需在函数名后输入两个问号。如下：
 
 ![Looking up documentation for a function](attachments/ipython_doc1.PNG)
 
@@ -173,14 +173,14 @@ sentence.count('w')
 sentence.replace("robot", "computer")
 ```
 
-## 玩玩列表
-列表（list）是所有Python标准库的容器中的一种。它可以存储一序列的Python对象（object）。我们可以创建一列表的数字：
+## 看看列表
+列表（list）是Python标准库中容器的一种。它可以存储一序列（sequence）的Python对象（object）。我们可以创建一个数字列表：
 
 ```python
 [-1, 1/3, 10*2, 7-1]
 ```
 
-列表可以存储任何类型的Python对象；它可以存储或混合数字，字符串，其它列表，和任何其他类型的对象。
+列表可以存储任何类型的Python对象；它可以混合存储数字，字符串，其它列表，和任何类型的对象。
 
 ```python
 [1, 2, "a", 0.5, "apple and orange"]
@@ -192,7 +192,7 @@ sentence.replace("robot", "computer")
 [1, 2, 3] + ["a", "b", "c"]
 ```
 
-像字符串一样，列表本质上也是一个序列（sequence），所以我们可以通过项目在列表中的位置来访问它。这个位置叫做项目的索引（index）；一个序列首项的索引永远都是0.
+像字符串一样，列表本质上也是一个序列，所以我们可以通过项目在列表中的位置来访问它。这个位置叫做项目的索引（index）；序列第一个成员的索引永远都是0.
 
 ```python
 my_list = [10, 20, 30, 40, 50, 60]
@@ -236,7 +236,7 @@ my_list
 my_list[:3]
 ```
 
-这个切片出的结果也可以被用来更新列表的前三项内容。
+这个切片出的结果可以用来更新列表的前三项内容。
 
 ```python
 my_list[:3] = "abc"
@@ -246,7 +246,7 @@ my_list[:3] = "abc"
 my_list
 ```
 
-作为这个展示的结尾，让我们在这个列表的结尾附加（append）一个新项目。
+为这个演示收尾，让我们在这个列表的结尾附加（append）一个新成员。
 
 ```python
 my_list.append("moo")

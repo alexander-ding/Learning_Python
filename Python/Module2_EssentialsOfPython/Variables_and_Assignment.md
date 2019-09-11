@@ -35,7 +35,7 @@ jupyter:
 name = "Brian"  # 为变量 `name` 赋值字符串 "Brian"
 grade = 92      # 为变量 `grade` 赋值整数 92
 ```
-将左右弄混（如 `92 = name`）会导致语法错误。当一个变量被某个对象（如一个数字或字符串）赋值时，我们经常会说这变量是该对象的*引用*（reference）。比如说，变量`name` 是字符串 `"Brian"` 的引用。这意味着，当一个变量被对象赋值后，你可以在代码的其它方式通过调用它来引用对应的对象：
+将左右弄混（如 `92 = name`）会导致语法错误。当变量被某个对象（如一个数字或字符串）赋值时，我们经常会说这变量是该对象的*引用*（reference）。比如说，变量 `name` 是字符串 `"Brian"` 的引用。这意味着，当一个变量被对象赋值后，你可以在代码的其它地方将其作为该对象的代名词（或占位符）使用：
 ```python
 # 演示使用变量
 name = "Brian"
@@ -45,8 +45,8 @@ failing = False
 if grade < 60:
     failing = True
 
-# 在文本文件 "student_grades.txt" 最后写: 
-# 名字 | 成绩 | 及格与否
+# 在文本文件“student_grades.txt”最后写: 
+# 名字 | 成绩 | 不及格
 with open("student_grades.txt", mode="a") as opened_file:
     opened_file.write("{} | {} | {}".format(name, grade, failing))
 ```
@@ -88,7 +88,7 @@ with open("student_grades.txt", mode="a") as opened_file:
 
 1. 创建（初始化）了一个列表，其内态为 `[1, 2, 3]`。
 2. 为变量 `x` 赋值了此列表；`x` 现在是该列表的一个引用了。
-3. 通过我们的引用变量 `x`，更新了列表索引为0的成员以储存整数 `-4`。
+3. 通过我们的引用变量 `x` 更新了列表索引为0的成员以储存整数 `-4`。
 
 这并没有创建一个新的列表对象，而仅仅*修改*了原本的列表。这也是为什么在命令行中打印 `x` 会显示 `[-4, 2, 3]` 而不是 `[1, 2, 3]`。
 
@@ -107,24 +107,24 @@ TypeError                                 Traceback (most recent call last)
 TypeError: 'tuple' object does not support item assignment
 ```
 
-### 可变和不可变类对象
+### 可变和不可变对象类型
 以下是Python中常见的一些可变和不可变对象。在我们开始讨论词典（dictionary）和集（set）时这些知识会很有用。
 <!-- #endregion -->
 
 **一些不可变对象**
 
- - [数字](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types)（整数，浮点数，复数）
- - [字符串](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Strings)
- - [元组](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Tuples) 
- - [布尔值](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#The-Boolean-Type)
- - ["冻结"集](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython%2FDataStructures_III_Sets_and_More.html#%E9%9B%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)（frozen-set）
+ - [数字](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#数字类型)（整数，浮点数，复数）
+ - [字符串](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#字符串)
+ - [元组](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#元组) 
+ - [布尔值](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#布尔类)
+ - ["冻结"集](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython%2FDataStructures_III_Sets_and_More.html#集数据结构)（frozen-set）
 
 **一些可变对象**
 
- - [列表](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists)
- - [词典](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)
- - [集](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)
- - [NumPy数组](https://www.pythonlikeyoumeanit.com/module_3.html)
+ - [列表](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#列表)
+ - [词典](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)
+ - [集](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#集数据结构)
+ - [NumPy数组](https://cn.pythonlikeyoumeanit.com/module_3.html)
 
 <!-- #region -->
 ## 多个变量引用一个可变对象
@@ -149,7 +149,7 @@ TypeError: 'tuple' object does not support item assignment
 [1, 2, 3, 4]
 ```
 
-我们可以看到 `list2` 还在引用*相同的，更新过的*列表，和 `list1` 同步：
+我们可以看到 `list2` 还在引用*相同的，更新过的*列表，所以它和 `list1` 同步：
 ```python
 >>> print(list2)
 [1, 2, 3, 4]
@@ -175,7 +175,7 @@ TypeError: 'tuple' object does not support item assignment
 
 **阅读理解：切片列表是否会创建一个列表的引用？**
 
-设变量 `x`，赋值为一个列表，和变量 `y`，赋值为 `x` 的一个“切片“。`x` 和 `y` 是否引用同样的列表？也就是说，当你更新 `x` 和 `y` 的子序列时，变化是否会在两个变量中都显示？请编写一些简单的代码来查明此问题。
+设变量 `x`，赋值为一个列表，和变量 `y`，赋值为 `x` 的一个“切片”。`x` 和 `y` 是否引用同样的列表？也就是说，当你更新 `x` 和 `y` 的子序列时，变化是否会在两个变量中都显示？请编写一些简单的代码来查明此问题。
 
 </div>
 
@@ -203,7 +203,7 @@ TypeError: 'tuple' object does not support item assignment
 <!-- #endregion -->
 
 <!-- #region -->
-## 阅读理解答案：
+## 阅读理解答案
 
 **切片列表是否会创建一个列表的引用？：解**
 

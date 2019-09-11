@@ -10,6 +10,7 @@ if "%SPHINXBUILD%" == "" (
 set SOURCEDIR=.
 set BUILDDIR=_build
 set SPHINXPROJ=BFundamentalsofPython
+set SPHINXOPTS=-D language=zh_CN
 
 if "%1" == "" goto help
 

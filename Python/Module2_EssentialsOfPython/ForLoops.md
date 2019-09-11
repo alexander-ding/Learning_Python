@@ -31,7 +31,7 @@ jupyter:
 
 <!-- #region -->
 ## For循环
-一个“for循环”（for-loop）允许我们迭代某个集合中的项目，并为每一次项目执行同一块代码。比如说，以下的代码会求元组中所有正数的和：
+一个“for循环”（for-loop）允许我们迭代某个集合中的成员，并为每一次成员执行同一块代码。比如说，以下的代码会求元组中所有正数的和：
 ```python
 total = 0
 for num in (-22.0, 3.5, 8.1, -10, 0.5):
@@ -45,7 +45,7 @@ for <var> in <iterable>:
     一区块代码
 ```
 
-`<var>` 指代任何合法的变量身份（variable-identifier）， `<iterable>` 则是任何**可迭代物**。我们会在下一节中更正式地讨论迭代物；现在你只需要知道任何序列都是可迭代物这一事实就行了。`for` 语句必须由一个冒号结尾，且for循环的主体必须由[空格限定](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope)。
+`<var>` 指代任何合法的变量身份（variable-identifier），`<iterable>` 则是任何**可迭代物**。我们会在下一节中更正式地讨论迭代物；现在你只需要知道任何序列都是可迭代物这一事实就行了。`for` 语句必须由一个冒号结尾，且for循环的主体必须由[空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)。
 
 for循环的行为如下：
 
@@ -75,11 +75,11 @@ print(total)  # `total` 的值为 1 + 3 + 5 = 9
 5. 为 `total` 赋值 `1 + 3`
 6. 迭代此列表，得出值 `5` 并为 `item` 赋值该数字
 7. 为 `total` 赋值 `4 + 5`
-8. 迭代此列表。因为现在已经在列表结尾了，列表将提供一个 `StopIteration` 信号，因此for循环会退出。
+8. 迭代此列表。因为现在已经在列表结尾，列表将提供一个 `StopIteration` 信号，并导致for循环退出
 9. 打印 `total` 的值（9）
 
-#### 可能的错误点
-注意变量 `item` 在for循环退出之后依然存在。它会引用for循环迭代的最后一个值（在这个例子中 `item` 的值为5）。就算如此，*你不应该编写在for循环外面使用迭代变量的代码*。如果你循环一个*空*的可迭代物，迭代变量不会被定义：
+#### 可能的错误
+注意迭代变量 `item` 在for循环退出之后依然存在。它会引用for循环迭代的最后一个值（在这个例子中 `item` 的值为5）。就算如此，*你不应该在for循环外面使用迭代变量*。因为如果你循环一个*空*的可迭代物，迭代变量不会被定义：
 
 ```python
 for x in []:         # 可迭代物是空的——迭代变量 `x` 将不会被定义
@@ -87,7 +87,7 @@ for x in []:         # 可迭代物是空的——迭代变量 `x` 将不会被�
 print(x)             # 程序报错，因为 `x` 没有被定义
 ```
 
-因为我们在试图迭代一个空列表，`StopIteration` 会被立刻返回——甚至在变量 `x` 被定义之前。因此for循环中包含的代码从来没有被执行，之后的 `print(x)` 语句也会导致 `NameError`，因为 `x` 没有被定义！
+当我们试图迭代一个空列表时，程序会在变量 `x` 被定义之前立刻收到 `StopIteration` 信号。for循环中的代码块一次都没有被执行。因为 `x` 没有被定义，之后的 `print(x)` 语句会导致 `NameError`！
 <!-- #endregion -->
 
 <div class="alert alert-info">
@@ -100,21 +100,21 @@ print(x)             # 程序报错，因为 `x` 没有被定义
 
 <!-- #region -->
 ## While循环
-一个“while循环”（while-loop）允许你重复一区块代码，知道某个条件不再满足：
+一个“while循环”（while-loop）允许你重复一区块代码，直到某个条件不再满足：
 
 ```
 while <condition>:
     代码块
 ```
 
-`<condition>` 是一个会返回 `True` 或 `False` 的表达式或任何可以输入进 `bool` 的对象。while循环的“主体”则是在while循环语句下方缩进的代码。
+`<condition>` 是一个会返回 `True` 或 `False` 的表达式，或任何可以转化为 `bool` 的对象。while循环的“主体”则是在循环语句下方缩进的代码。
 
 while循环的行为如下：
 
-- 执行 `bool(<condition>)` 并在返回 `True` 时执行下方缩进的代码区块。不然，“退出”while循环并跳过缩进的代码。
-- 如果缩进的代码被执行了，回到第一步。
+- 执行 `bool(<condition>)` 并在表达式返回 `True` 时执行下方缩进的代码区块。不然，“退出”while循环并跳过其缩进代码。
+- 如果缩进的代码块被执行了，回到第一步。
 
-让我们来看一看一个例子吧：
+让我们观察一个例子：
 ```python
 # 演示基本的while循环
 total = 0
@@ -138,9 +138,9 @@ print(total)  # `total` 现在的值为 2
 
 <div class="alert alert-warning">
 
-**警告！** 
+**警告！**
 
-条件语句永远为真的while循环是有可能的。这会让你的代码无限运行下去！如果这在Jupyter记事本中发生，打断或重启你的内核（kernel）。
+你可能（一不小心）编写了条件语句永远为真的while循环。这会导致你的代码无限运行！如果这在Jupyter记事本中意外发生，打断或重启你的壳（kernel）。
 </div>
 <!-- #endregion -->
 
@@ -160,7 +160,7 @@ print(total)  # `total` 现在的值为 2
 
 在循环中遇到 `break` 会导致程序立刻退出循环：
 
-```ipython
+```python
 # 提前退出循环
 >>> for item in [1, 2, 3, 4, 5]:
 ...     if item == 3:
@@ -174,9 +174,9 @@ print(total)  # `total` 现在的值为 2
 3  ...break!
 ```
 
-你可以在任何循环结尾添加一个 `else` 句段。此else语句的主体*只有在循环在自然退出（没有被 `break` 语句提前退出）后才会执行*。
+你可以在任何循环结尾添加一个 `else` 句段。此else语句的主体*只有在循环自然退出（没有被 `break` 语句打断）后才会执行*。
 
-```ipython
+```python
 # 在循环结尾添加一个else句段
 >>> for item in [2, 4, 6]:
 ...     if item == 3:
@@ -220,20 +220,20 @@ x =  3 >> enter loop-body <<
 
 **阅读理解：控制循环中的流**
 
-重复循环一个列表的整数，求其中偶数的和并将此和加到一个总值中。重复此过程，直到总值超过100，或当你已经循环这个列表超过50次时。只有整数大于等于100时打印总值。
+重复循环一个整数列表，求其中偶数的和并将此和加到一个总值中。重复此过程，直到总值超过100，或已经循环这个列表超过50次。在总值大于等于100时打印它。
 
 </div>
 
 
 ## 官方说明文档链接
 
-- ['for' 语句](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
-- ['while' 语句](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
-- ['break'，'continue'，和 'else' 句段](https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
-- ['pass' 语句](https://docs.python.org/3/tutorial/controlflow.html#pass-statements)
+- [“for”语句](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
+- [“while”语句](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
+- [“break”，“continue”，和“else”句段](https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
+- [“pass”语句](https://docs.python.org/3/tutorial/controlflow.html#pass-statements)
 
 
-## 阅读理解答案：
+## 阅读理解答案
 
 <!-- #region -->
 **简单for循环：解**
@@ -263,16 +263,16 @@ total = 0
 
 while total < 100:
     for item in x:
-        # 当 `item` 是奇数时立刻返回
-        # for循环
+        # 当 `item` 是奇数时立刻跳到
+        # 下一轮for循环
         if item % 2 == 1:
             continue
         else:
             total += item
     num_loop += 1
-    
+
     # 只有在循环了50次之后才
-    # 从while循环中break
+    # 打断while循环中
     if 50 < num_loop:
         break
 else:
