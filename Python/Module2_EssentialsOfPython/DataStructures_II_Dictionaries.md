@@ -19,14 +19,14 @@ jupyter:
 ```
 
 # 数据结构（第二部分）：词典
-Python的词典（dictionary）允许你储存键值对（key-value pair），然后向词典输入键可以快速地获取其对应的值。具体来讲，你通过描述从键到值的单向对应关系来创建词典。**每个键应该只对应一个值**，也就是说每个键都应该是唯一的。
+Python的词典（dictionary）允许你储存键值对（key-value pair），然后通过提供键来快速地获取其对应的值。具体来讲，你通过描述从键到值的单向对应关系来创建词典。**每个键应该只对应一个值**，也就是说每个键都应该是唯一的。
 
 
 <!-- #region -->
-让我们来创建以下食物到价格的对应关系：
+让我们来创建以下从食物到价格的对应关系：
 
-- "cheese" $\rightarrow$ 2.53, 
-- "milk" $\rightarrow$ 3.40, 
+- "cheese" $\rightarrow$ 2.53，
+- "milk" $\rightarrow$ 3.40，
 - "frozen pizza" $\rightarrow$ 8.01
 
 ```python
@@ -38,7 +38,7 @@ Python的词典（dictionary）允许你储存键值对（key-value pair），�
 8.01
 ```
 
-Pythond的词典是其数据结构中一颗闪耀的星；它紧凑，快速，通用，并非常有用。你可以用它来创建多种多样的对应关系。
+Python的词典是其数据结构中一颗闪耀的星；它紧凑，高效，通用，并非常有用。你可以用它来创建多种多样的对应关系。
 
 ```python
 # 记录某3D坐标是否处于空间中某区域之中
@@ -71,13 +71,13 @@ dict
 # 使用 `{key1:value1, key2:value2, ...}` 来创建词典：
 #  "apple" -> "fruit"
 # "carrot" -> "vegetable
->>> fruit_or_veggie = {"apple":"fruit", "carrot":"vegetable"} 
+>>> fruit_or_veggie = {"apple":"fruit", "carrot":"vegetable"}
 
 # 创建空词典
 >>> {}
 {}
 ```
-你也可以使用 `dict` 来作为构造器来创建词典。你可以向其输入有着键值对（由类似元组的序列代表）的可迭代物。
+你也可以使用 `dict` 来作为构造器来创建词典。你可以向其输入存有键值对（键值对由如元组的序列表达）的可迭代物。
 
 ```python
 # 使用 `dict` 来创建词典：
@@ -104,7 +104,7 @@ dict
 ```
 
 ### 返回键对应的值
-现在我们可以使用词典来“查找”某项目是水果还是蔬菜。词典支持和列表/元组一样的方括号“获取项目”语法，但与其使用索引我们使用一个合法的键：
+现在我们可以使用词典来“查找”某项目是水果还是蔬菜。词典支持和列表/元组一样的方括号“获取项目”语法，但与其使用索引我们将使用一个合法的键：
 ```python
 # 获取键 "apple" 对应的值
 >>> fruit_or_veggie["apple"]
@@ -123,7 +123,7 @@ KeyError                                  Traceback (most recent call last)
 KeyError: 'grape'
 ```
 
-### 添加额外的键值对应
+### 添加额外的键值对
 在词典创建后，你可以通过 `my_dict[new_key] = new_value` 在其中设定额外的的键值对：
 ```python
 # 设定对应 "banana" -> "fruit"
@@ -179,9 +179,9 @@ True
 []
 ```
 
-具体来讲，词典的内容应遵循以下规则：
+具体来讲，词典应遵循以下规则：
 
-- 词典的*键*必须是*不可变*的对象（更加精确地讲，他必须是[可哈希](https://docs.python.org/3/glossary.html#term-hashable)（hashable）的；不要太在意这个细节）。
+- 词典的*键*必须是*不可变*的对象（更加精确地讲，它必须是[可哈希](https://docs.python.org/3/glossary.html#term-hashable)（hashable）的；不要太在意这个细节）。
 - 词典的*值*可以是任何对象（甚至可以是同一个词典！试试看，这挺酷的！）
 
 <div class="alert alert-warning">
@@ -198,9 +198,9 @@ True
  - 元组（但元组中的成员也必须是不可变对象）
  - 布尔值
  - [冻集](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#集操作)（frozenset）对象
- 
-使用可变对象作为键的问题在于该对象在作为键使用*之后*可以被改变。因此，词典会需要“检测”到这个变化并为变化后的键重新创建它的“查找方式”。而值可以是可变对象，因为值对象的细节并不影响词典如何查找该值。
- 
+
+使用可变对象作为键的问题在于该对象在作为键使用*之后*可以被改变。因此，词典会需要通过某种方法“检测”到这个变化并为变化后的键重新创建它的“查找方式”。相比之下，值可以是可变对象，因为值对象的细节并不影响词典如何查找该值。
+
 如上所述，如果你试图使用列表来作为键，你会收到一个 `TypeError`，因为列表是可变的：
 ```python
 # 试图将列表作为键使用
@@ -280,7 +280,7 @@ False
 3
 ```
 
-`example_dict.keys()` 也会返回一个词典键的可迭代物，也因此可以用来达到和之前范例直接使用词典一样的效果。
+`example_dict.keys()` 也会返回一个词典键的可迭代物。因此它可以达到和之前范例直接使用词典一样的效果。
 
 **检查词典的值**
 
@@ -332,21 +332,21 @@ True
 
 假设我们收到一个值为*互不相同*的数字的词典，编写一个返回对应词典中*最大*值的*键*的函数。
 
-然后，修改你的函数来处理值可能重复的词典。返回包含所有对应最大值的键的元组。
+然后，修改你的函数来处理值可能重复值的词典。返回包含所有对应最大值的键的元组。
 </div>
 
 
 ### 词典函数的时间复杂性
 除了灵活和通用之外，词典的函数也相对高效。以下为词典常见操作（在CPython实现中）的时间复杂性——请注意 $\mathcal{O}(1)$ 操作的数量！
 
-设 `example_dict` 为一个有 $n$ 个键值对的词典。
+设 `example_dict` 为有 $n$ 个键值对的词典。
 
 以下为 $\mathcal{O}(1)$ 的操作：
 
-- 返回词典键的数量：`len(example_dict)` 
-- 检查某对象是否为词典的键，如果是的话返回它对应的值：`example_dict[key]` 
-- 设定一个键值对应：`example_dict[key] = value` 
-- 检查某对象是否为词典的键：`obj in example_dict` 
+- 返回词典键的数量：`len(example_dict)`
+- 检查某对象是否为词典的键，如果是的话返回它对应的值：`example_dict[key]`
+- 设定一个键值对：`example_dict[key] = value`
+- 检查某对象是否为词典的键：`obj in example_dict`
 - 检查某对对象是否为词典的键值对：`(obj1, obj2) in example_dict.items()`
 
 以下为 $\mathcal{O}(n)$ 的操作：
@@ -356,12 +356,12 @@ True
 
 <!-- #region -->
 ### 词典是否有序？一句警告
-和Python的序列不同的是，词典没有任何内在的顺序，但这是在Python 3.6之前了。
+和Python的序列不同的是，词典没有任何内在的顺序...但是这是在Python 3.6前的历史了。
 
-在Python 3.6之前，词典并没有任何顺序。如果你迭代一个词典的键，值，或键值对，你不会得到任何项目*顺序*的保证。`[i for i in example_dict]` 可能在每次运行时返回顺序不同的键列表；你唯一得到的保证是列表会包含词典所有的键：
+在Python 3.6之前，词典并没有任何顺序。如果你迭代一个词典的键，值，或键值对，你不会得到任何*顺序*的保证。`[i for i in example_dict]` 可能在每次运行时返回顺序不同的键列表；你唯一得到的保证是列表会包含词典所有的键：
 
 ```python
-# 在Python 3.5和之前，词典是无序 的
+# 在Python 3.5和之前，词典是无序的
 >>> example_dict = {"key1":"value1", "key2":"value2", "key3":"value3"}
 
 # 这可能会返回排序不同的列表
@@ -377,10 +377,10 @@ True
 ...
 ```
 
-词典在[Python 3.6中重新实现](https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation)，使得它相比以前会少使用大约25%的内存（这是一个很大的提升！）。随之而来的变化就是新的实现导致了词典的各种可迭代物（如 `dict.keys()`，`dict.values()`，`dict.items()`）每次都会根据添加到词典中顺序返回对象。
+词典在[Python 3.6中重新实现](https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation)，使得它相比以前会少用大约25%的内存（这是一个很大的提升！）。随之而来的变化就是新的实现导致了词典的各种可迭代物（如 `dict.keys()`，`dict.values()`，`dict.items()`）每次都会根据添加到词典中的顺序返回对象。
 
 ```python
-# 在Python 3.6和之后词典根据键值对添加的顺序来排序
+# 在Python 3.6和之后，词典根据键值对添加的顺序来排序
 >>> example_dict = {"key1":"value1", "key2":"value2", "key3":"value3"}
 
 # 这永远都会返回一样顺序的键
@@ -388,11 +388,11 @@ True
 ["key1", "key2", "key3"]
 ```
 
-这很棒，对吧？不对！如果你在Python 3.6中编写基于词典排序的代码，那么你的算法在Python 3.5和以前几乎一定会导致错误的结果！最差的是，这很可能在你的代码中根本不报错，所以这个bug会静默地持续下去——这很难抓到！
+这很棒，对吧？不对！如果你在Python 3.6中编写基于词典成员顺序的代码，那么你的算法在Python 3.5和以前几乎一定会导致错误的结果！最差的一点是，这很可能在你的代码中根本不报错，所以这个bug会静默地持续下去——这很难抓到！
 
-**如果你没有明显标记你的代码和Python 3.6之前的版本不兼容，编写代码的时候假装词典并不归序！**
+**如果你没有明显标记你的代码和Python 3.6之前的版本不兼容，编写代码的时候假装词典并没有顺序！**
 
-如果你真的想要使用一个顺序的词典，用 `collections.OrderedDict`。它的行为和正常的词典一模一样，但它不管什么Python版本都保证顺序。
+如果你真的想要需要一个顺序的词典，使用 `collections.OrderedDict`。它的行为和正常的词典一模一样，但它不管在什么Python版本都保证成员顺序。
 
 ```python
 from collections import OrderedDict
@@ -433,7 +433,7 @@ names = ("Ashley", "David", "Edward", "Zoe")
 scores = (0.92, 0.72, 0.88, 0.77)
 ```
 
-这是一个基本但冗长的解法。它太长，且其逻辑使因为使用了 `index` 而没必要地复杂化了。
+这是一个简单但冗长的解法。它太长，且其逻辑使因为使用了 `index` 而没必要地复杂化了。
 
 ```python
 # basic solution for creating `grades`
@@ -444,7 +444,7 @@ for index in range(len(names)):
     grades[name] = value
 ```
 
-你应该使用函数[zip](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html#zip)来将名字和成绩打包到一个可迭代物中国呢，并利用理解表达式来创建词典。
+你应该使用函数[zip](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html#zip)来将名字和成绩打包到一个可迭代物中，并利用理解表达式来创建词典。
 
 ```python
 # 好很多的创建 `grades` 的方式
@@ -483,7 +483,7 @@ inverted_x = {value:key for key, value in x.items()}
 
 ```python
 # solution
-def max_key(x): 
+def max_key(x):
     max_val = max(x.values())
     for key, value in x.items():
         if value == max_val:
@@ -494,9 +494,9 @@ def max_key(x):
 'c'
 ```
 
-这个函数的不利之处在于它迭代了 `x` 两次；一次由 `max` 一次由for循环。这个问题的最优解仅仅迭代一次，但它用到了在这里提供的材料之外的进阶概念。我们在此为子孙后代提供最优解：
+这个函数的不利之处在于它迭代了 `x` 两次；一次由 `max`，一次由for循环。这个问题的最优解仅仅迭代一次，但它用到了在超出本节纲领的进阶概念。我们在此为未来的你提供最优解：
 
-你可以为 `max` 函数提供“key”参数。这个参数接受用来计算每轮迭代的“值”（这个值就是 `max` 函数用来找出最大值的参考）的函数。在此，我们向其输入内置的词典函数[get](https://docs.python.org/3/library/stdtypes.html#dict.get)。它接受词典的键为参数并返回对应的值。所以 `max` 会迭代 `x` 的每一个值并通过对比每个 `x.get(key)`（这和 `x[key]` 一样有效率）来寻找最大值。
+你可以为 `max` 函数提供“key”参数。这个参数接受用来计算每轮迭代的“值”的函数，而这个值就是 `max` 函数用来找出最大成员的使用的值。在此，我们向其输入内置的词典函数[get](https://docs.python.org/3/library/stdtypes.html#dict.get)。它接受词典的键为参数并返回对应的值。所以 `max` 会迭代 `x` 的每一个值并通过对比每个 `x.get(key)`（这和 `x[key]` 功能基本一样）来寻找最大值。
 
 ```python
 # 最优解（在此为完整性提供）

@@ -21,7 +21,7 @@ jupyter:
 <!-- #region -->
 # 错误范围内百分比
 
->我们需要设计一个算法来测试某工厂制造的零件有多少百分比属于设计规格的可接受范围内。函数接受一列表的零件度量，一列表的设计规格的理想度量，以及一个可以接受的错误范围。返回有多少部分的零件属于安全范围内（`<=`）。
+>我们需要设计一个算法来测试某工厂制造的零件有多少百分比属于设计规格的可接受范围内。函数接受一列表的零件度量，一列表的设计规格的理想度量，以及一个可以接受的错误范围，并返回有多少部分的零件属于安全范围内（`<=`）。
 
 ``` Python
 # 范例行为
@@ -38,19 +38,19 @@ jupyter:
 ```python
 def within_margin_percentage(desired, actual, margin):
     """ 计算多少部分的值属于期望值的错误范围内
-        
+
         Parameters
         ----------
         desired: List[float]
             期望值
-        
+
         actual: List[float]
             对应的实际值
             假设 `len(actual) == len(desired)`
-        
+
         margin: float
             可接受的错误范围
-        
+
         Returns
         -------
         float
@@ -60,26 +60,26 @@ def within_margin_percentage(desired, actual, margin):
     pass
 ```
 
-你会需要熟悉[对比操作符](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#Comparison-Operations)，[控制流](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html)，和[列表索引](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Introducing-Indexing-and-Slicing)来解决本问题。
+你会需要熟悉[对比操作符](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#比较运算)，[控制流](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html)，和[列表索引](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#索引和切片简介)来解决本问题。
 
 ## 解
-本题可以通过简单地循环实际和可接受值对并数多少对属于安全范围内来解决：
+本题可以通过简单地循环实际和可接受值并计算其中多少属于安全范围内来解决：
 ``` Python
 def within_margin_percentage(desired, actual, margin):
     """ 计算多少部分的值属于期望值的错误范围内
-        
+
         Parameters
         ----------
         desired: List[float]
             期望值
-        
+
         actual: List[float]
             对应的实际值
             假设 `len(actual) == len(desired)`
-        
+
         margin: float
             可接受的错误范围
-        
+
         Returns
         -------
         float
@@ -93,14 +93,14 @@ def within_margin_percentage(desired, actual, margin):
     return count / total if total > 0 else 1.0
 ```
 
-注意我们处理了 `desired` 和 `actual` 是空列表的边缘情况：[单行if-else语法](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#Inline-if-else-statements) `count / total if total > 0 else 1` 将在 `total` 为0时返回1:
+注意我们处理了 `desired` 和 `actual` 是空列表的边缘情况：[单行if-else语法](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#单行的if-else语句) `count / total if total > 0 else 1` 将在 `total` 为0时返回1:
 ```python
 >>> within_margin_percentage([], [], margin=0.5)
 1.0
 ```
-这个行为按理说是这种情况下的正确行为（因为没有任何值在安全范围外面）。如果我们没有处理这个边缘情况，`within_margin_percentage([], [], margin=0.5)` 会导致 `ZeroDivisionError`。
+以上行为应该是这种情况下的正确行为（因为没有任何值在安全范围外面）。如果我们没有处理这个边缘情况，`within_margin_percentage([], [], margin=0.5)` 会导致 `ZeroDivisionError`。
 
-你也可能会使用内置的 `sum` 函数和[生成器理解](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Creating-your-own-generator:-generator-comprehensions)来过滤在安全范围外的项目对：
+你也可能会使用内置的 `sum` 函数和[生成器理解](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#创建你自己的生成器：生成器理解)来过滤在安全范围外的成员对：
 
 ```python
 def within_margin_percentage(desired, actual, margin):

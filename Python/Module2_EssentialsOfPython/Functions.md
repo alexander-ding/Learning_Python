@@ -27,7 +27,7 @@ jupyter:
 在本资源各处会有一些阅读理解练习。这些题目旨在帮助读者活学活用文中的知识点。练习题的答案可以在本页底部找到。
 </div>
 
-定义函数将允许我们包装代码片段，描述进入和离开其代码的信息。你可以在各种情况下重复使用这个“代码胶囊”。比如说，假设你想要数一个字符串中有多少元音，你可以定义以下的函数来达到目的：
+定义函数允许我们包装代码片段并描述进入和离开其中的信息。你可以在各种情况下重复使用这个“代码胶囊”。比如说，假设你想要数一个字符串中有多少元音，你可以定义以下的函数来达到该目的：
 
 ```python
 def count_vowels(in_string):
@@ -41,7 +41,7 @@ def count_vowels(in_string):
     return num_vowels
 ```
 
-执行此代码会定义*函数* `count_vowels`。这个函数会期待一个对象作为*输入参数*（input argument），由 `in_string` 代名，并会*返回*（return）该对象中元音的数量。使用 `count_vowels` 并向其输入一个对象的过程叫做*调用*（call）该函数：
+执行此代码会定义*函数* `count_vowels`。这个函数期待一个对象作为*输入参数*（input argument），由 `in_string` 代名，并会*返回*（return）该对象中元音的数量。使用 `count_vowels` 并向其输入一个对象的过程叫做*调用*（call）该函数：
 
 ```python
 >>> count_vowels("Hi my name is Ryan")
@@ -58,19 +58,19 @@ def count_vowels(in_string):
 4
 ```
 
-在本节中，我们将会了解一下定义和调用Python函数的语法。
+在本节中，我们将会了解定义和调用Python函数的语法。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
 **定义**：
 
-Python**函数**（function）是一个包装代码的对象。*调用*（call）函数将会执行包装的代码并*返回*（return）一个对象。你可以定义函数使其接受*参数*（argument），也就是输入进包装的代码的对象。 
+Python**函数**（function）是一个包装代码的对象。*调用*（call）函数将会执行包装的代码并*返回*（return）一个对象。你可以定义函数使其接受*参数*（argument），也就是输入进包装代码的对象。
 </div>
 
 <!-- #region -->
 ## `def` 语句
-类似于 `if`，`else`，和 `for`，Python保留 `def` 语句来预示函数（以及我们会在之后讨论的几个其它东西）的定义。以下是定义Python函数的一般形式：
+类似于 `if`，`else`，和 `for`，Python保留了 `def` 语句来表达函数（以及我们会在之后讨论的其它几个构造体）的定义。以下是Python函数定义的一般形式：
 
 ```
 def <function name>(<function signature>):
@@ -79,15 +79,15 @@ def <function name>(<function signature>):
     return <object>
 ```
 
-- `<function name>` 可以是任何合法的变量名，在这之后*必须*有一对括号和一个冒号。
-- `<function signature>` 描述函数的输入参数。如果函数不接受任何变量，你可以在这一部分留白（你仍然需要输入括号，但是光光括号并不会包装任何参数）。
-- 说明字符串（documentation string）（一般叫做“docstring”）可以有多行长并解释了函数的目的。它是可选的。
-- `<encapsulated code>` 可以包含一般的Python代码，且其由相对于 `def` 语句的缩进在标记。
-- `return` 当被包装的代码遇到这个标示后，会导致函数返回标记的对象并立刻终止函数的执行。
- 
-Python同样保留 `return` 语句来表达函数的终止；如果遇到了 `return`，那程序将立即终止函数的执行并返回 `return` 右边的对象。
+- `<function name>` 是任何合法的变量名，在这之后*必须*跟随一对括号和一个冒号。
+- `<function signature>` 描述函数的输入参数。如果函数不接受任何变量，你可以留白这一部分（你仍然需要提供括号，但是仅仅括号并不会包装任何参数）。
+- 说明字符串（documentation string）（一般叫做“docstring”）可以长达多行并解释函数的目的。它是可选的。
+- `<encapsulated code>` 包含正常的Python代码，其由相对于 `def` 语句的缩进限定。
+- `return` 当函数中包装的代码遇到这个标示后，函数会返回标示后跟随的对象并立刻终止函数的执行。
 
-请注意，和if语句和for循环一样，`def` 语句必须由冒号结尾，且函数的主体代码必须[由空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)：
+Python同样保留了 `return` 语句来表达函数的终止；如果遇到了 `return`，那程序将立即终止函数的执行并返回 `return` 右边的对象。
+
+请注意，与if语句和for循环一样，`def` 语句必须由冒号结尾，且函数的主体代码必须[由空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)：
 <!-- #endregion -->
 
 <!-- #region -->
@@ -132,13 +132,13 @@ def ok_func():
 
 **阅读理解：编写简单函数**
 
-写一个名为 `count_even` 的函数。它应该接受一个名为 `numbers` 的参数，其为一个成员为整数的可迭代物。函数应该返回列表中的偶数数量。注意包含一个合理的docstring。
+编写一个名为 `count_even` 的函数。它应该接受一个名为 `numbers` 的整数可迭代物作为参数。该函数应该返回列表中偶数的数量。注意包含一个合理的docstring。
 
 </div>
 
 <!-- #region -->
 ## `return` 语句
-一般来讲，`return` 语句可以返回任何Python对象。同时，你可以使用一个**空的** `return` 语句或在函数中完全不使用**返回**语句。这两种情况下，*函数都会返回 `None` 对象*。
+一般来讲，`return` 语句可以返回任何Python对象。同时，你可以使用一个**空的** `return` 语句或在函数中完全不使用**返回**（return）语句。在这两种情况下，*函数都会返回 `None` 对象*。
 
 ```python
 # 本函数返回 `None`
@@ -157,7 +157,7 @@ def f():
 <!-- #endregion -->
 
 <!-- #region -->
-所有Python函数都会返回*某物*。就算是内置的 `print` 函数在打印后也会返回 `None`！
+所有Python函数都会返回*某个对象*。就算是内置的 `print` 函数在打印后也会返回 `None`！
 
 ```python
 # `print` 函数返回 `None`
@@ -171,10 +171,10 @@ True
 
 **警告**！
 
-请注意不要*错误地*漏掉或使用空的返回语句。你任然能调用你的函数，但是它在任何情况下都会返回 `None`！
+请注意不要*错误地*漏掉或使用空的返回语句。你将依然能够调用你的函数，但是它在任何情况下都会返回 `None`！
 </div>
 
-函数并不是一定要有返回语句之外的额外代码的。比如说，我们可以使用`sum` 和生成器理解（见本模组前一节）来简短我们的 `count_vowels` 函数：
+函数并不一定要有除了返回语句之外的代码。比如说，我们可以使用 `sum` 和生成器理解（见本模组前一节）来简化我们的 `count_vowels` 函数：
 
 ```python
 # 你可以直接描述函数返回的对象
@@ -186,7 +186,7 @@ def count_vowels(in_string):
 
 <!-- #region -->
 ### 多个 `return` 语句
-你可以在一个函数内使用多余一个的 `return` 语句。在处理边缘情况或优化代码时这可能会有用。假设你想要你的函数通过[泰勒级数](https://en.wikipedia.org/wiki/Taylor_series#Exponential_function)（Taylor series）来模糊计算$e^{x}$，当 $x = 0$ 时函数应该立刻返回 `1.0`：
+你可以在一个函数内使用不止一个 `return` 语句。在处理边缘情况或优化代码时这可能会有用。假设你想要你的函数通过[泰勒级数](https://en.wikipedia.org/wiki/Taylor_series#Exponential_function)（Taylor series）来模糊计算 $e^{x}$，当 $x = 0$ 时函数应该立刻返回 `1.0`：
 
 ```python
 def compute_exp(x):
@@ -198,21 +198,21 @@ def compute_exp(x):
     return sum(x**n / factorial(n) for n in range(100))
 ```
 
-如果 `x==0` 为 `True`，那么程序将执行第一个 `return` 语句，返回 `1.0` 并立刻“终止”该函数，而不执行其下方的代码。
+如果 `x==0` 为 `True`，那么程序将执行第一个 `return` 语句，返回 `1.0` 并立刻“终止”该函数，且不执行之后的代码。
 <!-- #endregion -->
 
-如上所述，就算后面有额外的代码，`return` 语句也会导致函数立刻终止而不执行之后的代码。*在一次函数调用中，程序不可能遇到多个 `return` 语句*。因此，如果你想要返回多个项目，那么你的函数必须返回单个包含这些项目的容器，如列表会元组。
+如上所述，就算下方有额外的代码，`return` 语句也会导致函数立刻终止且不执行之后的代码。*在一次函数调用中，程序不可能遇到多个 `return` 语句*。因此，如果你想要返回多个对象，那么你的函数必须返回单个包含这些项目的容器，如列表会元组。
 
 <!-- #region -->
 ```python
 # 函数返回多个项目
-def bad_f(x): # 函数名字大意为：不好的函数
+def bad_f(x): # 译者注：函数名字大意为：不好的函数
     """ 返回 x**2 和 x**3"""
-    return x**2 
+    return x**2
     # 此代码永远都不会被执行！
     return x**3
 
-def good_f(x): # 函数名字大意为：好的函数
+def good_f(x): # 译者注：函数名字大意为：好的函数
     """ return x**2 and x**3"""
     return (x**2, x**3)
 ```
@@ -240,22 +240,22 @@ def add_2(x):
 def add_2(x): return x + 2
 ```
 
-尽量只在函数极其简单到不需要docstring就能理解时才使用此功能。不要滥用。
+尽量只在函数极其简单到不需要docstring就能理解时使用此功能。切记不要滥用。
 <!-- #endregion -->
 
 <!-- #region -->
 ## 参数
-你可以在函数签名（function signature）部分通过一序列由逗号隔开的变量名来描述函数的*位置性*参数（positional argument）。比如说，以下代码为函数 `is_bounded` 提供了 `x`，`lower`，和 `upper` 三个输入参数：
+你可以在函数签名（function signature）部分通过一序列由逗号隔开的变量名来描述函数的*位置*参数（positional argument）。比如说，以下代码为函数 `is_bounded` 提供了 `x`，`lower`，和 `upper` 三个参数：
 
 ```python
 def is_bounded(x, lower, upper):
     return lower <= x <= upper
 ```
 
-你可以用几种不同的方法来像函数提供其参数：
+你可以用几种不同的方法来向函数提供参数：
 
 ### 通过位置提供参数
-输入到 `is_bounded` 中的对象会根据它们的位置来赋值给它的输入变量。也就是说，`is_bounded(3, 2, 4)` 会赋值 `x=3`，`lower=2`，和 `upper=4`，根据函数输入参数的位置顺序来对应：
+输入到 `is_bounded` 中的对象会根据它们的位置来赋值函数的输入变量。也就是说，`is_bounded(3, 2, 4)` 会赋值 `x=3`，`lower=2`，和 `upper=4`，其根据函数输入参数的位置顺序来对应：
 
 ```python
 # 计算：2 <= 3 <= 4
@@ -264,7 +264,7 @@ def is_bounded(x, lower, upper):
 True
 ```
 
-向函数输入太少或太多参数会导致 `TypeError`
+向函数输入太少或太多参数会导致 `TypeError`。
 ```python
 # 输入太少：报错
 is_bounded(3)
@@ -303,10 +303,10 @@ SyntaxError: positional argument follows keyword argument
 
 <!-- #region -->
 ### 有默认值的参数
-你可以提供参数的默认值。如果用户在调用函数时没有提供此参数，那么函数将会使用定义的默认值。请回忆我们的 `count_vowels` 函数。假设我们想要提供将“y”算为元音的选择，但因为我们知道人们一般不会将“y”算为元音，所以我们可以默认不算“y”：
+你可以提供参数的默认值。如果用户在调用函数时没有提供此参数，那么函数将会使用定义的默认值。请回忆我们的 `count_vowels` 函数。假设我们想要提供将“y”算为一个元音的选择。因为我们知道人们一般不会将“y”视为元音，所以我们可以默认将“y”除外：
 
 ```python
-def count_vowels(in_string, include_y=False): 
+def count_vowels(in_string, include_y=False):
     """ 返回 `in_string` 中元音的数量"""
     vowels = "aeiouAEIOU"
     if include_y:
@@ -314,7 +314,7 @@ def count_vowels(in_string, include_y=False):
     return sum(1 for char in in_string if char in vowels)
 ```
 
-现在，如果在调用 `count_vowels` 时只有 `in_string` 被提供了，那么 `include_y` 会使用默认值 `False`：
+现在，如果在调用 `count_vowels` 时只提供了 `in_string`，那么 `include_y` 会使用默认值 `False`：
 
 ```python
 # 使用默认值：不将y算为元音
@@ -349,7 +349,7 @@ def f(x, y, count=1, upper=2, z):
 
 <div class="alert alert-info">
 
-**阅读理解：函数和参数s**
+**阅读理解：函数和参数**
 
 编写一个函数 `max_or_min`。它接受两个位置参数 `x` 和 `y`（将会被赋值为数字）以及一个 `mode` 变量，其默认值为 `"max"`。
 
@@ -361,10 +361,10 @@ def f(x, y, count=1, upper=2, z):
 
 <!-- #region -->
 ### 支持任意多的位置参数
-Python为我们提供了定义可以接受任意多位置参数的函数的语法。使用 `def f(*<var_name>)` 语法来定义这类输入。
+Python提供了定义可以接受任意多位置参数的函数的语法。使用 `def f(*<var_name>)` 语法来定义这类输入。
 
 ```python
-# * 符号表明了调用 `f` 时可以向 `args` 
+# * 符号表明调用 `f` 时可以向 `args`
 # 输入任意多的参数。
 def f(*args):
     #  所有向 `f` 输入的参数都会被“打包”成一个元组
@@ -382,7 +382,7 @@ def f(*args):
 ()
 
 # 向 `f` 输入1个参数
->>> f(1)           
+>>> f(1)
 (1,)
 
 # 向 `f` 输入3个参数
@@ -439,7 +439,7 @@ def f(x, y, z):
 >>> f(1, 2, 3)
 6
 
-# `*` 意味着：解包 [1, 2, 3] 的内容并将每个
+# `*` 意味着：解包 `[1, 2, 3]` 的内容并将每个
 # 物件分别输入为x，y，和z
 >>> f(*[1, 2, 3])  # 等值于：f(1, 2, 3)
 6
@@ -511,10 +511,10 @@ def f(x, y=2, **kwargs):
     return None
 
 # 译者注：kwargs是keyword arguments的缩写，也就是关键词参数。
-# 译者注：此命名方式算是传统，所以尽量遵循
+# 译者注：此命名方式是传统，所以请尽量遵循
 ```
 ```python
-# passing arbitrary keyword arguments to `f`
+# 向 `f` 输入任意的关键词参数
 >>> f(1, y=9, z=3, k="hi")
 ```
 ```
@@ -538,7 +538,7 @@ kwargs is:  {}
 # 接受任意多的位置和关键词参数
 def f(*x, **y):
     # 所有位置参数都打包成元组 `x`
-    # 所有关键词参数都打包成词典 `y` 
+    # 所有关键词参数都打包成词典 `y`
     print(x)  
     print(y)
     return None
@@ -642,24 +642,24 @@ if count_vowels("pillow") > 1:
 - [函数注解](https://docs.python.org/3/tutorial/controlflow.html#function-annotations)
 
 <!-- #region -->
-## 阅读理解答案：
+## 阅读理解答案
 
 **编写简单函数：解**
 
 ```python
 def count_even(numbers):
-    """ 返回可迭代物中偶数的数量"""
+    """ 返回可迭代物中偶数的数量 """
     total_even = 0
     for num in numbers:
         if num % 2 == 0:
             total += 1
     return total
 ```
-或，通过使用生成器理解：
+或通过使用生成器理解：
 
 ```python
 def count_even(numbers):
-    """ 返回可迭代物中偶数的数量"""
+    """ 返回可迭代物中偶数的数量 """
     return sum(1 for num in numbers if num % 2 == 0)
 ```
 
@@ -668,16 +668,16 @@ def count_even(numbers):
 ```python
 def max_or_min(x, y, mode="max"):
     """ 根据 `mode` 参数返回 `max(x,y)` 或 `min(x,y)`。
-        
+
         Parameters
         ----------
         x : Number
-   
+
         y : Number
-   
+
         mode : str
             'max' 或 'min'
-        
+
         Returns
         -------
         两值的最大或最小值。如果mode不合法那么会返回 `None`。"""
@@ -689,7 +689,7 @@ def max_or_min(x, y, mode="max"):
         return None
 ```
 
-请注意你其实可以在 `mode` 输入不正确时让你的函数报错（raise an “exception”）。事实上，这应该才是这种情况下更加合理的函数行为。
+请注意你其实可以在 `mode` 输入不正确时让你的函数报错（raise an “exception”）。事实上，这才应该是这种情况下更加合理的函数行为。
 
 这种解决方案如下：
 ```python
@@ -716,7 +716,7 @@ def mean(*seq):
     return total / len(seq)
 ```
 
-或，我们可以利用以下两地来做一下骚操作：
+或者我们可以利用以下两点来做一些骚操作：
 
 - 当 `seq` 为空时 `bool(seq)` 是 `False` 的事实
 - 单行if-else语法
