@@ -1,12 +1,12 @@
-Module 1: Getting Started with Python
-=====================================
-This module introduces the reader to the Python programming language and to some powerful tools for writing and running Python code. We will discuss what Python is, what it means to be a programming language, as well as what happens when you install Python on your computer. 
+模组1：Python入门
+=================
+本模组将向读者介绍Python以及一些强大的Python编辑以及运行工具。我们将讨论Python是什么，编程语言具体是什么意思，以及安装Python具体对你的电脑意味着什么。
 
-Next, we will step through the process of installing Python on our computers. Specifically, we will be installing the Anaconda distribution of Python, which includes critical 3rd party libraries and tools that are essential for doing any STEM-related work (e.g. NumPy, matplotlib, and Jupyter).
+其次，我们将一步步介绍如何安装Python。我们会安装Anaconda版本的Python，其中含有很多对科学工作极其重要的第三方模组和工具（比如NumPy，matplotlib，Jupyter）。
 
-Ready or not, it's time to actually write some code! Armed with our fresh install of Python, we will embark on an informal introduction to the language by dabbling with numbers, messing with strings, and playing with lists. This will allow us to begin building an intuition of what Python's syntax generally looks like and what it feels like to write and run Python code. Module 2 is where we will begin a more careful study of the language.
+不管你准备好了没有，是时候编写一些代码了！当我们安装好了全新的Python之后，我们将进入一个非正式的Python教程--随便尝试使用数字，写几个字符串，玩玩列表。这将帮助我们建立一个对Python语法的直观印象，并体验编写和运行Python代码的感受。模组2则会更加细致系统地学习Python。
 
-Lastly, we will take some time to survey some modern tools for writing and editing Python code. This includes the revolutionary Jupyter notebook, which has become a fantastically popular tool for researchers, data scientists, educators, and students alike. Also presented are two of the most powerful integrated development environments (IDEs) for Python: PyCharm and Visual Studio Code.
+最后，我们会花一些时间去勘察一些常用的Python代码编写工具。这包括Jupyter Notebook，一个在实验者，数据科学家，教育家，和学生之间非常流行的工具。同时，我们也会介绍两个非常强大的Python集成开发环境（IDE）：PyCharm和Visual Studio Code。
 
 .. toctree::
    :maxdepth: 2

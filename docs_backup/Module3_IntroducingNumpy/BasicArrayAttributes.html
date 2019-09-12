@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Numpy array attributes, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic Array Attributes &mdash; Python Like You Mean It</title>
+  <title>基本的数组属性 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Functions for Creating NumPy Arrays" href="FunctionsForCreatingNumpyArrays.html" />
-    <link rel="prev" title="Accessing Data Along Multiple Dimensions in an Array" href="AccessingDataAlongMultipleDimensions.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="创建NumPy数组的函数" href="FunctionsForCreatingNumpyArrays.html" />
+    <link rel="prev" title="访问数组多维度的内容" href="AccessingDataAlongMultipleDimensions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,27 +95,27 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic Array Attributes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">基本的数组属性</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">Advanced Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">迭代数组和数组遍历顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">数组广播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">进阶索引</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -160,9 +161,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_3.html">Module 3: The Essentials of NumPy</a> &raquo;</li>
+          <li><a href="../module_3.html">模组3：NumPy基础</a> &raquo;</li>
         
-      <li>Basic Array Attributes</li>
+      <li>基本的数组属性</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,10 +206,10 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Basic-Array-Attributes">
-<h1>Basic Array Attributes<a class="headerlink" href="#Basic-Array-Attributes" title="Permalink to this headline">¶</a></h1>
-<p>Armed with our understanding of multidimensional NumPy arrays, we now look at methods for programmatically inspecting an array’s attributes (e.g.&nbsp;its dimensionality). It is especially important to understand what an array’s “shape” is.</p>
-<p>We will use the following array to provide context for our discussion:</p>
+<div class="section" id="基本的数组属性">
+<h1>基本的数组属性<a class="headerlink" href="#基本的数组属性" title="永久链接至标题">¶</a></h1>
+<p>有了我们对NumPy多维数组的理解后，我们现在来了解一些使用代码来查看数组属性（例如维度）的方法吧。理解数组的“形状”（shape）是什么极其重要。</p>
+<p>我们将使用以下的数组来进行讨论：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">example_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>                           <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">]],</span>
@@ -220,51 +221,51 @@
 <span class="gp">... </span>                           <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>According to the preceding discussion, it is a 3-dimensional array structured such that:</p>
+<p>根据之前的讨论，这是一个有着一下结构的3维数组：</p>
 <ul class="simple">
-<li>axis-0 discerns which of the <strong>3 sheets</strong> to select from.</li>
-<li>axis-1 discerns which of the <strong>2 rows</strong>, in any sheet, to select from.</li>
-<li>axis-2 discerns which of the <strong>4 columns</strong>, in any sheet and row, to select from.</li>
+<li><p>轴0描述从<strong>3页</strong>中选中哪一个。</p></li>
+<li><p>轴1描述从任何一页中的<strong>2行</strong>中选中哪一个。</p></li>
+<li><p>轴2描述从任何一页和行中的<strong>4列</strong>中选中哪一个。</p></li>
 </ul>
 <p><strong>ndarray.ndim</strong>:</p>
-<p>The number of axes (dimensions) of the array.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensionality of the array</span>
+<p>数组的轴（维度）数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 数组的维度</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_array</span><span class="o">.</span><span class="n">ndim</span>
 <span class="mi">3</span>
 </pre></div>
 </div>
 <p><strong>ndarray.shape</strong>:</p>
-<p>A tuple of integers indicating the number of elements that are stored along each dimension of the array. For a 2D-array with <span class="math notranslate nohighlight">\(N\)</span> rows and <span class="math notranslate nohighlight">\(M\)</span> columns, shape will be <span class="math notranslate nohighlight">\((N, M)\)</span>. The length of this shape-tuple is therefore equal to the number of dimensions of the array.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape of the array</span>
+<p>成员为代表数组每个维度的项目数量的整数元组。如果一个2维数组有着 <span class="math notranslate nohighlight">\(N\)</span> 行和 <span class="math notranslate nohighlight">\(M\)</span> 列，那么形状将是 <span class="math notranslate nohighlight">\((N, M)\)</span>。所以这个形状元组的长度等于数组的维度。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 数组的形状</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_array</span><span class="o">.</span><span class="n">shape</span>
 <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>ndarray.size</strong>:</p>
-<p>The total number of elements of the array. This is equal to the product of the elements of the array’s shape.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># size of the array: the number of elements it stores</span>
+<p>这个数组总共的成员数。这等于数组形状的每个数的乘积。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 数组的大小：数组中存了多少个成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_array</span><span class="o">.</span><span class="n">size</span>
 <span class="mi">24</span>
 </pre></div>
 </div>
 <p><strong>ndarray.dtype</strong>:</p>
-<p>An object describing the data type of the elements in the array. Recall that NumPy’s ND-arrays are <em>homogeneous</em>: they can only posses numbers of a uniform data type.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `example_array` contains integers, each of which are stored using 32 bits of memory</span>
+<p>描述数组成员的数据类型的对象。请回忆，NumPy的N维数组都是<em>同质</em>（homogenous）的：它们只能拥有同样数据类型的数字。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `example_array` 存储整数。每个整数使用32比特（bit）的内存</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_array</span><span class="o">.</span><span class="n">dtype</span>
 <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>ndarray.itemsize</strong>:</p>
-<p>The size, in bytes (8 bits is 1 byte), of each element of the array. For example, an array of elements of type <code class="docutils literal notranslate"><span class="pre">float64</span></code> has itemsize 8 <span class="math notranslate nohighlight">\((= \frac{64}{8})\)</span>, while an array of type <code class="docutils literal notranslate"><span class="pre">complex32</span></code> has itemsize 4 <span class="math notranslate nohighlight">\((= \frac{32}{8})\)</span>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># each integer in `example_array` is represented using 4 bytes (32 bits) of memory</span>
+<p>数组每个成员的大小，单位是字节（byte）（1字节等于8比特）。比如说，类型为 <code class="docutils literal notranslate"><span class="pre">float64</span></code> 的数组的itemsize就是8 <span class="math notranslate nohighlight">\((= \frac{64}{8})\)</span>，而类型为 <code class="docutils literal notranslate"><span class="pre">complex32</span></code> 的数组的itemsize就是4 <span class="math notranslate nohighlight">\((= \frac{32}{8})\)</span>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `example_array` 的每个整数占用4字节（32比特）的内存</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_array</span><span class="o">.</span><span class="n">itemsize</span>
 <span class="mi">4</span>
 </pre></div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#array-attributes">Array attributes</a></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#array-attributes">数组属性</a></p></li>
 </ul>
 </div>
 </div>
@@ -277,10 +278,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="FunctionsForCreatingNumpyArrays.html" class="btn btn-neutral float-right" title="Functions for Creating NumPy Arrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="FunctionsForCreatingNumpyArrays.html" class="btn btn-neutral float-right" title="创建NumPy数组的函数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="AccessingDataAlongMultipleDimensions.html" class="btn btn-neutral float-left" title="Accessing Data Along Multiple Dimensions in an Array" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="AccessingDataAlongMultipleDimensions.html" class="btn btn-neutral float-left" title="访问数组多维度的内容" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Introduction to Sets, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Structures (Part III): Sets &amp; the Collections Module &mdash; Python Like You Mean It</title>
+  <title>数据结构（第三部分）：集和集合模组 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Module 2: Problems" href="../module_2_problems.html" />
-    <link rel="prev" title="Data Structures (Part II): Dictionaries" href="DataStructures_II_Dictionaries.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="模组2：题目" href="../module_2_problems.html" />
+    <link rel="prev" title="数据结构（第二部分）：词典" href="DataStructures_II_Dictionaries.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,45 +95,45 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Structures (Part III): Sets &amp; the Collections Module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#The-“Set”-Data-Structure">The “Set” Data Structure</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Creating-a-set">Creating a set</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Set-operations">Set operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">数据结构（第三部分）：集和集合模组</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#集数据结构">集数据结构</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#创建集">创建集</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#集操作">集操作</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#The-Collections-Module">The Collections Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#collections模组">collections模组</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#Named-Tuple">Named-Tuple</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Default-Dictionary">Default Dictionary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Counter">Counter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#The-deque">The deque</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#默认词典">默认词典</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#计数器">计数器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#双队列">双队列</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -178,9 +179,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Data Structures (Part III): Sets &amp; the Collections Module</li>
+      <li>数据结构（第三部分）：集和集合模组</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,129 +224,129 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Data-Structures-(Part-III):-Sets-&amp;-the-Collections-Module">
-<h1>Data Structures (Part III): Sets &amp; the Collections Module<a class="headerlink" href="#Data-Structures-(Part-III):-Sets-&-the-Collections-Module" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="The-“Set”-Data-Structure">
-<h2>The “Set” Data Structure<a class="headerlink" href="#The-“Set”-Data-Structure" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">set</span></code> type describes an <em>unordered</em> collection of <em>unique</em> objects. It is useful for:</p>
+<div class="section" id="数据结构（第三部分）：集和集合模组">
+<h1>数据结构（第三部分）：集和集合模组<a class="headerlink" href="#数据结构（第三部分）：集和集合模组" title="永久链接至标题">¶</a></h1>
+<div class="section" id="集数据结构">
+<h2>集数据结构<a class="headerlink" href="#集数据结构" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">set</span></code>（集）类是一个成员为<em>互不相同</em>的对象的<em>无序</em>集合。它在以下情况有用：</p>
 <ul class="simple">
-<li>Filtering out “repeat” objects in a collection, producing only its unique members.</li>
-<li>Quickly checking for membership, as a <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> operation.</li>
-<li>Efficiently comparing two sets of objects; e.g.&nbsp;if one set is a “subset” of another.</li>
+<li><p>过滤集合中“重复”的成员并仅仅返回其中不重复的成员。</p></li>
+<li><p>快速（<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>）检查对象是否为成员。</p></li>
+<li><p>高效地对比两个集；如检查一个集是否为另外一个的“子集”（subset）。</p></li>
 </ul>
-<p>A set uses a “hashing” scheme for keeping track of its contents. Thus, like a dictionary’s keys, a set can only store <em>immutable</em> objects so that its hashes will never become invalid. Unlike the other data structures that we have encountered, <em>there is no mechanism for retrieving an individual item from a set</em>. That is, there is no index or key that can be used to retrieve an individual member from a set.</p>
-<p>Python’s sets also support many familiar set-algebra operations, like taking the union or intersection of sets, as we will see below. For an exhaustive listing of the functions available to sets, please consult <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">the official documentation on sets</a>.</p>
-<div class="section" id="Creating-a-set">
-<h3>Creating a set<a class="headerlink" href="#Creating-a-set" title="Permalink to this headline">¶</a></h3>
-<p>You can initialize a set using the syntax: <code class="docutils literal notranslate"><span class="pre">{item1,</span> <span class="pre">item2,</span> <span class="pre">...}</span></code>. Please note that this is distinct from the the dictionary-initialization syntax, which uses a colon to indicate key-value pairs:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initializing a set containing various immutable objects</span>
+<p>集使用“哈希”（hashing）算法来记录它的成员。因此，像词典的键一样，集只能储存<em>不可变</em>的对象来保证对象的哈希值不会无效。和我们遇到的其它数据结构不同，<em>你无法从集中获取单独的成员</em>。也就是说，没有任何索引或键可以用来获取集中的单个成员。</p>
+<p>Python的集也支持了常见的集合代数操作，如并集（union）或交集（intersection）运算，如下所见。你可以阅读<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">集的官方说明文档</a>来查看所有可用的集函数。</p>
+<div class="section" id="创建集">
+<h3>创建集<a class="headerlink" href="#创建集" title="永久链接至标题">¶</a></h3>
+<p>你可以用以下语法初始化集：<code class="docutils literal notranslate"><span class="pre">{item1,</span> <span class="pre">item2,</span> <span class="pre">...}</span></code>。请注意，这和使用冒号表达键值对的词典初始化语法不同：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初始化有着各种不可变对象的集</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}</span>
 <span class="p">{</span><span class="bp">False</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mf">3.4</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>A set can be constructed using the generator-comprehension syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialization via set-comprehension</span>
+<p>你可以使用生成器理解语法来创建一个集：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用集理解来初始化</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">}</span>
 <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>And, like the <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, and <code class="docutils literal notranslate"><span class="pre">dict</span></code> types, the <code class="docutils literal notranslate"><span class="pre">set</span></code> type can be used to construct a set from an iterable. Note that you must use <code class="docutils literal notranslate"><span class="pre">set()</span></code> if you want to create an empty set, using <code class="docutils literal notranslate"><span class="pre">{}</span></code> creates an empty <em>dictionary</em>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># introducing the `set` type</span>
+<p>同时，和 <code class="docutils literal notranslate"><span class="pre">list</span></code>，<code class="docutils literal notranslate"><span class="pre">tuple</span></code>，和 <code class="docutils literal notranslate"><span class="pre">dict</span></code> 类型类似，<code class="docutils literal notranslate"><span class="pre">set</span></code> 类型可以接受可迭代物来创建集。请注意你必须使用 <code class="docutils literal notranslate"><span class="pre">set()</span></code> 来创建一个空集，因为 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 会创建一个空<em>词典</em>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 介绍 `set` 类型</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">})</span>
 <span class="nb">set</span>
 
-<span class="c1"># using `set` to consume an iterable to construct a set</span>
+<span class="c1"># 使用 `set` 消耗一个可迭代物来创建集</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 
-<span class="c1"># creating an empty set</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># specifying `{}` would create an empty *dictionary*</span>
+<span class="c1"># 创建空集</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># 如果使用 `{}` 则会创造一个*词典*</span>
 <span class="nb">set</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Redundant items are “ignored” when constructing or adding to a set. Thus <em>constructing a set is a great way to extract the unique items from a collection</em>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter repeat-items from a collection by feeding it into a set</span>
+<p>在创建或往集里面添加内容时会“无视”重复的项目。所以说，<em>创建集是一个很棒的从集合中抽取独特对象的方法</em>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过输入到集中过滤集合中重复的对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;moo&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Set Creation</strong></p>
-<p>Use a set to find all of the unique letters in the string <code class="docutils literal notranslate"><span class="pre">&quot;The</span> <span class="pre">cat</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">hat&quot;</span></code>. Ignore all non-letter characters and lowercase all letters.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：创建集</strong></p>
+<p>使用集来找到字符串 <code class="docutils literal notranslate"><span class="pre">&quot;The</span> <span class="pre">cat</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">hat&quot;</span></code> 中所有的独特的字母。无视所有不是字母的字符，并将所有字母小写化。</p>
 </div>
 </div>
-<div class="section" id="Set-operations">
-<h3>Set operations<a class="headerlink" href="#Set-operations" title="Permalink to this headline">¶</a></h3>
-<p>Sets support membership-checking (<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>) along with iteration (<span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>). Note that sets are unordered; thus the order of iteration is effectively random:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking membership in a set</span>
+<div class="section" id="集操作">
+<h3>集操作<a class="headerlink" href="#集操作" title="永久链接至标题">¶</a></h3>
+<p>集支持成员检测为（<span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>）以及迭代（<span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>）。注意集是无序的，所以迭代顺序实际上是随机的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查集成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 <span class="bp">True</span>
 
-<span class="c1"># iterating over a set (the order of iteration is random)</span>
+<span class="c1"># 迭代集（迭代顺序是随机的）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">}]</span>
 <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Python also provides the set-theoretic operations of union, intersection, and the relations of set equality and set inclusion. These can be invoked using operator symbols or by calling functions on the set explicitly.</p>
-<p>For an exhaustive list of the functions available to the set, please <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">refer to the official Python documentation</a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating set-comparison operations</span>
+<p>Python也支持集合代数操作：并集（union），交集（intersectino），等值（equality），和子集（subset）关系。你可以通过操作符或通过显性调用集函数来进行这些操作。</p>
+<p>请<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">查阅Python官方说明文档</a>来阅读集函数的完整列表。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示集对比操作</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">}</span>
 
-<span class="c1"># union: items in x or y, or both</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">|</span> <span class="n">y</span>  <span class="c1"># or x.union(y)</span>
+<span class="c1"># 并集：在x或y或全部两个集当中的项目</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">|</span> <span class="n">y</span>  <span class="c1"># 等值于 x.union(y)</span>
 <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">}</span>
 
-<span class="c1"># intersection: items in both x and y</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span>  <span class="c1"># or x.intersection(y)</span>
+<span class="c1"># 交集：在x和y中的项目</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span>  <span class="c1"># 等值于 x.intersection(y)</span>
 <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">}</span>
 
-<span class="c1"># difference: items in x but not in y</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>  <span class="c1"># or x.difference(y)</span>
+<span class="c1"># 差：在x而不在y中的项目</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>  <span class="c1"># 等值于 x.difference(y)</span>
 <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">}</span>
 
-<span class="c1"># symmetric difference: in x or y, but not in both</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">^</span> <span class="n">y</span>  <span class="c1"># or x.symmetric_difference</span>
+<span class="c1"># 对称差：在x或y但不是全部两个的项目</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">^</span> <span class="n">y</span>  <span class="c1"># 等值于 x.symmetric_difference(y)</span>
 <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">}</span>
 
-<span class="c1"># check if set_1 is a superset of set_2</span>
+<span class="c1"># 检查set_1是否为set_2的超集（superset）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="o">&gt;=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
 <span class="bp">True</span>
 
-<span class="c1"># check if set_1 and set_2 are equivalent sets</span>
+<span class="c1"># 检查set_1和set_2是否为相同的集</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span> <span class="o">==</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>A set is a <em>mutable</em> object; it can be updated after it was created:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sets are mutable</span>
+<p>集是一个<em>可变</em>对象；你可以在创建后修改它：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 集是可变的</span>
 
-<span class="c1"># add a single member to `x`</span>
+<span class="c1"># 往 `x` 中添加一个成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>
 
-<span class="c1"># update `x` by adding members of an iterable</span>
+<span class="c1"># 通过添加可迭代物中的成员来更新 `x`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
-<span class="c1"># remove a member of `x`</span>
+<span class="c1"># 删除 `x` 的一个成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Because it is mutable, a set cannot be used as a dictionary-key, nor can a set be a member of another set. Python provides an immutable version of the set, <code class="docutils literal notranslate"><span class="pre">frozenset</span></code>, which has all of the functions of a set other than those that mutate the set:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `frozenset` is an immutable version of a Python set</span>
+<p>因为集是可变的，它不能作为词典的键，也不能作为另外一个集的成员。Python提供了一个不可变版本的集，叫做 <code class="docutils literal notranslate"><span class="pre">frozenset</span></code>。它有着集所有除了修改集的操作函数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `frozenset` 是Python集的不可变版本</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>Python’s set is an unordered collection of unique, immutable objects. It is an excellent tool for extracting the unique members from a collection of items. The set provides <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> membership-checking along with a suite of set-algebra operations for comparing sets. <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> is an immutable version of the set.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>Python的集的成员为互不相同，不可变的对象的集合。它是从对象集合中获取不重复的成员的好方法。集提供了 <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> 的成员检测以及一组对比集的集合代数操作。<code class="docutils literal notranslate"><span class="pre">frozenset</span></code> 是集的不可变版本。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Set Comparisons</strong></p>
-<p>Given the enrollment lists for class-A and class-B, find the students enrolled in both classes. Produce the result as a sorted list of names.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：对比集</strong></p>
+<p>设课A和课B的学生，寻找同时有着这两门课的同学名单。返回排序过的名字列表。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">classA</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bohr&quot;</span><span class="p">,</span> <span class="s2">&quot;Curie&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Euler&quot;</span><span class="p">,</span> <span class="s2">&quot;Fermi&quot;</span><span class="p">,</span> <span class="s2">&quot;Feynman&quot;</span><span class="p">,</span> <span class="s2">&quot;Gauss&quot;</span><span class="p">,</span> <span class="s2">&quot;Heisenberg&quot;</span><span class="p">,</span> <span class="s2">&quot;Noether&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">classB</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bohm&quot;</span><span class="p">,</span> <span class="s2">&quot;Bohr&quot;</span><span class="p">,</span> <span class="s2">&quot;Einstein&quot;</span><span class="p">,</span> <span class="s2">&quot;Fermi&quot;</span><span class="p">,</span> <span class="s2">&quot;Gauss&quot;</span><span class="p">,</span> <span class="s2">&quot;Hopper&quot;</span><span class="p">,</span> <span class="s2">&quot;Montalcini&quot;</span><span class="p">]</span>
 </pre></div>
@@ -353,26 +354,26 @@
 </div>
 </div>
 </div>
-<div class="section" id="The-Collections-Module">
-<h2>The Collections Module<a class="headerlink" href="#The-Collections-Module" title="Permalink to this headline">¶</a></h2>
-<p>Python provides a number of valuable, optimized data structures in its <a class="reference external" href="https://docs.python.org/3/library/collections.html">“collections” module</a>. It is recommended that the reader take some time to peruse this module. Here, we will briefly show off some of the utilities of its data structures.</p>
-<p>Refer to the <a class="reference external" href="https://docs.python.org/3/library/collections.html">official documentation</a> for a complete listing of the functions available to these data structures.</p>
+<div class="section" id="collections模组">
+<h2>collections模组<a class="headerlink" href="#collections模组" title="永久链接至标题">¶</a></h2>
+<p>Python在其<a class="reference external" href="https://docs.python.org/3/library/collections.html">“collections”模组</a>提供一系列优化过的实用数据结构。本文建议读者花一些时间去细读该模组。我们将在这里快速展示其中包含的数据结构的用处。</p>
+<p>请查阅<a class="reference external" href="https://docs.python.org/3/library/collections.html">官方说明文档</a>来阅读所有这些数据结构可用的函数。</p>
 <div class="section" id="Named-Tuple">
-<h3>Named-Tuple<a class="headerlink" href="#Named-Tuple" title="Permalink to this headline">¶</a></h3>
-<p>A named tuple allows you to form a tuple whose members are named. Thus the user can access a member by name or via index. Otherwise the named tuple behaves just like a typical tuple. This facilitates clean, readable code.</p>
-<p>Suppose, for instance, you want to keep track of the 3D-position and time of an event. You can use a named-tuple so that each space and time coordinate can be referenced “by name”. In this way, the reader doesn’t have to keep in mind that element-3 of your tuple corresponds to time:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate the use of named tuple</span>
+<h3>Named-Tuple<a class="headerlink" href="#Named-Tuple" title="永久链接至标题">¶</a></h3>
+<p>一个命名元组（namedtuple）允许你创建有名字的成员的元组。这样，你可以通过名字或者索引来访问其中的成员。除此之外命名元组和正常元组的行为完全一样。这将帮助你编写干净易读的代码。</p>
+<p>比如说，假设你想要储存某事件的3D坐标以及时间，你可以使用命名元组来“根据名字”调用其空间和时间坐标。通过这个方式，代码的读者不需要记住元组的索引3代表着时间坐标这一设定：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示命名元组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
-<span class="c1"># Define a tuple that holds a space-time coordinate.</span>
-<span class="c1"># Here we define the tuple to have four entries, named</span>
-<span class="c1"># &#39;x&#39;, &#39;y&#39;, &#39;z&#39;, and &#39;t&#39;, in order.</span>
+<span class="c1"># 定义储存时空坐标的元组。</span>
+<span class="c1"># 我们如此顺序定义元组的四个成员，名字为</span>
+<span class="c1"># &#39;x&#39;，&#39;y&#39;，&#39;z&#39;，和 &#39;t&#39;。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">space_time_coord</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;space_time_coord&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">])</span>
 
-<span class="c1"># `r` is a particular space-time coordinate (an instance of our named tuple)</span>
+<span class="c1"># `r` 是某一个时空点（我们定义的命名元组的一个实例）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">space_time_coord</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">100.2</span><span class="p">)</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">x</span>  <span class="c1"># access the x coordinate &quot;by name&quot;; this is more descriptive than `r[0]`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">x</span>  <span class="c1"># “通过名字”访问x坐标；这比 `r[0]` 更加易懂</span>
 <span class="mf">1.5</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">y</span>
@@ -384,7 +385,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">t</span>
 <span class="mf">100.2</span>
 
-<span class="c1"># you can also access contents by indexing/slicing</span>
+<span class="c1"># 你也可以通过索引/切片来访问其内容</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="mf">100.2</span>
 
@@ -393,49 +394,48 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="Default-Dictionary">
-<h3>Default Dictionary<a class="headerlink" href="#Default-Dictionary" title="Permalink to this headline">¶</a></h3>
-<p>A default dictionary allows you to specify a Python function, <span class="math notranslate nohighlight">\(f\)</span> that will be used as a “default value” for that dictionary. The default value will be whatever <span class="math notranslate nohighlight">\(f()\)</span> returns. That is, whenever you try to access a key that does not exist in the dictionary, instead of raising <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>, the mapping <span class="math notranslate nohighlight">\(key \rightarrow f()\)</span> will be created in the dictionary:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate the behavior of the `defaultdict`</span>
+<div class="section" id="默认词典">
+<h3>默认词典<a class="headerlink" href="#默认词典" title="永久链接至标题">¶</a></h3>
+<p>默认词典（defaultdict）允许你提供一个Python函数 <span class="math notranslate nohighlight">\(f\)</span> 来作为该词典的“默认值”，其默认值为 <span class="math notranslate nohighlight">\(f()\)</span> 返回的值。也就是说，每当你试图访问在词典中不存在的键时，词典会创建 <span class="math notranslate nohighlight">\(key \rightarrow f()\)</span> 的对应关系而不会导致 <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `defaultdict` 的行为</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">example_default_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>  <span class="c1"># will map any missing key to `list()`</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">example_default_dict</span>  <span class="c1"># an empty default dictionary</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">example_default_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>  <span class="c1"># 会将任何不存在的键对应到 `list()`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">example_default_dict</span>  <span class="c1"># 空默认词典</span>
 <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="p">{})</span>
 
-<span class="c1"># &quot;apple&quot; is not a key, so the default mapping &quot;apple&quot; -&gt; list() is created</span>
-<span class="c1"># and this value is returned</span>
+<span class="c1"># &quot;apple&quot; 并不是一个存在的键，所以词典将创建默认对应关系 &quot;apple&quot; -&gt; list()</span>
+<span class="c1"># 并返回对应的值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_default_dict</span><span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">]</span>
 <span class="p">[]</span>
 
-<span class="c1"># this mapping now exists in the dictionary</span>
+<span class="c1"># 现在这个对应关系在词典中存在</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_default_dict</span>
 <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="p">[]})</span>
 </pre></div>
 </div>
-<p>Suppose you want to use a dictionary as a grade book, which maps <span class="math notranslate nohighlight">\(name \rightarrow grades\)</span>. With a standard dictionary, you have to worry about encountering a student for the first time:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using a vanilla dictionary to store: name -&gt; list of grades</span>
-<span class="n">student</span> <span class="o">=</span> <span class="s2">&quot;Ryan&quot;</span>
-<span class="n">grade</span> <span class="o">=</span> <span class="mi">52</span>  <span class="c1"># I failed the test...</span>
+<p>假设你想要将一个词典当作成绩簿来使用，其对应关系为 <span class="math notranslate nohighlight">\(名字 \rightarrow 成绩（多个）\)</span>。在使用标准词典时，你会需要担心第一次输入某学生成绩的情况：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用标准词典来储存：名字 -&gt; 成绩列表</span>
+<span class="n">student</span> <span class="o">=</span> <span class="s2">&quot;Ryan&quot;</span> <span class="c1"># 译者注：这是原作者的名字</span>
+<span class="n">grade</span> <span class="o">=</span> <span class="mi">52</span>  <span class="c1"># 我不合格...</span>
 
-<span class="c1"># standard dictionary usage</span>
+<span class="c1"># 标准词典的用法</span>
 <span class="n">gradebook</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="c1"># if student isn&#39;t in the gradebook, enter that student</span>
-<span class="c1"># along with an empty list as the grades</span>
+<span class="c1"># 如果学生不在成绩簿中，将学生先作为空列表输入</span>
 <span class="k">if</span> <span class="n">student</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gradebook</span><span class="p">:</span>
     <span class="n">gradebook</span><span class="p">[</span><span class="n">student</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="n">gradebook</span><span class="p">[</span><span class="n">student</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>  <span class="c1"># append the grade to that student&#39;s list of grades</span>
+<span class="n">gradebook</span><span class="p">[</span><span class="n">student</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>  <span class="c1"># 在列表最后添加学生的成绩</span>
 </pre></div>
 </div>
-<p>The default dictionary’s behavior exactly accommodates this initialization process (when providing <code class="docutils literal notranslate"><span class="pre">list</span></code> as the initialization function):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using a default dictionary to store: name -&gt; list of grades</span>
+<p>默认词典的行为（当你向初始化函数提供 <code class="docutils literal notranslate"><span class="pre">list</span></code> 时）完全代替了以上的初始化过程：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用默认词典来储存：名字 -&gt; 成绩列表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">gradebook</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 
-<span class="c1"># Because &quot;Susan&quot; doesn&#39;t exist in the dictionary</span>
-<span class="c1"># `list()` creates an empty list, as a default value,</span>
-<span class="c1"># which we can immediately append her grade to</span>
+<span class="c1"># 因为 &quot;Susan&quot; 在词典中并不存在</span>
+<span class="c1"># `list()` 创建一个空列表来作为默认值</span>
+<span class="c1"># 然后我们可以立刻向其添加她的成绩</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">gradebook</span><span class="p">[</span><span class="s2">&quot;Susan&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">84</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">gradebook</span>
@@ -443,56 +443,56 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="Counter">
-<h3>Counter<a class="headerlink" href="#Counter" title="Permalink to this headline">¶</a></h3>
-<p>Python’s counter data structure is designed for tallying the unique objects that it encounters. It essentially creates a dictionary that maps: <span class="math notranslate nohighlight">\(obj \rightarrow count\)</span>. Suppose you want to study the distribution of words used in a body of text; counter is perfect for this application:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate the `Counter` data structure</span>
+<div class="section" id="计数器">
+<h3>计数器<a class="headerlink" href="#计数器" title="永久链接至标题">¶</a></h3>
+<p>Python的计数器（counter）数据结构旨在计算它遇到的独特的对象数。基本上，它就是创建了一个对应 <span class="math notranslate nohighlight">\(对象 \rightarrow 遭遇次数\)</span> 的词典。假设你想要了解在某文本中单词的分布，计数器是完美的解决方案：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `Counter` 数据结构</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
-<span class="c1"># Note: We will &quot;normalize&quot; our text by making it all lowercase.</span>
-<span class="c1"># We will then split the string by its spaces, storing the resulting</span>
-<span class="c1"># tokens in a list. For real text, we would also want to remove punctuation</span>
+<span class="c1"># 注：我们将会“标准化“我们的文本，使其全部都为小写。</span>
+<span class="c1"># 我们将会根据空格区分单个单词，并将得到的单词存在列表中</span>
+<span class="c1"># 如果我们在使用真正的文本，我们也会想要删除标点符号</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">text_1</span> <span class="o">=</span> <span class="s2">&quot;The cat in the hat&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">text_1</span> <span class="o">=</span> <span class="n">text_1</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">text_1</span>
 <span class="p">[</span><span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;hat&#39;</span><span class="p">]</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">word_distr</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">text_1</span><span class="p">)</span>  <span class="c1"># tally the unique objects in `text_1`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">word_distr</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">text_1</span><span class="p">)</span>  <span class="c1"># 数 `text_1` 中独特对象的出现次数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">word_distr</span>
 <span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;cat&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;hat&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
 
-<span class="c1"># feed additional items to the counter by &quot;update&quot;</span>
+<span class="c1"># 利用“update”来输入更多的对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">text_2</span> <span class="o">=</span> <span class="s2">&quot;The apple in the tree&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">text_2</span> <span class="o">=</span> <span class="n">text_2</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">word_distr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">text_2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">word_distr</span>
 <span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;hat&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;tree&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 
-<span class="c1"># get the top-2 most common words, along with their counts</span>
+<span class="c1"># 获取2个最常见的单词以及它们的出现次数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">word_distr</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="p">[(</span><span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
 
-<span class="c1"># get the count for the word &quot;tree&quot;</span>
+<span class="c1"># 获取单词“tree”的出现次数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">word_distr</span><span class="p">[</span><span class="s2">&quot;tree&quot;</span><span class="p">]</span>
 <span class="mi">1</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Counter</span></code> accepts any iterable of immutable objects:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Counter</span></code> 接受任何成员为不可变对象的可迭代物：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Counter</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)])</span>
 <span class="go">Counter({(None, None): 3, 0: 2, &#39;moo&#39;: 1})</span>
 </pre></div>
 </div>
-<p>Refer to the <a class="reference external" href="https://docs.python.org/3/library/collections.html#counter-objects">official documentation</a> for a complete listing of all the nice functions that <code class="docutils literal notranslate"><span class="pre">Counter</span></code> has access to.</p>
+<p>请查阅<a class="reference external" href="https://docs.python.org/3/library/collections.html#counter-objects">官方说明文档</a>来阅读 <code class="docutils literal notranslate"><span class="pre">Counter</span></code> 的棒棒的可用函数。</p>
 </div>
-<div class="section" id="The-deque">
-<h3>The deque<a class="headerlink" href="#The-deque" title="Permalink to this headline">¶</a></h3>
-<p>Like the list, Python’s deque is a mutable, sequential data structure. What distinguishes the deque is that:</p>
+<div class="section" id="双队列">
+<h3>双队列<a class="headerlink" href="#双队列" title="永久链接至标题">¶</a></h3>
+<p>像列表一样，Python的双队列（deque）是一个可变的序列性数据结构。双队列不同的点在于：</p>
 <ul class="simple">
-<li>Mutating either the beginning or the end of a deque is <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>, whereas mutating the beginning of a list is <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>. As such, the deque has unique functions to take advantage of this, like <code class="docutils literal notranslate"><span class="pre">appendleft</span></code>.</li>
-<li>The downside of the preceding feature is that <em>accessing items near the middle of the deque is</em> <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>, whereas it is <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> for lists and tuples.</li>
+<li><p>修改双队列的开头或者结尾都是 <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>，而修改列表开头是 <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>。因此，双队列有着独特的函数来利用这一优势，如 <code class="docutils literal notranslate"><span class="pre">appendleft</span></code>。</p></li>
+<li><p>以上功能的坏处在于<em>获取双队列靠近中间的对象是</em> <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>，而列表和元组是 <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>。</p></li>
 </ul>
-<p>A complete rundown of the deque’s functionality can be found <a class="reference external" href="https://docs.python.org/3/library/collections.html#deque-objects">here</a>.</p>
-<p>The deque is included in Python’s <code class="docutils literal notranslate"><span class="pre">collections</span></code> module, and thus must be imported:</p>
+<p>你可以在<a class="reference external" href="https://docs.python.org/3/library/collections.html#deque-objects">这里</a>找到双列表的完整功能。</p>
+<p>双列表属于Python <code class="docutils literal notranslate"><span class="pre">collections</span></code> 模组的成员，因此你需要导入它：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_deque</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_deque</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -502,33 +502,34 @@
 </div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">Sets and frozen sets</a><ul>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#sets">Tutorial on sets</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">集和冻集</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#sets">集教程</a></p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://docs.python.org/3/library/collections.html">The collections module</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/collections.html">collections模组</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Set Creation: Solution</strong></p>
-<p>Use a set to find all of the unique letters in the string <code class="docutils literal notranslate"><span class="pre">&quot;The</span> <span class="pre">cat</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">hat&quot;</span></code>. Ignore all non-letter characters and lowercase all letters.</p>
-<p>We can use the built-in string functions <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.isalpha">isalpha</a> and <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.lower">lower</a> to filter out non-letter characters, and to lowercase the letters.</p>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>创建集：解</strong></p>
+<p>使用集来找到字符串 <code class="docutils literal notranslate"><span class="pre">&quot;The</span> <span class="pre">cat</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">hat&quot;</span></code> 中所有的独特的字母。无视所有不是字母的字符，并将所有字母小写化。</p>
+<p>我们可以使用内置的字符串函数<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.isalpha">isalpha</a>和<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.lower">lower</a>来过滤非字母字符并小写化所有字母。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;The cat in the hat&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">char</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">sentence</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()}</span>
 <span class="go">{&#39;a&#39;, &#39;c&#39;, &#39;e&#39;, &#39;h&#39;, &#39;i&#39;, &#39;n&#39;, &#39;t&#39;}</span>
 </pre></div>
 </div>
-<p><strong>Set Comparisons: Solution</strong></p>
-<p>Given the roster for class-A and class-B, find the students enrolled in both classes. Produce the result as a sorted list.</p>
+<p><strong>对比集：解</strong></p>
+<p>根据课A和课B的名单表，找到同时在两个班的学生名单。返回排序过的名字列表。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">classA</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bohr&quot;</span><span class="p">,</span> <span class="s2">&quot;Curie&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Euler&quot;</span><span class="p">,</span> <span class="s2">&quot;Gauss&quot;</span><span class="p">,</span> <span class="s2">&quot;Heisenberg&quot;</span><span class="p">,</span> <span class="s2">&quot;Noether&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">classB</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bohm&quot;</span><span class="p">,</span> <span class="s2">&quot;Bohr&quot;</span><span class="p">,</span> <span class="s2">&quot;Einstein&quot;</span><span class="p">,</span> <span class="s2">&quot;Fermi&quot;</span><span class="p">,</span> <span class="s2">&quot;Gauss&quot;</span><span class="p">,</span> <span class="s2">&quot;Hopper&quot;</span><span class="p">,</span> <span class="s2">&quot;Montalcini&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>We can find the entries common to both lists by constructing sets from them, and then taking the intersection of those sets. The result is a set, which is an iterable. Thus it can be fed to the built-in function <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#Functions-that-act-on-iterables">sorted</a>, to produce a sorted list of names.</p>
+<p>我们可以通过使用这两个列表创建集然后求交集来找出两个列表通用的名字。结果为一个集，而集是一种可迭代物。因此我们可以将其输入进内置的函数<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#操作可迭代物的函数">sorted</a>并返回排序过的名字列表。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">classA</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">classB</span><span class="p">))</span>
 <span class="go">[&#39;Bohr&#39;, &#39;Gauss&#39;]</span>
 </pre></div>
@@ -544,10 +545,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../module_2_problems.html" class="btn btn-neutral float-right" title="Module 2: Problems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../module_2_problems.html" class="btn btn-neutral float-right" title="模组2：题目" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="DataStructures_II_Dictionaries.html" class="btn btn-neutral float-left" title="Data Structures (Part II): Dictionaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="DataStructures_II_Dictionaries.html" class="btn btn-neutral float-left" title="数据结构（第二部分）：词典" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

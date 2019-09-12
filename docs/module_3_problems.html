@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Module 3: Problems &mdash; Python Like You Mean It</title>
+  <title>模组3：题目 &mdash; Python Like You Mean It</title>
   
 
   
@@ -27,6 +27,7 @@
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="_static/gtag.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -38,10 +39,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Measuring the Accuracy of a Classification Model" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html" />
-    <link rel="prev" title="Advanced Indexing" href="Module3_IntroducingNumpy/AdvancedIndexing.html" /> 
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="测量分类模型的精度" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html" />
+    <link rel="prev" title="进阶索引" href="Module3_IntroducingNumpy/AdvancedIndexing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,17 +93,17 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 3: Problems</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html">Measuring the Accuracy of a Classification Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html">Playing Darts and Estimating Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">模组3：题目</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html">测量分类模型的精度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html">掷镖游戏和约算Pi</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -148,7 +149,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Module 3: Problems</li>
+      <li>模组3：题目</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,26 +192,26 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="module-3-problems">
-<h1>Module 3: Problems<a class="headerlink" href="#module-3-problems" title="Permalink to this headline">¶</a></h1>
-<p>This section presents the reader with problems to exercise their understanding of the materials that were presented in the Essentials of NumPy module. They are meant to be worked through after having read through the module in its entirety. Accompanying each problem is a solution and explanation, which include links to the relevant sections of Python Like You Mean It. The solutions are also designed to emphasize good coding practices.</p>
-<p>These problems were written by former students of mine and PLYMI readers. Have you written a piece of code that would make for a good exercise for a Python user? Consider submitting a problem and solution to be included here!</p>
+<div class="section" id="id1">
+<h1>模组3：题目<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>本节提供了用来锻炼和检查读者对NumPy基础模组阅读材料理解的练习题。它们是给读完整个模组的读者练习的。每一题都有着对应的答案和解释，其包含有关PLYMI章节的链接。这些答案同时也旨在强调好的编程习惯。</p>
+<p>这些题目是由我意一位前学生和PLYMI读者编写的。你有没有写过一段可以作为好的Python练习题的代码呢？如果有，请考虑向我们提交一份问题和答案来在此包括！</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html">Measuring the Accuracy of a Classification Model</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html#Unvectorized-Solution">Unvectorized Solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html#Vectorized-Solution">Vectorized Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html">测量分类模型的精度</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html#未矢量化的解">未矢量化的解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html#矢量化的解">矢量化的解</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html">Playing Darts and Estimating Pi</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#Problem-1">Problem 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#Relevant-Reading">Relevant Reading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#Tips">Tips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#Solution-(Unvectorized)">Solution (Unvectorized)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#Solution-(Vectorized)">Solution (Vectorized)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#Problem-2">Problem 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#Solution">Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html">掷镖游戏和约算Pi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#问题1">问题1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#相关阅读">相关阅读</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#提示">提示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#解（未矢量化）">解（未矢量化）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#解（矢量化）">解（矢量化）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#问题2">问题2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html#解">解</a></li>
 </ul>
 </li>
 </ul>
@@ -225,10 +226,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html" class="btn btn-neutral float-right" title="Measuring the Accuracy of a Classification Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html" class="btn btn-neutral float-right" title="测量分类模型的精度" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Module3_IntroducingNumpy/AdvancedIndexing.html" class="btn btn-neutral float-left" title="Advanced Indexing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Module3_IntroducingNumpy/AdvancedIndexing.html" class="btn btn-neutral float-left" title="进阶索引" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

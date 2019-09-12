@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Conditional Statements, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Conditional Statements &mdash; Python Like You Mean It</title>
+  <title>条件语 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="For-Loops and While-Loops" href="ForLoops.html" />
-    <link rel="prev" title="Introducing Control Flow" href="Introduction.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="For循环和While循环" href="ForLoops.html" />
+    <link rel="prev" title="控制流简介" href="Introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,40 +95,40 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Conditional Statements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Comparison-Operations">Comparison Operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bool-and-Truth-Values-of-Non-Boolean-Objects"><code class="docutils literal notranslate"><span class="pre">bool</span></code> and Truth Values of Non-Boolean Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#if,-else,-and-elif"><code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and <code class="docutils literal notranslate"><span class="pre">elif</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Inline-if-else-statements">Inline if-else statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">条件语</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#比较运算">比较运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bool-和非布尔类对象的真值"><code class="docutils literal notranslate"><span class="pre">bool</span></code> 和非布尔类对象的真值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if，else，和-elif"><code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">else</span></code>，和 <code class="docutils literal notranslate"><span class="pre">elif</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#单行的if-else语句">单行的if-else语句</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Short-Circuiting-Logical-Expressions">Short-Circuiting Logical Expressions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Exercise-Solutions:">Reading Comprehension Exercise Solutions:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#短路逻辑表达式">短路逻辑表达式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档连接">官方说明文档连接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -173,9 +174,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Conditional Statements</li>
+      <li>条件语</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,110 +219,110 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Conditional-Statements">
-<h1>Conditional Statements<a class="headerlink" href="#Conditional-Statements" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="条件语">
+<h1>条件语<a class="headerlink" href="#条件语" title="永久链接至标题">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong>:</p>
-<p>There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>注</strong>：</p>
+<p>在本资源各处会有一些阅读理解练习。这些题目旨在帮助读者活学活用文中的知识点。练习题的答案可以在本页底部找到。</p>
 </div>
-<p>In this section, we will be introduced to the <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. These allow you to specify that blocks of code are to be executed only if specified conditions are found to be true, or perhaps alternative code if the condition is found to be false. For example, the following code will square <code class="docutils literal notranslate"><span class="pre">x</span></code> if it is a negative number, and will cube <code class="docutils literal notranslate"><span class="pre">x</span></code> if it is a positive number:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a simple if-else block</span>
+<p>在本节中，我们将会介绍 <code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">else</span></code>，和 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 语句。它们允许你编写仅仅在某些条件满足时才会执行的代码片段，或者在条件不满足时执行某些其它代码。比如说，以下代码在 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是负数的时候返回 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的平方，在 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是正数时返回 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的立方：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 简单的if-else区块</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<p>Please refer to the “Basic Python Object Types” subsection to recall the basics of the “boolean” type, which represents True and False values. We will extend that discussion by introducing comparison operations and membership-checking, and then expanding on the utility of the built-in <code class="docutils literal notranslate"><span class="pre">bool</span></code> type.</p>
-<div class="section" id="Comparison-Operations">
-<h2>Comparison Operations<a class="headerlink" href="#Comparison-Operations" title="Permalink to this headline">¶</a></h2>
-<p>Comparison statements will evaluate explicitly to either of the boolean-objects: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. There are eight comparison operations in Python:</p>
-<table border="1" class="docutils">
+<p>请通过“基本对象类型“一节来回忆布尔类型（代表真或否值）的一些基础特征。我们将会延续该节的讨论来介绍比较运算和成员检查，并讨论内置 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 类的更多有用之处。</p>
+<div class="section" id="比较运算">
+<h2>比较运算<a class="headerlink" href="#比较运算" title="永久链接至标题">¶</a></h2>
+<p>比较语句（comparison statement）最后一定会返回某个布尔对象：<code class="docutils literal notranslate"><span class="pre">True</span></code> 或 <code class="docutils literal notranslate"><span class="pre">False</span></code>。在Python中总共有八种比较运算：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="32%" />
-<col width="68%" />
+<col style="width: 43%" />
+<col style="width: 57%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Operation</th>
-<th class="head">Meaning</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>运算符</p></th>
+<th class="head"><p>含义</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></td>
-<td>strictly less than</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>小于（不等于）</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></td>
-<td>less than or equal</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>小于或等于</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></td>
-<td>strictly greater than</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>大于（不等于）</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></td>
-<td>greater than or equal</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>大于或等于</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">==</span></code></td>
-<td>equal</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>等于</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">!=</span></code></td>
-<td>not equal</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>不等于</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">is</span></code></td>
-<td>object identity</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">is</span></code></p></td>
+<td><p>相同对象</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code></td>
-<td>negated object identity</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code></p></td>
+<td><p>不相同对象</p></td>
 </tr>
 </tbody>
 </table>
-<p>The first six of these operators are familiar from mathematics:</p>
+<p>其中前六个运算符和数学中常见的相对应：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">=</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code> have very different meanings. The former is the assignment operator, and the latter is the equality operator:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># assign the value 3 to the variable `x`</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">==</span> <span class="mi">3</span>  <span class="c1"># check if `x` and 3 have the same value</span>
+<p>注意 <code class="docutils literal notranslate"><span class="pre">=</span></code> 和 <code class="docutils literal notranslate"><span class="pre">==</span></code> 有着两个很不一样的含义。前者是赋值运算符，而后者是等值运算符：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># 对变量 `x` 赋值 3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">==</span> <span class="mi">3</span>  <span class="c1"># 检查 `x` 和 3 是否有着同样的值</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Python allows you to chain comparison operators to create “compound” comparisons:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">1</span>  <span class="c1"># performs (2 &lt; 3) and (3 &lt; 1)</span>
+<p>Python允许你连接多个对比运算符来创建“复式”（compound）对比：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">1</span>  <span class="c1"># 等值于 (2 &lt; 3) and (3 &lt; 1)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
-<p>Whereas <code class="docutils literal notranslate"><span class="pre">==</span></code> checks to see if two objects have the same value, the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator checks to see if two objects are actually the <em>same</em> object. For example, creating two lists with the same contents produces two <em>distinct</em> lists, that have the same “value”:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating `==` vs `is`</span>
+<p><code class="docutils literal notranslate"><span class="pre">==</span></code> 运算符检查两个对象是否有着同样的值，而 <code class="docutils literal notranslate"><span class="pre">is</span></code> 运算符检查两个对象是否是<em>相同的</em>对象。比如说，创建两个有着一样内容的列表会得到两个<em>不同</em>的列表，但它们的“值”一样：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `==` 对比 `is`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
 <span class="bp">True</span>
 
-<span class="c1"># `x` and `y` reference equivalent, but distinct lists</span>
+<span class="c1"># `x` 和 `y` 引用两个等值但不同的列表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>Thus the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator is most commonly used to check if a variable references the <code class="docutils literal notranslate"><span class="pre">None</span></code> object, or either of the boolean objects:</p>
+<p>因此 <code class="docutils literal notranslate"><span class="pre">is</span></code> 运算符最常用来检查一个变量是否引用 <code class="docutils literal notranslate"><span class="pre">None</span></code> 对象，或两个布尔对象中的一个：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
 <span class="go">True</span>
 
-<span class="go"># (2 &lt; 0) returns the object `False`</span>
-<span class="go"># thus this becomes: `False is False`</span>
+<span class="go"># (2 &lt; 0) 返回对象 `False`</span>
+<span class="go"># 因此这会成为：`False is False`</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">False</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Use <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> to check if two objects are distinct:</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> 来检查两个对象是否不是同一个对象：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
 <span class="go">True</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="bool-and-Truth-Values-of-Non-Boolean-Objects">
-<h2><code class="docutils literal notranslate"><span class="pre">bool</span></code> and Truth Values of Non-Boolean Objects<a class="headerlink" href="#bool-and-Truth-Values-of-Non-Boolean-Objects" title="Permalink to this headline">¶</a></h2>
-<p>Recall that the two boolean objects <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> formally belong to the <code class="docutils literal notranslate"><span class="pre">int</span></code> type in addition to <code class="docutils literal notranslate"><span class="pre">bool</span></code>, and are associated with the values <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code>, respectively:</p>
+<div class="section" id="bool-和非布尔类对象的真值">
+<h2><code class="docutils literal notranslate"><span class="pre">bool</span></code> 和非布尔类对象的真值<a class="headerlink" href="#bool-和非布尔类对象的真值" title="永久链接至标题">¶</a></h2>
+<p>请回忆两个布尔对象 <code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code> 严格来讲即属于 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 也属于 <code class="docutils literal notranslate"><span class="pre">int</span></code> 类型，并分别有着值 <code class="docutils literal notranslate"><span class="pre">1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">0</span></code> 这些知识点：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="go">True</span>
 
@@ -346,36 +347,36 @@
 <span class="go">ZeroDivisionError: division by zero</span>
 </pre></div>
 </div>
-<p>Likewise Python ascribes boolean values to non-boolean objects. For example,the number 0 is associated with <code class="docutils literal notranslate"><span class="pre">False</span></code> and non-zero numbers are associated with <code class="docutils literal notranslate"><span class="pre">True</span></code>. The boolean values of built-in objects can be evaluated with the built-in Python command <code class="docutils literal notranslate"><span class="pre">bool</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using `bool` to access the True/False</span>
-<span class="c1"># value of non-boolean objects</span>
+<p>类似的，Python也会对非布尔对象提供相应的布尔值。比如说，数字0对应着 <code class="docutils literal notranslate"><span class="pre">False</span></code>，而任何非0的数字则对应 <code class="docutils literal notranslate"><span class="pre">True</span></code>。内置对象的布尔值可以通过Python内置的命令 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 来得出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `bool` 来查看非布尔类对象</span>
+<span class="c1"># 的布尔值为 `True` 或 `False`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>and non-zero Python integers are associated with <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nonzero values evaluate to `True`</span>
+<p>任何非0的Python整数对应 <code class="docutils literal notranslate"><span class="pre">True</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 非0值最后计算为 `True`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>The following built-in Python objects evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code> via <code class="docutils literal notranslate"><span class="pre">bool</span></code>:</p>
+<p>以下的内置Python对象通过 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 对应 <code class="docutils literal notranslate"><span class="pre">False</span></code>：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">False</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">None</span></code></li>
-<li>Zero of any numeric type: <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, <code class="docutils literal notranslate"><span class="pre">0j</span></code></li>
-<li>Any empty sequence, such as an empty string or list: <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple()</span></code>, <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy.array([])</span></code></li>
-<li>Empty dictionaries and sets</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>任何数字类的0:<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, <code class="docutils literal notranslate"><span class="pre">0j</span></code></p></li>
+<li><p>任何空序列，如空字符串或列表：<code class="docutils literal notranslate"><span class="pre">''</span></code>，<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>，<code class="docutils literal notranslate"><span class="pre">[]</span></code>，<code class="docutils literal notranslate"><span class="pre">numpy.array([])</span></code></p></li>
+<li><p>空词典（dictionary）或集（set）</p></li>
 </ul>
-<p>Thus non-zero numbers and non-empty sequences/collections evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code> via <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
+<p>因此任何非0的数字或非空的序列或集合都会通过 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 对应 <code class="docutils literal notranslate"><span class="pre">True</span></code>。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">bool</span></code> function allows you to evaluate the boolean values ascribed to various non-boolean objects. For instance, <code class="docutils literal notranslate"><span class="pre">bool([])</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code> wherease <code class="docutils literal notranslate"><span class="pre">bool([1,</span> <span class="pre">2])</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">bool</span></code> 函数允许你得到非布尔类对象对应的布尔值。比如说，<code class="docutils literal notranslate"><span class="pre">bool([])</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">False</span></code>，而 <code class="docutils literal notranslate"><span class="pre">bool([1,</span> <span class="pre">2])</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">True</span></code>。</p>
 </div>
 </div>
-<div class="section" id="if,-else,-and-elif">
-<h2><code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and <code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#if,-else,-and-elif" title="Permalink to this headline">¶</a></h2>
-<p>We now introduce the simple, but powerful <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditional statements. This will allow us to create simple branches in our code. For instance, suppose you are writing code for a video game, and you want to update a character’s status based on her/his number of health-points (an integer). The following code is representative of this:</p>
+<div class="section" id="if，else，和-elif">
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">else</span></code>，和 <code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#if，else，和-elif" title="永久链接至标题">¶</a></h2>
+<p>我们现在将介绍简单而强大的 <code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">else</span></code>，和 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 条件语句（conditional statement）。这将允许我们在代码中创建简单的分枝。比如说，假设你在为某电子游戏编写代码，并想要根据你角色的血量（整数）来更新ta的状态，下面的代码就是一个例子：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">num_health</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">:</span>
     <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;good&quot;</span>
 <span class="k">elif</span> <span class="n">num_health</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
@@ -386,88 +387,85 @@
     <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;dead&quot;</span>
 </pre></div>
 </div>
-<p>Each <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statement must end in a colon character, and the body of each of these statements is <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope">delimited by whitespace</a>.</p>
-<p>The following pseudo-code demonstrates the general template for conditional statements:</p>
+<p>每个 <code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">elif</span></code>，和 <code class="docutils literal notranslate"><span class="pre">else</span></code> 语句必须由冒号结尾，且其中所有语句都必须由<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域">空格限定</a>。</p>
+<p>以下的伪代码演示条件语句的通用模版：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">expression_1</span><span class="o">&gt;</span><span class="p">:</span>
-    <span class="n">the</span> <span class="n">code</span> <span class="n">within</span> <span class="n">this</span> <span class="n">indented</span> <span class="n">block</span> <span class="ow">is</span> <span class="n">executed</span> <span class="k">if</span><span class="o">..</span>
-    <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_1</span><span class="o">&gt;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>
+    <span class="n">本缩进区域的代码只有在以下条件满足时才会被执行</span><span class="o">...</span>
+    <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_1</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">为</span> <span class="kc">True</span>
 <span class="k">elif</span> <span class="o">&lt;</span><span class="n">expression_2</span><span class="o">&gt;</span><span class="p">:</span>
-    <span class="n">the</span> <span class="n">code</span> <span class="n">within</span> <span class="n">this</span> <span class="n">indented</span> <span class="n">block</span> <span class="ow">is</span> <span class="n">executed</span> <span class="k">if</span><span class="o">..</span>
-     <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_1</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">was</span> <span class="kc">False</span>
-     <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_2</span><span class="o">&gt;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>
+    <span class="n">本缩进区域的代码只有在以下条件满足时才会被执行</span><span class="o">...</span>
+     <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_1</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">之前为</span> <span class="kc">False</span>
+     <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_2</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">为</span> <span class="kc">True</span>
 <span class="o">...</span>
 <span class="o">...</span>
 <span class="k">elif</span> <span class="o">&lt;</span><span class="n">expression_n</span><span class="o">&gt;</span><span class="p">:</span>
-    <span class="n">the</span> <span class="n">code</span> <span class="n">within</span> <span class="n">this</span> <span class="n">indented</span> <span class="n">block</span> <span class="ow">is</span> <span class="n">executed</span> <span class="k">if</span><span class="o">..</span>
-      <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_1</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">was</span> <span class="kc">False</span>
-      <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_2</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">was</span> <span class="kc">False</span>
+    <span class="n">本缩进区域的代码只有在以下条件满足时才会被执行</span><span class="o">...</span>
+      <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_1</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">之前为</span> <span class="kc">False</span>
+      <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_2</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">之前为</span> <span class="kc">False</span>
       <span class="o">...</span>
       <span class="o">...</span>
-      <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_n</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">was</span> <span class="kc">False</span>
-      <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_n</span><span class="o">&gt;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>
+      <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_n</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">之前为</span> <span class="kc">False</span>
+      <span class="o">-</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">expression_n</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">为</span> <span class="kc">True</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">the</span> <span class="n">code</span> <span class="n">within</span> <span class="n">this</span> <span class="n">indented</span> <span class="n">block</span> <span class="ow">is</span> <span class="n">executed</span> <span class="n">only</span> <span class="k">if</span>
-    <span class="nb">all</span> <span class="n">preceding</span> <span class="n">expressions</span> <span class="n">were</span> <span class="kc">False</span>
+    <span class="n">本缩进区域的代码只有在</span>
+    <span class="n">之前所有表达式为</span> <span class="kc">False</span> <span class="n">时</span>
+    <span class="n">才会被执行</span><span class="o">...</span>
 </pre></div>
 </div>
-<p>In practice this can look like:</p>
+<p>实际运用时它可以看起来是这样：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
 <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="c1"># bool(3 &lt; 2) returns False, this code</span>
-    <span class="c1"># block is skipped</span>
+    <span class="c1"># bool(3 &lt; 2) 返回 False，所以此区块的代码将被跳过</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;`x` has more than three items in it&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
-    <span class="c1"># bool(len(x) == 2) returns True</span>
-    <span class="c1"># this code block is executed</span>
+    <span class="c1"># bool(len(x) == 2) 返回 True，此区块的代码被执行</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;`x` has two items in it&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
-    <span class="c1"># this statement is never reached</span>
+    <span class="c1"># 此语句根本没有被检查</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;`x` has one items in it&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="c1"># this statement is never reached</span>
+    <span class="c1"># 此语句根本没有被检查</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;`x` is an empty list&quot;</span><span class="p">)</span>
 
 <span class="s2">&quot;`x` has two items in it&quot;</span>
 </pre></div>
 </div>
-<p>In its simplest form, a conditional statement requires only an <code class="docutils literal notranslate"><span class="pre">if</span></code> clause. <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses can only follow an <code class="docutils literal notranslate"><span class="pre">if</span></code> clause.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A conditional statement consisting of</span>
-<span class="c1"># an &quot;if&quot;-clause, only.</span>
-
+<p>在最简洁的格式下，一个条件语句只需要一个 <code class="docutils literal notranslate"><span class="pre">if</span></code> 句段。<code class="docutils literal notranslate"><span class="pre">else</span></code> 和 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 句段只能在一个 <code class="docutils literal notranslate"><span class="pre">if</span></code> 句段之后。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一个只有“if”句段的条件语句</span>
 <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
 <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
-<span class="c1"># x is now 1</span>
+<span class="c1"># `x` 现在为 1</span>
 </pre></div>
 </div>
-<p>Similarly, conditional statements can have an <code class="docutils literal notranslate"><span class="pre">if</span></code> and an <code class="docutils literal notranslate"><span class="pre">else</span></code> without an <code class="docutils literal notranslate"><span class="pre">elif</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A conditional statement consisting of</span>
-<span class="c1"># an &quot;if&quot;-clause and an &quot;else&quot;</span>
+<p>类似的，条件语句可以有一个 <code class="docutils literal notranslate"><span class="pre">if</span></code> 和一个 <code class="docutils literal notranslate"><span class="pre">else</span></code> 而没有任何 <code class="docutils literal notranslate"><span class="pre">elif</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一个有一个“if”句段和一个“else”句段</span>
+<span class="c1"># 的条件语句</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
 
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="c1"># x is now -2</span>
+<span class="c1"># `x` 现在为 -2</span>
 </pre></div>
 </div>
-<p>Conditional statements can also have an <code class="docutils literal notranslate"><span class="pre">if</span></code> and an <code class="docutils literal notranslate"><span class="pre">elif</span></code> without an <code class="docutils literal notranslate"><span class="pre">else</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A conditional statement consisting of</span>
-<span class="c1"># an &quot;if&quot;-clause and an &quot;elif&quot;</span>
+<p>条件语句也可以有一个 <code class="docutils literal notranslate"><span class="pre">if</span></code> 和一个 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 而没有 <code class="docutils literal notranslate"><span class="pre">else</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一个有一个“if”句段和一个“elif”句段</span>
+<span class="c1"># 的条件语句</span>
 <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;cba&#39;</span>
-<span class="c1"># x is now &#39;abcabcabc&#39;</span>
+<span class="c1"># `x` 现在为 &#39;abcabcabc&#39;</span>
 </pre></div>
 </div>
-<p>Note that only one code block within a single if-elif-else statement can be executed: either the “if-block” is executed, or an “elif-block” is executed, or the “else-block” is executed. Consecutive if-statements, however, are completely independent of one another, and thus their code blocks can be executed in sequence, if their respective conditional statements resolve to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># consecutive if-statements are independent</span>
+<p>请注意在一个if-elif-else语句中只有其中一段可以被执行；要么“if”区块的代码被执行，要么一个“elif”区块的代码被执行，要么“else”区块的代码被执行。但是，背靠背的if语句是完全独立于对方的。因此它们的代码区块可能在单次运行中都被执行（假设它们对应的条件语句都最后为 <code class="docutils literal notranslate"><span class="pre">True</span></code>）。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 连续的if语句是互相独立的</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -477,13 +475,13 @@
 <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
     <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1"># y is now 2</span>
+<span class="c1"># y 现在为 2</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Conditional statements</strong></p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：条件语句</strong></p>
 <ol class="arabic simple">
-<li>Assume <code class="docutils literal notranslate"><span class="pre">my_list</span></code> is a list. Given the following code:</li>
+<li><p>设 <code class="docutils literal notranslate"><span class="pre">my_list</span></code> 为一个列表。根据以下代码：</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_item</span> <span class="o">=</span> <span class="bp">None</span>
 
@@ -491,44 +489,44 @@
     <span class="n">first_item</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>What will happen if <code class="docutils literal notranslate"><span class="pre">my_list</span></code> is <code class="docutils literal notranslate"><span class="pre">[]</span></code>? Will <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> be raised? What will <code class="docutils literal notranslate"><span class="pre">first_item</span></code> be?</p>
+<p>如果 <code class="docutils literal notranslate"><span class="pre">my_list</span></code> 为 <code class="docutils literal notranslate"><span class="pre">[]</span></code>，会发生什么？这是否会产生一个 <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>？<code class="docutils literal notranslate"><span class="pre">first_item</span></code> 会是什么？</p>
 <ol class="arabic simple" start="2">
-<li>Assume variable <code class="docutils literal notranslate"><span class="pre">my_file</span></code> is a string storing a filename, where a period denotes the end of the filename and the beginning of the file-type. Write code that extracts only the filename.</li>
+<li><p>设变量 <code class="docutils literal notranslate"><span class="pre">my_file</span></code> 为一个存储着文件名的字符串，其中英文句号 <code class="docutils literal notranslate"><span class="pre">.</span></code> 代表着文件名的结尾和文件类型的开始。编写代码来获取 <code class="docutils literal notranslate"><span class="pre">my_file</span></code> 的文件名。</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">my_file</span></code> will have at most one period in it. Accommodate cases where <code class="docutils literal notranslate"><span class="pre">my_file</span></code> does <em>not</em> include a file-type.</p>
-<p>That is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">my_file</span></code> 中最多只会有一个句号。妥善处理 <code class="docutils literal notranslate"><span class="pre">my_file</span></code> <em>没有</em>文件类型的情况。</p>
+<p>也就是说：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&quot;code.py&quot;</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">&quot;code&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;doc2.pdf&quot;</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">&quot;doc2&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;hello_world&quot;</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">&quot;hello_world&quot;</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;code.py&quot;</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">&quot;code&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;doc2.pdf&quot;</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">&quot;doc2&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello_world&quot;</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">&quot;hello_world&quot;</span></code></p></li>
 </ul>
 </div>
-<div class="section" id="Inline-if-else-statements">
-<h3>Inline if-else statements<a class="headerlink" href="#Inline-if-else-statements" title="Permalink to this headline">¶</a></h3>
-<p>Python supports a syntax for writing a restricted version of if-else statements in a single line. The following code:</p>
+<div class="section" id="单行的if-else语句">
+<h3>单行的if-else语句<a class="headerlink" href="#单行的if-else语句" title="永久链接至标题">¶</a></h3>
+<p>Python支持一个单行版本的if-else语句，其功能比较有限。以下代码：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">num</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">sign</span> <span class="o">=</span> <span class="s2">&quot;positive&quot;</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">sign</span> <span class="o">=</span> <span class="s2">&quot;negative&quot;</span>
 </pre></div>
 </div>
-<p>can be written in a single line as:</p>
+<p>可以被简写成：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sign</span> <span class="o">=</span> <span class="s2">&quot;positive&quot;</span> <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;negative&quot;</span>
 </pre></div>
 </div>
-<p>This is suggestive of the general underlying syntax for inline if-else statements:</p>
+<p>这代表了单行（inline）if-else语句的内在语法：</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>The inline if-else statement</strong>:</p>
-<p>The expression <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">if</span> <span class="pre">&lt;condition&gt;</span> <span class="pre">else</span> <span class="pre">B</span></code> returns <code class="docutils literal notranslate"><span class="pre">A</span></code> if <code class="docutils literal notranslate"><span class="pre">bool(&lt;condition&gt;)</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise this expression will return <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>单行if-else语句</strong>：</p>
+<p>表达式 <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">if</span> <span class="pre">&lt;condition&gt;</span> <span class="pre">else</span> <span class="pre">B</span></code> 当 <code class="docutils literal notranslate"><span class="pre">bool(&lt;condition&gt;)</span></code> 为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 时返回 <code class="docutils literal notranslate"><span class="pre">A</span></code>，不然该表达式会返回 <code class="docutils literal notranslate"><span class="pre">B</span></code>。</p>
 </div>
-<p>This syntax is highly restricted compared to the full “if-elif-else” expressions - no “elif” statement is permitted by this inline syntax, nor are muli-line code blocks within the if/else clauses.</p>
-<p>Inline if-else statements can be used anywhere, not just on the right side of an assignment statement, and can be quite convenient:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using inline if-else statements in different scenarios</span>
+<p>和完整的“if-elif-else”表达式对比，这个语法是极其受限制的——它不允许“elif”语句，也不允许if/else之间有多行的代码块。</p>
+<p>单行if-else语句可以在任何地方使用，不仅仅是在赋值语句的右侧。这有时很方便：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在不同情况下使用单行if-else语句</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 
-<span class="c1"># will store 1 if `x` is non-negative</span>
-<span class="c1"># will store 0 if `x` is negative</span>
+<span class="c1"># 如 `x` 并不是负数，这将储存 1</span>
+<span class="c1"># 如 `x` 为负数，这将储存 0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_list</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -537,25 +535,25 @@
 <span class="s1">&#39;b&#39;</span>
 </pre></div>
 </div>
-<p>We will see this syntax shine when we learn about comprehension statements. That being said, this syntax should be used judiciously. For example, inline if-else statements ought not be used in arithmetic expressions, for therein lies madness:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># don&#39;t ever do this...ever!</span>
+<p>我们将在讨论列表理解语句（list comprehension statement）时注意到这个语法很有用的地方，但请注意谨慎使用这一语法。比如说，不要在数学表达式中使用单行if-else语句，因为最后的代码令人抓狂：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 永远不要这么做，永远！</span>
 <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="mi">2</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">9</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="Short-Circuiting-Logical-Expressions">
-<h2>Short-Circuiting Logical Expressions<a class="headerlink" href="#Short-Circuiting-Logical-Expressions" title="Permalink to this headline">¶</a></h2>
-<p>Armed with our newfound understanding of conditional statements, we briefly return to our discussion of Python’s logic expressions to discuss “short-circuiting”. In Python, a logical expression is evaluated from left to right and will return its boolean value as soon as it is unambiguously determined, <em>leaving any remaining portions of the expression unevaluated</em>. That is, the expression may be <em>short-circuited</em>.</p>
-<p>For example, consider the fact that an <code class="docutils literal notranslate"><span class="pre">and</span></code> operation will only return <code class="docutils literal notranslate"><span class="pre">True</span></code> if both of its arguments evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>. Thus the expression <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">&lt;anything&gt;</span></code> is guaranteed to return <code class="docutils literal notranslate"><span class="pre">False</span></code>; furthermore, when executed, this expression will return <code class="docutils literal notranslate"><span class="pre">False</span></code> <em>without having evaluated</em> <code class="docutils literal notranslate"><span class="pre">bool(&lt;anything&gt;)</span></code>.</p>
-<p>To demonstrate this behavior, consider the following example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating short-circuited logic expressions</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="ow">and</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>  <span class="c1"># evaluating `1/0` would raise an error</span>
+<div class="section" id="短路逻辑表达式">
+<h2>短路逻辑表达式<a class="headerlink" href="#短路逻辑表达式" title="永久链接至标题">¶</a></h2>
+<p>在对条件语句有了更深刻的理解之后，我们将扩展我们对Python逻辑表达式的研究来讨论短路（short-circuiting）。在Python中，一个逻辑表达式会从左到右运算，并在表达式结果确定的那一步就返回，且<em>不会运算表达式剩下的部分</em>。也就是说，表达式可以<em>短路</em>。</p>
+<p>比如说，<code class="docutils literal notranslate"><span class="pre">and</span></code> 运算仅仅会在它两边的表达式都为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 时才会返回 <code class="docutils literal notranslate"><span class="pre">True</span></code>。因此，表达式 <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">&lt;anything&gt;</span></code> 一定会返回 <code class="docutils literal notranslate"><span class="pre">False</span></code>；同时，这个表达式会返回 <code class="docutils literal notranslate"><span class="pre">False</span></code> 而<em>不运算</em> <code class="docutils literal notranslate"><span class="pre">bool(&lt;anything&gt;)</span></code>。</p>
+<p>为了演示这一行为，请见下面的例子：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示短路逻辑表达式</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="ow">and</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>  <span class="c1"># 运算 `1/0` 会导致错误</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>According to our discussion, the pattern <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span></code> short-circuits this expression without it ever evaluating <code class="docutils literal notranslate"><span class="pre">bool(1/0)</span></code>. Reversing the ordering of the arguments makes this clear.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># expressions are evaluated from left to right</span>
+<p>根据上文的讨论，<code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span></code> 会短路这个表达式，让它不运算 <code class="docutils literal notranslate"><span class="pre">bool(1/0)</span></code> 就返回。换转参数顺序会明显地揭示这一点。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 表达式是从左到右运算的</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span> <span class="ow">and</span> <span class="bp">False</span>
 <span class="o">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span>                         <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
@@ -565,52 +563,52 @@
 <span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
 </pre></div>
 </div>
-<p>In practice, short-circuiting can be leveraged in order to condense one’s code. Suppose a section of our code is processing a variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, which may be either a <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types">number</a> or a <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Strings">string</a>. Suppose further that we want to process <code class="docutils literal notranslate"><span class="pre">x</span></code> in a special way if it is an all-uppercased string. The code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this will raise an error if `x` is not a string</span>
+<p>在实际操作中，你可以通过短路来浓缩你的代码。假设我们代码的一节在处理变量 <code class="docutils literal notranslate"><span class="pre">x</span></code>，其可能是一个<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#数字类型">数字</a>或<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#字符串">字符串</a>。假设我们当 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是全大写的字符串时想要有特殊的处理方式。以下代码</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这在 `x` 不是字符串时会报错</span>
 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
-    <span class="c1"># do something with the uppercased string</span>
+    <span class="c1"># 对此大写字符串进行操作</span>
 </pre></div>
 </div>
-<p>is problematic because <code class="docutils literal notranslate"><span class="pre">isupper</span></code> can only be called once we are sure that <code class="docutils literal notranslate"><span class="pre">x</span></code> is a string; this code will raise an error if <code class="docutils literal notranslate"><span class="pre">x</span></code> is a number. We could instead write</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a valid but messy way to filter out non-string objects</span>
+<p>是有问题的，因为 <code class="docutils literal notranslate"><span class="pre">isupper</span></code> 只应该在我们确定 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是字符串之后才调用；如果 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是一个数字，我们的代码会报错。我们可以重写代码</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一个可用但难看的过滤非字符串对象的方法</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
-        <span class="c1"># do something with the uppercased string</span>
+        <span class="c1"># 对此大写字符串进行操作</span>
 </pre></div>
 </div>
-<p>but the more elegant and concise way of handling the nestled checking is to leverage our ability to short-circuit logic expressions.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># utilizing short-circuiting to concisely perform all necessary checks</span>
+<p>但一个更加优雅和简短的处理多层次检测的方法是短路逻辑表达式。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 利用短路来简写必要的检查</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">x</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
-    <span class="c1"># do something with the uppercased string</span>
+    <span class="c1"># 对此大写字符串进行操作</span>
 </pre></div>
 </div>
-<p>See, that if <code class="docutils literal notranslate"><span class="pre">x</span></code> is not a string, that <code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">str)</span></code> will return <code class="docutils literal notranslate"><span class="pre">False</span></code>; thus <code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">str)</span> <span class="pre">and</span> <span class="pre">x.isupper()</span></code> will short-circuit and return <code class="docutils literal notranslate"><span class="pre">False</span></code> without ever evaluating <code class="docutils literal notranslate"><span class="pre">bool(x.isupper())</span></code>. This is the preferable way to handle this sort of checking. This code is more concise and readable than the equivalent nested if-statements.</p>
+<p>请注意如果 <code class="docutils literal notranslate"><span class="pre">x</span></code> 不是字符串，那 <code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">str)</span></code> 会返回 <code class="docutils literal notranslate"><span class="pre">False</span></code>；因此 <code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">str)</span> <span class="pre">and</span> <span class="pre">x.isupper()</span></code> 会短路并直接返回 <code class="docutils literal notranslate"><span class="pre">False</span></code>，且不运算 <code class="docutils literal notranslate"><span class="pre">bool(x.isupper())</span></code>。这是这种检查任务的推荐结局方法。这代码对比等值的多层if语句更简短和可读。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: short-circuited expressions</strong></p>
-<p>Consider the preceding example of short-circuiting, where we want to catch the case where <code class="docutils literal notranslate"><span class="pre">x</span></code> is an uppercased string. What is the “bug” in the following code? Why does this fail to utilize short-circuiting correctly?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># what is wrong with me?</span>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：短路表达式</strong></p>
+<p>回忆前文检查 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是大写字符串的范例。以下代码的“bug“是什么？为什么它并没有正确地利用短路？</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 我做错了什么？</span>
 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="c1"># do something with the uppercased string</span>
+    <span class="c1"># 对此大写字符串进行操作</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档连接">
+<h2>官方说明文档连接<a class="headerlink" href="#官方说明文档连接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#truth-value-testing">Truth testing</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not">Boolean operations</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#comparisons">Comparisons</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#the-if-statement">‘if’ statements</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool">布尔值</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#truth-value-testing">检查真值</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not">布尔操作符</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#comparisons">对比</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#the-if-statement">’if’语句</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Exercise-Solutions:">
-<h2>Reading Comprehension Exercise Solutions:<a class="headerlink" href="#Reading-Comprehension-Exercise-Solutions:" title="Permalink to this headline">¶</a></h2>
-<p><strong>Conditional statements</strong></p>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>条件语句：解</strong></p>
 <ol class="arabic simple">
-<li>If <code class="docutils literal notranslate"><span class="pre">my_list</span></code> is <code class="docutils literal notranslate"><span class="pre">[]</span></code>, then <code class="docutils literal notranslate"><span class="pre">bool(my_list)</span></code> will return <code class="docutils literal notranslate"><span class="pre">False</span></code>, and the code block will be skipped. Thus <code class="docutils literal notranslate"><span class="pre">first_item</span></code> will be <code class="docutils literal notranslate"><span class="pre">None</span></code>.</li>
-<li>First, check to see if <code class="docutils literal notranslate"><span class="pre">.</span></code> is even contained in <code class="docutils literal notranslate"><span class="pre">my_file</span></code>. If it is, find its index-position, and slice the string up to that index. Otherwise, <code class="docutils literal notranslate"><span class="pre">my_file</span></code> is already the file name.</li>
+<li><p>如果 <code class="docutils literal notranslate"><span class="pre">my_list</span></code> 为 <code class="docutils literal notranslate"><span class="pre">[]</span></code>，那 <code class="docutils literal notranslate"><span class="pre">bool(my_list)</span></code> 会返回 <code class="docutils literal notranslate"><span class="pre">False</span></code>，而对应的代码块则会被跳过。因此 <code class="docutils literal notranslate"><span class="pre">first_item</span></code> 会是 <code class="docutils literal notranslate"><span class="pre">None</span></code>。</p></li>
+<li><p>首先，检查 <code class="docutils literal notranslate"><span class="pre">my_file</span></code> 是否包含 <code class="docutils literal notranslate"><span class="pre">.</span></code>。如果是，找到它的索引并对字符串进行切片（切到该索引）。如果不是，<code class="docutils literal notranslate"><span class="pre">my_file</span></code> 就已经是文件名了。</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_file</span> <span class="o">=</span> <span class="s2">&quot;code.pdf&quot;</span>
 
@@ -621,14 +619,14 @@
     <span class="n">filename</span> <span class="o">=</span> <span class="n">my_file</span>
 </pre></div>
 </div>
-<p><strong>Short-circuited expressions</strong></p>
-<p>The code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># what is wrong with me?</span>
+<p><strong>短路表达式：解</strong></p>
+<p>此代码</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 我做错了什么？</span>
 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="c1"># do something with the uppercased string</span>
+    <span class="c1"># 对此大写字符串进行操作</span>
 </pre></div>
 </div>
-<p>fails to account for the fact that expressions are always evaluated from left to right. That is, <code class="docutils literal notranslate"><span class="pre">bool(x.isupper())</span></code> will always be evaluated first in this instance and will raise an error if <code class="docutils literal notranslate"><span class="pre">x</span></code> is not a string. Thus the following <code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">str)</span></code> statement is useless.</p>
+<p>并没有考虑表达式从左到右运算的顺序。也就是说，在这个例子中 <code class="docutils literal notranslate"><span class="pre">bool(x.isupper())</span></code> 永远都会首先被运算，并且会在 <code class="docutils literal notranslate"><span class="pre">x</span></code> 不是字符串时报错。因此，之后的 <code class="docutils literal notranslate"><span class="pre">isinstance(x,</span> <span class="pre">str)</span></code> 语句完全没用。</p>
 </div>
 </div>
 
@@ -640,10 +638,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ForLoops.html" class="btn btn-neutral float-right" title="For-Loops and While-Loops" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ForLoops.html" class="btn btn-neutral float-right" title="For循环和While循环" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Introduction.html" class="btn btn-neutral float-left" title="Introducing Control Flow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Introduction.html" class="btn btn-neutral float-left" title="控制流简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

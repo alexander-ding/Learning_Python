@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Vectorized operations with numpy arrays, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>“Vectorized” Operations: Optimized Computations on NumPy Arrays &mdash; Python Like You Mean It</title>
+  <title>“矢量化”操作：对NumPy数组进行优化过的计算 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Array Broadcasting" href="Broadcasting.html" />
-    <link rel="prev" title="Iterating Over Arrays &amp; Array-Traversal Order" href="ArrayTraversal.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="数组广播" href="Broadcasting.html" />
+    <link rel="prev" title="迭代数组和数组遍历顺序" href="ArrayTraversal.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,40 +95,40 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">Basic Array Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Basic-Mathematical-Operations-Using-Arrays">Basic Mathematical Operations Using Arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Vectorized-Operations">Vectorized Operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#NumPy’s-Mathematical-Functions">NumPy’s Mathematical Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Unary-Functions">Unary Functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Binary-Functions">Binary Functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Sequential-Functions">Sequential Functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions">Specifying the <code class="docutils literal notranslate"><span class="pre">axis</span></code> Keyword Argument in Sequential NumPy Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">基本的数组属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">迭代数组和数组遍历顺序</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">“矢量化”操作：对NumPy数组进行优化过的计算</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#使用数组进行基本数学操作">使用数组进行基本数学操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#矢量化操作">矢量化操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#NumPy的数学函数">NumPy的数学函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#一元函数">一元函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#二元函数">二元函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#序列函数">序列函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#在NumPy序列函数中提供-axis-关键词参数">在NumPy序列函数中提供 <code class="docutils literal notranslate"><span class="pre">axis</span></code> 关键词参数</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Logical-Operations">Logical Operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Linear-Algebra">Linear Algebra</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Conclusion">Conclusion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#逻辑运算">逻辑运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#线性代数">线性代数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#总结">总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">Advanced Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">数组广播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">进阶索引</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -173,9 +174,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_3.html">Module 3: The Essentials of NumPy</a> &raquo;</li>
+          <li><a href="../module_3.html">模组3：NumPy基础</a> &raquo;</li>
         
-      <li>“Vectorized” Operations: Optimized Computations on NumPy Arrays</li>
+      <li>“矢量化”操作：对NumPy数组进行优化过的计算</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,49 +219,46 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="“Vectorized”-Operations:-Optimized-Computations-on-NumPy-Arrays">
-<h1>“Vectorized” Operations: Optimized Computations on NumPy Arrays<a class="headerlink" href="#“Vectorized”-Operations:-Optimized-Computations-on-NumPy-Arrays" title="Permalink to this headline">¶</a></h1>
-<p>In this section, we will:</p>
+<div class="section" id="“矢量化”操作：对NumPy数组进行优化过的计算">
+<h1>“矢量化”操作：对NumPy数组进行优化过的计算<a class="headerlink" href="#“矢量化”操作：对NumPy数组进行优化过的计算" title="永久链接至标题">¶</a></h1>
+<p>在本节中，我们将会：</p>
 <ul class="simple">
-<li>Define the term vectorization, as it is used in the context of Python/NumPy.</li>
-<li>Prescribe the use of NumPy’s vectorized functions for performing optimized numerical computations on arrays.</li>
-<li>Compare the performance of a simple non-vectorized computation to a vectorized one.</li>
-<li>Describe how unary, binary, and sequential functions are defined on NumPy arrays.</li>
-<li>Provide a brief overview of linear algebra functions and logical operations.</li>
+<li><p>在Python/NumPy的环境中定义矢量化（vectorization）一词。</p></li>
+<li><p>指示如何使用NumPy矢量化的函数来进行优化过的数组计算。</p></li>
+<li><p>对比未矢量化的计算和矢量化的计算效率。</p></li>
+<li><p>描述NumPy数组的一元，二元，和序列函数是如何定义的。</p></li>
+<li><p>快速地过一下线性代数函数和逻辑操作。</p></li>
 </ul>
-<div class="section" id="Basic-Mathematical-Operations-Using-Arrays">
-<h2>Basic Mathematical Operations Using Arrays<a class="headerlink" href="#Basic-Mathematical-Operations-Using-Arrays" title="Permalink to this headline">¶</a></h2>
-<p>The ND-array can be utilized in mathematical expressions to perform mathematical computations using an array’s entries. In general, NumPy implements mathematical functions such that, when a function acts on an array, the mathematical operation is applied to <em>each</em> entry in the array.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstrating the application of common</span>
-<span class="c1"># mathematical operations to a NumPy array</span>
+<div class="section" id="使用数组进行基本数学操作">
+<h2>使用数组进行基本数学操作<a class="headerlink" href="#使用数组进行基本数学操作" title="永久链接至标题">¶</a></h2>
+<p>你可以在数学表达式中使用N维数组来对数组的成员来进行数学运算。一般来讲，NumPy实现的数学函数会在作用于数组时对数组的<em>每个</em>成员进行该数学操作。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示对NumPy数组进行常用的数学操作</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">3.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">6.</span><span class="p">,</span>  <span class="mf">7.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">]])</span>
 
-<span class="c1"># `x ** 2` squares each entry in the array `x`</span>
+<span class="c1"># `x ** 2` 将数组 `x` 的每个成员都求平方</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="n">array</span><span class="p">([[</span>  <span class="mf">0.</span><span class="p">,</span>   <span class="mf">1.</span><span class="p">,</span>   <span class="mf">4.</span><span class="p">],</span>
        <span class="p">[</span>  <span class="mf">9.</span><span class="p">,</span>  <span class="mf">16.</span><span class="p">,</span>  <span class="mf">25.</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">36.</span><span class="p">,</span>  <span class="mf">49.</span><span class="p">,</span>  <span class="mf">64.</span><span class="p">]])</span>
 
-<span class="c1"># `np.sqrt(x)` takes the square-root</span>
-<span class="c1"># of each entry in the array `x`</span>
+<span class="c1"># `np.sqrt(x)` 求数组 `x` 的每个成员的平方根</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span>        <span class="p">,</span>  <span class="mf">1.</span>        <span class="p">,</span>  <span class="mf">1.41421356</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">1.73205081</span><span class="p">,</span>  <span class="mf">2.</span>        <span class="p">,</span>  <span class="mf">2.23606798</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">2.44948974</span><span class="p">,</span>  <span class="mf">2.64575131</span><span class="p">,</span>  <span class="mf">2.82842712</span><span class="p">]])</span>
 
-<span class="c1"># Slices return arrays, thus you can operate</span>
-<span class="c1"># on these too. Add .5 to each entry in row-0</span>
-<span class="c1"># of `x`</span>
+<span class="c1"># 切片也返回数组，因此你也可以对切片进行操作</span>
+<span class="c1"># 向 `x` 行0的所有成员加.5</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="o">.</span><span class="mi">5</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">0.5</span><span class="p">,</span>  <span class="mf">1.5</span><span class="p">,</span>  <span class="mf">2.5</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Similarly, mathematical operations performed between two arrays are designed to act on the corresponding pairs of entries between the two arrays:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstrating mathematical operations between two arrays</span>
+<p>相似的，对两个数组进行的数学操作会将数组的成员一一对应并进行操作：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示两个数组之间的数学操作</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">3.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">6.</span><span class="p">,</span>  <span class="mf">7.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">]])</span>
@@ -269,8 +267,7 @@
 <span class="o">...</span>               <span class="p">[</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span><span class="o">-</span><span class="mf">1.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.</span> <span class="p">]])</span>
 
-<span class="c1"># `x + y` will add the corresponding entries of</span>
-<span class="c1"># the arrays `x` and `y`</span>
+<span class="c1"># `x + y` 会将数组 `x` 和 `y` 对应的数字相加</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 <span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">4.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span> <span class="p">],</span>
        <span class="p">[</span> <span class="mf">0.5</span><span class="p">,</span>  <span class="mf">2.</span> <span class="p">,</span>  <span class="mf">3.5</span><span class="p">],</span>
@@ -282,45 +279,41 @@
        <span class="p">[</span><span class="o">-</span><span class="mf">6.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.</span> <span class="p">]])</span>
 </pre></div>
 </div>
-<p>There are also mathematical operations which are designed to operate on sequences of numbers, such as the sum function. NumPy’s sequential functions can act on an array’s entries as if they form a single sequence, or act on subsequences of the array’s entries, according to the array’s axes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># applying the sequential function, `np.sum`</span>
-<span class="c1"># on an array</span>
+<p>Python有着旨在对数字序列进行操作的数学函数。相应的，NumPy的序列函数对数组成员进行操作时会假装所有成员都在一个序列中，或会根据数组的轴对相应的子序列进行操作。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 对数组使用序列函数 `np.sum`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">3.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">6.</span><span class="p">,</span>  <span class="mf">7.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">]])</span>
 
-<span class="c1"># summing over all of the array&#39;s entries</span>
+<span class="c1"># 这将求数组所有成员的和</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="mf">36.0</span>
 
-<span class="c1"># summing over the rows, within each column</span>
-<span class="c1"># of the array</span>
+<span class="c1"># 求数组每一列中所有行的和</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span>  <span class="mf">9.</span><span class="p">,</span>  <span class="mf">12.</span><span class="p">,</span>  <span class="mf">15.</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>We will use this section to provide a more thorough overview of the various mathematical functions that are provided by NumPy, as well as the behavior of its sequential mathematical operations. However, we must first understand that NumPy performs these “vectorized operations” in a highly-optimized fashion, such that pure Python code can never rival its efficiency. By the end of this section, “vectorized operation” will become a phrase of endearment.</p>
+<p>我们将在本节中提供更加细致的对NumPy提供的数学函数以及NumPy的序列数学操作的解析。但是，我们必须首先理解NumPy使用高效的“矢量化操作”来达到纯Python代码无法对比的效率这一点。在本节最后，“矢量化操作”将会成为对NumPy表达爱意的词汇。</p>
 </div>
-<div class="section" id="Vectorized-Operations">
-<h2>Vectorized Operations<a class="headerlink" href="#Vectorized-Operations" title="Permalink to this headline">¶</a></h2>
-<p>Recall that NumPy’s ND-arrays are <em>homogeneous</em>: an array can only contain data of a single type. For instance, an array can contain 8-bit integers or 32-bit floating point numbers, but not a mix of the two. This is in stark contrast to Python’s lists and tuples, which are entirely unrestricted in the variety of contents they can possess; a given list could simultaneously contain strings, integers, and other objects. This restriction on an array’s contents comes at a great benefit; in “knowing”
-that an array’s contents are homogeneous in data type, NumPy is able to delegate the task of performing mathematical operations on the array’s contents to optimized, compiled C code. This is a process that is referred to as <strong>vectorization</strong>. The outcome of this can be a <em>tremendous</em> speedup relative to the analogous computation performed in Python, which must painstakingly check the data type of <em>every</em> one of the items as it iterates over the arrays, since Python typically works with lists
-with unrestricted contents.</p>
+<div class="section" id="矢量化操作">
+<h2>矢量化操作<a class="headerlink" href="#矢量化操作" title="永久链接至标题">¶</a></h2>
+<p>请回忆，NumPy的N维数组是<em>同质</em>的：一个数组只能存储单个类型的数据。比如说，单个数组可以存储8比特整数或32比特浮点数，但是不能这两种数都有。这和Python的完全不限制成员种类数的列表和元组极其不同；一个列表可以同时存储字符串，整数，和其它对象。这个对数组成员的限制带来着大量的好处；因为NumPy提前“知道”数组成员的种类是同质的，它可以将对数组成员进行的数学操作代理给优化过，提前编译的C代码。这个过程叫做<strong>矢量化</strong>（vectorization）。这么做的结果是和纯Python代码运算相比<em>巨大的</em>速度提升。Python需要在迭代数组成员时<em>一个个</em>检查成员的数据类型，因为Python一般操作的列表是不限制数据类型的。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Definition</strong>:</p>
-<p>In the context of high-level languages like Python, Matlab, and R, the term <strong>vectorization</strong> describes the use of optimized, pre-compiled code written in a low-level language (e.g.&nbsp;C) to perform mathematical operations over a sequence of data. This is done in place of an explicit iteration written in the native language code (e.g.&nbsp;a “for-loop” written in Python).</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>定义</strong>：</p>
+<p>在像Python，Matlab，和R这类的高级语言里，<strong>矢量化</strong>一词指使用高效，提前编译的低级语言（如C）代码来对数据序列进行数学操作。这代替了在同语言中写的显性迭代代码（如Python中的for循环）。</p>
 </div>
-<p>Consider, for instance, the task of summing the integers 0-9,999 stored in an array. Calling NumPy’s <code class="docutils literal notranslate"><span class="pre">sum</span></code> function cues optimized C code to iterate over the integers in the array and tally the sum. <code class="docutils literal notranslate"><span class="pre">np.sum</span></code> is therefore a “vectorized” function. Let’s time how long it takes to compute this sum:</p>
+<p>比如说，假设我们想要求数组中存储的整数0-9，999的和，那调用NumPy的 <code class="docutils literal notranslate"><span class="pre">sum</span></code> 函数将使用高效的C代码来迭代数组中的整数并求和。因此，<code class="docutils literal notranslate"><span class="pre">np.sum</span></code> 是一个“矢量化”的函数。让我们计算一下求这个和花了多少时间：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="go"># sum an array, using NumPy&#39;s vectorized &#39;sum&#39; function</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>  <span class="c1"># takes 11 microseconds on my computer</span>
+<span class="go"># 使用NumPy的矢量化 &#39;sum&#39; 函数求和</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>  <span class="c1"># 在我的机器上花了11微秒</span>
 <span class="go">49995000</span>
 </pre></div>
 </div>
-<p>Now let’s compare this to the time required to <em>explicitly</em> loop over the array in Python and tally up the sum. Python is unable to take advantage of the fact that the array’s contents are all of a single data type - it has to check, for every iteration, if it is dealing with an integer, a string, a floating point number, etc, just as it does when iterating over a list. This will slow down the computation massively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum an array by explicitly looping over the array in Python</span>
-<span class="c1"># this takes 822 microseconds on my computer</span>
+<p>现在，让我们将这个对比在Python中<em>显性</em>迭代这个数组并求和花的时间。Python无法利用函数成员都是同一数据类型这一信息——它必须在每一轮迭代都检查数据的类型，就像在迭代列表一样。这回大幅度地降低运算速度。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在Python中显性迭代数组来求和sum an array by explicitly looping over the array in Python</span>
+<span class="c1"># 在我的机器上花了822微秒</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
 <span class="o">...</span>     <span class="n">total</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">total</span>
@@ -328,264 +321,261 @@ with unrestricted contents.</p>
 <span class="mi">49995000</span>
 </pre></div>
 </div>
-<p>Timed on my computer, the sum is <strong>over 50 times faster when performed in using NumPy’s vectorized function</strong>! This should make it clear that, whenever computational efficiency is important, one should avoid performing explicit for-loops over long sequences of data in Python, be them lists or NumPy arrays. NumPy provides a whole suite of vectorized functions. In fact, the name of the game when it comes to leveraging NumPy to do computations over arrays of numbers is to exclusively leverage its
-vectorized functions. The following computations all invoke vectorized functions:</p>
+<p>根据我机器上花的时间，求和<strong>在使用NumPy矢量化的函数时快了超过50倍</strong>！我希望这澄清了我们在计算速度重要时应避免对Python长序列数据（不管是列表还是NumPy数组）使用显性for循环一事。NumPy提供了一整套的矢量化函数。事实上，使用NumPy对数组进行计算的中心围绕着仅仅使用矢量化函数。以下运算全部都调用矢量化函数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="go"># multiply 2 with each number in the array</span>
+<span class="go"># 对数组中每个数乘以2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="go">array([4, 6, 8])</span>
 
-<span class="go"># subtract the corresponding entries of the two arrays</span>
+<span class="go"># 将两个数组中的对应成员相减</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">])</span>
 <span class="go">array([ 2. ,  0. , -7.4])</span>
 
-<span class="go"># Take the &quot;dot product&quot; of the two arrays</span>
-<span class="go"># &quot;dot product&quot; means: multiply their corresponding entries and sum the result</span>
+<span class="go"># 求两个数组的“点积”（dot product）</span>
+<span class="go"># 点积指的是：将数组对应成员相乘并求乘积的和</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 <span class="go">6</span>
 </pre></div>
 </div>
-<p>All of the mathematical functions that are introduced in the remainder of this section perform vectorized operations.</p>
+<p>所有本节之后介绍的数学函数都是矢量化的操作。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>NumPy provides highly-optimized functions for performing mathematical operations on arrays of numbers. Performing extensive iterations (e.g.&nbsp;via ‘for-loops’) in Python to perform repeated mathematical computations should nearly always be replaced by the use of vectorized functions on arrays. This informs the entire design paradigm of NumPy.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>NumPy提供了高度优化的函数来对数字数组进行数学运算。使用Python进行大量的迭代（如使用“for循环”）来达到重复的数学运算的地方基本都应该由对数组进行矢量化函数代替。这就是使用NumPy的设计方法。</p>
 </div>
 </div>
-<div class="section" id="NumPy’s-Mathematical-Functions">
-<h2>NumPy’s Mathematical Functions<a class="headerlink" href="#NumPy’s-Mathematical-Functions" title="Permalink to this headline">¶</a></h2>
-<p>We will now take some time to survey the various types of vectorized mathematical functions that NumPy supplies, and how these mathematical operations, which traditionally are defined on individual numbers, are applied to arrays of numbers. We will look at</p>
+<div class="section" id="NumPy的数学函数">
+<h2>NumPy的数学函数<a class="headerlink" href="#NumPy的数学函数" title="永久链接至标题">¶</a></h2>
+<p>我们将花一些时间来探索NumPy提供的多种矢量化数学函数，以及这些传统上仅仅处理单个数字的数学操作是如何处理数组的。我们将会讨论</p>
 <ul class="simple">
-<li>unary functions: <span class="math notranslate nohighlight">\(f(x)\)</span></li>
-<li>binary functions: <span class="math notranslate nohighlight">\(f(x,y)\)</span></li>
-<li>functions that operate on sequences of numbers: <span class="math notranslate nohighlight">\(f(\{x_i\}_{i=0}^{n-1})\)</span></li>
+<li><p>一元（unary）函数：<span class="math notranslate nohighlight">\(f(x)\)</span></p></li>
+<li><p>二元（binary）函数：<span class="math notranslate nohighlight">\(f(x,y)\)</span></p></li>
+<li><p>操作数字序列的函数：<span class="math notranslate nohighlight">\(f(\{x_i\}_{i=0}^{n-1})\)</span></p></li>
 </ul>
-<p>These represent a substantial portion of the essential mathematical tools in the NumPy library. An exhaustive list of NumPy’s mathematical functions is available in the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations">official documentation</a>.</p>
-<div class="section" id="Unary-Functions">
-<h3>Unary Functions<a class="headerlink" href="#Unary-Functions" title="Permalink to this headline">¶</a></h3>
-<p>A unary function is a mathematical function that only accepts one operand (i.e.&nbsp;argument): <span class="math notranslate nohighlight">\(f(x)\)</span>. NumPy supplies many familiar unary functions:</p>
-<table border="1" class="docutils">
+<p>这些函数代表着NumPy模组核心数学工具中的很大一部分。完整的NumPy数学函数列表可以在<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations">官方说明文档</a>中找到。</p>
+<div class="section" id="一元函数">
+<h3>一元函数<a class="headerlink" href="#一元函数" title="永久链接至标题">¶</a></h3>
+<p>一元函数是只接受一个操作数（也就是参数）的数学函数：<span class="math notranslate nohighlight">\(f(x)\)</span>。NumPy提供了很多熟悉的一元函数：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="64%" />
-<col width="36%" />
+<col style="width: 60%" />
+<col style="width: 40%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Unary Function: <span class="math notranslate nohighlight">\(f(x)\)</span></th>
-<th class="head">NumPy Function</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>一元函数：<span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<th class="head"><p>NumPy函数</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(\vert x \vert\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.absolute</span></code></td>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\vert x \vert\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.absolute</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code></p></td>
 </tr>
-<tr class="row-even"><td><strong>Trigonometric Functions</strong></td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><strong>三角函数</strong></p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\sin{x}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.sin</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sin{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.sin</span></code></p></td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(\cos{x}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.cos</span></code></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cos{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.cos</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\tan{x}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.tan</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\tan{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.tan</span></code></p></td>
 </tr>
-<tr class="row-even"><td><strong>Logarithmic Functions</strong></td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><strong>对数函数</strong></p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\ln{x}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.log</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\ln{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.log</span></code></p></td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(\log_{10}{x}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.log10</span></code></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\log_{10}{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.log10</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\log_{2}{x}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.log2</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\log_{2}{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.log2</span></code></p></td>
 </tr>
-<tr class="row-even"><td><strong>Exponential Functions</strong></td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><strong>指数函数</strong></p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(e^{x}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.exp</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.exp</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>This is by no means an exhaustive list of the available unary functions, for example the hyperbolic and inverse trigonometric functions are available too. These familiar functions are defined to work on individual numbers (i.e. “scalars”), not sequences of numbers. How, then, does NumPy implement these functions so that they behave in a coherent way when operating on arrays? The answer is that it <strong>maps</strong> the function over the array - applying <span class="math notranslate nohighlight">\(f(x)\)</span> to each element within the array, and
-producing a new array as a result (i.e.&nbsp;the input array is not overwritten).</p>
+<p>当然，这完全不是所有可用一元函数的完整列表。比如说，双曲函数和逆三角函数也有着对应的NumPy版本。这些熟悉的函数是为单个数字（也就是“标量”），而不是数字序列，定义的。那么DumPy是如何实现这些函数使得它们对数组操作时依然有条理呢？答案是NumPy将这个函数<strong>映射</strong>（map）到数组上——使用 <span class="math notranslate nohighlight">\(f(x)\)</span> 对数组中的每个成员进行操作，并将结果返回为一个新数组（也就是说输入数组并没有被重写）。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
 
-<span class="c1"># produces array([exp(0.), exp(1.), exp(2.)])</span>
-<span class="c1"># x is not overwritten by this; a new array</span>
-<span class="c1"># is created</span>
+<span class="c1"># 返回 array([exp(0.), exp(1.), exp(2.)])</span>
+<span class="c1"># x 并没有被次重写；这创建了一个新数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">1.</span> <span class="p">,</span>  <span class="mf">2.71828183</span><span class="p">,</span>  <span class="mf">7.3890561</span> <span class="p">])</span>
 </pre></div>
 </div>
-<p>This process generalizes to arrays of any dimensionality and shape.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of a unary function operating on a 2D array</span>
+<p>这个规则可以拓展到任何维度和形状的数组上。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 范例一元函数对2维数组进行操作</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
        <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]])</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># equivalent to: `x**2`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 等值于：`x**2`</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
        <span class="p">[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Because slicing returns an array, you can utilize these in mathematical operations as well</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># square column-0 of `x`</span>
+<p>因为切片返回一个数组，你可以对切片进行数学操作</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 求 `x` 第一列的平方</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>Applying a unary NumPy function, <span class="math notranslate nohighlight">\(f(x)\)</span>, to an N-dimensional array will apply <span class="math notranslate nohighlight">\(f(x)\)</span> elementwise on the array.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>将一元NumPy函数 <span class="math notranslate nohighlight">\(f(x)\)</span> 应用于N维数组将会将 <span class="math notranslate nohighlight">\(f(x)\)</span> 作用于数组的每一个成员。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Unary Functions</strong></p>
-<p>Given the 2D array:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：一元函数</strong></p>
+<p>设以下2维数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Take the natural-logarithm of the 1st and 3rd element in the 3rd-row of <code class="docutils literal notranslate"><span class="pre">x</span></code>, producing a shape-(2,) result.</p>
+<p>求 <code class="docutils literal notranslate"><span class="pre">x</span></code> 第三行的第一和第三个成员的自然对数以得到形状为 (2,) 的结果。</p>
 </div>
 </div>
-<div class="section" id="Binary-Functions">
-<h3>Binary Functions<a class="headerlink" href="#Binary-Functions" title="Permalink to this headline">¶</a></h3>
-<p>A binary function has the form <span class="math notranslate nohighlight">\(f(x,y)\)</span>. The arithmetic operations are all binary functions:</p>
-<table border="1" class="docutils">
+<div class="section" id="二元函数">
+<h3>二元函数<a class="headerlink" href="#二元函数" title="永久链接至标题">¶</a></h3>
+<p>二元函数的形式为 <span class="math notranslate nohighlight">\(f(x,y)\)</span>。算数操作都是二元函数：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="50%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 48%" />
+<col style="width: 28%" />
+<col style="width: 23%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Binary Function: <span class="math notranslate nohighlight">\(f(x, y)\)</span></th>
-<th class="head">NumPy Function</th>
-<th class="head">Python operator</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>二元函数：<span class="math notranslate nohighlight">\(f(x, y)\)</span></p></th>
+<th class="head"><p>NumPy函数</p></th>
+<th class="head"><p>Python操作符</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(x\cdot y\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.multiply</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">*</span></code></td>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(x\cdot y\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.multiply</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(x\div y\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.divide</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">/</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x\div y\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.divide</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(x+y\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.add</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">+</span></code></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(x+y\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.add</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(x-y\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.subtract</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">-</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x-y\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.subtract</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(x^{y}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.power</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">**</span></code></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(x^{y}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.power</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(x \% y\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.mod</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">%</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x \% y\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.mod</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Recall</strong>:</p>
-<p>The “modulo” function (“mod” for short), denoted by <span class="math notranslate nohighlight">\(\%\)</span>, is defined to return the <em>remainder</em> of division: <span class="math notranslate nohighlight">\(5 \% 3 = 2\)</span></p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>回忆</strong>：</p>
+<p>符号是 <span class="math notranslate nohighlight">\(\%\)</span> 的 “模”函数（modulo，简写为mod）的定义使其返回除法的<em>余数</em>：<span class="math notranslate nohighlight">\(5 \% 3 = 2\)</span></p>
 </div>
-<p>As indicated in this table, these NumPy functions can be called by invoking the familiar Python math-operators, when used in the context of NumPy arrays.</p>
-<p>Here are some other common binary functions:</p>
-<table border="1" class="docutils">
+<p>如上表所示，这些NumPy函数可以通过对NumPy数组使用熟悉的Python数学操作符来调用。</p>
+<p>以下是另外一些常见的二元函数：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="68%" />
-<col width="32%" />
+<col style="width: 56%" />
+<col style="width: 44%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Binary Function: <span class="math notranslate nohighlight">\(f(x, y)\)</span></th>
-<th class="head">NumPy Function</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>二元函数：f(x, y)$</p></th>
+<th class="head"><p>NumPy函数</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(\max(x, y)\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.maximum</span></code></td>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\max(x, y)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.maximum</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\min(x, y)\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.minimum</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\min(x, y)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.minimum</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>There are two cases that we must consider when working with binary functions, in the context of NumPy arrays:</p>
+<p>在用二元函数操作NumPy函数时，我们需要考虑两种情况：</p>
 <ol class="arabic simple">
-<li>When both operands of the function are arrays (of the same shape).</li>
-<li>When one operand of the function is a scalar (i.e.&nbsp;a single number) and the other is an array.</li>
+<li><p>当函数两个操作数都是（相同形状的）数组时。</p></li>
+<li><p>当函数的一个操作数是标量（也就是单个数字），另外一个操作数是数组时。</p></li>
 </ol>
-<p>Similar to the behavior of unary functions applied to an array, a binary function will operate on two same-shape arrays by applying the function to their pairwise elements.</p>
+<p>和对数组运用一元函数时的行为相似，二元数组会对两个形状相同的数组的对应成员进行操作。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.</span><span class="p">])</span>
 
-<span class="go"># pair-wise addition of elements in `x` and `y`</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># convenient notation for calling `np.add(x, y)`</span>
+<span class="go"># 对 `x` 和 `y` 对应的成员对进行操作</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># 这等值于：`np.add(x, y)`</span>
 <span class="go">array([-1.,  2.,  0.])</span>
 </pre></div>
 </div>
-<p>This process generalizes to arrays of any dimensionality and shape, as long as the two operands have the same shape.</p>
+<p>这个过程可以拓展到任何维度和形状的数组，只需要两个操作数的形状一样。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Important Note</strong>:</p>
-<p>You <em>can</em> apply binary NumPy functions to arrays of unlike shapes. For instance, you may want to add a single shape-(2,) array with ten of such arrays, which are stored as a single shape-(10,2) array. This process is known as <strong>broadcasting</strong>, and will be covered in detail in a later section.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>重要的注释</strong>：</p>
+<p>你<em>可以</em>将二元NumPy函数运用到形状不同的数组上。比如说，你可以会希望将一个形状为 (2,) 的数组加到十个形状相似的数组（被存在一个形状为 (10,2) 的数组中）中。这个过程叫做<strong>广播</strong>（broadcasting）。我们将在后面一节中对其讨论。</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of a binary function operating on two 2D arrays</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 二元函数操作两个2维数组的例子</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">5</span><span class="p">]])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>   <span class="mi">0</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># equivalent to `x + y`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 等值于 `x + y`</span>
 <span class="n">array</span><span class="p">([[</span><span class="mi">11</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
        <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]])</span>
 
-<span class="c1"># add column-0 of `x` and row-1 of `y`</span>
+<span class="c1"># 将 `x` 的列0和 `y` 的行1相加</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
 <span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>Applying a binary NumPy-function, <span class="math notranslate nohighlight">\(f(x,y)\)</span>, to two same-shape arrays will apply <span class="math notranslate nohighlight">\(f(x,y)\)</span> to each of their pairwise elements, producing an array of the same shape as either of the operands.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>将一个二元NumPy函数 <span class="math notranslate nohighlight">\(f(x,y)\)</span> 运用于两个形状相同的数组上会将 <span class="math notranslate nohighlight">\(f(x,y)\)</span> 应用于两个数组的所有对应成员对，并将讲过作为一个形状相同的数组返回。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Binary Functions</strong></p>
-<p>Given the 2D array:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：二元函数</strong></p>
+<p>设2维数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Add the four quadrants of <code class="docutils literal notranslate"><span class="pre">x</span></code>, producing a shape-(2, 2) output.</p>
+<p>将 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的四个象限（比如说 [[ 0, 1], [ 4, 5]] 就是一个象限) 相加，返回形状为 (2, 2) 的输出。</p>
 </div>
-<p>By now, you may be able to guess NumPy’s behavior when you perform feed a binary function a scalar (i.e.&nbsp;a single number) and an array: the function is applied elementwise on the array, with each application filling one of the function’s arguments, and the single scalar provided everywhere as the other operand. This matches exactly the behavior seen in traditional linear algebra.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>  <span class="c1"># convenient notation for calling `np.multiply(3, x)`</span>
+<p>现在，你可能已经可以猜出NumPy二元函数操作一个标量（也就是单个数字）和一个数组时的行为。函数将对数组的每个成员进行操作；每次运算将会提供数组的某一个成员和不变的向量。这和传统的线性代数的行为完全一样。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>  <span class="c1"># 等值于：`np.multiply(3, x)`</span>
 <span class="go">array([ 0.,  3.,  6.])</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># convenient notation for calling `np.power(x, 2)`</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># 等值于：`np.power(x, 2)`</span>
 <span class="go">array([ 1.,  4.,  9.])</span>
 </pre></div>
 </div>
-<p>This process generalizes to an array of any dimensionality and shape.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># examples of a binary function operating on a scalar &amp; an array</span>
+<p>这个过程可以扩展到任何维度和形状的数组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 二元函数操作一个标量和一个数组的范例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">5</span><span class="p">]])</span>
 
@@ -593,7 +583,7 @@ producing a new array as a result (i.e.&nbsp;the input array is not overwritten)
 <span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
        <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">]])</span>
 
-<span class="c1"># a 3D array of shape-(2, 2, 8)</span>
+<span class="c1"># 一个形状为 (2, 2, 8) 的3维数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]],</span>
 <span class="o">...</span>
@@ -606,117 +596,116 @@ producing a new array as a result (i.e.&nbsp;the input array is not overwritten)
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>Applying a binary NumPy function, <span class="math notranslate nohighlight">\(f(x,y)\)</span>, to an array and a scalar amounts to “distributing” the function elementwise over the array, everywhere utilizing the scalar as the other operand for the binary function.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>将二维NumPy函数 <span class="math notranslate nohighlight">\(f(x,y)\)</span> 应用到一个数组和一个标量将会导致函数将标量“分配”到数组的每一个成员并以此进行二元运算。</p>
 </div>
 </div>
-<div class="section" id="Sequential-Functions">
-<h3>Sequential Functions<a class="headerlink" href="#Sequential-Functions" title="Permalink to this headline">¶</a></h3>
-<p>A sequential function expects a variable-length sequence of numbers as an input, and produces a single number as an output: <span class="math notranslate nohighlight">\(f(\{x_i\}_{i=0}^{n-1})\)</span>. The following are some sequential NumPy functions:</p>
-<table border="1" class="docutils">
+<div class="section" id="序列函数">
+<h3>序列函数<a class="headerlink" href="#序列函数" title="永久链接至标题">¶</a></h3>
+<p>序列函数接受任意长度的数字序列并返回一个数字：<span class="math notranslate nohighlight">\(f(\{x_i\}_{i=0}^{n-1})\)</span>。以下是一些NumPy的序列函数：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="79%" />
-<col width="21%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Sequential Function: <span class="math notranslate nohighlight">\(f(\{x_i\}_{i=0}^{n-1})\)</span></th>
-<th class="head">NumPy Function</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>序列函数：<span class="math notranslate nohighlight">\(f(\{x_i\}_{i=0}^{n-1})\)</span></p></th>
+<th class="head"><p>NumPy函数</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Mean of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.mean</span></code></td>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 的平均值</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.mean</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Median of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.median</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 的中间值</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.median</span></code></p></td>
 </tr>
-<tr class="row-even"><td>Variance of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.var</span></code></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 的差额</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.var</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Standard Deviation of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.std</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 的标准差</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.std</span></code></p></td>
 </tr>
-<tr class="row-even"><td>Maximum Value of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.max</span></code></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 的最大值</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.max</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Minimum Value of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.min</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 的最小值</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.min</span></code></p></td>
 </tr>
-<tr class="row-even"><td>Index of the Maximum Value of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.argmax</span></code></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 最大值的索引</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.argmax</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Index of the Minimum Value of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.argmin</span></code></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 最小值的索引</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.argmin</span></code></p></td>
 </tr>
-<tr class="row-even"><td>Sum of <span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span></td>
-<td><code class="docutils literal notranslate"><span class="pre">np.sum</span></code></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\{x_i\}_{i=0}^{n-1}\)</span> 的和</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.sum</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>The implementation of sequential NumPy functions is straightforward when working with 1-dimensional arrays:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating sequential functions</span>
+<p>序列NumPy函数的实现在操作1维数组时很简单易懂：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示序列函数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># can also be invoked as `x.sum()`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 等值于：`x.sum()`</span>
 <span class="mf">6.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># can also be invoked as `x.mean()`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 等值于：`x.mean()`</span>
 <span class="mf">2.</span>
 </pre></div>
 </div>
-<p>How do these functions behave when they are fed multi-dimensional arrays? By default, NumPy’s sequential functions treat any multidimensional array as if it had been reshaped to a 1-dimensional array. For example:</p>
+<p>这些函数在操作多维数组时的行为会是如何呢？NumPy的序列函数默认把任何多维数组当作重塑为1维数组的版本对待。比如说：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
 
-<span class="go"># `sum`  will treat a multidimensional array</span>
-<span class="go"># as if it is a single sequence of numbers, by default</span>
+<span class="go"># `sum` 默认将会将多维数组当成一个数字序列对待</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">15</span>
 </pre></div>
 </div>
-<p>This default behavior of sequential NumPy functions can be overwritten by specifying the keyword argument <code class="docutils literal notranslate"><span class="pre">axis</span></code> within the sequential function. This is a very useful and common thing to do. We will carefully study what the axis argument is used for in these and other NumPy functions.</p>
+<p>你可以通过关键词参数 <code class="docutils literal notranslate"><span class="pre">axis</span></code> 来覆盖NumPy序列函数的默认行为。这是一个很有用和常见的功能。我们将会仔细学习axis参数在这些和其它NumPy函数中是如何使用的。</p>
 </div>
-<div class="section" id="Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions">
-<h3>Specifying the <code class="docutils literal notranslate"><span class="pre">axis</span></code> Keyword Argument in Sequential NumPy Functions<a class="headerlink" href="#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions" title="Permalink to this headline">¶</a></h3>
-<p>Let’s delve into the meaning of the <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument by first seeing it in action:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating a shape-(3,2) array</span>
+<div class="section" id="在NumPy序列函数中提供-axis-关键词参数">
+<h3>在NumPy序列函数中提供 <code class="docutils literal notranslate"><span class="pre">axis</span></code> 关键词参数<a class="headerlink" href="#在NumPy序列函数中提供-axis-关键词参数" title="永久链接至标题">¶</a></h3>
+<p>让我们通过一些例子来探索 <code class="docutils literal notranslate"><span class="pre">axis</span></code> 参数的意义：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个形状为 (3,2) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
 
-<span class="c1"># sum over axis-0, within axis-1</span>
-<span class="c1"># i.e. sum over the rows, within each column</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># equivalent: x.sum(axis=0)</span>
+<span class="c1"># 在轴1内对轴0求值</span>
+<span class="c1"># 也就是说，在每一列中求其中行的和</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 等值于：x.sum(axis=0)</span>
 <span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 
-<span class="c1"># sum over axis-1, within axis-0</span>
-<span class="c1"># i.e. sum over the columns, within each row</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># equivalent: x.sum(axis=1)</span>
+<span class="c1"># 在轴0内对轴1求值</span>
+<span class="c1"># 也就是说，在每一行中求其中列的和</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 等值于：x.sum(axis=1)</span>
 <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 
-<span class="c1"># negative axis-indices can be used too</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># equivalent: np.sum(x, axis=1)</span>
+<span class="c1"># 你也可以使用负的轴索引</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 等值于：np.sum(x, axis=1)</span>
 <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 
-<span class="c1"># sum over axis-0 and axis-1</span>
-<span class="c1"># i.e. sum the array as if it were a 1D sequence (default behavior)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># equivalent: x.sum(axis=(0, 1))</span>
+<span class="c1"># 在轴0和轴1内求值</span>
+<span class="c1"># 也就是说，假装数组是1维序列来求值（默认行为）</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># 等值于：x.sum(axis=(0, 1))</span>
 <span class="mi">15</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument thus specifies which axis or axes are traversed to produce the input sequences for the sequential function to act on. One sequence is designated for each valid combination of indices of the non-traversed axes. For example, <code class="docutils literal notranslate"><span class="pre">np.sum(x,</span> <span class="pre">axis=0)</span></code> says: “for each of the columns of <code class="docutils literal notranslate"><span class="pre">x</span></code>, sum over its rows”. Thus the following sequences are summed over:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># traverse all rows within column-0</span>
-<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>  <span class="c1"># traverse all rows within column-1</span>
+<p>如上，<code class="docutils literal notranslate"><span class="pre">axis</span></code> 参数提供了在为序列函数创建输入序列时遍历哪个或哪几个轴。每个成员为没有提供的轴的组合都会创建一个序列。比如说，<code class="docutils literal notranslate"><span class="pre">np.sum(x,</span> <span class="pre">axis=0)</span></code> 等于在说：“对 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的每一列求其行的和”。因此，以下序列将会被求和：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># 遍历列0中的所有行</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>  <span class="c1"># 遍历列1中的所有行</span>
 </pre></div>
 </div>
-<p>Thus each column of <code class="docutils literal notranslate"><span class="pre">x</span></code> is summed over, producing a shape-(2,) array containing the result of the two sums. Similarly, <code class="docutils literal notranslate"><span class="pre">np.sum(x,</span> <span class="pre">axis=1)</span></code> produces a shape-(3,) array, which stores the sum along each of the three rows in <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<p>You can also supply <em>multiple</em> axes to the keyword argument by specifying them in a “tuple” of integers (using a list instead of a tuple will <em>not</em> work). <code class="docutils literal notranslate"><span class="pre">np.sum(x,</span> <span class="pre">axis=(0,1))</span></code> cues NumPy to traverse <em>both</em> of <code class="docutils literal notranslate"><span class="pre">x</span></code>’s axes, designating the entirety of <code class="docutils literal notranslate"><span class="pre">x</span></code>’s contents as the sequence, and summing to the single sequence into one number. Recall that this matches the default behavior when no <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument is specified.</p>
+<p>如此，<code class="docutils literal notranslate"><span class="pre">x</span></code> 的每一列都会被求和，最终返回一个形状为 (2,) 的数组，其成员为这两个和。相似的， <code class="docutils literal notranslate"><span class="pre">np.sum(x,</span> <span class="pre">axis=1)</span></code> 返回一个形状为 (3,) 的数组，其成员为 <code class="docutils literal notranslate"><span class="pre">x</span></code> 三行求和的结果。</p>
+<p>你也可以通过提供整数“元组”（如果是列表而不是元组的话<em>不</em>会被接受）提供<em>多个</em>轴。<code class="docutils literal notranslate"><span class="pre">np.sum(x,</span> <span class="pre">axis=(0,1))</span></code> 会告诉NumPy去遍历 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的全部两个轴，并将 <code class="docutils literal notranslate"><span class="pre">x</span></code> 全部的成员当作一个序列来求和，返回一个数字。请回忆，这和不提供 <code class="docutils literal notranslate"><span class="pre">axis</span></code> 关键词参数时的默认行为一样。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>All sequential NumPy functions have an <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument that can be specified. <code class="docutils literal notranslate"><span class="pre">axis</span></code> is to be fed a single integer or a tuple of integers, which indicate which array axes are to be traversed to designate the sequences of array data to be operated on. A sequence is generated for each valid combination of indices for the non-traversed axes. By default, <strong>all</strong> of the input-array’s axes are included, thus the entire content of the array is treated as a single sequence.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>所有序列性的函数都可以接受关键词参数 <code class="docutils literal notranslate"><span class="pre">axis</span></code>。<code class="docutils literal notranslate"><span class="pre">axis</span></code> 可以接受单个整数或一元组的整数来描述在指定数组数据序列时要遍历哪些轴。每个合法的未被遍历的轴的索引的组合都会生成一个序列。默认情况下，<strong>所有</strong>输入元组的轴都会被包含，因此数组的所有成员都会被当作一个序列对待。</p>
 </div>
-<div class="section" id="Understanding-the-axis-argument-with-a-Multi-Dimensional-Array">
-<h4>Understanding the <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument with a Multi-Dimensional Array<a class="headerlink" href="#Understanding-the-axis-argument-with-a-Multi-Dimensional-Array" title="Permalink to this headline">¶</a></h4>
-<p>The key to understanding the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument, when working with multi-dimensional arrays, is to be comfortable with how array traversal works in NumPy. Refer to Section 5 of this module for a refresher on this topic. Consider the following shape-(4,2,3) array:</p>
+<div class="section" id="理解多维数组中的-axis-参数">
+<h4>理解多维数组中的 <code class="docutils literal notranslate"><span class="pre">axis</span></code> 参数<a class="headerlink" href="#理解多维数组中的-axis-参数" title="永久链接至标题">¶</a></h4>
+<p>理解处理多维数组时的 <code class="docutils literal notranslate"><span class="pre">axis</span></code> 关键词参数的秘密在于熟悉NumPy遍历数组的方法。如果需要复习一下这个话题，请查阅本模组的第五节。设以下形状为 (4,2,3) 的数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">array([[[ 0,  1,  2],</span>
@@ -732,84 +721,83 @@ producing a new array as a result (i.e.&nbsp;the input array is not overwritten)
 <span class="go">        [21, 22, 23]]])</span>
 </pre></div>
 </div>
-<p>We can think of this array as possessing four, 2x3 sheets of numbers. Traversing along axis-0 of <code class="docutils literal notranslate"><span class="pre">x</span></code> amounts to stepping from sheet to sheet, given each valid combination of axis-1 and axis-2 indices. Thus <code class="docutils literal notranslate"><span class="pre">np.mean(x,</span> <span class="pre">axis=0)</span></code> says: “for each combination of row and column, take the mean along the sheets of <code class="docutils literal notranslate"><span class="pre">x</span></code>”. Therefore six distinct sequences within <code class="docutils literal notranslate"><span class="pre">x</span></code> are designated for this sequential function to act on:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">])</span>  <span class="p">{</span><span class="n">mean</span> <span class="o">=</span>  <span class="mi">9</span><span class="p">}</span>
-<span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>  <span class="p">{</span><span class="n">mean</span> <span class="o">=</span> <span class="mi">10</span><span class="p">}</span>
-<span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  <span class="p">{</span><span class="n">mean</span> <span class="o">=</span> <span class="mi">11</span><span class="p">}</span>
-<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">21</span><span class="p">])</span>  <span class="p">{</span><span class="n">mean</span> <span class="o">=</span> <span class="mi">12</span><span class="p">}</span>
-<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>  <span class="p">{</span><span class="n">mean</span> <span class="o">=</span> <span class="mi">13</span><span class="p">}</span>
-<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span>  <span class="p">{</span><span class="n">mean</span> <span class="o">=</span> <span class="mi">14</span><span class="p">}</span>
+<p>我们可以认为这个数组有着4页2x3的纸张。遍历 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的轴0相当于根据每个合理的轴1和轴2索引组合在纸张之间跳跃。如此，<code class="docutils literal notranslate"><span class="pre">np.mean(x,</span> <span class="pre">axis=0)</span></code> 相当于在说：“为每一个行和列的组合求 <code class="docutils literal notranslate"><span class="pre">x</span></code> 在不同页的平均值”。所以这将在 <code class="docutils literal notranslate"><span class="pre">x</span></code> 中设定6个不同的序列来让这个序列函数进行操作：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">])</span>  <span class="p">{</span><span class="n">平均值</span> <span class="o">=</span>  <span class="mi">9</span><span class="p">}</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>  <span class="p">{</span><span class="n">平均值</span> <span class="o">=</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  <span class="p">{</span><span class="n">平均值</span> <span class="o">=</span> <span class="mi">11</span><span class="p">}</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">21</span><span class="p">])</span>  <span class="p">{</span><span class="n">平均值</span> <span class="o">=</span> <span class="mi">12</span><span class="p">}</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>  <span class="p">{</span><span class="n">平均值</span> <span class="o">=</span> <span class="mi">13</span><span class="p">}</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span>  <span class="p">{</span><span class="n">平均值</span> <span class="o">=</span> <span class="mi">14</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Also, notice that the set of valid combinations of axis-1 and axis-2 indices corresponds to the two-by-three grid associated with they layout of a sheet. NumPy will return the six mean values in a shape-(2,3) array, so that the correspondence between each sequence and its mean-value is unambiguous:</p>
+<p>同时，请注意，轴1和轴2的合理组合的集对应着数组一页的2x3格位。NumPy会将这6个平均值作为形状为 (2,3) 的数组返回，使得序列和它平均值之间的对应关系没有歧义：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="go">array([[  9.,  10.,  11.],</span>
 <span class="go">       [ 12.,  13.,  14.]])</span>
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Recall</strong>:</p>
-<p>Recall that NumPy uses row-major ordering (a.k.a C-ordering) when traversing arrays.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>回忆</strong>：</p>
+<p>NumPy使用行优先顺序（也叫做C顺序）来遍历数组。</p>
 </div>
-<p>Suppose we specify two axes, say axis-0 and axis-2; traversing these two axes amounts to stepping along the sheets and columns of <code class="docutils literal notranslate"><span class="pre">x</span></code>, for each axis-1 index. Thus two sequences are produced:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  <span class="p">{</span><span class="n">mean</span> <span class="o">=</span> <span class="mi">10</span><span class="p">}</span>
-<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span>  <span class="p">{</span><span class="n">mean</span> <span class="o">=</span> <span class="mi">13</span><span class="p">}</span>
+<p>假设我们提供了两个轴，轴0和轴2，遍历这两个轴相当于为每一个轴1的索引遍历 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的页和列。因此，这将创建两个序列：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>  <span class="p">{</span><span class="n">平均值</span> <span class="o">=</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span>  <span class="p">{</span><span class="n">平均值</span> <span class="o">=</span> <span class="mi">13</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="go">array([ 10.,  13.])</span>
 </pre></div>
 </div>
-<p>These observations lead us to the following general result:</p>
+<p>以上这些注意到的点让我们可以进行一下总结：</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Result</strong>:</p>
-<p>If <span class="math notranslate nohighlight">\(X\)</span> is an <span class="math notranslate nohighlight">\(N\)</span>-dimensional array, and <span class="math notranslate nohighlight">\(j\)</span> (with <span class="math notranslate nohighlight">\(j \leq N\)</span>) axes are specified in the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument for a sequential NumPy function, then a <span class="math notranslate nohighlight">\(N-j\)</span>-dimensional array will be produced by this function. The shape of the result will be that of <span class="math notranslate nohighlight">\(X\)</span>, but with the entries associated with those <span class="math notranslate nohighlight">\(j\)</span> axes removed.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>结果</strong>：</p>
+<p>如果 <span class="math notranslate nohighlight">\(X\)</span> 是一个 <span class="math notranslate nohighlight">\(N\)</span> 维数组，<code class="docutils literal notranslate"><span class="pre">axis</span></code> 关键词参数为一个NumPy序列函数提供了 <span class="math notranslate nohighlight">\(j\)</span>（满足 <span class="math notranslate nohighlight">\(j \leq N\)</span>）个轴，那么这个函数将会返回一个 <span class="math notranslate nohighlight">\(N-j\)</span> 维数组。返回数组的形状是 <span class="math notranslate nohighlight">\(X\)</span> 的形状除去那 <span class="math notranslate nohighlight">\(j\)</span> 个轴的结果。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Basic Sequential Functions</strong></p>
-<p>A digital image is simply an array of numbers, which instructs a grid of pixels on a monitor to shine light of specific colors, according to the numerical values in that array.</p>
-<p>An RGB-image can thus be stored as a 3D NumPy array of shape-<span class="math notranslate nohighlight">\((V, H, 3)\)</span>. <span class="math notranslate nohighlight">\(V\)</span> is the number of pixels along the vertical direction, <span class="math notranslate nohighlight">\(H\)</span> is the number of pixels along the horizontal, and the size-3 dimension stores the red, blue, and green color values for a given pixel. Thus a <span class="math notranslate nohighlight">\((32, 32, 3)\)</span> array would be a 32x32 RBG image.</p>
-<p>It is common to work with a collection of images. Suppose we want to store N images in a single array; thus we now consider a 4D shape-<span class="math notranslate nohighlight">\((N, V, H, 3)\)</span> array.</p>
-<p>Let’s collect some statistics on a collection of images. For the sake of convenience, let’s simply generate a 4D-array of random numbers as a placeholder for real image data. We will generate 100, 32x32 RGB images:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：基本序列函数</strong></p>
+<p>一张电子图片其实就是一个数字数组，其指示显示器的像素根据数组的值去发射具体颜色的光。</p>
+<p>因此，一张RGB图片可以作为一个3维NumPy数组储存，其形状为 <span class="math notranslate nohighlight">\((V, H, 3)\)</span>。<span class="math notranslate nohighlight">\(V\)</span> 是竖向的像素数量，<span class="math notranslate nohighlight">\(H\)</span> 是横向的像素数量，大小为3的维度储存了像素的红，蓝，绿颜色。因此，一个 <span class="math notranslate nohighlight">\((32, 32, 3)\)</span> 的数组将会是一张RGB图片。</p>
+<p>我们经常会需要处理图片集。假设我们想要将N张图片储存为一个数组，那么我们可以将其当作一个形状为 <span class="math notranslate nohighlight">\((N, V, H, 3)\)</span> 的4维数组。</p>
+<p>让我们收集一些关于这个图片集的统计数据。方便起见，让我们先产生成员为随机数字的4维数组来代替真实的图片数据。我们将会生成100张32x32的RGB图片：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now, compute the following:</p>
+<p>现在，计算以下：</p>
 <ol class="arabic simple">
-<li>The average 32x32 RGB image.</li>
-<li>The total sum of all the values in the array.</li>
-<li>The minimum blue value, respective to each image.</li>
-<li>The standard deviation among all the RGB values in all the images, respective to each pixel position (thus you should produce a shape-(32, 32) array of values).</li>
-<li>The maximum red-value in the top-left quadrant, respective to each image.</li>
+<li><p>所有图片平均下来的 32x32 RGB图.</p></li>
+<li><p>数组中所有值的和。</p></li>
+<li><p>每张图片的最小的蓝色值。</p></li>
+<li><p>每个像素位置在所有图片的RGB值的标准偏差（所以说你应该返回形状为 (32, 32) 的数组值）。</p></li>
+<li><p>每张图片左上象限的最大红色值。</p></li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="Logical-Operations">
-<h2>Logical Operations<a class="headerlink" href="#Logical-Operations" title="Permalink to this headline">¶</a></h2>
-<p>NumPy provides <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">a suite of logical operations</a> that can operate on arrays. Many of these map logical operations over array entries in the same fashion as NumPy’s mathematical functions. These functions return either a single boolean object, or a boolean-type array.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># check which entries of `x` are less than 6</span>
+<div class="section" id="逻辑运算">
+<h2>逻辑运算<a class="headerlink" href="#逻辑运算" title="永久链接至标题">¶</a></h2>
+<p>NumPy提供了的<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">一系列逻辑运算</a>来操作数组。很多这些函数使用和NumPy的数学函数一样的方式将逻辑操作衍射到每个数组操作。这些函数返回一个布尔对象或一个布尔类的数组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查 `x` 的哪些成员小于6</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
 
-<span class="c1"># returns a boolean-type array</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">6</span>  <span class="c1"># equivalent to `np.less(x, 6)`</span>
+<span class="c1"># 返回布尔类的数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">6</span>  <span class="c1"># 等值于：`np.less(x, 6)`</span>
 <span class="n">array</span><span class="p">([[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
        <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
        <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
        <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 
-<span class="c1"># performing a logical comparison between two arrays</span>
+<span class="c1"># 对两个数组进行逻辑对比</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span> <span class="o">&lt;=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">array</span><span class="p">([</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Recall from the Essentials of Python module that, due to effect of floating point numbers having limited numerical precision, that you should never rely on two floating point numbers being exactly equal. Rather, you should require that they are sufficiently “close” in value. In this same vein, you ought not check that the entries of two float-type arrays are precisely equal. Towards this end, the function <code class="docutils literal notranslate"><span class="pre">allclose</span></code> can be used to verify that all corresponding pairs of entries between two
-arrays are approximately equal in value:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking if two arrays match, using `np.allclose`</span>
+<p>请从Python基础模组回忆，因为浮点数的精度有限，你永远不应该假设两个浮点数会完全相同。反而，你应该检查它们的值是否足够“接近”。相似的，你不应该检查两个浮点类数组是否完全相同。为了达到这个目的，函数 <code class="docutils literal notranslate"><span class="pre">allclose</span></code> 可以用来检查两个数组的对应值是否足够接近：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `np.allclose` 检查两个数组是否对应</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span> <span class="o">/</span> <span class="mi">10</span>
 
@@ -818,27 +806,26 @@ arrays are approximately equal in value:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Linear-Algebra">
-<h2>Linear Algebra<a class="headerlink" href="#Linear-Algebra" title="Permalink to this headline">¶</a></h2>
-<p>Lastly, we note that NumPy provides a suite of functions that can perform optimized computations and routines relevant to linear algebra. Included here are functions for performing matrix products and tensor products, solving eigenvalue problems, inverting matrices, and computing vector normalizations. Please refer to the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html">official NumPy documentation</a> for a full listing of these functions.</p>
+<div class="section" id="线性代数">
+<h2>线性代数<a class="headerlink" href="#线性代数" title="永久链接至标题">¶</a></h2>
+<p>最后，请注意，NumPy有一组可以用来进行优化过的线性代数运算和常规工作的函数。这组工具包括进行矩阵乘法和张量乘法，解特征值问题，矩阵求逆，和矢量归一化的函数。请查看<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html">官方NumPy说明文档</a>来阅读这些函数的完整列表。</p>
 </div>
-<div class="section" id="Conclusion">
-<h2>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this headline">¶</a></h2>
-<p>NumPy provides users with a wide variety of functions capable of performing operations on arrays of data. Its use of <strong>vectorization</strong> makes these functions incredibly fast, when compared to the analogous computations performed in pure Python. Although the preceding discussion laid out a substantial number of rules for how these functions work, one should not worry about memorizing them. Rather, it is best to apply these functions to arrays of various dimensionality, and build an intuition for
-them. You may be pleasantly surprised by how easy it is to get a hang of this material by simply putting it to practice.</p>
+<div class="section" id="总结">
+<h2>总结<a class="headerlink" href="#总结" title="永久链接至标题">¶</a></h2>
+<p>NumPy为用户提供了各式各样的对数组数据进行操作的函数。它对<strong>矢量化</strong>的使用使得这些函数相比同样功能的纯Python代码非常快。虽然之前的讨论列出了很多这些函数如何工作的规则，读者不应该去尝试记忆它们。反而，最好的做法是将这些函数运用于各种维度的数组上来发展对其的直观理解。你可能会惊讶于通过实践学习这些材料有多简单。</p>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations">Math functions</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">Logic functions</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html">Linear algebra functions</a></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations">数学函数</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">逻辑函数</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html">线性代数函数</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Unary Functions: Solution</strong></p>
-<p>Take the natural-logarithm of the 1st and 3rd element in the 3rd-row of <code class="docutils literal notranslate"><span class="pre">x</span></code>, producing a shape-(2,) result.</p>
+<div class="section" id="阅读理解答案：">
+<h2>阅读理解答案：<a class="headerlink" href="#阅读理解答案：" title="永久链接至标题">¶</a></h2>
+<p><strong>一元函数：解</strong></p>
+<p>求 <code class="docutils literal notranslate"><span class="pre">x</span></code> 第三行的第一和第三个成员的自然对数以得到形状为 (2,) 的结果。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
@@ -848,44 +835,43 @@ them. You may be pleasantly surprised by how easy it is to get a hang of this ma
 <span class="go">array([ 2.07944154,  2.30258509])</span>
 </pre></div>
 </div>
-<p><strong>Binary Functions: Solution</strong></p>
-<p>Add the four quadrants of <code class="docutils literal notranslate"><span class="pre">x</span></code>, producing a shape-(2, 2) output.</p>
+<p><strong>二元函数：解</strong></p>
+<p>将 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的四个象限相加，返回形状为 (2, 2) 的输出。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
 
-<span class="go">    # top-left  top-right    bottom-left  bottom-right</span>
+<span class="go">    #  左上         右上          左下          右下</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
 <span class="go">array([[20, 24],</span>
 <span class="go">       [36, 40]])</span>
 </pre></div>
 </div>
-<p><strong>Basic Sequential Functions: Solutions</strong></p>
+<p><strong>基本序列函数：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="go"># 1. The average 32x32 RGB image.</span>
+<span class="go"># 1. 所有图片平均下来的 32x32 RGB图.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mean_imag</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mean_imag</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(32, 32, 3)</span>
 
-<span class="go"># 2. The total sum of all the values in the array.</span>
+<span class="go"># 2. 数组中所有值的和。</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">images</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="go">153422.97903817348</span>
 
-<span class="go"># 3. The minimum blue value, respective to each image.</span>
-<span class="go"># the colors are ordered red-blue-green along axis-3</span>
+<span class="go"># 3. 每张图片的最小的蓝色值。</span>
+<span class="go"># 在轴3的颜色顺序为红绿蓝</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">min_blue</span> <span class="o">=</span> <span class="n">images</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">min_blue</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(100,)</span>
 
-<span class="go"># 4. The standard deviation among all the RGB values in all the images,</span>
-<span class="go">#    respective to each pixel.</span>
+<span class="go"># 4. 每个像素位置在所有图片的RGB值的标准偏差。</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pixel_std_dev</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pixel_std_dev</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(32, 32)</span>
 
-<span class="go"># The maximum red-value in the top-left quadrant, respective to each image.</span>
+<span class="go"># 5. 每张图片左上象限的最大红色值。</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">max_red_quad</span> <span class="o">=</span> <span class="n">images</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">max_red_quad</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(100,)</span>
@@ -902,10 +888,10 @@ them. You may be pleasantly surprised by how easy it is to get a hang of this ma
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Broadcasting.html" class="btn btn-neutral float-right" title="Array Broadcasting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Broadcasting.html" class="btn btn-neutral float-right" title="数组广播" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ArrayTraversal.html" class="btn btn-neutral float-left" title="Iterating Over Arrays &amp; Array-Traversal Order" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ArrayTraversal.html" class="btn btn-neutral float-left" title="迭代数组和数组遍历顺序" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

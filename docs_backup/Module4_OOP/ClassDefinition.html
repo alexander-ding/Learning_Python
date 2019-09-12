@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: The rules for defining classes in python, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Defining a New Class of Object &mdash; Python Like You Mean It</title>
+  <title>定义新对象类 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Instances of a Class" href="ClassInstances.html" />
-    <link rel="prev" title="Introduction to Object Oriented Programming" href="Introduction_to_OOP.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="类实例" href="ClassInstances.html" />
+    <link rel="prev" title="面向对象编程简介" href="Introduction_to_OOP.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,29 +95,29 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">Introduction to Object Oriented Programming</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Defining a New Class of Object</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#The-General-Form-of-a-Class-Definition">The General Form of a Class Definition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Working-with-Object-Attributes">Working with Object Attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">面向对象编程简介</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">定义新对象类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#类定义的一般形式">类定义的一般形式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#操作对象属性">操作对象属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">Instances of a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">A Brief Summary of Terms and Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">Applications of Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">Special Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">类实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">术语和概念的快速总结</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Methods.html">方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">面向对象编程的应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">特殊方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">继承</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -162,9 +163,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_4.html">Module 4: Object Oriented Programming</a> &raquo;</li>
+          <li><a href="../module_4.html">模组4：面向对象编程</a> &raquo;</li>
         
-      <li>Defining a New Class of Object</li>
+      <li>定义新对象类</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,11 +208,11 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Defining-a-New-Class-of-Object">
-<h1>Defining a New Class of Object<a class="headerlink" href="#Defining-a-New-Class-of-Object" title="Permalink to this headline">¶</a></h1>
-<p>This section will introduce the basic syntax for defining a new class (a.k.a. type) of Python object. Recall that the phrase <code class="docutils literal notranslate"><span class="pre">def</span></code> is used to denote the definition of a function. Similarly, <code class="docutils literal notranslate"><span class="pre">class</span></code> is used to denote the beginning of a class definition. The body of the class definition, which is the indented region below a <code class="docutils literal notranslate"><span class="pre">class</span></code> statement, is used to define the class’ various <strong>attributes</strong>.</p>
-<p>The following defines a new class of object, named <code class="docutils literal notranslate"><span class="pre">MyGuy</span></code>, specifying four attributes <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>, and <code class="docutils literal notranslate"><span class="pre">f</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># defining a new class/type of object</span>
+<div class="section" id="定义新对象类">
+<h1>定义新对象类<a class="headerlink" href="#定义新对象类" title="永久链接至标题">¶</a></h1>
+<p>本节将介绍定义新Python对象类（也就是类型）的基础语法。请回忆，<code class="docutils literal notranslate"><span class="pre">def</span></code> 关键词用来标示函数的定义。相似的，<code class="docutils literal notranslate"><span class="pre">class</span></code> 关键词用来标示类定义的开始。类定义的主体部分，也就是 <code class="docutils literal notranslate"><span class="pre">class</span></code> 语句下方的锁进区域，则用来定义类的各种<strong>属性</strong>。</p>
+<p>以下定义了一类新的对象，名叫 <code class="docutils literal notranslate"><span class="pre">MyGuy</span></code>，并提供4个属性 <code class="docutils literal notranslate"><span class="pre">x</span></code>，<code class="docutils literal notranslate"><span class="pre">y</span></code>，<code class="docutils literal notranslate"><span class="pre">z</span></code>，和 <code class="docutils literal notranslate"><span class="pre">f</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一类/类型新的对象</span>
 <span class="k">class</span> <span class="nc">MyGuy</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
     <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -220,10 +221,10 @@
     <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
         <span class="k">return</span> <span class="mi">3</span>
 
-<span class="c1"># leaving the indented region ends the class definition</span>
+<span class="c1"># 离开锁进区域将终止类定义</span>
 </pre></div>
 </div>
-<p>Once this definition for a new class of object is executed, you can proceed to reference that object in your code. Here, we will access the various attributes of <code class="docutils literal notranslate"><span class="pre">MyGuy</span></code>.</p>
+<p>当这个新对象类的定义被执行后，你可以在代码中引用该对象。在这里，我们将访问 <code class="docutils literal notranslate"><span class="pre">MyGuy</span></code> 的各种属性。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">MyGuy</span><span class="o">.</span><span class="n">x</span>
 <span class="go">3</span>
 
@@ -237,23 +238,23 @@
 <span class="go">&lt;function __main__.MyGuy.f&gt;</span>
 </pre></div>
 </div>
-<p>See that all of the attributes can be accessed using the “dot” syntax: <code class="docutils literal notranslate"><span class="pre">object.attribute_name</span></code>. The attribute <code class="docutils literal notranslate"><span class="pre">f</span></code> is a function, thus we can call it and it will evaluate as expected:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># calling the attribute f</span>
+<p>请注意，所有的属性都可以通过“点”语法访问：<code class="docutils literal notranslate"><span class="pre">object.attribute_name</span></code>。属性 <code class="docutils literal notranslate"><span class="pre">f</span></code> 是一个函数，所以我们可以调用它来让它如预期一般执行：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 调用属性 f</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">MyGuy</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
 <span class="mi">3</span>
 </pre></div>
 </div>
-<p>An object attribute that is also a function is referred to as a <strong>method</strong>. Thus <code class="docutils literal notranslate"><span class="pre">f</span></code> is a method of <code class="docutils literal notranslate"><span class="pre">MyGuy</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">MyGuy</span></code> is the singular class object that embodies our class definition. It is akin to <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, and <code class="docutils literal notranslate"><span class="pre">int</span></code>. We will use <code class="docutils literal notranslate"><span class="pre">MyGuy</span></code> to create objects that are <em>instances</em> of our class, in the same way that <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> is an instance of <code class="docutils literal notranslate"><span class="pre">str</span></code>. More on this soon.</p>
+<p>同时是函数的对象属性被称为<strong>方法</strong>。所以，<code class="docutils literal notranslate"><span class="pre">f</span></code> 是 <code class="docutils literal notranslate"><span class="pre">MyGuy</span></code> 的一个方法。</p>
+<p><code class="docutils literal notranslate"><span class="pre">MyGuy</span></code> 是单个包含我们类定义的类对象。它类似于 <code class="docutils literal notranslate"><span class="pre">list</span></code>，<code class="docutils literal notranslate"><span class="pre">str</span></code>，和 <code class="docutils literal notranslate"><span class="pre">int</span></code>。我们将使用 <code class="docutils literal notranslate"><span class="pre">MyGuy</span></code> 来创建为我们类<em>实例</em>的对象，就像 <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> 是 <code class="docutils literal notranslate"><span class="pre">str</span></code> 的实例一样。我们将在之后对此深入讨论。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway:</strong></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">class</span></code> expression denotes the definition of a new class of object, which entails defining the attributes of that class. An attribute can “bind” to that class other Python objects (integers, strings, lists, etc), including functions. Attributes that are functions are called <em>methods</em>. The syntax <code class="docutils literal notranslate"><span class="pre">obj.attr</span></code> is the dot syntax for “getting” the attribute named <code class="docutils literal notranslate"><span class="pre">attr</span></code> from the object named <code class="docutils literal notranslate"><span class="pre">obj</span></code>.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">class</span></code> 表达式标示了新对象类的定义，而定义类代表着定义类的属性。一个属性可以向该类“绑定”其它Python对象（整数，字符串，列表，等等），包括函数。为函数的属性叫做<em>方法</em>。语法 <code class="docutils literal notranslate"><span class="pre">obj.attr</span></code> 是用来从名为 <code class="docutils literal notranslate"><span class="pre">obj</span></code> 的对象“获取”名为 <code class="docutils literal notranslate"><span class="pre">attr</span></code> 的属性的点语法。</p>
 </div>
-<div class="section" id="The-General-Form-of-a-Class-Definition">
-<h2>The General Form of a Class Definition<a class="headerlink" href="#The-General-Form-of-a-Class-Definition" title="Permalink to this headline">¶</a></h2>
-<p>The general form for a class definition is simply a collection of attribute definitions, which either take the form of variable assignments or function definitions, resulting in the formation of a new class of object, with its attributes and methods:</p>
+<div class="section" id="类定义的一般形式">
+<h2>类定义的一般形式<a class="headerlink" href="#类定义的一般形式" title="永久链接至标题">¶</a></h2>
+<p>类定义的一般形式就是属性定义——要么是变量赋值或函数定义——的集合。这将创建一类新的对象并提供它的属性和方法：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassName</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; class docstring &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 类的说明字符串（docstring）&quot;&quot;&quot;</span>
     <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span>
     <span class="o">.</span>
     <span class="o">.</span>
@@ -261,12 +262,10 @@
     <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="n">N</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>where each <code class="docutils literal notranslate"><span class="pre">&lt;statement-j&gt;</span></code> defines an attribute (e.g. <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">&quot;hi&quot;</span></code> defines the attribute <code class="docutils literal notranslate"><span class="pre">z</span></code>, or a function definition creates a method) for that class of object.</p>
-<p>Similar to function definitions, class definitions can contain effectively arbitrary Python code, and the definition has its own <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Scope.html">scope</a>; however, <em>any</em> variables assigned within the class definition will be available as attributes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Any variable assigned within a class definition becomes</span>
-<span class="c1"># available as an attribute for that class of object, even</span>
-<span class="c1"># a variable defined in a for-loop becomes an attribute of</span>
-<span class="c1"># that class.</span>
+<p>每个 <code class="docutils literal notranslate"><span class="pre">&lt;statement-j&gt;</span></code> 为该类对象定义一个属性（例：<code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">&quot;hi&quot;</span></code> 定义属性 <code class="docutils literal notranslate"><span class="pre">z</span></code>，而函数定义则创建一个方法）。</p>
+<p>就像函数定义一样，类定义在可以包含基本任何Python代码，且其定义有着属于自己的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Scope.html">作用域</a>；但是，<em>任何</em>在类定义中赋值的变量都可以作为属性来调用。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 任何在类定义中赋值的变量将作为对象类的属性可用。</span>
+<span class="c1"># 就算是在for循环中定义的变量也将成为类的属性。</span>
 
 <span class="k">class</span> <span class="nc">Dummy</span><span class="p">:</span>
     <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
@@ -278,8 +277,8 @@
         <span class="c1"># i = 10</span>
         <span class="n">cnt</span> <span class="o">+=</span> <span class="n">i</span>
 
-    <span class="c1"># last iteration of loop assigns i = 10</span>
-    <span class="c1"># thus i is an attribute of Dummy with value 10</span>
+    <span class="c1"># 最后一次迭代赋值了 i = 10</span>
+    <span class="c1"># 因此 i 是 Dummy 的属性之一，其值为 10</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Dummy</span><span class="o">.</span><span class="n">cnt</span>  <span class="c1"># cnt = 0 + 5 + 6 + 7 + 8 + 9 + 10</span>
@@ -290,32 +289,33 @@
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Naming Classes of Objects:</strong></p>
-<p>The convention for naming a new class/type of object is to use “camel-casing”. Thus if I wanted to call my class of objects “pizza shop”, I would use the name <code class="docutils literal notranslate"><span class="pre">PizzaShop</span></code>. This is in contrast to variable names, function names, and <em>instances</em> of a class object (still to be introduced), where convention dictates the use of lower-case letters and underscores in place of spaces (snake-case).</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>命名对象类</strong>：</p>
+<p>命名新对象类/类型的传统是使用“驼峰式大小写风格“（camel-casing）。因此如果我想叫我的对象类”pizza shop“，那么我会使用名字 <code class="docutils literal notranslate"><span class="pre">PizzaShop</span></code>。这和使用小写字母和下划线替代空格的蛇大小写风格（snake-case）变量名，函数名，和类对象的<em>实例</em>（即将介绍）的名字不同。</p>
+<p>译者注：camel-case直接将多个单词首字母大写拼接在一起而不使用空格，而snake-case用下划线串联多个小写单词。如：pizza shop的camel case是PizzaShop，而它的snake case是pizza_shop。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Create Your Own Class of Object</strong></p>
-<p>Create a definition for the class of object named <code class="docutils literal notranslate"><span class="pre">Dog</span></code>. This class should have two attributes: “name” and “speak”. The “name” attribute should bind a string to the object (the name of the dog). The “speak” attribute should be a <em>method</em>, that takes a string as an input argument and returns that string with <code class="docutils literal notranslate"><span class="pre">&quot;*woof*&quot;</span></code> added to either end of it (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">&quot;*woof*</span> <span class="pre">hello</span> <span class="pre">*woof*&quot;</span></code>)</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：创建你自己的对象类</strong></p>
+<p>创建名为 <code class="docutils literal notranslate"><span class="pre">Dog</span></code> 对象类的定义。这个类应该有两个属性：“name”和“speak”。“name”属性应该向对象绑定一个字符串（也就是狗的名字）。“speak”属性应该是一额<em>方法</em>，其接受一个字符串并返回该字符串在两边添加了 <code class="docutils literal notranslate"><span class="pre">&quot;*woof*&quot;</span></code> 的版本（如 <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">&quot;*woof*</span> <span class="pre">hello</span> <span class="pre">*woof*&quot;</span></code>）。</p>
 </div>
 </div>
-<div class="section" id="Working-with-Object-Attributes">
-<h2>Working with Object Attributes<a class="headerlink" href="#Working-with-Object-Attributes" title="Permalink to this headline">¶</a></h2>
-<p>Attempting to access an undefined attribute from an object will raise an <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code>:</p>
+<div class="section" id="操作对象属性">
+<h2>操作对象属性<a class="headerlink" href="#操作对象属性" title="永久链接至标题">¶</a></h2>
+<p>试图访问对象未定义的属性将会返回一个 <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">MyGuy</span><span class="o">.</span><span class="n">apple</span>
 <span class="go">AttributeError: type object &#39;MyGuy&#39; has no attribute &#39;apple&#39;</span>
 </pre></div>
 </div>
-<p>We can use built-in function <code class="docutils literal notranslate"><span class="pre">hasattr</span></code> to inspect if an object possesses a particular attribute:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating `hasattr`</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">)</span>  <span class="c1"># MyGuy.apple is not defined</span>
+<p>我们可以使用内置的函数 <code class="docutils literal notranslate"><span class="pre">hasattr</span></code> 来检查对象是否有某个属性：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `hasattr`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">)</span>  <span class="c1"># MyGuy.apple 未定义</span>
 <span class="bp">False</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>      <span class="c1"># MyGuy.x is defined</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>      <span class="c1"># MyGuy.x 已定义</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>In addition to using the dot-syntax for accessing attributes, the built-in function <code class="docutils literal notranslate"><span class="pre">getattr</span></code> can be used to the same effect:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating `getattr`</span>
+<p>除了使用点语法来访问属性之外，内置的 <code class="docutils literal notranslate"><span class="pre">getattr</span></code> 函数也可以用在达成一样的结果：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `getattr`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">MyGuy</span><span class="o">.</span><span class="n">x</span>
 <span class="mi">3</span>
 
@@ -323,9 +323,9 @@
 <span class="mi">3</span>
 </pre></div>
 </div>
-<p>It may be surprising to discover that new attributes can be bound (or “set”) to the object <em>after</em> that class of object has already been defined. This can be done using the builtin-function <code class="docutils literal notranslate"><span class="pre">setattr</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use `setattr` to bind the attribute `apple` to `MyGuy`</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">)</span>  <span class="c1"># MyGuy.apple is not defined</span>
+<p>你可能会惊讶于你可以在对象类定义<em>之后</em>向其绑定（或“设置”（set））新属性的事实。你可以通过内置函数 <code class="docutils literal notranslate"><span class="pre">setattr</span></code> 达到这个目的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `setattr` 来将属性 `apple` 绑定到 `MyGuy` 上</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">)</span>  <span class="c1"># MyGuy.apple 未定义</span>
 <span class="bp">False</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">setattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
@@ -333,36 +333,36 @@
 <span class="s1">&#39;red&#39;</span>
 </pre></div>
 </div>
-<p>Attributes can be defined/set even less formally, using a simple assignment syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;grape&quot;</span><span class="p">)</span>  <span class="c1"># MyGuy.grape is not defined</span>
+<p>你可以使用简单的赋值语法更加不正式地定义/设置属性：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">MyGuy</span><span class="p">,</span> <span class="s2">&quot;grape&quot;</span><span class="p">)</span>  <span class="c1"># MyGuy.grape 未定义</span>
 <span class="go">False</span>
 
-<span class="go"># set the attribute `grape` to `MyGuy`</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">MyGuy</span><span class="o">.</span><span class="n">grape</span> <span class="o">=</span> <span class="s2">&quot;purple&quot;</span>  <span class="c1"># define and set the attribute &#39;grape&#39;</span>
+<span class="go"># 向 `MyGuy` 设置  `grape`</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">MyGuy</span><span class="o">.</span><span class="n">grape</span> <span class="o">=</span> <span class="s2">&quot;purple&quot;</span>  <span class="c1"># 定义且设置属性 &#39;grape&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">MyGuy</span><span class="o">.</span><span class="n">grape</span>
 <span class="go">&#39;purple&#39;</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">MyGuy</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># set the attribute &#39;x&#39; with a new value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">MyGuy</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># 为属性 &#39;x&#39; 设置一个新值</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">MyGuy</span><span class="o">.</span><span class="n">x</span>
 <span class="go">-1</span>
 </pre></div>
 </div>
-<p>It may seem like the class definition is reduced to a mere formality, since attributes can be set to an object at so casually. Although Python is known for permitting this loosey-goosey style of coding, know that it is generally bad form to create attributes for a class of object outside of its designated definition.</p>
+<p>因为你可以如此随意地向对象设置属性，类定义可能看起来仅仅只是一个正式仪式了。虽然Python为支持这种很随意的代码而出名，但是请注意在对象类定义区域外面创建新属性一般来说是不好的形式。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway:</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">hasattr</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr</span></code>, and <code class="docutils literal notranslate"><span class="pre">setattr</span></code> are built-in functions that allow us to, by the name of an attribute, check to see if it exists, access its value, and set its value, respectively. Python’s objects are shockingly flexible in that their attributes can be created outside of the formal space of the class definition. That being said, we should be civilized and treat the class definition as a formal contract/specification whenever possible.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">hasattr</span></code>，<code class="docutils literal notranslate"><span class="pre">getattr</span></code>，和 <code class="docutils literal notranslate"><span class="pre">setattr</span></code> 是支持我们通过属性名字来分别检查属性是否存在，访问属性值，和设置属性值的内置函数。Python对象十分灵活，因为它们支持在类定义区域外面创建属性，但是我们应该文明做人，并在可能的情况下将类定义的区域作为正式的合约看待。</p>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#class-objects">Python Tutorial: Class Objects</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#class-objects">Python教程：类对象</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Set Creation: Solution</strong></p>
-<p>Create a definition for the class of object named <code class="docutils literal notranslate"><span class="pre">Dog</span></code>. This class should have two attributes: “name” and “speak”. The “name” attribute should bind a string to the object (the name of the dog). The “speak” attribute should be a <em>method</em>, that takes a string as an input argument and returns that string with <code class="docutils literal notranslate"><span class="pre">&quot;*woof*&quot;</span></code> added to either end of it (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">&quot;*woof*</span> <span class="pre">hello</span> <span class="pre">*woof*&quot;</span></code>)</p>
+<div class="section" id="阅读理解答案：">
+<h2>阅读理解答案：<a class="headerlink" href="#阅读理解答案：" title="永久链接至标题">¶</a></h2>
+<p><strong>创建你自己的对象类：解</strong></p>
+<p>创建名为 <code class="docutils literal notranslate"><span class="pre">Dog</span></code> 对象类的定义。这个类应该有两个属性：“name”和“speak”。“name”属性应该向对象绑定一个字符串（也就是狗的名字）。“speak”属性应该是一额<em>方法</em>，其接受一个字符串并返回该字符串在两边添加了 <code class="docutils literal notranslate"><span class="pre">&quot;*woof*&quot;</span></code> 的版本（如 <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">&quot;*woof*</span> <span class="pre">hello</span> <span class="pre">*woof*&quot;</span></code>）。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Charlie&quot;</span>
 
@@ -381,10 +381,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ClassInstances.html" class="btn btn-neutral float-right" title="Instances of a Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ClassInstances.html" class="btn btn-neutral float-right" title="类实例" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Introduction_to_OOP.html" class="btn btn-neutral float-left" title="Introduction to Object Oriented Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Introduction_to_OOP.html" class="btn btn-neutral float-left" title="面向对象编程简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

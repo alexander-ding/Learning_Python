@@ -19,28 +19,28 @@ jupyter:
 ```
 
 <!-- #region -->
-#  Accessing Data Along Multiple Dimensions in an Array
-In this section, we will: 
+# 访问数组多维度的内容
+在本节中，我们将会：
 
- - Define the "dimensionality" of an array.
- - Discuss the usefulness of ND-arrays.
- - Introduce the indexing and slicing scheme for accessing a multi-dimensional array's contents
- 
-We will encounter arrays of varying dimensionalities:
+ - 定义数组的“维度”（dimensionality）。
+ - 讨论N维数组（ND-array）的作用。
+ - 介绍访问多维数组内容的索引和切片体系。
+
+我们将会遇到不同维度的数组：
 
 ```python
-# A 0-D array
+# 0维数组
 np.array(8)
 
-# A 1-D array, shape-(3,)
+# 1维数组，形状为 (3,)
 np.array([2.3, 0.1, -9.1])
 
-# A 2-D array, shape-(3, 2)
+# 2维数组，形状为 (3, 2)
 np.array([[93,  95], 
           [84, 100], 
           [99,  87]])
 
-# A 3-D array, shape-(2, 2, 2)
+# 3维数组，形状为 (2, 2, 2)
 np.array([[[0, 1],
            [2, 3]],
           
@@ -48,18 +48,18 @@ np.array([[[0, 1],
            [6, 7]]])
 ```
 
-Similar to Python's sequences, we use 0-based indices and slicing to access the content of an array. However, we must specify an index/slice for *each* dimension of an array:
+和Python的序列类似，我们使用0开始的索引和切片来获取数组中的内容。但是，我们必须为数组的*每个*维度提供索引/切片：
 ```python
 >>> import numpy as np
 
-# A 3-D array
+# 3维数组
 >>> x = np.array([[[0, 1],
 ...                [2, 3]],
 ...           
 ...               [[4, 5],
 ...                [6, 7]]])
 
-# get: sheet-0, both rows, flip order of columns
+# 获取：第0页，全部两行，反向排列的列
 >>> x[0, :, ::-1]
 array([[1, 0],
        [3, 2]])
@@ -67,13 +67,13 @@ array([[1, 0],
 <!-- #endregion -->
 
 <!-- #region -->
-## One-dimensional Arrays
-Let's begin our discussion by constructing a simple ND-array containing three floating-point numbers. 
+## 一维数组
+让我们首先创建一额简单的N维数组，其成员为三个浮点数。
 
 ```python
 >>> simple_array = np.array([2.3, 0.1, -9.1])
 ```
-This array supports the same indexing scheme as Python's sequences (lists, tuples, and strings):
+这个数组支持和Python序列（列表，元组，和字符串）一样的索引体系：
 
 ```
  +------+------+------+
@@ -82,7 +82,7 @@ This array supports the same indexing scheme as Python's sequences (lists, tuple
      0      1      2  
     -3     -2     -1       
 ```
-The first row of numbers gives the position of the indices 0…3 in the array; the second row gives the corresponding negative indices. The slice from $i$ to $j$ returns an array containing of all numbers between the edges labeled $i$ and $j$, respectively:
+第一行数字提供了索引0-2在数组中对应的位置；第二行则提供了对应的负索引。从 $i$ 到 $j$ 的切片将返回一个在标记索引为 $i$ 和 $j$ 的成员之间所有的值（包括 $i$ 但不包括 $j$）：
 
 ```python
 >>> simple_array[0]
@@ -98,56 +98,56 @@ array([ 0.1, -9.1])
 IndexError: index 3 is out of bounds for axis 0 with size 3
 ```
 
-Given this indexing scheme, only *one* integer is needed to specify a unique entry in the array. Similarly only *one* slice is needed to uniquely specify a subsequence of entries in the array. For this reason, we say that this is a *1-dimensional array*. In general, the *dimensionality* of an array specifies the number of indices that are required to uniquely specify one of its entries.
+根据以上的索引体系，你只需要*一个*整数就能无歧义地辨别数组中的一个成员。相应的，你只需要*一个*切片就能无歧义地辨别数组中的一个子序列。因此，我们称其为*一维数组*（1-dimensional array）。笼统来讲，数组的*维度*（dimensionality）描述了无歧义辨别数组中单个成员所需要的索引数量。
 
 <div class="alert alert-info"> 
 
-**Definition**: 
+**定义**：
 
-The **dimensionality** of an array specifies the number of indices that are required to uniquely specify one of its entries. 
+数组的**维度**（dimensionality）指无歧义地辨别其单个成员所需要的索引数量。
 
 </div>
 
-This definition of dimensionality is common far beyond NumPy; one must use three numbers to uniquely specify a point in physical space, which is why it is said that space consists of three dimensions.
+这个维度的定义在NumPy之外也通用；你需要三个数字来无歧义地描述现实空间中的一个点，所以我们认为空间有着三个维度。
 <!-- #endregion -->
 
-## Two-dimensional Arrays
-Before proceeding further down the path of high-dimensional arrays, let's briefly consider a very simple dataset where the desire to access the data along multiple dimensions is manifestly desirable. Consider the following table from a gradebook:
+## 二维数组
+在我们开始讨论高维数组之前，让我们先讨论一个很简单的需要在多维度获取数据的数据集。某成绩簿有着以下表格：
 
 <!-- #region -->
-|         | Exam 1 (%)           | Exam 2 (%) |
+|         | 考试1 (%)           | 考试2 (%) |
 | ------------- |:-------------:| -----:|
 | Ashley     | $93$ | $95$ |
 | Brad     | $84$      |   $100$ |
 | Cassie | $99$      |    $87$ |
 
-This dataset contains 6 grade-values. It is almost immediately clear that storing these in a 1-dimensional array is not ideal:
+这个数据集总共有6个成绩值。将其存为一维数组明显是不智的：
 
 ```python
-# using a 1-dimensional array to store the grades
+# 使用1维数组来储存成绩
 >>> grades = np.array([93, 95, 84, 100, 99, 87])
 ```
 
-While no data has been lost, accessing this data using a single index is less than convenient; we want to be able to specify both the student and the exam when accessing a grade - it is natural to ascribe *two dimensions* to this data. Let's construct a 2D array containing these grades:
+虽然我们没有丢失任何数据，但是使用单个索引来访问其中的数据很不方便；我们希望能在获取成绩时提供学生和需要的考试——所以说使用*两个维度*来储存这些数据是再自然不过的。让我们创建一个存储这些成绩的二维数组：
 
 ```python
-# using a 2-dimensional array to store the grades
+# 使用2维数组来储存成绩
 >>> grades = np.array([[93,  95], 
 ...                    [84, 100], 
 ...                    [99,  87]])
 ```
 
-NumPy is able to see the repeated structure among the list-of-lists-of-numbers passed to `np.array`, and resolve the two dimensions of data, which we deem the 'student' dimension and the 'exam' dimension, respectively. 
+NumPy能够处理向 `np.array` 输入的成员为列表的列表，并根据其重复结构将其存为一个二维数组，第一维为“学生”维度，第二维度为“考试”维度。
 
 <div class="alert alert-warning">
 
-**Axis vs Dimension**:  
+**轴心 vs 维度**:  
 
-Although NumPy does formally recognize the concept of dimensionality precisely in the way that it is discussed here, its documentation refers to an individual dimension of an array as an **axis**. Thus you will see "axes" (pronounced "aks-ēz") used in place of "dimensions"; however, they mean the same thing.
+虽然NumPy正式承认维度这一概念且对其进行了和本节一样的定义，但是它的说明文档将数组的单个维度称为一个**轴**（axis，复数为axes）。因此你有时会见到说明文档用“axes”代替“dimensions”；但是，它们指着同样的东西。
 
 </div>
 
-NumPy specifies the row-axis (students) of a 2D array as "axis-0" and the column-axis (exams) as axis-1. You must now provide *two* indices, one for each axis (dimension), to uniquely specify an element in this 2D array; the first number specifies an index along axis-0, the second specifies an index along axis-1. The zero-based indexing schema that we reviewed earlier applies to each axis of the ND-array:
+NumPy将二维数组的行轴（学生）称为“轴0”，列轴（exams）称为“轴1”。你必须提供“两个”索引（每个轴心（维度）各一个）来无歧义地辨别这个二维数组中的一个成员；第一个数字提供了在轴0上的索引，第二个数字提供了在轴1上的索引。不管是哪个轴心，我们之前复习的从0开始的索引体系都通用：
 
 ```                                                    
                                                   -- axis-1 -> 
@@ -162,98 +162,97 @@ NumPy specifies the row-axis (students) of a 2D array as "axis-0" and the column
                                         V          +---+---+
 ```
 
-Because `grades` has three entries along axis-0 and two entries along axis-1, it has a "shape" of `(3, 2)`.
+因为 `grades` 在轴0上有三行数据，在轴1上由两行数据，它的“形状”（shape）为 `(3, 2)`。
 
 ```python
 >>> grades.shape
 (3, 2)
 ```
 
-### Integer Indexing
-Thus, if we want to access Brad's (item-1 along axis-0) score for Exam  1 (item-0 along axis-1) we simply specify:
+### 整数索引
+因此，如果我们想要获取Brad（轴0上的项目1）的考试1（轴1上的项目0）的成绩，我们只需要提供：
 
 ```python
-# providing two numbers to access an element
-# in a 2D-array
->>> grades[1, 0]  # Brad's score on Exam 1
+# 提供两个数字来访问2维数组的成员
+>>> grades[1, 0]  # Brad考试1的成绩
 84
 
-# negative indices work as with lists/tuples/strings
->>> grades[-2, 0]  # Brad's score on Exam 1
+# 负索引和列表/元组/字符串一样可以使用
+>>> grades[-2, 0]  # Brad考试1的成绩
 84
 ```
 
-### Slice Indexing
-We can also uses *slices* to access subsequences of our data. Suppose we want the scores of all the students for Exam 2. We can slice from 0 through 3 along axis-0 (refer to the indexing diagram in the previous section) to include all the students, and specify index 1 on axis-1 to select Exam 2:
+### 切片索引
+我们也可以使用*切片*（slice）来获取数据的子序列。假设我们想要获取所有成绩在考试2的成绩，我们可以在轴0上从0到3切片（请参考之前小节的索引图）来包含所有学生，并在轴1上提供索引1来选中考试2:
 
 ```python
->>> grades[0:3, 1]  # Exam 2 scores for all students
+>>> grades[0:3, 1]  # 所有学生的考试2成绩
 array([ 95, 100,  87])
 ```
-As with Python sequences, you can specify an "empty" slice to include all possible entries along an axis, by default: `grades[:, 1]` is equivalent to `grades[0:3, 1]`, in this instance. More generally, withholding either the 'start' or 'stop' value in a slice will result in the use smallest or largest valid index, respectively:  
+和Python序列一样，你可以提供一个“空”切片来默认包含某轴的所有项目：在这个序列中 `grades[:, 1]` 等值于 `grades[0:3, 1]`。更笼统的来讲，跳过不填切片的 'start' 或 'stop' 值会分别默认使用最小或最大的合法索引：
 ```python
->>> grades[1:, 1]  # equivalent to `grades[1:3, 1]
+>>> grades[1:, 1]  # 等值于 `grades[1:3, 1]`
 array([ 100,  87])
 
->>> grades[:, :1]  # equivalent to `grades[0:3, 0:1]
+>>> grades[:, :1]  # 等值于 `grades[0:3, 0:1]`
 array([[93],
        [84],
        [99]])
 ```
-The output of `grades[:, :1]` might look somewhat funny. Because the axis-1 slice only includes one column of numbers, the shape of the resulting array is (3, 1). 0 is thus only valid (non-negative) index for axis-1, since there is only one column to specify in the array.  
+`grades[:, :1]` 的输出可能看起来有点奇怪。因为轴1切片仅仅包含了一列的数字，最后得到的数组的形状为 (3, 1)。所以，在轴1上0是唯一的合法（非负）索引，因为在这个得到的数组中只有一行可以选中。
 
-You can also supply a "step" value to the slice. `grades[::-1, :]` will returns the array of grades with the student-axis flipped (reverse-alphabetical order).
+你也可以为切片提供一个“step”（步距）值。`grades[::-1, :]` 会返回学生轴颠倒的成绩数组。
 
-### Negative Indices
-As indicated above, negative indices are valid too and are quite useful. If we want to access the scores of the latest exam for all of the students, you can specify:
+### 负索引
+如上所述，负索引也合法，且很有用。如果我们想要访问所有学生最新的考试成绩，我们可以编写：
 
 ```python
-# using a negative index and a slice
->>> grades[:, -1]  # Latest exam scores (Exam 2), for all students
+# 使用负索引和切片
+>>> grades[:, -1]  # 所有学生的最新考试成绩（考试2）
 array([ 95, 100,  87])
 ```
-Note the value of using the negative index is that it will always provide you with the latest exam score - you need not check how many exams the students have taken.
+请注意使用负索引的价值在于它永远都会为你提供最新的考试成绩——你不需要先检查学生考过多少次。
 
-### Supplying Fewer Indices Than Dimensions 
-What happens if we only supply one index to our array? It may be surprising that `grades[0]` does not throw an error since we are specifying only one index to access data from a 2-dimensional array. Instead, NumPy it will return all of the exam scores for student-0 (Ashley):
+### 提供低于维度数量的索引
+在我们为这个数组只提供一个索引时会发生什么？你可能会惊讶于 `grades[0]` 并不会报错这一事，因为我们为二维数组只提供了一个索引。反而，NumPy将会返回学生0（Ashley）的所有考试成绩：
 
 ```python
 >>> grades[0] 
 array([ 93, 95])
 ```
-This is because NumPy will automatically insert trailing slices for you if you don't provide as many indices as there are dimensions for your array. `grades[0]` was treated as `grades[0, :]`.
+这是因为NumPy会在你不提供足够多的索引时自动在结尾提供缺失的切片。`grades[0]` 会被当作 `grades[0, :]` 处理。
 
 <div class="alert alert-info"> 
-Suppose you have an $N$-dimensional array, and only provide $j$ indices for the array; NumPy will automatically insert $N-j$ trailing slices for you. In the case that $N=5$ and $j=3$, `d5_array[0, 0, 0]` is treated as  `d5_array[0, 0, 0, :, :]`
+假设你有着一个 $N$ 维数组并在索引时仅仅提供了 $j$ 个索引；NumPy将会在结尾自动插入 $N-j$ 个切片。如果 $N=5$，$j=3$，那么 `d5_array[0, 0, 0]` 等值于 `d5_array[0, 0, 0, :, :]`。
 </div>
 <!-- #endregion -->
 
-Thus far, we have discussed some rules for accessing data in arrays, all of which fall into the category that is designated ["basic indexing"](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#basic-slicing-and-indexing) by the NumPy documentation. We will discuss the details of basic indexing and of ["advanced indexing"](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing), in full, in a later section. Note, however, that all of the indexing/slicing reviewed here produces a "view" of the original array. That is, *no data is copied* when you index into an array using integer indices and/or slices. Recall that slicing lists and tuples *do* produce copies of the data.
+到现在为止，我们讨论了一些在数组中获取数据的规则，但这些规则都属于NumPy说明文档规定为[“基础索引”](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#basic-slicing-and-indexing)（basic indexing）的一部分。我们将在之后一节完整地讨论基础索引和[“进阶索引”](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing)（advanced indexing）。但是，请注意，在这里复习的所有索引/切片方法都会创建原本数组的一个“视阈“（view）。也就是说，当你使用整数索引或切片索引数组时，*没有任何数据被复制*。请回忆，切片列表和元组*会*复制其数据。
 
 
 
 <div class="alert alert-warning">
 
-**FYI**: 
+**供参考**：
 
-Keeping track of the meaning of an array's various dimensions can quickly become unwieldy when working with real datasets. [xarray](http://xarray.pydata.org/en/stable/) is a Python library that provides functionality comparable to NumPy, but allows users provide *explicit labels* for an array's dimensions; that is, you can *name* each dimension. Using an `xarray` to select Brad's scores could look like `grades.sel(student='Brad')`, for instance. This is a valuable library to look into at your leisure.
+记录数组每个维度的含义可能在处理现实中的数据集时很快变得麻烦复杂。[xarray](http://xarray.pydata.org/en/stable/)则是一个提供和NumPy相似功能的，但允许用户为数组的维度提供*显式标签*的Python模组。也就是说，你可以为每个维度*命名*。比如说，你可以如下使用 `xarray` 来选中Brad的成绩：`grades.sel(student='Brad')`。在你有空的时候，这是一个值得花些时间去了解的模组。
 
 </div>
 
 <!-- #region -->
-## N-dimensional Arrays
-Let's build up some intuition for arrays with a dimensionality higher than 2. The following code creates a 3-dimensional array:
+## N维数组
+让我们对维度高于2的数组产生一些直观的理解。以下代码创建一个三维数组：
 ```python
-# a 3D array, shape-(2, 2, 2)
+# 三维数组，形状为 (2, 2, 2)
 >>> d3_array = np.array([[[0, 1],
 ...                       [2, 3]],
 ...                         
 ...                      [[4, 5],
 ...                       [6, 7]]])
 ```
-You can think of axis-0 denoting which of the 2x2 "sheets" to select from. Then axis-1 specifies the row along the sheets, and axis-2 the column within the row:
+你可以认为轴0代表着选中哪个2x2的“页”（sheet），然后轴1代表着在页中选中哪一行，而轴2代表着在行中选择哪个列：
 
-**Depicting the layout of a 3D array**
+**描绘3维数组的结构**
 ```
                                            sheet 0:
                                                   [0, 1]
@@ -278,28 +277,28 @@ You can think of axis-0 denoting which of the 2x2 "sheets" to select from. Then 
 
 ```
 
-Thus `d3_array[0, 1, 0]` specifies the element residing in sheet-0, at row-1 and column-0:
+如此，`d3_array[0, 1, 0]` 选中了在页0，行1，列0的成员：
 ```python
-# retrieving a single element from a 3D-array
+# 在3维数组中获得单个成员
 >>> d3_array[0, 1, 0]
 2
 ```
 
-`d3_array[:, 0, 0]` specifies the elements in row-0 and column-0 of **both** sheets:
+`d3_array[:, 0, 0]` 选中了**全部**页在行0和列0的成员：
 ```python
-# retrieving a 1D sub-array from a 3D-array
+# 在3维数组中获得1维子数组
 >>> d3_array[:, 0, 0]
 array([0, 4])
 ```
-`d3_array[1]`, which recall is shorthand for `d3_array[1, :, :]`, selects both rows and both columns of sheet-1:
+`d3_array[1]`，也就是 `d3_array[1, :, :]` 的简写，选中页1全部的行和列：
 ```python
-# retrieving a 2D sub-array from a 3D-array
+# 在3维数组中获得2维子数组
 >>> d3_array[1]
 array([[4, 5],
        [6, 7]])
 ```
 
-In four dimensions, one can think of "*stacks* of sheets with rows and columns" where axis-0 selects the stack of sheets you are working with, axis-1 chooses the sheet, axis-2 chooses the row, and axis-3 chooses the column. Extrapolating to higher dimensions ("collections of stacks of sheets ...") continues in the same tedious fashion.  
+在四维的情况下，你可以将轴0的成员理解为“一*打*（stack）有着行列的页”。轴0选中哪一打页，轴1选中哪一页，轴2选中哪一行，轴3选中哪一列。往更高维度扩展这个类比（“好多打页的集合”）将像这个相同的冗长的方式继续。 
 
 
 
@@ -308,9 +307,9 @@ In four dimensions, one can think of "*stacks* of sheets with rows and columns" 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Multi-dimensional Indexing**
+**阅读理解：多维索引**
 
-Given the 3D, shape-(3, 3, 3) array:
+设3维数组，其形状为 (3, 3, 3)：
 
 ```python
 >>> arr = np.array([[[ 0,  1,  2],
@@ -326,7 +325,7 @@ Given the 3D, shape-(3, 3, 3) array:
 ...                  [24, 25, 26]]])
 ```
 
-Index into the array to produce the following results
+索引该数组来得到以下结果
 
 ```python
 #1 
@@ -351,16 +350,16 @@ array([[11, 10,  9],
 <!-- #endregion -->
 
 <!-- #region -->
-## Zero-dimensional Arrays
-A zero dimensional array is simply a single number (a.k.a. a scalar value):
+## 零维数组
+零维数组仅仅是一个数字（也就是一个标量值）：
 ```python
-# creating a 0-dimensional array
+# 创建一个0维数组
 >>> x = np.array(15.2)
 ```
 
-This is *not* equivalent to a length-1 1D-array: `np.array([15.2])`. According to our definition of dimensionality, *zero* numbers are required to index into a 0-D array as it is unnecessary to provide an identifier for a standalone number. Thus you cannot index into a 0-D array.
+这*不*等值于长度为1的一维数组：`np.array([15.2])`。根据维度的定义，我们需要*零*个数字来索引一个0维数组，因为我们不需要为单个数字其提供任何索引。因此，你不能索引0维数组。
 ```python
-# you cannot index into a 0-D array
+# 你不能索引0维数组
 >>> x[0]
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
@@ -371,33 +370,33 @@ IndexError: too many indices for array
     
 ```
 
-You must use the syntax `arr.item()` to retrieve the numerical entry from a 0D array:
+你必须使用语法 `arr.item()` 来获取0维数组的数字值：
 ```python
 >>> x.item()
 15.2
 ```
 
-Zero-dimensional arrays do not show up in real applications very often. They are, however, important from the point of view of NumPy being self-consistent in how it treats dimensionality in its arrays, and it is important that you are at least exposed to a 0D array and understand its nuances.
+零维数组在实际使用时不会经常出现。但是，它们的行为证明了NumPy对其数组维度的定义是自治的，而你也应该至少接触以下并理解0维数组的细节。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-Although accessing data along varying dimensions is ultimately all a matter of judicious bookkeeping (you *could* access all of this data from a 1-dimensional array, after all), NumPy's ability to provide users with an interface for accessing data along dimensions is incredibly useful. It affords us an ability to impose intuitive, abstract structure to our data. 
+虽然在多个维度访问数据最终其实也就是一个细心活（因为你理论上*可以*通过一个一维数组来访问同样的数据），但是NumPy为用户提供的多维度访问数组内容的界面是非常有用的。它为我们提供了给数据赋予直观的抽象结构的能力。
 
 </div> 
 
 <!-- #region -->
-## Manipulating Arrays
-NumPy provides an assortment of functions that allow us manipulate the way that an array's data can be accessed. These permit us to reshape an array, change its dimensionality, and swap the positions of its axes:
+## 操作数组
+NumPy提供了一系列操作如何访问数组数据的方法。这些函数能让我们重塑（reshape）数组的形状，修改它的维度，并交换它不同轴的位置：
 
 ```python
 >>> x = np.array([[ 1,  2,  3,  4],
 ...               [ 5,  6,  7,  8],
 ...               [ 9, 10, 11, 12]])
 
-# reshaping an array
+# 重塑数组形状
 >>> x.reshape(3, 2, 2)
 array([[[ 1,  2],
         [ 3,  4]],
@@ -408,53 +407,51 @@ array([[[ 1,  2],
        [[ 9, 10],
         [11, 12]]])
 
-# Transposing an array: reversing 
-# the ordering of its axes. This interchanges
-# the rows and columns of `x`
+# 转制（transpose）数组：交换数组轴的顺序。
+# 这将 `x` 的行列互换
 >>> x.transpose()
 array([[ 1,  5,  9],
        [ 2,  6, 10],
        [ 3,  7, 11],
        [ 4,  8, 12]])
 ```
-A complete listing of the available array-manipulation functions can be found in the [official NumPy documentation](https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html). Among these functions, the reshape function is especially useful.   
+完整的数组操作函数列表可以在[NumPy的官方说明文档](https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html)找到。在这些函数中，reshape函数极其有用。
 
-### Introducing the `reshape` Function
-The `reshape` function allows you to change the dimensionality and axis-layout of a given array. This adjusts the indexing interface used to access the array's underlying data, as was discussed in earlier in this module. Let's take a shape-(6,) array, and reshape it to a shape-(2, 3) array:
+### 介绍 `reshape` 函数
+`reshape` 函数允许你修改数组的维度和轴结构。它修改用来访问数组内置数据的本模组之前讨论过的索引界面。设一个形状为 (6,) 的数组，让我们将其重塑成形为 (2, 3) 的数组：
 
 ```python
 >>> import numpy as np
 >>> x = np.array([0, 1, 2, 3, 4, 5])
 
-# reshape a shape-(6,) array into a shape-(2,3) array
+# 将形状为 (6,) 的数组重塑为形状为 (2,3) 的数组
 >>> x.reshape(2, 3)
 array([[0, 1, 2],
        [3, 4, 5]])
 ```
 
-You can also conveniently reshape an array by "setting" its shape via assignment:
+你也可以很方便地通过在赋值时“设置”它的形状来达到重塑的目的：
 ```python
 # equivalent to: x = x.reshape(2, 3)
 >>> x.shape = (2, 3)
 ```
 
-Of course, the size the the initial array must match the size of the to-be reshaped array:
+当然，最初数组的大小要对应重塑后的数组的大小：
 
 ```python
-# an array with 5 numbers are cannot be reshaped
-# into a (3, 2) array
+# 一个有5个数字的数组不能被重塑为形状是 (3, 2) 的数组
 >>> np.array([0, 1, 2, 3, 4]).reshape(3, 2)
 ValueError: total size of new array must be unchanged
 ```
 
-Multidimensional arrays can be reshaped too:
+多维数组也可以被重塑：
 ```python
-# reshaping a multidimensional array
+# 重塑多维数组的形状
 >>> x = np.array([[ 0,  1,  2,  3],
 ...               [ 4,  5,  6,  7],
 ...               [ 8,  9, 10, 11]])
 
-# reshape from (3, 4) to (2, 3, 2)
+# 从 (3, 4) 重塑为 (2, 3, 2)
 >>> x.reshape(2, 3, 2)
 array([[[ 0,  1],
         [ 2,  3],
@@ -465,19 +462,19 @@ array([[[ 0,  1],
         [10, 11]]])
 ```
 
-Because the size of an input array and the resulting reshaped array must agree, you can specify *one* of the dimension-sizes in the reshape function to be -1, and this will cue NumPy to compute that dimension's size for you. For example, if you are reshaping a shape-(36,) array into a shape-(3, 4, 3) array. The following are valid:
+因为输入数组的大小和重塑数组的大小必须相同，你可以在reshape函数中将维度大小之中的*一个*设置为-1.这将告诉NumPy去为你计算该维度的大小。比如说，如果你在将形状 (36,) 的数组重塑为形状是 (3, 4, 3) 的数组，以下都可以：
 ```python
-# Equivalent ways of specifying a reshape
-# np.arange(36) produces the shape-(36,) array ([0, 1, 2, ..., 35])
-np.arange(36).reshape(3, 4, 3)   # (36,) --reshape--> (3, 4, 3) 
-np.arange(36).reshape(3, 4, -1)  # NumPy replaces -1 with 36/(3*4) -> 3
-np.arange(36).reshape(3, -1, 3)  # NumPy replaces -1 with 36/(3*3) -> 4
-np.arange(36).reshape(-1, 4, 3)  # NumPy replaces -1 with 36/(3*4) -> 3
+# 等值的重塑方法
+# np.arange(36) 返回一个形状为 (36,) 的数组（[0, 1, 2, ..., 35]）
+np.arange(36).reshape(3, 4, 3)   # (36,) --重塑--> (3, 4, 3) 
+np.arange(36).reshape(3, 4, -1)  # NumPy 将 -1 代替为 36/(3*4) -> 3
+np.arange(36).reshape(3, -1, 3)  # NumPy 将 -1 代替为 36/(3*3) -> 4
+np.arange(36).reshape(-1, 4, 3)  # NumPy 将 -1 代替为 36/(3*4) -> 3
 ```
 
-You can use -1 to specify only one dimension: 
+你只能用-1来描述一个维度：
 ```python
->>> np.arange(36).reshape(3, -1, -1)  # this is an ambiguous specification, and thus
+>>> np.arange(36).reshape(3, -1, -1)  # 这可能有歧义，所以...
 ---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
 <ipython-input-3-207d18d18af2> in <module>()
@@ -488,26 +485,26 @@ ValueError: can only specify one unknown dimension
 
 <div class="alert alert-info">
 
-**Reshaping Does Not Make a Copy of an Array**: 
+**重塑并不会复制数组**：
 
-For all straightforward applications of reshape, NumPy does not actually create a new copy of an array's data when performing a `reshape` operation. Instead, the original array and the reshaped array reference the same underlying data. The reshaped array simply provides a new index-interface for accessing said data, and is thus referred to as a "view" of the original array (more on this "views" in a later section).
+任何直接运用reshape的情况下，NumPy都不会复制原本数组数据。实际上，原本的数组和重塑的数组都引用着相同的内在数据。重塑的数组仅仅提供了一个新的访问该数据的索引界面，所以它被是原本数组的一个“视阈”（view）（我们会在后面一节详细讨论“视阈”）。
 
 </div>
 <!-- #endregion -->
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [The N-dimensional array](https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html)
-- [Array indexing](https://docs.scipy.org/doc/numpy/user/basics.indexing.html#indexing)
-- [Indexing routines](https://docs.scipy.org/doc/numpy/reference/routines.indexing.html#indexing-routines)
-- [Array manipulation routines](https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html)
+- [N维数组](https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html)
+- [数组索引](https://docs.scipy.org/doc/numpy/user/basics.indexing.html#indexing)
+- [索引常规](https://docs.scipy.org/doc/numpy/reference/routines.indexing.html#indexing-routines)
+- [数组操作常规](https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html)
 
 
-## Reading Comprehension Solutions
+## 阅读理解答案：
 
 
 <!-- #region -->
-**Reading Comprehension: Multi-dimensional Indexing**
+**阅读理解：多维索引**
 
 ```python
 >>> arr = np.array([[[ 0,  1,  2],

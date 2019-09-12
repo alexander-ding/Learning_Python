@@ -18,23 +18,22 @@ jupyter:
    :keywords: summary, tutorial, python shopping list, object oriented, method, attribute
 ```
 
-# Applications of Object Oriented Programming
+# 面向对象编程的应用
 
-We have spent a considerable amount of time learning about the syntax and definitions of classes, class objects, instances, and methods. Let's take a moment to gather our knowledge and create a useful class. This will help develop a sense for the ways in which object oriented programming can be useful for us. We will try to take care to make some recommendations when one should and shouldn't define their own classes. 
+我们花了不少时间学习类，类对象，实例，和方法的语法和定义。让我们花一些时间来总结我们的知识并创建一个有用的类。这将帮助我们发展对面向对象编程如何能为我们所用的理解。我们将试图推荐一些决定我们何时该和何时不该定义我们自己的类的守则。
 
+## 购物清单
+让我们创建一个购物清单类，其实例将纯粗一列表的要购买的物品名字（字符串）和一列表的已经购买的物品名字。我们将编写一个 `__init__` 函数来接受一个或多个字符串来加入到购物清单中。然后，我们将创建方法来允许我们：
 
-## Shopping List
-Let's create a shopping list class, where an instance of this class stores a list of item-names (strings) to be purchased and a list of names that have already been purchased. We will write an `__init__` function that accepts one or more strings, which will be added to the shopping list. Then, we will create methods that will allow us to:
+- 向购物清单添加新物品
+- 将列表的物品标记为“已购买”
+- 从列表中删除物品，不管其是否已经购买
+- （根据字母顺序）列出需要购买的物品名字
+- （根据字母顺序）列出已经购买的物品名字
 
-- add new items to the shopping list
-- mark items on the list as "purchased"
-- remove items, purchased or not, from the list
-- list the name of the items to-be purchased (in alphabetical order)
-- list the name of the items have been purchased (in alphabetical order)
+我们不想要在购物清单中有着重复的物品——如果有人输入了“apple”两次，我们应该仅仅列该物品一次。因此，我们将使用存储不重复成员的[集](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)来存储列表中的成员。
 
-We do not want redundant items to be included on our shopping list - if someone enters "apples" twice, we should only list it once. Thus we will make use of [sets](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure), which store unique elements, to store the items on our list.
-
-Lastly, we will want our methods to accept a variable that is either a single item name (a string) or multiple item names (a list/tuple/iterable of strings). To accommodate this, if we receive a sole string as an input, we will place it in a list before carrying on. This will ensure that we are always working with an iterable containing a string.
+最后，我们想要我们的方法来接受一个为单个物品名（字符串）或多个物品名（一列表/元组/可迭代物的字符串）的变量。为了容纳这两种情况，如果我们仅仅收到了一个字符串，我们将首先将其放入一个列表中。这将保证我们永远都会操作成员为字符串的可迭代物。
 
 
 
@@ -45,7 +44,7 @@ class ShoppingList:
         """ Parameters
             ----------
             items : Union[str, Iterable[str]]
-                Iterable of item-names to add to shopping list"""
+                要加入到购物列表的成员为物品名字的可迭代物"""
         if isinstance(items, str):
             items = [items]
         self._needed = set(items)
@@ -57,39 +56,39 @@ class ShoppingList:
             Parameters
             ----------
             items : Union[str, Iterable[str]]
-                Iterable of item-names to add to shopping list"""
+                要加入到购物列表的成员为物品名字的可迭代物"""
         if isinstance(items, str):
             items = [items]
-        # set.update adds elements of an iterable to a set  
+        # set.update 将可迭代物中的成员添加到集中
         self._needed.update(items) 
         
     def mark_purchased_items(self, items):
-        """ Provide names of items to mark as 'purchased' 
+        """ 提供用来标记成“已购买”的物品的名字
             
             Parameters
             ----------
             items : Union[str, Iterable[str]]"""
         if isinstance(items, str):
             items = [items]
-        # only mark items as purchased that are on our list to begin with
+        # 仅仅将已经在列表中的物品标记为已购买
         self._purchased.update(set(items) & self._needed)
-        # remove all purchased items from out unpurchased set
+        # 从未购买的集中删除删除所有已购买物品
         self._needed.difference_update(self._purchased)
     
     def list_purchased_items(self):
-        """ Return a sorted list of the items that have been purchased"""
+        """ 返回已购买物品的排序列表"""
         return sorted(self._purchased)
 
     def list_unpurchased_items(self):
-        """ Return a sorted list of the items still on the list"""
+        """ 返回未购买物品的排序列表"""
         return sorted(self._needed)
 ```
 
 <!-- #region -->
-Let's create a shopping list with a few items on it:
+让我们创建一个有几个物品的购物列表：
 
 ```python
-# creating a shopping list
+# 创建一个购物清单
 >>> my_list = ShoppingList(["apples", "apples", "grapes", "peaches", "milk", "bread"])
 >>> my_list.list_unpurchased_items()
 ['apples', 'bread', 'grapes', 'milk', 'peaches']
@@ -97,10 +96,10 @@ Let's create a shopping list with a few items on it:
 []
 ```
 
-Notice that I mistakenly placed apples on my list twice. However our use of sets under the hood handles this gracefully, reducing all redundant entries automatically. Supposing that we are carrying on with our shopping and we purchase several items, let's mark them as such.
+请注意，我不小心在列表中输入了“apples”两次。但是，我们在幕后使用的集能够优雅地处理这个错误并自动删除所有重复的物品。假设我们带着购物清单并购买了几个物品，让我们如此标记。
 
 ```python
-# mark items as purchased on our list
+# 在购物列表中标记几个物品为已购买
 >>> my_list.mark_purchased_items(["grapes", "pineapples"])
 >>> my_list.list_purchased_items()
 ['grapes']
@@ -108,17 +107,17 @@ Notice that I mistakenly placed apples on my list twice. However our use of sets
 ['apples', 'bread', 'milk', 'peaches']
 ```
 
-See that "grapes" were appropriately removed from our unpurchased set and added to our purchased set. Additionally, our implementation gracefully ignores our request to mark pineapples as being purchased, as pineapples weren't even on our list to begin with.
+请注意我们在未购买组中正确的删除了“grapes”并将其加入到了购买组中。同时，我们的实现优雅地忽略了将“pineapple”标记为已购买的请求，因为我们本来就没有在列表中加入“pineapple”。
 
-In the next section we will augment our `ShoppingList` class with some special methods to make it easier to view the items, purchased and not, on our list.
+在下一节中我们将会为我们的 `ShoppingList` 类添加一些特殊方法来使得我们可以更加简单地浏览我们购买和未购买物品的列表。
 <!-- #endregion -->
 
 <div class="alert alert-warning">
 
-**Caution: Using Class Definitions Responsibly**
+**注意：负责地使用类定义**
 
-Our `ShoppingList` class' main utility is that it coordinates two sets of items for us, making the logic of tracking unpurchased and purchased items intuitive and simple. If we did not care about keeping track of purchased items, then we ought not define a class at all. We should instead just store our items in a `list` and use its methods to add and remove items. 
+我们 `ShoppingList` 类的主要功能是为我们管理两个物品集，使得记录未购买和购买物品的逻辑简单易懂。如果我们不在乎记录物品是否已经购买，那么我们根本不应该定义一个类。我们应该直接将物品名存入一个 `list` 中并使用它的方法来添加和删除物品。
 
-When possible, it is preferable to use Python's built-in types in lieu of defining a new class. Doing so will help keep your code simple, portable, and compatible with other code.
+当可以的时候，我们应当优先使用Python的内置类型，而不是定义一个新类。这么做会使得你的代码简单，轻便，并和其它代码兼容。
 
 </div>

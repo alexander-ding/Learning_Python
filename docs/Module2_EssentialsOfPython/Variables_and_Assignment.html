@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: variable naming and assignment, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Variables &amp; Assignment &mdash; Python Like You Mean It</title>
+  <title>变量和赋值 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introducing Control Flow" href="Introduction.html" />
-    <link rel="prev" title="Sequence Types" href="SequenceTypes.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="控制流简介" href="Introduction.html" />
+    <link rel="prev" title="序列类型" href="SequenceTypes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,38 +95,38 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Variables &amp; Assignment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Valid-Names-for-Variables">Valid Names for Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Mutable-and-Immutable-Objects">Mutable and Immutable Objects</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Mutable-&amp;-Immutable-Types-of-Objects">Mutable &amp; Immutable Types of Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">变量和赋值</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#变量的合法名字">变量的合法名字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#可变和不可变对象">可变和不可变对象</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#可变和不可变对象类型">可变和不可变对象类型</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Referencing-a-Mutable-Object-with-Multiple-Variables">Referencing a Mutable Object with Multiple Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Exercise-Solutions:">Reading Comprehension Exercise Solutions:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#多个变量引用一个可变对象">多个变量引用一个可变对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -171,9 +172,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Variables &amp; Assignment</li>
+      <li>变量和赋值</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,20 +217,20 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Variables-&amp;-Assignment">
-<h1>Variables &amp; Assignment<a class="headerlink" href="#Variables-&-Assignment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="变量和赋值">
+<h1>变量和赋值<a class="headerlink" href="#变量和赋值" title="永久链接至标题">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong>:</p>
-<p>There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>注</strong>：</p>
+<p>本文各处的阅读理解练习旨在帮助你练习使用文章中的知识点。练习题的答案可以在本页结尾找到。</p>
 </div>
-<p>Variables permit us to write code that is flexible and amendable to repurpose. Suppose we want to write code that logs a student’s grade on an exam. The logic behind this process should not depend on whether we are logging Brian’s score of 92% versus Ashley’s score of 94%. As such, we can utilize variables, say <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">grade</span></code>, to serve as placeholders for this information. In this subsection, we will demonstrate how to define variables in Python.</p>
-<p>In Python, the <code class="docutils literal notranslate"><span class="pre">=</span></code> symbol represents the “assignment” operator. The variable goes to the left of <code class="docutils literal notranslate"><span class="pre">=</span></code>, and the object that is being assigned to the variable goes to the right:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Brian&quot;</span>  <span class="c1"># the variable `name` is being assigned the string &quot;Brian&quot;</span>
-<span class="n">grade</span> <span class="o">=</span> <span class="mi">92</span>      <span class="c1"># the variable `grade` is being assigned the integer 92</span>
+<p>变量的意义在于帮助我们编写灵活易重用的代码。假设我们希望编写代码来记录学生的考试成绩，这过程背后的逻辑不管是记录小明的92分还是小丽的94分都应该是一样的。为此我们可以使用变量，如 <code class="docutils literal notranslate"><span class="pre">name</span></code> 和 <code class="docutils literal notranslate"><span class="pre">grade</span></code>，来作为这些信息的占位符。在本小节中，我们将会展示如何在Python中定义变量。</p>
+<p>在Python中，符号 <code class="docutils literal notranslate"><span class="pre">=</span></code> 代表着“赋值”（assignment）操作符。变量在 <code class="docutils literal notranslate"><span class="pre">=</span></code> 左边，而用来赋值的对象在符号的右边：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Brian&quot;</span>  <span class="c1"># 为变量 `name` 赋值字符串 &quot;Brian&quot;</span>
+<span class="n">grade</span> <span class="o">=</span> <span class="mi">92</span>      <span class="c1"># 为变量 `grade` 赋值整数 92</span>
 </pre></div>
 </div>
-<p>Attempting to reverse the assignment order (e.g. <code class="docutils literal notranslate"><span class="pre">92</span> <span class="pre">=</span> <span class="pre">name</span></code>) will result in a syntax error. When a variable is assigned an object (like a number or a string), it is common to say that the variable <strong>is a reference to</strong> that object. For example, the variable <code class="docutils literal notranslate"><span class="pre">name</span></code> references the string <code class="docutils literal notranslate"><span class="pre">&quot;Brian&quot;</span></code>. This means that, once a variable is assigned an object, it can be used elsewhere in your code as a reference to (or placeholder for) that object:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating the use of variables in code</span>
+<p>将左右弄混（如 <code class="docutils literal notranslate"><span class="pre">92</span> <span class="pre">=</span> <span class="pre">name</span></code>）会导致语法错误。当变量被某个对象（如一个数字或字符串）赋值时，我们经常会说这变量是该对象的<em>引用</em>（reference）。比如说，变量 <code class="docutils literal notranslate"><span class="pre">name</span></code> 是字符串 <code class="docutils literal notranslate"><span class="pre">&quot;Brian&quot;</span></code> 的引用。这意味着，当一个变量被对象赋值后，你可以在代码的其它地方将其作为该对象的代名词（或占位符）使用：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示使用变量</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Brian&quot;</span>
 <span class="n">grade</span> <span class="o">=</span> <span class="mi">92</span>
 <span class="n">failing</span> <span class="o">=</span> <span class="bp">False</span>
@@ -237,54 +238,54 @@
 <span class="k">if</span> <span class="n">grade</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
     <span class="n">failing</span> <span class="o">=</span> <span class="bp">True</span>
 
-<span class="c1"># writes: name | grade | passing-status</span>
-<span class="c1"># to the end of the file &quot;student_grades.txt&quot;</span>
+<span class="c1"># 在文本文件“student_grades.txt”最后写:</span>
+<span class="c1"># 名字 | 成绩 | 不及格</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;student_grades.txt&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_file</span><span class="p">:</span>
     <span class="n">opened_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;{} | {} | {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">grade</span><span class="p">,</span> <span class="n">failing</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="section" id="Valid-Names-for-Variables">
-<h2>Valid Names for Variables<a class="headerlink" href="#Valid-Names-for-Variables" title="Permalink to this headline">¶</a></h2>
-<p>A variable name may consist of alphanumeric characters (<code class="docutils literal notranslate"><span class="pre">a-z</span></code>, <code class="docutils literal notranslate"><span class="pre">A-Z</span></code>, <code class="docutils literal notranslate"><span class="pre">0-9</span></code>) and the underscore symbol (<code class="docutils literal notranslate"><span class="pre">_</span></code>); a valid name cannot begin with a numerical value.</p>
+<div class="section" id="变量的合法名字">
+<h2>变量的合法名字<a class="headerlink" href="#变量的合法名字" title="永久链接至标题">¶</a></h2>
+<p>合法的变量名字可以包括任何字母或数字（<code class="docutils literal notranslate"><span class="pre">a-z</span></code>，<code class="docutils literal notranslate"><span class="pre">A-Z</span></code>，<code class="docutils literal notranslate"><span class="pre">0-9</span></code>）以及下划线（<code class="docutils literal notranslate"><span class="pre">_</span></code>）；合法的名字不可以由数字打头。</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">var</span></code>: valid</li>
-<li><code class="docutils literal notranslate"><span class="pre">_var2</span></code>: valid</li>
-<li><code class="docutils literal notranslate"><span class="pre">ApplePie_Yum_Yum</span></code>: valid</li>
-<li><code class="docutils literal notranslate"><span class="pre">2cool</span></code>: <strong>invalid</strong> (begins with a numerical character)</li>
-<li><code class="docutils literal notranslate"><span class="pre">I.am.the.best</span></code>: <strong>invalid</strong> (contains <code class="docutils literal notranslate"><span class="pre">.</span></code>)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var</span></code>：合法</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_var2</span></code>：合法</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ApplePie_Yum_Yum</span></code>：合法</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2cool</span></code>：<strong>不合法</strong>（数字打头）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">I.am.the.best</span></code>: <strong>不合法</strong>（包括了 <code class="docutils literal notranslate"><span class="pre">.</span></code>）</p></li>
 </ul>
-<p>They also cannot conflict with character sequences that are reserved by the Python language. As such, the following cannot be used as variable names:</p>
+<p>变量名也不能和其它Python保留的特殊名字冲突。因此，下列名字也不能作为变量名：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">pass</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">def</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">return</span></code>, <code class="docutils literal notranslate"><span class="pre">yield</span></code>, <code class="docutils literal notranslate"><span class="pre">raises</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">import</span></code>, <code class="docutils literal notranslate"><span class="pre">from</span></code>, <code class="docutils literal notranslate"><span class="pre">as</span></code>, <code class="docutils literal notranslate"><span class="pre">with</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>，<code class="docutils literal notranslate"><span class="pre">while</span></code>，<code class="docutils literal notranslate"><span class="pre">break</span></code>，<code class="docutils literal notranslate"><span class="pre">pass</span></code>，<code class="docutils literal notranslate"><span class="pre">continue</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code>，<code class="docutils literal notranslate"><span class="pre">is</span></code>，<code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">else</span></code>，<code class="docutils literal notranslate"><span class="pre">elif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code>，<code class="docutils literal notranslate"><span class="pre">class</span></code>，<code class="docutils literal notranslate"><span class="pre">return</span></code>，<code class="docutils literal notranslate"><span class="pre">yield</span></code>，<code class="docutils literal notranslate"><span class="pre">raises</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span></code>，<code class="docutils literal notranslate"><span class="pre">from</span></code>，<code class="docutils literal notranslate"><span class="pre">as</span></code>，<code class="docutils literal notranslate"><span class="pre">with</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">try</span></code>，<code class="docutils literal notranslate"><span class="pre">except</span></code>，<code class="docutils literal notranslate"><span class="pre">finally</span></code></p></li>
 </ul>
-<p>There are other unicode characters that are permitted as valid characters in a Python variable name, but it is not worthwhile to delve into those details here.</p>
+<p>还有一些unicode符号可以作为Python变量名中的字符，但本文在此不进行讨论。</p>
 </div>
-<div class="section" id="Mutable-and-Immutable-Objects">
-<h2>Mutable and Immutable Objects<a class="headerlink" href="#Mutable-and-Immutable-Objects" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>mutability</strong> of an object refers to its ability to have its state changed. A <strong>mutable object</strong> can have its state changed, whereas an <strong>immutable object</strong> cannot. For instance, a list is an example of a mutable object. Once formed, we are able to update the contents of a list - replacing, adding to, and removing its elements.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating the mutability of a list</span>
+<div class="section" id="可变和不可变对象">
+<h2>可变和不可变对象<a class="headerlink" href="#可变和不可变对象" title="永久链接至标题">¶</a></h2>
+<p>对象的<strong>可变性</strong>指它的内态（state）是否能被改变。<strong>可变对象</strong>的内态可以被修改，而<strong>不可变对象</strong>则不能。比如说，列表就是可变对象的一种。在创建之后，我们可以更新列表的内容——代替，增加，或删除它的成员。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示列表的可变性</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>  <span class="c1"># replace element-0 of `x` with -4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>  <span class="c1"># 将 `x` 索引为0的成员修改成 -4</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>To spell out what is transpiring here, we:</p>
+<p>让我们来看看这里具体发生了什么，我们：</p>
 <ol class="arabic simple">
-<li>Create (initialize) a list with the state <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>.</li>
-<li>Assign this list to the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>; <code class="docutils literal notranslate"><span class="pre">x</span></code> is now a reference to that list.</li>
-<li>Using our referencing variable, <code class="docutils literal notranslate"><span class="pre">x</span></code>, update element-0 of the list to store the integer <code class="docutils literal notranslate"><span class="pre">-4</span></code>.</li>
+<li><p>创建（初始化）了一个列表，其内态为 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>。</p></li>
+<li><p>为变量 <code class="docutils literal notranslate"><span class="pre">x</span></code> 赋值了此列表；<code class="docutils literal notranslate"><span class="pre">x</span></code> 现在是该列表的一个引用了。</p></li>
+<li><p>通过我们的引用变量 <code class="docutils literal notranslate"><span class="pre">x</span></code> 更新了列表索引为0的成员以储存整数 <code class="docutils literal notranslate"><span class="pre">-4</span></code>。</p></li>
 </ol>
-<p>This does not create a new list object, rather it <em>mutates</em> our original list. This is why printing <code class="docutils literal notranslate"><span class="pre">x</span></code> in the console displays <code class="docutils literal notranslate"><span class="pre">[-4,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> and not <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>.</p>
-<p>A tuple is an example of an immutable object. Once formed, there is no mechanism by which one can change of the state of a tuple; and any code that appears to be updating a tuple is in fact creating an entirely new tuple.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating to the immutability of a tuple</span>
+<p>这并没有创建一个新的列表对象，而仅仅<em>修改</em>了原本的列表。这也是为什么在命令行中打印 <code class="docutils literal notranslate"><span class="pre">x</span></code> 会显示 <code class="docutils literal notranslate"><span class="pre">[-4,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>。</p>
+<p>元组则是不可变对象的一种。在创建之后，我们没有任何办法可以改变元组的内态；任何看起来像是在更新元组的代码起始都是在创建一个全新的元组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示元组的不可变性</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>  <span class="c1"># attempt to replace element-0 of `x` with -4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>  <span class="c1"># 试图将 `x` 索引为0的成员修改为 -4</span>
 <span class="o">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">a858573fdc63</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
@@ -294,33 +295,32 @@
 <span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
 </pre></div>
 </div>
-<div class="section" id="Mutable-&amp;-Immutable-Types-of-Objects">
-<h3>Mutable &amp; Immutable Types of Objects<a class="headerlink" href="#Mutable-&-Immutable-Types-of-Objects" title="Permalink to this headline">¶</a></h3>
-<p>The following are some common immutable and mutable objects in Python. These will be important to have in mind as we start to work with dictionaries and sets.</p>
-<p><strong>Some immutable objects</strong></p>
+<div class="section" id="可变和不可变对象类型">
+<h3>可变和不可变对象类型<a class="headerlink" href="#可变和不可变对象类型" title="永久链接至标题">¶</a></h3>
+<p>以下是Python中常见的一些可变和不可变对象。在我们开始讨论词典（dictionary）和集（set）时这些知识会很有用。</p>
+<p><strong>一些不可变对象</strong></p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types">numbers</a> (integers, floating-point numbers, complex numbers)</li>
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Strings">strings</a></li>
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Tuples">tuples</a></li>
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#The-Boolean-Type">booleans</a></li>
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure">“frozen”-sets</a></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#数字类型">数字</a>（整数，浮点数，复数）</p></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#字符串">字符串</a></p></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#元组">元组</a></p></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#布尔类">布尔值</a></p></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython%2FDataStructures_III_Sets_and_More.html#集数据结构">“冻结”集</a>（frozen-set）</p></li>
 </ul>
-<p><strong>Some mutable objects</strong></p>
+<p><strong>一些可变对象</strong></p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists">lists</a></li>
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html">dictionaries</a></li>
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure">sets</a></li>
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/module_3.html">NumPy arrays</a></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#列表">列表</a></p></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html">词典</a></p></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#集数据结构">集</a></p></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/module_3.html">NumPy数组</a></p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="Referencing-a-Mutable-Object-with-Multiple-Variables">
-<h2>Referencing a Mutable Object with Multiple Variables<a class="headerlink" href="#Referencing-a-Mutable-Object-with-Multiple-Variables" title="Permalink to this headline">¶</a></h2>
-<p>It is possible to assign variables to other, existing variables. Doing so will cause the variables to reference the same object:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating the behavior of variables</span>
-<span class="c1"># referencing the same object</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1">#  `list1` references [1, 2, 3]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">list2</span> <span class="o">=</span> <span class="n">list1</span>      <span class="c1">#  `list2` and `list1` now both reference [1, 2, 3]</span>
+<div class="section" id="多个变量引用一个可变对象">
+<h2>多个变量引用一个可变对象<a class="headerlink" href="#多个变量引用一个可变对象" title="永久链接至标题">¶</a></h2>
+<p>你可以向变量赋值给其它已经存在的变量。这将会导致这些变量都引用同一个对象：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示引用同一个对象的变量行为</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1">#  `list1` 引用 [1, 2, 3]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list2</span> <span class="o">=</span> <span class="n">list1</span>      <span class="c1">#  `list2` 和 `list1` 现在都引用 [1, 2, 3]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -329,41 +329,41 @@
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>What this entails is that these common variables will reference the <em>same instance</em> of the list. Meaning that if the list changes, all of the variables referencing that list will reflect this change:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># append 4 to the end of [1, 2, 3]</span>
+<p>具体来讲，这两个变量都引用这列表的<em>同一个实例</em>（instance）。这意味着如果列表有变化，所有引用它的变量都会反映这个变化：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># 在 [1, 2, 3] 结尾附加4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
 <span class="go">[1, 2, 3, 4]</span>
 </pre></div>
 </div>
-<p>We can see that <code class="docutils literal notranslate"><span class="pre">list2</span></code> is still assigned to reference the <em>same, updated</em> list as <code class="docutils literal notranslate"><span class="pre">list1</span></code>:</p>
+<p>我们可以看到 <code class="docutils literal notranslate"><span class="pre">list2</span></code> 还在引用<em>相同的，更新过的</em>列表，所以它和 <code class="docutils literal notranslate"><span class="pre">list1</span></code> 同步：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
 <span class="go">[1, 2, 3, 4]</span>
 </pre></div>
 </div>
-<p>In general, assigning a variable <code class="docutils literal notranslate"><span class="pre">b</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">a</span></code> will cause the variables to reference the <em>same</em> object in the system’s memory, and assigning <code class="docutils literal notranslate"><span class="pre">c</span></code> to <code class="docutils literal notranslate"><span class="pre">a</span></code> or <code class="docutils literal notranslate"><span class="pre">b</span></code> will simply have a third variable reference this same object. Then any change (a.k.a <em>mutation</em>) of the object will be reflected in all of the variables that reference it (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>).</p>
-<p>Of course, assigning two variables to identical but <em>distinct</em> lists means that a change to one list will not affect the other:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1">#  `list1` references [1, 2, 3]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1">#  `list2` references a *separate* list, whose value is [1, 2, 3]</span>
+<p>一般来讲，为变量 <code class="docutils literal notranslate"><span class="pre">b</span></code> 赋值变量 <code class="docutils literal notranslate"><span class="pre">a</span></code> 会导致它们引用系统内存中<em>相同</em>的对象，而为变量 <code class="docutils literal notranslate"><span class="pre">c</span></code> 赋值变量 <code class="docutils literal notranslate"><span class="pre">a</span></code> 或 <code class="docutils literal notranslate"><span class="pre">b</span></code> 会导致有第三个变量引用同样的对象。然后，该对象的任何变化（也就是<em>mutation</em>）会在所有引用它的变量中反映（<code class="docutils literal notranslate"><span class="pre">a</span></code>，<code class="docutils literal notranslate"><span class="pre">b</span></code>，和<code class="docutils literal notranslate"><span class="pre">c</span></code>）。</p>
+<p>当然，为两个变量赋值内容一样但<em>不同</em>的列表意味着一个列表的变化不会影响另外那个：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1">#  `list1` 引用 [1, 2, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1">#  `list2` 引用*另外*一个列表，其值为 [1, 2, 3]</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># append 4 to the end of [1, 2, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># 在 [1, 2, 3] 结尾附加4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
 <span class="go">[1, 2, 3, 4]</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>     <span class="c1"># `list2` still references its own list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>     <span class="c1"># `list2` 依然引用它自己的列表</span>
 <span class="go">[1, 2, 3]</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Does slicing a list produce a reference to that list?</strong></p>
-<p>Suppose <code class="docutils literal notranslate"><span class="pre">x</span></code> is assigned a list, and that <code class="docutils literal notranslate"><span class="pre">y</span></code> is assigned a “slice” of <code class="docutils literal notranslate"><span class="pre">x</span></code>. Do <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> reference the same list? That is, if you update part of the subsequence common to <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, does that change show up in both of them? Write some simple code to investigate this.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：切片列表是否会创建一个列表的引用？</strong></p>
+<p>设变量 <code class="docutils literal notranslate"><span class="pre">x</span></code>，赋值为一个列表，和变量 <code class="docutils literal notranslate"><span class="pre">y</span></code>，赋值为 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的一个“切片”。<code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 是否引用同样的列表？也就是说，当你更新 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的子序列时，变化是否会在两个变量中都显示？请编写一些简单的代码来查明此问题。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Understanding References</strong></p>
-<p>Based on our discussion of mutable and immutable objects, predict what the value of <code class="docutils literal notranslate"><span class="pre">y</span></code> will be in the following circumstance:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：理解引用</strong></p>
+<p>根据我们对可变和不可变对象的讨论，预测下列情况中 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的最终值：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
 
-<span class="go"># shorthand for: `x = x * 3`</span>
+<span class="go"># 和 `x = x * 3` 等值</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">9</span>
@@ -374,26 +374,26 @@
 </div>
 </div>
 </div>
-<div class="section" id="Reading-Comprehension-Exercise-Solutions:">
-<h2>Reading Comprehension Exercise Solutions:<a class="headerlink" href="#Reading-Comprehension-Exercise-Solutions:" title="Permalink to this headline">¶</a></h2>
-<p><strong>Does slicing a list produce a reference to that list?: Solution</strong></p>
-<p>Based on the following behavior, we can conclude that slicing a list does <strong>not</strong> produce a reference to the original list. Rather, slicing a list produces a copy of the appropriate subsequence of the list:</p>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>切片列表是否会创建一个列表的引用？：解</strong></p>
+<p>根据以下的行为，我们可以得出切片列表<em>并不</em>创建一个列表的新引用。反而，切片列表会创建对应列表子序列的新列表：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>      <span class="c1"># does `y` reference the same list as `x`?</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>      <span class="c1"># `y` 是否和 `x` 引用同一个列表？</span>
 <span class="go">[0, 1]</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># update one of the entries of the list that `x` references</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># 更新 `x` 引用的列表中的某个成员</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">[-1, 1, 2, 3]</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>      <span class="c1"># the list that `y` references was unaffected by the update</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>      <span class="c1"># `y` 引用的列表并没有反映这个更新</span>
 <span class="go">[0, 1]</span>
 </pre></div>
 </div>
-<p><strong>Understanding References: Solutions</strong></p>
-<p>Integers are immutable, thus <code class="docutils literal notranslate"><span class="pre">x</span></code> must reference an entirely new object (<code class="docutils literal notranslate"><span class="pre">9</span></code>), and <code class="docutils literal notranslate"><span class="pre">y</span></code> still references <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+<p><strong>理解引用：解</strong></p>
+<p>整数不可变，因此 <code class="docutils literal notranslate"><span class="pre">x</span></code> 肯定是引用一个全新的对象（<code class="docutils literal notranslate"><span class="pre">9</span></code>），而 <code class="docutils literal notranslate"><span class="pre">y</span></code> 还在引用 <code class="docutils literal notranslate"><span class="pre">3</span></code>。</p>
 </div>
 </div>
 
@@ -405,10 +405,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Introduction.html" class="btn btn-neutral float-right" title="Introducing Control Flow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Introduction.html" class="btn btn-neutral float-right" title="控制流简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="SequenceTypes.html" class="btn btn-neutral float-left" title="Sequence Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="SequenceTypes.html" class="btn btn-neutral float-left" title="序列类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

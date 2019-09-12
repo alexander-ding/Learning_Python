@@ -1,8 +1,8 @@
-Module 2: Problems
-==================
-This section presents the reader with problems to exercise their understanding of the materials that were presented in the Essentials of Python module. They are meant to be worked through after having read through the module in its entirety. Accompanying each problem is a solution and explanation, which include links to the relevant sections of Python Like You Mean It. The solutions are also designed to emphasize good coding practices.
+模组2：题目
+===========
+本节提供了用来锻炼和检查读者对Python基础模组阅读材料理解的练习题。它们是给读完整个模组的读者练习的。每一题都有着对应的答案和解释，其包含有关PLYMI章节的链接。这些答案同时也旨在强调好的编程习惯。
 
-These problems were written by former students of mine and PLYMI readers. Have you written a piece of code that would make for a good exercise for a Python user? Consider submitting a problem and solution to be included here!
+这些题目是由我意一位前学生（译者注：也就是我啦！快来夸我）和PLYMI读者编写的。你有没有写过一段可以作为好的Python练习题的代码呢？如果有，请考虑向我们提交一份问题和答案来在此包括！
 
 
 .. toctree::

@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Introduction to Dictionaries, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Structures (Part II): Dictionaries &mdash; Python Like You Mean It</title>
+  <title>数据结构（第二部分）：词典 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Structures (Part III): Sets &amp; the Collections Module" href="DataStructures_III_Sets_and_More.html" />
-    <link rel="prev" title="Data Structures (Part I): Introduction" href="DataStructures.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="数据结构（第三部分）：集和集合模组" href="DataStructures_III_Sets_and_More.html" />
+    <link rel="prev" title="数据结构（第一部分）：简介" href="DataStructures.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,46 +95,46 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Structures (Part II): Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Dictionary-Basics">Dictionary Basics</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Constructing-a-dictionary">Constructing a dictionary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Retrieving-a-value,-given-a-key">Retrieving a value, given a key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Adding-more-key-value-mappings">Adding more key-value mappings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">数据结构（第二部分）：词典</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#词典基础">词典基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#创建词典">创建词典</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#返回键对应的值">返回键对应的值</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#添加额外的键值对">添加额外的键值对</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#What-Can-a-Dictionary-Store?">What Can a Dictionary Store?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Numerical-Precision-&amp;-Dictionary-Keys">Numerical Precision &amp; Dictionary Keys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Inspecting-a-Dictionary">Inspecting a Dictionary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Time-Complexities-of-the-Dictionary’s-Functions">Time Complexities of the Dictionary’s Functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Are-Dictionaries-Ordered?-A-Word-of-Warning">Are Dictionaries Ordered? A Word of Warning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#词典可以储存什么？">词典可以储存什么？</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#数字精度和词典键">数字精度和词典键</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#检查词典">检查词典</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#词典函数的时间复杂性">词典函数的时间复杂性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#词典是否有序？一句警告">词典是否有序？一句警告</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -179,9 +180,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Data Structures (Part II): Dictionaries</li>
+      <li>数据结构（第二部分）：词典</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -224,74 +225,74 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Data-Structures-(Part-II):-Dictionaries">
-<h1>Data Structures (Part II): Dictionaries<a class="headerlink" href="#Data-Structures-(Part-II):-Dictionaries" title="Permalink to this headline">¶</a></h1>
-<p>Python’s dictionary allows you to store key-value pairs, and then pass the dictionary a key to quickly retrieve its corresponding value. Specifically, you construct the dictionary by specifying one-way mappings from key-objects to value-objects. <strong>Each key must map to exactly one value</strong>, meaning that a key must be unique.</p>
-<p>Let’s create the following mapping of grocery-to-price:</p>
+<div class="section" id="数据结构（第二部分）：词典">
+<h1>数据结构（第二部分）：词典<a class="headerlink" href="#数据结构（第二部分）：词典" title="永久链接至标题">¶</a></h1>
+<p>Python的词典（dictionary）允许你储存键值对（key-value pair），然后通过提供键来快速地获取其对应的值。具体来讲，你通过描述从键到值的单向对应关系来创建词典。<strong>每个键应该只对应一个值</strong>，也就是说每个键都应该是唯一的。</p>
+<p>让我们来创建以下从食物到价格的对应关系：</p>
 <ul class="simple">
-<li>“cheese” <span class="math notranslate nohighlight">\(\rightarrow\)</span> 2.53,</li>
-<li>“milk” <span class="math notranslate nohighlight">\(\rightarrow\)</span> 3.40,</li>
-<li>“frozen pizza” <span class="math notranslate nohighlight">\(\rightarrow\)</span> 8.01</li>
+<li><p>“cheese” <span class="math notranslate nohighlight">\(\rightarrow\)</span> 2.53，</p></li>
+<li><p>“milk” <span class="math notranslate nohighlight">\(\rightarrow\)</span> 3.40，</p></li>
+<li><p>“frozen pizza” <span class="math notranslate nohighlight">\(\rightarrow\)</span> 8.01</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use a dictionary to map groceries to prices: item-name -&gt; price</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用一个词典来将食物来对应价格：名字 -&gt; 价格</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">items_to_prices</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cheese&quot;</span><span class="p">:</span> <span class="mf">2.53</span><span class="p">,</span> <span class="s2">&quot;milk&quot;</span><span class="p">:</span> <span class="mf">3.40</span><span class="p">,</span> <span class="s2">&quot;frozen pizza&quot;</span><span class="p">:</span> <span class="mf">8.01</span><span class="p">}</span>
 
-<span class="c1"># looking up the price of &quot;frozen pizza&quot;</span>
+<span class="c1"># 查看 &quot;frozen pizza&quot; 的价格</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">items_to_prices</span><span class="p">[</span><span class="s2">&quot;frozen pizza&quot;</span><span class="p">]</span>
 <span class="mf">8.01</span>
 </pre></div>
 </div>
-<p>Python’s dictionary is a shining star among its data structures; it is compact, fast, versatile, and extremely useful. It can be used to create a wide variety of mappings.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># keep track of whether or not a 3D coordinate fell into some region in space</span>
-<span class="c1"># map (x, y, z) coordinates to &quot;is in a region&quot;: (x, y, z) -&gt; True/False</span>
+<p>Python的词典是其数据结构中一颗闪耀的星；它紧凑，高效，通用，并非常有用。你可以用它来创建多种多样的对应关系。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 记录某3D坐标是否处于空间中某区域之中</span>
+<span class="c1"># 将 (x, y, z) 坐标对应到“是否在区域中”：(x, y, z) -&gt; True/False</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">point_to_region</span> <span class="o">=</span> <span class="p">{(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span><span class="bp">False</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">):</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mf">4.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">):</span><span class="bp">False</span><span class="p">}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">point_to_region</span><span class="p">[(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)]</span>
 <span class="bp">True</span>
 
-<span class="c1"># map student-name to exam scores: name -&gt; scores</span>
+<span class="c1"># 将学生名字对应到考试成绩中：名字 -&gt; 成绩</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">name_to_scores</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Ryan S&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="s2">&quot;Nick S&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">90</span><span class="p">]}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">name_to_scores</span><span class="p">[</span><span class="s2">&quot;Ryan S&quot;</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>It is important to note outright that the time it takes for dictionary to take a key and retrieve a value <em>does not depend on the size of the dictionary.</em> That is the complexity for a dictionary look-up is <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>! It accomplishes this by making use of a technique known as <a class="reference external" href="https://en.wikipedia.org/wiki/Hash_function">hashing</a>.</p>
-<p>These are all instances of the built-in <code class="docutils literal notranslate"><span class="pre">dict</span></code> type:</p>
+<p>我们应该立刻指出：在词典中查找某键对应的值的速度<em>并不会根据词典大小改变。</em>也就是说，词典查找的复杂度为 <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>！它通过一个知名的<a class="reference external" href="https://en.wikipedia.org/wiki/Hash_function">哈希算法</a>技巧来达到这一点。</p>
+<p>以下为所有内置 <code class="docutils literal notranslate"><span class="pre">dict</span></code> 类型的实例:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">items_to_prices</span><span class="p">)</span>
 <span class="go">dict</span>
 </pre></div>
 </div>
-<p>We will be discussing the essentials of the dictionary. It is highly recommended that you refer to the official Python documentation for a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict">complete rundown of all the functions available to the dictionary</a>.</p>
-<div class="section" id="Dictionary-Basics">
-<h2>Dictionary Basics<a class="headerlink" href="#Dictionary-Basics" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Constructing-a-dictionary">
-<h3>Constructing a dictionary<a class="headerlink" href="#Constructing-a-dictionary" title="Permalink to this headline">¶</a></h3>
-<p>A nice syntax for creating a dictionary is to specify key-value pairs inside “curly braces”: <code class="docutils literal notranslate"><span class="pre">{key1:value1,</span> <span class="pre">key2:value2,</span> <span class="pre">...}</span></code>. As an example, let’s construct a dictionary that maps types of foods to “fruit” or “vegetable”. We’ll start by mapping “apple” to “fruit”, and “carrot” to “vegetable”</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use `{key1:value1, key2:value2, ...} to create a dictionary that maps:</span>
+<p>我们会在下文讨论词典的基础。本文强烈建议你阅读Python官方说明文档来查看<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict">所有词典可用的函数</a>.</p>
+<div class="section" id="词典基础">
+<h2>词典基础<a class="headerlink" href="#词典基础" title="永久链接至标题">¶</a></h2>
+<div class="section" id="创建词典">
+<h3>创建词典<a class="headerlink" href="#创建词典" title="永久链接至标题">¶</a></h3>
+<p>你可以通过在“花括号”中输入键值对来创建词典：<code class="docutils literal notranslate"><span class="pre">{key1:value1,</span> <span class="pre">key2:value2,</span> <span class="pre">...}</span></code>。作为范例，让我们创建一个将食物名字对应到 “fruit” 或 “vegetable” 的词典吧。我们首先将 “apple” 对应到 “fruit”，“carrot” 对应到 “vegetable”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `{key1:value1, key2:value2, ...}` 来创建词典：</span>
 <span class="c1">#  &quot;apple&quot; -&gt; &quot;fruit&quot;</span>
 <span class="c1"># &quot;carrot&quot; -&gt; &quot;vegetable</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fruit_or_veggie</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span><span class="s2">&quot;fruit&quot;</span><span class="p">,</span> <span class="s2">&quot;carrot&quot;</span><span class="p">:</span><span class="s2">&quot;vegetable&quot;</span><span class="p">}</span>
 
-<span class="c1"># create an empty dictionary</span>
+<span class="c1"># 创建空词典</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{}</span>
 <span class="p">{}</span>
 </pre></div>
 </div>
-<p>You can also use <code class="docutils literal notranslate"><span class="pre">dict</span></code> as a constructor to create the dictionary. It can be fed an iterable of key-value pairs, each of which is packed in a sequence, such as a tuple.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use `dict` to create a dictionary that maps:</span>
+<p>你也可以使用 <code class="docutils literal notranslate"><span class="pre">dict</span></code> 来作为构造器来创建词典。你可以向其输入存有键值对（键值对由如元组的序列表达）的可迭代物。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `dict` 来创建词典：</span>
 <span class="c1">#  &quot;apple&quot; -&gt; &quot;fruit&quot;</span>
 <span class="c1"># &quot;carrot&quot; -&gt; &quot;vegetable</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fruit_or_veggie</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;fruit&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;carrot&quot;</span><span class="p">,</span> <span class="s2">&quot;vegetable&quot;</span><span class="p">)])</span>
 
-<span class="c1"># use `dict` to create an empty dictionary:</span>
+<span class="c1"># 使用 `dict` 来创建空词典</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="p">{}</span>
 </pre></div>
 </div>
-<p>Lastly, Python also supports a dictionary-comprehension syntax, which mirrors the generator/list comprehension syntax covered earlier in this module:</p>
+<p>最后，Python也支持词典理解语法，其与本模组之前讨论的生成器/列表理解语法类似：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">key</span><span class="p">:</span><span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">iterable</span> <span class="n">of</span> <span class="n">key</span><span class="o">-</span><span class="n">value</span> <span class="n">pairs</span><span class="o">&gt;</span> <span class="p">[</span><span class="k">if</span> <span class="nb">bool</span><span class="p">(</span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">)]}</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the &#39;dictionary comprehension&#39; syntax to create a dictionary that maps:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用“词典理解”语法来创建词典</span>
 <span class="c1">#  &quot;apple&quot; -&gt; &quot;fruit&quot;</span>
 <span class="c1"># &quot;carrot&quot; -&gt; &quot;vegetable</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;fruit&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;carrot&quot;</span><span class="p">,</span> <span class="s2">&quot;vegetable&quot;</span><span class="p">)]}</span>
@@ -299,16 +300,16 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="Retrieving-a-value,-given-a-key">
-<h3>Retrieving a value, given a key<a class="headerlink" href="#Retrieving-a-value,-given-a-key" title="Permalink to this headline">¶</a></h3>
-<p>Now we can use this dictionary to “look up” if an item is a fruit or a veggie. Dictionaries support the same square-bracket “get-item” syntax as a list/tuple, but here a valid key is used as the index:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the value associated with the key &quot;apple&quot;</span>
+<div class="section" id="返回键对应的值">
+<h3>返回键对应的值<a class="headerlink" href="#返回键对应的值" title="永久链接至标题">¶</a></h3>
+<p>现在我们可以使用词典来“查找”某项目是水果还是蔬菜。词典支持和列表/元组一样的方括号“获取项目”语法，但与其使用索引我们将使用一个合法的键：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取键 &quot;apple&quot; 对应的值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fruit_or_veggie</span><span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">]</span>
 <span class="s2">&quot;fruit&quot;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">KeyError</span></code> will be raised if you try to look-up a key that doesn’t exist:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;grape&quot; hasn&#39;t been specified as a key</span>
+<p>尝试查找不存在的键会导致 <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;grape&quot; 并没有作为键被定义</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fruit_or_veggie</span><span class="p">[</span><span class="s2">&quot;grape&quot;</span><span class="p">]</span>
 <span class="o">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span>                                  <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
@@ -319,18 +320,18 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="Adding-more-key-value-mappings">
-<h3>Adding more key-value mappings<a class="headerlink" href="#Adding-more-key-value-mappings" title="Permalink to this headline">¶</a></h3>
-<p>Once created, a dictionary can have a new key-value pair be “set” using <code class="docutils literal notranslate"><span class="pre">my_dict[new_key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the mapping &quot;banana&quot; -&gt; &quot;fruit&quot;</span>
+<div class="section" id="添加额外的键值对">
+<h3>添加额外的键值对<a class="headerlink" href="#添加额外的键值对" title="永久链接至标题">¶</a></h3>
+<p>在词典创建后，你可以通过 <code class="docutils literal notranslate"><span class="pre">my_dict[new_key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code> 在其中设定额外的的键值对：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 设定对应 &quot;banana&quot; -&gt; &quot;fruit&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fruit_or_veggie</span><span class="p">[</span><span class="s2">&quot;banana&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fruit&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fruit_or_veggie</span>
 <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="s1">&#39;fruit&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="s1">&#39;fruit&#39;</span><span class="p">,</span> <span class="s1">&#39;carrot&#39;</span><span class="p">:</span> <span class="s1">&#39;vegetable&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>If the key already exists, the mapping for that key will simply be updated.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">update</span></code> function can be used to add multiple key-value pairs at once. This function can be passed another dictionary or an iterable of key-value sequences</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># adding multiple key-value pairs to the dictionary</span>
+<p>如果键已经存在的话，那该键对应的值将被更新。</p>
+<p>你可以使用 <code class="docutils literal notranslate"><span class="pre">update</span></code> 函数来一次性添加多个键值对。该函数接受另外一个词典或成员为键值对序列的可迭代物</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 向词典添加多个键值对</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fruit_or_veggie</span><span class="o">.</span><span class="n">update</span><span class="p">([(</span><span class="s2">&quot;grape&quot;</span><span class="p">,</span> <span class="s2">&quot;fruit&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;onion&quot;</span><span class="p">,</span> <span class="s2">&quot;vegetable&quot;</span><span class="p">)])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">fruit_or_veggie</span>
 <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="s1">&#39;fruit&#39;</span><span class="p">,</span>
@@ -341,16 +342,16 @@
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Dictionary Basics</strong></p>
-<p>Given the tuple of student names <code class="docutils literal notranslate"><span class="pre">(&quot;Ashley&quot;,</span> <span class="pre">&quot;David&quot;,</span> <span class="pre">&quot;Edward&quot;,</span> <span class="pre">&quot;Zoe&quot;)</span></code>, and their corresponding exam grades <code class="docutils literal notranslate"><span class="pre">(0.92,</span> <span class="pre">0.72,</span> <span class="pre">0.88,</span> <span class="pre">0.77)</span></code>, create a dictionary that maps: name <span class="math notranslate nohighlight">\(\rightarrow\)</span> grade. Then, update Zoe’s grade to <code class="docutils literal notranslate"><span class="pre">.79</span></code>. Lastly, add a new student, Ryan, whose grade is 0.34.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：词典基础</strong></p>
+<p>设含有学生名的元组 <code class="docutils literal notranslate"><span class="pre">(&quot;Ashley&quot;,</span> <span class="pre">&quot;David&quot;,</span> <span class="pre">&quot;Edward&quot;,</span> <span class="pre">&quot;Zoe&quot;)</span></code> 以及他们对应的考试成绩 <code class="docutils literal notranslate"><span class="pre">(0.92,</span> <span class="pre">0.72,</span> <span class="pre">0.88,</span> <span class="pre">0.77)</span></code>，创建一个词典来对应：名字 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 成绩。然后，将Zoe的成绩更新为 <code class="docutils literal notranslate"><span class="pre">.79</span></code>。最后添加一个新学生Ryan，其成绩为0.34。</p>
+<p>译者注：原作者名为Ryan，是位自黑达人。</p>
 </div>
 </div>
 </div>
-<div class="section" id="What-Can-a-Dictionary-Store?">
-<h2>What Can a Dictionary Store?<a class="headerlink" href="#What-Can-a-Dictionary-Store?" title="Permalink to this headline">¶</a></h2>
-<p>Although the preceding example only involves a mappings from strings to strings, <em>the keys and values of a dictionary can be heterogeneous in type</em>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrates the wide variety of object types that can be used as</span>
-<span class="c1"># keys and values in a dictionary</span>
+<div class="section" id="词典可以储存什么？">
+<h2>词典可以储存什么？<a class="headerlink" href="#词典可以储存什么？" title="永久链接至标题">¶</a></h2>
+<p>虽然前文的例子中仅仅将字符串对应字符串，但是<em>词典的键和值的类型可以相异</em>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示词典可以使用的多种多样的键值类型</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span><span class="k">print</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">:</span><span class="s2">&quot;cow&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">:[]}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="mi">10</span>
@@ -368,27 +369,27 @@
 <span class="p">[]</span>
 </pre></div>
 </div>
-<p>To be specific, a dictionary’s contents are dictated by the following rules:</p>
+<p>具体来讲，词典应遵循以下规则：</p>
 <ul class="simple">
-<li>A dictionary <em>key</em> must be an <em>immutable</em> object (more precisely, it must be <a class="reference external" href="https://docs.python.org/3/glossary.html#term-hashable">hashable</a>; don’t worry about this detail).</li>
-<li>A dictionary <em>value</em> can be any object (even the dictionary itself! Try this, it’s cool!)</li>
+<li><p>词典的<em>键</em>必须是<em>不可变</em>的对象（更加精确地讲，它必须是<a class="reference external" href="https://docs.python.org/3/glossary.html#term-hashable">可哈希</a>（hashable）的；不要太在意这个细节）。</p></li>
+<li><p>词典的<em>值</em>可以是任何对象（甚至可以是同一个词典！试试看，这挺酷的！）</p></li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Recall</strong>:</p>
-<p>A mutable object can be changed after it is created. An immutable object cannot be changed.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>回忆</strong>：</p>
+<p>可变对象在被创建后是可以被修改的。不可变对象则不能被修改。</p>
 </div>
-<p>Thus valid keys can be the following types:</p>
+<p>所以合法的键可以是以下类型：</p>
 <ul class="simple">
-<li>numbers (integers, floating-point numbers, complex numbers)</li>
-<li>strings</li>
-<li>tuples (if the tuple contains anything, it must be other immutable objects)</li>
-<li>boolean values</li>
-<li><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#Set-operations">frozenset</a> objects</li>
+<li><p>数字（整数，浮点数，复数）</p></li>
+<li><p>字符串</p></li>
+<li><p>元组（但元组中的成员也必须是不可变对象）</p></li>
+<li><p>布尔值</p></li>
+<li><p><a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#集操作">冻集</a>（frozenset）对象</p></li>
 </ul>
-<p>Trying to use a mutable object as a key is problematic since that object could be changed <em>after</em> it was already used as a key. Thus the dictionary would have to “detect” this change and recreate its “lookup scheme” for the changed key. Values, on the other hand, can be mutable because the details of a given value-object have no impact on how the dictionary retrieves it.</p>
-<p>In accordance with this discussion will get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> if you try to use a list as a key, since lists are mutable:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># trying to use a list as a key</span>
-<span class="c1"># this raises an error because lists are mutable</span>
+<p>使用可变对象作为键的问题在于该对象在作为键使用<em>之后</em>可以被改变。因此，词典会需要通过某种方法“检测”到这个变化并为变化后的键重新创建它的“查找方式”。相比之下，值可以是可变对象，因为值对象的细节并不影响词典如何查找该值。</p>
+<p>如上所述，如果你试图使用列表来作为键，你会收到一个 <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>，因为列表是可变的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 试图将列表作为键使用</span>
+<span class="c1"># 因为列表是可变的，这会报错</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bad_dict</span> <span class="o">=</span> <span class="p">{[]:</span><span class="mi">1</span><span class="p">}</span>
 <span class="o">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
@@ -398,22 +399,21 @@
 <span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
 </pre></div>
 </div>
-<div class="section" id="Numerical-Precision-&amp;-Dictionary-Keys">
-<h3>Numerical Precision &amp; Dictionary Keys<a class="headerlink" href="#Numerical-Precision-&-Dictionary-Keys" title="Permalink to this headline">¶</a></h3>
-<p>Care must be taken when using floating-point numbers as a key in a dictionary, <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision">due to its limited numerical precision</a>. For the same reason that you ought not rely on two floats being equal, you should not assume that two floats will produce the same hash, when stored as a key:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the folly of using a floating-point number as a key</span>
-<span class="c1"># in a dictionary</span>
+<div class="section" id="数字精度和词典键">
+<h3>数字精度和词典键<a class="headerlink" href="#数字精度和词典键" title="永久链接至标题">¶</a></h3>
+<p>在使用浮点数作为词典键时需小心，因为浮点数的<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#理解数字精度">精度有限</a>。和你不应该检查两个浮点数是否完全相同的原因一样，你不能保证两个浮点数作为键时会有相同的哈希值：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将浮点数作为词典键使用导致的尴尬情况</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;apple&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mf">0.0</span><span class="p">]</span>
 <span class="ne">KeyError</span><span class="p">:</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<p>An acceptable way of accommodating the use of a float as a key, depending on the use case, is to first round the floating point number to normalize it to a lower precision:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># rounding a float before using it as a key</span>
+<p>根据使用情况，一种可以接受的使用浮点数作为值的方法是先将浮点数四舍五入到一个更低的精度：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 现将浮点数四舍五入再将其用为键</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="c1"># round the float to its 2nd decimal place</span>
+<span class="c1"># 将浮点数四舍五入到小数点后第二位</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">float_key</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="n">float_key</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;apple&quot;</span>
 <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mf">0.0</span><span class="p">]</span>
@@ -421,101 +421,101 @@
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>A dictionary key must be an immutable object. A dictionary value can be any object.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>词典的键必须是不可变对象。词典的值可以是任何对象。</p>
 </div>
 </div>
-<div class="section" id="Inspecting-a-Dictionary">
-<h3>Inspecting a Dictionary<a class="headerlink" href="#Inspecting-a-Dictionary" title="Permalink to this headline">¶</a></h3>
-<p>The dictionary provides tooling for inspecting and iterating over its keys and values. We will use the following dictionary for our examples:</p>
+<div class="section" id="检查词典">
+<h3>检查词典<a class="headerlink" href="#检查词典" title="永久链接至标题">¶</a></h3>
+<p>词典提供了一些检查和迭代其键和值的工具。我们在范例中将会使用以下词典：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">example_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key1&quot;</span><span class="p">:</span><span class="s2">&quot;value1&quot;</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">:</span><span class="s2">&quot;value2&quot;</span><span class="p">,</span> <span class="s2">&quot;key3&quot;</span><span class="p">:</span><span class="s2">&quot;value3&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>Inspecting a dictionary’s keys</strong></p>
-<p>The dictionary itself can be used to iterate over its keys:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># iterating over a dictionary produces its keys</span>
+<p><strong>检查词典的键</strong></p>
+<p>你可以直接使用词典本身来迭代它的键：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 迭代词典会迭代它的键</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="p">]</span>
 <span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;key3&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>You can also use the dictionary to test for membership among its keys:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking if an object is among a dictionary&#39;s keys</span>
+<p>你也可以使用词典本身来检测某对象是否为它的键：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查某对象是否是词典的键</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;key3&quot;</span> <span class="ow">in</span> <span class="n">example_dict</span>
 <span class="bp">True</span>
 
-<span class="c1"># you *cannot* use this to check for membership among its valus</span>
+<span class="c1"># 你*不能*用这个方法检查词典的值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;value3&quot;</span> <span class="ow">in</span> <span class="n">example_dict</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">len</span></code> counts the number of keys in the dictionary:</p>
+<p><code class="docutils literal notranslate"><span class="pre">len</span></code> 会返回词典有多少个键：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">example_dict</span><span class="p">)</span>
 <span class="go">3</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">example_dict.keys()</span></code> also returns an iterable over the dictionary’s keys, and thus can be used to exactly the same effect as the dictionary itself in these preceding examples.</p>
-<p><strong>Inspecting a dictionary’s values</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">example_dict.values()</span></code> can be iterated over to produce that dictionary’s values:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># iterating over a dictionary&#39;s values</span>
+<p><code class="docutils literal notranslate"><span class="pre">example_dict.keys()</span></code> 也会返回一个词典键的可迭代物。因此它可以达到和之前范例直接使用词典一样的效果。</p>
+<p><strong>检查词典的值</strong></p>
+<p>迭代 <code class="docutils literal notranslate"><span class="pre">example_dict.values()</span></code> 会提供词典的值：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 迭代词典的值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 <span class="p">[</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="s1">&#39;value3&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>You can also use this to test for membership among the dictionary’s values:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking if an object is among a dictionary&#39;s values</span>
+<p>你也可以使用这个函数来检查某对象是否为词典的值：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查某对象是否为词典的值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;value1&quot;</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p><strong>Inspecting a dictionary’s key-value pairs</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">example_dict.items()</span></code> can be iterated over to produce that dictionary’s key-value pairs (which are packed into tuples):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># iterating over a dictionary produces its keys</span>
+<p><strong>检查词典的键值对</strong></p>
+<p>迭代 <code class="docutils literal notranslate"><span class="pre">example_dict.items()</span></code> 会返回词典的键值对（它们被打包在元组中）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 迭代词典的items会返回它的键值对</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
 <span class="p">[(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;value1&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;value3&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>You can also use this to test for membership among the dictionary’s key-value pairs:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking if a key-value pair exists in a dictionary</span>
+<p>你也可以用这个函数来检测某对象是否为词典的键值对：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查某对象是否为词典的键值对</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;value1&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Inverting a Dictionary</strong></p>
-<p>Write a function that inverts a dictionary. For example, if you were given <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">{'k1':</span> <span class="pre">'v1',</span> <span class="pre">'k2':</span> <span class="pre">'v2',</span> <span class="pre">'k3':</span> <span class="pre">'v3'}</span></code>, you would produce the dictionary <code class="docutils literal notranslate"><span class="pre">inverted_x</span> <span class="pre">=</span> <span class="pre">{'v1':</span> <span class="pre">'k1',</span> <span class="pre">'v2':</span> <span class="pre">'k2',</span> <span class="pre">'v3':</span> <span class="pre">'k3'}</span></code>.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：反向词典</strong></p>
+<p>编写一个函数来将词典反向。比如说，如果函数收到 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">{'k1':</span> <span class="pre">'v1',</span> <span class="pre">'k2':</span> <span class="pre">'v2',</span> <span class="pre">'k3':</span> <span class="pre">'v3'}</span></code>，那你应返回词典 <code class="docutils literal notranslate"><span class="pre">inverted_x</span> <span class="pre">=</span> <span class="pre">{'v1':</span> <span class="pre">'k1',</span> <span class="pre">'v2':</span> <span class="pre">'k2',</span> <span class="pre">'v3':</span> <span class="pre">'k3'}</span></code>。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Inspecting a Dictionary</strong></p>
-<p>Assume we are working with a dictionary whose values are all <em>unique</em> numbers. Write a function that returns the <em>key</em> that maps to the <em>largest</em> value in the dictionary.</p>
-<p>Next, generalize your solution for a dictionary whose values are not necessarily unique. Return a tuple of all of the keys that map to that max value.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：检查词典</strong></p>
+<p>假设我们收到一个值为<em>互不相同</em>的数字的词典，编写一个返回对应词典中<em>最大</em>值的<em>键</em>的函数。</p>
+<p>然后，修改你的函数来处理值可能重复值的词典。返回包含所有对应最大值的键的元组。</p>
 </div>
 </div>
-<div class="section" id="Time-Complexities-of-the-Dictionary’s-Functions">
-<h3>Time Complexities of the Dictionary’s Functions<a class="headerlink" href="#Time-Complexities-of-the-Dictionary’s-Functions" title="Permalink to this headline">¶</a></h3>
-<p>In addition to being flexible and versatile, the dictionary’s functions manage to be quite efficient as well. The following is a summary of the time complexities associated with various common operations using a dictionary (according to its implementation in CPython) - note all the <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> operations!</p>
-<p>Let <code class="docutils literal notranslate"><span class="pre">example_dict</span></code> represent a dictionary with <span class="math notranslate nohighlight">\(n\)</span> key-value pair mappings.</p>
-<p>The following are <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> operations:</p>
+<div class="section" id="词典函数的时间复杂性">
+<h3>词典函数的时间复杂性<a class="headerlink" href="#词典函数的时间复杂性" title="永久链接至标题">¶</a></h3>
+<p>除了灵活和通用之外，词典的函数也相对高效。以下为词典常见操作（在CPython实现中）的时间复杂性——请注意 <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> 操作的数量！</p>
+<p>设 <code class="docutils literal notranslate"><span class="pre">example_dict</span></code> 为有 <span class="math notranslate nohighlight">\(n\)</span> 个键值对的词典。</p>
+<p>以下为 <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> 的操作：</p>
 <ul class="simple">
-<li>Return the number of keys in the dictionary: <code class="docutils literal notranslate"><span class="pre">len(example_dict)</span></code></li>
-<li>Check if the key is in the dictionary, and return the value if it is: <code class="docutils literal notranslate"><span class="pre">example_dict[key]</span></code></li>
-<li>Set a key-value mapping: <code class="docutils literal notranslate"><span class="pre">example_dict[key]</span> <span class="pre">=</span> <span class="pre">value</span></code></li>
-<li>Check if an object is among the dictionary’s keys: <code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">in</span> <span class="pre">example_dict</span></code></li>
-<li>Check if a pair of objects are among the dictionary’s key-value pairs: <code class="docutils literal notranslate"><span class="pre">(obj1,</span> <span class="pre">obj2)</span> <span class="pre">in</span> <span class="pre">example_dict.items()</span></code></li>
+<li><p>返回词典键的数量：<code class="docutils literal notranslate"><span class="pre">len(example_dict)</span></code></p></li>
+<li><p>检查某对象是否为词典的键，如果是的话返回它对应的值：<code class="docutils literal notranslate"><span class="pre">example_dict[key]</span></code></p></li>
+<li><p>设定一个键值对：<code class="docutils literal notranslate"><span class="pre">example_dict[key]</span> <span class="pre">=</span> <span class="pre">value</span></code></p></li>
+<li><p>检查某对象是否为词典的键：<code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">in</span> <span class="pre">example_dict</span></code></p></li>
+<li><p>检查某对对象是否为词典的键值对：<code class="docutils literal notranslate"><span class="pre">(obj1,</span> <span class="pre">obj2)</span> <span class="pre">in</span> <span class="pre">example_dict.items()</span></code></p></li>
 </ul>
-<p>The following are <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> operations:</p>
+<p>以下为 <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> 的操作：</p>
 <ul class="simple">
-<li>Check if an object is among the dictionary’s values: <code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">in</span> <span class="pre">example_dict.values()</span></code></li>
-<li>Iterate over the dictionary’s keys/values/key-value pairs</li>
+<li><p>检查某对象是否为词典的值：<code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">in</span> <span class="pre">example_dict.values()</span></code></p></li>
+<li><p>迭代词典所有的键/值/键值对</p></li>
 </ul>
 </div>
-<div class="section" id="Are-Dictionaries-Ordered?-A-Word-of-Warning">
-<h3>Are Dictionaries Ordered? A Word of Warning<a class="headerlink" href="#Are-Dictionaries-Ordered?-A-Word-of-Warning" title="Permalink to this headline">¶</a></h3>
-<p>Unlike Python’s sequences, the dictionary has no inherent ordering… that is, until Python 3.6 came out.</p>
-<p>Prior to Python 3.6, a dictionary had no ordering associated with it. If you iterated over a dictionary’s keys, values, or key-value pairs, you had no guarantee about the <em>order</em> in which these items would be produced. <code class="docutils literal notranslate"><span class="pre">[i</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">example_dict]</span></code> could produce a list of keys with different ordering each time the code was run; you were only guaranteed that the list would contain all of the dictionary’s keys:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in Python 3.5 and earlier, dictionaries were unordered</span>
+<div class="section" id="词典是否有序？一句警告">
+<h3>词典是否有序？一句警告<a class="headerlink" href="#词典是否有序？一句警告" title="永久链接至标题">¶</a></h3>
+<p>和Python的序列不同的是，词典没有任何内在的顺序…但是这是在Python 3.6前的历史了。</p>
+<p>在Python 3.6之前，词典并没有任何顺序。如果你迭代一个词典的键，值，或键值对，你不会得到任何<em>顺序</em>的保证。<code class="docutils literal notranslate"><span class="pre">[i</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">example_dict]</span></code> 可能在每次运行时返回顺序不同的键列表；你唯一得到的保证是列表会包含词典所有的键：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在Python 3.5和之前，词典是无序的</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key1&quot;</span><span class="p">:</span><span class="s2">&quot;value1&quot;</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">:</span><span class="s2">&quot;value2&quot;</span><span class="p">,</span> <span class="s2">&quot;key3&quot;</span><span class="p">:</span><span class="s2">&quot;value3&quot;</span><span class="p">}</span>
 
-<span class="c1"># this can produce lists with different orders</span>
+<span class="c1"># 这可能会返回排序不同的列表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="p">]</span>
 <span class="p">[</span><span class="s2">&quot;key1&quot;</span><span class="p">,</span> <span class="s2">&quot;key3&quot;</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">]</span>
 
@@ -528,55 +528,54 @@
 <span class="o">...</span>
 </pre></div>
 </div>
-<p>The dictionary was <a class="reference external" href="https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation">reimplemented in Python 3.6</a> so that it will consume roughly 25% less memory than before (which is a big deal!). The catch is that this new implementation entails that the dictionary’s various iterables (e.g. <code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.values()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict.items()</span></code>) will always yield their items according to the order in which they were added to the dictionary.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in Python 3.6 and beyond dictionaries are ordered according to the order in</span>
-<span class="c1"># which key-value pairs were added to the dictionary by the user</span>
+<p>词典在<a class="reference external" href="https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation">Python 3.6中重新实现</a>，使得它相比以前会少用大约25%的内存（这是一个很大的提升！）。随之而来的变化就是新的实现导致了词典的各种可迭代物（如 <code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code>，<code class="docutils literal notranslate"><span class="pre">dict.values()</span></code>，<code class="docutils literal notranslate"><span class="pre">dict.items()</span></code>）每次都会根据添加到词典中的顺序返回对象。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在Python 3.6和之后，词典根据键值对添加的顺序来排序</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key1&quot;</span><span class="p">:</span><span class="s2">&quot;value1&quot;</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">:</span><span class="s2">&quot;value2&quot;</span><span class="p">,</span> <span class="s2">&quot;key3&quot;</span><span class="p">:</span><span class="s2">&quot;value3&quot;</span><span class="p">}</span>
 
-<span class="c1"># this will always produce the same ordering of keys</span>
+<span class="c1"># 这永远都会返回一样顺序的键</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="p">]</span>
 <span class="p">[</span><span class="s2">&quot;key1&quot;</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">,</span> <span class="s2">&quot;key3&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>This is great, right? Wrong! If you write code in Python 3.6 that relies on the fact that dictionaries are ordered, your algorithm will almost certainly produce the wrong results if you run it using Python 3.5 or earlier! Worst of all, it very unlikely that this will raise any error in your code so the bug will persist silently - this is very tough to catch!</p>
-<p><strong>Unless you make explicit that your code is incompatible with versions of Python prior to Python 3.6, write your code as if the dictionary is unordered!</strong></p>
-<p>If you do want to use an ordered dictionary, make use of <code class="docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code>, which behaves like just like the standard dictionary but is guaranteed to maintain ordering regardless of what version of Python you are using.</p>
+<p>这很棒，对吧？不对！如果你在Python 3.6中编写基于词典成员顺序的代码，那么你的算法在Python 3.5和以前几乎一定会导致错误的结果！最差的一点是，这很可能在你的代码中根本不报错，所以这个bug会静默地持续下去——这很难抓到！</p>
+<p><strong>如果你没有明显标记你的代码和Python 3.6之前的版本不兼容，编写代码的时候假装词典并没有顺序！</strong></p>
+<p>如果你真的想要需要一个顺序的词典，使用 <code class="docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code>。它的行为和正常的词典一模一样，但它不管在什么Python版本都保证成员顺序。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ordered</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;value1&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;value3&#39;</span><span class="p">)])</span>
 
-<span class="c1"># this will always produce the same result, regardless of what</span>
-<span class="c1"># version of Python is being used</span>
+<span class="c1"># 这永远都会返回相同的结果，不论Python版本</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ordered</span><span class="p">]</span>
 <span class="p">[</span><span class="s2">&quot;key1&quot;</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">,</span> <span class="s2">&quot;key3&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>No matter what version of Python you are using, write your code as if the Python dictionary is unordered. If you do want to use an ordered dictionary, your code should make use of <code class="docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code>.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>不管你在用什么Python版本，在编写代码的时候假装Python词典是无序的。如果你真的想要一个有序的词典，你的代码应该使用 <code class="docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code>。</p>
 </div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">Dictionaries</a><ul>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">Dictionaries tutorial</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">词典</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">词典教程</a></p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://docs.python.org/3/glossary.html#term-hashable">Definition of ‘hashable’</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects">Dictionary view objects</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/glossary.html#term-hashable">“可哈希”的定义</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects">词典视阈对象</a>（dictionary view objects）</p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Dictionary Basics: Solutions</strong></p>
-<p>Given the tuple of student names <code class="docutils literal notranslate"><span class="pre">(Ashley,</span> <span class="pre">David,</span> <span class="pre">Edward,</span> <span class="pre">Zoe)</span></code>, and their corresponding exam grades <code class="docutils literal notranslate"><span class="pre">(0.92,</span> <span class="pre">0.72,</span> <span class="pre">0.88,</span> <span class="pre">0.77)</span></code>, create a dictionary that maps: name <span class="math notranslate nohighlight">\(\rightarrow\)</span> grade.</p>
-<p>Then, update Zoe’s grade to <code class="docutils literal notranslate"><span class="pre">.79</span></code>. Lastly, add a new student, Ryan, whose grade is 0.34.</p>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>词典基础：解</strong></p>
+<p>设包含学生名字的元组 <code class="docutils literal notranslate"><span class="pre">(Ashley,</span> <span class="pre">David,</span> <span class="pre">Edward,</span> <span class="pre">Zoe)</span></code> 以及对应的成绩 <code class="docutils literal notranslate"><span class="pre">(0.92,</span> <span class="pre">0.72,</span> <span class="pre">0.88,</span> <span class="pre">0.77)</span></code>，创建一个词典：name <span class="math notranslate nohighlight">\(\rightarrow\)</span> grade。</p>
+<p>然后，将Zoe的成绩更新为 <code class="docutils literal notranslate"><span class="pre">.79</span></code>。最后，添加一个新学生Ryan，其成绩为 0.34。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Ashley&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Edward&quot;</span><span class="p">,</span> <span class="s2">&quot;Zoe&quot;</span><span class="p">)</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.77</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here is a basic, but verbose solution. It is too long and its logic is complicated by the use of <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
+<p>这是一个简单但冗长的解法。它太长，且其逻辑使因为使用了 <code class="docutils literal notranslate"><span class="pre">index</span></code> 而没必要地复杂化了。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># basic solution for creating `grades`</span>
 <span class="n">grades</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
@@ -585,32 +584,32 @@
     <span class="n">grades</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 </pre></div>
 </div>
-<p>You should make use of the function <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html#zip">zip</a> to pair the names and scores together in an iterable, and create the dictionary using a comprehension expression.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># much better solution for creating `grades`</span>
+<p>你应该使用函数<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html#zip">zip</a>来将名字和成绩打包到一个可迭代物中，并利用理解表达式来创建词典。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 好很多的创建 `grades` 的方式</span>
 <span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="n">student</span><span class="p">:</span><span class="n">value</span> <span class="k">for</span> <span class="n">student</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">scores</span><span class="p">)}</span>
 
-<span class="c1"># updating Zoe&#39;s grade</span>
+<span class="c1"># 更新Zoe的成绩</span>
 <span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Zoe&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.79</span>
 
-<span class="c1"># adding Ryan&#39;s grade</span>
+<span class="c1"># 添加Ryan的成绩</span>
 <span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Ryan&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.34</span>
 </pre></div>
 </div>
-<p><strong>Inverting a Dictionary: Solution</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># simple solution: using a for-loop</span>
+<p><strong>反向词典：解</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 简单解：使用for循环</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;k1&#39;</span><span class="p">:</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="s1">&#39;k2&#39;</span><span class="p">:</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="s1">&#39;k3&#39;</span><span class="p">:</span> <span class="s1">&#39;v3&#39;</span><span class="p">}</span>
 <span class="n">inverted_x</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">inverted_x</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># better solution: using a dictionary-comprehension</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 更好的解：使用词典理解</span>
 <span class="n">inverted_x</span> <span class="o">=</span> <span class="p">{</span><span class="n">value</span><span class="p">:</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 </pre></div>
 </div>
-<p><strong>Inspecting a Dictionary: Solution</strong></p>
-<p>Assume we are working with a dictionary whose values are all <em>unique</em> numbers. Write a function that returns the key that maps to the <em>largest</em> value in the dictionary.</p>
-<p>The solution that you should be able to arrive at is:</p>
+<p><strong>检查词典：解</strong></p>
+<p>假设我们收到一个值为<em>互不相同</em>的数字的词典，编写一个返回对应词典中<em>最大</em>值的键的函数。</p>
+<p>你应该能够写出的解为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># solution</span>
 <span class="k">def</span> <span class="nf">max_key</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -623,10 +622,9 @@
 <span class="go">&#39;c&#39;</span>
 </pre></div>
 </div>
-<p>The downside of this is that it iterates over <code class="docutils literal notranslate"><span class="pre">x</span></code> twice: once via <code class="docutils literal notranslate"><span class="pre">max</span></code> and once via the for-loop. The optimal solution for this only involves a single iteration, however it requires advanced concepts that are beyond the scope of the material presented here. We include the ideal solution for posterity:</p>
-<p>You can provide the <code class="docutils literal notranslate"><span class="pre">max</span></code> function with “key” argument, which accepts the function that should be used to evaluate the “value” for each iteration, which is used to discern the max element. Here, we pass it the built-in dictionary-function <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict.get">get</a>, which takes in a dictionary’s key as an argument, and returns the corresponding value from the mapping. Thus <code class="docutils literal notranslate"><span class="pre">max</span></code> will iterate over each key of <code class="docutils literal notranslate"><span class="pre">x</span></code>, and discern the maximum value by
-comparing the value returned by each <code class="docutils literal notranslate"><span class="pre">x.get(key)</span></code> (which is effectively the same as <code class="docutils literal notranslate"><span class="pre">x[key]</span></code>).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># optimal solution (for the sake of completeness)</span>
+<p>这个函数的不利之处在于它迭代了 <code class="docutils literal notranslate"><span class="pre">x</span></code> 两次；一次由 <code class="docutils literal notranslate"><span class="pre">max</span></code>，一次由for循环。这个问题的最优解仅仅迭代一次，但它用到了在超出本节纲领的进阶概念。我们在此为未来的你提供最优解：</p>
+<p>你可以为 <code class="docutils literal notranslate"><span class="pre">max</span></code> 函数提供“key”参数。这个参数接受用来计算每轮迭代的“值”的函数，而这个值就是 <code class="docutils literal notranslate"><span class="pre">max</span></code> 函数用来找出最大成员的使用的值。在此，我们向其输入内置的词典函数<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict.get">get</a>。它接受词典的键为参数并返回对应的值。所以 <code class="docutils literal notranslate"><span class="pre">max</span></code> 会迭代 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的每一个值并通过对比每个 <code class="docutils literal notranslate"><span class="pre">x.get(key)</span></code>（这和 <code class="docutils literal notranslate"><span class="pre">x[key]</span></code> 功能基本一样）来寻找最大值。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 最优解（在此为完整性提供）</span>
 <span class="k">def</span> <span class="nf">max_key_optimal</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
 </pre></div>
@@ -635,8 +633,8 @@ comparing the value returned by each <code class="docutils literal notranslate">
 <span class="go">&#39;d&#39;</span>
 </pre></div>
 </div>
-<p>You can read more about this <code class="docutils literal notranslate"><span class="pre">key</span></code> parameter <a class="reference external" href="https://docs.python.org/3/howto/sorting.html#key-functions">here</a>.</p>
-<p>Next, generalize your solution for a dictionary whose values are not necessarily unique. Return a tuple of the keys that map to that max value.</p>
+<p>你可以在<a class="reference external" href="https://docs.python.org/3/howto/sorting.html#key-functions">这里</a>阅读 <code class="docutils literal notranslate"><span class="pre">key</span></code> 参数。</p>
+<p>接下来，让你的解可以处理词典有重复值的情况。返回成员为对应最大值的键的元组。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_maxes</span><span class="p">(</span><span class="n">dictionary</span><span class="p">):</span>
     <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dictionary</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
     <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">max_val</span><span class="p">)</span>
@@ -656,10 +654,10 @@ comparing the value returned by each <code class="docutils literal notranslate">
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="DataStructures_III_Sets_and_More.html" class="btn btn-neutral float-right" title="Data Structures (Part III): Sets &amp; the Collections Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="DataStructures_III_Sets_and_More.html" class="btn btn-neutral float-right" title="数据结构（第三部分）：集和集合模组" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="DataStructures.html" class="btn btn-neutral float-left" title="Data Structures (Part I): Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="DataStructures.html" class="btn btn-neutral float-left" title="数据结构（第一部分）：简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

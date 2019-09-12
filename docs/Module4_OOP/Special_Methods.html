@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Controlling behavior with special methods, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Special Methods &mdash; Python Like You Mean It</title>
+  <title>特殊方法 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Inheritance" href="Inheritance.html" />
-    <link rel="prev" title="Applications of Object Oriented Programming" href="Applications_of_OOP.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="继承" href="Inheritance.html" />
+    <link rel="prev" title="面向对象编程的应用" href="Applications_of_OOP.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,29 +95,29 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">Introduction to Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">Defining a New Class of Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">Instances of a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">A Brief Summary of Terms and Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">Applications of Object Oriented Programming</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Special Methods</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#String-Representations-of-Objects">String-Representations of Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Interfacing-with-Mathematical-Operators">Interfacing with Mathematical Operators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Creating-a-Container-Like-Class">Creating a Container-Like Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">面向对象编程简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">定义新对象类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">类实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">术语和概念的快速总结</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Methods.html">方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">面向对象编程的应用</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">特殊方法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#对象的字符串表达">对象的字符串表达</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#为数学操作符接口">为数学操作符接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#创建类容器类">创建类容器类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">继承</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -162,9 +163,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_4.html">Module 4: Object Oriented Programming</a> &raquo;</li>
+          <li><a href="../module_4.html">模组4：面向对象编程</a> &raquo;</li>
         
-      <li>Special Methods</li>
+      <li>特殊方法</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,19 +208,18 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Special-Methods">
-<h1>Special Methods<a class="headerlink" href="#Special-Methods" title="Permalink to this headline">¶</a></h1>
-<p>In this section, we will learn about a variety of instance methods that are reserved by Python, which affect an object’s high level behavior and its interactions with operators. These are known as special methods. <code class="docutils literal notranslate"><span class="pre">__init__</span></code> is an example of a special method; recall that it controls the process of creating instances of a class. Similarly, we will see that <code class="docutils literal notranslate"><span class="pre">__add__</span></code> controls the behavior of an object when it is operated on by the <code class="docutils literal notranslate"><span class="pre">+</span></code> symbol, for example. In general, the names of special
-methods take the form of <code class="docutils literal notranslate"><span class="pre">__&lt;name&gt;__</span></code>, where the two underscores preceed and succeed the name. Accordingly, special methods can also be referred to as “dunder” (double-underscore) methods. Learning to leverage special methods will enable us to design elegant and powerful classes of objects.</p>
-<p>These methods give us complete control over the various high-level interfaces that we use to interact with objects. Let’s make a simple class with nonsensical behavior to demonstrate our ability to shape how our class behaves:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstrating (mis)use of special methods</span>
+<div class="section" id="特殊方法">
+<h1>特殊方法<a class="headerlink" href="#特殊方法" title="永久链接至标题">¶</a></h1>
+<p>在本节中，我们将学习一系列各种Python保留的影响对象高层次行为和与操作符交互行为的实例方法。这些方法被称为特殊方法（special method）。<code class="docutils literal notranslate"><span class="pre">__init__</span></code> 是其中之一；请回忆，它控制在创建类实例的过程。相似的，比如说，我们将看到 <code class="docutils literal notranslate"><span class="pre">__add__</span></code> 如何控制对象在被 <code class="docutils literal notranslate"><span class="pre">+</span></code> 符号操作时的行为。一般而言，特殊方法的名字遵循格式 <code class="docutils literal notranslate"><span class="pre">__&lt;name&gt;__</span></code>；在名字前后各有两个下划线。相应的，我们可以将特殊方法读作“dunder”（double underscore）方法。学习如何使用这些特殊方法将允许我们设计优雅和强大的对象类。</p>
+<p>这些方法为我们提供了对各种我们用来和对象交互的高层次接口的完全控制。让我们设一个行为随心的简单类来演示我们控制类行为的能力：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示特殊方法的（错误）使用方法</span>
 <span class="k">class</span> <span class="nc">SillyClass</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Determines behavior of `self[key]` &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot; 设定 `self[key]` 的行为 &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="fm">__pow__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Determines behavior of `self ** other` &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot; 设定 `self ** other` 的行为 &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;Python Like You Mean It&quot;</span>
 </pre></div>
 </div>
@@ -232,51 +232,48 @@ methods take the form of <code class="docutils literal notranslate"><span class=
 <span class="go">&#39;Python Like You Mean It&#39;</span>
 </pre></div>
 </div>
-<p>This section is not meant to be a comprehensive treatment of special methods, which would require us to reach beyond our desired level of sophistication. The <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#special-method-names">official Python documentation</a> provides a rigorous but somewhat inaccessible treatment of special methods. <a class="reference external" href="http://www.diveintopython3.net/special-method-names.html">Dive into Python 3</a> has an excellent appendix on special methods. It is strongly recommended
-that readers consult this resource.</p>
-<div class="section" id="String-Representations-of-Objects">
-<h2>String-Representations of Objects<a class="headerlink" href="#String-Representations-of-Objects" title="Permalink to this headline">¶</a></h2>
-<p>The following methods determines how an object should be represented as a string in various contexts. For example, this text consistently utilizes the fact that passing an object to the Python console will prompt the console to print out a representation of that object as a string. That is,</p>
+<p>本节并不旨在为特殊方法的完整讨论，因为这会使得我们超出本文所期望的复杂度。<a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#special-method-names">官方Python说明文档</a>提供了一个严谨但有点难读的关于特殊方法的讨论。<a class="reference external" href="http://www.diveintopython3.net/special-method-names.html">Dive into Python 3</a>提供了一个很棒的关于特殊方法的附录。本文强烈建议读者咨询此资源。</p>
+<div class="section" id="对象的字符串表达">
+<h2>对象的字符串表达<a class="headerlink" href="#对象的字符串表达" title="永久链接至标题">¶</a></h2>
+<p>以下方法决定了对象在各种情况下该如何作为字符串表达。比如说，本文经常向Python命令行输入对象来导致命令行打印对象对应的字符串表达式。比如说：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">[&#39;a&#39;, 1, True]</span>
 </pre></div>
 </div>
-<p>Under the hood, the special method <code class="docutils literal notranslate"><span class="pre">x.__repr__</span></code> is being called to obtain this string representation whenever an object is displayed in a console/notebook like this. The method returns the string <code class="docutils literal notranslate"><span class="pre">&quot;['a',</span> <span class="pre">1,</span> <span class="pre">True]&quot;</span></code>, which is then printed out to the console. This is an extremely useful for creating classes whose objects can be inspected conveniently in a Python console or in a Jupyter notebook. Similarly <code class="docutils literal notranslate"><span class="pre">__str__</span></code> returns the string that will be produced when <code class="docutils literal notranslate"><span class="pre">str</span></code> is called on the
-object.</p>
-<table border="1" class="docutils">
+<p>在幕后，每当一个对象的在命令行/笔记本中像这样被显式，Python会调用特殊方法 <code class="docutils literal notranslate"><span class="pre">x.__repr__</span></code> 来获取对象的字符串表达式。这个方法返回了字符串 <code class="docutils literal notranslate"><span class="pre">&quot;['a',</span> <span class="pre">1,</span> <span class="pre">True]&quot;</span></code>，然后Python将其打印到命令行中。这对创建可以方便地在Python命令行或Jupyter笔记本中查看的类对象游泳。相似的，<code class="docutils literal notranslate"><span class="pre">__str__</span></code> 返回在 <code class="docutils literal notranslate"><span class="pre">str</span></code> 为此对象调用时对象转化成的字符串。</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 24%" />
+<col style="width: 17%" />
+<col style="width: 59%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Method</th>
-<th class="head">Signature</th>
-<th class="head">Explanation</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>签名</p></th>
+<th class="head"><p>解释</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Returns string for a printable representation of object</td>
-<td><code class="docutils literal notranslate"><span class="pre">__repr__(self)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">repr(x)</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__repr__()</span></code>, this is also invoked when an object is returned by a console</td>
+<tbody>
+<tr class="row-even"><td><p>返回对象打印时的字符串表达</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__repr__(self)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">repr(x)</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__repr__()</span></code>。这也在对象被命令行返回时被调用</p></td>
 </tr>
-<tr class="row-odd"><td>Returns string representation of an object</td>
-<td><code class="docutils literal notranslate"><span class="pre">__str__(self)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">str(x)</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__str__()</span></code></td>
+<tr class="row-odd"><td><p>返回对象的字符串表达</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__str__(self)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str(x)</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__str__()</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>A well-implemented <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method can greatly improve the convenience of working with a class. For example, let’s add this method to our <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> class that we wrote in the preceding section; the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> will create a string with our shopping items on a bulleted list with purchased items crossed out:</p>
+<p>一个实现得好的 <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> 方法可以极大提升操作该类时的方便程度。比如说，让我们为在上一节写的的 <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> 类添加这个方法；<code class="docutils literal notranslate"><span class="pre">__repr__</span></code> 将会将我们的购物清单物品转化成一个列表，其中已经购买的物品将被划掉：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strike</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Renders string with strike-through characters through it.</span>
+    <span class="sd">&quot;&quot;&quot; 为字符串的每个字符添加删除线。</span>
 
 <span class="sd">        `strike(&#39;hello world&#39;)` -&gt; &#39;̶h̶e̶l̶l̶o̶ ̶w̶o̶r̶l̶d&#39;</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        \u0336 is a special strike-through unicode character; it</span>
-<span class="sd">        is not unique to Python.&quot;&quot;&quot;</span>
+<span class="sd">        \u0336 是一个特殊的删除线unicode符号；它并不是Python独有的。&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\u0336</span><span class="s1">{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">text</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">ShoppingList</span><span class="p">:</span>
@@ -285,8 +282,7 @@ object.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">_purchased</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Returns formatted shopping list as a string with</span>
-<span class="sd">            purchased items being crossed out.</span>
+        <span class="sd">&quot;&quot;&quot; 返回格式化过的购物清单。已购买的物品将会被划掉。</span>
 
 <span class="sd">            Returns</span>
 <span class="sd">            -------</span>
@@ -294,8 +290,8 @@ object.</p>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_needed</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_purchased</span><span class="p">:</span>
             <span class="n">remaining_items</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_needed</span><span class="p">]</span>
             <span class="n">purchased_items</span> <span class="o">=</span> <span class="p">[</span><span class="n">strike</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_purchased</span><span class="p">]</span>
-            <span class="c1"># You wont find the • character on your keyboard. I simply</span>
-            <span class="c1"># googled &quot;unicode bullet point&quot; and copied/pasted it here.</span>
+            <span class="c1"># 你不会在你的键盘中找到 • 符号。我直接谷歌了“unicode bullet point”</span>
+            <span class="c1"># 并将其复制/粘贴到了这里。</span>
             <span class="k">return</span> <span class="s2">&quot;• &quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">• &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remaining_items</span> <span class="o">+</span> <span class="n">purchased_items</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_new_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
@@ -306,7 +302,7 @@ object.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">_needed</span><span class="o">.</span><span class="n">difference_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_purchased</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># demonstrating `ShoppingList.__repr__`
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># 演示 `ShoppingList.__repr__`
 &gt;&gt;&gt; l = ShoppingList([&quot;grapes&quot;, &quot;beets&quot;, &quot;apples&quot;, &quot;milk&quot;, &quot;melon&quot;, &quot;coffee&quot;])
 &gt;&gt;&gt; l.mark_purchased_items([&quot;grapes&quot;, &quot;beets&quot;, &quot;milk&quot;])
 &gt;&gt;&gt; l
@@ -318,76 +314,75 @@ object.</p>
 • ̶b̶e̶e̶t̶s
 </pre></div>
 </div>
-<p>See that this simple method makes it much easier for us to inspect the state of our shopping list when we are working in a console/notebook environment.</p>
+<p>这个简单的方法使得我们在命令行/笔记本环境下检查购物清单的内态简单很多。</p>
 </div>
-<div class="section" id="Interfacing-with-Mathematical-Operators">
-<h2>Interfacing with Mathematical Operators<a class="headerlink" href="#Interfacing-with-Mathematical-Operators" title="Permalink to this headline">¶</a></h2>
-<p>The following special methods control how an object interacts with <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, and other mathematical operators. A full listing of all the special methods used to emulate numeric types can be found <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types">here</a></p>
-<table border="1" class="docutils">
+<div class="section" id="为数学操作符接口">
+<h2>为数学操作符接口<a class="headerlink" href="#为数学操作符接口" title="永久链接至标题">¶</a></h2>
+<p>以下特殊方法控制某个对象如何和 <code class="docutils literal notranslate"><span class="pre">+</span></code>，<code class="docutils literal notranslate"><span class="pre">*</span></code>，<code class="docutils literal notranslate"><span class="pre">**</span></code>，和其它数学操作符交互。完整的模仿数字类的特殊方法列表可以在<a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types">这里</a>找到。</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="13%" />
-<col width="38%" />
-<col width="50%" />
+<col style="width: 8%" />
+<col style="width: 41%" />
+<col style="width: 51%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Method</th>
-<th class="head">Signature</th>
-<th class="head">Explanation</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>签名</p></th>
+<th class="head"><p>解释</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Add</td>
-<td><code class="docutils literal notranslate"><span class="pre">__add__(self,</span> <span class="pre">other)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__add__(y)</span></code></td>
+<tbody>
+<tr class="row-even"><td><p>加</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__add__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__add__(y)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Subtract</td>
-<td><code class="docutils literal notranslate"><span class="pre">__sub__(self,</span> <span class="pre">other)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__sub__(y)</span></code></td>
+<tr class="row-odd"><td><p>减</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__sub__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__sub__(y)</span></code></p></td>
 </tr>
-<tr class="row-even"><td>Multiply</td>
-<td><code class="docutils literal notranslate"><span class="pre">__mul__(self,</span> <span class="pre">other)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__mul__(y)</span></code></td>
+<tr class="row-even"><td><p>乘</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__mul__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__mul__(y)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Divide</td>
-<td><code class="docutils literal notranslate"><span class="pre">__truediv__(self,</span> <span class="pre">other)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__truediv__(y)</span></code></td>
+<tr class="row-odd"><td><p>除</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__truediv__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__truediv__(y)</span></code></p></td>
 </tr>
-<tr class="row-even"><td>Power</td>
-<td><code class="docutils literal notranslate"><span class="pre">__pow__(self,</span> <span class="pre">other)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">y</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__pow__(y)</span></code></td>
+<tr class="row-even"><td><p>乘方</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__pow__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">y</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__pow__(y)</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>You may be wondering why division has the peculiar name <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code>, whereas the other operators have more sensible names. This is an artifact of the transition from Python 2 to Python 3; <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types">the default integer-division was replaced by float-division</a>, and thus <code class="docutils literal notranslate"><span class="pre">__div__</span></code> was replaced by <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> for the sake of 2-3 compatibility.</p>
-<p>Let’s give <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> an <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method so that we can merge shopping lists using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator. Rather than redefine the entire <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> class, we can simply define this as a function and use <code class="docutils literal notranslate"><span class="pre">setattr</span></code> to set it as a method to our existing class.</p>
+<p>你可能在好奇为什么除法有着奇怪的名字 <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code>，而其它操作符的名字都很正常。这是从Python 2转型到Python 3的一个产物；<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types">默认的整数除法被浮点数除法提到了</a>，所以 <code class="docutils literal notranslate"><span class="pre">__div__</span></code> 被 <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> 代替以保证两个版本的兼容性。</p>
+<p>让我们给 <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> 一个 <code class="docutils literal notranslate"><span class="pre">__add__</span></code> 方法来使得我们可以使用 <code class="docutils literal notranslate"><span class="pre">+</span></code> 操作符合并两个购物清单。与其重新定义整个 <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> 类，我们可以直接将其定义为一个函数并使用 <code class="docutils literal notranslate"><span class="pre">setattr</span></code> 来将其加入到我们先有的类中。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Add the unpurchased and purchased items from another shopping</span>
-<span class="sd">        list to the present one.</span>
+    <span class="sd">&quot;&quot;&quot; 将另外一个购物清单的未购买和已购买物品添加到这个清单。</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        other : ShoppingList</span>
-<span class="sd">            The shopping list whose items we will add to the present one.</span>
+<span class="sd">            另外那个购物清单，其物品我们将添加到这个清单中。</span>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        ShoppingList</span>
-<span class="sd">            The present shopping list, with items added to it.&quot;&quot;&quot;</span>
+<span class="sd">            添加了物品的本购物清单。&quot;&quot;&quot;</span>
     <span class="n">new_list</span> <span class="o">=</span> <span class="n">ShoppingList</span><span class="p">([])</span>
-    <span class="c1"># populate new_list with items from `self` and `other`</span>
+    <span class="c1"># 为 new_list 添加 `self` 和 `other` 的物品</span>
     <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">]:</span>
         <span class="n">new_list</span><span class="o">.</span><span class="n">add_new_items</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">_needed</span><span class="p">)</span>
 
-        <span class="c1"># add purchased items to list, then mark as purchased</span>
+        <span class="c1"># 首先将已购买物品添加到列表中，然后将它们标为已购买</span>
         <span class="n">new_list</span><span class="o">.</span><span class="n">add_new_items</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">_purchased</span><span class="p">)</span>
         <span class="n">new_list</span><span class="o">.</span><span class="n">mark_purchased_items</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">_purchased</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">new_list</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set `__add__` as a method of `ShoppingList`</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将 `__add__` 设为 `ShoppingList` 的一个方法</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">setattr</span><span class="p">(</span><span class="n">ShoppingList</span><span class="p">,</span> <span class="s2">&quot;__add__&quot;</span><span class="p">,</span> <span class="fm">__add__</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now let’s create a few shopping lists and combine them:</p>
+<p>现在，让我们创建几个购物清单并合并它们：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">food</span> <span class="o">=</span> <span class="n">ShoppingList</span><span class="p">([</span><span class="s2">&quot;milk&quot;</span><span class="p">,</span> <span class="s2">&quot;flour&quot;</span><span class="p">,</span> <span class="s2">&quot;salt&quot;</span><span class="p">,</span> <span class="s2">&quot;eggs&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">food</span><span class="o">.</span><span class="n">mark_purchased_items</span><span class="p">([</span><span class="s2">&quot;flour&quot;</span><span class="p">,</span> <span class="s2">&quot;salt&quot;</span><span class="p">])</span>
 
@@ -396,7 +391,7 @@ object.</p>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clothes</span> <span class="o">=</span> <span class="n">ShoppingList</span><span class="p">([</span><span class="s2">&quot;t-shirts&quot;</span><span class="p">,</span> <span class="s2">&quot;socks&quot;</span><span class="p">])</span>
 
-<span class="go"># combine all three shopping lists</span>
+<span class="go"># 合并所有三个购物清单</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">food</span> <span class="o">+</span> <span class="n">office_supplies</span> <span class="o">+</span> <span class="n">clothes</span>
 <span class="go">• t-shirts</span>
 <span class="go">• eggs</span>
@@ -409,64 +404,64 @@ object.</p>
 <span class="go">• ̶p̶e̶n̶c̶i̶l̶s</span>
 </pre></div>
 </div>
-<p>Overloading the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator provides us with a sleek interface for merging multiple shopping lists in a sleek, readable way. <code class="docutils literal notranslate"><span class="pre">food</span> <span class="pre">+</span> <span class="pre">office_supplies</span> <span class="pre">+</span> <span class="pre">clothes</span></code> is equivalent to calling <code class="docutils literal notranslate"><span class="pre">(food.__add__(office_supplies)).__add__(clothes)</span></code>. It is obvious that the former expression is far superior.</p>
+<p>重载（overload）<code class="docutils literal notranslate"><span class="pre">+</span></code> 操作符为我们提供了合并多个购物清单的简单易读的方法。<code class="docutils literal notranslate"><span class="pre">food</span> <span class="pre">+</span> <span class="pre">office_supplies</span> <span class="pre">+</span> <span class="pre">clothes</span></code> 等值于调用 <code class="docutils literal notranslate"><span class="pre">(food.__add__(office_supplies)).__add__(clothes)</span></code>。很明显，前者更加可取。</p>
 </div>
-<div class="section" id="Creating-a-Container-Like-Class">
-<h2>Creating a Container-Like Class<a class="headerlink" href="#Creating-a-Container-Like-Class" title="Permalink to this headline">¶</a></h2>
-<p>The following special methods allow us to give our class a container interface, like that of a dictionary, set, or list. An exhaustive listing and discussion of these methods can be found <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-container-types">here</a></p>
-<table border="1" class="docutils">
+<div class="section" id="创建类容器类">
+<h2>创建类容器类<a class="headerlink" href="#创建类容器类" title="永久链接至标题">¶</a></h2>
+<p>以下特殊方法允许我们给我们的类提供一个像词典，集，或列表所有的一样的容器接口。这些方法的完整列表和讨论可以在<a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-container-types">这里</a>找到。</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Method</th>
-<th class="head">Signature</th>
-<th class="head">Explanation</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>签名</p></th>
+<th class="head"><p>接受</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Length</td>
-<td><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">len(x)</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__len__()</span></code></td>
+<tbody>
+<tr class="row-even"><td><p>长度</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">len(x)</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__len__()</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Get Item</td>
-<td><code class="docutils literal notranslate"><span class="pre">__getitem__(self,</span> <span class="pre">key)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x[key]</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__getitem__(key)</span></code></td>
+<tr class="row-odd"><td><p>获取成员</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__getitem__(self,</span> <span class="pre">key)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x[key]</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__getitem__(key)</span></code></p></td>
 </tr>
-<tr class="row-even"><td>Set Item</td>
-<td><code class="docutils literal notranslate"><span class="pre">__setitem__(self,</span> <span class="pre">key,</span> <span class="pre">item)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x[key]</span> <span class="pre">=</span> <span class="pre">item</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__setitem__(key,</span> <span class="pre">item)</span></code></td>
+<tr class="row-even"><td><p>设置成员</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__setitem__(self,</span> <span class="pre">key,</span> <span class="pre">item)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x[key]</span> <span class="pre">=</span> <span class="pre">item</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__setitem__(key,</span> <span class="pre">item)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Contains</td>
-<td><code class="docutils literal notranslate"><span class="pre">__contains__(self,</span> <span class="pre">item)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">in</span> <span class="pre">x</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__contains__(item)</span></code></td>
+<tr class="row-odd"><td><p>是否拥有</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__contains__(self,</span> <span class="pre">item)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">in</span> <span class="pre">x</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__contains__(item)</span></code></p></td>
 </tr>
-<tr class="row-even"><td>Iterator</td>
-<td><code class="docutils literal notranslate"><span class="pre">__iter__(self)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">iter(x)</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__iter__()</span></code></td>
+<tr class="row-even"><td><p>迭代器</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__iter__(self)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">iter(x)</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__iter__()</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Next</td>
-<td><code class="docutils literal notranslate"><span class="pre">__next__(self)</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">next(x)</span></code> invokes <code class="docutils literal notranslate"><span class="pre">x.__next__()</span></code></td>
+<tr class="row-odd"><td><p>下一个</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">__next__(self)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">next(x)</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">x.__next__()</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>To get a feel for these methods, let’s create class that implements most aspects of a list’s interface. We will store a list as an attribute of our class to keep track of the contents, but will implement special methods that “echo” the interface of the list.</p>
+<p>为了对这些方法产生直观理解，让我们创建一个实现了大部分列表交互界面的类。我们将会列表作为类的一个属性来记录其内容，但我们会通过实现特殊方法来复制列表的交互界面。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyList</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">):</span>
-            <span class="c1"># handles `MyList([1, 2, 3])</span>
+            <span class="c1"># 处理 `MyList([1, 2, 3])</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># handles `MyList(1, 2, 3)`</span>
+            <span class="c1"># 处理 `MyList(1, 2, 3)`</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-        <span class="c1"># slicing should return a `MyList` instance</span>
-        <span class="c1"># otherwise, the individual element should be returned as-is</span>
+        <span class="c1"># 切片应返回一个 `MyList` 实例</span>
+        <span class="c1"># 不然的话，我们应该直接返回单个成员</span>
         <span class="k">return</span> <span class="n">MyList</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">else</span> <span class="n">out</span>
 
     <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
@@ -476,11 +471,10 @@ object.</p>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Use the character | as the delimiter for our list&quot;&quot;&quot;</span>
-        <span class="c1"># `self._data.__repr__()` returns &#39;[ ... ]&#39;,</span>
-        <span class="c1"># thus we can slice to get the contents of the string</span>
-        <span class="c1"># and exclude the square-brackets, and add our own</span>
-        <span class="c1"># delimiters in their place</span>
+        <span class="sd">&quot;&quot;&quot; 使用字符 | 来限定我们的列表&quot;&quot;&quot;</span>
+        <span class="c1"># `self._data.__repr__()` 返回 &#39;[ ... ]&#39;，</span>
+        <span class="c1"># 因此我们可以切片字符串的成员并去除两边的方括号，并</span>
+        <span class="c1"># 使用我们自己的限定符号来代替它们</span>
         <span class="k">return</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span>
 
     <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
@@ -490,14 +484,14 @@ object.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Let’s appreciate the rich behavior that we get out of this simple class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># MyList can accept any iterable as its</span>
-<span class="c1"># first (and only) input argument</span>
+<p>让我们体会一下这个简单的类提供的成熟行为：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># MyList 接受任何可迭代物为其第一个（也是唯一的）</span>
+<span class="c1"># 输入参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">MyList</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="o">|</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="o">|</span>
 
-<span class="c1"># MyList accepts an arbitrary number of arguments</span>
+<span class="c1"># MyList 接受任意数量的参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">MyList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="o">|</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">|</span>
@@ -505,20 +499,20 @@ object.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="mi">5</span>
 
-<span class="c1"># getting an item</span>
+<span class="c1"># 获取一个成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="mi">1</span>
 
-<span class="c1"># slicing returns a MyList instance</span>
+<span class="c1"># 切片返回一个 MyList 实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 <span class="o">|</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">|</span>
 
-<span class="c1"># setting an item</span>
+<span class="c1"># 设置一个成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="o">|-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">|</span>
 
-<span class="c1"># checking membership</span>
+<span class="c1"># 检查是否为成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="ow">in</span> <span class="n">x</span>
 <span class="bp">False</span>
 
@@ -527,12 +521,12 @@ object.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#special-method-names">Special Methods</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types">Emulating Numeric Types</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-container-types">Emulating Container Types</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#special-method-names">特殊方法</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types">模仿数字类</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-container-types">模仿容器类</a></p></li>
 </ul>
 </div>
 </div>
@@ -545,10 +539,10 @@ object.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Inheritance.html" class="btn btn-neutral float-right" title="Inheritance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Inheritance.html" class="btn btn-neutral float-right" title="继承" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Applications_of_OOP.html" class="btn btn-neutral float-left" title="Applications of Object Oriented Programming" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Applications_of_OOP.html" class="btn btn-neutral float-left" title="面向对象编程的应用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

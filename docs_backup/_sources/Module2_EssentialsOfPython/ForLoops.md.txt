@@ -18,150 +18,150 @@ jupyter:
    :keywords: for-loop, while-loop, break, control flow, basic programming
 ```
 
-# For-Loops and While-Loops
-In this section, we will introduce the essential "for-loop" control flow paradigm along with the formal definition of an "iterable". The utility of these items cannot be understated. Moving forward, you will likely find use for these concepts in nearly every piece of Python code that you write!
+# For循环和While循环
+在本节中我们将会介绍“for循环”控制流以及“可迭代物”（iterable）的正式定义。这些功能极其强大强大。在未来，你会在你编写的Python代码中随处见到这些概念！
 
 
 <div class="alert alert-warning">
 
-**Note**: 
+**注**：
 
-There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.
+在本资源各处会有一些阅读理解练习。这些题目旨在帮助读者活学活用文中的知识点。练习题的答案可以在本页底部找到。
 </div>
 
 <!-- #region -->
-## For-Loops
-A "for-loop" allows you to iterate over a collection of items, and execute a block of code once for each iteration. For example, the following code will sum up all the positive numbers in a tuple:
+## For循环
+一个“for循环”（for-loop）允许我们迭代某个集合中的成员，并为每一次成员执行同一块代码。比如说，以下的代码会求元组中所有正数的和：
 ```python
 total = 0
 for num in (-22.0, 3.5, 8.1, -10, 0.5):
     if num > 0:
         total = total + num
 ```
-The general syntax for a "for-loop" is:
+“for循环”的语法为：
 
 ```
 for <var> in <iterable>:
-    block of code
+    一区块代码
 ```
 
-Where `<var>` is any valid variable-identifier and `<iterable>` is any **iterable**. We will discuss iterables more formally in the next section; suffice it to know that every sequence-type object is an iterable. The `for`statement must end in a colon character, and the body the for-loop is [whitespace-delimited](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope).
+`<var>` 指代任何合法的变量身份（variable-identifier），`<iterable>` 则是任何**可迭代物**。我们会在下一节中更正式地讨论迭代物；现在你只需要知道任何序列都是可迭代物这一事实就行了。`for` 语句必须由一个冒号结尾，且for循环的主体必须由[空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)。
 
-The for-loop behaves as follows:
+for循环的行为如下：
 
-- Request the next member of the iterable.
-- If the iterable is empty, exit the for-loop without running its body.
-- If the iterable did produce a member, assign that member to `<var>` (if `<var>` was not previously defined, it becomes defined). 
-- Execute the enclosed body of code.
-- Go back to the first step.
+- 试图获取可迭代物的下一个成员。
+- 如果可迭代物是空的，退出for循环且不运行其主体代码。
+- 如果可迭代物提供了一个成员，为 `<var>` 赋值为该成员（如果 `<var>` 在之前并没有被定义，它将会在这里被定义）。
+- 执行循环的主体代码。
+- 返回第一步。
 
-To be concrete, let's consider the example:
+让我们来看一看一个例子吧：
 ```python
-# demonstrating a basic for-loop
+# 演示基本的for循环
 total = 0
 for item in [1, 3, 5]:
     total = total + item
 
-print(total)  # `total` has the value 1 + 3 + 5 = 9
-# `item` is still defined here, and holds the value 5
+print(total)  # `total` 的值为 1 + 3 + 5 = 9
+# `item` 在这里依然被定义，且其值为5
 ```
 
-This code will perform the following steps:
+此代码会执行以下的步骤：
 
-1. Define the variable `total`, and assign it the value `0`
-2. Iterate on the list, producing value `1`, define the variable `item` and assign it the value `1`
-3. Assign `total` the value `0 + 1`
-4. Iterate on the list, producing the value `3` and assigning it to `item`
-5. Assign `total` the value `1 + 3`
-6. Iterate on the list, producing the value `5` and assigning it to `item`
-7. Assign `total` the value `4 + 5`
-8. Iterate on the list. Having reached its end, a `StopIteration` signal it raised by the list, and the for-loop sequence is exited.
-9. Print the value of `total` (9)
+1. 定义变量 `total`，并为其赋值 `0`
+2. 迭代此列表，得出值 `1`，定义变量 `item` 并为其赋值 `1`
+3. 为 `total` 赋值 `0 + 1`
+4. 迭代此列表，得出值 `3` 并为 `item` 赋值该数字
+5. 为 `total` 赋值 `1 + 3`
+6. 迭代此列表，得出值 `5` 并为 `item` 赋值该数字
+7. 为 `total` 赋值 `4 + 5`
+8. 迭代此列表。因为现在已经在列表结尾，列表将提供一个 `StopIteration` 信号，并导致for循环退出
+9. 打印 `total` 的值（9）
 
-#### Potential Pitfall
-Note that the variable `item` will persist after the for-loop block is exited. It will reference the last value from the for-loop iteration (in this case `item` has the value 5). That being said, *you should not write code that depends on the iterate-variable, outside of the context of the for-loop*. In the case that you try to loop over an *empty* iterable, the iterate-variable is never defined:
+#### 可能的错误
+注意迭代变量 `item` 在for循环退出之后依然存在。它会引用for循环迭代的最后一个值（在这个例子中 `item` 的值为5）。就算如此，*你不应该在for循环外面使用迭代变量*。因为如果你循环一个*空*的可迭代物，迭代变量不会被定义：
 
 ```python
-for x in []:         # the iterable is empty - the iterate-variable `x` will not be defined
-    print("Hello?")  # this code is never executed
-print(x)             # raises an error because `x` was never defined
+for x in []:         # 可迭代物是空的——迭代变量 `x` 将不会被定义
+    print("Hello?")  # 此代码不会被执行
+print(x)             # 程序报错，因为 `x` 没有被定义
 ```
 
-Because we are attempting to iterate over an empty list, `StopIteration` is raised immediately - before the variable `x` is even defined. Thus the code enclosed within the for-loop is never reached, and the subsequent `print(x)` statement will raise a `NameError`, because `x` was never defined!
+当我们试图迭代一个空列表时，程序会在变量 `x` 被定义之前立刻收到 `StopIteration` 信号。for循环中的代码块一次都没有被执行。因为 `x` 没有被定义，之后的 `print(x)` 语句会导致 `NameError`！
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: A basic for-loop**
+**阅读理解：简单for循环**
 
-Using a for-loop and an if-statement, print each letter in the string `"abcdefghij"`, if that letter is a vowel.
+使用一个for循环和一个if语句，打印字符串 `"abcdefghij"` 中的每一个元音（vowel，也就是aeiou这几个字母）。
 
 </div>
 
 <!-- #region -->
-## While-Loops
-A "while-loop" allows you to repeat a block of code until a condition is no longer true:
+## While循环
+一个“while循环”（while-loop）允许你重复一区块代码，直到某个条件不再满足：
 
 ```
 while <condition>:
-    block of code
+    代码块
 ```
 
-Where `<condition>` is an expression that returns `True` or `False`, or is any object on which `bool` can be called. The "body" of the while-loop is the code indented beneath the while-loop statement.
+`<condition>` 是一个会返回 `True` 或 `False` 的表达式，或任何可以转化为 `bool` 的对象。while循环的“主体”则是在循环语句下方缩进的代码。
 
-The while-loop behaves as follows:
+while循环的行为如下：
 
-- Call `bool(<condition>)` and execute the indented block of code if `True` is returned. Otherwise, "exit" the while-loop, skipping past the indented code.
-- If the indented block code is executed, go back to the first step.
+- 执行 `bool(<condition>)` 并在表达式返回 `True` 时执行下方缩进的代码区块。不然，“退出”while循环并跳过其缩进代码。
+- 如果缩进的代码块被执行了，回到第一步。
 
-To be concrete, let's consider the example:
+让我们观察一个例子：
 ```python
-# demonstrating a basic while-loop
+# 演示基本的while循环
 total = 0
 while total < 2:
-    total += 1  # equivalent to: `total = total + 1`
+    total += 1  # 和 `total = total + 1` 等值
 
-print(total)  # `total` has the value 2
+print(total)  # `total` 现在的值为 2
 ```
 
-This code will perform the following steps:
+此代码会执行以下步骤：
 
-1. Define the variable `total`, and assign it the value `0`
-2. Evaluate `0 < 2`, which returns `True`: enter the enclosed code-block
-3. Execute the code block: assign `total` the value `0 + 1`
-4. Evaluate `1 < 2`, which returns `True`: enter the enclosed code-block
-5. Execute the code block: assign `total` the value `1 + 1`
-6. Evaluate `2 < 2`, which returns `False`: *skip* the enclosed code-block
-7. Print the value of `total` (2)
+1. 定义变量 `total`，并为其赋值 `0`
+2. 运算 `0 < 2`，其返回 `True`：进入循环主体的代码块
+3. 执行代码块：为 `total` 赋值 `0 + 1`
+4. 运算 `1 < 2`，其返回 `True`：进入循环主体的代码块
+5. 执行代码块：为 `total` 赋值 `1 + 1`
+6. 运算 `2 < 2`，其返回 `False`：*跳过*循环主体的代码块
+7. 打印 `total` 的值（2）
 
-Note that if we started off with `total = 3`, the condition-expression `3 < 2` would evaluate to `False` outright, and the indented body of code would never be reached.
+注意，如果我们一开始定义 `total = 3`，那条件表达式 `3 < 2` 会直接返回 `False`，且缩进的代码块将一次都不会执行。
 
 <div class="alert alert-warning">
 
-**Warning!** 
+**警告！**
 
-It is possible to write a while-loop such that its conditional statement is always True, in which case your code will run ceaselessly! If this ever happens to you in a Jupyter notebook, either interrupt or restart your kernel.
+你可能（一不小心）编写了条件语句永远为真的while循环。这会导致你的代码无限运行！如果这在Jupyter记事本中意外发生，打断或重启你的壳（kernel）。
 </div>
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: A basic while-loop**
+**阅读理解：简单while循环**
 
-Given a list of nonzero, positive numbers, `x`, append the sum of that list to the end of it. Do this until the last value in `x` is at least 100. Use a while-loop. 
+设一列表 `x`，其成员皆为的非零正数。在列表的结尾附加列表所有值的和。重复进行这一步，直到 `x` 的最后一个成员的值至少是100。使用一个while循环。
 
-If you start with `x = [1]`, then by the end of your while-loop `x` should be `[1, 1, 2, 4, 8, 16, 32, 64, 128]`.
+如果你定义 `x = [1]`，那在你的while循环结束后 `x` 应该是 `[1, 1, 2, 4, 8, 16, 32, 64, 128]`。
 
 </div>
 
 <!-- #region -->
-## `break`, `continue`, & `else` clauses on loops
-The `continue` and `break` statements can be used within the bodies of both for-loops and while-loops. They provide added means for "short-circuiting" or prematurely exiting a given loop, respectively.
+## 循环中的 `break`，`continue`，和 `else` 句段
+你可以在for循环和while循环的主体中使用 `continue` 和 `break` 语句。它们分别提供一些额外的“短路”和提前退出循环的方式。
 
-Encountering `break` within a given loop causes that loop to be exited immediately:
+在循环中遇到 `break` 会导致程序立刻退出循环：
 
-```ipython
-# breaking out of a loop early
+```python
+# 提前退出循环
 >>> for item in [1, 2, 3, 4, 5]:
 ...     if item == 3:
 ...         print(item, " ...break!")
@@ -174,10 +174,10 @@ Encountering `break` within a given loop causes that loop to be exited immediate
 3  ...break!
 ```
 
-An `else` clause can be added to the end of any loop. The body of this else-statement will be executed *only if the loop was not exited via a `break` statement*.
+你可以在任何循环结尾添加一个 `else` 句段。此else语句的主体*只有在循环自然退出（没有被 `break` 语句打断）后才会执行*。
 
-```ipython
-# including an else-clause at the end of the loop
+```python
+# 在循环结尾添加一个else句段
 >>> for item in [2, 4, 6]:
 ...     if item == 3:
 ...         print(item, " ...break!")
@@ -193,9 +193,9 @@ An `else` clause can be added to the end of any loop. The body of this else-stat
 if you are reading this, then the loop completed without a 'break'
 ```
 
-The `continue` statement, when encountered within a loop, causes the loop-statement to be revisited immediately.
+在循环中遇到 `continue` 语句会导致程序立刻回到检查条件语句这一步。
 ```python
-# demonstrating a `continue` statement in a loop
+# 演示循环中的 `continue` 语句
 >>> x = 1
 >>> while x < 4:
 ...     print("x = ", x, ">> enter loop-body <<")
@@ -218,25 +218,25 @@ x =  3 >> enter loop-body <<
 
 <div class="alert alert-info">
 
-**Reading Comprehension: conducting flow in a loop**
+**阅读理解：控制循环中的流**
 
-Loop over a list of integers repeatedly, summing up all of its even values, and adding the content to a total. Repeat this process until the the total exceeds 100, or if you have looped over the list more than 50 times. Print the total only if it exceeds 100.
+重复循环一个整数列表，求其中偶数的和并将此和加到一个总值中。重复此过程，直到总值超过100，或已经循环这个列表超过50次。在总值大于等于100时打印它。
 
 </div>
 
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- ['for' statement](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
-- ['while' statement](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
-- ['break', 'continue', and 'else' clauses](https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
-- ['pass' statment](https://docs.python.org/3/tutorial/controlflow.html#pass-statements)
+- [“for”语句](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement)
+- [“while”语句](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
+- [“break”，“continue”，和“else”句段](https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops)
+- [“pass”语句](https://docs.python.org/3/tutorial/controlflow.html#pass-statements)
 
 
-## Reading Comprehension Exercise Solutions:
+## 阅读理解答案
 
 <!-- #region -->
-**A basic for-loop: Solution**
+**简单for循环：解**
 ```python
 for letter in "abcdefghij":
     if letter in "aeiou":
@@ -246,7 +246,7 @@ for letter in "abcdefghij":
 <!-- #endregion -->
 
 <!-- #region -->
-**A basic while-loop: Solution**
+**简单while循环：解**
 ```python
 while x[-1] < 100:
     x.append(sum(x))
@@ -254,7 +254,7 @@ while x[-1] < 100:
 <!-- #endregion -->
 
 <!-- #region -->
-**Conducting flow in a loop: Solution**
+**控制循环中的流：解**
 
 ```python
 x = [3, 4, 1, 2, 8, 10, -3, 0]
@@ -263,16 +263,16 @@ total = 0
 
 while total < 100:
     for item in x:
-        # return to for-loop if 
-        # `item` is odd-valued
+        # 当 `item` 是奇数时立刻跳到
+        # 下一轮for循环
         if item % 2 == 1:
             continue
         else:
             total += item
     num_loop += 1
-    
-    # break from while-loop if 
-    # more than 50 items tallied
+
+    # 只有在循环了50次之后才
+    # 打断while循环中
     if 50 < num_loop:
         break
 else:

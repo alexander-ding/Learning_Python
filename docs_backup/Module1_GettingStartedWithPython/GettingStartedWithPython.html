@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Basic description of the Python programming language, Difficulty: Easy, Category: Background" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introducing the Python Programming Language &mdash; Python Like You Mean It</title>
+  <title>介绍Python编程语言 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installing Python" href="Installing_Python.html" />
-    <link rel="prev" title="A Quick Guide to Formatting" href="SiteFormatting.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="安装Python" href="Installing_Python.html" />
+    <link rel="prev" title="代码格式的简单指南" href="SiteFormatting.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,28 +95,28 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="SiteFormatting.html">A Quick Guide to Formatting</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Introducing the Python Programming Language</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#What-is-Python?">What is Python?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Python-Scripts">Python Scripts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#What-is-a-Python-Interpreter-and-What-Does-it-Mean-to-“Install-Python”?">What is a Python Interpreter and What Does it Mean to “Install Python”?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Why-Python?">Why Python?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Summary">Summary</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_1.html">模组1：Python入门</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SiteFormatting.html">代码格式的简单指南</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">介绍Python编程语言</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Python是什么？">Python是什么？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Python脚本">Python脚本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Python直译器是什么？“安装Python”意味着什么？">Python直译器是什么？“安装Python”意味着什么？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#为什么选择Python？">为什么选择Python？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#总结">总结</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_Python.html">Installing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Informal_Intro_Python.html">An Informal Introduction to Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Getting_Started_With_IDEs_and_Notebooks.html">Setting Up a Development Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_Python.html">安装Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Informal_Intro_Python.html">非正式的Python介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter记事本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting_Started_With_IDEs_and_Notebooks.html">设置开发环境</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -161,9 +162,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_1.html">Module 1: Getting Started with Python</a> &raquo;</li>
+          <li><a href="../module_1.html">模组1：Python入门</a> &raquo;</li>
         
-      <li>Introducing the Python Programming Language</li>
+      <li>介绍Python编程语言</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,88 +207,86 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Introducing-the-Python-Programming-Language">
-<h1>Introducing the Python Programming Language<a class="headerlink" href="#Introducing-the-Python-Programming-Language" title="Permalink to this headline">¶</a></h1>
-<p>In this section we will learn</p>
+<div class="section" id="介绍Python编程语言">
+<h1>介绍Python编程语言<a class="headerlink" href="#介绍Python编程语言" title="永久链接至标题">¶</a></h1>
+<p>在本节中我们将学习</p>
 <ul class="simple">
-<li>What Python is.</li>
-<li>What it means to “install Python” on your computer.</li>
-<li>How one writes and executes Python code.</li>
+<li><p>Python是什么。</p></li>
+<li><p>“安装Python”具体意味着什么。</p></li>
+<li><p>如何写和执行Python代码。</p></li>
 </ul>
-<div class="section" id="What-is-Python?">
-<h2>What is Python?<a class="headerlink" href="#What-is-Python?" title="Permalink to this headline">¶</a></h2>
-<p><strong>Python is a programming language</strong>. That is, it provides us with a strict set of grammatical rules that correspond to well-defined instructions that a computer will obey. The tremendous value of this is that we can write text documents that are relatively simple and intuitive for humans to read, and yet can inform the computer to perform precise operations. Python <strong>code</strong> is simply text that conforms to the Python language.</p>
-<p>For example, the following text obeys the rules of the Python language:</p>
+<div class="section" id="Python是什么？">
+<h2>Python是什么？<a class="headerlink" href="#Python是什么？" title="永久链接至标题">¶</a></h2>
+<p><strong>Python是一门编程语言</strong>。具体来讲，Python为我们提供一组严谨的语法规则；每条规则都对应一组计算机会执行的明确命令。这将允许我们编写一些即相对简单以及易读，且同时可以提供给计算机具体命令的文本。Python<strong>代码</strong>仅仅是符合Python语法的文本。</p>
+<p>比如说，接下来的文本就符合Python的语法规则：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;2 + 3 = {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>According to the Python language, it will instruct the computer to:</p>
+<p>根据Python的定义，它将指令计算机去：</p>
 <ul class="simple">
-<li>compute 2 + 3</li>
-<li>assign the resulting value (5) to a variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, in memory</li>
-<li>access the value of <code class="docutils literal notranslate"><span class="pre">x</span></code>, and print to the computer’s screen: ‘2 + 3 = 5’</li>
+<li><p>计算 2 + 3</p></li>
+<li><p>在内存中设定一个函数 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为计算的结果（5）</p></li>
+<li><p>访问 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的值，并在计算机屏幕上显示：“2 + 3 = 5”</p></li>
 </ul>
-<p>An example of code that <strong>does not</strong> obey Python’s rules is:</p>
+<p>一个<strong>不符合</strong>Python规则的例子：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">~</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<p>because character <code class="docutils literal notranslate"><span class="pre">~</span></code> has no meaning in the Python language when it is placed between two integers.</p>
-<p>To “learn Python” thus entails learning the grammatical rules specified by the Python language, and the computer instuctions that they map to. Additionally, you will want to familiarize yourself with many of the convenient tools that are “pre-written” and come with the Python language; they are part of the so-called standard library.</p>
-<p>Given this basic understanding of what the Python programming language is, we now want to know how to use our Python code to send instructions to the computer. The most basic way of doing this is to:</p>
+<p>原因是，根据Python定义，夹在两个整数中间的符号 <code class="docutils literal notranslate"><span class="pre">~</span></code> 没有任何意义。</p>
+<p>因此，“学习Python”意味着学习Python语言的语法规则以及这些规则对应的计算机指令。同时，你也需要了解已经“提前写好”的，极其方便的Python自带的工具；这些工具是所谓Python标准库的一部分。</p>
+<p>有了对Python语言的基本理解后，我们现在要学习如何使用我们的Python代码去给计算机发送指令。最基本的方法是：</p>
 <ul class="simple">
-<li>Write a Python “script”: a text file containing Python code.</li>
-<li>Pass this text file to a <strong>Python interpreter</strong>, which will instruct the computer to carry out the operations described by the code.</li>
+<li><p>写Python“脚本”：一个包含Python代码的文本。</p></li>
+<li><p>将这个文本送到<strong>Python直译器</strong>（Python Interpreter）中。直译器将告诉计算机去执行代码描述的工作。</p></li>
 </ul>
 </div>
-<div class="section" id="Python-Scripts">
-<h2>Python Scripts<a class="headerlink" href="#Python-Scripts" title="Permalink to this headline">¶</a></h2>
-<p>You can save the the valid code from the preceding section in a text file using a simple text editor, and <em>voilà</em> you have written a <strong>Python script</strong>: a text file containing Python code. It is standard to save this text file using the suffix <code class="docutils literal notranslate"><span class="pre">.py</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">my_code.py</span></code>), rather than the familiar <code class="docutils literal notranslate"><span class="pre">.txt</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">my_text.txt</span></code>). There is nothing special about the <code class="docutils literal notranslate"><span class="pre">.py</span></code> suffix; it simply helps differentiate files that contain Python code from run-of-the-mill text files, which contain plain
-English.</p>
-<p>Although you can use simple text editors to write Python scripts (e.g.&nbsp;notepad (Win), TextEdit (Mac), nano (Linux)), there are much more sophisticated editors that provide an “integrated development environment” (IDE) for writing code. An IDE, configured to support Python, will warn you if you have written code that violates Python’s grammar rules, similar to the way word processing software warns you if you have made a spelling mistake. More on IDEs in a later section.</p>
+<div class="section" id="Python脚本">
+<h2>Python脚本<a class="headerlink" href="#Python脚本" title="永久链接至标题">¶</a></h2>
+<p>你可以用任意一个文本编辑器将前文的能用的代码存到一个文本文件中。就像这样，你写好了一个<strong>Python脚本</strong>：一个包含Python代码的文本文件。标准情况下，Python代码的后缀都是 <code class="docutils literal notranslate"><span class="pre">.py</span></code>（比如说 <code class="docutils literal notranslate"><span class="pre">my_code.py</span></code>），而不是常见的 <code class="docutils literal notranslate"><span class="pre">.txt</span></code>（例如 <code class="docutils literal notranslate"><span class="pre">my_text.txt</span></code>）。这个 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 后缀没有任何特殊的；这仅仅是为了帮助用户区分包含Python代码的文本文件和其他正常的包含普通文章的文本文件。</p>
+<p>虽然你可以使用基本的文本编辑器去写Python脚本（如notepad（Windows），TextEdit（Mac），nano（Linux）），但是你也可以使用更加复杂的提供“集成开发环境”（Integrated Development Environment，也就是IDE）的编辑器来写代码。一个为Python配置的IDE会警告不符合Python语法的代码，就像Word这类文字处理软件会提醒你的错误拼写一样。我们会在之后的一节里详细讨论IDE。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>WARNING</strong>:</p>
-<p>Do not use word processing programs, like Microsoft Word, to write code. They will “silently” change the characters written in your file, such as the type of quotation marks being used. This will cause errors in your code.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>警告</strong>：</p>
+<p>不要使用像Microsfot Word这样的传统文字处理程序来编写代码。这些程序会“静默”地对你打出的字符进行修改，如双引号的种类。这会导致你的代码出现错误。</p>
+<p>译者注：在写Python代码时一定要记得使用英文输入法。Python直译器并不会理解中文的双引号 或单引号 ‘’</p>
 </div>
-<p>Now that you have a Python script, how do you get the computer to read it and follow its instructions? You will need to install a <strong>Python interpreter</strong> on your computer to accomplish this. This is what people mean, whether they know it or not, when they tell you to “install Python” on your computer.</p>
+<p>在有一个Python脚本后，该如何让电脑读取并执行脚本的指示呢？你需要在你的计算机上安装一个<strong>Python直译器</strong>。当人们说你需要“安装Python”的时候，这就是他们具体的意思。</p>
 </div>
-<div class="section" id="What-is-a-Python-Interpreter-and-What-Does-it-Mean-to-“Install-Python”?">
-<h2>What is a Python Interpreter and What Does it Mean to “Install Python”?<a class="headerlink" href="#What-is-a-Python-Interpreter-and-What-Does-it-Mean-to-“Install-Python”?" title="Permalink to this headline">¶</a></h2>
-<p>A Python interpreter is any computer program that is capable of doing the following:</p>
+<div class="section" id="Python直译器是什么？“安装Python”意味着什么？">
+<h2>Python直译器是什么？“安装Python”意味着什么？<a class="headerlink" href="#Python直译器是什么？“安装Python”意味着什么？" title="永久链接至标题">¶</a></h2>
+<p>Python直译器泛指任何可以执行以下的电脑程序：</p>
 <ul class="simple">
-<li>Read in a text file (e.g. <code class="docutils literal notranslate"><span class="pre">my_code.py</span></code>).</li>
-<li>Parse the text and determine if it obeys the rules of the Python language (the interpreter will raise an error if the rules are not obeyed).</li>
-<li>Translate the parsed text into instructions, according to the Python language’s specifications.</li>
-<li>Instruct the computer to carry out the tasks.</li>
-<li>As a whole, a Python script is executed from top-to-bottom by the interpreter.</li>
+<li><p>读取文本文件（如 <code class="docutils literal notranslate"><span class="pre">my_code.py</span></code>）。</p></li>
+<li><p>解析其文本并反馈文本是否符合Python语言的语法规则（如果不符合，直译器会报错）。</p></li>
+<li><p>指示计算机去执行文本描述的任务。</p></li>
+<li><p>总体而言，Python直译器将从上到下执行脚本。</p></li>
 </ul>
-<p>The first Python interpeter was written in the programming language C, and is known as CPython. Accordingly, <strong>the CPython interpreter is the official interpreter of the Python language</strong>. Any new rules/features that are introduced to the Python language are guaranteed be implemented in the <a class="reference external" href="https://github.com/python/cpython">CPython code base</a>.</p>
+<p>世界上第一个Python直译器是用C编程语言写的，因此其被命名为CPython。所以<strong>CPython直译器是最官方的Python语言直译器</strong>。任何新的Python特征或规则一定会在<a class="reference external" href="https://github.com/python/cpython">CPython代码库</a>中实现。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong>:</p>
-<p>Python interpreters have been in written programming languages other than C, like in Java (Jython) and Go (Grumpy). These are not guaranteed to be up-to-date with the latest specifications of the Python language, and are rarely used in comparison to the CPython interpreter.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>注</strong>：</p>
+<p>当然，Python直译器也存在于其他不是C的编程语言中，如Java（Jython）和Go（Grumpy）。这些直译器并不能保证实现最新的Python规范，因此很少有人会将它们和CPython直译器对比。</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>About Installing Python</strong>:</p>
-<p>Do not download and install Python from python.org. There isn’t anything wrong with this, but a later section will provide you with explicit instructions for installing Python on your machine.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>关于安装Python</strong>：</p>
+<p>不要从python.org下载和安装Python。这样做没有任何错，但是本文后面的一节将提供详细的Python安装指示。</p>
 </div>
-<p>If you “install Python on your computer” from <a class="reference external" href="https://www.python.org/downloads/release/python-363/">python.org</a>, you are essentially downloading an executable program onto your machine that operates as a Python interpreter. On Windows, for instance, this program is called <code class="docutils literal notranslate"><span class="pre">python.exe</span></code>. This program is the result of the aforementioned CPython code, and it is capable of performing the all of the tasks of a Python interpreter. Additionally, you are downloading a large suite of useful tools
-and functions that you can utilize in your code. This is known as the Python standard library; take a moment to look over its contents <a class="reference external" href="https://docs.python.org/3/library/index.html#the-python-standard-library">here</a>.</p>
-<p>Once you have a Python interpreter installed on your machine, using it to execute a Python script is quite simple. Assume for the sake of simplicity that the <code class="docutils literal notranslate"><span class="pre">python</span></code> interpreter program and <code class="docutils literal notranslate"><span class="pre">my_script.py</span></code> are in the same directory (a.k.a ‘folder’) in your computer. Then, in a terminal (<code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> for Windows) you can execute the following command:</p>
+<p>如果你从<a class="reference external" href="https://www.python.org/downloads/release/python-363/">python.org</a>“在你的计算机上安装了Python”，你在做的基本就是下载一个满足Python直译器规范的可执行文件。比如在Windows上，这个程序叫做 <code class="docutils literal notranslate"><span class="pre">python.exe</span></code>。这个程序就是之前提到的CPython代码的产物，其可以执行任何Python直译器的工作。同时，你也在下载一大组可以用于你自己代码里的工具和函数。这些工具和函数叫做Python标准库；花一些时间去了解<a class="reference external" href="https://docs.python.org/3/library/index.html#the-python-standard-library">标准库</a>的内容。</p>
+<p>当你在计算机上安装了一个Python直译器后，使用它去执行Python脚本并不困难。为简化我们的讨论，假设叫做 <code class="docutils literal notranslate"><span class="pre">python</span></code> 的直译器程序和 <code class="docutils literal notranslate"><span class="pre">my_script.py</span></code> 都在你的计算机中同一个文件夹内（叫做 <code class="docutils literal notranslate"><span class="pre">folder</span></code>）。那么，在命令行（对Windows而言就是 <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>）中，你可以执行以下指令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python my_script.py
 </pre></div>
 </div>
-<p>this will instruct the Python interpreter program <code class="docutils literal notranslate"><span class="pre">python</span></code> to read your text file <code class="docutils literal notranslate"><span class="pre">my_script.py</span></code>, ensure that your code obeys all of the grammatical rules specified by the Python language, and then send instructions to your computer in accordance with the code that it reads. If your script simply contains the code <code class="docutils literal notranslate"><span class="pre">print(&quot;hello</span> <span class="pre">world&quot;)</span></code>, then the text <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code> will appear in your terminal window, as expected.</p>
-<p>In practice, you will be able to simply execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_script.py</span></code> in any directory, and your computer will know where to look to find the <code class="docutils literal notranslate"><span class="pre">python</span></code> program. This will be set up during the installation process.</p>
-<p>It may be confusing to think that the Python language is interpreted by using a program written in another language. How, then, is that language interpreted? The answer, in the case of CPython, is that C code need not be interpreted; programs exist for Windows, Mac, and Linux that can translate C code directly into machine instructions.</p>
+<p>这将指示Python直译器程序 <code class="docutils literal notranslate"><span class="pre">python</span></code> 去读取你的文本文件 <code class="docutils literal notranslate"><span class="pre">my_script.py</span></code>，确保里面的代码符合所有Python语言的语法规则，并指示你的计算机去执行和文本相应的指令。如果你的脚本仅仅包含代码 <code class="docutils literal notranslate"><span class="pre">print(&quot;hello</span> <span class="pre">world&quot;)</span></code>，那么你的命令行自然会显示字符串 <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code>。</p>
+<p>在实际使用中，不管你从任何文件夹中执行 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_script.py</span></code>，你的计算机也应该会知道如何去找到名为 <code class="docutils literal notranslate"><span class="pre">python</span></code> 程序。相应的设置会在安装过程中完成。</p>
+<p>理解Python语言是被一个用另外语言编写的程序来直译的事实可能比较绕脑。如果是这样，那另外那个语言是怎么被直译的呢？在CPython的情况下，答案就是C代码并不会被直译；有程序存在于Windows，Mac，和Linux上可以直接将C代码翻译成电脑直接执行的机器指令。</p>
 </div>
-<div class="section" id="Why-Python?">
-<h2>Why Python?<a class="headerlink" href="#Why-Python?" title="Permalink to this headline">¶</a></h2>
-<p>Python has become a hugely popular programming language. In fact, it is likely the <a class="reference external" href="https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities/fulltext">most popular introductory language at universities</a>. First and foremost, its syntax is designed to be intuitive and readable. For example, the following Python code sums the numbers 0-9, and prints the result:</p>
+<div class="section" id="为什么选择Python？">
+<h2>为什么选择Python？<a class="headerlink" href="#为什么选择Python？" title="永久链接至标题">¶</a></h2>
+<p>Python已经成为了一个极其流行的编程语言。事实上，它可能是<a class="reference external" href="https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities/fulltext">最流行的大学编程入门语言</a>。首先，Python的句法非常易懂易读。比如说，接下来的代码会求数字 0-9 的和，并打印结果：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>This can be reproduced by the following C++ code, which is arguably less-intuitive:</p>
+<p>同样的工作可以用以下的C++代码达成，但是这难懂很多：</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;numeric&gt;</span><span class="cp"></span>
@@ -298,19 +297,19 @@ and functions that you can utilize in your code. This is known as the Python sta
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>As such, Python is a language that is conducive to rapidly prototyping and testing code. Additionally, it is open-sourced: it is free to use, anyone can participate in improving/maintaining the language, and many people create new libraries that add tremendous functionality to the language. Thus, Python has become exceptionally popular especially among scientists, engineers, and other researchers.</p>
-<p>We will be relying heavily on Python and a library for doing optimized numerical computations, called NumPy, throughout this course.</p>
+<p>因此，Python作为一门语言很方便快速编写和测试新代码。同时，Python是开源的；你可以免费使用它，任何人都可以参与到维持或改善这门语言中，且大家创造了很多给Python提供了大量功能的第三方模组。因此，Python在科学家，工程师，和其他研究者中极其流行。</p>
+<p>在本资源中我们会使用Python和高度优化的数字工作模组NumPy。</p>
 </div>
-<div class="section" id="Summary">
-<h2>Summary<a class="headerlink" href="#Summary" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="总结">
+<h2>总结<a class="headerlink" href="#总结" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li>Python is a programming language - it provides us with a simple set of grammatical rules that allow us to write human-readable text, which can be translated unambiguously to instruct a computer to perform tasks.</li>
-<li>Python code is text that conforms to the Python language.</li>
-<li>A Python script is a text file containing Python code. Traditionally such a file will be saved using the suffix <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</li>
-<li>A Python interpreter is a program that is capable of reading and parsing a text file, and translating the code into machine instructions, as specified by the Python language.</li>
-<li>To “install Python” onto you machine boils down to saving a functioning Python interpreter onto your machine.</li>
-<li>The official Python interpreter is a program written in the language C, and is known as the CPython interpreter.</li>
-<li>The “standard library” is a large collection of tools and functions that comes packaged with the CPython interpreter.</li>
+<li><p>Python是一门编程语言——它为我们提供一组简单的语法规则来编写既可以让人看懂也可以准确翻译到计算机指令的文本。</p></li>
+<li><p>Python代码是任何符合Python语言标准的文本。</p></li>
+<li><p>Python脚本是一个包含Python代码的文本文件。这种文件根据命名标准都使用后缀 <code class="docutils literal notranslate"><span class="pre">.py</span></code>。</p></li>
+<li><p>Python直译器是一个能够读取和分析文本文件并根据Python语言的规则将其中的代码翻译成计算机指示的程序。</p></li>
+<li><p>“安装Python”归根结底就是将Python直译器下载到你的计算机上。</p></li>
+<li><p>官方的Python直译器是一个用C语言编写的程序，叫做CPython直译器。</p></li>
+<li><p>Python“标准库“是和CPython直译器一起包装的一组庞大的工具和函数。</p></li>
 </ul>
 </div>
 </div>
@@ -323,10 +322,10 @@ and functions that you can utilize in your code. This is known as the Python sta
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Installing_Python.html" class="btn btn-neutral float-right" title="Installing Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Installing_Python.html" class="btn btn-neutral float-right" title="安装Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="SiteFormatting.html" class="btn btn-neutral float-left" title="A Quick Guide to Formatting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="SiteFormatting.html" class="btn btn-neutral float-left" title="代码格式的简单指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

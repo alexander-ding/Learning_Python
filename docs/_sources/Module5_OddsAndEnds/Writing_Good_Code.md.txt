@@ -19,370 +19,368 @@ jupyter:
    :keywords: pep8, code style, lint, format, best practices, type hint, documentation, numpydoc, sphinx, typing, annotation, whitespace
 ```
 
-# Writing Good Code
+# 编写好代码
 
-Throughout PLYMI we have been concerned with learning the rules for writing valid Python code. That is, we have taken care to ensure that our computers can understand the instructions that we have written for them. Here, we will discuss methods for making our code easier for *humans* to understand. Specifically, we will study:
+在整个PLYMI的过程中我们学习的重点在于编写合法Python代码的规则。也就是说，我们保证了我们的计算机能够理解我们为其编写的指示。在这里，我们将讨论让*人们*轻松理解我们的代码的方法。具体来讲，我们会学习：
 
- - "PEP8": the official style guide for Python code.
- - Python's system for adding so-called "type hints" to functions.
- - Formal documentation specifications such as NumPy docs and Napolean docs.
+ - “PEP8”：Python代码的官方风格指南
+ - Python为函数添加所谓“类型暗示”的系统
+ - 如NumPy和Napolean说明文档的正式说明文档细则
 
-The immediate purpose of discussing these items is that they will help us write code that is easy to understand and maintain. In the long term, they will serve to make our projects long-lived and useful to many more people. It can be surprising to see how quickly a code base can atrophy, becoming opaque and unusable even to its creator, when it wasn't designed with a sufficient attention to detail and documentation. 
+讨论这些项目的最直接的目的在于帮助我们编写易懂和易维持的代码。长期上来，它们将使得我们的项目长寿并对其他更多人有用。你可能会惊讶于一个代码库在设计事没有给予细节和说明文档足够多考量时可以多快地衰退，并变得难懂和难用，甚至对其创造者也是如此。
 
-It is difficult to overstate the importance of this material.
+你很难夸大本话题的重要性。
 
 <!-- #region -->
-## The PEP8 Style Guide to Python Code
+## Python代码的PEP8风格指南
 
 <div class="alert alert-warning">
 
-**What is a PEP?**
+**PEP是什么？**
 
-We will be referencing several "PEPs" in this section. PEP stands for Python Enhancement Proposal. Any fundamental changes to the core Python language, the CPython interpreter, or the modules in Python's standard library must first be submitted as a PEP, which goes through an approval process. You can read more about the purposes and guidelines of PEPs [here](https://www.python.org/dev/peps/pep-0001/). The complete index of PEPs is available [here](https://www.python.org/dev/peps/).     
+我们将在本节引用多个“PEP”。PEP是Python Enhancement Protocol（Python增强协议）的缩写。任何对Python语言，CPython直译器，或Python标准库的模组的根本性改变必须首先作为一个PEP提交并经历一个审批过程。你可以在[这里](https://www.python.org/dev/peps/pep-0001/)读取更多有关PEP的宗旨和准则。完整的PEP索引可以在[这里](https://www.python.org/dev/peps/) 找到。
 </div>
 
-[PEP 8](https://www.python.org/dev/peps/pep-0008/#code-lay-out) is a design document that specifies a coherent code style guide for the Python community.. It touches on a wide array of "dos" and "don'ts" when making style decision in your code. Many of these items are exceedingly simple. For example, PEP 8 calls for the inclusion of a single whitespace around binary mathematical operators; e.g.:
+[PEP8](https://www.python.org/dev/peps/pep-0008/#code-lay-out)是一个为Python社区提供有条理的代码风格指南的设计文档。它提供了一大组的在你的代码中做有关风格选择时的“这么做”和“不这么做”的指示。比如说，PEP8呼吁用户在二元数学操作赋旁边添加一个空格；如下：
 
 ```python
-# Do:
+# 这么做：
 x = x + 1
 
-# Don't:
+# 不这么做：
 x=x+1
 ```
 
-The biggest impact that this document has is that it guides Python users to write similar-looking code. Thus, writing code that adheres to PEP8 will ensure your code is easy for others to read, and vice versa. Note that the code you have encountered throughout PLYMI adheres to this style guide.
+这份文档的最大影响在于它指导Python用户去编写看起来相似的代码。如此，编写符合PEP8的代码将会使得你的代码让其它人更容易阅读它，反之亦然。请注意，在PLYMI各处的代码块均符合此风格指南。
 
-We will make salient some of the PEP8 guidelines that are most pertinent to the variety of code that you have encountered in your reading thus far. That being said, you should take the time to read through [PEP 8 in full](https://www.python.org/dev/peps/pep-0008/#code-lay-out), and consult it regularly when you write code. It won't take long for you to internalize most of its guidelines. Lastly, note that many [IDEs](https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html) have have tools called "linters" that will parse your code and warn you when your code is in violation of PEP8's guidelines. This is an excellent mechanism for ensuring that your code adheres to this style specification.
+我们将会指出PEP8指南中和本文阅读中的那类代码最相关的一些细则。虽说如此，你应该花一些时间阅读[完整的PEP8](https://www.python.org/dev/peps/pep-0008/#code-lay-out)，并在编写代码时经常参阅它。这样做的话你不会需要太多时间就会自然而然记住大部分细则了。最后，请注意很多[IDE](https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html)有着叫做“linter”的工具来检查你的代码并在代码违反PEP8规则时提出警告。这是一个极佳的保证你代码符合风格指南的功能。
 
-### Being Pythonic
-We will being by studying some guidelines for writing idiomatic Python code. That is, these guide us to follow the syntax that the creators of Python intended for us to use. 
+### Python式编程
+我们将会学习一些如何编写地道的Python代码的守则。也就是说，它们将直到我们去使用Python创造者希望我们使用的语法。
 
-For instance, always leverage the negated operators `is not` and `not in`. For example `not x is None` and `x is not None` are functionally equivalent, but the latter is clearly preferable as it matches our native grammar.  
+比如说，永远使用否定语 `is not` 和 `not in`。比如说，`not x is None` 本 `x is not None` 功能上完全相同，但是后者明显更加可取，因为它和英文语法相同。  
 
 ```python
-# Do:
+# 这么做：
 x not in collection
 
-# Don't
+# 不这么做：
 not x in collections
 
-# Do:
+# 这么做：
 x is not None
 
-# Don't
+# 不这么做：
 not x is None
 ```
 
-Do not use parentheses to create unnecessary closures. Parentheses should be used for specifying function signatures, calling objects (e.g. calling a function), associating mathematical operations, defining generator-expressions, and grouping long multi-line expressions.   
+不要使用括号来创建不必要的括号组。你应在提供函数签名，调用对象（如调用函数），结合数学表达式，定义生成器表达式，和组合多行表达式时使用括号。
 
 ```python
-# Do:
+# 这么做：
 if x > 2:
     x += 1
     
-# Don't:
+# 不这么做：
 if (x > 2):
     x += 1
     
-# Do
+# 这么做：
 if (long_variable_name in a_long_list_name 
     and long_variable_name not in another_long_name):
     x += 1
 
-# Don't
+# 不这么做：
 if long_variable_name in a_long_list_name and long_variable_name not in another_long_name:
     x += 1
-    
-# Do:
+
+# 这么做：
 for i in numbers:
     x.append(i**2)
 
-# Don't:
+# 不这么做：
 for i in numbers:(
     x.append(i**2)
     )
 ```
 
-Finally, make use of [boolean values for non-boolean objects](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#bool-and-Truth-Values-of-Non-Boolean-Objects) in conditional expressions. For example, you can rely on the fact that empty sequence-objects will evaluate to `False` in conditional statements. 
+最后，在条件表达式中使用[非布尔对象的布尔值](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#bool-and-Truth-Values-of-Non-Boolean-Objects)。比如说，你可以使用空序列对象会在条件语句中计算为 `False` 的事实。
 
 ```python
-# Do:
+# 这么做：
 if list_of_names:
     x += 1
     
-# Don't:
+# 不这么做：
 if len(list_of_names) > 0:
     x += 1
 
-# Do:
+# 这么做：
 result = "on" if integer_flag else "off
 
-# Don't:
+# 不这么做：
 result = "on" if integer_flag != 0 else "off
 ```
 
-### Naming Conventions
+### 命名规则
 
-Class names should use the `CamelCase` (aka `CapWords`) formatting convention, whereas functions and variables should use all-lowercase characters in their names. Underscores can be used in longer lowercased names to make them easier to read (i.e. `snake_case`).
+类名字应该使用 `CamelCase`（驼峰式大小写格式，也叫做 `CapWords`）格式化规则，而函数和变量应该使用全小写的名字。在长的小写名字中你应该使用下划线使其更可读（如 `snake_case`）。
 
 ```python
-# naming conventions for classes
+# 类的命名规则
 
-# Do:
+# 这么做：
 class ShoppingList:
     pass
 
-# Don't:
+# 不这么做：
 class shoppingList:
     pass
 ```
 
 ```python
-# naming conventions for local variables and functions
+# 本地变量和函数的命名规则
 
-# Do:
+# 这么做：
 
 list_of_students = ["Alyosha", "Biff", "Celine"]
 
 def rotate_image(image):
     pass
 
-# Don't
+# 不这么做：
 ListOfStudents = ["Shmangela", "Shmonathan"]
 
 def rotateimage(image):
     pass
 ```
 
-To be clear, there is nothing fundamentally correct about using `CamelCasing` for class names and `snake_casing` for functions and variable names. That being said, most Python users expect code to adhere to these conventions and will struggle to understand and use your code if you do not adhere to them.
+请注意，为类名使用 `CamelCasing` 和为函数和变量名使用 `snake_casing` 并没有什么根本的正确性。虽然如此，大部分Python用户会期望代码符合这些规则，且会在你不这么做的时候难以阅读你的代码。
 
-Constants - variables whose values are not to be changed anywhere within the code - should be specified using ALL_CAPS. Underscores can be used for improving readability.
+常量——其值在代码任何地方都不会改变的变量——应该使用全大写（ALL_CAPS）格式。你可以使用下划线来提升可读性。
 
 ```python
-# naming conventions for constants
+# 常量的命名规则
 
-# Do:
-BOILING_POINT = 100  # celsius
+# 这么做：
+BOILING_POINT = 100  # 摄氏度
 
-# Don't:
-boiling_point = 100  # celsius 
+# 不这么做：
+boiling_point = 100  # 摄氏度
 ```
 
-Variables that are only to be used internally within the code by developers can be identified using a leading underscore. For example, if you encounter the line of code `_use_gpu = True`, this means that the variable `_use_gpu` is only meant to be viewed and edited by the people who are actually writing the code. Note that this variable will not behave differently from `use_gpu` - the leading underscore is simply a visual indicator and nothing more.
+你可以使用前置下划线来命名只会在开发者内部代码使用的变量。比如说，如果你看到了 `_use_gpu = True` 这行代码，这意味着变量 `_use_gpu` 应该仅仅被编写此（模组）代码的人浏览并使用。请注意，这个变量不会和 `use_gpu` 有着不同的行为——前置的下划线仅仅是一个视觉上的标记。
 
-You can use a trailing underscore when your variable name would otherwise conflict with terms reserved by Python. For example you cannot name a variable `class`, as this term is reserved by Python for defining a new class-object. Instead you could name the variable `class_`. This should be used only sparingly.
+你可以在你的变量名会和Python保留的名字冲突时添加一个滞后的下划线。比如说，你不能将一个变量命名为 `class`,，因为它是Python为定义新类对象所保留的词。反而，你可以将其命名为 `class_`。你应该尽量避免使用这个技巧。
 
-Paramount to all of this is that variables are given *descriptive* names.
+比起这些，最重要的点在于给你的变量*描述性*的名字。
 
 ```python
-# Do:
+# 这么做：
 for temperature in list_of_temperatures:
     pressure = gauge(temperature)
 
-# Don't:
+# 不这么做：
 for thing in x:
     thingthing = f(thing)
 
-# No this is not an exaggeration. 
-# I have really seen code like this.
+# 不，这并不是夸大其词。
+# 我真的见过这样子的代码。
 ```
 
-### Indentations and Spacing
+### 缩进和字距
 
-You should use spaces, not tabs, when creating indentations. 
+在创建缩进时，你应该使用空格而不是tab键。
 
-[Scope-delimiting indentations](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope) should always consist of four spaces. 
+[限定作用域的缩进](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope)应该永远使用四个空格。
 
 ```python
-# using four spaces to delimit scope
+# 使用四个空格来限定作用域
 
-# Do:
+# 这么做：
 if x > 0:
-    x = 2  # indented by four spaces
+    x = 2  # 由四个空格缩进
 
-# Don't:
+# 不这么做：
 if x > 0:
-  x = 2    # indented by not-four spaces
+  x = 2    # 由不是四个空格缩进
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-Use hanging indentations to wrap a long line of code over two or more lines. That being said, you should ensure that contents within parentheses or brackets are aligned vertically:
+在单（逻辑）行代码占用两或以上行的空间时，使用悬挂的缩进。你应该注意在括号或方括号中的内容竖向对齐：
 
 ```python
-# Using hanging indents to manage long lines of code
+# 使用悬挂缩进来处理长代码行
 
-# Do: use whitespace to align multi-line arguments in 
-#     a function signature
+# 这么做：使用空格来对其函数签名中多行的
+#        参数（译者注：中文没法对齐，抱歉啦！）
 if isinstance(item, str):
-    output = some_long_function_name(arg1, arg2, arg3, 
+    output = some_long_function_name(arg1, arg2, arg3,
                                      arg4, arg5, arg6)
 
-# Don't:
+# 不这么做：
 if isinstance(item, str):
-    output = some_long_function_name(arg1, arg2, arg3, 
+    output = some_long_function_name(arg1, arg2, arg3,
              arg4, arg5, arg6)
 
-# Do: 
-grocery_list = {"apple": 2, "banana": 10, "chocolate": 1e34, 
+# 这么做：
+grocery_list = {"apple": 2, "banana": 10, "chocolate": 1e34,
                 "toothpaste": 1, "shampoo": 1}
 
-# Don't: second line is under-indented
-grocery_list = {"apple": 2, "banana": 10, "chocolate": 1e34, 
+# 不这么做：第二行缩进不够
+grocery_list = {"apple": 2, "banana": 10, "chocolate": 1e34,
        "toothpaste": 1, "shampoo": 1}
 
-# Do
-x = [[i**2 for i in list_of_ages if i > 10] 
+# 这么做：
+x = [[i**2 for i in list_of_ages if i > 10]
      for list_of_ages in database]
 
-# Don't: second line is over-indented
-x = [[i**2 for i in list_of_ages if i > 10] 
+# 不这么做：第二行缩进过头
+x = [[i**2 for i in list_of_ages if i > 10]
               for list_of_ages in database]
 ```
 
 <!-- #endregion -->
 
 <!-- #region -->
-Function and class definitions should be separated by two blank lines:
+函数和类定义应由两个空行隔开：
 ```python
-# separating function and class definitions using two blank lines
+# 使用两个空行隔开函数和类定义
 
-# Do:
+# 这么做：
 def func_a():
-    """I am function a"""
+    """我是函数a"""
     return 1
 
 
-def func_b():  # separated from func_a by two blank lines
-    """I am function b"""
+def func_b():  # 和 func_a 隔了两个空行
+    """我是函数b"""
     return 2
 
-# Don't:
+# 不这么做：
 def func_c():
-    """I am function c"""
+    """我是函数c"""
     return 1
 
-def func_d():  # separated from func_c by one blank line
-    """I am function d"""
+def func_d():  # 和 func_c 隔了一个空行
+    """我是函数d"""
     return 2
 ```
 
-Default-values for arguments in functions should be specified without any surrounding whitespace. This also holds when calling a function using a named argument.
+函数参数的默认值应不用空格写出。这也通用于在调用函数时使用参数名字的情况。
 
 ```python
-# default values should not have whitespace around them
+# 默认值不应该有空格
 
-# Do:
+# 这么做：
 def func(x, y=2):
     return x + y
 
-# Don't:
+# 不这么做：
 def func(x, y = 2):
     return x + y
 
-# Do:
+# 这么做：
 grade = grade_lookup(name="Ryan")
 
-# Don't:
+# 不这么做：
 grade = grade_lookup(name = "Ryan")
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-As in written English, commas and colons should both follow a non-space character and should be followed by a whitespace. An exception to this is when there is a trailing comma/colon at the end of the line of code, or when a colon is used in a slice.
+就像在正常英文中一样，逗号和冒号后应该在一个非空格的符号后，并之后跟着一个空格。这条规则的例外是在代码行尾的逗号/冒号或在切片中使用冒号。
 
 ```python
-# a comma/colon should be followed by a whitespace
+# 逗号/冒号应后置一个空格
 
-# Do:
+# 这么做：
 x = (1, 2, 3)
 
-# Don't
+# 不这么做：
 x = (1,2,3)
 x = (1 , 2 , 3)
 
-# Do:
+# 这么做：
 x = {1: "a", 2: "b", 3: "c"}
 
-# Don't:
+# 不这么做：
 x = {1 : "a", 2 : "b", 3 : "c"}
 
 x = {1:"a", 2:"b", 3:"c"}
 
-# Do:
-# (1,) is a tuple containing the integer 1.
-# Recall that (1) is the same as 1. The 
-# trailing comma is necessary for it to 
-# be treated as a tuple.
+# 这么做：
+# (1,) 是一个包含整数1的元组。请回忆，(1) 等于
+# 1。只有行尾的逗号才使得其被视作一个元组。
 x = (1,)
 
-# Don't:
+# 不这么做：
 x = (1, )
 
-# Do:
-# a simple slice should not contain whitespaces
+# 这么做：
+# 简单的切片不应该有空格
 sublist = x[1:4]
 
-# Don't:
+# 不这么做：
 sublist = x[1: 4]
 ```
 
-To conclude, consider that simply knowing that there exists a Python style guide, and that it is named PEP8, is the most important thing to take away from this section. Previously, you may not have even thought to search for such a document. That you consult PEP8 when you have code-style questions is the most important outcome here.
+总而言之，使得你知道存在一个名为PEP8的Python风格指南是本小节最关键的目的。在读本小节之前，你可能都不会知道去搜索这么一个文档。当你有着关于代码风格的问题时会咨询PEP8才是这里本小节最重要的结果。
 <!-- #endregion -->
 
 <div class="alert alert-warning">
 
-**Automating Style:**
+**自动化风格**：
 
-Although adhering to a clear and consistent style is critical for writing "good code," enforcing such standards can be tedious and labor-intensive. This is especially true when you begin collaborating with others and working on large projects. Fortunately,  several powerful tools exist that can help us automate good code styling.
+虽然遵守一个清晰一致的风格为编写“好代码”是至关重要的，执行这些标准可能会很麻烦并耗力。这在你开始和其他人合作并编写大规模项目时会特别明显。幸运的是，有好几个很强大的工具存在来帮助我们自动化好的代码风格。
 
-- [flake8](https://github.com/PyCQA/flake8): Analyzes your code to enforce the PEP8 standards and to catch bad code patterns, such as unused variables.
-  - IDEs like Visual Studio Code and PyCharm will automatically configure themselves to run flake8 or comparable [linters](https://en.wikipedia.org/wiki/Lint_(software)) on your code. They will add visual marks to your code to highlight problematic sections of code. This tool can also be run from the command line, or be configured to run automatically with other IDEs and text editors. 
-- [isort](https://isort.readthedocs.io/en/latest/): *"I sort your Python imports so you don't have to"*
-  - As promised, this tool manages the unruly stack of import statements that quickly accrue at the top of our code. It will sort import statements alphabetically, and will group them in accordance with PEP8.
-- [black](https://black.readthedocs.io/en/stable/): *"Any code style you like, as long as it is black"*
-  - Black is an uncompromising code formatter. You need not spend time formatting code correctly if you run black - it will format your code the same way every time. While this will take care of managing things like line-breaks, indentation, spacing, and brackets for you, it is still your responsibility to [write code that is Pythonic](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Being-Pythonic) and to [use good naming conventions](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Naming-Conventions).
+- [flake8](https://github.com/PyCQA/flake8)：分析你的代码来执行PEP8标准并报告不好的代码，如未使用的变量。
+  - 像Visual Studio Code和PyCharm这样的IDE会自动对你的代码运行flake8或相似的[linter](https://en.wikipedia.org/wiki/Lint_(software))。它们会在你的代码上添加可视的标记来高亮显示有问题的代码片段。你也可以从命令行运行这个工具，或设置使其和其它IDE和文本编辑器自动运行。
+- [isort](https://isort.readthedocs.io/en/latest/)：*“我来处理（I sort）你的Python导入，所以你不需要操心”*
+  - 就像工具承诺的一样，它会自动为你管理在我们代码顶端快速变多的导入语句。它将按照字母顺序排序这些导入语句并根据PEP8将它们分组。
+- [black](https://black.readthedocs.io/en/stable/)：*“你喜欢的任何代码风格，只要它是黑色的”*
+  - Black是一个决不妥协的代码格式器。如果你运行black，你不需要花时间来正确地格式化你的代码——它会每次用相同的方法格式化你的代码。虽然这会帮助你解决像分行，缩进，字距，和方括号这类事，但是[编写Python式的代码](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Being-Pythonic)和[使用好的命名规则](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Naming-Conventions)依然是你的责任。
 
-It is useful to know that these tools exist; consider integrating them into your workflow as you become an increasingly-prolific "Pythoneer".
+知道这些工具存在是很有用的；当你成为一个越来越高效的Python程序员的同时，考虑将这些工具添加到你的工作流程中。
 </div>
 
 <div class="alert alert-info">
 
-**Takeaway:**
+**经验**：
 
-[PEP8](https://www.python.org/dev/peps/pep-0008/#code-lay-out) is a design document for the Python community that specifies a coherent style guide for writing Python code. Adhering to this style guide will help to ensure that you write clean code that is organized in a consistent manner across projects. Furthermore, those who abide by PEP8 will find it easier to navigate other PEP8-adherent code bases.    
+[PEP8](https://www.python.org/dev/peps/pep-0008/#code-lay-out)是面向Python社区的设计文本，其提供了一个有条理的编写Python代码的风格指南。遵守这个风格指南将帮助你在不同项目编写一贯不变的干净代码。同时，遵守PEP8的程序员会更轻松地浏览其它遵守PEP8的代码库。 
 </div>
 
 <!-- #region -->
-## Type-Hinting
+## 类型暗示
 
-Type hinting is a syntax that was introduced in Python 3.5 (via [PEP 484](https://www.python.org/dev/peps/pep-0484/)), which permits users to annotate their function definitions to indicate the object-types of a function's inputs and outputs. For example, let's define a function that counts the number of vowels in a string and annotate the function signature with type-hints. 
+类型暗示是在Python 3.5（通过[PEP 484](https://www.python.org/dev/peps/pep-0484/)）添加的一种允许用户注释函数定义来指出函数输入和输出的对象类型的语法。比如说，让我们定义一个函数来数字符串中元音数并使用类型暗示来注释函数的签名吧。
 
 ```python
-# A function signature that has been annotated with type-hints
+# 用类型暗示注释过的函数签名
 
 def count_vowels(x: str) -> int:
-    """Returns the number of vowels contained in `in_string`"""
+    """返回 `in_string` 中元音的数量"""
     vowels = set("aeiouAEIOU")
     return sum(1 for char in x if char in vowels)
 ```
 
-Here, we have "hinted" that `x` should be passed a string-type object, and that the function will return an integer-type object. The general form of an annotated function, with an arbitrary number of [positional arguments](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Arguments) and [default-valued arguments](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Default-Valued-Arguments) is as follows:
+在这里，我们“暗示”了 `x` 应为字符串类型的对象，以及函数会返回整数类对象。注释过的有着任意多[位置参数](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Arguments)和[默认值参数](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Default-Valued-Arguments)的函数的一般形式如下：
 
 ```
-def func_name(arg: <type>, [...], kwarg: <type> = <value>, [...])) -> <type>:   
+def func_name(arg: <type>, [...], kwarg: <type> = <value>, [...])) -> <type>:
 ```
 
-See that each argument name is followed by a colon and the type-object that serves as the type-hint. The return type of the function comes after the closing parenthesis of the signature; it is preceded by the arrow `->` and is followed by the colon that ends the function signature. The same syntax can be used to annotate methods in a class definition.
+请注意，每个参数名后都跟着一个冒号和作为类型暗示的类型对象。函数的返回类型则在签名的后括号之后；它前置一个箭头 `->` 并后置标记函数签名结尾的冒号。你可以使用相同的语法来注释类定义中的方法。
 
-Let's modify `count_vowels` and add a default-valued argument that permits users to optionally include 'y' as a vowel.
+让我们修改 `count_vowels` 来添加一个允许用户可选地将 'y' 视作元音的默认值参数。
 
 ```python
-# Type-hinting a default-valued argument
+# 默认值参数的类型暗示
 
 def count_vowels(x: str, include_y: bool = False) -> int:
-    """Returns the number of vowels contained in `in_string`"""
+    """返回 `in_string` 中元音的数量"""
     vowels = set("aeiouAEIOU")
     if include_y:
         vowels.update("yY")
@@ -390,145 +388,144 @@ def count_vowels(x: str, include_y: bool = False) -> int:
 ```
 <!-- #endregion -->
 
-Here, we have hinted that `include_y` is expected to be passed a boolean-type object, and that it has a default value of `False`. It is important to take some time to grow accustomed to seeing the form `include_y: bool = False`. This can be difficult to parse at first. Keep in mind that  `: bool` is the type-hint here and `= False` specifies the default argument. The ordering of these statements are *not* interchangeable - a type-hint must immediately follow the variable name. 
+在这里，我们暗示了 `include_y` 会期待布尔类对象，以及它的默认值为 `False`。花些时间习惯 `include_y: bool = False` 的形式很重要。可能一开始这有点难读。请记住，`: bool` 在这里是类型暗示，而 `= False` 提供了默认参数。这两个语句的顺序并*不*可以互换——类暗示必须立即跟随变量名字。
 
 <!-- #region -->
-Python 3.6, via [PEP 526](https://www.python.org/dev/peps/pep-0526/), introduced a syntax for annotating standalone variables in your code. For example, suppose that you are initializing a list in your code that will store even numbers. You can annotate this variable as:
+Python 3.6通过[PEP 526](https://www.python.org/dev/peps/pep-0526/)加入了一个用来注释代码中独立变量的语法。比如说，假设你在代码中初始化一个将储存偶数的列表，你可以如下注释这个变量：
 
 ```python
-# annotating a variable with a type-hint
+# 使用类暗示来注释变量
 from typing import List, Set
 
 names: Set[str] = []
 odd_numbers: List[int] = []
 ```
 
-this permits us to document that the empty list will be used to store integers. You can also annotate a variable without providing an initial value.
+这允许我们记录这个空列表将会储存整数。你也可以注释一个变量而不提供初始值。
 
 ```python
-# annotating a variable, without providing a value
+# 注释一个函数但不提供值
 max_num: int
 ```
 
-Note that this variable-annotation syntax is *not* valid for versions of Python earlier than Python 3.6, and the function-annotation syntax is not valid for versions prior to Python 3.5. A formal theory of type-hinting is discussed in [PEP 483](https://www.python.org/dev/peps/pep-0483/).
+请注意，这种变量注释语法在Python 3.6之前的版本并*不*合法，而函数注释语法在Python 3.5之前的版本并不合法。[PEP 483](https://www.python.org/dev/peps/pep-0483/)提供了一个正式的类型暗示理论。
 <!-- #endregion -->
 
 <!-- #region -->
-### What is It Good For? (Absolutely Nothing)
+### 这能做什么？（什么都不能）
 
-As far as the Python interpreter is concerned, **type-hints have no impact on your code other than adding documentation**. That is, Python **will not enforce any type-checking based on your type-hints**. This is in stark contrast to strongly-typed languages, like C++, where you are required specify input and output types for a function as constraints that are strictly enforced by the compiler. 
+从Python直译器的角度来看，**类型暗示对你的代码没有任何除了添加说明文档以外的意义**。也就是说，Python**不会根据你的类型暗示提供任何强制的类型检查**。这和其它如C++的需要为函数提供由编译器履行的输入和输出类型强类型（strongly-typed）语言对比鲜明。
 
-Indeed, in Python we are free to pass whatever we want to our function regardless of its annotated type-hints. Let's pass an empty list, instead of a string, to the  `count_vowels` function that we defined above.
+的确，在Python中我们可以无视注释的类型暗示随意提供任何参数。与其提供一个字符串，让我们向以上定义的 `count_vowels` 函数提供一个空列表吧。
 
 ```python
-# Type-hints do not actually enforce type-checking.
-# Here we pass an empty list instead of a string without 
-# any warnings/errors being raised
+# 类型暗示并不会真的执行类型检查。在这里，我们输入了一个空列表，而不是
+# 字符串，但是没有导致任何警告或错误。
 >>> count_vowels([])
 0
 ```
 
-See that our function pays no notice to the fact that we violated our type-hint, which suggests that we will be passing in a string. It happily loops over the empty list and sums over zeros entries, thus the function returns `0`. This is why these annotations are merely called type *hints*, and not type *requirements*.
+请注意，我们的函数并不在乎我们违反了我们类型暗示保证输入的是字符串这一事实。它开心地循环这个空列表并求其零个成员的和，并返回 `0`。这也是为什么这些注释仅仅叫做类型*暗示*，而不是类型*要求*。
 
-While the CPython interpreter will never require or enforce type-hints during the lifetime of Python 3, there are 3rd party libraries and tooling that makes keen use of these annotations. *It is these 3rd-party capabilities that make type-hinting worth using*. [IDEs like PyCharm and VSCode](https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html) can leverage type hints to great effect. They will warn you when you pass objects to your function that do not abide by the type hints, and they will also leverage these annotations to keep track of the objects that are returned by the function. 
+虽然CPython直译器就在Python 3的生命周期中将永远不会要求或强制使用类型暗示，但是有第三方模组和工具来使用类型暗示。*那些第三方功能使得类型暗示值得使用*。[如PyCharm和VSCode的IDE](https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html)可以使用类型暗示来达到很棒的功能。它们会在你向函数输入不符合类型暗示的对象时警告你，且它们会使用这些类型暗示来记录函数返回的对象。
 
-For example, suppose that we are using the `count_vowels` function in a library of code that we are developing, and we mistakenly think that the output of this function is a string that we want to capitalize. Our IDE will see that we are trying to capitalize an integer and will thus warn us:
+比如说，假设我们在我们正在开发的一个代码模组中使用 `count_vowels` 函数，且我们错误地认为函数的输出是一个字符串并试图将其大写化。我们的IDE将会注意到我们试图大写一个整数并如此警告我们：
 
 ![PyCharm uses type-hints to check our code for consistency](pics/pycharm1.png)
 
-This saves us the trouble of having to run our code, hit an error, read through the stack trace, and debug our mistake. Instead, we immediately see our inconsistency get flagged. In fact, we probably never would have even made the mistake at all, as our IDE would have shown a list of integer-methods for us to choose from, and not string-methods. This would have likely alerted us to our misapprehension. 
+这相比运行代码，遭遇错误，阅读错误，并修正它的流程所花的时间少很多。我们可以立刻看到被标记出的冲突。事实上，我们可能永远都不会产生这个错误，因为我们的IDE会自动显示一列表的整数方法，而不是字符串方法。这很可能会直接纠正我们的错误理解。
 
-It does not take long to experience the benefits of type-hinting through your IDE. This both accelerates your coding by informing you of the object types that you are working with on the fly, and helps to expose oversights in your code as soon as they are made. 
+你不会需要花多久就会通过IDE感受到类型暗示的好处。这将通过告诉你正在操作的对象类型来提升你编写代码的速度，并在你犯错的时候立刻提醒你。
 
-Finally, it is also worthwhile to highlight the [mypy](http://mypy-lang.org/) project, which is used to perform static type-checking on your code based on your type-hints. That is, mypy will automatically traverse your code and find potential bugs by identifying type conflicts in your code (e.g. trying to capitalize an integer) by checking their annotated and inferred types. This tool is most useful for large-scale code bases. Companies like Dropbox make keen use of mypy to identify inconsistencies in their code without having to hit runtime errors. Keep mypy in mind as you mature as a Python developer and find yourself working on projects of growing complexity.
+最后，我们来花一些时间安利一下[mypy](http://mypy-lang.org/)项目。它根据你的代码的类型暗示进行静态的类型检查。也就是说，mypy将会自动遍历你的代码并通过检查对象的标注或推测出的类型来检测代码中的类型冲突（如试图大写化一个整数），指出可能的bug。在大规模代码库中这个工具极其有用。像Dropbox这样的公司经常使用mypy来在检测它们代码中的冲突来避免运行时的错误。在你作为一名Python开发者逐渐成熟并编写越来越复杂的项目的过程中，请记住mypy。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Takeaway:**
+**经验**：
 
-There is a simple syntax for annotating functions, class-methods, and variables with type-hints; this is a formal mechanism for documenting the types of objects that are expected as inputs to the function, as well as the return type of the function. It is critical to note that that type-hints are *never* enforced by Python - they only serve as a form of documentation.
+你可以通过简单的类型暗示语法来标记函数，类方法，和变量；这是一个正式的记录函数输入和输出对象的类型的方法。请记住，类型暗示在Python中*永远*不会被强迫执行——它们仅仅是一种说明文档。
 
-That being said, IDEs have powerful abilities to inspect type-hints and to highlight potential inconsistencies in your code. These capabilities can greatly facilitate your code-development. There are also third-party libraries like [mypy](http://mypy-lang.org/) that can be used to provide more rigorous type enforcement in your code.
+虽然如此，IDE有着强大的检查类型暗示并高亮显示代码中的类型冲突的能力。这些功能能够大幅度地帮助你开发代码。同时，你也可以使用像[mypy](http://mypy-lang.org/)的第三方模组来对你的代码进行更严苛的类型检查。
 
 </div>
 
 
-### Using the `typing` Module
-Although we can use Python's built-in type objects (e.g. `list` and `dict`) for type-hinting, the standard library's [typing](https://docs.python.org/3/library/typing.html) module provides objects that are used to form more descriptive hints. For example, suppose that we want to write a function that takes in a list of integers as an input. Using the built-in `list` object for our type-hint prevents us from indicating that the list should house integers. Using `typing.List`, on the other hand, supports a richer syntax for type-hinting: `typing.List[int]` specifies "a list of integers." Familiarizing yourself with the `typing` module is the first step to writing good type hints.
+### 使用 `typing` 模组
+虽然我们可以使用Python的内置类型对象（如 `list` 和 `dict`）来进行类型暗示，标准库的[typing](https://docs.python.org/3/library/typing.html)模组提供了可以用来创建更加描述性的暗示的对象。比如说，假设我们想编写一个接受整数列表的函数，使用内置的 `list` 对象不能标示这个列表应该存储整数。但是，使用 `typing.List` 则指出更完善的类型暗示语法：`typing.List[int]` 标示了“整数列表”。熟悉 `typing` 模组是编写好类型暗示的第一步。
 
-The following is a summary some of the most critical members of the `typing` module, along with examples for using them.
+以下是对 `typing` 模组中最重要的一些成员的总结，以及使用它们的一些例子。
 
 
 #### `Any`
 
-- **What it hints:** Any type of object
+- **暗示：**任何对象类
 
 #### `Union[<type>, <type>]`
 
-- **What it hints:** Either of two types of objects
-- **Examples:** Hint an integer or a boolean: `Union[int, bool]`
+- **暗示：**任何两种对象类型
+- **例：**暗示整数或布尔值：`Union[int, bool]`
 
 #### `Optional[<type>]` 
 
-- **What it hints:** Either `<type>` or `None`, with `None` as the default 
-- **Examples:** Hint an object that is `None` by default, but will be a string otherwise: `Optional[str]`
+- **暗示：**`<type>` 或 `None`，但 `None` 是默认值
+- **例：**暗示一个默认为 `None` 的值，但如果不是默认值就是一个字符串：`Optional[str]`
 
 #### ``None`` 
 
-- **What it hints:** Simply the object `None` 
+- **暗示：**对象 `None`
 
 #### `List[<type>]` 
 
-- **What it hints:** A list containing an arbitrary number of objects of a given type
-- **Examples:** 
+- **暗示：**包含任何数量的某种对象的列表
+- **例：**
 
-  - Hint a list of strings: `List[str]` 
-  - Hint a list of strings and integers: `List[Union[str, int]]` 
-  - Hint a list of lists of anything: `List[List[Any]]` or `List[List]`
+  - 暗示字符串列表：`List[str]`
+  - 暗示字符串和整数列表：`List[Union[str, int]]`
+  - 暗示任何成员的列表的列表：`List[List[Any]]` 或 `List[List]`
 
 #### `Tuple[<type>, ...]` 
 
-- **What it hints:** A tuple containing a specific number of objects of the specified types. `...` can be used to indicate an arbitrary number of objects in the tuple
-- **Examples:** 
+- **暗示：**包含某数量的某些类型的对象的元组。`...` 可以用来标示元组有着任意数量的对象
+- **例：**
 
-  - Hint a tuple containing one string and one boolean: `Tuple[str, bool]`
-  - Hint a tuple containing an arbitrary number of integers: `Tuple[int, ...]`
+  - 暗示包含一个字符串和一个布尔值的元组：`Tuple[str, bool]`
+  - 暗示包含任意多整数的元组：`Tuple[int, ...]`
   
 #### `Set[<type>]` 
 
-- **What it hints:** A set containing an arbitrary number of objects of a given type
-- **Examples:** 
+- **暗示：**包含任意某类对象的集
+- **例：** 
 
-  - Hint a set of floats: `Set[float]`
-  - Hint a set of tuples (each containing two integers): `Set[Tuple[int, int]]`
+  - 暗示浮点数集：`Set[float]`
+  - 暗示（包含两个整数的）元组集：`Set[Tuple[int, int]]`
 
 #### `Dict[<key-type>, <value-type>]` 
 
-- **What it hints:** A dictionary that maps keys of a given type to values of a given type
-- **Examples:** 
+- **暗示：**将某类的键对应某类的值的词典
+- **例：** 
 
-  - Hint a dictionary that maps strings to integers: `Dict[str, int]`
-  - Hint a dictionary that maps any hashable to booleans: `Dict[Hashable, bool]`|
+  - 暗示字符串对应整数的词典：`Dict[str, int]`
+  - 暗示任何可哈希对象对应布尔值的词典：`Dict[Hashable, bool]`
 
 
 #### `Callable[[<arg-type>], <output-type>]` 
 
-- **What it hints:** A callable (e.g. a function or a method) that takes in arguments of specified types and returns the specified type
-- **Examples:** 
+- **暗示：**任何接受某些类型的参数并返回某类的可调用对象（如参数或方法）
+- **例：** 
 
-  - Hint a function that takes in a string and an integer and returns `None`: `Callable[[str, int], None]`
-  - Hint a method that accepts arbitrary arguments and returns a boolean: `Callable[..., bool]`
+  - 暗示接受一个字符串和一个整数并返回 `None` 的函数：`Callable[[str, int], None]`
+  - 暗示一个接受任意参数并返回布尔值的方法：`Callable[..., bool]`
   
 
 <!-- #region -->
-Let's take, for example, a function that takes in:
+作为一个例子，让我们设一个接受如下的函数：
 
-- a dictionary of student grades, which maps names (strings) to grades (list of floats)
-- a custom function for computing statistics over a list of numbers
-- a list of names of students for whom we want to compute statistics, whose default is all students
+- 包含学生成绩的词典，其将名字（字符串）对应到成绩（浮点数列表）
+- 计算数字列表的统计数据的函数
+- 想要计算统计数据的学生名字列表，默认为所有学生
 
-and returns a list of tuples, with each tuple containing a student's name and their stat.
+并返回元组列表，每个元组包含学生的名字和ta的统计数据。
 
 ```python
 from typing import Dict, Callable, Optional, List, Tuple, Any
@@ -536,68 +533,67 @@ from typing import Dict, Callable, Optional, List, Tuple, Any
 def compute_student_stats(grade_book: Dict[str, List[float]],
                           stat_function: Callable[[List[float]], Any],
                           student_list: Optional[List[str]] = None) -> List[Tuple[str, Any]]:
-    """Computes custom statistics over student's grades.
-    
+    """计算学生成绩的自定义统计数据。
+
     Parameters
     ----------
     grade_book : Dict[str, List[float]]
-        The dictionary (name -> grades) of all of the students' grades. 
+        所有学生成绩的词典（名字 -> 成绩）。
 
     stat_function: Callable[[List[float]], Any]
-        The function used to compute statistics over each student's grades.
-    
+        计算每个学生成绩的统计数据的函数。
+
     student_list : Optional[List[str]]
-        A list of names of the students for whom statistics will be computed. 
-        By default, statistics will be computed for all students in the gradebook.
+        需要计算统计数据肚饿学生名字列表。
+        函数会默认计算成绩簿中所有学生的统计数据。
     
     Returns
     -------
     List[Tuple[str, Any]]
-        The name-stats tuple pair for each specified student.
+        每个学生的名字和统计数据元组。
     """
-    if student_list is None:               # default to all-students
-        student_list = sorted(grade_book)  # iterates over the dictionary's keys
+    if student_list is None:               # 默认所有学生
+        student_list = sorted(grade_book)  # 迭代词典的键
     return [(name, stat_function(grade_book[name])) for name in student_list]
 ```
 <!-- #endregion -->
 
-(Note that we have also included a detailed NumPy-style docstring; we will discuss this documentation style in detail in the following subsection).
+（请注意，我们同时添加了一个细致的NumPy风格docstring；我们将会在接下来的小节中仔细讨论这个说明文档风格）。
 
-There are a few details to take note of here. First, see that we need not make any assumptions about what type of object is returned by `stat_function`. It might return the mean-value as a single floating point number, or perhaps a tuple of the mean, median, and mode, etc. Thus we document its output type as `Any`; this is reflected in our function's return type as well: `List[Tuple[str, Any]]`. As we will discuss shortly, it is prudent to be discerning but general in one's type-hints. Next, note that `Optional[List[str]]` is used to indicate that the default-value of `student_list` is `None`, but that we can otherwise pass it a list-of-strings. This is cleaner to read than the equivalent hint `Union[None, List[str]]` and it indicates that `None` is indeed the default-value. 
+在这里有应注意几个细节。首先，我们没有对 `stat_function` 返回的对象类型没有进行任何假设。它可能会返回单个浮点数的平均值，或包含平均值，中间值，最频繁出现值等等的元组。因此，我们说明它的返回类型是 `Any`；这在我们函数的返回类型中也有显示：`List[Tuple[str, Any]]`。和我们马上要进行的讨论呼应，你应该在类型暗示尽可能细致的前提下做到不丢失任何通用性。然后，`Optional[List[str]]` 用来标记 `student_list` 的默认值是 `None`，但如果不是默认值我们向其输入一个字符串列表。这比起等值的暗示 `Union[None, List[str]]` 更加易读，而且它表达了默认值是 `None` 这个事实。
 
+如果你[定义了自己的类型（既类）](http://www.pythonlikeyoumeanit.com/module_4.html)，你可以在暗示中直接提供这个类对象。这类型暗示了某个变量将接受该类型的一个*实例*。如果你遇到了想要暗示类对象本身（而不是其实例）的稀少情况，你可以使用 `typing.Type` 来表达这一点。
 
-In the case that you have [defined your own type (akaclass)](http://www.pythonlikeyoumeanit.com/module_4.html), you can simply provide the resulting class object in an annotation. This type-hints that a variable is expected to be an *instance* of that type. If, instead, you have the rare case of hinting that the class object itself (not an instance of the class) is expected, you can use `typing.Type` to indicate this.
-
-Let's write a silly example to demonstrate these points. We will define our own `Dog` class, and will write a function that expects the `Dog` class-object itself (type-hinted as `Type[Dog]`). The function will create several *instances* of the `Dog` class (type-hinted simply as `Dog`), and will return them in a list.
+让我们编写一个简单的例子来演示这些片。我们将定义我们的 `Dog` 类并编写一个接受 `Dog` 类对象（类型暗示为 `Type[Dog]`）的函数。该函数将创建几个 `Dog` 类的*实例*（类型暗示为 `Dog`）并将它们放入列表中返回。
 
 <!-- #region -->
 ```python
-# type-hinting a custom class
+# 类型暗示自定义类
 from typing import List, Type
 class Dog:
     def __init__(self, name):
         self.name = name
 
-# cls is expected to be the class-object, `Dog`, itself
-# This function returns a list of instances of the `Dog` type 
+# cls 期望为类对象 `Dog` 本身
+# 这个函数返回一列表的 `Dog` 类型实例
 def list_famous_dogs(cls: Type[Dog]) -> List[Dog]:
     return [cls(name) for name in ["Lassie", "Shadow", "Air Bud"]]
 ```
 
-You can also create a [type alias](https://docs.python.org/3/library/typing.html#type-aliases), which you can define in your code and use in your annotations. For example, if you will regularly be passing around a tuple containing five `Dog`-instances, you can define an alias to help make your type-hints more succinct:
+你也可以在代码中创建[类型代名词](https://docs.python.org/3/library/typing.html#type-aliases)（type alias）并在注释中使用。比如说，如果你将经常使用有着五个 `Dog` 实例的元组，你可以定义一个代名词来使得你的类型暗示更加简短：
 
 ```python
-# creating an alias for a type
+# 创建类型的代名词
 Pack = Tuple[Dog, Dog, Dog, Dog, Dog]
 
 def find_alpha(dogs: Pack) -> Dog:
     ...
 ```
 
-Object types defined in 3rd-party libraries, e.g. NumPy's [ndarray](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html) behave no differently from our own custom custom classes; simply provide the [class object](https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object) in the type-hint annotation:
+第三方模组定义的对象类型，如NumPy的[N维数组](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html)和我们自己的自定义类行为一样；直接在类型暗示标注中提供[类对象](https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object)就行了：
 
 ```python
-# type-hinting an nd-array from numpy
+# 类型桉树numpy的N维数组
 import numpy as np
 
 def custom_dot_product(x: np.ndarray, y: np.ndarray) -> float:
@@ -605,29 +601,29 @@ def custom_dot_product(x: np.ndarray, y: np.ndarray) -> float:
 ```
 <!-- #endregion -->
 
-Eventually, popular 3rd party libraries like NumPy will contribute their own typing modules so that you can provide higher-fidelity hints that indicate things like data-type and array-shape. NumPy developers [are currently working on this](https://github.com/numpy/numpy/issues/7370).
+早晚有一天，像NumPy这样的流行的第三方模组将会贡献它们自己的类型模组来帮助你提供更加保真的类型暗示，如数据类型和数组形状。NumPy开发者[正在为此工作](https://github.com/numpy/numpy/issues/7370)。
 
 
 <div class="alert alert-info">
 
-**Takeaway:**
+**经验**：
 
-Python's `typing` module contains objects that are used to create descriptive type-hints. For example, whereas `list` can only be used to type-hint a list, `typing.List[str]` describes a list-of-strings. These can also be used to create concise aliases for convoluted type-hints that will be used frequently throughout your code. 
+Python的 `typing` 模组包含了用来创建描述性类型暗示的对象。比如说，虽然 `list` 只能用来类型暗示一个列表，`typing.List[str]` 描述了一个字符串列表。你也可以使用它们来为在代码中重复使用的复杂类型暗示创建简短的代名词。
 
-In general, a [class object](https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object) can be used for type-hinting, and it indicates that a variable should be an *instance* of that class. For example, `numpy.ndarray` hints that a variable should be passed an instance of the nd-array class.
+一般而言，你可以使用[类对象](https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object)来进行类型暗示，且其暗示了一个变量将为该类的一个*实例*。比如说，`numpy.ndarray` 暗示了一个变量将接受一个N维数组。
 
 </div>
 
 <!-- #region -->
-### Writing Good Type-Hints (quack quack)
+### 编写好的类型暗示
 
-You should strive to write type-hints that pass [the duck test](https://en.wikipedia.org/wiki/Duck_test): if your function is expecting a duck then hint for something that walks like a duck, quacks like a duck, etc. This will help you avoid writing type-hints that are overly narrow, and which are ultimately non-Pythonic in their strictness.
+你应该尽量编写通过[鸭子测试](https://en.wikipedia.org/wiki/Duck_test)的代码：如果你的函数期待一个鸭子，那么暗示一个走起来像鸭子，叫起来像鸭子，等等的东西。这将帮助你避免编写太过狭隘并因此不符合Python风格的类型暗示。
 
-To be more concrete, let's revisit our `count_vowels` function:
+具体来讲，让我们复习一下我们的 `count_vowels` 函数：
 
 ```python
 def count_vowels(x: str, include_y: bool = False) -> int:
-    """Returns the number of vowels contained in `in_string`"""
+    """返回 `x` 中元音的数量"""
     vowels = set("aeiouAEIOU")
     if include_y:
         vowels.update("yY")
@@ -636,10 +632,10 @@ def count_vowels(x: str, include_y: bool = False) -> int:
 <!-- #endregion -->
 
 <!-- #region -->
-Look carefully at how `x` is used in this function. We simply iterate over `x` in a for-loop - there is nothing string-specific about this. We could pass a string, a tuple, a list, or anything that supports iteration to this function, and it will happily count the vowels in `x`:
+仔细看 `x` 在函数中如何使用。我们用for循环迭代 `x`——这没有任何仅限于字符串的功能。我们向这个函数可以输入一个字符串，元组，列表，或任何支持迭代的对象，而它都会开开心心地计算 `x` 中的元音数。
 
 ```python
-# `count_vowels` can operate on any iterable of strings
+# `count_vowels` 可以操作任何字符串可迭代物
 >>> count_vowels("apple")
 2
 
@@ -653,44 +649,43 @@ Look carefully at how `x` is used in this function. We simply iterate over `x` i
 2
 ```
 
-It is over-restrictive and un-Pythonic to type-hint `x` as `str`. Let's make our type-hint more accommodating.
+类型暗示 `x` 为 `str` 就太过限制且非Python风格了。让我们修改类型暗示使其更加包容。
 <!-- #endregion -->
 
 <!-- #region -->
-The `typing` module provides a so-called [abstract base class](https://docs.python.org/3/glossary.html#term-abstract-base-class), `Iterable`, which is a generic type for any class that supports iteration. Thus we can improve our type-hint by making it more general. This encapsulates all of the above use-cases that we demonstrated.
+`typing` 模组提供了所谓的[抽象基类](https://docs.python.org/3/glossary.html#term-abstract-base-class) `Iterable`，其为代表任何支持迭代的类的一般类型。因此，我们可以通过使我们的类型暗示更一般化来提升它的描述性。这将包含我们上面演示中的所有使用方法。
 
 ```python
 from typing import Iterable
 
 def count_vowels(x: Iterable[str], include_y: bool = False) -> int:
-    """Returns the number of vowels contained in `in_string`"""
+    """返回 `x` 中元音的数量"""
     vowels = set("aeiouAEIOU")
     if include_y:
         vowels.update("yY")
     return sum(1 for char in x if char in vowels)
 ```
 
-(To be completely general, we could have hinted `Iterable[Hashable]`, as we are relying on the entries of `x` to be hashable to check for their membership in the [set](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure) of vowels. It is up to you to determine how abstract you want your ducks to be.)
+（如果我们想要完全的一般化，我们可以暗示 `Iterable[Hashable]`，因为我们依赖 `x` 中的成员的可哈希特征来检查它们是否在元音[集](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)中。你应该决定你的鸭子要有多抽象）。
 
-It is is important to review the [abstract base classes (abc's) for Python's collections](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes) (yes, I am encouraging you to learn your abc's). This will help you classify categories of types generally, based on their [special methods](http://www.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html). Two of the most common abc's are `Iterable`: any class that supports the iteration protocol, and `Sequence`: any collection that has a length (via `__len__`) and supports the get-item syntax (via `__getitem__`).
+复习[Python集合的抽象基类](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes)（abstract base class（abc））很重要（是的，我在建议你复习你的abc——译者注：abc也可以指小学生学的字母表）。这将帮助你一般性地根据对象的[特殊方法](http://www.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html)分类它们。两个最常用的abc是 `Iterable`：任何支持迭代协议的类，和 `Sequence`：任何有着长度（通过 `__len__`）和支持获取成员语法（通过 `__getitem__`）的集合。
 <!-- #endregion -->
 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Type Hinting**
+**阅读理解：类型暗示**
 
-Read through the following function and annotate its signature with type-hints. Try to make your type-hints sufficiently general here.
+阅读以下函数并使用类型暗示标记它的签名。尝试让你的类型暗示足够一般化。
 
 ```python
 def get_first_and_last(x):
-    """Returns the first and last elements of `x`. `x` is 
-    assumed to be non-empty
-    """ 
+    """返回 `x` 的第一和最后一个成员。函数将假设 `x` 非空。
+    """
     return (x[0], x[-1])
 ```
 
-Here are some examples of this function in action. Be sure that your type-hint captures all of this diversity.
+以下是一些使用该函数的例子。请使你的类型暗示支持这些多样的使用方法。
 
 ```python
 >>> get_first_and_last("hello")
@@ -708,87 +703,86 @@ Here are some examples of this function in action. Be sure that your type-hint c
 
 <div class="alert alert-info">
 
-**Takeaway:**
+**经验**：
 
-It is un-Pythonic to be overly strict when type hinting. Python handles typing flexibly - it uses [duck typing](https://en.wikipedia.org/wiki/Duck_typing) - and our type hints should follow suit. Rely on abstract base classes when possible to provide the appropriate guidelines for a particular variable type. 
+在类型暗示时太过严苛是不符合Python风格的做法。Python灵活地处理类型分类——它使用[鸭子类型分类](https://en.wikipedia.org/wiki/Duck_typing)——且我们的类型暗示也应该如此。每当可以的时候使用抽象基类来提供某种变量类型的合理规则。
 
 </div>
 
 
-## Documentation Styles
+## 说明文档风格
 
-[Davis King](https://twitter.com/nulhom?lang=en), a prolific and talented open source developer, is the creator of the [dlib C++ library](http://dlib.net/). Among the library's major features, like machine learning algorithms, Davis lists its *documentation* as the first and foremost feature. In fact, he says about dlib:
+[Davis King](https://twitter.com/nulhom?lang=en)，一个多产又有才的开源开发者，是[dlib C++库](http://dlib.net/)的创造者。在库如机器学习算法的主要功能中，David将其*说明文档*列为第一个和最重要的功能。事实上，他如此评论dlib：
 
-> *I consider the documentation to be the most important part of the library.* So if you find anything that isn't documented, isn't clear, or has out of date documentation, tell me and I will fix it.
+> *我认为说明文档是这个库最重要的组件。* 所以如果你发现任何东西没有说明文档，不清楚，或有着过时的说明文档，告诉我，我将修好它。
 
-There is great wisdom in placing such a high value on documentation. In this section, we will learn about two popular docstring-style specifications for Python: the NumPy specification and the Google specification. Both of these are rich extensions of the rudimentary docstring conventions that are proposed in [PEP 257](https://www.python.org/dev/peps/pep-0257/), and, critically, they both place an emphasis on documenting the variable types. 
+如此重视说明文档是一个很聪明地做饭。在本小节中，我们将学习两个流行的Python docstring风格的规格：NumPy规格和Google规格。两个规格都是对[PEP 257](https://www.python.org/dev/peps/pep-0257/)提出的基础docstring的强大拓展，且它们都对记录变量类型有着极大的重视。
 
-PLYMI uses Numpy-style docstrings throughout most of the text (except for when we are trying to keep the functions brief). This is ultimately just a choice of style/aesthetics. Ultimately, the critical takeaway here is to **pick a documentation style, learn it, and stick to it faithfully**. Once again, it is hard to overstate how important it is to anchor your code with clear and consistent documentation. It will aid you in your code-writing process, it will enable users to adopt and perhaps contribute to your code, and it will ensure longevity for your hard work.
+PLYMI在阅读大部分时候（除了在我们试图使函数简短时）都使用了NumPy风格的docstring。最终而言这只是一个风格/美观上的选择。总而言之，这里最重要的经验是去**选择一个说明文档风格，学习它，并忠诚地使用它**。再次重申一次，我们很难夸张使用清晰和协调的说明文档有多重要。它将帮助你的代码的编写过程。它将允许用户使用和甚至对你的代码做贡献，并将保证你的辛苦工作的长命。
 
 <!-- #region -->
-### The NumPy Documentation Style
+### NumPy说明文档
 
-The NumPy documentation style is specified in full [here](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard). It is strongly recommended that you read through it in full. There are details in the specification that we will pass over here for the sake of simplicity and to avoid rewriting their specification. We will focus on the guidelines for documenting functions, but note that they specify rules for documenting [classes](https://www.pythonlikeyoumeanit.com/module_4.html) and [modules](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Modules_and_Packages.html#Modules).
+NumPy说明文档风格在在[这里](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)完整地列出。在这里我强烈建议你完整阅读这个列表。我们将在这里忽略一些细节来保证阅读的简单度并避免重复以上文档中的内容。我们将专注于为函数编写说明文档的规则，但请注意它们也提供了为[类](https://www.pythonlikeyoumeanit.com/module_4.html)和[模组](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Modules_and_Packages.html#Modules)编写说明文档的规则。
 
-A function's docstring is divided up into several sections. Most of these sections are delimited with a header, e.g. "Parameters", followed by a horizontal line of dashes:
+函数的docstring分为几个部分。大部分这些部分都由一个头行，如“Parameters”，和一行折线限定。
 
 ```
 Parameters
 ----------
 ```
 
-A docstring should at least consist of:
+一个docstring至少应有：
 
- - A succinct, single-line description of the function.
- - An extended summary of the function, which provides a more verbose description of things.
- - A `Parameters` section, which details the types of the input parameters along with descriptions of them. (This section is not necessary if your function is parameterless).
- - A `Returns` section (or `Yields` for a generator), which details the object that is returned by the function. (This is not necessary if your function always returns `None`).
+ - 一个简短的单行函数功能描述。
+ - 一个更长的函数总结，其为提供更多细节描述。
+ - 一个 `Parameters` 部分，其提供了输入参数的类型以及它们的描述。（如果你的函数不接受参数，那这一部分也就没有必要了）。
+ - 一个 `Returns` 部分（如果是生成器的话是 `Yields`），其提供了函数返回对象的细节。（如果你的函数永远返回s `None`，那这一部分也就没有必要了）。
 <!-- #endregion -->
 
 <!-- #region -->
-There are additional, optional sections that can be used to improve your documentation: 
+你也可以添加额外的，可选的部分来提升你的说明文档：
 
-- A `Notes` section, which can be used to discuss tertiary details of the function, such as a description of the algorithm that was used. You can also include mathematical formulae here, and cite primary materials
-- A `References` section, used to document any works that were cited in the "Notes" section. It is not very common to need to reference primary sources in your docstrings.
-- An `Examples` section, which contains console-style code, similar to the code snippets that you see in PLYMI, for using your function.
+- 一个 `Notes` 部分。你可以用它提供函数额外的注释，如函数所使用的算法。你也可以在这里提供数学公式并列出参考资料。
+- 一个 `References` 部分。你可以用它来记录任何在“Notes”部分参考的资料。你很少会需要在docstring中引用参考资料。
+- 一个 `Examples` 部分，其含有演示如何使用你的函数的命令行风格的代码（类似于你在PLYMI中见到的代码片段）。
 
-There are additional, more obscure or technical sections that you can read about in the formal specification.
+上文提供的正式说明文档风格文件中列出了其它的更加少见或技术性的部分可供你添加。
 
-The following function has a docstring that exemplifies all of these sections.
+以下函数有着一个包含以上所有部分的docstring。
 
 ```python
 def pairwise_dists(x: np.ndarray, y: np.ndarray) -> np.ndarray:
-    """Computes pairwise distances between the rows of ``x`` and ``y``.
-    
-    Returns the shape-(M, N) array of Euclidean distances between 
-    the M rows of ``x`` and the N rows of ``y``.
+    """计算 ``x`` 和 ``y`` 每行对之间的距离。
+
+    返回形状为 (M, N) 的 ``x`` 中M行和 ``y`` 中
+    N行的欧氏距离数组。
 
     Parameters
     ----------
     x : numpy.ndarray, shape=(M, D)
-        An optional description of ``x``
+        可选的对 ``x`` 的介绍
     y : numpy.ndarray, shape=(N, D)
-        An optional description of ``y``
+        可选的对 ``y`` 的介绍
 
     Returns
     -------
     numpy.ndarray, shape=(M, N)
-        The pairwise distances
+        距离对
     
     Notes
     -----
-    This function uses the memory-efficient vectorized implementation that
-    is detailed in [1]_.
+    本函数使用了内存高效的矢量化实现。细节可以在 [1]_ 中找到。
     
     References
     ----------
     .. [1] Soklaski, R. (2019, Jan 21). Array Broadcasting. 
-           Retrieved from https://http://www.pythonlikeyoumeanit.com
+           Retrieved from https://www.pythonlikeyoumeanit.com
     
     Examples
     --------
-    Compute the pairwise distances between the rows of a shape-(3, 3) array 
-    with the rows of a shape-(2, 3) array.
+    计算形状为 (3, 3) 的数组的行和形状为 (2, 3) 的数组的行之间
+    的距离对。
     
     >>> import numpy as np
     >>> x = np.array([[1., 2., 3.],
@@ -804,40 +798,37 @@ def pairwise_dists(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     ...
 ```
 
-See that we specify **type information** in the `Parameters` and the `Returns` section of the docstring, even though it is redundant with the function signature's type-hints - it is useful to have this information in the docstring too. This is a good place to embellish the type information with pertinent information that is not conveyed by the formal type-hints. For example, we added shape information alongside the types in these sections. 
+请注意，我们在docstring的 `Parameters` 和 `Returns` 部分提供了**类型信息**，虽然这重复了函数签名中的类型暗示——在docstring中也有这个信息是很有用的。这是一个提供正式类型暗示中缺失的有关信息的好地方。比如说，我们在这些部分的类型旁边添加了形状的信息。
 
-Variable names should be referenced using double back-ticks within the docstring; e.g. \`\`x\`\`. It should also be noted that that including an `Examples` section is very useful for creating high-quality documentation. It is recommended that you include examples liberally throughout your code. 
+在docstring中，变量名应用在两边分别用两个 \` 符号包围，如 \`\`x\`\`。请注意，包含一个 `Examples` 部分为创建高质量的说明文档极其有帮助。本文建议你在你的代码中活用多用范例部分。
 
-Here is another example docstring that adheres to the NumPy-style, one without a `Notes` and `References` section:
+以下是另外一个符合NumPy风格的范例docstring，但它没有 `Notes` 和 `References` 部分：
 
 ```python
 def compute_student_stats(grade_book: Dict[str, Iterable[float]],
                           stat_function: Callable[[Iterable[float]], Any],
                           student_list: Optional[List[str]] = None) -> List[Tuple[str, Any]]:
-    """Computes custom statistics over students' grades.
+    """计算学生成绩的自定义统计数据。
 
-    Applies ``stat_func`` over a list of each student's grades, 
-    and accumulates name-stat tuple pairs in a list.
-    
+    对每个学生的成绩列表调用 ``stat_func``，并将结果作为名字-数据的元组
+    储存到一个列表中。
+
     Parameters
     ----------
     grade_book : Dict[str, List[float]]
-        The dictionary (name -> grades) of all of the students' 
-        grades. 
+        所有学生成绩的词典（名字 -> 成绩）。
 
     stat_function: Callable[[Iterable[float]], Any]
-        The function used to compute statistics over each student's 
-        grades.
+        用来计算每个学生成绩的统计数据的函数。
 
     student_list : Optional[List[str]]
-        A list of names of the students for whom statistics will be 
-        computed. By default, statistics will be computed for all 
-        students in the grade book.
+        需要计算统计数据的学生名字列表。函数将默认计算所有成绩簿中
+        学生的统计数据。
 
     Returns
     -------
     List[Tuple[str, Any]]
-        The name-stats tuple pair for each specified student.
+        每个学生的名字-数据元组。
     
     Examples
     --------
@@ -851,32 +842,32 @@ def compute_student_stats(grade_book: Dict[str, Iterable[float]],
 <!-- #endregion -->
 
 <!-- #region -->
-### The Google Documentation Style
+### Google说明文档风格
 
-The Google documentation style is specified in full [here](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args); it is part of the complete [Google Python style guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#google-python-style-guide). The docstring style specified here is quite succinct in comparison to the NumPy spec. It consists of the following sections:
+Google说明文档的完整规则可以在[这里](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args)找到；它是完整[Google Python风格指南](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#google-python-style-guide)的一部分。在这里描述的docstring风格对比NumPy的规格相对简短。它包含了以下部分：
 
- - A succinct, single-line description of the function.
- - An extended summary of the function, which provides a more verbose description of things.
- - An `Args` section, which details the types of the input parameters along with descriptions of them. (This section is not necessary if your function is parameterless).
- - A `Returns` section (or `Yields` for a generator), which details the object that is returned by the function. (This is not necessary if your function always returns `None`).
- 
-There is also a `Raises` section in the case that your function raises exceptions under known conditions.
+ - 一个简短的单行函数描述。
+ - 一个更长的函数总结，其为提供更多细节描述。
+ - 一个 `Args` 部分，其细致提供了函数的输入参数的类型和描述（如果你的函数没有参数，那么这个部分也没有必要了）。
+ - 一个 `Returns` 部分（如果是生成器的话是 `Yields`），其细致描述了函数返回的对象（如果你的函数永远返回 `None`，那么这个部分也没有必要了）。
 
-Let's reproduce the docstrings for `pairwise_dists` and `compute_student_stats` using the Google style.
+如果你的函数在已知情况下引发错误（raises an exception）的话，你也可以添加一个 `Raises` 部分。
+
+让我们使用Google的风格来重写 `pairwise_dists` 和 `compute_student_stats` 的docstring。
 
 ```python
 def pairwise_dists(x: np.ndarray, y: np.ndarray) -> np.ndarray:
-    """Computes pairwise distances between the rows of ``x`` and ``y``.
-    
-    Returns the shape-(M, N) array of Euclidean distances between 
-    the M rows of ``x`` and the N rows of ``y``.
+    """计算 ``x`` 和 ``y`` 每行对之间的距离。
+
+    返回形状为 (M, N) 的 ``x`` 中M行和 ``y`` 中
+    N行的欧氏距离数组。
 
     Args:
-        x (numpy.ndarray) : A shape-(M, D) array
-        y (numpy.ndarray) : A shape-(N, D) array
+        x (numpy.ndarray) : 一个形状为 (M, D) 的数组
+        y (numpy.ndarray) : 一个形状为 (N, D) 的数组
 
     Returns:
-        (numpy.ndarray): A shape-(M, N) array of the pairwise distances
+        (numpy.ndarray): 一个形状为 (M, N) 的距离对数组
     """
     ...
 ```
@@ -885,86 +876,81 @@ def pairwise_dists(x: np.ndarray, y: np.ndarray) -> np.ndarray:
 def compute_student_stats(grade_book: Dict[str, Iterable[float]],
                           stat_function: Callable[[Iterable[float]], Any],
                           student_list: Optional[List[str]] = None) -> List[Tuple[str, Any]]:
-    """Computes custom statistics over students' grades.
+    """计算学生成绩的自定义统计数据。
 
-    Applies ``stat_func`` over a list of each student's grades, 
-    and accumulates name-stat tuple pairs in a list.
+    对每个学生的成绩列表调用 ``stat_func``，并将结果作为名字-数据的元组
+    储存到一个列表中。
     
     Args:
-        grade_book (Dict[str, List[float]]): The dictionary 
-            (name -> grades) of all of the students' grades. 
+        grade_book (Dict[str, List[float]]): 所有学生成绩的词典
+            （名字 -> 成绩）。
 
-        stat_function (Callable[[Iterable[float]], Any]): The 
-            function used to compute statistics over each 
-            student's grades.
+        stat_function (Callable[[Iterable[float]], Any]): 用来
+            计算每个学生成绩的统计数据的函数。
 
-        student_list (Optional[List[str]]): A list of names of 
-            the students for whom statistics will be computed. 
-            By default, statistics will be computed for all 
-            students in the grade book.
+        student_list (Optional[List[str]]): 需要计算统计数据的学生
+            名字列表。函数将默认计算所有成绩簿中学生的统计数据。
 
     Returns
-        (List[Tuple[str, Any]]):  The name-stats tuple pair for each 
-        specified student.
+        (List[Tuple[str, Any]]): 每个学生的名字-数据元组。
     """
     ...
 ```
 
-See that this style produces docstrings that are succinct, but are sometimes crowded horizontally given the successive levels of indentation within each docstring-section. 
+请注意，本风格创建简短，但有时因为每个部分中的缩进而横向拥挤的docstring。
 
-It must also be noted that the [Napolean project](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings), which facilitates the automated generation of HTML documentation-pages from Python docstrings, has extended the Google specification to match the sections of the NumPy style. The Napolean version of the NumPy and Google docstring styles can be found [here](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#id1). This resource also includes useful examples of docstrings for modules and classes.  
+同时，帮助你自动从Python的docstring生成HTML说明文档页面的[Napolean项目](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings)已经拓展了Google的规格来对应NumPy风格的部分。Napolean版本的NumPy和Google的docstring风格可以在[这里](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#id1)找到。这个资源也包含了很多有用的模组和类的范例docstring。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Takeaway:**
+**经验**：
 
-Take some time to review the NumPy and Google docstring specifications, pick one, and stick to it faithfully when documenting your code. If you plan to code with others, find out if they have already chosen a documentation style. 
+花一些时间来复习NumPy和Google的docstring风格，选择其一，并在为你的代码编写说明文档时遵守它。如果你打算和其它人一起合作，那么了解他们是否已经选择了一个说明文档风格。
 
 </div>
 
 
 <div class="alert alert-warning">
 
-**Documentation Tools:**
+**说明文档工具**：
 
-[Sphinx](http://www.sphinx-doc.org/en/master/) is a popular and hugely-powerful tool that will render documentation for your project in HTML by parsing the docstrings that are in your code. Python, NumPy, and almost all major 3rd party Python libraries use Sphinx to publish their documentation pages. [Napolean](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings) and [numpydoc](https://github.com/numpy/numpydoc) are Sphinx extensions that allows Sphinx to parse and nicely render docstrings that adhere to the NumPy and Google docstring specifications.
+[Sphinx](http://www.sphinx-doc.org/en/master/)是一个流行且极其强大的工具。它通过分析你代码中的docstring来为你生成HTML说明文档。Python，NumPy，和几乎所有重要的第三方Python模组都使用Sphinx来发布它们的说明文档页面。[Napolean](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings)和[numpydoc](https://github.com/numpy/numpydoc)是允许Sphinx分析并好看地渲染遵守NumPy和Google的风格的docstring的Sphinx拓展。
 
-[custom_inherit](https://github.com/meowklaski/custom_inherit) is a lightweight tool for [inheriting](http://www.pythonlikeyoumeanit.com/Module4_OOP/Inheritance.html) and merging docstrings. It provides rich support for merging the various sections of docstrings, and supports NumPy and Google-style docstrings natively. It also supports custom documentation styles.
+[custom_inherit](https://github.com/meowklaski/custom_inherit)是一个[继承](http://www.pythonlikeyoumeanit.com/Module4_OOP/Inheritance.html)和合并docstring的轻量工具。它提供了合并docstring不同部分的强大功能并原生支持NumPy和Google风格的docstring。它也支持自定义的说明文档风格。
 </div>
 
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [PEP 0: Index of Python Enhancement Proposals](https://www.python.org/dev/peps/)
-- [PEP 1: Purpose and Guidelines](https://www.python.org/dev/peps/pep-0001/)
-- [PEP 8: Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008)
-- [PEP 483: The Theory of Type Hints](https://www.python.org/dev/peps/pep-0483/)
-- [PEP 484: Type-Hinting](https://www.python.org/dev/peps/pep-0484/)
-- [PEP 526: Syntax for Variable Annotations](https://www.python.org/dev/peps/pep-0526/)
-- [The standard library's typing module](https://docs.python.org/3/library/typing.html)
-- [Definition: abstract base class](https://docs.python.org/3/glossary.html#term-abstract-base-class)
-- [NumPy Documentation Specification](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)
-- [Google Documentation Specification](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args)
-- [Napolean: Marching Towards Legible Docstrings](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#)
+- [PEP 0：所有Python增强协议的索引](https://www.python.org/dev/peps/)
+- [PEP 1：宗旨和准则](https://www.python.org/dev/peps/pep-0001/)
+- [PEP 8：Python代码的风格指南](https://www.python.org/dev/peps/pep-0008)
+- [PEP 483：类型暗示的理论](https://www.python.org/dev/peps/pep-0483/)
+- [PEP 484：类型暗示](https://www.python.org/dev/peps/pep-0484/)
+- [PEP 526：变量注释的语法](https://www.python.org/dev/peps/pep-0526/)
+- [标准库的typing模组](https://docs.python.org/3/library/typing.html)
+- [定义：抽象基类](https://docs.python.org/3/glossary.html#term-abstract-base-class)
+- [NumPy说明文档风格](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)
+- [Google说明文档风格](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args)
+- [Napolean：向更可读的docstring进军](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#)
 
 
-## Reading Comprehension Solutions
+## 阅读理解答案：
 
 <!-- #region -->
-**Type Hinting: Solutions**
+**类型暗示：解**
 
-The following is a well-annotated version of `get_first_and_last`:
+以下是一个注释过的 `get_first_and_last` 版本：
 
 ```python
 from typing import Sequence, Tuple, Any
 
 def get_first_and_last(x: Sequence[Any]) -> Tuple[Any, Any]:
-    """Returns the first and last elements of `x`. `x` is 
-    assumed to be non-empty
+    """返回 `x` 的第一和最后一个成员。函数将假设 `x` 非空。
     """ 
     return (x[0], x[-1])
 ```
 
-This function only requires that `x` can be indexed into. Referring to the [abc's for Python's collections](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes), `Sequence` is the simplest abstract base class that supports the `__getitem__` syntax. Indeed, this was a trait characteristic that we saw for all of [Python's sequence types](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html). Lastly, note that we make no assumptions about the contents of `x`, thus we use the generic `Any` type. 
+这个函数仅仅要求 `x` 可以被索引。参考[Python集合的抽象基类](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes)列表，`Sequence` 是最简单的支持 `__getitem__` 语法的抽象基类。确实，如我们所见，这是一个通用于所有[Python序列类型](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html)的属性。最后，请注意，我们对 `x` 的成员不进行任何假设，所以我们使用了通用的 `Any` 类型。
 <!-- #endregion -->

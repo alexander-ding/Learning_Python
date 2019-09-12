@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Indexing into multi-dimensional numpy arrays, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Accessing Data Along Multiple Dimensions in an Array &mdash; Python Like You Mean It</title>
+  <title>访问数组多维度的内容 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Basic Array Attributes" href="BasicArrayAttributes.html" />
-    <link rel="prev" title="Introducing the ND-array" href="IntroducingTheNDarray.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="基本的数组属性" href="BasicArrayAttributes.html" />
+    <link rel="prev" title="N维数组简介" href="IntroducingTheNDarray.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,42 +95,42 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Accessing Data Along Multiple Dimensions in an Array</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#One-dimensional-Arrays">One-dimensional Arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Two-dimensional-Arrays">Two-dimensional Arrays</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Integer-Indexing">Integer Indexing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Slice-Indexing">Slice Indexing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Negative-Indices">Negative Indices</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Supplying-Fewer-Indices-Than-Dimensions">Supplying Fewer Indices Than Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">访问数组多维度的内容</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#一维数组">一维数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#二维数组">二维数组</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#整数索引">整数索引</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#切片索引">切片索引</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#负索引">负索引</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#提供低于维度数量的索引">提供低于维度数量的索引</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#N-dimensional-Arrays">N-dimensional Arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Zero-dimensional-Arrays">Zero-dimensional Arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Manipulating-Arrays">Manipulating Arrays</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Introducing-the-reshape-Function">Introducing the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#N维数组">N维数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#零维数组">零维数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#操作数组">操作数组</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#介绍-reshape-函数">介绍 <code class="docutils literal notranslate"><span class="pre">reshape</span></code> 函数</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">Basic Array Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">Advanced Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">基本的数组属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">迭代数组和数组遍历顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">数组广播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">进阶索引</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -175,9 +176,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_3.html">Module 3: The Essentials of NumPy</a> &raquo;</li>
+          <li><a href="../module_3.html">模组3：NumPy基础</a> &raquo;</li>
         
-      <li>Accessing Data Along Multiple Dimensions in an Array</li>
+      <li>访问数组多维度的内容</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -220,27 +221,27 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Accessing-Data-Along-Multiple-Dimensions-in-an-Array">
-<h1>Accessing Data Along Multiple Dimensions in an Array<a class="headerlink" href="#Accessing-Data-Along-Multiple-Dimensions-in-an-Array" title="Permalink to this headline">¶</a></h1>
-<p>In this section, we will:</p>
+<div class="section" id="访问数组多维度的内容">
+<h1>访问数组多维度的内容<a class="headerlink" href="#访问数组多维度的内容" title="永久链接至标题">¶</a></h1>
+<p>在本节中，我们将会：</p>
 <ul class="simple">
-<li>Define the “dimensionality” of an array.</li>
-<li>Discuss the usefulness of ND-arrays.</li>
-<li>Introduce the indexing and slicing scheme for accessing a multi-dimensional array’s contents</li>
+<li><p>定义数组的“维度”（dimensionality）。</p></li>
+<li><p>讨论N维数组（ND-array）的作用。</p></li>
+<li><p>介绍访问多维数组内容的索引和切片体系。</p></li>
 </ul>
-<p>We will encounter arrays of varying dimensionalities:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A 0-D array</span>
+<p>我们将会遇到不同维度的数组：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 0维数组</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 
-<span class="c1"># A 1-D array, shape-(3,)</span>
+<span class="c1"># 1维数组，形状为 (3,)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.1</span><span class="p">])</span>
 
-<span class="c1"># A 2-D array, shape-(3, 2)</span>
+<span class="c1"># 2维数组，形状为 (3, 2)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">93</span><span class="p">,</span>  <span class="mi">95</span><span class="p">],</span>
           <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
           <span class="p">[</span><span class="mi">99</span><span class="p">,</span>  <span class="mi">87</span><span class="p">]])</span>
 
-<span class="c1"># A 3-D array, shape-(2, 2, 2)</span>
+<span class="c1"># 3维数组，形状为 (2, 2, 2)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
            <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span>
 
@@ -248,29 +249,29 @@
            <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>Similar to Python’s sequences, we use 0-based indices and slicing to access the content of an array. However, we must specify an index/slice for <em>each</em> dimension of an array:</p>
+<p>和Python的序列类似，我们使用0开始的索引和切片来获取数组中的内容。但是，我们必须为数组的<em>每个</em>维度提供索引/切片：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="go"># A 3-D array</span>
+<span class="go"># 3维数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span>
 <span class="gp">...</span>
 <span class="gp">... </span>              <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]])</span>
 
-<span class="go"># get: sheet-0, both rows, flip order of columns</span>
+<span class="go"># 获取：第0页，全部两行，反向排列的列</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="go">array([[1, 0],</span>
 <span class="go">       [3, 2]])</span>
 </pre></div>
 </div>
-<div class="section" id="One-dimensional-Arrays">
-<h2>One-dimensional Arrays<a class="headerlink" href="#One-dimensional-Arrays" title="Permalink to this headline">¶</a></h2>
-<p>Let’s begin our discussion by constructing a simple ND-array containing three floating-point numbers.</p>
+<div class="section" id="一维数组">
+<h2>一维数组<a class="headerlink" href="#一维数组" title="永久链接至标题">¶</a></h2>
+<p>让我们首先创建一额简单的N维数组，其成员为三个浮点数。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">simple_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>This array supports the same indexing scheme as Python’s sequences (lists, tuples, and strings):</p>
+<p>这个数组支持和Python序列（列表，元组，和字符串）一样的索引体系：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+------+------+------+</span>
 <span class="o">|</span>  <span class="mf">2.3</span> <span class="o">|</span>  <span class="mf">0.1</span> <span class="o">|</span> <span class="o">-</span><span class="mf">9.1</span> <span class="o">|</span>
 <span class="o">+------+------+------+</span>
@@ -278,7 +279,7 @@
    <span class="o">-</span><span class="mi">3</span>     <span class="o">-</span><span class="mi">2</span>     <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
-<p>The first row of numbers gives the position of the indices 0…3 in the array; the second row gives the corresponding negative indices. The slice from <span class="math notranslate nohighlight">\(i\)</span> to <span class="math notranslate nohighlight">\(j\)</span> returns an array containing of all numbers between the edges labeled <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, respectively:</p>
+<p>第一行数字提供了索引0-2在数组中对应的位置；第二行则提供了对应的负索引。从 <span class="math notranslate nohighlight">\(i\)</span> 到 <span class="math notranslate nohighlight">\(j\)</span> 的切片将返回一个在标记索引为 <span class="math notranslate nohighlight">\(i\)</span> 和 <span class="math notranslate nohighlight">\(j\)</span> 的成员之间所有的值（包括 <span class="math notranslate nohighlight">\(i\)</span> 但不包括 <span class="math notranslate nohighlight">\(j\)</span>）：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">simple_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">2.3</span>
 
@@ -292,61 +293,61 @@
 <span class="go">IndexError: index 3 is out of bounds for axis 0 with size 3</span>
 </pre></div>
 </div>
-<p>Given this indexing scheme, only <em>one</em> integer is needed to specify a unique entry in the array. Similarly only <em>one</em> slice is needed to uniquely specify a subsequence of entries in the array. For this reason, we say that this is a <em>1-dimensional array</em>. In general, the <em>dimensionality</em> of an array specifies the number of indices that are required to uniquely specify one of its entries.</p>
+<p>根据以上的索引体系，你只需要<em>一个</em>整数就能无歧义地辨别数组中的一个成员。相应的，你只需要<em>一个</em>切片就能无歧义地辨别数组中的一个子序列。因此，我们称其为<em>一维数组</em>（1-dimensional array）。笼统来讲，数组的<em>维度</em>（dimensionality）描述了无歧义辨别数组中单个成员所需要的索引数量。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Definition</strong>:</p>
-<p>The <strong>dimensionality</strong> of an array specifies the number of indices that are required to uniquely specify one of its entries.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>定义</strong>：</p>
+<p>数组的<strong>维度</strong>（dimensionality）指无歧义地辨别其单个成员所需要的索引数量。</p>
 </div>
-<p>This definition of dimensionality is common far beyond NumPy; one must use three numbers to uniquely specify a point in physical space, which is why it is said that space consists of three dimensions.</p>
+<p>这个维度的定义在NumPy之外也通用；你需要三个数字来无歧义地描述现实空间中的一个点，所以我们认为空间有着三个维度。</p>
 </div>
-<div class="section" id="Two-dimensional-Arrays">
-<h2>Two-dimensional Arrays<a class="headerlink" href="#Two-dimensional-Arrays" title="Permalink to this headline">¶</a></h2>
-<p>Before proceeding further down the path of high-dimensional arrays, let’s briefly consider a very simple dataset where the desire to access the data along multiple dimensions is manifestly desirable. Consider the following table from a gradebook:</p>
-<table border="1" class="docutils">
+<div class="section" id="二维数组">
+<h2>二维数组<a class="headerlink" href="#二维数组" title="永久链接至标题">¶</a></h2>
+<p>在我们开始讨论高维数组之前，让我们先讨论一个很简单的需要在多维度获取数据的数据集。某成绩簿有着以下表格：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="24%" />
-<col width="36%" />
-<col width="39%" />
+<col style="width: 24%" />
+<col style="width: 36%" />
+<col style="width: 39%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Exam 1 (%)</th>
-<th class="head">Exam 2 (%)</th>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>考试1 (%)</p></th>
+<th class="head"><p>考试2 (%)</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Ashley</td>
-<td><span class="math notranslate nohighlight">\(93\)</span></td>
-<td><span class="math notranslate nohighlight">\(95\)</span></td>
+<tbody>
+<tr class="row-even"><td><p>Ashley</p></td>
+<td><p><span class="math notranslate nohighlight">\(93\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(95\)</span></p></td>
 </tr>
-<tr class="row-odd"><td>Brad</td>
-<td><span class="math notranslate nohighlight">\(84\)</span></td>
-<td><span class="math notranslate nohighlight">\(100\)</span></td>
+<tr class="row-odd"><td><p>Brad</p></td>
+<td><p><span class="math notranslate nohighlight">\(84\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(100\)</span></p></td>
 </tr>
-<tr class="row-even"><td>Cassie</td>
-<td><span class="math notranslate nohighlight">\(99\)</span></td>
-<td><span class="math notranslate nohighlight">\(87\)</span></td>
+<tr class="row-even"><td><p>Cassie</p></td>
+<td><p><span class="math notranslate nohighlight">\(99\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(87\)</span></p></td>
 </tr>
 </tbody>
 </table>
-<p>This dataset contains 6 grade-values. It is almost immediately clear that storing these in a 1-dimensional array is not ideal:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using a 1-dimensional array to store the grades</span>
+<p>这个数据集总共有6个成绩值。将其存为一维数组明显是不智的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用1维数组来储存成绩</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">93</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">87</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>While no data has been lost, accessing this data using a single index is less than convenient; we want to be able to specify both the student and the exam when accessing a grade - it is natural to ascribe <em>two dimensions</em> to this data. Let’s construct a 2D array containing these grades:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using a 2-dimensional array to store the grades</span>
+<p>虽然我们没有丢失任何数据，但是使用单个索引来访问其中的数据很不方便；我们希望能在获取成绩时提供学生和需要的考试——所以说使用<em>两个维度</em>来储存这些数据是再自然不过的。让我们创建一个存储这些成绩的二维数组：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用2维数组来储存成绩</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">93</span><span class="p">,</span>  <span class="mi">95</span><span class="p">],</span>
 <span class="o">...</span>                    <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
 <span class="o">...</span>                    <span class="p">[</span><span class="mi">99</span><span class="p">,</span>  <span class="mi">87</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>NumPy is able to see the repeated structure among the list-of-lists-of-numbers passed to <code class="docutils literal notranslate"><span class="pre">np.array</span></code>, and resolve the two dimensions of data, which we deem the ‘student’ dimension and the ‘exam’ dimension, respectively.</p>
+<p>NumPy能够处理向 <code class="docutils literal notranslate"><span class="pre">np.array</span></code> 输入的成员为列表的列表，并根据其重复结构将其存为一个二维数组，第一维为“学生”维度，第二维度为“考试”维度。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Axis vs Dimension</strong>:</p>
-<p>Although NumPy does formally recognize the concept of dimensionality precisely in the way that it is discussed here, its documentation refers to an individual dimension of an array as an <strong>axis</strong>. Thus you will see “axes” (pronounced “aks-ēz”) used in place of “dimensions”; however, they mean the same thing.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>轴心 vs 维度</strong>:</p>
+<p>虽然NumPy正式承认维度这一概念且对其进行了和本节一样的定义，但是它的说明文档将数组的单个维度称为一个<strong>轴</strong>（axis，复数为axes）。因此你有时会见到说明文档用“axes”代替“dimensions”；但是，它们指着同样的东西。</p>
 </div>
-<p>NumPy specifies the row-axis (students) of a 2D array as “axis-0” and the column-axis (exams) as axis-1. You must now provide <em>two</em> indices, one for each axis (dimension), to uniquely specify an element in this 2D array; the first number specifies an index along axis-0, the second specifies an index along axis-1. The zero-based indexing schema that we reviewed earlier applies to each axis of the ND-array:</p>
+<p>NumPy将二维数组的行轴（学生）称为“轴0”，列轴（exams）称为“轴1”。你必须提供“两个”索引（每个轴心（维度）各一个）来无歧义地辨别这个二维数组中的一个成员；第一个数字提供了在轴0上的索引，第二个数字提供了在轴1上的索引。不管是哪个轴心，我们之前复习的从0开始的索引体系都通用：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="o">--</span> <span class="n">axis</span><span class="o">-</span><span class="mi">1</span> <span class="o">-&gt;</span>
               <span class="o">-</span><span class="mi">2</span>  <span class="o">-</span><span class="mi">1</span>
                <span class="mi">0</span>   <span class="mi">1</span>
@@ -359,78 +360,77 @@
   <span class="n">V</span>          <span class="o">+---+---+</span>
 </pre></div>
 </div>
-<p>Because <code class="docutils literal notranslate"><span class="pre">grades</span></code> has three entries along axis-0 and two entries along axis-1, it has a “shape” of <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">2)</span></code>.</p>
+<p>因为 <code class="docutils literal notranslate"><span class="pre">grades</span></code> 在轴0上有三行数据，在轴1上由两行数据，它的“形状”（shape）为 <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">2)</span></code>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grades</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(3, 2)</span>
 </pre></div>
 </div>
-<div class="section" id="Integer-Indexing">
-<h3>Integer Indexing<a class="headerlink" href="#Integer-Indexing" title="Permalink to this headline">¶</a></h3>
-<p>Thus, if we want to access Brad’s (item-1 along axis-0) score for Exam 1 (item-0 along axis-1) we simply specify:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># providing two numbers to access an element</span>
-<span class="c1"># in a 2D-array</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Brad&#39;s score on Exam 1</span>
+<div class="section" id="整数索引">
+<h3>整数索引<a class="headerlink" href="#整数索引" title="永久链接至标题">¶</a></h3>
+<p>因此，如果我们想要获取Brad（轴0上的项目1）的考试1（轴1上的项目0）的成绩，我们只需要提供：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 提供两个数字来访问2维数组的成员</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Brad考试1的成绩</span>
 <span class="mi">84</span>
 
-<span class="c1"># negative indices work as with lists/tuples/strings</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Brad&#39;s score on Exam 1</span>
+<span class="c1"># 负索引和列表/元组/字符串一样可以使用</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Brad考试1的成绩</span>
 <span class="mi">84</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Slice-Indexing">
-<h3>Slice Indexing<a class="headerlink" href="#Slice-Indexing" title="Permalink to this headline">¶</a></h3>
-<p>We can also uses <em>slices</em> to access subsequences of our data. Suppose we want the scores of all the students for Exam 2. We can slice from 0 through 3 along axis-0 (refer to the indexing diagram in the previous section) to include all the students, and specify index 1 on axis-1 to select Exam 2:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grades</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Exam 2 scores for all students</span>
+<div class="section" id="切片索引">
+<h3>切片索引<a class="headerlink" href="#切片索引" title="永久链接至标题">¶</a></h3>
+<p>我们也可以使用<em>切片</em>（slice）来获取数据的子序列。假设我们想要获取所有成绩在考试2的成绩，我们可以在轴0上从0到3切片（请参考之前小节的索引图）来包含所有学生，并在轴1上提供索引1来选中考试2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grades</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># 所有学生的考试2成绩</span>
 <span class="go">array([ 95, 100,  87])</span>
 </pre></div>
 </div>
-<p>As with Python sequences, you can specify an “empty” slice to include all possible entries along an axis, by default: <code class="docutils literal notranslate"><span class="pre">grades[:,</span> <span class="pre">1]</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">grades[0:3,</span> <span class="pre">1]</span></code>, in this instance. More generally, withholding either the ‘start’ or ‘stop’ value in a slice will result in the use smallest or largest valid index, respectively:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grades</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># equivalent to `grades[1:3, 1]</span>
+<p>和Python序列一样，你可以提供一个“空”切片来默认包含某轴的所有项目：在这个序列中 <code class="docutils literal notranslate"><span class="pre">grades[:,</span> <span class="pre">1]</span></code> 等值于 <code class="docutils literal notranslate"><span class="pre">grades[0:3,</span> <span class="pre">1]</span></code>。更笼统的来讲，跳过不填切片的 ‘start’ 或 ‘stop’ 值会分别默认使用最小或最大的合法索引：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grades</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># 等值于 `grades[1:3, 1]`</span>
 <span class="go">array([ 100,  87])</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">grades</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># equivalent to `grades[0:3, 0:1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grades</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 等值于 `grades[0:3, 0:1]`</span>
 <span class="go">array([[93],</span>
 <span class="go">       [84],</span>
 <span class="go">       [99]])</span>
 </pre></div>
 </div>
-<p>The output of <code class="docutils literal notranslate"><span class="pre">grades[:,</span> <span class="pre">:1]</span></code> might look somewhat funny. Because the axis-1 slice only includes one column of numbers, the shape of the resulting array is (3, 1). 0 is thus only valid (non-negative) index for axis-1, since there is only one column to specify in the array.</p>
-<p>You can also supply a “step” value to the slice. <code class="docutils literal notranslate"><span class="pre">grades[::-1,</span> <span class="pre">:]</span></code> will returns the array of grades with the student-axis flipped (reverse-alphabetical order).</p>
+<p><code class="docutils literal notranslate"><span class="pre">grades[:,</span> <span class="pre">:1]</span></code> 的输出可能看起来有点奇怪。因为轴1切片仅仅包含了一列的数字，最后得到的数组的形状为 (3, 1)。所以，在轴1上0是唯一的合法（非负）索引，因为在这个得到的数组中只有一行可以选中。</p>
+<p>你也可以为切片提供一个“step”（步距）值。<code class="docutils literal notranslate"><span class="pre">grades[::-1,</span> <span class="pre">:]</span></code> 会返回学生轴颠倒的成绩数组。</p>
 </div>
-<div class="section" id="Negative-Indices">
-<h3>Negative Indices<a class="headerlink" href="#Negative-Indices" title="Permalink to this headline">¶</a></h3>
-<p>As indicated above, negative indices are valid too and are quite useful. If we want to access the scores of the latest exam for all of the students, you can specify:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using a negative index and a slice</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Latest exam scores (Exam 2), for all students</span>
+<div class="section" id="负索引">
+<h3>负索引<a class="headerlink" href="#负索引" title="永久链接至标题">¶</a></h3>
+<p>如上所述，负索引也合法，且很有用。如果我们想要访问所有学生最新的考试成绩，我们可以编写：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用负索引和切片</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 所有学生的最新考试成绩（考试2）</span>
 <span class="n">array</span><span class="p">([</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span>  <span class="mi">87</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Note the value of using the negative index is that it will always provide you with the latest exam score - you need not check how many exams the students have taken.</p>
+<p>请注意使用负索引的价值在于它永远都会为你提供最新的考试成绩——你不需要先检查学生考过多少次。</p>
 </div>
-<div class="section" id="Supplying-Fewer-Indices-Than-Dimensions">
-<h3>Supplying Fewer Indices Than Dimensions<a class="headerlink" href="#Supplying-Fewer-Indices-Than-Dimensions" title="Permalink to this headline">¶</a></h3>
-<p>What happens if we only supply one index to our array? It may be surprising that <code class="docutils literal notranslate"><span class="pre">grades[0]</span></code> does not throw an error since we are specifying only one index to access data from a 2-dimensional array. Instead, NumPy it will return all of the exam scores for student-0 (Ashley):</p>
+<div class="section" id="提供低于维度数量的索引">
+<h3>提供低于维度数量的索引<a class="headerlink" href="#提供低于维度数量的索引" title="永久链接至标题">¶</a></h3>
+<p>在我们为这个数组只提供一个索引时会发生什么？你可能会惊讶于 <code class="docutils literal notranslate"><span class="pre">grades[0]</span></code> 并不会报错这一事，因为我们为二维数组只提供了一个索引。反而，NumPy将会返回学生0（Ashley）的所有考试成绩：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grades</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">array([ 93, 95])</span>
 </pre></div>
 </div>
-<p>This is because NumPy will automatically insert trailing slices for you if you don’t provide as many indices as there are dimensions for your array. <code class="docutils literal notranslate"><span class="pre">grades[0]</span></code> was treated as <code class="docutils literal notranslate"><span class="pre">grades[0,</span> <span class="pre">:]</span></code>.</p>
+<p>这是因为NumPy会在你不提供足够多的索引时自动在结尾提供缺失的切片。<code class="docutils literal notranslate"><span class="pre">grades[0]</span></code> 会被当作 <code class="docutils literal notranslate"><span class="pre">grades[0,</span> <span class="pre">:]</span></code> 处理。</p>
 <div class="admonition note">
-Suppose you have an <span class="math notranslate nohighlight">\(N\)</span>-dimensional array, and only provide <span class="math notranslate nohighlight">\(j\)</span> indices for the array; NumPy will automatically insert <span class="math notranslate nohighlight">\(N-j\)</span> trailing slices for you. In the case that <span class="math notranslate nohighlight">\(N=5\)</span> and <span class="math notranslate nohighlight">\(j=3\)</span>, <code class="docutils literal notranslate"><span class="pre">d5_array[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code> is treated as <code class="docutils literal notranslate"><span class="pre">d5_array[0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">:,</span> <span class="pre">:]</span></code></div>
-<p>Thus far, we have discussed some rules for accessing data in arrays, all of which fall into the category that is designated <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#basic-slicing-and-indexing">“basic indexing”</a> by the NumPy documentation. We will discuss the details of basic indexing and of <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing">“advanced indexing”</a>, in full, in a later section. Note, however, that all of the
-indexing/slicing reviewed here produces a “view” of the original array. That is, <em>no data is copied</em> when you index into an array using integer indices and/or slices. Recall that slicing lists and tuples <em>do</em> produce copies of the data.</p>
+<p>假设你有着一个 <span class="math notranslate nohighlight">\(N\)</span> 维数组并在索引时仅仅提供了 <span class="math notranslate nohighlight">\(j\)</span> 个索引；NumPy将会在结尾自动插入 <span class="math notranslate nohighlight">\(N-j\)</span> 个切片。如果 <span class="math notranslate nohighlight">\(N=5\)</span>，<span class="math notranslate nohighlight">\(j=3\)</span>，那么 <code class="docutils literal notranslate"><span class="pre">d5_array[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code> 等值于 <code class="docutils literal notranslate"><span class="pre">d5_array[0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">:,</span> <span class="pre">:]</span></code>。</p>
+</div>
+<p>到现在为止，我们讨论了一些在数组中获取数据的规则，但这些规则都属于NumPy说明文档规定为<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#basic-slicing-and-indexing">“基础索引”</a>（basic indexing）的一部分。我们将在之后一节完整地讨论基础索引和<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing">“进阶索引”</a>（advanced
+indexing）。但是，请注意，在这里复习的所有索引/切片方法都会创建原本数组的一个“视阈“（view）。也就是说，当你使用整数索引或切片索引数组时，<em>没有任何数据被复制</em>。请回忆，切片列表和元组<em>会</em>复制其数据。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>FYI</strong>:</p>
-<p>Keeping track of the meaning of an array’s various dimensions can quickly become unwieldy when working with real datasets. <a class="reference external" href="http://xarray.pydata.org/en/stable/">xarray</a> is a Python library that provides functionality comparable to NumPy, but allows users provide <em>explicit labels</em> for an array’s dimensions; that is, you can <em>name</em> each dimension. Using an <code class="docutils literal notranslate"><span class="pre">xarray</span></code> to select Brad’s scores could look like <code class="docutils literal notranslate"><span class="pre">grades.sel(student='Brad')</span></code>, for instance. This is a valuable library to look into at
-your leisure.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>供参考</strong>：</p>
+<p>记录数组每个维度的含义可能在处理现实中的数据集时很快变得麻烦复杂。<a class="reference external" href="http://xarray.pydata.org/en/stable/">xarray</a>则是一个提供和NumPy相似功能的，但允许用户为数组的维度提供<em>显式标签</em>的Python模组。也就是说，你可以为每个维度<em>命名</em>。比如说，你可以如下使用 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> 来选中Brad的成绩：<code class="docutils literal notranslate"><span class="pre">grades.sel(student='Brad')</span></code>。在你有空的时候，这是一个值得花些时间去了解的模组。</p>
 </div>
 </div>
 </div>
-<div class="section" id="N-dimensional-Arrays">
-<h2>N-dimensional Arrays<a class="headerlink" href="#N-dimensional-Arrays" title="Permalink to this headline">¶</a></h2>
-<p>Let’s build up some intuition for arrays with a dimensionality higher than 2. The following code creates a 3-dimensional array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a 3D array, shape-(2, 2, 2)</span>
+<div class="section" id="N维数组">
+<h2>N维数组<a class="headerlink" href="#N维数组" title="永久链接至标题">¶</a></h2>
+<p>让我们对维度高于2的数组产生一些直观的理解。以下代码创建一个三维数组：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 三维数组，形状为 (2, 2, 2)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d3_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="o">...</span>                       <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span>
 <span class="o">...</span>
@@ -438,8 +438,8 @@ your leisure.</p>
 <span class="o">...</span>                       <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>You can think of axis-0 denoting which of the 2x2 “sheets” to select from. Then axis-1 specifies the row along the sheets, and axis-2 the column within the row:</p>
-<p><strong>Depicting the layout of a 3D array</strong></p>
+<p>你可以认为轴0代表着选中哪个2x2的“页”（sheet），然后轴1代表着在页中选中哪一行，而轴2代表着在行中选择哪个列：</p>
+<p><strong>描绘3维数组的结构</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sheet</span> <span class="mi">0</span><span class="p">:</span>
        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -462,29 +462,29 @@ your leisure.</p>
    <span class="n">V</span>    <span class="n">V</span>
 </pre></div>
 </div>
-<p>Thus <code class="docutils literal notranslate"><span class="pre">d3_array[0,</span> <span class="pre">1,</span> <span class="pre">0]</span></code> specifies the element residing in sheet-0, at row-1 and column-0:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># retrieving a single element from a 3D-array</span>
+<p>如此，<code class="docutils literal notranslate"><span class="pre">d3_array[0,</span> <span class="pre">1,</span> <span class="pre">0]</span></code> 选中了在页0，行1，列0的成员：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在3维数组中获得单个成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d3_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="mi">2</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">d3_array[:,</span> <span class="pre">0,</span> <span class="pre">0]</span></code> specifies the elements in row-0 and column-0 of <strong>both</strong> sheets:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># retrieving a 1D sub-array from a 3D-array</span>
+<p><code class="docutils literal notranslate"><span class="pre">d3_array[:,</span> <span class="pre">0,</span> <span class="pre">0]</span></code> 选中了<strong>全部</strong>页在行0和列0的成员：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在3维数组中获得1维子数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d3_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">d3_array[1]</span></code>, which recall is shorthand for <code class="docutils literal notranslate"><span class="pre">d3_array[1,</span> <span class="pre">:,</span> <span class="pre">:]</span></code>, selects both rows and both columns of sheet-1:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># retrieving a 2D sub-array from a 3D-array</span>
+<p><code class="docutils literal notranslate"><span class="pre">d3_array[1]</span></code>，也就是 <code class="docutils literal notranslate"><span class="pre">d3_array[1,</span> <span class="pre">:,</span> <span class="pre">:]</span></code> 的简写，选中页1全部的行和列：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在3维数组中获得2维子数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d3_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>In four dimensions, one can think of “<em>stacks</em> of sheets with rows and columns” where axis-0 selects the stack of sheets you are working with, axis-1 chooses the sheet, axis-2 chooses the row, and axis-3 chooses the column. Extrapolating to higher dimensions (“collections of stacks of sheets …”) continues in the same tedious fashion.</p>
+<p>在四维的情况下，你可以将轴0的成员理解为“一<em>打</em>（stack）有着行列的页”。轴0选中哪一打页，轴1选中哪一页，轴2选中哪一行，轴3选中哪一列。往更高维度扩展这个类比（“好多打页的集合”）将像这个相同的冗长的方式继续。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Multi-dimensional Indexing</strong></p>
-<p>Given the 3D, shape-(3, 3, 3) array:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：多维索引</strong></p>
+<p>设3维数组，其形状为 (3, 3, 3)：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
 <span class="gp">... </span>                 <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
 <span class="gp">... </span>                 <span class="p">[</span> <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">]],</span>
@@ -498,7 +498,7 @@ your leisure.</p>
 <span class="gp">... </span>                 <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>Index into the array to produce the following results</p>
+<p>索引该数组来得到以下结果</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#1</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">8</span><span class="p">],</span>
        <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">17</span><span class="p">],</span>
@@ -519,15 +519,15 @@ your leisure.</p>
 </div>
 </div>
 </div>
-<div class="section" id="Zero-dimensional-Arrays">
-<h2>Zero-dimensional Arrays<a class="headerlink" href="#Zero-dimensional-Arrays" title="Permalink to this headline">¶</a></h2>
-<p>A zero dimensional array is simply a single number (a.k.a. a scalar value):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating a 0-dimensional array</span>
+<div class="section" id="零维数组">
+<h2>零维数组<a class="headerlink" href="#零维数组" title="永久链接至标题">¶</a></h2>
+<p>零维数组仅仅是一个数字（也就是一个标量值）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个0维数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mf">15.2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This is <em>not</em> equivalent to a length-1 1D-array: <code class="docutils literal notranslate"><span class="pre">np.array([15.2])</span></code>. According to our definition of dimensionality, <em>zero</em> numbers are required to index into a 0-D array as it is unnecessary to provide an identifier for a standalone number. Thus you cannot index into a 0-D array.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># you cannot index into a 0-D array</span>
+<p>这<em>不</em>等值于长度为1的一维数组：<code class="docutils literal notranslate"><span class="pre">np.array([15.2])</span></code>。根据维度的定义，我们需要<em>零</em>个数字来索引一个0维数组，因为我们不需要为单个数字其提供任何索引。因此，你不能索引0维数组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 你不能索引0维数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="o">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
@@ -537,25 +537,25 @@ your leisure.</p>
 <span class="ne">IndexError</span><span class="p">:</span> <span class="n">too</span> <span class="n">many</span> <span class="n">indices</span> <span class="k">for</span> <span class="n">array</span>
 </pre></div>
 </div>
-<p>You must use the syntax <code class="docutils literal notranslate"><span class="pre">arr.item()</span></code> to retrieve the numerical entry from a 0D array:</p>
+<p>你必须使用语法 <code class="docutils literal notranslate"><span class="pre">arr.item()</span></code> 来获取0维数组的数字值：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 <span class="go">15.2</span>
 </pre></div>
 </div>
-<p>Zero-dimensional arrays do not show up in real applications very often. They are, however, important from the point of view of NumPy being self-consistent in how it treats dimensionality in its arrays, and it is important that you are at least exposed to a 0D array and understand its nuances.</p>
+<p>零维数组在实际使用时不会经常出现。但是，它们的行为证明了NumPy对其数组维度的定义是自治的，而你也应该至少接触以下并理解0维数组的细节。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>Although accessing data along varying dimensions is ultimately all a matter of judicious bookkeeping (you <em>could</em> access all of this data from a 1-dimensional array, after all), NumPy’s ability to provide users with an interface for accessing data along dimensions is incredibly useful. It affords us an ability to impose intuitive, abstract structure to our data.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>虽然在多个维度访问数据最终其实也就是一个细心活（因为你理论上<em>可以</em>通过一个一维数组来访问同样的数据），但是NumPy为用户提供的多维度访问数组内容的界面是非常有用的。它为我们提供了给数据赋予直观的抽象结构的能力。</p>
 </div>
 </div>
-<div class="section" id="Manipulating-Arrays">
-<h2>Manipulating Arrays<a class="headerlink" href="#Manipulating-Arrays" title="Permalink to this headline">¶</a></h2>
-<p>NumPy provides an assortment of functions that allow us manipulate the way that an array’s data can be accessed. These permit us to reshape an array, change its dimensionality, and swap the positions of its axes:</p>
+<div class="section" id="操作数组">
+<h2>操作数组<a class="headerlink" href="#操作数组" title="永久链接至标题">¶</a></h2>
+<p>NumPy提供了一系列操作如何访问数组数据的方法。这些函数能让我们重塑（reshape）数组的形状，修改它的维度，并交换它不同轴的位置：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
 
-<span class="go"># reshaping an array</span>
+<span class="go"># 重塑数组形状</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="go">array([[[ 1,  2],</span>
 <span class="go">        [ 3,  4]],</span>
@@ -566,9 +566,8 @@ your leisure.</p>
 <span class="go">       [[ 9, 10],</span>
 <span class="go">        [11, 12]]])</span>
 
-<span class="go"># Transposing an array: reversing</span>
-<span class="go"># the ordering of its axes. This interchanges</span>
-<span class="go"># the rows and columns of `x`</span>
+<span class="go"># 转制（transpose）数组：交换数组轴的顺序。</span>
+<span class="go"># 这将 `x` 的行列互换</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="go">array([[ 1,  5,  9],</span>
 <span class="go">       [ 2,  6, 10],</span>
@@ -576,38 +575,37 @@ your leisure.</p>
 <span class="go">       [ 4,  8, 12]])</span>
 </pre></div>
 </div>
-<p>A complete listing of the available array-manipulation functions can be found in the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html">official NumPy documentation</a>. Among these functions, the reshape function is especially useful.</p>
-<div class="section" id="Introducing-the-reshape-Function">
-<h3>Introducing the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> Function<a class="headerlink" href="#Introducing-the-reshape-Function" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">reshape</span></code> function allows you to change the dimensionality and axis-layout of a given array. This adjusts the indexing interface used to access the array’s underlying data, as was discussed in earlier in this module. Let’s take a shape-(6,) array, and reshape it to a shape-(2, 3) array:</p>
+<p>完整的数组操作函数列表可以在<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html">NumPy的官方说明文档</a>找到。在这些函数中，reshape函数极其有用。</p>
+<div class="section" id="介绍-reshape-函数">
+<h3>介绍 <code class="docutils literal notranslate"><span class="pre">reshape</span></code> 函数<a class="headerlink" href="#介绍-reshape-函数" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">reshape</span></code> 函数允许你修改数组的维度和轴结构。它修改用来访问数组内置数据的本模组之前讨论过的索引界面。设一个形状为 (6,) 的数组，让我们将其重塑成形为 (2, 3) 的数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 
-<span class="go"># reshape a shape-(6,) array into a shape-(2,3) array</span>
+<span class="go"># 将形状为 (6,) 的数组重塑为形状为 (2,3) 的数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="go">array([[0, 1, 2],</span>
 <span class="go">       [3, 4, 5]])</span>
 </pre></div>
 </div>
-<p>You can also conveniently reshape an array by “setting” its shape via assignment:</p>
+<p>你也可以很方便地通过在赋值时“设置”它的形状来达到重塑的目的：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># equivalent to: x = x.reshape(2, 3)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Of course, the size the the initial array must match the size of the to-be reshaped array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># an array with 5 numbers are cannot be reshaped</span>
-<span class="c1"># into a (3, 2) array</span>
+<p>当然，最初数组的大小要对应重塑后的数组的大小：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一个有5个数字的数组不能被重塑为形状是 (3, 2) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="ne">ValueError</span><span class="p">:</span> <span class="n">total</span> <span class="n">size</span> <span class="n">of</span> <span class="n">new</span> <span class="n">array</span> <span class="n">must</span> <span class="n">be</span> <span class="n">unchanged</span>
 </pre></div>
 </div>
-<p>Multidimensional arrays can be reshaped too:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># reshaping a multidimensional array</span>
+<p>多维数组也可以被重塑：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 重塑多维数组的形状</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
 
-<span class="c1"># reshape from (3, 4) to (2, 3, 2)</span>
+<span class="c1"># 从 (3, 4) 重塑为 (2, 3, 2)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span>
         <span class="p">[</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
@@ -618,17 +616,17 @@ your leisure.</p>
         <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>Because the size of an input array and the resulting reshaped array must agree, you can specify <em>one</em> of the dimension-sizes in the reshape function to be -1, and this will cue NumPy to compute that dimension’s size for you. For example, if you are reshaping a shape-(36,) array into a shape-(3, 4, 3) array. The following are valid:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equivalent ways of specifying a reshape</span>
-<span class="c1"># np.arange(36) produces the shape-(36,) array ([0, 1, 2, ..., 35])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># (36,) --reshape--&gt; (3, 4, 3)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># NumPy replaces -1 with 36/(3*4) -&gt; 3</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># NumPy replaces -1 with 36/(3*3) -&gt; 4</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># NumPy replaces -1 with 36/(3*4) -&gt; 3</span>
+<p>因为输入数组的大小和重塑数组的大小必须相同，你可以在reshape函数中将维度大小之中的<em>一个</em>设置为-1.这将告诉NumPy去为你计算该维度的大小。比如说，如果你在将形状 (36,) 的数组重塑为形状是 (3, 4, 3) 的数组，以下都可以：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 等值的重塑方法</span>
+<span class="c1"># np.arange(36) 返回一个形状为 (36,) 的数组（[0, 1, 2, ..., 35]）</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># (36,) --重塑--&gt; (3, 4, 3)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># NumPy 将 -1 代替为 36/(3*4) -&gt; 3</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># NumPy 将 -1 代替为 36/(3*3) -&gt; 4</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># NumPy 将 -1 代替为 36/(3*4) -&gt; 3</span>
 </pre></div>
 </div>
-<p>You can use -1 to specify only one dimension:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># this is an ambiguous specification, and thus</span>
+<p>你只能用-1来描述一个维度：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 这可能有歧义，所以...</span>
 <span class="go">---------------------------------------------------------------------------</span>
 <span class="go">ValueError                                Traceback (most recent call last)</span>
 <span class="go">&lt;ipython-input-3-207d18d18af2&gt; in &lt;module&gt;()</span>
@@ -638,23 +636,23 @@ your leisure.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reshaping Does Not Make a Copy of an Array</strong>:</p>
-<p>For all straightforward applications of reshape, NumPy does not actually create a new copy of an array’s data when performing a <code class="docutils literal notranslate"><span class="pre">reshape</span></code> operation. Instead, the original array and the reshaped array reference the same underlying data. The reshaped array simply provides a new index-interface for accessing said data, and is thus referred to as a “view” of the original array (more on this “views” in a later section).</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>重塑并不会复制数组</strong>：</p>
+<p>任何直接运用reshape的情况下，NumPy都不会复制原本数组数据。实际上，原本的数组和重塑的数组都引用着相同的内在数据。重塑的数组仅仅提供了一个新的访问该数据的索引界面，所以它被是原本数组的一个“视阈”（view）（我们会在后面一节详细讨论“视阈”）。</p>
 </div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html">The N-dimensional array</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.indexing.html#indexing">Array indexing</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.indexing.html#indexing-routines">Indexing routines</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html">Array manipulation routines</a></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html">N维数组</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.indexing.html#indexing">数组索引</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.indexing.html#indexing-routines">索引常规</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html">数组操作常规</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Reading Comprehension: Multi-dimensional Indexing</strong></p>
+<div class="section" id="阅读理解答案：">
+<h2>阅读理解答案：<a class="headerlink" href="#阅读理解答案：" title="永久链接至标题">¶</a></h2>
+<p><strong>阅读理解：多维索引</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
 <span class="gp">... </span>                 <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
 <span class="gp">... </span>                 <span class="p">[</span> <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">]],</span>
@@ -701,10 +699,10 @@ your leisure.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="BasicArrayAttributes.html" class="btn btn-neutral float-right" title="Basic Array Attributes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="BasicArrayAttributes.html" class="btn btn-neutral float-right" title="基本的数组属性" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="IntroducingTheNDarray.html" class="btn btn-neutral float-left" title="Introducing the ND-array" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="IntroducingTheNDarray.html" class="btn btn-neutral float-left" title="N维数组简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

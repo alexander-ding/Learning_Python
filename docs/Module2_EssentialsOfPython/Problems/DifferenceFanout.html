@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: For-Loop Exercise, Difficulty: Easy, Category: Practice Problem" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Difference Fanout &mdash; Python Like You Mean It</title>
+  <title>扇出差 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../../_static/gtag.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Encode as String" href="EncodeAsString.html" />
-    <link rel="prev" title="Within Margin Percentage" href="MarginPercentage.html" /> 
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="编码为字符串" href="EncodeAsString.html" />
+    <link rel="prev" title="错误范围内百分比" href="MarginPercentage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,25 +95,25 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../module_2_problems.html">Module 2: Problems</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="MergeMaxDicts.html">Merging Two Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Palindrome.html">Is Palindrome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MarginPercentage.html">Within Margin Percentage</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Difference Fanout</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Solution:-difference_fanout-using-for-loops">Solution: difference_fanout using for-loops</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Solution:-difference_fanout-using-list-comprehensions">Solution: difference_fanout using list comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Extension">Extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../module_2_problems.html">模组2：题目</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="MergeMaxDicts.html">合并两个词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Palindrome.html">回文判断</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MarginPercentage.html">错误范围内百分比</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">扇出差</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#解：使用for循环计算扇出差">解：使用for循环计算扇出差</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#解：使用列表理解计算扇出差">解：使用列表理解计算扇出差</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#扩展">扩展</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="EncodeAsString.html">Encode as String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncodeAsString.html">编码为字符串</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -158,9 +159,9 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../module_2_problems.html">Module 2: Problems</a> &raquo;</li>
+          <li><a href="../../module_2_problems.html">模组2：题目</a> &raquo;</li>
         
-      <li>Difference Fanout</li>
+      <li>扇出差</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,47 +204,44 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Difference-Fanout">
-<h1>Difference Fanout<a class="headerlink" href="#Difference-Fanout" title="Permalink to this headline">¶</a></h1>
-<p>Given a list of numbers, for each number generate a list of the differences between it and <span class="math notranslate nohighlight">\(n_{fanout}\)</span> (known as the <strong>fanout</strong> value) following numbers in the list. Return a list of all the lists generated for each number. For members in the list that have fewer than <span class="math notranslate nohighlight">\(n_{fanout}\)</span> following members, calculate as many differences as possible. For example, suppose we want to compute the difference fanout on the list <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">1]</span></code> with a fanout value of 3. Then we would compute:</p>
+<div class="section" id="扇出差">
+<h1>扇出差<a class="headerlink" href="#扇出差" title="永久链接至标题">¶</a></h1>
+<p>设一列表的数字，为每个数字生成它与它在列表后 <span class="math notranslate nohighlight">\(n_{fanout}\)</span>（叫做<strong>扇出</strong>（fanout）值）个数字之间的差的列表。返回一个列表，其成员为为每一个数字生成的列表（也就是说返回的是成员为列表的列表）。如果列表成员之后的成员数小于 <span class="math notranslate nohighlight">\(n_{fanout}\)</span>，计算尽可能多的差。比如说，假设我们想要计算列表 <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">1]</span></code> 的扇出差，且扇出值为3，那我们应该计算：</p>
 <ul class="simple">
-<li><span class="math notranslate nohighlight">\(3 \rightarrow [2 - 3, 4 - 3, 6 - 3]\)</span></li>
-<li><span class="math notranslate nohighlight">\(2 \rightarrow [4 - 2, 6 - 2, 1 - 2]\)</span></li>
-<li><span class="math notranslate nohighlight">\(4 \rightarrow [6 - 4, 1 - 4]\)</span></li>
-<li><span class="math notranslate nohighlight">\(6 \rightarrow [1 - 6]\)</span></li>
-<li><span class="math notranslate nohighlight">\(1 \rightarrow []\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(3 \rightarrow [2 - 3, 4 - 3, 6 - 3]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2 \rightarrow [4 - 2, 6 - 2, 1 - 2]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4 \rightarrow [6 - 4, 1 - 4]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(6 \rightarrow [1 - 6]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 \rightarrow []\)</span></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example behavior</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 范例行为</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">difference_fanout</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
 <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span> <span class="p">[]]</span>
 </pre></div>
 </div>
-<p>You will want to know about <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists">lists</a>, <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Introducing-Indexing-and-Slicing">indexing &amp; slicing</a> lists, and <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ForLoops.html">for-loops</a> to solve this problem.</p>
-<p>For extra credits (and some extra fun!), try to write your function only using <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#List-&amp;-Tuple-Comprehensions">list comprehension</a>.</p>
-<div class="section" id="Solution:-difference_fanout-using-for-loops">
-<h2>Solution: difference_fanout using for-loops<a class="headerlink" href="#Solution:-difference_fanout-using-for-loops" title="Permalink to this headline">¶</a></h2>
-<p>We will naturally tackle this problem by performing nested for-loops. The outermost for-loop will loop over each number in the list. We will refer to this number as the “base number”. We will want the inner for-loop to iterate ahead of the base number so that we can compute the differences between it and its <span class="math notranslate nohighlight">\(n_{fanout}\)</span> neighbors. We will need to take care re-initialize our intermediate list of differences for each new base number, otherwise each subtraction will get appended to one long
-list.</p>
+<p>你会想要先阅读本文对<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#列表">列表</a>，<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#索引和切片简介">索引和切片</a>列表，以及<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/For循环.html">for循环</a>的讨论，然后再解决本问题。</p>
+<p>如果想要获得额外分（以及额外的乐趣！）的话，尝试仅仅使用<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#列表和元组理解">列表理解</a>来编写你的函数。</p>
+<div class="section" id="解：使用for循环计算扇出差">
+<h2>解：使用for循环计算扇出差<a class="headerlink" href="#解：使用for循环计算扇出差" title="永久链接至标题">¶</a></h2>
+<p>我们将会使用最直接了当的嵌套for循环来解决本问题。外层for循环会迭代列表中的每一个数字。我们这个数字将其称为“基础数”（base number）。我们将想要内层for循环迭代基础数之后的数字，这样我们可以计算基础数和它 <span class="math notranslate nohighlight">\(n_{fanout}\)</span> 个邻居们的差。我们将会为每一个基础数重新初始化中间的列表，不然每个差都会被附加到一个很长的列表后。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">difference_fanout</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">fanout</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Return a list of differences for</span>
-<span class="sd">        each value with its following terms</span>
+    <span class="sd">&quot;&quot;&quot; 返回列表，其成员为值和它后面成员之间的差</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        l: List[Number]</span>
-<span class="sd">            Input list of base numbers.</span>
+<span class="sd">            作为输入的基础数列表</span>
 
 <span class="sd">        fanout: int</span>
-<span class="sd">            Number of neighbors to compute differences against.</span>
+<span class="sd">            和多少个邻居计算差</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        List[List[Number]]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">all_fanouts</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># will store each list of fanouts</span>
+    <span class="n">all_fanouts</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 会储存每一个扇出差的列表</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">base_number</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-        <span class="c1"># `base_fanout` will store the differences between</span>
-        <span class="c1"># the base number&#39;s successive neighbors and base number</span>
+        <span class="c1"># `base_fanout` 会储存基础数和它之后邻居的差</span>
         <span class="n">base_fanout</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">fanout</span><span class="p">]:</span>
             <span class="n">base_fanout</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span> <span class="o">-</span> <span class="n">base_number</span><span class="p">)</span>
@@ -252,25 +250,23 @@ list.</p>
     <span class="k">return</span> <span class="n">all_fanouts</span>
 </pre></div>
 </div>
-<p>Note our use of <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#Enumerating-iterables">enumerate</a>; this permits us to simultaneously access our base number, which we use in the subtraction, as well as its index-position within the list <code class="docutils literal notranslate"><span class="pre">l</span></code>, which we use to determine the neighbors.</p>
-<p>Next, you may be concerned that our inner-loop will attempt to iterate beyond the end of the list. Consider the case in which <code class="docutils literal notranslate"><span class="pre">base_number</span></code> is the final element in <code class="docutils literal notranslate"><span class="pre">l</span></code>, thus <code class="docutils literal notranslate"><span class="pre">l[i+1:</span> <span class="pre">i+1+fanout]</span></code> would be equivalent to <code class="docutils literal notranslate"><span class="pre">l[len(l):</span> <span class="pre">len(l)+fanout]</span></code> - the stopping point for this slice clearly reaches beyond the extent of <code class="docutils literal notranslate"><span class="pre">l</span></code> (assuming <code class="docutils literal notranslate"><span class="pre">fanout</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>). Fortunately, this is not an oversight on our part. While indexing a list outside of its bounds will raise an error, recall that <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Handling-out-of-bounds-indices">a slice will
-automatically limit itself to be within bounds of a given sequence</a>. That is, <code class="docutils literal notranslate"><span class="pre">l[i+1:</span> <span class="pre">i+1+fanout]</span></code> actually behaves like <code class="docutils literal notranslate"><span class="pre">l[min(i,</span> <span class="pre">len(l)-1):</span> <span class="pre">min(len(l),</span> <span class="pre">i+1+fanout)]</span></code> (assuming we are dealing only with positive indices and non-empty lists). Thus our inner-loop will naturally limit itself. In the case that <code class="docutils literal notranslate"><span class="pre">base_number</span></code> is the final element in <code class="docutils literal notranslate"><span class="pre">l</span></code>, the inner-loop will exit
-immediately, leaving <code class="docutils literal notranslate"><span class="pre">base_fanout</span></code> empty. Although somewhat obscure, this is an important aspect of Python’s slicing mechanism to keep in mind.</p>
+<p>请注意我们使用了<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Iterables.html#枚举可迭代物">enumerate</a>；这允许我们同时访问我们的基础数（来求差）以及它在列表 <code class="docutils literal notranslate"><span class="pre">l</span></code> 中的索引（来确定它的邻居是哪些）。</p>
+<p>你可能会担心我们的内循环会试图迭代列表结尾之后的数字。考虑 <code class="docutils literal notranslate"><span class="pre">base_number</span></code> 为 <code class="docutils literal notranslate"><span class="pre">l</span></code> 的最后成员的情况。那么 <code class="docutils literal notranslate"><span class="pre">l[i+1:</span> <span class="pre">i+1+fanout]</span></code> 等值于 <code class="docutils literal notranslate"><span class="pre">l[len(l):</span> <span class="pre">len(l)+fanout]</span></code>——这个切片的结尾索引明显超过了 <code class="docutils literal notranslate"><span class="pre">l</span></code> 的长度（假设 <code class="docutils literal notranslate"><span class="pre">fanout</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>）。幸运的是，这并不是我们的疏忽。虽然索引列表范围外的成员会导致错误，但是请回忆：<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#处理超界索引">切片会自动将其限制在序列的边界之中</a>。也就是说，<code class="docutils literal notranslate"><span class="pre">l[i+1:</span> <span class="pre">i+1+fanout]</span></code> 其实行为和
+<code class="docutils literal notranslate"><span class="pre">l[min(i,</span> <span class="pre">len(l)-1):</span> <span class="pre">min(len(l),</span> <span class="pre">i+1+fanout)]</span></code> 一样（假设我们仅仅在处理正索引和非空的列表）。因此我们的内循环会自然地限制自身。在 <code class="docutils literal notranslate"><span class="pre">base_number</span></code> 为 <code class="docutils literal notranslate"><span class="pre">l</span></code> 最后成员的情况下，内循环会立刻退出，使得 <code class="docutils literal notranslate"><span class="pre">base_fanout</span></code> 为空。虽然有一点费解，但是这是一个值得记忆的Python切片特征。</p>
 </div>
-<div class="section" id="Solution:-difference_fanout-using-list-comprehensions">
-<h2>Solution: difference_fanout using list comprehensions<a class="headerlink" href="#Solution:-difference_fanout-using-list-comprehensions" title="Permalink to this headline">¶</a></h2>
-<p>We can make judicious use of nested <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#List-&amp;-Tuple-Comprehensions">list comprehensions</a> to simplify our solution. Although the syntax may appear to be convoluted at first glance, it permits us proceed without worrying about initializing multiple empty lists and appending to them at the right points in our nested for-loops</p>
+<div class="section" id="解：使用列表理解计算扇出差">
+<h2>解：使用列表理解计算扇出差<a class="headerlink" href="#解：使用列表理解计算扇出差" title="永久链接至标题">¶</a></h2>
+<p>我们可以审慎地嵌套<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#列表和元组理解">列表理解</a>来简化我们的答案。虽然这语法可能第一眼看上去有一点复杂，但是它允许我们不用担心初始化多个列表并在嵌套for循环中正确的地方向它们附加内容。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">difference_fanout</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">fanout</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Return a list of differences for</span>
-<span class="sd">        each value with its following terms</span>
+    <span class="sd">&quot;&quot;&quot; 返回列表，其成员为值和它后面成员之间的差</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        l: List[Number]</span>
-<span class="sd">            Input list</span>
+<span class="sd">            作为输入的基础数列表</span>
 
 <span class="sd">        fanout: int</span>
-<span class="sd">            Number of neighbors to compute difference with</span>
+<span class="sd">            和多少个邻居计算差</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -280,30 +276,27 @@ immediately, leaving <code class="docutils literal notranslate"><span class="pre
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">base</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>See that the outermost list comprehension loops over the base number, as did the outer for-loop in the prior solution, and that the innermost list comprehension plays the same roll as the inner for-loop.</p>
-<p>There are fewer potential points of failure in this solution, as its conciseness removes the “moving parts” that had to be managed in the previous solution. This should help demonstrate the power of the comprehension expression syntax.</p>
+<p>注意最外层的列表理解迭代了基础数，如上一个答案的外层for循环一般，而里层的列表理解达成了和上一个答案的里层for循环一样的目的。</p>
+<p>在这个版本的解中可能导致错误的地方比前一个答案少，因为其简短性使得你不需要担心之前答案需要处理的“中间部分”。这应该演示了理解表达式语法的强大。</p>
 </div>
-<div class="section" id="Extension">
-<h2>Extension<a class="headerlink" href="#Extension" title="Permalink to this headline">¶</a></h2>
-<p>Recall from <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Functions-are-Objects">earlier</a> that functions are, under the hood, just objects with some special operations that allow you to “call” a function. This means that you can pass other functions as parameters into a function. It is especially powerful, since it enables us to generalize the purposes of our functions. For example, we don’t have to limit our function to just computing the <strong>difference</strong>
-between members and their following terms; we can apply <strong>any</strong> <em>binary operation</em>. Instead of finding the difference, we can calculate the sum or product or even concatenate two strings for a list of string. The possibilities are limitless.</p>
-<p>Armed with this knowledge, we can generalize the code.</p>
+<div class="section" id="扩展">
+<h2>扩展<a class="headerlink" href="#扩展" title="永久链接至标题">¶</a></h2>
+<p>回忆<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#函数也是对象">前文</a>，函数其实就是提供了“调用函数”这个特殊功能的对象。这意味着你可以将函数作为参数输入到别的函数中。这一点极其强大，因为这将允许我们扩大我们函数的运用场合。比如说，我们不需要限制我们的函数来仅仅计算成员和之后项目的<strong>差</strong>；我们可以使用<strong>任何</strong><em>二元运算</em>。与其计算差，我们可以计算和或乘积或甚至在字符串列表的情况下粘连字符串。可能性无限；有限的仅仅是你的想象力。</p>
+<p>在了解了这一点后，我们可以归纳我们的代码。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply_fanout</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">fanout</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Return a list of outputs for each value</span>
-<span class="sd">        after applying a binary operation between</span>
-<span class="sd">        the value and its following terms</span>
+    <span class="sd">&quot;&quot;&quot; 返回一个列表，成员为值和在它后面成员之间</span>
+<span class="sd">        进行二元运算的结果</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        l: List[Any]</span>
-<span class="sd">            Input list</span>
+<span class="sd">            输入列表</span>
 
 <span class="sd">        fanout: int</span>
-<span class="sd">            Number of neighbors to apply the operation with</span>
+<span class="sd">            和多少个邻居进行运算</span>
 
 <span class="sd">        op: Callable[[Any, Any], Any]</span>
-<span class="sd">            Any binary operation to be applied to fanout-pairs</span>
-<span class="sd">            of elements in `l`.</span>
+<span class="sd">            任何用来对 `l` 中对象组成的扇出对操作的二元运算</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -313,7 +306,7 @@ between members and their following terms; we can apply <strong>any</strong> <em
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">base</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>Now, we can rewrite <code class="docutils literal notranslate"><span class="pre">difference_fanout</span></code> simply as</p>
+<p>现在，我们可以简单地重写 <code class="docutils literal notranslate"><span class="pre">difference_fanout</span></code> 为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
 
@@ -321,7 +314,7 @@ between members and their following terms; we can apply <strong>any</strong> <em
     <span class="k">return</span> <span class="n">apply_fanout</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">fanout</span><span class="p">,</span> <span class="n">subtract</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We can easily change <code class="docutils literal notranslate"><span class="pre">subtract</span></code> to some other function for a totally different use.</p>
+<p>我们可以轻松地将 <code class="docutils literal notranslate"><span class="pre">subtract</span></code> 换成其它函数来达到完全不同的目的。</p>
 </div>
 </div>
 
@@ -333,10 +326,10 @@ between members and their following terms; we can apply <strong>any</strong> <em
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="EncodeAsString.html" class="btn btn-neutral float-right" title="Encode as String" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="EncodeAsString.html" class="btn btn-neutral float-right" title="编码为字符串" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="MarginPercentage.html" class="btn btn-neutral float-left" title="Within Margin Percentage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="MarginPercentage.html" class="btn btn-neutral float-left" title="错误范围内百分比" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

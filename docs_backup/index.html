@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -27,6 +27,7 @@
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="_static/gtag.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -38,8 +39,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Python Like You Mean It" href="intro.html" /> 
 </head>
 
@@ -91,13 +92,13 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -187,137 +188,140 @@
 }
 </style>
 <div class="section" id="python-like-you-mean-it">
-<h1>Python Like You Mean It<a class="headerlink" href="#python-like-you-mean-it" title="Permalink to this headline">¶</a></h1>
+<h1>Python Like You Mean It<a class="headerlink" href="#python-like-you-mean-it" title="永久链接至标题">¶</a></h1>
 <blockquote>
-<div><p>Written by <a class="reference external" href="https://scholar.google.com/citations?hl=en&amp;user=coXsftgAAAAJ&amp;view_op=list_works&amp;gmla=AJsN-F7Eg769ERNBQDKZ5-5xmT9qh2G2chKgH0Lwbd3zujR7FAPiWmVp_57dFPKG_h7ghPeLG8oGysj5YWziwXib4oHb6kr2HA">Ryan Soklaski</a> (Twitter/GitHub:<a class="reference external" href="https://twitter.com/rsokl">&#64;rsokl</a>)</p>
-<p>Edited by <a class="reference external" href="https://davidmascharka.com/">David Mascharka</a></p>
+<div><p>作者 <a class="reference external" href="https://scholar.google.com/citations?hl=en&amp;user=coXsftgAAAAJ&amp;view_op=list_works&amp;gmla=AJsN-F7Eg769ERNBQDKZ5-5xmT9qh2G2chKgH0Lwbd3zujR7FAPiWmVp_57dFPKG_h7ghPeLG8oGysj5YWziwXib4oHb6kr2HA">Ryan Soklaski</a> (Twitter/GitHub:<a class="reference external" href="https://twitter.com/rsokl">&#64;rsokl</a>)</p>
+<p>编辑 <a class="reference external" href="https://davidmascharka.com/">David Mascharka</a></p>
+<p>翻译 <a class="reference external" href="https://alexding123.github.io/">Alex Ding</a></p>
+<p><a href="#id7"><span class="problematic" id="id8">`English Version &lt;https://www.pythonlikeyoumeanit.com`_</span></a></p>
 </div></blockquote>
-<div class="section" id="what-this-is">
-<h2>What this is<a class="headerlink" href="#what-this-is" title="Permalink to this headline">¶</a></h2>
-<p>Python Like You Mean It (PLYMI) is a free resource for learning the basics of Python &amp; NumPy, and moreover, becoming a competent Python user. The features of the Python language that are emphasized here were chosen to help those who are particularly interested in STEM applications (data analysis, machine learning, numerical work, etc.).</p>
-<p>I want this to be a lean, one-stop resource for learning the essentials of Python from scratch. The reader will begin by learning about what Python is and what installing Python even means, and will hopefully walk away with a solid understanding of a substantial core of the language and its premiere numerical library, NumPy. I am also placing an emphasis on best practices throughout this site and am teaching to the latest version of Python (version 3.6, as of writing this).</p>
+<div class="section" id="id1">
+<h2>这是什么<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>Python Like You Mean It (PLYMI) 是一个免费学习Python和NumPy基础的在线资源，其旨在帮助读者熟练地使用Python。本资源主要讨论的Python特征侧重于对科学应用感兴趣的读者（如数据分析，机器学习，数字相关工作，等等）。</p>
+<p>我（作者）对这个资源的定位是一个一站式，零基础的学习Python核心内容的轻量教程。读者会首先学习Python是什么以及安装Python具体意味着什么，且在最后带着对这个语言的核心内容和它的旗舰数字处理模组NumPy的理解离开。我也会注重提供一些常见任务的“最佳做法“。本文使用的Python为写作时的最新版本（3.6）。</p>
 </div>
-<div class="section" id="what-this-isn-t">
-<h2>What this isn’t<a class="headerlink" href="#what-this-isn-t" title="Permalink to this headline">¶</a></h2>
-<p>This is not even close to being an exhaustive treatment of the Python language, and is not sufficient to become a “complete” Python user. But it will hopefully provide a solid enough foundation that acquiring those missing pieces will be relatively easy.</p>
-<p>This is also not a deep “Python for Data Science” resource. It will not teach you how to use machine learning and data analysis libraries like sci-kit learn and Pandas. That being said, NumPy is such a critically-important library that it has deeply influenced essentially all of the other major STEM-related Python libraries (e.g. sci-kit, TensorFlow, PyTorch, Pandas). The NumPy content presented here will serve as a cornerstone for working with all of these libraries down the road.</p>
+<div class="section" id="id2">
+<h2>这不是什么<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>这绝对不是一个全面的Python教程。仅仅读完全文并不会让你成为一个准备充足的Python开发人员，但本文旨在帮助读者打造一个坚固的基础来帮助你在之后轻松地学习这里没有讨论的话题。</p>
+<p>这同时也不是一个很深入的“Python数据科学应用”的资源。这并不会教你如何使用机器学习或者如sci-kit learn和Pandas的数据分析模组。虽然如此，NumPy的重要性之高使得其对别的所有常见的的科学相关的Python模组（如sci-kit，TensorFlow，PyTorch，Pandas）都有着很深远的影响。本文的NumPy内容会为之后使用任何这些模组奠好基石。</p>
 </div>
-<div class="section" id="what-about-python-textbooks">
-<h2>What about Python textbooks?<a class="headerlink" href="#what-about-python-textbooks" title="Permalink to this headline">¶</a></h2>
-<p>Books and blogs can be great. I personally think that programming books can overwhelming because they are required to be so complete; it is hard for a someone new to a language to distill the essentials of the Python language from hundreds of pages of text. Furthermore, it simply makes more sense to make this sort of material available digitally; users should be able to easily search the site, view it on mobile devices, copy code snippets, and know that the content is being kept up-to-date.</p>
+<div class="section" id="python">
+<h2>那Python书籍呢？<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h2>
+<p>书和博客在很多情况下很有帮助。我个人认为编程书籍经常为完整性太过复杂冗长，以至于读者难以在好几百页的书里分辨哪些话题最重要。其次，在网上发表本文更加合理；用户可以轻松地搜索话题，复制代码，并在手机端浏览时刻更新的最新内容。</p>
 </div>
-<div class="section" id="python-shouldn-t-be-too-easy">
-<h2>Python shouldn’t be <em>too</em> easy<a class="headerlink" href="#python-shouldn-t-be-too-easy" title="Permalink to this headline">¶</a></h2>
-<p>Python is a relatively easy language to pick up, and it doesn’t require much rigor to make code work. Unfortunately, this means that there are many Python users out there who know enough to just get by, but lack a sound understanding of the language. You don’t want to get caught in the “know enough Python to be dangerous” zone; therein lies complacency, stagnation, and the genesis of a lot of bad code. You’ve got to Python like you mean it!</p>
+<div class="section" id="id3">
+<h2>Python不应该太简单<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>Python是一门相对而言比较简单的语言。编写能用的代码并不困难。不幸的是，这意味着很多Python用户仅仅知道足够的知识来达成自己的需求，但缺乏对这门语言健全的理解。切记不要沦落到“知道足够的Python来做蠢事”的境地；这容易导致自满，学习停滞，和很多低质量的代码。各位一定要学好学清楚。</p>
 </div>
-<div class="section" id="plymi-is-on-github">
-<h2>PLYMI is on GitHub<a class="headerlink" href="#plymi-is-on-github" title="Permalink to this headline">¶</a></h2>
-<p>If you have questions about the reading, think that you have spotted some mistakes, or would like to contribute to PLYMI, please visit <a class="reference external" href="https://github.com/rsokl/Learning_Python">our GitHub page</a>. You will need to create a GitHub account in order to post an issue; this process is free and easy. We would love for you to join us to discuss the website!</p>
+<div class="section" id="plymigithub">
+<h2>PLYMI为GitHub开源项目<a class="headerlink" href="#plymigithub" title="永久链接至标题">¶</a></h2>
+<p>如果你对阅读本文有任何的问题，想要纠错，或者希望能够对本资源做贡献，请访问 <a class="reference external" href="https://github.com/rsokl/Learning_Python">我们的GitHub</a>。你需要创建一个GitHub账号才能发表帖子，但这个过程免费也简单。我们在这里强烈欢迎各位读者来一起讨论这个网站!</p>
+<p>译者注：这里的GitHub链接是原文的，你也可以访问 <a class="reference external" href="https://github.com/alexding123/Learning_Python">中文版的GitHub</a>。译者会尽力在每次原文的GitHub更新之后去更新中文版，所以对文章有问题可以直接去英文版的GitHub上，对翻译有问题可以去中文版的GitHub。</p>
 </div>
-<div class="section" id="contributors">
-<h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
-<p>The following people made significant contributions to PLYMI, adding problems with worked solutions and valuable feedback on the text:</p>
+<div class="section" id="id5">
+<h2>贡献者<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>一下这些人对PLYMI有着显著的贡献。他们提供了练习题和答案以及有价值的建议：</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/alexding123">&#64;alexding123</a></li>
-<li>AJ Federici (GitHub:<a class="reference external" href="https://github.com/AFederici">&#64;Federici</a>)</li>
-<li>Annabelle Lew (GitHub:<a class="reference external" href="https://github.com/AnnabelleLew">&#64;AnnabelleLew</a>)</li>
-<li>Petar Griggs (GitHub:<a class="reference external" href="https://github.com/petarmhg">&#64;petarmhg</a>)</li>
-<li>Sam Carpenter (GitHub:<a class="reference external" href="https://github.com/HardBoiled800">&#64;HardBoiled800</a>)</li>
+<li><p>Alex Ding (GitHub:<a class="reference external" href="https://github.com/alexding123">&#64;alexding123</a>)</p></li>
+<li><p>AJ Federici (GitHub:<a class="reference external" href="https://github.com/AFederici">&#64;Federici</a>)</p></li>
+<li><p>Annabelle Lew (GitHub:<a class="reference external" href="https://github.com/AnnabelleLew">&#64;AnnabelleLew</a>)</p></li>
+<li><p>Petar Griggs (GitHub:<a class="reference external" href="https://github.com/petarmhg">&#64;petarmhg</a>)</p></li>
+<li><p>Sam Carpenter (GitHub:<a class="reference external" href="https://github.com/HardBoiled800">&#64;HardBoiled800</a>)</p></li>
 </ul>
 </div>
-<div class="section" id="about-me">
-<h2>About Me<a class="headerlink" href="#about-me" title="Permalink to this headline">¶</a></h2>
-<p>I started learning to use Python in graduate school for my physics research, and I was <em>so</em> bad at using it. Fortunately, one of my labmates was more experienced and had the good sense to tell me that my code and work flow was terrible. He pointed me to tooling, style guides, and documentation pages so that I could improve (I’d like to think that this resource would have been a huge help to me back then). I’ve been coding in Python for at least six years now, and I’ve taken to following the language, along with its new features and changes, quite closely. Currently I do machine learning research, and have served as a core developer for a machine learning library. I also love to teach, so this has been a fun project for me to take on!</p>
+<div class="section" id="id6">
+<h2>关于作者<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>我刚开始学习使用Python的时候是为了我研究生时的物理实验。当时我的Python使用差得无可救药。幸运的是，一个实验室里更加熟悉Python的同事点醒了我，让我理解了我的代码和工作流程有多糟糕。他指向了一些工具，代码风格指南，和说明文档来帮助我提升编程水平（我认为本资源对当年的我会是一个巨大的帮助）。如今我已经使用了Python至少六年，并比较仔细地了解着这门语言的新特征和变化。现在我在做机器学习的研究，也作为一名核心人员开发过一个机器学习的模组。我很喜欢教书–因此这个项目对我而言非常有意思！</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Python Like You Mean It</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#what-this-is">What this is</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#what-this-isn-t">What this isn’t</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#what-about-python-textbooks">What about Python textbooks?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#python-shouldn-t-be-too-easy">Python shouldn’t be <em>too</em> easy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#plymi-is-on-github">PLYMI is on GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#contributors">Contributors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#about-me">About Me</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id1">这是什么</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id2">这不是什么</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#python">那Python书籍呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id3">Python不应该太简单</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#plymigithub">PLYMI为GitHub开源项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id5">贡献者</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id6">关于作者</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_1.html">Module 1: Getting Started with Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/SiteFormatting.html">A Quick Guide to Formatting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/GettingStartedWithPython.html">Introducing the Python Programming Language</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/Installing_Python.html">Installing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/Informal_Intro_Python.html">An Informal Introduction to Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/Jupyter_Notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html">Setting Up a Development Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_1.html">模组1：Python入门</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/SiteFormatting.html">代码格式的简单指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/GettingStartedWithPython.html">介绍Python编程语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/Installing_Python.html">安装Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/Informal_Intro_Python.html">非正式的Python介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/Jupyter_Notebooks.html">Jupyter记事本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html">设置开发环境</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_2.html">Module 2: The Essentials of Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_2.html">模组2：Python基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_2_problems.html">Module 2: Problems</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/MergeMaxDicts.html">Merging Two Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/Palindrome.html">Is Palindrome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/MarginPercentage.html">Within Margin Percentage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/DifferenceFanout.html">Difference Fanout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/EncodeAsString.html">Encode as String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_2_problems.html">模组2：题目</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/MergeMaxDicts.html">合并两个词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/Palindrome.html">回文判断</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/MarginPercentage.html">错误范围内百分比</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/DifferenceFanout.html">扇出差</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module2_EssentialsOfPython/Problems/EncodeAsString.html">编码为字符串</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_3.html">Module 3: The Essentials of NumPy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicArrayAttributes.html">Basic Array Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html">Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html">Advanced Indexing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_3.html">模组3：NumPy基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicArrayAttributes.html">基本的数组属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html">迭代数组和数组遍历顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html">数组广播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html">进阶索引</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_3_problems.html">Module 3: Problems</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html">Measuring the Accuracy of a Classification Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html">Playing Darts and Estimating Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_3_problems.html">模组3：题目</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/ComputeAccuracy.html">测量分类模型的精度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Problems/Approximating_pi.html">掷镖游戏和约算Pi</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_4.html">Module 4: Object Oriented Programming</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Introduction_to_OOP.html">Introduction to Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/ClassDefinition.html">Defining a New Class of Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/ClassInstances.html">Instances of a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Brief_Review.html">A Brief Summary of Terms and Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Methods.html">Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Applications_of_OOP.html">Applications of Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Special_Methods.html">Special Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Inheritance.html">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_4.html">模组4：面向对象编程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Introduction_to_OOP.html">面向对象编程简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/ClassDefinition.html">定义新对象类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/ClassInstances.html">类实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Brief_Review.html">术语和概念的快速总结</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Methods.html">方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Applications_of_OOP.html">面向对象编程的应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Special_Methods.html">特殊方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module4_OOP/Inheritance.html">继承</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_5.html">Module 5: Odds and Ends</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module5_OddsAndEnds/Writing_Good_Code.html">Writing Good Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_5.html">模组5：琐碎话题</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module5_OddsAndEnds/Writing_Good_Code.html">编写好代码</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Module5_OddsAndEnds/Matplotlib.html">Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module5_OddsAndEnds/WorkingWithFiles.html">Working with Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module5_OddsAndEnds/Modules_and_Packages.html">Import: Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module5_OddsAndEnds/WorkingWithFiles.html">操作文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module5_OddsAndEnds/Modules_and_Packages.html">导入：模组和包</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="indices-and-tables">
-<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>
+<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">模块索引</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">搜索页面</span></a></p></li>
 </ul>
 </div>
 </div>

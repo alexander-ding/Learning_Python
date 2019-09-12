@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Measuring classification accuracy, Difficulty: Easy, Category: Practice Problem" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Measuring the Accuracy of a Classification Model &mdash; Python Like You Mean It</title>
+  <title>测量分类模型的精度 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../../_static/gtag.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Playing Darts and Estimating Pi" href="Approximating_pi.html" />
-    <link rel="prev" title="Module 3: Problems" href="../../module_3_problems.html" /> 
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="掷镖游戏和约算Pi" href="Approximating_pi.html" />
+    <link rel="prev" title="模组3：题目" href="../../module_3_problems.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,21 +95,21 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../module_3_problems.html">Module 3: Problems</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Measuring the Accuracy of a Classification Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Unvectorized-Solution">Unvectorized Solution</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Vectorized-Solution">Vectorized Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../module_3_problems.html">模组3：题目</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">测量分类模型的精度</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#未矢量化的解">未矢量化的解</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#矢量化的解">矢量化的解</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Approximating_pi.html">Playing Darts and Estimating Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Approximating_pi.html">掷镖游戏和约算Pi</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -154,9 +155,9 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../module_3_problems.html">Module 3: Problems</a> &raquo;</li>
+          <li><a href="../../module_3_problems.html">模组3：题目</a> &raquo;</li>
         
-      <li>Measuring the Accuracy of a Classification Model</li>
+      <li>测量分类模型的精度</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -199,106 +200,101 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Measuring-the-Accuracy-of-a-Classification-Model">
-<h1>Measuring the Accuracy of a Classification Model<a class="headerlink" href="#Measuring-the-Accuracy-of-a-Classification-Model" title="Permalink to this headline">¶</a></h1>
-<p>Suppose that we are working on a project in which we have some model that can process an image and classify its content. For example, my <code class="docutils literal notranslate"><span class="pre">cat_dog_goose_other</span></code> function tries to classify whether a picture is of a cat (class 0), a dog (class 1), a goose (class 2), or something else (class 3). We want to measure the <em>accuracy</em> of our classifier. That is, we want to feed it a series of images whose contents are known and tally the number of times the model’s prediction matches the true content of
-an image. The accuracy is the fraction of images that the model classifies correctly.</p>
-<p>For each image we feed the <code class="docutils literal notranslate"><span class="pre">cat_dog_goose_other</span></code> model, it will produce four <strong>scores</strong> - one score for each class. The model was designed such that the class with the highest score corresponds to its prediction. There are no constraints on the values the scores can take. For example, if the model processes one image it will return a shape-<span class="math notranslate nohighlight">\((1, 4)\)</span> score-array:</p>
+<div class="section" id="测量分类模型的精度">
+<h1>测量分类模型的精度<a class="headerlink" href="#测量分类模型的精度" title="永久链接至标题">¶</a></h1>
+<p>假设我们在做一个使用某种模型来处理图片并分类其内容的项目。比如说，我的 <code class="docutils literal notranslate"><span class="pre">cat_dog_goose_other</span></code> 函数将试图分类某张图片是否是猫（类型0），狗（类型1），鹅（类型2），或其它（类型3）。我们想要测量分类器的<em>精确度</em>。也就是说，我们想要向函数输入一序列我们知道其类型的图片并数模型的分类和实际分类相同的次数。这样做的精度就是模型分类正确的图片的比例。</p>
+<p>为我们输入给 <code class="docutils literal notranslate"><span class="pre">cat_dog_goose_other</span></code> 模型的每一张图片，模型都会返回四个<strong>分数</strong>（score）——每个分数对应一类型。模型设计的结果就是分数最高的类型就是模型预测的类型。比如说，如果模型处理一张图片，它将会返回一个形状为 <span class="math notranslate nohighlight">\((1, 4)\)</span> 的分数数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scores</span> <span class="o">=</span> <span class="n">cat_dog_goose_other</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="go"># processing one image produces a 1x4 array of classification scores</span>
+<span class="go"># 处理一张图片将返回一个1x4的分类分数数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scores</span>
 <span class="go">array([[-10, 33, 580, 100]])</span>
 </pre></div>
 </div>
-<p>Here, our model has predicted that this is a picture of a goose, since the score associate with class 2 (<code class="docutils literal notranslate"><span class="pre">scores[2]</span></code>) is the largest value. In general, if we pass <code class="docutils literal notranslate"><span class="pre">cat_dog_goose_other</span></code> an array of <span class="math notranslate nohighlight">\(N\)</span> images, it will return a shape-<span class="math notranslate nohighlight">\((N, 4)\)</span> array of classification scores - each of the <span class="math notranslate nohighlight">\(N\)</span> images has <span class="math notranslate nohighlight">\(4\)</span> scores associated with it.</p>
-<p>Because we are measuring our model’s accuracy, we have curated a set of images whose contents are known. That is, we have a true <strong>label</strong> for each image, which is encoded as a class-ID. For example, a picture of a cat would have the label <code class="docutils literal notranslate"><span class="pre">0</span></code> associated with it, a picture of a dog would have the label <code class="docutils literal notranslate"><span class="pre">1</span></code> and so on. Thus, a stack of <span class="math notranslate nohighlight">\(N\)</span> images would have associated with it a shape-<span class="math notranslate nohighlight">\((N,)\)</span> array of integer labels, each label is within <span class="math notranslate nohighlight">\([0, 4)\)</span>.</p>
-<p>Suppose we have passed our model five images, and it produced the following scores:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Classification scores produced by `cat_dog_goose_other`</span>
-<span class="c1"># on five images. A shape-(5, 4) array.</span>
+<p>在这里，我们的模型预测这张图片是一只鹅，因为类型2对应的分数（<code class="docutils literal notranslate"><span class="pre">scores[2]</span></code>）是最大的值。总体而言，如果我们向 <code class="docutils literal notranslate"><span class="pre">cat_dog_goose_other</span></code> 输入一个有着 <span class="math notranslate nohighlight">\(N\)</span> 张图片的数组，它将返回一个形状为 <span class="math notranslate nohighlight">\((N, 4)\)</span> 的分类分数数组——<span class="math notranslate nohighlight">\(N\)</span> 张图片的每一张都对应着 <span class="math notranslate nohighlight">\(4\)</span> 个分数。</p>
+<p>因为我们在测量模型的精准度，我们将输入一组我们已经知道其真实分类的图片。也就是说，我们有着每张图片的正确<strong>标签</strong>（label），以类型ID的形式存储着。比如说，一张猫的图片会对应着标签 <code class="docutils literal notranslate"><span class="pre">0</span></code>，一张狗的图片会对应标签 <code class="docutils literal notranslate"><span class="pre">1</span></code>，如此重复。所以，一打 <span class="math notranslate nohighlight">\(N\)</span> 张图片会对应着一个形状为 <span class="math notranslate nohighlight">\((N,)\)</span> 的整数标签数组，而每个标签都在 <span class="math notranslate nohighlight">\([0, 4)\)</span> 之内。</p>
+<p>假设我们向我们的模型输入了5张图片，而它返回了以下分数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `cat_dog_goose_other` 对5张图片产生的分类分数</span>
+<span class="c1"># 一个形状为 (5, 4) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">30</span><span class="p">,</span>   <span class="mi">1</span><span class="p">,</span>  <span class="mi">10</span><span class="p">,</span>  <span class="mi">80</span><span class="p">],</span>  <span class="c1"># prediction: other</span>
-<span class="o">...</span>                    <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">20</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>  <span class="o">-</span><span class="mi">5</span><span class="p">],</span>  <span class="c1"># prediction: dog</span>
-<span class="o">...</span>                    <span class="p">[</span> <span class="mi">27</span><span class="p">,</span>  <span class="mi">50</span><span class="p">,</span>   <span class="mi">9</span><span class="p">,</span>  <span class="mi">30</span><span class="p">],</span>  <span class="c1"># prediction: dog</span>
-<span class="o">...</span>                    <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>  <span class="mi">84</span><span class="p">,</span>   <span class="mi">3</span><span class="p">],</span>  <span class="c1"># prediction: goose</span>
-<span class="o">...</span>                    <span class="p">[</span>  <span class="mi">5</span><span class="p">,</span>   <span class="mi">2</span><span class="p">,</span>  <span class="mi">10</span><span class="p">,</span>   <span class="mi">0</span><span class="p">]])</span> <span class="c1"># prediction: goose</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">30</span><span class="p">,</span>   <span class="mi">1</span><span class="p">,</span>  <span class="mi">10</span><span class="p">,</span>  <span class="mi">80</span><span class="p">],</span>  <span class="c1"># 预测：其它</span>
+<span class="o">...</span>                    <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">20</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>  <span class="o">-</span><span class="mi">5</span><span class="p">],</span>  <span class="c1"># 预测：狗</span>
+<span class="o">...</span>                    <span class="p">[</span> <span class="mi">27</span><span class="p">,</span>  <span class="mi">50</span><span class="p">,</span>   <span class="mi">9</span><span class="p">,</span>  <span class="mi">30</span><span class="p">],</span>  <span class="c1"># 预测：狗</span>
+<span class="o">...</span>                    <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>  <span class="mi">84</span><span class="p">,</span>   <span class="mi">3</span><span class="p">],</span>  <span class="c1"># 预测：鹅</span>
+<span class="o">...</span>                    <span class="p">[</span>  <span class="mi">5</span><span class="p">,</span>   <span class="mi">2</span><span class="p">,</span>  <span class="mi">10</span><span class="p">,</span>   <span class="mi">0</span><span class="p">]])</span> <span class="c1"># 预测：鹅</span>
 </pre></div>
 </div>
-<p>And suppose that the true labels for these five images are:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># truth: cat, dog, dog, goose, other</span>
+<p>并假设这5张图片的正确标签为：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 正确：猫，狗，狗，鹅，其它</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Our model classified three out of five images correctly; thus, our accuracy function should return 0.6:</p>
+<p>那么我们的模型在5张图片中正确分类了3张；因此，我们的精确度函数应当返回0.6:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">classification_accuracy</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 <span class="go">0.6</span>
 </pre></div>
 </div>
-<p>To generalize this problem, assume that your classifier is dealing with <span class="math notranslate nohighlight">\(K\)</span> classes (instead of <span class="math notranslate nohighlight">\(4\)</span>). Complete the following function.</p>
-<p><strong>Tip:</strong> You will find it useful to leverage <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html#numpy.argmax">numpy’s argmax function</a>`f</p>
+<p>为了归纳这个问题，假设你的分类器会分类 <span class="math notranslate nohighlight">\(K\)</span> 个类型（而不是 <span class="math notranslate nohighlight">\(4\)</span> 个）。填完以下函数。</p>
+<p><strong>提示</strong>：你会想要使用<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html#numpy.argmax">numpy的argmax函数</a>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">classification_accuracy</span><span class="p">(</span><span class="n">classification_scores</span><span class="p">,</span> <span class="n">true_labels</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the fractional classification accuracy for a batch of N predictions.</span>
+<span class="sd">    返回一组N个预测的分类精确度。</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    classification_scores : numpy.ndarray, shape=(N, K)</span>
-<span class="sd">        The scores for K classes, for a batch of N pieces of data</span>
-<span class="sd">        (e.g. images).</span>
+<span class="sd">        一组N个数据（图片）的K个类型的分数。</span>
 <span class="sd">    true_labels : numpy.ndarray, shape=(N,)</span>
-<span class="sd">        The true label for each datum in the batch: each label is an</span>
-<span class="sd">        integer in the domain [0, K).</span>
+<span class="sd">        一组中每个数据的正确标签：每个标签是一个在 [0, K) 之中的整数。</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    float</span>
-<span class="sd">        (num_correct) / N</span>
+<span class="sd">        正确数 / N</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># YOUR CODE HERE</span>
+    <span class="c1"># 你的代码</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
-<div class="section" id="Unvectorized-Solution">
-<h2>Unvectorized Solution<a class="headerlink" href="#Unvectorized-Solution" title="Permalink to this headline">¶</a></h2>
-<p>A simple approach to this problem is to first loop over the rows of our classification scores. We know that each such row stores the scores for each class for a particular data point, and that the <em>index</em> of the highest score in that row gives us the predicted label for that data point (e.g.&nbsp;image in our hypothetical use-case). We can then directly compare these predicted labels with the true labels to compute the accuracy.</p>
-<p>We can use the function <code class="docutils literal notranslate"><span class="pre">numpy.argmax</span></code> to get the index of the highest score, and thus the predicted class-ID, for each data point. Recall that NumPy arrays use <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html#How-to-Traverse-an-Array:-Row-major-%28C%29-vs-Column-major-%28F%29-Traversal-Ordering">row-major traversal ordering</a>, so performing a for-loop over <code class="docutils literal notranslate"><span class="pre">classification_scores</span></code> will yield one row of the array at a time.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pred_labels</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Will store the N predicted class-IDs</span>
+<div class="section" id="未矢量化的解">
+<h2>未矢量化的解<a class="headerlink" href="#未矢量化的解" title="永久链接至标题">¶</a></h2>
+<p>此问题的一个简单处理方法就是首先迭代我们分类分数的每一行。我们知道每一行数据储存着一个数据点每个类型的分数，而每一行最高分数的<em>索引</em>将会为我们提供该数据点（如我们例子中的图片）的预测标签。然后我们可以直接将预测的标签和正确的标签进行对比来计算精确度。</p>
+<p>我们可以使用函数 <code class="docutils literal notranslate"><span class="pre">numpy.argmax</span></code> 来获取每个数据点的最高分数的索引并由此获得其预测的类型ID。请回忆，NumPy数组使用<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html#How-to-Traverse-an-Array:-Row-major-%28C%29-vs-Column-major-%28F%29-Traversal-Ordering">行优先遍历顺序</a>，所以for循环 <code class="docutils literal notranslate"><span class="pre">classification_scores</span></code> 将会一次返回数组的一行。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pred_labels</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 将会储存N个预测的类型ID</span>
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">classification_scores</span><span class="p">:</span>
-    <span class="c1"># store the index associated with the highest score for each datum</span>
+    <span class="c1"># 储存每个数据点最大值对应的索引</span>
     <span class="n">pred_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Next, we need to count the fraction of predicted class-IDs that match the true labels classification matches the true classification.</p>
+<p>接下来，我们需要数多有少比例的预测类型ID和正确标签相同。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_correct</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pred_labels</span><span class="p">)):</span>
     <span class="k">if</span> <span class="n">pred_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">true_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">num_correct</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>Or we can make use of <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Creating-your-own-generator:-generator-comprehensions">a generator comprehension</a> and <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html">itertools</a> to be much more succinct:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># recall: int(True) -&gt; 1, int(False) -&gt; 0</span>
+<p>我们也可以使用<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Creating-your-own-generator:-generator-comprehensions">生成器理解</a>和<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html">itertools</a>来简化以上代码：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 请回忆：int(True) -&gt; 1, int(False) -&gt; 0</span>
 <span class="n">num_correct</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">t</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pred_labels</span><span class="p">,</span> <span class="n">true_labels</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>We can formally write this out into the following function:</p>
+<p>我们可以将以上代码正式写入一个函数中：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unvectorized_accuracy</span><span class="p">(</span><span class="n">classification_scores</span><span class="p">,</span> <span class="n">true_labels</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the fractional classification accuracy for a batch of N predictions.</span>
+<span class="sd">    返回一组N个预测的分类精确度。</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    classification_scores : numpy.ndarray, shape=(N, K)</span>
-<span class="sd">        The scores for K classes, for a batch of N pieces of data</span>
-<span class="sd">        (e.g. images).</span>
+<span class="sd">        一组N个数据（图片）的K个类型的分数。</span>
 <span class="sd">    true_labels : numpy.ndarray, shape=(N,)</span>
-<span class="sd">        The true label for each datum in the batch: each label is an</span>
-<span class="sd">        integer in the domain [0, K).</span>
+<span class="sd">        一组中每个数据的正确标签：每个标签是一个在 [0, K) 之中的整数。</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    float</span>
-<span class="sd">        (num_correct) / N</span>
+<span class="sd">        正确数 / N</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">pred_labels</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Will store the N predicted class-IDs</span>
+    <span class="n">pred_labels</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 将会储存N个预测的类型ID</span>
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">classification_scores</span><span class="p">:</span>
         <span class="n">pred_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
 
@@ -309,52 +305,49 @@ an image. The accuracy is the fraction of images that the model classifies corre
     <span class="k">return</span> <span class="n">num_correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">true_labels</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Testing against our example from above:</p>
+<p>用之前例子的数据进行测试：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unvectorized_accuracy</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 <span class="go">0.6</span>
 </pre></div>
 </div>
-<p>Horray! We have a working accuracy function! However, this function can be greatly simplified and optimized by <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html">vectorizing</a> it.</p>
+<p>耶！我们有一个可用的精确度函数了！但是，这个函数可以通过<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html">矢量化</a>大幅度地简化和优化。</p>
 </div>
-<div class="section" id="Vectorized-Solution">
-<h2>Vectorized Solution<a class="headerlink" href="#Vectorized-Solution" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">numpy.argmax</span></code> is one of NumPy’s <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Sequential-Functions">vectorized sequential functions</a>. As such, it accepts <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions">axis as a keyword argument</a>. This means that, instead of calling <code class="docutils literal notranslate"><span class="pre">np.argmax</span></code> on each row of <code class="docutils literal notranslate"><span class="pre">classification_scores</span></code> in a for-loop, we
-can simply instruct <code class="docutils literal notranslate"><span class="pre">np.argmax</span></code> to operate <em>across the columns of each row of the array</em> by specifying <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># returns the column-index of the max value</span>
-<span class="c1"># within each row of `classification_scores`</span>
+<div class="section" id="矢量化的解">
+<h2>矢量化的解<a class="headerlink" href="#矢量化的解" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">numpy.argmax</span></code> 是NumPy的一个<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Sequential-Functions">矢量化序列函数</a>。如此，它接受<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions">关键词参数axis</a>。这意味着，与其对 <code class="docutils literal notranslate"><span class="pre">classification_scores</span></code> 的每一行通过for循环调用 <code class="docutils literal notranslate"><span class="pre">np.argmax</span></code>，我们可以直接通过提供 <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> 来告诉 <code class="docutils literal notranslate"><span class="pre">np.argmax</span></code>
+去对<em>数组每一行的列</em>进行操作。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 返回 `classification_scores` 每行中最大值列的索引</span>
 <span class="n">pred_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">classification_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This simple expression eliminates our first for-loop entirely.</p>
-<p>Next, we can use NumPy’s <em>vectorized logical operations</em>, specifically <code class="docutils literal notranslate"><span class="pre">==</span></code>, to get a boolean-valued array that stores <code class="docutils literal notranslate"><span class="pre">True</span></code> wherever the predicted labels match the true labels and <code class="docutils literal notranslate"><span class="pre">False</span></code> everywhere else. Recall that <code class="docutils literal notranslate"><span class="pre">True</span></code> behaves like <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> like <code class="docutils literal notranslate"><span class="pre">0</span></code>. Thus, we can call <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> on our resulting boolean-valued array to compute the number of correct predictions divided by the total number of predictions. We can thus vectorize our second for-loop with:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># computes the fraction of correctly predicted labels</span>
+<p>这个简单的表达式完全代替了我们的第一个for循环。</p>
+<p>然后，我们可以使用NumPy的<em>矢量化逻辑操作符</em> <code class="docutils literal notranslate"><span class="pre">==</span></code> 来获取一个布尔数组，其在预测标签等于正确标签时储存 <code class="docutils literal notranslate"><span class="pre">True</span></code>，而不等于时储存 <code class="docutils literal notranslate"><span class="pre">False</span></code>。请回忆，<code class="docutils literal notranslate"><span class="pre">True</span></code> 的行为和 <code class="docutils literal notranslate"><span class="pre">1</span></code> 一样，而 <code class="docutils literal notranslate"><span class="pre">False</span></code> 的行为和 <code class="docutils literal notranslate"><span class="pre">0</span></code> 一样。所以，我们可以通过对返回的布尔数组调用 <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> 来计算正确预测除以总预测数的比例。我们可以如此矢量化第二个for循环：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算正确预测标签的比例</span>
 <span class="n">frac_correct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pred_labels</span> <span class="o">==</span> <span class="n">true_labels</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>All together, making keen use of vectorization allows us to write our classification accuracy function <em>in a single line of code</em>.</p>
+<p>综上，聪明地使用矢量化允许我们在<em>一行代码内</em>编写我们的分类精度函数。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">classification_accuracy</span><span class="p">(</span><span class="n">classification_scores</span><span class="p">,</span> <span class="n">true_labels</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the fractional classification accuracy for a batch of N predictions.</span>
+<span class="sd">    返回一组N个预测的分类精确度。</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    classification_scores : numpy.ndarray, shape=(N, K)</span>
-<span class="sd">        The scores for K classes, for a batch of N pieces of data</span>
-<span class="sd">        (e.g. images).</span>
+<span class="sd">        一组N个数据（图片）的K个类型的分数。</span>
 <span class="sd">    true_labels : numpy.ndarray, shape=(N,)</span>
-<span class="sd">        The true label for each datum in the batch: each label is an</span>
-<span class="sd">        integer in the domain [0, K).</span>
+<span class="sd">        一组中每个数据的正确标签：每个标签是一个在 [0, K) 之中的整数。</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    float</span>
-<span class="sd">        (num_correct) / N</span>
+<span class="sd">        正确数 / N</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">classification_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">true_labels</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Not only is this cleaner to look at, but it was also simpler and less error-prone to write. Moreover, it is much faster than our unvectorized solution - given <span class="math notranslate nohighlight">\(N=10,000\)</span> data points and <span class="math notranslate nohighlight">\(K=100\)</span> classes, our vectorized solution is roughly <span class="math notranslate nohighlight">\(40\times\)</span> faster</p>
-<p>(The following “time-it” code blocks must be run in independent cells in a Jupyter notebook or IPython console - <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> must be the topmost command in the cell)</p>
+<p>这不仅仅看起来干净很多，它也更加简单且在编写时更难出错。同时，它相比我们之前未矢量化的版本快很多——设 <span class="math notranslate nohighlight">\(N=10,000\)</span> 个数据点和 <span class="math notranslate nohighlight">\(K=100\)</span> 个类型，我们的矢量化解大约快 <span class="math notranslate nohighlight">\(40\times\)</span>。</p>
+<p>（以下的“time-it”代码块必须在Jupyter记事本或IPython命令行的独立小节中运行——<code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> 必须是小节顶端的第一行命令）</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
@@ -382,10 +375,10 @@ can simply instruct <code class="docutils literal notranslate"><span class="pre"
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Approximating_pi.html" class="btn btn-neutral float-right" title="Playing Darts and Estimating Pi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Approximating_pi.html" class="btn btn-neutral float-right" title="掷镖游戏和约算Pi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../module_3_problems.html" class="btn btn-neutral float-left" title="Module 3: Problems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../module_3_problems.html" class="btn btn-neutral float-left" title="模组3：题目" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

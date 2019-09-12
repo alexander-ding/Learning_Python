@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: understanding python sequences, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sequence Types &mdash; Python Like You Mean It</title>
+  <title>序列类型 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Variables &amp; Assignment" href="Variables_and_Assignment.html" />
-    <link rel="prev" title="Basic Object Types" href="Basic_Objects.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="变量和赋值" href="Variables_and_Assignment.html" />
+    <link rel="prev" title="基本对象类型" href="Basic_Objects.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,40 +95,40 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Sequence Types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Tuples">Tuples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Working-with-sequences">Working with sequences</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Introducing-Indexing-and-Slicing">Introducing Indexing and Slicing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Indexing">Indexing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Slicing">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">序列类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#元组">元组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#操作序列">操作序列</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#索引和切片简介">索引和切片简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#索引">索引</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#切片">切片</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Exercise-Solutions:">Reading Comprehension Exercise Solutions:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -173,9 +174,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Sequence Types</li>
+      <li>序列类型</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,46 +219,44 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Sequence-Types">
-<h1>Sequence Types<a class="headerlink" href="#Sequence-Types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="序列类型">
+<h1>序列类型<a class="headerlink" href="#序列类型" title="永久链接至标题">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong>:</p>
-<p>There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>注</strong>：</p>
+<p>本文各处的阅读理解练习旨在帮助你练习使用文章中的知识点。练习题的答案可以在本页结尾找到。</p>
 </div>
-<p>The following objects are all example of sequences:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># examples of sequences</span>
+<p>下列对象都是序列（sequence）的种类：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 序列的例子</span>
 
-<span class="c1"># a list</span>
+<span class="c1"># 列表（list）</span>
 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 
-<span class="c1"># a string</span>
+<span class="c1"># 字符串（string）</span>
 <span class="s2">&quot;hello out there&quot;</span>
 
-<span class="c1"># a tuple</span>
+<span class="c1"># 元组（tuple）</span>
 <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># a NumPy array</span>
+<span class="c1"># NumPy数组</span>
 <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Being able to work with sequences of objects/data is so important that it warrants us to take our first (relatively) deep dive into Python. The preceding reading introduced Python lists and strings, two important objects that are built into the Python language. Although quite distinct from one another in terms of what they can contain, <em>lists and strings are both types of sequences</em> - they store a finite collection of objects whose ordering matters (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;tac&quot;</span></code> should be
-considered distinct strings). As such, lists, strings, and the other sequence types in Python all share a common interface for allowing users to inspect, retrieve, and summarize their contents.</p>
-<p>In this section, we will:</p>
+<p>因为操作对象/数据序列的能力极其重要，我们第一课（相对）深入的Python探讨将会学习序列类型。前面的阅读向读者介绍了Python的列表和字符串。虽然两者能存储的内容不同，<em>列表和字符串都是一种序列</em>——它们能够存储一组有限多的有顺序的对象（比如说 <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&quot;tac&quot;</span></code> 虽然成员字符相同，但是其实是两个不一样的字符串）。因此，列表，字符串，和其它Python的序列类型共享一个常用的接口来帮助用户查阅，调用，和总结它们的内容。</p>
+<p>在本节中，我们将：</p>
 <ul class="simple">
-<li>Introduce tuples, the last built-in sequence type that we have yet to encounter.</li>
-<li>Demonstrate the common interface that can be used to inspect and summarize the contents of a sequence.</li>
-<li>Detail the all-important indexing scheme used by Python, which will allow us to access specific items or subsequences from a sequence.</li>
+<li><p>介绍元组——我们将见到的最后一种内置序列类型。</p></li>
+<li><p>展示用来查阅和总结序列内容的通用接口。</p></li>
+<li><p>细致讨论Python的检索系统。我们可以用它来查阅序列具体的成员或子序列。</p></li>
 </ul>
-<div class="section" id="Tuples">
-<h2>Tuples<a class="headerlink" href="#Tuples" title="Permalink to this headline">¶</a></h2>
-<p>The last built-in sequence type that we have yet to encounter is the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> type. A tuple is very similar to a list, in that it can store a sequence of arbitrary objects (a mix of numbers, strings, lists, other tuples, etc.). Where lists are constructed using square-brackets, tuples use parentheses:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating a tuple</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># tuple with 3 entries</span>
+<div class="section" id="元组">
+<h2>元组<a class="headerlink" href="#元组" title="永久链接至标题">¶</a></h2>
+<p>最后一个我们还未讨论的内置序列类型叫做 <code class="docutils literal notranslate"><span class="pre">tuple</span></code>（元组）类型。元组和列表相似，都可以存储任何对象（数字，字符串，列表，其它元组，或多种对象，等等）。和列表的方括号不同的是元组由圆括号创建：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建元组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 有三个物件的元组</span>
 
-<span class="c1"># (3) does not make a tuple with one entry</span>
-<span class="c1"># you must provide a trailing comma in this</span>
-<span class="c1"># instance</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>         <span class="c1"># a tuple with 1 entry</span>
+<span class="c1"># (3) 并不能创建只有一个物件的元组</span>
+<span class="c1"># 在这个情况下，你必须在最后添加一个额外的逗号</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>         <span class="c1"># 有一个对象的元组</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">tuple</span>
@@ -267,28 +266,28 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Checking multiple types</strong>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">isinstance</span></code> can be used to check multiple types at once, by supplying it a tuple of types. That is,</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>检查多种类型</strong>：</p>
+<p>通过输入一个包含多类型的元组，你可以用 <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> 来一次性检查多种类型。如下：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">str</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Will check if <code class="docutils literal notranslate"><span class="pre">x</span></code> is a tuple <em>or</em> a list <em>or</em> a string.</p>
+<p>这将检查 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是否是元组<em>或</em>列表<em>或</em>字符串。</p>
 </div>
-<p>Unlike a list, <em>once a tuple is formed, it cannot be changed</em>. That is, a tuple is <em>immutable</em>, whereas a list is <em>mutable</em>. Tuples generally consume less memory than do lists, since it is known that a tuple will not change in size. Furthermore, tuples come in handy when you want to ensure that a sequence of data cannot be changed by subsequent code.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the contents of a list can be changed: it is &quot;mutable&quot;</span>
+<p>和列表不同的是，<em>当你创建元组之后，你无法修改它</em>。也就是说，元组是<em>不可变</em>（immutable）的，而列表是<em>可变</em>（mutable）的。元组一般相比列表会使用更少的内存，因为我们提前知道元组的大小不会改变。另外一个元组的好用点在于它保证存储的数据不会被之后的代码给改变。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列表的内容可以被修改；列表是“可变”的</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;moo&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
 
-<span class="c1"># the contents of a tuple cannot be changed: it is &quot;immutable&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>  <span class="c1"># (a, b, ...) creates a tuple</span>
+<span class="c1"># 元组的内容不可以被修改；元组是“不可变”的</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>  <span class="c1"># (a, b, ...) 创建一个元组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">tuple</span></code> can be used to convert other sequences (other iterables, more generally) into tuples. <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">list</span></code> behave similarly.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `tuple` can create a tuple out of other sequences</span>
+<p>你可以用 <code class="docutils literal notranslate"><span class="pre">tuple</span></code> 来将其它序列（或广义来讲，其它任何可迭代物）转化成元组。这和 <code class="docutils literal notranslate"><span class="pre">str</span></code> 和 <code class="docutils literal notranslate"><span class="pre">list</span></code> 的行为类似。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `tuple` 可以利用其它序列来创建元组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -300,11 +299,11 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 </pre></div>
 </div>
 </div>
-<div class="section" id="Working-with-sequences">
-<h2>Working with sequences<a class="headerlink" href="#Working-with-sequences" title="Permalink to this headline">¶</a></h2>
-<p>The following summarizes the common interface that is shared by Python’s different types of sequence, which includes lists, tuples, and strings. This interface allows you to inspect, summarize, join, and retrieve members from any variety of sequence.</p>
-<p><strong>Checking if an object is contained within a sequence:</strong> <code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">in</span> <span class="pre">seq</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using &#39;in&#39; and &#39;not in&#39; for membership checking</span>
+<div class="section" id="操作序列">
+<h2>操作序列<a class="headerlink" href="#操作序列" title="永久链接至标题">¶</a></h2>
+<p>下文将总结不同Python序列类型（包括列表，元组，和字符串）的通用界面。此界面将允许你查看，总结，合并，和获取序列的成员。</p>
+<p><strong>检查某对象是否为序列成员</strong>：<code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">in</span> <span class="pre">seq</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 利用 &#39;in&#39; 和 &#39;not in&#39; 检查对象是否为序列成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="ow">in</span> <span class="n">x</span>
@@ -316,41 +315,39 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span>
 <span class="bp">True</span>
 
-<span class="c1"># strings can also test for sub-sequence membership</span>
+<span class="c1"># 你可以检查字符串是否为其它字符串的子序列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;cat&quot;</span> <span class="ow">in</span> <span class="s2">&quot;the cat in the hat&quot;</span>
 <span class="bp">True</span>
 
-<span class="c1"># you cannot test for sub-sequence membership in other</span>
-<span class="c1"># types of sequences</span>
+<span class="c1"># 而其它序列类型不支持子序列检查</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="bp">False</span>
 
-<span class="c1"># the list [1, 2] must be an element of the list</span>
-<span class="c1"># to be seen as a member</span>
+<span class="c1"># 只有当 [1, 2] 为列表中的项目时才会被视作列表成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="bp">None</span><span class="p">]</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p><strong>Concatenating sequences:</strong> <code class="docutils literal notranslate"><span class="pre">seq1</span> <span class="pre">+</span> <span class="pre">seq2</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenating sequences with &#39;+&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>  <span class="c1"># creates a new list</span>
+<p><strong>连接序列：</strong><code class="docutils literal notranslate"><span class="pre">seq1</span> <span class="pre">+</span> <span class="pre">seq2</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过 &#39;+&#39; 来粘连两个序列</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>  <span class="c1"># 这将创建一个新序列</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;c&quot;</span> <span class="o">+</span> <span class="s2">&quot;at&quot;</span>
 <span class="s2">&quot;cat&quot;</span>
 </pre></div>
 </div>
-<p><strong>Repeated concatenation of a sequence:</strong> <code class="docutils literal notranslate"><span class="pre">n*seq1</span></code> or <code class="docutils literal notranslate"><span class="pre">seq1*n</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># equivalent to `cat + cat + cat`</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;cat&quot;</span> <span class="o">*</span> <span class="mi">3</span>   <span class="c1"># creates a new string</span>
+<p><strong>重复连接某序列</strong>：<code class="docutils literal notranslate"><span class="pre">n*seq1</span></code> 或 <code class="docutils literal notranslate"><span class="pre">seq1*n</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 和 `cat + cat + cat` 等值</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;cat&quot;</span> <span class="o">*</span> <span class="mi">3</span>   <span class="c1"># 创建一个新字符串</span>
 <span class="s1">&#39;catcatcat&#39;</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># creates a new tuple</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># 创建一个新元组</span>
 <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Asking for the number of members in a sequence:</strong> <code class="docutils literal notranslate"><span class="pre">len(seq)</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># getting the length of a sequence</span>
+<p><strong>检查序列成员数</strong>：<code class="docutils literal notranslate"><span class="pre">len(seq)</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看序列的长度</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>
 <span class="mi">3</span>
 
@@ -361,37 +358,37 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 <span class="mi">0</span>
 </pre></div>
 </div>
-<p><strong>Getting the index of the first occurrence of</strong> <code class="docutils literal notranslate"><span class="pre">x</span></code> <strong>in a sequence</strong>: <code class="docutils literal notranslate"><span class="pre">seq.index(x)</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;cat cat cat&quot;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>  <span class="c1"># &#39;t&#39; first occurs at index-2</span>
+<p><strong>查看序列中</strong> <code class="docutils literal notranslate"><span class="pre">x</span></code> <strong>第一次出现的位置的索引</strong>：<code class="docutils literal notranslate"><span class="pre">seq.index(x)</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;cat cat cat&quot;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>  <span class="c1"># &#39;t&#39; 第一次出现在索引（index）2</span>
 <span class="go">2</span>
 
-<span class="go"># `index` doesn&#39;t look within sequences contained by the outer sequence</span>
-<span class="go"># e.g. it sees 1, 2, and &quot;moo&quot;, not 1, 2, &quot;m&quot;, &quot;o&quot;, &quot;o&quot;</span>
+<span class="go"># `index` 并不会检查序列中包含的成员序列</span>
+<span class="go"># 例，它会检查 1，2，和 &quot;moo&quot;，而不是1，2，“m”，“o”，“o”</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
 <span class="go">ValueError: &#39;m&#39; is not in list</span>
 </pre></div>
 </div>
-<p><strong>Counting the number of occurrences of</strong> <code class="docutils literal notranslate"><span class="pre">x</span></code> <strong>in a sequence</strong>: <code class="docutils literal notranslate"><span class="pre">seq.count(x)</span></code></p>
+<p><strong>返回序列中</strong> <code class="docutils literal notranslate"><span class="pre">x</span></code> <strong>出现的次数</strong>：<code class="docutils literal notranslate"><span class="pre">seq.count(x)</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;the cat in the hat&quot;</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">)</span>
 <span class="go">3</span>
 
-<span class="go"># `count` doesn&#39;t look within sequences contained by the outer sequence</span>
-<span class="go"># thus is doesn&#39;t &quot;see&quot; the 1 within `[1, 2]`.</span>
+<span class="go"># `count` 不会检查序列中包含的成员序列</span>
+<span class="go"># 因此，它不会“看到” `[1, 2]` 中的 1。</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;111&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">2</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Basics of sequences</strong></p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：序列基础</strong></p>
 <ol class="arabic simple">
-<li>Change the list <code class="docutils literal notranslate"><span class="pre">[True,</span> <span class="pre">None,</span> <span class="pre">22]</span></code> into a tuple.</li>
-<li>How many sequence-types have we discussed thus far? Which of these produce objects that are immutable? Which of these produce objects that are mutable? For those types that are mutable, write a piece of example code that mutates an object.</li>
+<li><p>将列表 <code class="docutils literal notranslate"><span class="pre">[True,</span> <span class="pre">None,</span> <span class="pre">22]</span></code> 转化成元组。</p></li>
+<li><p>到现在，我们讨论了多少种序列类型？其中哪些创建不可变对象？哪些创建可变对象？在可变类型中选择一个并编写修改其成员对象的范例代码。</p></li>
 </ol>
 </div>
-<div class="section" id="Introducing-Indexing-and-Slicing">
-<h3>Introducing Indexing and Slicing<a class="headerlink" href="#Introducing-Indexing-and-Slicing" title="Permalink to this headline">¶</a></h3>
-<p>We can access individual items from a sequence by specifying the <em>index</em> of that item. Python ascribes the 1st entry in a sequence index-0, the second entry index-1, and so on.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># accessing individual items from a sequence via indexing</span>
+<div class="section" id="索引和切片简介">
+<h3>索引和切片简介<a class="headerlink" href="#索引和切片简介" title="永久链接至标题">¶</a></h3>
+<p>我们可以通过提供序列中单个成员的<em>索引</em>（index）来访问此物件。Python序列的第一个成员的索引是0，第二个是1，如此下去。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过索引来访问序列的单个物件</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;abcdefg&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="s2">&quot;a&quot;</span>
@@ -400,17 +397,17 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 <span class="s2">&quot;c&quot;</span>
 </pre></div>
 </div>
-<p>We can also “slice” a sequence, specifying a start-index and stop-index, and return a subsequence of the items contained within the slice:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;slicing&quot; a sequence produces a subsequence of its contents</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># include items 0, 1, 2 (3 is excluded)</span>
+<p>我们也可以切片（“slice”）序列，也就是通过提供起始索引和结尾索引来返回其中包含的子序列：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过“切片”来提供序列内容的子序列</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># 这子序列包含索引为0，1，2（注意不包含3）的成员</span>
 <span class="s2">&quot;abc&quot;</span>
 </pre></div>
 </div>
-<p>It is critical to have a good grasp of how to access a sequence’s members and subsequences by using indexing and slicing. This indexing scheme will also appear in our work with NumPy arrays. We will proceed by providing a detailed rundown of Python’s indexing and slicing mechanisms.</p>
+<p>熟练访问序列成员和子序列是极其重要的技能。索引功能也会在我们操作NumPy数组（array）时出现。接下来，让我们来具体描述Python的索引和切片功能。</p>
 </div>
-<div class="section" id="Indexing">
-<h3>Indexing<a class="headerlink" href="#Indexing" title="Permalink to this headline">¶</a></h3>
-<p>Python allows you to retrieve individual members of a sequence by specifying the <em>index</em> of that member, which is the integer that uniquely identifies that member’s position in the sequence. <em>Python implements 0-based indexing for its sequences</em>, and also permits the use of negative integers to count from the end of the sequence. Consider the string <code class="docutils literal notranslate"><span class="pre">&quot;Python&quot;</span></code>. The following diagram displays the indices for this sequence:</p>
+<div class="section" id="索引">
+<h3>索引<a class="headerlink" href="#索引" title="永久链接至标题">¶</a></h3>
+<p>Python允许你通过序列中单个成员的<em>索引</em>（index），一个识别成员在序列中位置的独特整数，来获取该成员。<em>Python使用从0开始的索引模式</em>，并允许你使用负数来从序列结尾往开头数。拿字符串 <code class="docutils literal notranslate"><span class="pre">&quot;Python&quot;</span></code> 来说，接下来的图表将显示该序列的索引：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+---+---+---+---+---+---+</span>
 <span class="o">|</span> <span class="n">P</span> <span class="o">|</span> <span class="n">y</span> <span class="o">|</span> <span class="n">t</span> <span class="o">|</span> <span class="n">h</span> <span class="o">|</span> <span class="n">o</span> <span class="o">|</span> <span class="n">n</span> <span class="o">|</span>
 <span class="o">+---+---+---+---+---+---+</span>
@@ -418,40 +415,40 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
  <span class="o">-</span><span class="mi">6</span>  <span class="o">-</span><span class="mi">5</span>  <span class="o">-</span><span class="mi">4</span>  <span class="o">-</span><span class="mi">3</span>  <span class="o">-</span><span class="mi">2</span>  <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
-<p>The first row of numbers gives the position of the indices 0…5 in the string; the second row gives the corresponding negative indices.</p>
-<p><strong>Positive Indices</strong></p>
+<p>第一行的数字提供了字符串0到5的索引；第二行提供了对应的负索引。</p>
+<p><strong>正索引</strong></p>
 <ul class="simple">
-<li>0 <span class="math notranslate nohighlight">\(\rightarrow\)</span> P</li>
-<li>1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> y</li>
-<li>2 <span class="math notranslate nohighlight">\(\rightarrow\)</span> t</li>
-<li>3 <span class="math notranslate nohighlight">\(\rightarrow\)</span> h</li>
-<li>4 <span class="math notranslate nohighlight">\(\rightarrow\)</span> o</li>
-<li>5 <span class="math notranslate nohighlight">\(\rightarrow\)</span> n</li>
+<li><p>0 <span class="math notranslate nohighlight">\(\rightarrow\)</span> P</p></li>
+<li><p>1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> y</p></li>
+<li><p>2 <span class="math notranslate nohighlight">\(\rightarrow\)</span> t</p></li>
+<li><p>3 <span class="math notranslate nohighlight">\(\rightarrow\)</span> h</p></li>
+<li><p>4 <span class="math notranslate nohighlight">\(\rightarrow\)</span> o</p></li>
+<li><p>5 <span class="math notranslate nohighlight">\(\rightarrow\)</span> n</p></li>
 </ul>
-<p><strong>Negative Indices</strong></p>
+<p><strong>负索引</strong></p>
 <ul class="simple">
-<li>-6 <span class="math notranslate nohighlight">\(\rightarrow\)</span> P</li>
-<li>-5 <span class="math notranslate nohighlight">\(\rightarrow\)</span> y</li>
-<li>-4 <span class="math notranslate nohighlight">\(\rightarrow\)</span> t</li>
-<li>-3 <span class="math notranslate nohighlight">\(\rightarrow\)</span> h</li>
-<li>-2 <span class="math notranslate nohighlight">\(\rightarrow\)</span> o</li>
-<li>-1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> n</li>
+<li><p>-6 <span class="math notranslate nohighlight">\(\rightarrow\)</span> P</p></li>
+<li><p>-5 <span class="math notranslate nohighlight">\(\rightarrow\)</span> y</p></li>
+<li><p>-4 <span class="math notranslate nohighlight">\(\rightarrow\)</span> t</p></li>
+<li><p>-3 <span class="math notranslate nohighlight">\(\rightarrow\)</span> h</p></li>
+<li><p>-2 <span class="math notranslate nohighlight">\(\rightarrow\)</span> o</p></li>
+<li><p>-1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> n</p></li>
 </ul>
-<p>Given this indexing scheme, Python reserves the use of square brackets following a variable name or object, as the “get-item” syntax: <code class="docutils literal notranslate"><span class="pre">seq[index]</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstrating indexing into sequences</span>
+<p>通过此索引模式，Python保留变量名或对象后的方括号语法来允许用户“获取成员”：<code class="docutils literal notranslate"><span class="pre">seq[index]</span></code>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示序列索引</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 
-<span class="c1"># this is known as the &quot;get-item&quot; syntax</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     <span class="c1"># indexing starts at 0</span>
+<span class="c1"># 这叫做“获取成员”语法。</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>      <span class="c1"># 索引从0开始</span>
 <span class="mi">1</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>    <span class="c1"># each entry has a positive index and negative index</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>     <span class="c1"># 每个成员都有着对应的正索引和负索引</span>
 <span class="mi">1</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>     <span class="c1"># negative indexing is relative to the end of the sequence</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>     <span class="c1"># 负索引是相对序列结尾而言的</span>
 <span class="mi">4</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;cat&quot;</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># you can index directly into a sequence-object</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;cat&quot;</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 你可以直接检索序列对象</span>
 <span class="s1">&#39;t&#39;</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -459,84 +456,84 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>To “index into” a sequence is to retrieve a single member by specifying an integer index, that indicates the place of that member in the sequence: <code class="docutils literal notranslate"><span class="pre">seq[index]</span></code>. Python uses a zero-based indexing system, meaning that the first element in a sequence is located at position 0. Negative indices allow you to refer to an item’s position relative to the end of the list.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>对一个序列“索引”指的是通过提供序列中单个成员的索引——也就是表达成员在序列中位置的整数——来获取它：<code class="docutils literal notranslate"><span class="pre">seq[index]</span></code>。Python使用一个从0开始的索引系统，也就是说序列中第一个成员是索引0。负索引允许你通过对象相对序列结尾的位置来获取它。</p>
 </div>
 </div>
-<div class="section" id="Slicing">
-<h3>Slicing<a class="headerlink" href="#Slicing" title="Permalink to this headline">¶</a></h3>
-<p>Slicing a sequence allows us to retrieve a subsequence of items, based on the indexing scheme that we reviewed in the preceeding subsection. Specifying a slice consists of:</p>
+<div class="section" id="切片">
+<h3>切片<a class="headerlink" href="#切片" title="永久链接至标题">¶</a></h3>
+<p>我们可以利用类似前文索引的切片（slicing）来获取列表的子序列。一个切片（slice）包含了以下的部分：</p>
 <ul class="simple">
-<li>A start-index: the sequence-position where the slice begins (this item is <em>included</em> in the slice).</li>
-<li>A stop-index: the sequence-position where the slice ends (this item is <em>excluded</em> from the slice).</li>
-<li>A step-size, which permits us to take every item within the start &amp; stop bounds, or every <em>other</em> item, and so on. It is important to note that a negative step-size permits us to traverse a sequence <em>in reveresed order</em>.</li>
+<li><p>起始索引（start-index）：切片第一个物件的索引（索引指向的成员将<em>会被包含</em>在该切片中）。</p></li>
+<li><p>结尾索引（stop-index）：切片结尾的索引（索引指向的成员<em>不会被包含</em>在切片中）。</p></li>
+<li><p>步距（step-size）：这将允许我们获取起始和结尾中的每个成员，或每<em>两个</em>成员，或每<em>n个</em>成员。负步距将允许从结尾往开始<em>反向</em>获取每n个成员。</p></li>
 </ul>
-<p>The basic syntax for slicing is: <code class="docutils literal notranslate"><span class="pre">seq[start:stop:step]</span></code>, using colons to separate the start, stop, and step values.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating the basics of slicing a sequence</span>
+<p>切片的基本语法为：<code class="docutils literal notranslate"><span class="pre">seq[start:stop:step]</span></code>。注意使用冒号“:”来分别起始，结尾，和步距。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示序列切片</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;abcdefg&quot;</span>
 
-<span class="c1"># start:0, stop:4, step:1</span>
+<span class="c1"># start：0, stop：4，step：1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
 <span class="s1">&#39;abcd&#39;</span>
 
-<span class="c1"># start:1, stop:4, step:1</span>
+<span class="c1"># start：1，stop：4，step：1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
 <span class="s1">&#39;bcd&#39;</span>
 
-<span class="c1"># start:1, stop:5, step:2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># get every other entry within [start, stop)</span>
+<span class="c1"># start：1，stop：5，step：2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># 获取 [start, stop) 中的每两个成员</span>
 <span class="s1">&#39;ace&#39;</span>
 
-<span class="c1"># starting and stopping at the same index produces an empty sequence</span>
-<span class="c1"># start:0, stop:0, step:1</span>
+<span class="c1"># start和stop同一个索引时会得到空序列</span>
+<span class="c1"># start：0，stop：0，step：1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
 <span class="s1">&#39;&#39;</span>
 </pre></div>
 </div>
-<p>Slicing provides sensible default start, stop, and step values. Their default values are:</p>
+<p>切片默认的start，stop，和step值都很实用。具体如下：</p>
 <ul class="simple">
-<li>start: 0</li>
-<li>stop: <code class="docutils literal notranslate"><span class="pre">len(seq)</span></code></li>
-<li>step: 1</li>
+<li><p>start：0</p></li>
+<li><p>stop：<code class="docutils literal notranslate"><span class="pre">len(seq)</span></code></p></li>
+<li><p>step：1</p></li>
 </ul>
-<p>You can omit any of these values or specify <code class="docutils literal notranslate"><span class="pre">None</span></code> in that entry to use the default value. You can omit the second colon entirely, and the slice will use a step-size of 1.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using default start, stop, and step values</span>
+<p>对其中任何一个值，你可以通过不提供值或提供 <code class="docutils literal notranslate"><span class="pre">None</span></code> 来使用默认值。你也可以不提供第二个冒号和后面的步距来使用默认的步距1。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用默认的start，stop，和step值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;abcdefg&quot;</span>
 
-<span class="c1"># start: 0, stop: 7, step: 1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[:]</span>  <span class="c1"># equivalent: `seq[None:None]`</span>
+<span class="c1"># start：0，stop：7，step：1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[:]</span>  <span class="c1"># 和 `seq[None:None]` 等值</span>
 <span class="s1">&#39;abcdefg&#39;</span>
 
-<span class="c1"># start: 0, stop: 7, step: 2</span>
+<span class="c1"># start：0，stop：7，step：2</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
 <span class="s1">&#39;aceg&#39;</span>
 </pre></div>
 </div>
-<p>Negative values can also be used in a slice. Specifying a negative step-value instructs the slice to traverse the sequence <em>in reverse order</em>. In this case, the default start and stop values will change so that <code class="docutils literal notranslate"><span class="pre">seq[::-1]</span></code> produces the sequence in reverse.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using a negative step size reverses the order of the sequence</span>
+<p>你也可以在切片中使用负数。负步距将会<em>反向</em>迭代选中的序列。在这个情况下，默认的起始和结尾索引将会变成使得 <code class="docutils literal notranslate"><span class="pre">seq[::-1]</span></code> 提供该序列的反向版本的值。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用负步距来提供序列的反向版本</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="s1">&#39;gfedcba&#39;</span>
 </pre></div>
 </div>
-<p>As we saw with using negative indices, specifying negative start/stop values in a slice permits us to indicate indices relative to the end of the list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a slice returning the last two values of the sequence</span>
+<p>和负索引一般，在切片中使用负起始或结尾值允许我们表达相对于序列结尾的位置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 该切片将返回序列的最后两个值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
 <span class="s1">&#39;fg&#39;</span>
 
-<span class="c1"># a slice returning all but the last two values of the sequence</span>
+<span class="c1"># 该切片将返回除了最后两个值之外的列表序列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <span class="s1">&#39;abcde&#39;</span>
 </pre></div>
 </div>
-<p>Although the colon-syntax for slicing, <code class="docutils literal notranslate"><span class="pre">seq[start:stop:step]</span></code>, appears nearly ubiquitously in Python code, it is important to know that there is a built-in <code class="docutils literal notranslate"><span class="pre">slice</span></code> object that Python uses to form slices. It accepts the same start, stop, and step values, and produces the same sort of slicing behavior:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using the `slice` object explicitly</span>
+<p>虽然切片的冒号语法 <code class="docutils literal notranslate"><span class="pre">seq[start:stop:step]</span></code> 在Python代码中随处可见，你应知道Python使用一个内置的 <code class="docutils literal notranslate"><span class="pre">slice</span></code> 对象来创建切片。它接受一样的start，stop，和step值，并提供一样的切片行为：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 显性使用 `slice` 对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;abcdefg&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
 <span class="s1">&#39;abc&#39;</span>
 </pre></div>
 </div>
-<p>This gives you the ability to work with slices in more creative ways in your code, since it allows you to assign a variable to a slice.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using the `slice` object to slice several sequences</span>
+<p>这将允许你在代码中做一些更加有意思的事情，因为你可以将变量赋值为切片对象。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `slice` 对象来切片多个序列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq1</span> <span class="o">=</span> <span class="s2">&quot;apple&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq3</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
@@ -554,81 +551,81 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>To “slice” a sequence is to retrieve a subsequence by specifying a start-index (included), a stop-index (excluded), and a step value. Negative values can be supplied for these, and default values are available as well. The common slicing syntax <code class="docutils literal notranslate"><span class="pre">seq[start:stop:step]</span></code> is actually just a nice shorthand for using a <code class="docutils literal notranslate"><span class="pre">slice</span></code> object: <code class="docutils literal notranslate"><span class="pre">seq[slice(start,</span> <span class="pre">stop,</span> <span class="pre">step)]</span></code>.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>“切片”序列指通过指定起始索引（被包含），结尾索引（不被包含），和步距来获取子序列。你可以提供负值，也可以使用默认值。常见的 <code class="docutils literal notranslate"><span class="pre">seq[start:stop:step]</span></code> 语法其实就是使用 <code class="docutils literal notranslate"><span class="pre">slice</span></code> 对象的简写：<code class="docutils literal notranslate"><span class="pre">seq[slice(start,</span> <span class="pre">stop,</span> <span class="pre">step)]</span></code>。</p>
 </div>
-<div class="section" id="Handling-out-of-bounds-indices">
-<h4>Handling out-of-bounds indices<a class="headerlink" href="#Handling-out-of-bounds-indices" title="Permalink to this headline">¶</a></h4>
-<p>Attempting to get a member from a sequence using an out-of-bounds index will raise an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># x only contains 6 items</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># try to access the 7th item in `x`</span>
+<div class="section" id="处理超界索引">
+<h4>处理超界索引<a class="headerlink" href="#处理超界索引" title="永久链接至标题">¶</a></h4>
+<p>试图使用某个超界的索引来获取序列成员会导致 <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># `x` 只有6个成员</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 试图获取 `x` 的第7个成员</span>
 <span class="go">IndexError: list index out of range</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">]</span>
 <span class="go">IndexError: list index out of range</span>
 </pre></div>
 </div>
-<p>However, specifying an out-of-bounds start or stop value for a slice does not raise an error. Instead, the nearest valid start/stop value is used instead:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># no bounds checking is used for slicing</span>
+<p>但注意，在切片中提供超界的起始或结尾索引并不会导致错误。Python会使用最接近的合法起始或结尾值：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 切片并不要求索引在界限内</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[:</span><span class="mi">10000</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Warning!</strong></p>
-<p>The lack of bounds-checking for slices can be a major source of errors when starting out with Python. Just because your code isn’t raising an error does not mean that you have computed the correct start/stop values for your slice!</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>警告！</strong></p>
+<p>入门Python时，切片不检查索引超界这一特征可能会成为一大错误源。代码不报错不代表你代码计算的起始和结尾索引就是正确的！</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Indexing and Slicing Sequences</strong></p>
-<p>In Python, a <strong>sequence</strong> is any ordered collection of objects whose contents can be accessed via “indexing”. A sub-sequence can be accessed by “slicing” the sequence. You saw, in the required reading, that Python’s lists and strings are both examples of sequences. The following questions will help you explore the power of sequence indexing and slicing.</p>
-<p>Given the tuple:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：索引和切片序列</strong></p>
+<p>在Python中，<strong>序列</strong>（sequence）指任何包含对象的有序集合。你可以通过“索引”（indexing）来获取其中的成员，你也可以通过“切片”（slicing）来获取其中的子序列。你也在阅读本文时了解了Python的列表和字符串也都是序列这一事实。接下来的阅读理解题目将会帮助你探索序列索引和切片的强大性。</p>
+<p>设元组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Slice or index into <code class="docutils literal notranslate"><span class="pre">x</span></code> to produce the following:</p>
+<p>对 <code class="docutils literal notranslate"><span class="pre">x</span></code> 切片或索引来获取以下：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">0</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">8</span></code> (using a negative index)</li>
-<li><code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">4,</span> <span class="pre">6)</span></code> (using a slice-object)</li>
-<li><code class="docutils literal notranslate"><span class="pre">(4,)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">4</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">4</span></code> (using a negative index)</li>
-<li><code class="docutils literal notranslate"><span class="pre">(6,</span> <span class="pre">8)</span></code> (using a negative index for the start of the slice)</li>
-<li><code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">6)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">(8,</span> <span class="pre">6,</span> <span class="pre">4,</span> <span class="pre">2)</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">8</span></code>（使用负索引）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">4,</span> <span class="pre">6)</span></code>（使用切片）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(4,)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code>（使用负索引）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(6,</span> <span class="pre">8)</span></code>（切片并使用负起始索引）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">6)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(8,</span> <span class="pre">6,</span> <span class="pre">4,</span> <span class="pre">2)</span></code></p></li>
 </ol>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Checking Your General Understanding</strong></p>
-<p>Write a piece of code for each of the following tasks. If the task is impossible/ill-posed explain why.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：检查你的理解</strong></p>
+<p>为下列每个任务编写一组代码来完成它。如果你认为任务不可能或要求不合理，请解释为什么。</p>
 <ol class="arabic simple">
-<li>Using the string “blogosphere”, slicing, and repeat-concatenation, create the string: ‘boopeeboopeeboopeeboopeeboopee’. (hint: how would you slice “blogosphere” to produce “boopee”, think step-size)</li>
-<li>Assume that a tuple, <code class="docutils literal notranslate"><span class="pre">x</span></code>, contains the item <code class="docutils literal notranslate"><span class="pre">5</span></code> in it at least once. Find where that first entry is, and change it to <code class="docutils literal notranslate"><span class="pre">-5</span></code>. For example <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">0,</span> <span class="pre">5)</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">-5,</span> <span class="pre">0,</span> <span class="pre">5)</span></code>.</li>
-<li>Given a sequence, <code class="docutils literal notranslate"><span class="pre">x</span></code>, and a valid negative index for <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">neg_index</span></code>, find the corresponding positive-value for that index. That is, if <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">&quot;cat&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">neg_index</span> <span class="pre">=</span> <span class="pre">-3</span></code>, which is the negative index that would return <code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code>, then you would want to return the index <code class="docutils literal notranslate"><span class="pre">0</span></code>.</li>
+<li><p>设字符串 “blogosphere”，通过切片和多次粘连，创建字符串：‘boopeeboopeeboopeeboopeeboopee’。（提示：你该如何切片 “blogosphere” 来获得 “boopee” 呢？步距。）</p></li>
+<li><p>设包含对象 <code class="docutils literal notranslate"><span class="pre">5</span></code> 至少一次的元组 <code class="docutils literal notranslate"><span class="pre">x</span></code>。找出该对象第一次出现的位置，并将其修改成 <code class="docutils literal notranslate"><span class="pre">-5</span></code>。比如说，<code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">0,</span> <span class="pre">5)</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">-5,</span> <span class="pre">0,</span> <span class="pre">5)</span></code>。</p></li>
+<li><p>设序列 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的一个合法的负索引 <code class="docutils literal notranslate"><span class="pre">neg_index</span></code>，找出该索引对应的正值。比如说，如果 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">&quot;cat&quot;</span></code>，<code class="docutils literal notranslate"><span class="pre">neg_index</span> <span class="pre">=</span> <span class="pre">-3</span></code>（也就是 <code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code> 的负索引），那你应该返回索引 <code class="docutils literal notranslate"><span class="pre">0</span></code>。</p></li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq">Sequences</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple">Tuples</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types">Immutable Sequence Types</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types">Mutable Sequence Types</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq">序列</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple">元组</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#immutable-sequence-types">不可变序列类</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types">可变序列类</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Exercise-Solutions:">
-<h2>Reading Comprehension Exercise Solutions:<a class="headerlink" href="#Reading-Comprehension-Exercise-Solutions:" title="Permalink to this headline">¶</a></h2>
-<p><strong>Basics of sequences</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Change the list [True, None, 22] into a tuple.</span>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>序列基础</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 将列表 `[True, None, 22]` 转化成元组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">tuple</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>
 <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>We have been introduced to three Python types that are sequential in nature: strings, lists, and tuples. Among these, lists are the only mutable objects. We can demonstrate this by simply appending a new element to the end of a list that has already been constructed.</li>
+<li><p>我们介绍了三种序列性的Python类型：字符串，列表，和元组。在这其中，列表是唯一的可变对象。我们可以通过在一个已经创建的列表结尾附加新成员来演示它的可变性。</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
@@ -639,30 +636,30 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 <span class="go">[1, 2, 3, &quot;I&#39;m different now&quot;]</span>
 </pre></div>
 </div>
-<p><strong>Indexing and Slicing Sequences: Solutions</strong></p>
+<p><strong>索引和切片序列：解</strong></p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">x[0]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x[-1]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x[slice(1,</span> <span class="pre">4,</span> <span class="pre">1)]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x[2:3]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x[2]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x[-3]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x[-2:]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x[1:4:2]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x[:0:-1]</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[-1]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[slice(1,</span> <span class="pre">4,</span> <span class="pre">1)]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[2:3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[2]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[-3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[-2:]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[1:4:2]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x[:0:-1]</span></code></p></li>
 </ol>
-<p><strong>Checking Your General Understanding: Solutions</strong></p>
+<p><strong>检查你的理解：解</strong></p>
 <ol class="arabic simple">
-<li>“boopee” is every-other letter in “blogosphere”, thus slicing this sequence with a step-size of 2, <code class="docutils literal notranslate"><span class="pre">&quot;blogosphere&quot;[::2]</span></code>, returns “boopee”. We can then use <code class="docutils literal notranslate"><span class="pre">seq*n</span></code> to repeat this sequence five times. Thus the solution is</li>
+<li><p>“boopee”也就是“blogosphere”的每两个字母，因此使用步距2来切片该序列，<code class="docutils literal notranslate"><span class="pre">&quot;blogosphere&quot;[::2]</span></code>，会返回“boopee”。我们可以使用 <code class="docutils literal notranslate"><span class="pre">seq*n</span></code> 来重复该序列5此。因此解是</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;blogosphere&quot;</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span>
 <span class="go">&#39;boopeeboopeeboopeeboopeeboopee&#39;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Tuples are immutable objects. This means that their content cannot be changed once it is created. Thus this question is ill-posed! How clever am I for writing that question? I feel so clever. Wow. I’m great.</li>
+<li><p>元组是不可变的。这意味着在创建后它们的内容是不可以被修改的，因此该任务不可能完成！写这个问题的我得有多聪明呢？我感觉自己贼聪明。哇，我真棒。</p></li>
 </ol>
-<p>If that question was posed in terms of a <em>list</em>, then the solution would be:</p>
+<p>如果以上问题要求你修改一个<em>列表</em>，那解为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
@@ -670,7 +667,7 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>Refer to the “index” diagram to see that this is the simple relationship between positive and negative indices for a given sequence:</li>
+<li><p>查阅之前的索引图表来理解以下正索引和负索引的简单关系：</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pos_index</span> <span class="o">=</span> <span class="n">neg_index</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
@@ -686,10 +683,10 @@ considered distinct strings). As such, lists, strings, and the other sequence ty
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Variables_and_Assignment.html" class="btn btn-neutral float-right" title="Variables &amp; Assignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Variables_and_Assignment.html" class="btn btn-neutral float-right" title="变量和赋值" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Basic_Objects.html" class="btn btn-neutral float-left" title="Basic Object Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Basic_Objects.html" class="btn btn-neutral float-left" title="基本对象类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

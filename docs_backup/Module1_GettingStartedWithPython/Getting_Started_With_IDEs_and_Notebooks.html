@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Integrated Development Environments, Difficulty: Easy, Category: Tools" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Setting Up a Development Environment &mdash; Python Like You Mean It</title>
+  <title>设置开发环境 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Module 2: The Essentials of Python" href="../module_2.html" />
-    <link rel="prev" title="Jupyter Notebooks" href="Jupyter_Notebooks.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="模组2：Python基础" href="../module_2.html" />
+    <link rel="prev" title="Jupyter记事本" href="Jupyter_Notebooks.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,28 +95,28 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="SiteFormatting.html">A Quick Guide to Formatting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GettingStartedWithPython.html">Introducing the Python Programming Language</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_Python.html">Installing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Informal_Intro_Python.html">An Informal Introduction to Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting Up a Development Environment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#What-You-Will-Learn">What You Will Learn</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Integrated-Development-Environments">Integrated Development Environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Recommended-IDEs">Recommended IDEs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_1.html">模组1：Python入门</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SiteFormatting.html">代码格式的简单指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStartedWithPython.html">介绍Python编程语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_Python.html">安装Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Informal_Intro_Python.html">非正式的Python介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter记事本</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">设置开发环境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#你将学到什么">你将学到什么</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#集成开发环境（IDE）">集成开发环境（IDE）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#推荐的IDE">推荐的IDE</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -161,9 +162,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_1.html">Module 1: Getting Started with Python</a> &raquo;</li>
+          <li><a href="../module_1.html">模组1：Python入门</a> &raquo;</li>
         
-      <li>Setting Up a Development Environment</li>
+      <li>设置开发环境</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,64 +207,63 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Setting-Up-a-Development-Environment">
-<h1>Setting Up a Development Environment<a class="headerlink" href="#Setting-Up-a-Development-Environment" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="What-You-Will-Learn">
-<h2>What You Will Learn<a class="headerlink" href="#What-You-Will-Learn" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="设置开发环境">
+<h1>设置开发环境<a class="headerlink" href="#设置开发环境" title="永久链接至标题">¶</a></h1>
+<div class="section" id="你将学到什么">
+<h2>你将学到什么<a class="headerlink" href="#你将学到什么" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li>An IDE is a sophisticated text editor that allows you edit, run, and debug code.</li>
-<li>The Python shell is an interface for typing Python code and executing it directly in your computer’s terminal.</li>
-<li>The IPython shell is a much nicer version of the Python shell - it provides syntax highlighting, autocompletion, and other features.</li>
-<li>The Jupyter Notebook is a powerful tool for prototyping and experimenting with code, as well as visualizing data and writing nicely-formatted text. We will be using this throughout the course.</li>
+<li><p>集成开发环境（IDE）是一套允许你编辑，运行，和调试代码的复杂的文本编辑器。</p></li>
+<li><p>Python壳（shell）是一个用以输入和直接在计算机命令行中运行Python代码的接口。</p></li>
+<li><p>IPython壳是一个更加完善的Python壳版本——它提供语法高亮，自动完成，和其它功能。</p></li>
+<li><p>Jupyter记事本是一个强大的编写，实验新代码的工具。它同时也可以用来可视化数据和编写格式化的文本。我们将会在本资源中经常使用它。</p></li>
 </ul>
 </div>
-<div class="section" id="Integrated-Development-Environments">
-<h2>Integrated Development Environments<a class="headerlink" href="#Integrated-Development-Environments" title="Permalink to this headline">¶</a></h2>
-<p>In Section 1 of this module, we learned that a Python script is simply a text file that contains Python code. Aside from using a <code class="docutils literal notranslate"><span class="pre">.py</span></code> suffix for the filename, there is nothing that differentiates this sort of file from any other text file. That being said, it is not a good idea to use a simple text editor to write Python code (and it is a big mistake use word-processing software, like Microsoft Word, to do so). Instead we want an “integrated development environment” (IDE) that will facilitate
-our code-writing.</p>
-<p>First and foremost, a good IDE will provide a text editor that will:</p>
+<div class="section" id="集成开发环境（IDE）">
+<h2>集成开发环境（IDE）<a class="headerlink" href="#集成开发环境（IDE）" title="永久链接至标题">¶</a></h2>
+<p>在本模组的第一节中，我们了解了Python脚本仅仅是包含Python代码的文本文件这一事实。除了使用 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 为文件后缀名之外，Python脚本对比其它文本文件没有什么特殊的特征。虽然如此，一般来说用简单的文本编辑器来编写Python代码并不有效（而使用类似Microsoft Word的文字处理软件也是万万不可取的）。我们需要一个“集成开发环境”（IDE）来帮助我们开发代码。</p>
+<p>首先，一个好的IDE会提供一个拥有如下功能的文本编辑器：</p>
 <ul class="simple">
-<li>check your code for syntax errors (a misspelled function name, a reference to an undefined variable, etc)</li>
-<li>colorize your code so that it is easy to distinguish, for instance, numbers from character strings.</li>
-<li>enable you to easily look up documentation and definitions for functions that you are using.</li>
-<li>autocomplete the names of variables and functions as you are typing them.</li>
+<li><p>检查你的代码以找出并标记语法错误（拼错的函数名，调用不存在的变量，等等）</p></li>
+<li><p>彩色化你的代码使其更容易分辨。比如说，这可以帮助你区分数字和字符串。</p></li>
+<li><p>让你可以轻松地查阅函数的定义和说明文件。</p></li>
+<li><p>在你输入变量和函数时自动完成它们的名字。</p></li>
 </ul>
-<p>An IDE also often provides debugging tools so that you can test your code; it will also typically interface with version-control software, like Git, so that you can keep track of versions of your code as you modify it. We will not discuss these useful, but more advanced features here.</p>
-<div class="section" id="Recommended-IDEs">
-<h3>Recommended IDEs<a class="headerlink" href="#Recommended-IDEs" title="Permalink to this headline">¶</a></h3>
-<p>There are many excellent IDEs that can be configured to work well with Python. Two IDEs that we endorse are:</p>
-<p><a class="reference external" href="https://www.jetbrains.com/pycharm/download">PyCharm</a>: A powerful IDE dedicated to Python.</p>
-<p><strong>Pros</strong></p>
+<p>一个IDE同时也经常提供调试工具来帮助你测试你的代码；它也经常会提供一个和像Git这样的版本控制软件（version-control software）的交互接口来帮助你在修改代码的同时跟踪代码的版本。虽然它们很有用，我们在这里并不会讨论这些更高级的功能。</p>
+<div class="section" id="推荐的IDE">
+<h3>推荐的IDE<a class="headerlink" href="#推荐的IDE" title="永久链接至标题">¶</a></h3>
+<p>市面上有很多很棒的IDE可以调试以配合Python使用。我们在这里推荐两个IDE：</p>
+<p><a class="reference external" href="https://www.jetbrains.com/pycharm/download">PyCharm</a>: 一个专门针对Python的强大IDE。</p>
+<p><strong>好处</strong></p>
 <ul class="simple">
-<li>works well out-of-the-box</li>
-<li>long-supported by professionals and thus is very reliable</li>
-<li>highly configurable</li>
-<li>fully-featured</li>
+<li><p>下载即用，无需太多设置就很好用</p></li>
+<li><p>有职业人员的长期支持，因此很可靠</p></li>
+<li><p>可以进行深层次的设置</p></li>
+<li><p>全功能</p></li>
 </ul>
-<p><strong>Cons</strong></p>
+<p><strong>坏处</strong></p>
 <ul class="simple">
-<li>can be resource-heavy, especially for a laptop</li>
-<li>may be overwhelming to new users (but has good documentation and tutorials)</li>
+<li><p>特别对手提电脑来说可能很耗资源</p></li>
+<li><p>对新用户而言可能会难易上手（但它有很好的教程和说明文件）</p></li>
 </ul>
-<p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a class="reference external" href="https://code.visualstudio.com/docs/languages/python">Python extension</a>: A lightweight, highly customizable IDE.</p>
-<p><strong>Pros</strong></p>
+<p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> 以及它的 <a class="reference external" href="https://code.visualstudio.com/docs/languages/python">Python拓展</a>: 一个轻便，宜定制的IDE。</p>
+<p><strong>好处</strong></p>
 <ul class="simple">
-<li>lightweight and elegant</li>
-<li>works with many different languages, so you only need to familiarize yourself with one IDE</li>
-<li>a huge number of extensions can be downloaded to add functionality to the editor; these are created by a large community of open-source developers.</li>
+<li><p>轻便优雅</p></li>
+<li><p>支持很多不同的语言，这样你只需要学习一个IDE</p></li>
+<li><p>有极其多的拓展可供下载以提供编辑器新功能；这些拓展是由一个大社区的开源开发者编写的。</p></li>
 </ul>
-<p><strong>Cons</strong></p>
+<p><strong>坏处</strong></p>
 <ul class="simple">
-<li>currently less polished and less powerful than PyCharm, although Microsoft is now formally supporting the Python extension</li>
-<li>can require some tinkering to get features working</li>
+<li><p>PyCharm暂时比起更完善和强大，但注意Microsoft现在正式支持Python拓展了</p></li>
+<li><p>可能需要细微的调试才能使用某些功能</p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>Integrated Development Environments (IDEs) provide powerful tools for helping you write well-formatted and typo-free code. We recommend using PyCharm Community Edition or Visual Studio Code (with the Python extension installed) for your Python IDE.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>:</p>
+<p>集成开发环境（IDE）提供强大的工具来帮助你编写格式化和无拼写错误的代码。本资源建议你使用PyCharm Community Edition或Visual Studio Code（加上Python拓展）作为你的Python IDE。</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title fa fa-exclamation-circle"><strong>Jupyter Lab</strong>:</p>
-<p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">Jupyter Lab</a> is a new IDE that is being developed by the same team that develops the Jupyter Notebook. It aims to mix the polish and power of a traditional IDE, along with the convenience and great utility of the notebook environment. As of writing this, Jupyter Lab is still in the beta release phase. Given the massive popularity of Jupyter Notebook, Jupyter Lab will likely become a widely used IDE, quickly.</p>
+<p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">Jupyter Lab</a>是由Jupyter Notebook团队开发的一个全新的IDE。它的设计宗旨是为了将传统IDE的完善和强大和记事本环境的方便和好用。在编写本文时，Jupyter Lab还在beta测试期。鉴于Jupyter Notebook的流行度，Jupyter Lab也很有可能会很快成为一个常用的IDE。</p>
 </div>
 </div>
 </div>
@@ -277,10 +277,10 @@ our code-writing.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../module_2.html" class="btn btn-neutral float-right" title="Module 2: The Essentials of Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../module_2.html" class="btn btn-neutral float-right" title="模组2：Python基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Jupyter_Notebooks.html" class="btn btn-neutral float-left" title="Jupyter Notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Jupyter_Notebooks.html" class="btn btn-neutral float-left" title="Jupyter记事本" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

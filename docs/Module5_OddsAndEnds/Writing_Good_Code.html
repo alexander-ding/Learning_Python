@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Writing good code, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Writing Good Code &mdash; Python Like You Mean It</title>
+  <title>编写好代码 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Matplotlib" href="Matplotlib.html" />
-    <link rel="prev" title="Module 5: Odds and Ends" href="../module_5.html" /> 
+    <link rel="prev" title="模组5：琐碎话题" href="../module_5.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,38 +95,38 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Writing Good Code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#The-PEP8-Style-Guide-to-Python-Code">The PEP8 Style Guide to Python Code</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Being-Pythonic">Being Pythonic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Naming-Conventions">Naming Conventions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Indentations-and-Spacing">Indentations and Spacing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编写好代码</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Python代码的PEP8风格指南">Python代码的PEP8风格指南</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Python式编程">Python式编程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#命名规则">命名规则</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#缩进和字距">缩进和字距</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Type-Hinting">Type-Hinting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#What-is-It-Good-For?-(Absolutely-Nothing)">What is It Good For? (Absolutely Nothing)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Using-the-typing-Module">Using the <code class="docutils literal notranslate"><span class="pre">typing</span></code> Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Writing-Good-Type-Hints-(quack-quack)">Writing Good Type-Hints (quack quack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#类型暗示">类型暗示</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#这能做什么？（什么都不能）">这能做什么？（什么都不能）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#使用-typing-模组">使用 <code class="docutils literal notranslate"><span class="pre">typing</span></code> 模组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#编写好的类型暗示">编写好的类型暗示</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Documentation-Styles">Documentation Styles</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#The-NumPy-Documentation-Style">The NumPy Documentation Style</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#The-Google-Documentation-Style">The Google Documentation Style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#说明文档风格">说明文档风格</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#NumPy说明文档">NumPy说明文档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Google说明文档风格">Google说明文档风格</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingWithFiles.html">Working with Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Modules_and_Packages.html">Import: Modules and Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingWithFiles.html">操作文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modules_and_Packages.html">导入：模组和包</a></li>
 </ul>
 </li>
 </ul>
@@ -173,9 +174,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_5.html">Module 5: Odds and Ends</a> &raquo;</li>
+          <li><a href="../module_5.html">模组5：琐碎话题</a> &raquo;</li>
         
-      <li>Writing Good Code</li>
+      <li>编写好代码</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,547 +219,547 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Writing-Good-Code">
-<h1>Writing Good Code<a class="headerlink" href="#Writing-Good-Code" title="Permalink to this headline">¶</a></h1>
-<p>Throughout PLYMI we have been concerned with learning the rules for writing valid Python code. That is, we have taken care to ensure that our computers can understand the instructions that we have written for them. Here, we will discuss methods for making our code easier for <em>humans</em> to understand. Specifically, we will study:</p>
+<div class="section" id="编写好代码">
+<h1>编写好代码<a class="headerlink" href="#编写好代码" title="永久链接至标题">¶</a></h1>
+<p>在整个PLYMI的过程中我们学习的重点在于编写合法Python代码的规则。也就是说，我们保证了我们的计算机能够理解我们为其编写的指示。在这里，我们将讨论让<em>人们</em>轻松理解我们的代码的方法。具体来讲，我们会学习：</p>
 <ul class="simple">
-<li>“PEP8”: the official style guide for Python code.</li>
-<li>Python’s system for adding so-called “type hints” to functions.</li>
-<li>Formal documentation specifications such as NumPy docs and Napolean docs.</li>
+<li><p>“PEP8”：Python代码的官方风格指南</p></li>
+<li><p>Python为函数添加所谓“类型暗示”的系统</p></li>
+<li><p>如NumPy和Napolean说明文档的正式说明文档细则</p></li>
 </ul>
-<p>The immediate purpose of discussing these items is that they will help us write code that is easy to understand and maintain. In the long term, they will serve to make our projects long-lived and useful to many more people. It can be surprising to see how quickly a code base can atrophy, becoming opaque and unusable even to its creator, when it wasn’t designed with a sufficient attention to detail and documentation.</p>
-<p>It is difficult to overstate the importance of this material.</p>
-<div class="section" id="The-PEP8-Style-Guide-to-Python-Code">
-<h2>The PEP8 Style Guide to Python Code<a class="headerlink" href="#The-PEP8-Style-Guide-to-Python-Code" title="Permalink to this headline">¶</a></h2>
+<p>讨论这些项目的最直接的目的在于帮助我们编写易懂和易维持的代码。长期上来，它们将使得我们的项目长寿并对其他更多人有用。你可能会惊讶于一个代码库在设计事没有给予细节和说明文档足够多考量时可以多快地衰退，并变得难懂和难用，甚至对其创造者也是如此。</p>
+<p>你很难夸大本话题的重要性。</p>
+<div class="section" id="Python代码的PEP8风格指南">
+<h2>Python代码的PEP8风格指南<a class="headerlink" href="#Python代码的PEP8风格指南" title="永久链接至标题">¶</a></h2>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>What is a PEP?</strong></p>
-<p>We will be referencing several “PEPs” in this section. PEP stands for Python Enhancement Proposal. Any fundamental changes to the core Python language, the CPython interpreter, or the modules in Python’s standard library must first be submitted as a PEP, which goes through an approval process. You can read more about the purposes and guidelines of PEPs <a class="reference external" href="https://www.python.org/dev/peps/pep-0001/">here</a>. The complete index of PEPs is available <a class="reference external" href="https://www.python.org/dev/peps/">here</a>.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>PEP是什么？</strong></p>
+<p>我们将在本节引用多个“PEP”。PEP是Python Enhancement Protocol（Python增强协议）的缩写。任何对Python语言，CPython直译器，或Python标准库的模组的根本性改变必须首先作为一个PEP提交并经历一个审批过程。你可以在<a class="reference external" href="https://www.python.org/dev/peps/pep-0001/">这里</a>读取更多有关PEP的宗旨和准则。完整的PEP索引可以在<a class="reference external" href="https://www.python.org/dev/peps/">这里</a> 找到。</p>
 </div>
-<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#code-lay-out">PEP 8</a> is a design document that specifies a coherent code style guide for the Python community.. It touches on a wide array of “dos” and “don’ts” when making style decision in your code. Many of these items are exceedingly simple. For example, PEP 8 calls for the inclusion of a single whitespace around binary mathematical operators; e.g.:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do:</span>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#code-lay-out">PEP8</a>是一个为Python社区提供有条理的代码风格指南的设计文档。它提供了一大组的在你的代码中做有关风格选择时的“这么做”和“不这么做”的指示。比如说，PEP8呼吁用户在二元数学操作赋旁边添加一个空格；如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这么做：</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
 </div>
-<p>The biggest impact that this document has is that it guides Python users to write similar-looking code. Thus, writing code that adheres to PEP8 will ensure your code is easy for others to read, and vice versa. Note that the code you have encountered throughout PLYMI adheres to this style guide.</p>
-<p>We will make salient some of the PEP8 guidelines that are most pertinent to the variety of code that you have encountered in your reading thus far. That being said, you should take the time to read through <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#code-lay-out">PEP 8 in full</a>, and consult it regularly when you write code. It won’t take long for you to internalize most of its guidelines. Lastly, note that many
-<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html">IDEs</a> have have tools called “linters” that will parse your code and warn you when your code is in violation of PEP8’s guidelines. This is an excellent mechanism for ensuring that your code adheres to this style specification.</p>
-<div class="section" id="Being-Pythonic">
-<h3>Being Pythonic<a class="headerlink" href="#Being-Pythonic" title="Permalink to this headline">¶</a></h3>
-<p>We will being by studying some guidelines for writing idiomatic Python code. That is, these guide us to follow the syntax that the creators of Python intended for us to use.</p>
-<p>For instance, always leverage the negated operators <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>. For example <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">None</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code> are functionally equivalent, but the latter is clearly preferable as it matches our native grammar.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do:</span>
+<p>这份文档的最大影响在于它指导Python用户去编写看起来相似的代码。如此，编写符合PEP8的代码将会使得你的代码让其它人更容易阅读它，反之亦然。请注意，在PLYMI各处的代码块均符合此风格指南。</p>
+<p>我们将会指出PEP8指南中和本文阅读中的那类代码最相关的一些细则。虽说如此，你应该花一些时间阅读<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#code-lay-out">完整的PEP8</a>，并在编写代码时经常参阅它。这样做的话你不会需要太多时间就会自然而然记住大部分细则了。最后，请注意很多<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html">IDE</a>有着叫做“linter”的工具来检查你的代码并在代码违反PEP8规则时提出警告。这是一个极佳的保证你代码符合风格指南的功能。</p>
+<div class="section" id="Python式编程">
+<h3>Python式编程<a class="headerlink" href="#Python式编程" title="永久链接至标题">¶</a></h3>
+<p>我们将会学习一些如何编写地道的Python代码的守则。也就是说，它们将直到我们去使用Python创造者希望我们使用的语法。</p>
+<p>比如说，永远使用否定语 <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> 和 <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>。比如说，<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">None</span></code> 本 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code> 功能上完全相同，但是后者明显更加可取，因为它和英文语法相同。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这么做：</span>
 <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">collection</span>
 
-<span class="c1"># Don&#39;t</span>
+<span class="c1"># 不这么做：</span>
 <span class="ow">not</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">collections</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
 
-<span class="c1"># Don&#39;t</span>
+<span class="c1"># 不这么做：</span>
 <span class="ow">not</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
 </pre></div>
 </div>
-<p>Do not use parentheses to create unnecessary closures. Parentheses should be used for specifying function signatures, calling objects (e.g.&nbsp;calling a function), associating mathematical operations, defining generator-expressions, and grouping long multi-line expressions.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do:</span>
+<p>不要使用括号来创建不必要的括号组。你应在提供函数签名，调用对象（如调用函数），结合数学表达式，定义生成器表达式，和组合多行表达式时使用括号。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这么做：</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1"># Do</span>
+<span class="c1"># 这么做：</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">long_variable_name</span> <span class="ow">in</span> <span class="n">a_long_list_name</span>
     <span class="ow">and</span> <span class="n">long_variable_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">another_long_name</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1"># Don&#39;t</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">if</span> <span class="n">long_variable_name</span> <span class="ow">in</span> <span class="n">a_long_list_name</span> <span class="ow">and</span> <span class="n">long_variable_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">another_long_name</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:(</span>
     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="p">)</span>
 </pre></div>
 </div>
-<p>Finally, make use of <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#bool-and-Truth-Values-of-Non-Boolean-Objects">boolean values for non-boolean objects</a> in conditional expressions. For example, you can rely on the fact that empty sequence-objects will evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code> in conditional statements.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do:</span>
+<p>最后，在条件表达式中使用<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#bool-and-Truth-Values-of-Non-Boolean-Objects">非布尔对象的布尔值</a>。比如说，你可以使用空序列对象会在条件语句中计算为 <code class="docutils literal notranslate"><span class="pre">False</span></code> 的事实。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这么做：</span>
 <span class="k">if</span> <span class="n">list_of_names</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_of_names</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;on&quot;</span> <span class="k">if</span> <span class="n">integer_flag</span> <span class="k">else</span> <span class="s2">&quot;off</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;on&quot;</span> <span class="k">if</span> <span class="n">integer_flag</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;off</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Naming-Conventions">
-<h3>Naming Conventions<a class="headerlink" href="#Naming-Conventions" title="Permalink to this headline">¶</a></h3>
-<p>Class names should use the <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> (aka <code class="docutils literal notranslate"><span class="pre">CapWords</span></code>) formatting convention, whereas functions and variables should use all-lowercase characters in their names. Underscores can be used in longer lowercased names to make them easier to read (i.e. <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># naming conventions for classes</span>
+<div class="section" id="命名规则">
+<h3>命名规则<a class="headerlink" href="#命名规则" title="永久链接至标题">¶</a></h3>
+<p>类名字应该使用 <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code>（驼峰式大小写格式，也叫做 <code class="docutils literal notranslate"><span class="pre">CapWords</span></code>）格式化规则，而函数和变量应该使用全小写的名字。在长的小写名字中你应该使用下划线使其更可读（如 <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>）。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 类的命名规则</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="k">class</span> <span class="nc">ShoppingList</span><span class="p">:</span>
     <span class="k">pass</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">class</span> <span class="nc">shoppingList</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># naming conventions for local variables and functions</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 本地变量和函数的命名规则</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 
 <span class="n">list_of_students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alyosha&quot;</span><span class="p">,</span> <span class="s2">&quot;Biff&quot;</span><span class="p">,</span> <span class="s2">&quot;Celine&quot;</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">rotate_image</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="c1"># Don&#39;t</span>
+<span class="c1"># 不这么做：</span>
 <span class="n">ListOfStudents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Shmangela&quot;</span><span class="p">,</span> <span class="s2">&quot;Shmonathan&quot;</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">rotateimage</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>To be clear, there is nothing fundamentally correct about using <code class="docutils literal notranslate"><span class="pre">CamelCasing</span></code> for class names and <code class="docutils literal notranslate"><span class="pre">snake_casing</span></code> for functions and variable names. That being said, most Python users expect code to adhere to these conventions and will struggle to understand and use your code if you do not adhere to them.</p>
-<p>Constants - variables whose values are not to be changed anywhere within the code - should be specified using ALL_CAPS. Underscores can be used for improving readability.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># naming conventions for constants</span>
+<p>请注意，为类名使用 <code class="docutils literal notranslate"><span class="pre">CamelCasing</span></code> 和为函数和变量名使用 <code class="docutils literal notranslate"><span class="pre">snake_casing</span></code> 并没有什么根本的正确性。虽然如此，大部分Python用户会期望代码符合这些规则，且会在你不这么做的时候难以阅读你的代码。</p>
+<p>常量——其值在代码任何地方都不会改变的变量——应该使用全大写（ALL_CAPS）格式。你可以使用下划线来提升可读性。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 常量的命名规则</span>
 
-<span class="c1"># Do:</span>
-<span class="n">BOILING_POINT</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># celsius</span>
+<span class="c1"># 这么做：</span>
+<span class="n">BOILING_POINT</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># 摄氏度</span>
 
-<span class="c1"># Don&#39;t:</span>
-<span class="n">boiling_point</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># celsius</span>
+<span class="c1"># 不这么做：</span>
+<span class="n">boiling_point</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># 摄氏度</span>
 </pre></div>
 </div>
-<p>Variables that are only to be used internally within the code by developers can be identified using a leading underscore. For example, if you encounter the line of code <code class="docutils literal notranslate"><span class="pre">_use_gpu</span> <span class="pre">=</span> <span class="pre">True</span></code>, this means that the variable <code class="docutils literal notranslate"><span class="pre">_use_gpu</span></code> is only meant to be viewed and edited by the people who are actually writing the code. Note that this variable will not behave differently from <code class="docutils literal notranslate"><span class="pre">use_gpu</span></code> - the leading underscore is simply a visual indicator and nothing more.</p>
-<p>You can use a trailing underscore when your variable name would otherwise conflict with terms reserved by Python. For example you cannot name a variable <code class="docutils literal notranslate"><span class="pre">class</span></code>, as this term is reserved by Python for defining a new class-object. Instead you could name the variable <code class="docutils literal notranslate"><span class="pre">class_</span></code>. This should be used only sparingly.</p>
-<p>Paramount to all of this is that variables are given <em>descriptive</em> names.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do:</span>
+<p>你可以使用前置下划线来命名只会在开发者内部代码使用的变量。比如说，如果你看到了 <code class="docutils literal notranslate"><span class="pre">_use_gpu</span> <span class="pre">=</span> <span class="pre">True</span></code> 这行代码，这意味着变量 <code class="docutils literal notranslate"><span class="pre">_use_gpu</span></code> 应该仅仅被编写此（模组）代码的人浏览并使用。请注意，这个变量不会和 <code class="docutils literal notranslate"><span class="pre">use_gpu</span></code> 有着不同的行为——前置的下划线仅仅是一个视觉上的标记。</p>
+<p>你可以在你的变量名会和Python保留的名字冲突时添加一个滞后的下划线。比如说，你不能将一个变量命名为 <code class="docutils literal notranslate"><span class="pre">class</span></code>,，因为它是Python为定义新类对象所保留的词。反而，你可以将其命名为 <code class="docutils literal notranslate"><span class="pre">class_</span></code>。你应该尽量避免使用这个技巧。</p>
+<p>比起这些，最重要的点在于给你的变量<em>描述性</em>的名字。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这么做：</span>
 <span class="k">for</span> <span class="n">temperature</span> <span class="ow">in</span> <span class="n">list_of_temperatures</span><span class="p">:</span>
     <span class="n">pressure</span> <span class="o">=</span> <span class="n">gauge</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">for</span> <span class="n">thing</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
     <span class="n">thingthing</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">thing</span><span class="p">)</span>
 
-<span class="c1"># No this is not an exaggeration.</span>
-<span class="c1"># I have really seen code like this.</span>
+<span class="c1"># 不，这并不是夸大其词。</span>
+<span class="c1"># 我真的见过这样子的代码。</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Indentations-and-Spacing">
-<h3>Indentations and Spacing<a class="headerlink" href="#Indentations-and-Spacing" title="Permalink to this headline">¶</a></h3>
-<p>You should use spaces, not tabs, when creating indentations.</p>
-<p><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope">Scope-delimiting indentations</a> should always consist of four spaces.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using four spaces to delimit scope</span>
+<div class="section" id="缩进和字距">
+<h3>缩进和字距<a class="headerlink" href="#缩进和字距" title="永久链接至标题">¶</a></h3>
+<p>在创建缩进时，你应该使用空格而不是tab键。</p>
+<p><a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope">限定作用域的缩进</a>应该永远使用四个空格。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用四个空格来限定作用域</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># indented by four spaces</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 由四个空格缩进</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># indented by not-four spaces</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># 由不是四个空格缩进</span>
 </pre></div>
 </div>
-<p>Use hanging indentations to wrap a long line of code over two or more lines. That being said, you should ensure that contents within parentheses or brackets are aligned vertically:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using hanging indents to manage long lines of code</span>
+<p>在单（逻辑）行代码占用两或以上行的空间时，使用悬挂的缩进。你应该注意在括号或方括号中的内容竖向对齐：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用悬挂缩进来处理长代码行</span>
 
-<span class="c1"># Do: use whitespace to align multi-line arguments in</span>
-<span class="c1">#     a function signature</span>
+<span class="c1"># 这么做：使用空格来对其函数签名中多行的</span>
+<span class="c1">#        参数（译者注：中文没法对齐，抱歉啦！）</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">some_long_function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">,</span>
                                      <span class="n">arg4</span><span class="p">,</span> <span class="n">arg5</span><span class="p">,</span> <span class="n">arg6</span><span class="p">)</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">some_long_function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">,</span>
              <span class="n">arg4</span><span class="p">,</span> <span class="n">arg5</span><span class="p">,</span> <span class="n">arg6</span><span class="p">)</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="n">grocery_list</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;chocolate&quot;</span><span class="p">:</span> <span class="mf">1e34</span><span class="p">,</span>
                 <span class="s2">&quot;toothpaste&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;shampoo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 
-<span class="c1"># Don&#39;t: second line is under-indented</span>
+<span class="c1"># 不这么做：第二行缩进不够</span>
 <span class="n">grocery_list</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;chocolate&quot;</span><span class="p">:</span> <span class="mf">1e34</span><span class="p">,</span>
        <span class="s2">&quot;toothpaste&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;shampoo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 
-<span class="c1"># Do</span>
+<span class="c1"># 这么做：</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">list_of_ages</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">]</span>
      <span class="k">for</span> <span class="n">list_of_ages</span> <span class="ow">in</span> <span class="n">database</span><span class="p">]</span>
 
-<span class="c1"># Don&#39;t: second line is over-indented</span>
+<span class="c1"># 不这么做：第二行缩进过头</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">list_of_ages</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">]</span>
               <span class="k">for</span> <span class="n">list_of_ages</span> <span class="ow">in</span> <span class="n">database</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Function and class definitions should be separated by two blank lines:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># separating function and class definitions using two blank lines</span>
+<p>函数和类定义应由两个空行隔开：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用两个空行隔开函数和类定义</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="k">def</span> <span class="nf">func_a</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;I am function a&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;我是函数a&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">1</span>
 
 
-<span class="k">def</span> <span class="nf">func_b</span><span class="p">():</span>  <span class="c1"># separated from func_a by two blank lines</span>
-    <span class="sd">&quot;&quot;&quot;I am function b&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">func_b</span><span class="p">():</span>  <span class="c1"># 和 func_a 隔了两个空行</span>
+    <span class="sd">&quot;&quot;&quot;我是函数b&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">2</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">def</span> <span class="nf">func_c</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;I am function c&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;我是函数c&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">1</span>
 
-<span class="k">def</span> <span class="nf">func_d</span><span class="p">():</span>  <span class="c1"># separated from func_c by one blank line</span>
-    <span class="sd">&quot;&quot;&quot;I am function d&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">func_d</span><span class="p">():</span>  <span class="c1"># 和 func_c 隔了一个空行</span>
+    <span class="sd">&quot;&quot;&quot;我是函数d&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>Default-values for arguments in functions should be specified without any surrounding whitespace. This also holds when calling a function using a named argument.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># default values should not have whitespace around them</span>
+<p>函数参数的默认值应不用空格写出。这也通用于在调用函数时使用参数名字的情况。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 默认值不应该有空格</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="n">grade</span> <span class="o">=</span> <span class="n">grade_lookup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Ryan&quot;</span><span class="p">)</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="n">grade</span> <span class="o">=</span> <span class="n">grade_lookup</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Ryan&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>As in written English, commas and colons should both follow a non-space character and should be followed by a whitespace. An exception to this is when there is a trailing comma/colon at the end of the line of code, or when a colon is used in a slice.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a comma/colon should be followed by a whitespace</span>
+<p>就像在正常英文中一样，逗号和冒号后应该在一个非空格的符号后，并之后跟着一个空格。这条规则的例外是在代码行尾的逗号/冒号或在切片中使用冒号。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 逗号/冒号应后置一个空格</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1"># Don&#39;t</span>
+<span class="c1"># 不这么做：</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1"># Do:</span>
+<span class="c1"># 这么做：</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">}</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">}</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s2">&quot;c&quot;</span><span class="p">}</span>
 
-<span class="c1"># Do:</span>
-<span class="c1"># (1,) is a tuple containing the integer 1.</span>
-<span class="c1"># Recall that (1) is the same as 1. The</span>
-<span class="c1"># trailing comma is necessary for it to</span>
-<span class="c1"># be treated as a tuple.</span>
+<span class="c1"># 这么做：</span>
+<span class="c1"># (1,) 是一个包含整数1的元组。请回忆，(1) 等于</span>
+<span class="c1"># 1。只有行尾的逗号才使得其被视作一个元组。</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">)</span>
 
-<span class="c1"># Do:</span>
-<span class="c1"># a simple slice should not contain whitespaces</span>
+<span class="c1"># 这么做：</span>
+<span class="c1"># 简单的切片不应该有空格</span>
 <span class="n">sublist</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 
-<span class="c1"># Don&#39;t:</span>
+<span class="c1"># 不这么做：</span>
 <span class="n">sublist</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>To conclude, consider that simply knowing that there exists a Python style guide, and that it is named PEP8, is the most important thing to take away from this section. Previously, you may not have even thought to search for such a document. That you consult PEP8 when you have code-style questions is the most important outcome here.</p>
+<p>总而言之，使得你知道存在一个名为PEP8的Python风格指南是本小节最关键的目的。在读本小节之前，你可能都不会知道去搜索这么一个文档。当你有着关于代码风格的问题时会咨询PEP8才是这里本小节最重要的结果。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Automating Style:</strong></p>
-<p>Although adhering to a clear and consistent style is critical for writing “good code,” enforcing such standards can be tedious and labor-intensive. This is especially true when you begin collaborating with others and working on large projects. Fortunately, several powerful tools exist that can help us automate good code styling.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>自动化风格</strong>：</p>
+<p>虽然遵守一个清晰一致的风格为编写“好代码”是至关重要的，执行这些标准可能会很麻烦并耗力。这在你开始和其他人合作并编写大规模项目时会特别明显。幸运的是，有好几个很强大的工具存在来帮助我们自动化好的代码风格。</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/PyCQA/flake8">flake8</a>: Analyzes your code to enforce the PEP8 standards and to catch bad code patterns, such as unused variables.<ul>
-<li>IDEs like Visual Studio Code and PyCharm will automatically configure themselves to run flake8 or comparable <a class="reference external" href="https://en.wikipedia.org/wiki/Lint_(software)">linters</a> on your code. They will add visual marks to your code to highlight problematic sections of code. This tool can also be run from the command line, or be configured to run automatically with other IDEs and text editors.</li>
+<li><p><a class="reference external" href="https://github.com/PyCQA/flake8">flake8</a>：分析你的代码来执行PEP8标准并报告不好的代码，如未使用的变量。</p>
+<ul>
+<li><p>像Visual Studio Code和PyCharm这样的IDE会自动对你的代码运行flake8或相似的<a class="reference external" href="https://en.wikipedia.org/wiki/Lint_(software)">linter</a>。它们会在你的代码上添加可视的标记来高亮显示有问题的代码片段。你也可以从命令行运行这个工具，或设置使其和其它IDE和文本编辑器自动运行。</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://isort.readthedocs.io/en/latest/">isort</a>: <em>“I sort your Python imports so you don’t have to”</em><ul>
-<li>As promised, this tool manages the unruly stack of import statements that quickly accrue at the top of our code. It will sort import statements alphabetically, and will group them in accordance with PEP8.</li>
+<li><p><a class="reference external" href="https://isort.readthedocs.io/en/latest/">isort</a>：<em>“我来处理（I sort）你的Python导入，所以你不需要操心”</em></p>
+<ul>
+<li><p>就像工具承诺的一样，它会自动为你管理在我们代码顶端快速变多的导入语句。它将按照字母顺序排序这些导入语句并根据PEP8将它们分组。</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>: <em>“Any code style you like, as long as it is black”</em><ul>
-<li>Black is an uncompromising code formatter. You need not spend time formatting code correctly if you run black - it will format your code the same way every time. While this will take care of managing things like line-breaks, indentation, spacing, and brackets for you, it is still your responsibility to <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Being-Pythonic">write code that is Pythonic</a> and to <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Naming-Conventions">use good naming
-conventions</a>.</li>
+<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a>：<em>“你喜欢的任何代码风格，只要它是黑色的”</em></p>
+<ul>
+<li><p>Black是一个决不妥协的代码格式器。如果你运行black，你不需要花时间来正确地格式化你的代码——它会每次用相同的方法格式化你的代码。虽然这会帮助你解决像分行，缩进，字距，和方括号这类事，但是<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Being-Pythonic">编写Python式的代码</a>和<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Naming-Conventions">使用好的命名规则</a>依然是你的责任。</p></li>
 </ul>
 </li>
 </ul>
-<p>It is useful to know that these tools exist; consider integrating them into your workflow as you become an increasingly-prolific “Pythoneer”.</p>
+<p>知道这些工具存在是很有用的；当你成为一个越来越高效的Python程序员的同时，考虑将这些工具添加到你的工作流程中。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway:</strong></p>
-<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#code-lay-out">PEP8</a> is a design document for the Python community that specifies a coherent style guide for writing Python code. Adhering to this style guide will help to ensure that you write clean code that is organized in a consistent manner across projects. Furthermore, those who abide by PEP8 will find it easier to navigate other PEP8-adherent code bases.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#code-lay-out">PEP8</a>是面向Python社区的设计文本，其提供了一个有条理的编写Python代码的风格指南。遵守这个风格指南将帮助你在不同项目编写一贯不变的干净代码。同时，遵守PEP8的程序员会更轻松地浏览其它遵守PEP8的代码库。</p>
 </div>
 </div>
 </div>
-<div class="section" id="Type-Hinting">
-<h2>Type-Hinting<a class="headerlink" href="#Type-Hinting" title="Permalink to this headline">¶</a></h2>
-<p>Type hinting is a syntax that was introduced in Python 3.5 (via <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>), which permits users to annotate their function definitions to indicate the object-types of a function’s inputs and outputs. For example, let’s define a function that counts the number of vowels in a string and annotate the function signature with type-hints.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A function signature that has been annotated with type-hints</span>
+<div class="section" id="类型暗示">
+<h2>类型暗示<a class="headerlink" href="#类型暗示" title="永久链接至标题">¶</a></h2>
+<p>类型暗示是在Python 3.5（通过<a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>）添加的一种允许用户注释函数定义来指出函数输入和输出的对象类型的语法。比如说，让我们定义一个函数来数字符串中元音数并使用类型暗示来注释函数的签名吧。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 用类型暗示注释过的函数签名</span>
 
 <span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Returns the number of vowels contained in `in_string`&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;返回 `in_string` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiouAEIOU&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here, we have “hinted” that <code class="docutils literal notranslate"><span class="pre">x</span></code> should be passed a string-type object, and that the function will return an integer-type object. The general form of an annotated function, with an arbitrary number of <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Arguments">positional arguments</a> and <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Default-Valued-Arguments">default-valued arguments</a> is as follows:</p>
+<p>在这里，我们“暗示”了 <code class="docutils literal notranslate"><span class="pre">x</span></code> 应为字符串类型的对象，以及函数会返回整数类对象。注释过的有着任意多<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Arguments">位置参数</a>和<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Default-Valued-Arguments">默认值参数</a>的函数的一般形式如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_name</span><span class="p">(</span><span class="n">arg</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span> <span class="n">kwarg</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">]))</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="p">:</span>
 </pre></div>
 </div>
-<p>See that each argument name is followed by a colon and the type-object that serves as the type-hint. The return type of the function comes after the closing parenthesis of the signature; it is preceded by the arrow <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> and is followed by the colon that ends the function signature. The same syntax can be used to annotate methods in a class definition.</p>
-<p>Let’s modify <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> and add a default-valued argument that permits users to optionally include ‘y’ as a vowel.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Type-hinting a default-valued argument</span>
+<p>请注意，每个参数名后都跟着一个冒号和作为类型暗示的类型对象。函数的返回类型则在签名的后括号之后；它前置一个箭头 <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> 并后置标记函数签名结尾的冒号。你可以使用相同的语法来注释类定义中的方法。</p>
+<p>让我们修改 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 来添加一个允许用户可选地将 ‘y’ 视作元音的默认值参数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 默认值参数的类型暗示</span>
 
 <span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Returns the number of vowels contained in `in_string`&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;返回 `in_string` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiouAEIOU&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">include_y</span><span class="p">:</span>
         <span class="n">vowels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;yY&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here, we have hinted that <code class="docutils literal notranslate"><span class="pre">include_y</span></code> is expected to be passed a boolean-type object, and that it has a default value of <code class="docutils literal notranslate"><span class="pre">False</span></code>. It is important to take some time to grow accustomed to seeing the form <code class="docutils literal notranslate"><span class="pre">include_y:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code>. This can be difficult to parse at first. Keep in mind that <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">bool</span></code> is the type-hint here and <code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">False</span></code> specifies the default argument. The ordering of these statements are <em>not</em> interchangeable - a type-hint must immediately follow the variable name.</p>
-<p>Python 3.6, via <a class="reference external" href="https://www.python.org/dev/peps/pep-0526/">PEP 526</a>, introduced a syntax for annotating standalone variables in your code. For example, suppose that you are initializing a list in your code that will store even numbers. You can annotate this variable as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># annotating a variable with a type-hint</span>
+<p>在这里，我们暗示了 <code class="docutils literal notranslate"><span class="pre">include_y</span></code> 会期待布尔类对象，以及它的默认值为 <code class="docutils literal notranslate"><span class="pre">False</span></code>。花些时间习惯 <code class="docutils literal notranslate"><span class="pre">include_y:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></code> 的形式很重要。可能一开始这有点难读。请记住，<code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">bool</span></code> 在这里是类型暗示，而 <code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">False</span></code> 提供了默认参数。这两个语句的顺序并<em>不</em>可以互换——类暗示必须立即跟随变量名字。</p>
+<p>Python 3.6通过<a class="reference external" href="https://www.python.org/dev/peps/pep-0526/">PEP 526</a>加入了一个用来注释代码中独立变量的语法。比如说，假设你在代码中初始化一个将储存偶数的列表，你可以如下注释这个变量：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用类暗示来注释变量</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Set</span>
 
 <span class="n">names</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">odd_numbers</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 </div>
-<p>this permits us to document that the empty list will be used to store integers. You can also annotate a variable without providing an initial value.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># annotating a variable, without providing a value</span>
+<p>这允许我们记录这个空列表将会储存整数。你也可以注释一个变量而不提供初始值。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 注释一个函数但不提供值</span>
 <span class="n">max_num</span><span class="p">:</span> <span class="nb">int</span>
 </pre></div>
 </div>
-<p>Note that this variable-annotation syntax is <em>not</em> valid for versions of Python earlier than Python 3.6, and the function-annotation syntax is not valid for versions prior to Python 3.5. A formal theory of type-hinting is discussed in <a class="reference external" href="https://www.python.org/dev/peps/pep-0483/">PEP 483</a>.</p>
-<div class="section" id="What-is-It-Good-For?-(Absolutely-Nothing)">
-<h3>What is It Good For? (Absolutely Nothing)<a class="headerlink" href="#What-is-It-Good-For?-(Absolutely-Nothing)" title="Permalink to this headline">¶</a></h3>
-<p>As far as the Python interpreter is concerned, <strong>type-hints have no impact on your code other than adding documentation</strong>. That is, Python <strong>will not enforce any type-checking based on your type-hints</strong>. This is in stark contrast to strongly-typed languages, like C++, where you are required specify input and output types for a function as constraints that are strictly enforced by the compiler.</p>
-<p>Indeed, in Python we are free to pass whatever we want to our function regardless of its annotated type-hints. Let’s pass an empty list, instead of a string, to the <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> function that we defined above.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Type-hints do not actually enforce type-checking.</span>
-<span class="c1"># Here we pass an empty list instead of a string without</span>
-<span class="c1"># any warnings/errors being raised</span>
+<p>请注意，这种变量注释语法在Python 3.6之前的版本并<em>不</em>合法，而函数注释语法在Python 3.5之前的版本并不合法。<a class="reference external" href="https://www.python.org/dev/peps/pep-0483/">PEP 483</a>提供了一个正式的类型暗示理论。</p>
+<div class="section" id="这能做什么？（什么都不能）">
+<h3>这能做什么？（什么都不能）<a class="headerlink" href="#这能做什么？（什么都不能）" title="永久链接至标题">¶</a></h3>
+<p>从Python直译器的角度来看，<strong>类型暗示对你的代码没有任何除了添加说明文档以外的意义</strong>。也就是说，Python<strong>不会根据你的类型暗示提供任何强制的类型检查</strong>。这和其它如C++的需要为函数提供由编译器履行的输入和输出类型强类型（strongly-typed）语言对比鲜明。</p>
+<p>的确，在Python中我们可以无视注释的类型暗示随意提供任何参数。与其提供一个字符串，让我们向以上定义的 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 函数提供一个空列表吧。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 类型暗示并不会真的执行类型检查。在这里，我们输入了一个空列表，而不是</span>
+<span class="c1"># 字符串，但是没有导致任何警告或错误。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">([])</span>
 <span class="mi">0</span>
 </pre></div>
 </div>
-<p>See that our function pays no notice to the fact that we violated our type-hint, which suggests that we will be passing in a string. It happily loops over the empty list and sums over zeros entries, thus the function returns <code class="docutils literal notranslate"><span class="pre">0</span></code>. This is why these annotations are merely called type <em>hints</em>, and not type <em>requirements</em>.</p>
-<p>While the CPython interpreter will never require or enforce type-hints during the lifetime of Python 3, there are 3rd party libraries and tooling that makes keen use of these annotations. <em>It is these 3rd-party capabilities that make type-hinting worth using</em>. <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html">IDEs like PyCharm and VSCode</a> can leverage type hints to great effect. They will warn you when you pass objects to your
-function that do not abide by the type hints, and they will also leverage these annotations to keep track of the objects that are returned by the function.</p>
-<p>For example, suppose that we are using the <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> function in a library of code that we are developing, and we mistakenly think that the output of this function is a string that we want to capitalize. Our IDE will see that we are trying to capitalize an integer and will thus warn us:</p>
+<p>请注意，我们的函数并不在乎我们违反了我们类型暗示保证输入的是字符串这一事实。它开心地循环这个空列表并求其零个成员的和，并返回 <code class="docutils literal notranslate"><span class="pre">0</span></code>。这也是为什么这些注释仅仅叫做类型<em>暗示</em>，而不是类型<em>要求</em>。</p>
+<p>虽然CPython直译器就在Python 3的生命周期中将永远不会要求或强制使用类型暗示，但是有第三方模组和工具来使用类型暗示。<em>那些第三方功能使得类型暗示值得使用</em>。<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html">如PyCharm和VSCode的IDE</a>可以使用类型暗示来达到很棒的功能。它们会在你向函数输入不符合类型暗示的对象时警告你，且它们会使用这些类型暗示来记录函数返回的对象。</p>
+<p>比如说，假设我们在我们正在开发的一个代码模组中使用 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 函数，且我们错误地认为函数的输出是一个字符串并试图将其大写化。我们的IDE将会注意到我们试图大写一个整数并如此警告我们：</p>
 <p><img alt="PyCharm uses type-hints to check our code for consistency" src="../_images/pycharm1.png" /></p>
-<p>This saves us the trouble of having to run our code, hit an error, read through the stack trace, and debug our mistake. Instead, we immediately see our inconsistency get flagged. In fact, we probably never would have even made the mistake at all, as our IDE would have shown a list of integer-methods for us to choose from, and not string-methods. This would have likely alerted us to our misapprehension.</p>
-<p>It does not take long to experience the benefits of type-hinting through your IDE. This both accelerates your coding by informing you of the object types that you are working with on the fly, and helps to expose oversights in your code as soon as they are made.</p>
-<p>Finally, it is also worthwhile to highlight the <a class="reference external" href="http://mypy-lang.org/">mypy</a> project, which is used to perform static type-checking on your code based on your type-hints. That is, mypy will automatically traverse your code and find potential bugs by identifying type conflicts in your code (e.g.&nbsp;trying to capitalize an integer) by checking their annotated and inferred types. This tool is most useful for large-scale code bases. Companies like Dropbox make keen use of mypy to identify
-inconsistencies in their code without having to hit runtime errors. Keep mypy in mind as you mature as a Python developer and find yourself working on projects of growing complexity.</p>
+<p>这相比运行代码，遭遇错误，阅读错误，并修正它的流程所花的时间少很多。我们可以立刻看到被标记出的冲突。事实上，我们可能永远都不会产生这个错误，因为我们的IDE会自动显示一列表的整数方法，而不是字符串方法。这很可能会直接纠正我们的错误理解。</p>
+<p>你不会需要花多久就会通过IDE感受到类型暗示的好处。这将通过告诉你正在操作的对象类型来提升你编写代码的速度，并在你犯错的时候立刻提醒你。</p>
+<p>最后，我们来花一些时间安利一下<a class="reference external" href="http://mypy-lang.org/">mypy</a>项目。它根据你的代码的类型暗示进行静态的类型检查。也就是说，mypy将会自动遍历你的代码并通过检查对象的标注或推测出的类型来检测代码中的类型冲突（如试图大写化一个整数），指出可能的bug。在大规模代码库中这个工具极其有用。像Dropbox这样的公司经常使用mypy来在检测它们代码中的冲突来避免运行时的错误。在你作为一名Python开发者逐渐成熟并编写越来越复杂的项目的过程中，请记住mypy。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway:</strong></p>
-<p>There is a simple syntax for annotating functions, class-methods, and variables with type-hints; this is a formal mechanism for documenting the types of objects that are expected as inputs to the function, as well as the return type of the function. It is critical to note that that type-hints are <em>never</em> enforced by Python - they only serve as a form of documentation.</p>
-<p>That being said, IDEs have powerful abilities to inspect type-hints and to highlight potential inconsistencies in your code. These capabilities can greatly facilitate your code-development. There are also third-party libraries like <a class="reference external" href="http://mypy-lang.org/">mypy</a> that can be used to provide more rigorous type enforcement in your code.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>你可以通过简单的类型暗示语法来标记函数，类方法，和变量；这是一个正式的记录函数输入和输出对象的类型的方法。请记住，类型暗示在Python中<em>永远</em>不会被强迫执行——它们仅仅是一种说明文档。</p>
+<p>虽然如此，IDE有着强大的检查类型暗示并高亮显示代码中的类型冲突的能力。这些功能能够大幅度地帮助你开发代码。同时，你也可以使用像<a class="reference external" href="http://mypy-lang.org/">mypy</a>的第三方模组来对你的代码进行更严苛的类型检查。</p>
 </div>
 </div>
-<div class="section" id="Using-the-typing-Module">
-<h3>Using the <code class="docutils literal notranslate"><span class="pre">typing</span></code> Module<a class="headerlink" href="#Using-the-typing-Module" title="Permalink to this headline">¶</a></h3>
-<p>Although we can use Python’s built-in type objects (e.g. <code class="docutils literal notranslate"><span class="pre">list</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code>) for type-hinting, the standard library’s <a class="reference external" href="https://docs.python.org/3/library/typing.html">typing</a> module provides objects that are used to form more descriptive hints. For example, suppose that we want to write a function that takes in a list of integers as an input. Using the built-in <code class="docutils literal notranslate"><span class="pre">list</span></code> object for our type-hint prevents us from indicating that the list should house integers. Using <code class="docutils literal notranslate"><span class="pre">typing.List</span></code>, on the
-other hand, supports a richer syntax for type-hinting: <code class="docutils literal notranslate"><span class="pre">typing.List[int]</span></code> specifies “a list of integers.” Familiarizing yourself with the <code class="docutils literal notranslate"><span class="pre">typing</span></code> module is the first step to writing good type hints.</p>
-<p>The following is a summary some of the most critical members of the <code class="docutils literal notranslate"><span class="pre">typing</span></code> module, along with examples for using them.</p>
+<div class="section" id="使用-typing-模组">
+<h3>使用 <code class="docutils literal notranslate"><span class="pre">typing</span></code> 模组<a class="headerlink" href="#使用-typing-模组" title="永久链接至标题">¶</a></h3>
+<p>虽然我们可以使用Python的内置类型对象（如 <code class="docutils literal notranslate"><span class="pre">list</span></code> 和 <code class="docutils literal notranslate"><span class="pre">dict</span></code>）来进行类型暗示，标准库的<a class="reference external" href="https://docs.python.org/3/library/typing.html">typing</a>模组提供了可以用来创建更加描述性的暗示的对象。比如说，假设我们想编写一个接受整数列表的函数，使用内置的 <code class="docutils literal notranslate"><span class="pre">list</span></code> 对象不能标示这个列表应该存储整数。但是，使用 <code class="docutils literal notranslate"><span class="pre">typing.List</span></code> 则指出更完善的类型暗示语法：<code class="docutils literal notranslate"><span class="pre">typing.List[int]</span></code> 标示了“整数列表”。熟悉 <code class="docutils literal notranslate"><span class="pre">typing</span></code> 模组是编写好类型暗示的第一步。</p>
+<p>以下是对 <code class="docutils literal notranslate"><span class="pre">typing</span></code> 模组中最重要的一些成员的总结，以及使用它们的一些例子。</p>
 <div class="section" id="Any">
-<h4><code class="docutils literal notranslate"><span class="pre">Any</span></code><a class="headerlink" href="#Any" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Any</span></code><a class="headerlink" href="#Any" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> Any type of object</li>
+<li><p><strong>暗示：</strong>任何对象类</p></li>
 </ul>
 </div>
 <div class="section" id="Union[&lt;type&gt;,-&lt;type&gt;]">
-<h4><code class="docutils literal notranslate"><span class="pre">Union[&lt;type&gt;,</span> <span class="pre">&lt;type&gt;]</span></code><a class="headerlink" href="#Union[<type>,-<type>]" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Union[&lt;type&gt;,</span> <span class="pre">&lt;type&gt;]</span></code><a class="headerlink" href="#Union[<type>,-<type>]" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> Either of two types of objects</li>
-<li><strong>Examples:</strong> Hint an integer or a boolean: <code class="docutils literal notranslate"><span class="pre">Union[int,</span> <span class="pre">bool]</span></code></li>
+<li><p><strong>暗示：</strong>任何两种对象类型</p></li>
+<li><p><strong>例：</strong>暗示整数或布尔值：<code class="docutils literal notranslate"><span class="pre">Union[int,</span> <span class="pre">bool]</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="Optional[&lt;type&gt;]">
-<h4><code class="docutils literal notranslate"><span class="pre">Optional[&lt;type&gt;]</span></code><a class="headerlink" href="#Optional[<type>]" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Optional[&lt;type&gt;]</span></code><a class="headerlink" href="#Optional[<type>]" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> Either <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, with <code class="docutils literal notranslate"><span class="pre">None</span></code> as the default</li>
-<li><strong>Examples:</strong> Hint an object that is <code class="docutils literal notranslate"><span class="pre">None</span></code> by default, but will be a string otherwise: <code class="docutils literal notranslate"><span class="pre">Optional[str]</span></code></li>
+<li><p><strong>暗示：</strong><code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">None</span></code>，但 <code class="docutils literal notranslate"><span class="pre">None</span></code> 是默认值</p></li>
+<li><p><strong>例：</strong>暗示一个默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code> 的值，但如果不是默认值就是一个字符串：<code class="docutils literal notranslate"><span class="pre">Optional[str]</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="None">
-<h4><code class="docutils literal notranslate"><span class="pre">None</span></code><a class="headerlink" href="#None" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">None</span></code><a class="headerlink" href="#None" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> Simply the object <code class="docutils literal notranslate"><span class="pre">None</span></code></li>
+<li><p><strong>暗示：</strong>对象 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="List[&lt;type&gt;]">
-<h4><code class="docutils literal notranslate"><span class="pre">List[&lt;type&gt;]</span></code><a class="headerlink" href="#List[<type>]" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">List[&lt;type&gt;]</span></code><a class="headerlink" href="#List[<type>]" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> A list containing an arbitrary number of objects of a given type</li>
-<li><strong>Examples:</strong><ul>
-<li>Hint a list of strings: <code class="docutils literal notranslate"><span class="pre">List[str]</span></code></li>
-<li>Hint a list of strings and integers: <code class="docutils literal notranslate"><span class="pre">List[Union[str,</span> <span class="pre">int]]</span></code></li>
-<li>Hint a list of lists of anything: <code class="docutils literal notranslate"><span class="pre">List[List[Any]]</span></code> or <code class="docutils literal notranslate"><span class="pre">List[List]</span></code></li>
+<li><p><strong>暗示：</strong>包含任何数量的某种对象的列表</p></li>
+<li><p><strong>例：</strong></p>
+<ul>
+<li><p>暗示字符串列表：<code class="docutils literal notranslate"><span class="pre">List[str]</span></code></p></li>
+<li><p>暗示字符串和整数列表：<code class="docutils literal notranslate"><span class="pre">List[Union[str,</span> <span class="pre">int]]</span></code></p></li>
+<li><p>暗示任何成员的列表的列表：<code class="docutils literal notranslate"><span class="pre">List[List[Any]]</span></code> 或 <code class="docutils literal notranslate"><span class="pre">List[List]</span></code></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="Tuple[&lt;type&gt;,-...]">
-<h4><code class="docutils literal notranslate"><span class="pre">Tuple[&lt;type&gt;,</span> <span class="pre">...]</span></code><a class="headerlink" href="#Tuple[<type>,-...]" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Tuple[&lt;type&gt;,</span> <span class="pre">...]</span></code><a class="headerlink" href="#Tuple[<type>,-...]" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> A tuple containing a specific number of objects of the specified types. <code class="docutils literal notranslate"><span class="pre">...</span></code> can be used to indicate an arbitrary number of objects in the tuple</li>
-<li><strong>Examples:</strong><ul>
-<li>Hint a tuple containing one string and one boolean: <code class="docutils literal notranslate"><span class="pre">Tuple[str,</span> <span class="pre">bool]</span></code></li>
-<li>Hint a tuple containing an arbitrary number of integers: <code class="docutils literal notranslate"><span class="pre">Tuple[int,</span> <span class="pre">...]</span></code></li>
+<li><p><strong>暗示：</strong>包含某数量的某些类型的对象的元组。<code class="docutils literal notranslate"><span class="pre">...</span></code> 可以用来标示元组有着任意数量的对象</p></li>
+<li><p><strong>例：</strong></p>
+<ul>
+<li><p>暗示包含一个字符串和一个布尔值的元组：<code class="docutils literal notranslate"><span class="pre">Tuple[str,</span> <span class="pre">bool]</span></code></p></li>
+<li><p>暗示包含任意多整数的元组：<code class="docutils literal notranslate"><span class="pre">Tuple[int,</span> <span class="pre">...]</span></code></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="Set[&lt;type&gt;]">
-<h4><code class="docutils literal notranslate"><span class="pre">Set[&lt;type&gt;]</span></code><a class="headerlink" href="#Set[<type>]" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Set[&lt;type&gt;]</span></code><a class="headerlink" href="#Set[<type>]" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> A set containing an arbitrary number of objects of a given type</li>
-<li><strong>Examples:</strong><ul>
-<li>Hint a set of floats: <code class="docutils literal notranslate"><span class="pre">Set[float]</span></code></li>
-<li>Hint a set of tuples (each containing two integers): <code class="docutils literal notranslate"><span class="pre">Set[Tuple[int,</span> <span class="pre">int]]</span></code></li>
+<li><p><strong>暗示：</strong>包含任意某类对象的集</p></li>
+<li><p><strong>例：</strong></p>
+<ul>
+<li><p>暗示浮点数集：<code class="docutils literal notranslate"><span class="pre">Set[float]</span></code></p></li>
+<li><p>暗示（包含两个整数的）元组集：<code class="docutils literal notranslate"><span class="pre">Set[Tuple[int,</span> <span class="pre">int]]</span></code></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="Dict[&lt;key-type&gt;,-&lt;value-type&gt;]">
-<h4><code class="docutils literal notranslate"><span class="pre">Dict[&lt;key-type&gt;,</span> <span class="pre">&lt;value-type&gt;]</span></code><a class="headerlink" href="#Dict[<key-type>,-<value-type>]" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Dict[&lt;key-type&gt;,</span> <span class="pre">&lt;value-type&gt;]</span></code><a class="headerlink" href="#Dict[<key-type>,-<value-type>]" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> A dictionary that maps keys of a given type to values of a given type</li>
-<li><strong>Examples:</strong><ul>
-<li>Hint a dictionary that maps strings to integers: <code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">int]</span></code></li>
-<li>Hint a dictionary that maps any hashable to booleans: <code class="docutils literal notranslate"><span class="pre">Dict[Hashable,</span> <span class="pre">bool]</span></code>|</li>
+<li><p><strong>暗示：</strong>将某类的键对应某类的值的词典</p></li>
+<li><p><strong>例：</strong></p>
+<ul>
+<li><p>暗示字符串对应整数的词典：<code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">int]</span></code></p></li>
+<li><p>暗示任何可哈希对象对应布尔值的词典：<code class="docutils literal notranslate"><span class="pre">Dict[Hashable,</span> <span class="pre">bool]</span></code></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="Callable[[&lt;arg-type&gt;],-&lt;output-type&gt;]">
-<h4><code class="docutils literal notranslate"><span class="pre">Callable[[&lt;arg-type&gt;],</span> <span class="pre">&lt;output-type&gt;]</span></code><a class="headerlink" href="#Callable[[<arg-type>],-<output-type>]" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Callable[[&lt;arg-type&gt;],</span> <span class="pre">&lt;output-type&gt;]</span></code><a class="headerlink" href="#Callable[[<arg-type>],-<output-type>]" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
-<li><strong>What it hints:</strong> A callable (e.g.&nbsp;a function or a method) that takes in arguments of specified types and returns the specified type</li>
-<li><strong>Examples:</strong><ul>
-<li>Hint a function that takes in a string and an integer and returns <code class="docutils literal notranslate"><span class="pre">None</span></code>: <code class="docutils literal notranslate"><span class="pre">Callable[[str,</span> <span class="pre">int],</span> <span class="pre">None]</span></code></li>
-<li>Hint a method that accepts arbitrary arguments and returns a boolean: <code class="docutils literal notranslate"><span class="pre">Callable[...,</span> <span class="pre">bool]</span></code></li>
+<li><p><strong>暗示：</strong>任何接受某些类型的参数并返回某类的可调用对象（如参数或方法）</p></li>
+<li><p><strong>例：</strong></p>
+<ul>
+<li><p>暗示接受一个字符串和一个整数并返回 <code class="docutils literal notranslate"><span class="pre">None</span></code> 的函数：<code class="docutils literal notranslate"><span class="pre">Callable[[str,</span> <span class="pre">int],</span> <span class="pre">None]</span></code></p></li>
+<li><p>暗示一个接受任意参数并返回布尔值的方法：<code class="docutils literal notranslate"><span class="pre">Callable[...,</span> <span class="pre">bool]</span></code></p></li>
 </ul>
 </li>
 </ul>
-<p>Let’s take, for example, a function that takes in:</p>
+<p>作为一个例子，让我们设一个接受如下的函数：</p>
 <ul class="simple">
-<li>a dictionary of student grades, which maps names (strings) to grades (list of floats)</li>
-<li>a custom function for computing statistics over a list of numbers</li>
-<li>a list of names of students for whom we want to compute statistics, whose default is all students</li>
+<li><p>包含学生成绩的词典，其将名字（字符串）对应到成绩（浮点数列表）</p></li>
+<li><p>计算数字列表的统计数据的函数</p></li>
+<li><p>想要计算统计数据的学生名字列表，默认为所有学生</p></li>
 </ul>
-<p>and returns a list of tuples, with each tuple containing a student’s name and their stat.</p>
+<p>并返回元组列表，每个元组包含学生的名字和ta的统计数据。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Any</span>
 
 <span class="k">def</span> <span class="nf">compute_student_stats</span><span class="p">(</span><span class="n">grade_book</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
                           <span class="n">stat_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="n">Any</span><span class="p">],</span>
                           <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
-    <span class="sd">&quot;&quot;&quot;Computes custom statistics over student&#39;s grades.</span>
+    <span class="sd">&quot;&quot;&quot;计算学生成绩的自定义统计数据。</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    grade_book : Dict[str, List[float]]</span>
-<span class="sd">        The dictionary (name -&gt; grades) of all of the students&#39; grades.</span>
+<span class="sd">        所有学生成绩的词典（名字 -&gt; 成绩）。</span>
 
 <span class="sd">    stat_function: Callable[[List[float]], Any]</span>
-<span class="sd">        The function used to compute statistics over each student&#39;s grades.</span>
+<span class="sd">        计算每个学生成绩的统计数据的函数。</span>
 
 <span class="sd">    student_list : Optional[List[str]]</span>
-<span class="sd">        A list of names of the students for whom statistics will be computed.</span>
-<span class="sd">        By default, statistics will be computed for all students in the gradebook.</span>
+<span class="sd">        需要计算统计数据肚饿学生名字列表。</span>
+<span class="sd">        函数会默认计算成绩簿中所有学生的统计数据。</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    List[Tuple[str, Any]]</span>
-<span class="sd">        The name-stats tuple pair for each specified student.</span>
+<span class="sd">        每个学生的名字和统计数据元组。</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">student_list</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>               <span class="c1"># default to all-students</span>
-        <span class="n">student_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">grade_book</span><span class="p">)</span>  <span class="c1"># iterates over the dictionary&#39;s keys</span>
+    <span class="k">if</span> <span class="n">student_list</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>               <span class="c1"># 默认所有学生</span>
+        <span class="n">student_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">grade_book</span><span class="p">)</span>  <span class="c1"># 迭代词典的键</span>
     <span class="k">return</span> <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="n">stat_function</span><span class="p">(</span><span class="n">grade_book</span><span class="p">[</span><span class="n">name</span><span class="p">]))</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">student_list</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>(Note that we have also included a detailed NumPy-style docstring; we will discuss this documentation style in detail in the following subsection).</p>
-<p>There are a few details to take note of here. First, see that we need not make any assumptions about what type of object is returned by <code class="docutils literal notranslate"><span class="pre">stat_function</span></code>. It might return the mean-value as a single floating point number, or perhaps a tuple of the mean, median, and mode, etc. Thus we document its output type as <code class="docutils literal notranslate"><span class="pre">Any</span></code>; this is reflected in our function’s return type as well: <code class="docutils literal notranslate"><span class="pre">List[Tuple[str,</span> <span class="pre">Any]]</span></code>. As we will discuss shortly, it is prudent to be discerning but general in one’s type-hints.
-Next, note that <code class="docutils literal notranslate"><span class="pre">Optional[List[str]]</span></code> is used to indicate that the default-value of <code class="docutils literal notranslate"><span class="pre">student_list</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, but that we can otherwise pass it a list-of-strings. This is cleaner to read than the equivalent hint <code class="docutils literal notranslate"><span class="pre">Union[None,</span> <span class="pre">List[str]]</span></code> and it indicates that <code class="docutils literal notranslate"><span class="pre">None</span></code> is indeed the default-value.</p>
-<p>In the case that you have <a class="reference external" href="http://www.pythonlikeyoumeanit.com/module_4.html">defined your own type (akaclass)</a>, you can simply provide the resulting class object in an annotation. This type-hints that a variable is expected to be an <em>instance</em> of that type. If, instead, you have the rare case of hinting that the class object itself (not an instance of the class) is expected, you can use <code class="docutils literal notranslate"><span class="pre">typing.Type</span></code> to indicate this.</p>
-<p>Let’s write a silly example to demonstrate these points. We will define our own <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class, and will write a function that expects the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class-object itself (type-hinted as <code class="docutils literal notranslate"><span class="pre">Type[Dog]</span></code>). The function will create several <em>instances</em> of the <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class (type-hinted simply as <code class="docutils literal notranslate"><span class="pre">Dog</span></code>), and will return them in a list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># type-hinting a custom class</span>
+<p>（请注意，我们同时添加了一个细致的NumPy风格docstring；我们将会在接下来的小节中仔细讨论这个说明文档风格）。</p>
+<p>在这里有应注意几个细节。首先，我们没有对 <code class="docutils literal notranslate"><span class="pre">stat_function</span></code> 返回的对象类型没有进行任何假设。它可能会返回单个浮点数的平均值，或包含平均值，中间值，最频繁出现值等等的元组。因此，我们说明它的返回类型是 <code class="docutils literal notranslate"><span class="pre">Any</span></code>；这在我们函数的返回类型中也有显示：<code class="docutils literal notranslate"><span class="pre">List[Tuple[str,</span> <span class="pre">Any]]</span></code>。和我们马上要进行的讨论呼应，你应该在类型暗示尽可能细致的前提下做到不丢失任何通用性。然后，<code class="docutils literal notranslate"><span class="pre">Optional[List[str]]</span></code> 用来标记 <code class="docutils literal notranslate"><span class="pre">student_list</span></code> 的默认值是 <code class="docutils literal notranslate"><span class="pre">None</span></code>，但如果不是默认值我们向其输入一个字符串列表。这比起等值的暗示
+<code class="docutils literal notranslate"><span class="pre">Union[None,</span> <span class="pre">List[str]]</span></code> 更加易读，而且它表达了默认值是 <code class="docutils literal notranslate"><span class="pre">None</span></code> 这个事实。</p>
+<p>如果你<a class="reference external" href="http://www.pythonlikeyoumeanit.com/module_4.html">定义了自己的类型（既类）</a>，你可以在暗示中直接提供这个类对象。这类型暗示了某个变量将接受该类型的一个<em>实例</em>。如果你遇到了想要暗示类对象本身（而不是其实例）的稀少情况，你可以使用 <code class="docutils literal notranslate"><span class="pre">typing.Type</span></code> 来表达这一点。</p>
+<p>让我们编写一个简单的例子来演示这些片。我们将定义我们的 <code class="docutils literal notranslate"><span class="pre">Dog</span></code> 类并编写一个接受 <code class="docutils literal notranslate"><span class="pre">Dog</span></code> 类对象（类型暗示为 <code class="docutils literal notranslate"><span class="pre">Type[Dog]</span></code>）的函数。该函数将创建几个 <code class="docutils literal notranslate"><span class="pre">Dog</span></code> 类的<em>实例</em>（类型暗示为 <code class="docutils literal notranslate"><span class="pre">Dog</span></code>）并将它们放入列表中返回。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 类型暗示自定义类</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Type</span>
 <span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
-<span class="c1"># cls is expected to be the class-object, `Dog`, itself</span>
-<span class="c1"># This function returns a list of instances of the `Dog` type</span>
+<span class="c1"># cls 期望为类对象 `Dog` 本身</span>
+<span class="c1"># 这个函数返回一列表的 `Dog` 类型实例</span>
 <span class="k">def</span> <span class="nf">list_famous_dogs</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Dog</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dog</span><span class="p">]:</span>
     <span class="k">return</span> <span class="p">[</span><span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Lassie&quot;</span><span class="p">,</span> <span class="s2">&quot;Shadow&quot;</span><span class="p">,</span> <span class="s2">&quot;Air Bud&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
-<p>You can also create a <a class="reference external" href="https://docs.python.org/3/library/typing.html#type-aliases">type alias</a>, which you can define in your code and use in your annotations. For example, if you will regularly be passing around a tuple containing five <code class="docutils literal notranslate"><span class="pre">Dog</span></code>-instances, you can define an alias to help make your type-hints more succinct:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating an alias for a type</span>
+<p>你也可以在代码中创建<a class="reference external" href="https://docs.python.org/3/library/typing.html#type-aliases">类型代名词</a>（type alias）并在注释中使用。比如说，如果你将经常使用有着五个 <code class="docutils literal notranslate"><span class="pre">Dog</span></code> 实例的元组，你可以定义一个代名词来使得你的类型暗示更加简短：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建类型的代名词</span>
 <span class="n">Pack</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dog</span><span class="p">,</span> <span class="n">Dog</span><span class="p">,</span> <span class="n">Dog</span><span class="p">,</span> <span class="n">Dog</span><span class="p">,</span> <span class="n">Dog</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">find_alpha</span><span class="p">(</span><span class="n">dogs</span><span class="p">:</span> <span class="n">Pack</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dog</span><span class="p">:</span>
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>Object types defined in 3rd-party libraries, e.g.&nbsp;NumPy’s <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html">ndarray</a> behave no differently from our own custom custom classes; simply provide the <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object">class object</a> in the type-hint annotation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># type-hinting an nd-array from numpy</span>
+<p>第三方模组定义的对象类型，如NumPy的<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html">N维数组</a>和我们自己的自定义类行为一样；直接在类型暗示标注中提供<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object">类对象</a>就行了：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 类型桉树numpy的N维数组</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">custom_dot_product</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Eventually, popular 3rd party libraries like NumPy will contribute their own typing modules so that you can provide higher-fidelity hints that indicate things like data-type and array-shape. NumPy developers <a class="reference external" href="https://github.com/numpy/numpy/issues/7370">are currently working on this</a>.</p>
+<p>早晚有一天，像NumPy这样的流行的第三方模组将会贡献它们自己的类型模组来帮助你提供更加保真的类型暗示，如数据类型和数组形状。NumPy开发者<a class="reference external" href="https://github.com/numpy/numpy/issues/7370">正在为此工作</a>。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway:</strong></p>
-<p>Python’s <code class="docutils literal notranslate"><span class="pre">typing</span></code> module contains objects that are used to create descriptive type-hints. For example, whereas <code class="docutils literal notranslate"><span class="pre">list</span></code> can only be used to type-hint a list, <code class="docutils literal notranslate"><span class="pre">typing.List[str]</span></code> describes a list-of-strings. These can also be used to create concise aliases for convoluted type-hints that will be used frequently throughout your code.</p>
-<p>In general, a <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object">class object</a> can be used for type-hinting, and it indicates that a variable should be an <em>instance</em> of that class. For example, <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> hints that a variable should be passed an instance of the nd-array class.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>Python的 <code class="docutils literal notranslate"><span class="pre">typing</span></code> 模组包含了用来创建描述性类型暗示的对象。比如说，虽然 <code class="docutils literal notranslate"><span class="pre">list</span></code> 只能用来类型暗示一个列表，<code class="docutils literal notranslate"><span class="pre">typing.List[str]</span></code> 描述了一个字符串列表。你也可以使用它们来为在代码中重复使用的复杂类型暗示创建简短的代名词。</p>
+<p>一般而言，你可以使用<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object">类对象</a>来进行类型暗示，且其暗示了一个变量将为该类的一个<em>实例</em>。比如说，<code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> 暗示了一个变量将接受一个N维数组。</p>
 </div>
 </div>
 </div>
-<div class="section" id="Writing-Good-Type-Hints-(quack-quack)">
-<h3>Writing Good Type-Hints (quack quack)<a class="headerlink" href="#Writing-Good-Type-Hints-(quack-quack)" title="Permalink to this headline">¶</a></h3>
-<p>You should strive to write type-hints that pass <a class="reference external" href="https://en.wikipedia.org/wiki/Duck_test">the duck test</a>: if your function is expecting a duck then hint for something that walks like a duck, quacks like a duck, etc. This will help you avoid writing type-hints that are overly narrow, and which are ultimately non-Pythonic in their strictness.</p>
-<p>To be more concrete, let’s revisit our <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> function:</p>
+<div class="section" id="编写好的类型暗示">
+<h3>编写好的类型暗示<a class="headerlink" href="#编写好的类型暗示" title="永久链接至标题">¶</a></h3>
+<p>你应该尽量编写通过<a class="reference external" href="https://en.wikipedia.org/wiki/Duck_test">鸭子测试</a>的代码：如果你的函数期待一个鸭子，那么暗示一个走起来像鸭子，叫起来像鸭子，等等的东西。这将帮助你避免编写太过狭隘并因此不符合Python风格的类型暗示。</p>
+<p>具体来讲，让我们复习一下我们的 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 函数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Returns the number of vowels contained in `in_string`&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;返回 `x` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiouAEIOU&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">include_y</span><span class="p">:</span>
         <span class="n">vowels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;yY&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Look carefully at how <code class="docutils literal notranslate"><span class="pre">x</span></code> is used in this function. We simply iterate over <code class="docutils literal notranslate"><span class="pre">x</span></code> in a for-loop - there is nothing string-specific about this. We could pass a string, a tuple, a list, or anything that supports iteration to this function, and it will happily count the vowels in <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `count_vowels` can operate on any iterable of strings</span>
+<p>仔细看 <code class="docutils literal notranslate"><span class="pre">x</span></code> 在函数中如何使用。我们用for循环迭代 <code class="docutils literal notranslate"><span class="pre">x</span></code>——这没有任何仅限于字符串的功能。我们向这个函数可以输入一个字符串，元组，列表，或任何支持迭代的对象，而它都会开开心心地计算 <code class="docutils literal notranslate"><span class="pre">x</span></code> 中的元音数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `count_vowels` 可以操作任何字符串可迭代物</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">)</span>
 <span class="mi">2</span>
 
@@ -772,32 +773,31 @@ Next, note that <code class="docutils literal notranslate"><span class="pre">Opt
 <span class="mi">2</span>
 </pre></div>
 </div>
-<p>It is over-restrictive and un-Pythonic to type-hint <code class="docutils literal notranslate"><span class="pre">x</span></code> as <code class="docutils literal notranslate"><span class="pre">str</span></code>. Let’s make our type-hint more accommodating.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">typing</span></code> module provides a so-called <a class="reference external" href="https://docs.python.org/3/glossary.html#term-abstract-base-class">abstract base class</a>, <code class="docutils literal notranslate"><span class="pre">Iterable</span></code>, which is a generic type for any class that supports iteration. Thus we can improve our type-hint by making it more general. This encapsulates all of the above use-cases that we demonstrated.</p>
+<p>类型暗示 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为 <code class="docutils literal notranslate"><span class="pre">str</span></code> 就太过限制且非Python风格了。让我们修改类型暗示使其更加包容。</p>
+<p><code class="docutils literal notranslate"><span class="pre">typing</span></code> 模组提供了所谓的<a class="reference external" href="https://docs.python.org/3/glossary.html#term-abstract-base-class">抽象基类</a> <code class="docutils literal notranslate"><span class="pre">Iterable</span></code>，其为代表任何支持迭代的类的一般类型。因此，我们可以通过使我们的类型暗示更一般化来提升它的描述性。这将包含我们上面演示中的所有使用方法。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span>
 
 <span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Returns the number of vowels contained in `in_string`&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;返回 `x` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiouAEIOU&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">include_y</span><span class="p">:</span>
         <span class="n">vowels</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;yY&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>(To be completely general, we could have hinted <code class="docutils literal notranslate"><span class="pre">Iterable[Hashable]</span></code>, as we are relying on the entries of <code class="docutils literal notranslate"><span class="pre">x</span></code> to be hashable to check for their membership in the <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure">set</a> of vowels. It is up to you to determine how abstract you want your ducks to be.)</p>
-<p>It is is important to review the <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes">abstract base classes (abc’s) for Python’s collections</a> (yes, I am encouraging you to learn your abc’s). This will help you classify categories of types generally, based on their <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html">special methods</a>. Two of the most common abc’s are <code class="docutils literal notranslate"><span class="pre">Iterable</span></code>: any class that supports the iteration protocol, and
-<code class="docutils literal notranslate"><span class="pre">Sequence</span></code>: any collection that has a length (via <code class="docutils literal notranslate"><span class="pre">__len__</span></code>) and supports the get-item syntax (via <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>).</p>
+<p>（如果我们想要完全的一般化，我们可以暗示 <code class="docutils literal notranslate"><span class="pre">Iterable[Hashable]</span></code>，因为我们依赖 <code class="docutils literal notranslate"><span class="pre">x</span></code> 中的成员的可哈希特征来检查它们是否在元音<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure">集</a>中。你应该决定你的鸭子要有多抽象）。</p>
+<p>复习<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes">Python集合的抽象基类</a>（abstract base class（abc））很重要（是的，我在建议你复习你的abc——译者注：abc也可以指小学生学的字母表）。这将帮助你一般性地根据对象的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html">特殊方法</a>分类它们。两个最常用的abc是 <code class="docutils literal notranslate"><span class="pre">Iterable</span></code>：任何支持迭代协议的类，和 <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>：任何有着长度（通过 <code class="docutils literal notranslate"><span class="pre">__len__</span></code>）和支持获取成员语法（通过
+<code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>）的集合。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Type Hinting</strong></p>
-<p>Read through the following function and annotate its signature with type-hints. Try to make your type-hints sufficiently general here.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：类型暗示</strong></p>
+<p>阅读以下函数并使用类型暗示标记它的签名。尝试让你的类型暗示足够一般化。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_first_and_last</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the first and last elements of `x`. `x` is</span>
-<span class="sd">    assumed to be non-empty</span>
+    <span class="sd">&quot;&quot;&quot;返回 `x` 的第一和最后一个成员。函数将假设 `x` 非空。</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Here are some examples of this function in action. Be sure that your type-hint captures all of this diversity.</p>
+<p>以下是一些使用该函数的例子。请使你的类型暗示支持这些多样的使用方法。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_first_and_last</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 <span class="go">(&#39;h&#39;, &#39;o&#39;)</span>
 
@@ -810,75 +810,73 @@ Next, note that <code class="docutils literal notranslate"><span class="pre">Opt
 </div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway:</strong></p>
-<p>It is un-Pythonic to be overly strict when type hinting. Python handles typing flexibly - it uses <a class="reference external" href="https://en.wikipedia.org/wiki/Duck_typing">duck typing</a> - and our type hints should follow suit. Rely on abstract base classes when possible to provide the appropriate guidelines for a particular variable type.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>在类型暗示时太过严苛是不符合Python风格的做法。Python灵活地处理类型分类——它使用<a class="reference external" href="https://en.wikipedia.org/wiki/Duck_typing">鸭子类型分类</a>——且我们的类型暗示也应该如此。每当可以的时候使用抽象基类来提供某种变量类型的合理规则。</p>
 </div>
 </div>
 </div>
-<div class="section" id="Documentation-Styles">
-<h2>Documentation Styles<a class="headerlink" href="#Documentation-Styles" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://twitter.com/nulhom?lang=en">Davis King</a>, a prolific and talented open source developer, is the creator of the <a class="reference external" href="http://dlib.net/">dlib C++ library</a>. Among the library’s major features, like machine learning algorithms, Davis lists its <em>documentation</em> as the first and foremost feature. In fact, he says about dlib:</p>
+<div class="section" id="说明文档风格">
+<h2>说明文档风格<a class="headerlink" href="#说明文档风格" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://twitter.com/nulhom?lang=en">Davis King</a>，一个多产又有才的开源开发者，是<a class="reference external" href="http://dlib.net/">dlib C++库</a>的创造者。在库如机器学习算法的主要功能中，David将其<em>说明文档</em>列为第一个和最重要的功能。事实上，他如此评论dlib：</p>
 <blockquote>
-<div><em>I consider the documentation to be the most important part of the library.</em> So if you find anything that isn’t documented, isn’t clear, or has out of date documentation, tell me and I will fix it.</div></blockquote>
-<p>There is great wisdom in placing such a high value on documentation. In this section, we will learn about two popular docstring-style specifications for Python: the NumPy specification and the Google specification. Both of these are rich extensions of the rudimentary docstring conventions that are proposed in <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">PEP 257</a>, and, critically, they both place an emphasis on documenting the variable types.</p>
-<p>PLYMI uses Numpy-style docstrings throughout most of the text (except for when we are trying to keep the functions brief). This is ultimately just a choice of style/aesthetics. Ultimately, the critical takeaway here is to <strong>pick a documentation style, learn it, and stick to it faithfully</strong>. Once again, it is hard to overstate how important it is to anchor your code with clear and consistent documentation. It will aid you in your code-writing process, it will enable users to adopt and perhaps
-contribute to your code, and it will ensure longevity for your hard work.</p>
-<div class="section" id="The-NumPy-Documentation-Style">
-<h3>The NumPy Documentation Style<a class="headerlink" href="#The-NumPy-Documentation-Style" title="Permalink to this headline">¶</a></h3>
-<p>The NumPy documentation style is specified in full <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">here</a>. It is strongly recommended that you read through it in full. There are details in the specification that we will pass over here for the sake of simplicity and to avoid rewriting their specification. We will focus on the guidelines for documenting functions, but note that they specify rules for documenting
-<a class="reference external" href="https://www.pythonlikeyoumeanit.com/module_4.html">classes</a> and <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Modules_and_Packages.html#Modules">modules</a>.</p>
-<p>A function’s docstring is divided up into several sections. Most of these sections are delimited with a header, e.g. “Parameters”, followed by a horizontal line of dashes:</p>
+<div><p><em>我认为说明文档是这个库最重要的组件。</em> 所以如果你发现任何东西没有说明文档，不清楚，或有着过时的说明文档，告诉我，我将修好它。</p>
+</div></blockquote>
+<p>如此重视说明文档是一个很聪明地做饭。在本小节中，我们将学习两个流行的Python docstring风格的规格：NumPy规格和Google规格。两个规格都是对<a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">PEP 257</a>提出的基础docstring的强大拓展，且它们都对记录变量类型有着极大的重视。</p>
+<p>PLYMI在阅读大部分时候（除了在我们试图使函数简短时）都使用了NumPy风格的docstring。最终而言这只是一个风格/美观上的选择。总而言之，这里最重要的经验是去<strong>选择一个说明文档风格，学习它，并忠诚地使用它</strong>。再次重申一次，我们很难夸张使用清晰和协调的说明文档有多重要。它将帮助你的代码的编写过程。它将允许用户使用和甚至对你的代码做贡献，并将保证你的辛苦工作的长命。</p>
+<div class="section" id="NumPy说明文档">
+<h3>NumPy说明文档<a class="headerlink" href="#NumPy说明文档" title="永久链接至标题">¶</a></h3>
+<p>NumPy说明文档风格在在<a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">这里</a>完整地列出。在这里我强烈建议你完整阅读这个列表。我们将在这里忽略一些细节来保证阅读的简单度并避免重复以上文档中的内容。我们将专注于为函数编写说明文档的规则，但请注意它们也提供了为<a class="reference external" href="https://www.pythonlikeyoumeanit.com/module_4.html">类</a>和<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Modules_and_Packages.html#Modules">模组</a>编写说明文档的规则。</p>
+<p>函数的docstring分为几个部分。大部分这些部分都由一个头行，如“Parameters”，和一行折线限定。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Parameters</span>
 <span class="o">----------</span>
 </pre></div>
 </div>
-<p>A docstring should at least consist of:</p>
+<p>一个docstring至少应有：</p>
 <ul class="simple">
-<li>A succinct, single-line description of the function.</li>
-<li>An extended summary of the function, which provides a more verbose description of things.</li>
-<li>A <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> section, which details the types of the input parameters along with descriptions of them. (This section is not necessary if your function is parameterless).</li>
-<li>A <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section (or <code class="docutils literal notranslate"><span class="pre">Yields</span></code> for a generator), which details the object that is returned by the function. (This is not necessary if your function always returns <code class="docutils literal notranslate"><span class="pre">None</span></code>).</li>
+<li><p>一个简短的单行函数功能描述。</p></li>
+<li><p>一个更长的函数总结，其为提供更多细节描述。</p></li>
+<li><p>一个 <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> 部分，其提供了输入参数的类型以及它们的描述。（如果你的函数不接受参数，那这一部分也就没有必要了）。</p></li>
+<li><p>一个 <code class="docutils literal notranslate"><span class="pre">Returns</span></code> 部分（如果是生成器的话是 <code class="docutils literal notranslate"><span class="pre">Yields</span></code>），其提供了函数返回对象的细节。（如果你的函数永远返回s <code class="docutils literal notranslate"><span class="pre">None</span></code>，那这一部分也就没有必要了）。</p></li>
 </ul>
-<p>There are additional, optional sections that can be used to improve your documentation:</p>
+<p>你也可以添加额外的，可选的部分来提升你的说明文档：</p>
 <ul class="simple">
-<li>A <code class="docutils literal notranslate"><span class="pre">Notes</span></code> section, which can be used to discuss tertiary details of the function, such as a description of the algorithm that was used. You can also include mathematical formulae here, and cite primary materials</li>
-<li>A <code class="docutils literal notranslate"><span class="pre">References</span></code> section, used to document any works that were cited in the “Notes” section. It is not very common to need to reference primary sources in your docstrings.</li>
-<li>An <code class="docutils literal notranslate"><span class="pre">Examples</span></code> section, which contains console-style code, similar to the code snippets that you see in PLYMI, for using your function.</li>
+<li><p>一个 <code class="docutils literal notranslate"><span class="pre">Notes</span></code> 部分。你可以用它提供函数额外的注释，如函数所使用的算法。你也可以在这里提供数学公式并列出参考资料。</p></li>
+<li><p>一个 <code class="docutils literal notranslate"><span class="pre">References</span></code> 部分。你可以用它来记录任何在“Notes”部分参考的资料。你很少会需要在docstring中引用参考资料。</p></li>
+<li><p>一个 <code class="docutils literal notranslate"><span class="pre">Examples</span></code> 部分，其含有演示如何使用你的函数的命令行风格的代码（类似于你在PLYMI中见到的代码片段）。</p></li>
 </ul>
-<p>There are additional, more obscure or technical sections that you can read about in the formal specification.</p>
-<p>The following function has a docstring that exemplifies all of these sections.</p>
+<p>上文提供的正式说明文档风格文件中列出了其它的更加少见或技术性的部分可供你添加。</p>
+<p>以下函数有着一个包含以上所有部分的docstring。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise_dists</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Computes pairwise distances between the rows of ``x`` and ``y``.</span>
+    <span class="sd">&quot;&quot;&quot;计算 ``x`` 和 ``y`` 每行对之间的距离。</span>
 
-<span class="sd">    Returns the shape-(M, N) array of Euclidean distances between</span>
-<span class="sd">    the M rows of ``x`` and the N rows of ``y``.</span>
+<span class="sd">    返回形状为 (M, N) 的 ``x`` 中M行和 ``y`` 中</span>
+<span class="sd">    N行的欧氏距离数组。</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    x : numpy.ndarray, shape=(M, D)</span>
-<span class="sd">        An optional description of ``x``</span>
+<span class="sd">        可选的对 ``x`` 的介绍</span>
 <span class="sd">    y : numpy.ndarray, shape=(N, D)</span>
-<span class="sd">        An optional description of ``y``</span>
+<span class="sd">        可选的对 ``y`` 的介绍</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    numpy.ndarray, shape=(M, N)</span>
-<span class="sd">        The pairwise distances</span>
+<span class="sd">        距离对</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    This function uses the memory-efficient vectorized implementation that</span>
-<span class="sd">    is detailed in [1]_.</span>
+<span class="sd">    本函数使用了内存高效的矢量化实现。细节可以在 [1]_ 中找到。</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
 <span class="sd">    .. [1] Soklaski, R. (2019, Jan 21). Array Broadcasting.</span>
-<span class="sd">           Retrieved from https://http://www.pythonlikeyoumeanit.com</span>
+<span class="sd">           Retrieved from https://www.pythonlikeyoumeanit.com</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    Compute the pairwise distances between the rows of a shape-(3, 3) array</span>
-<span class="sd">    with the rows of a shape-(2, 3) array.</span>
+<span class="sd">    计算形状为 (3, 3) 的数组的行和形状为 (2, 3) 的数组的行之间</span>
+<span class="sd">    的距离对。</span>
 
 <span class="sd">    &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">    &gt;&gt;&gt; x = np.array([[1., 2., 3.],</span>
@@ -894,36 +892,33 @@ contribute to your code, and it will ensure longevity for your hard work.</p>
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>See that we specify <strong>type information</strong> in the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> and the <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section of the docstring, even though it is redundant with the function signature’s type-hints - it is useful to have this information in the docstring too. This is a good place to embellish the type information with pertinent information that is not conveyed by the formal type-hints. For example, we added shape information alongside the types in these sections.</p>
-<p>Variable names should be referenced using double back-ticks within the docstring; e.g. ``x``. It should also be noted that that including an <code class="docutils literal notranslate"><span class="pre">Examples</span></code> section is very useful for creating high-quality documentation. It is recommended that you include examples liberally throughout your code.</p>
-<p>Here is another example docstring that adheres to the NumPy-style, one without a <code class="docutils literal notranslate"><span class="pre">Notes</span></code> and <code class="docutils literal notranslate"><span class="pre">References</span></code> section:</p>
+<p>请注意，我们在docstring的 <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Returns</span></code> 部分提供了<strong>类型信息</strong>，虽然这重复了函数签名中的类型暗示——在docstring中也有这个信息是很有用的。这是一个提供正式类型暗示中缺失的有关信息的好地方。比如说，我们在这些部分的类型旁边添加了形状的信息。</p>
+<p>在docstring中，变量名应用在两边分别用两个 ` 符号包围，如 ``x``。请注意，包含一个 <code class="docutils literal notranslate"><span class="pre">Examples</span></code> 部分为创建高质量的说明文档极其有帮助。本文建议你在你的代码中活用多用范例部分。</p>
+<p>以下是另外一个符合NumPy风格的范例docstring，但它没有 <code class="docutils literal notranslate"><span class="pre">Notes</span></code> 和 <code class="docutils literal notranslate"><span class="pre">References</span></code> 部分：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_student_stats</span><span class="p">(</span><span class="n">grade_book</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
                           <span class="n">stat_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="n">Any</span><span class="p">],</span>
                           <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
-    <span class="sd">&quot;&quot;&quot;Computes custom statistics over students&#39; grades.</span>
+    <span class="sd">&quot;&quot;&quot;计算学生成绩的自定义统计数据。</span>
 
-<span class="sd">    Applies ``stat_func`` over a list of each student&#39;s grades,</span>
-<span class="sd">    and accumulates name-stat tuple pairs in a list.</span>
+<span class="sd">    对每个学生的成绩列表调用 ``stat_func``，并将结果作为名字-数据的元组</span>
+<span class="sd">    储存到一个列表中。</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    grade_book : Dict[str, List[float]]</span>
-<span class="sd">        The dictionary (name -&gt; grades) of all of the students&#39;</span>
-<span class="sd">        grades.</span>
+<span class="sd">        所有学生成绩的词典（名字 -&gt; 成绩）。</span>
 
 <span class="sd">    stat_function: Callable[[Iterable[float]], Any]</span>
-<span class="sd">        The function used to compute statistics over each student&#39;s</span>
-<span class="sd">        grades.</span>
+<span class="sd">        用来计算每个学生成绩的统计数据的函数。</span>
 
 <span class="sd">    student_list : Optional[List[str]]</span>
-<span class="sd">        A list of names of the students for whom statistics will be</span>
-<span class="sd">        computed. By default, statistics will be computed for all</span>
-<span class="sd">        students in the grade book.</span>
+<span class="sd">        需要计算统计数据的学生名字列表。函数将默认计算所有成绩簿中</span>
+<span class="sd">        学生的统计数据。</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    List[Tuple[str, Any]]</span>
-<span class="sd">        The name-stats tuple pair for each specified student.</span>
+<span class="sd">        每个学生的名字-数据元组。</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -936,29 +931,29 @@ contribute to your code, and it will ensure longevity for your hard work.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="The-Google-Documentation-Style">
-<h3>The Google Documentation Style<a class="headerlink" href="#The-Google-Documentation-Style" title="Permalink to this headline">¶</a></h3>
-<p>The Google documentation style is specified in full <a class="reference external" href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args">here</a>; it is part of the complete <a class="reference external" href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#google-python-style-guide">Google Python style guide</a>. The docstring style specified here is quite succinct in comparison to the NumPy spec. It consists of the following sections:</p>
+<div class="section" id="Google说明文档风格">
+<h3>Google说明文档风格<a class="headerlink" href="#Google说明文档风格" title="永久链接至标题">¶</a></h3>
+<p>Google说明文档的完整规则可以在<a class="reference external" href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args">这里</a>找到；它是完整<a class="reference external" href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#google-python-style-guide">Google Python风格指南</a>的一部分。在这里描述的docstring风格对比NumPy的规格相对简短。它包含了以下部分：</p>
 <ul class="simple">
-<li>A succinct, single-line description of the function.</li>
-<li>An extended summary of the function, which provides a more verbose description of things.</li>
-<li>An <code class="docutils literal notranslate"><span class="pre">Args</span></code> section, which details the types of the input parameters along with descriptions of them. (This section is not necessary if your function is parameterless).</li>
-<li>A <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section (or <code class="docutils literal notranslate"><span class="pre">Yields</span></code> for a generator), which details the object that is returned by the function. (This is not necessary if your function always returns <code class="docutils literal notranslate"><span class="pre">None</span></code>).</li>
+<li><p>一个简短的单行函数描述。</p></li>
+<li><p>一个更长的函数总结，其为提供更多细节描述。</p></li>
+<li><p>一个 <code class="docutils literal notranslate"><span class="pre">Args</span></code> 部分，其细致提供了函数的输入参数的类型和描述（如果你的函数没有参数，那么这个部分也没有必要了）。</p></li>
+<li><p>一个 <code class="docutils literal notranslate"><span class="pre">Returns</span></code> 部分（如果是生成器的话是 <code class="docutils literal notranslate"><span class="pre">Yields</span></code>），其细致描述了函数返回的对象（如果你的函数永远返回 <code class="docutils literal notranslate"><span class="pre">None</span></code>，那么这个部分也没有必要了）。</p></li>
 </ul>
-<p>There is also a <code class="docutils literal notranslate"><span class="pre">Raises</span></code> section in the case that your function raises exceptions under known conditions.</p>
-<p>Let’s reproduce the docstrings for <code class="docutils literal notranslate"><span class="pre">pairwise_dists</span></code> and <code class="docutils literal notranslate"><span class="pre">compute_student_stats</span></code> using the Google style.</p>
+<p>如果你的函数在已知情况下引发错误（raises an exception）的话，你也可以添加一个 <code class="docutils literal notranslate"><span class="pre">Raises</span></code> 部分。</p>
+<p>让我们使用Google的风格来重写 <code class="docutils literal notranslate"><span class="pre">pairwise_dists</span></code> 和 <code class="docutils literal notranslate"><span class="pre">compute_student_stats</span></code> 的docstring。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise_dists</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Computes pairwise distances between the rows of ``x`` and ``y``.</span>
+    <span class="sd">&quot;&quot;&quot;计算 ``x`` 和 ``y`` 每行对之间的距离。</span>
 
-<span class="sd">    Returns the shape-(M, N) array of Euclidean distances between</span>
-<span class="sd">    the M rows of ``x`` and the N rows of ``y``.</span>
+<span class="sd">    返回形状为 (M, N) 的 ``x`` 中M行和 ``y`` 中</span>
+<span class="sd">    N行的欧氏距离数组。</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        x (numpy.ndarray) : A shape-(M, D) array</span>
-<span class="sd">        y (numpy.ndarray) : A shape-(N, D) array</span>
+<span class="sd">        x (numpy.ndarray) : 一个形状为 (M, D) 的数组</span>
+<span class="sd">        y (numpy.ndarray) : 一个形状为 (N, D) 的数组</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        (numpy.ndarray): A shape-(M, N) array of the pairwise distances</span>
+<span class="sd">        (numpy.ndarray): 一个形状为 (M, N) 的距离对数组</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="o">...</span>
 </pre></div>
@@ -966,77 +961,69 @@ contribute to your code, and it will ensure longevity for your hard work.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_student_stats</span><span class="p">(</span><span class="n">grade_book</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
                           <span class="n">stat_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="n">Any</span><span class="p">],</span>
                           <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
-    <span class="sd">&quot;&quot;&quot;Computes custom statistics over students&#39; grades.</span>
+    <span class="sd">&quot;&quot;&quot;计算学生成绩的自定义统计数据。</span>
 
-<span class="sd">    Applies ``stat_func`` over a list of each student&#39;s grades,</span>
-<span class="sd">    and accumulates name-stat tuple pairs in a list.</span>
+<span class="sd">    对每个学生的成绩列表调用 ``stat_func``，并将结果作为名字-数据的元组</span>
+<span class="sd">    储存到一个列表中。</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        grade_book (Dict[str, List[float]]): The dictionary</span>
-<span class="sd">            (name -&gt; grades) of all of the students&#39; grades.</span>
+<span class="sd">        grade_book (Dict[str, List[float]]): 所有学生成绩的词典</span>
+<span class="sd">            （名字 -&gt; 成绩）。</span>
 
-<span class="sd">        stat_function (Callable[[Iterable[float]], Any]): The</span>
-<span class="sd">            function used to compute statistics over each</span>
-<span class="sd">            student&#39;s grades.</span>
+<span class="sd">        stat_function (Callable[[Iterable[float]], Any]): 用来</span>
+<span class="sd">            计算每个学生成绩的统计数据的函数。</span>
 
-<span class="sd">        student_list (Optional[List[str]]): A list of names of</span>
-<span class="sd">            the students for whom statistics will be computed.</span>
-<span class="sd">            By default, statistics will be computed for all</span>
-<span class="sd">            students in the grade book.</span>
+<span class="sd">        student_list (Optional[List[str]]): 需要计算统计数据的学生</span>
+<span class="sd">            名字列表。函数将默认计算所有成绩簿中学生的统计数据。</span>
 
 <span class="sd">    Returns</span>
-<span class="sd">        (List[Tuple[str, Any]]):  The name-stats tuple pair for each</span>
-<span class="sd">        specified student.</span>
+<span class="sd">        (List[Tuple[str, Any]]): 每个学生的名字-数据元组。</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>See that this style produces docstrings that are succinct, but are sometimes crowded horizontally given the successive levels of indentation within each docstring-section.</p>
-<p>It must also be noted that the <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings">Napolean project</a>, which facilitates the automated generation of HTML documentation-pages from Python docstrings, has extended the Google specification to match the sections of the NumPy style. The Napolean version of the NumPy and Google docstring styles can be found <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#id1">here</a>.
-This resource also includes useful examples of docstrings for modules and classes.</p>
+<p>请注意，本风格创建简短，但有时因为每个部分中的缩进而横向拥挤的docstring。</p>
+<p>同时，帮助你自动从Python的docstring生成HTML说明文档页面的<a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings">Napolean项目</a>已经拓展了Google的规格来对应NumPy风格的部分。Napolean版本的NumPy和Google的docstring风格可以在<a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#id1">这里</a>找到。这个资源也包含了很多有用的模组和类的范例docstring。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway:</strong></p>
-<p>Take some time to review the NumPy and Google docstring specifications, pick one, and stick to it faithfully when documenting your code. If you plan to code with others, find out if they have already chosen a documentation style.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>花一些时间来复习NumPy和Google的docstring风格，选择其一，并在为你的代码编写说明文档时遵守它。如果你打算和其它人一起合作，那么了解他们是否已经选择了一个说明文档风格。</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Documentation Tools:</strong></p>
-<p><a class="reference external" href="http://www.sphinx-doc.org/en/master/">Sphinx</a> is a popular and hugely-powerful tool that will render documentation for your project in HTML by parsing the docstrings that are in your code. Python, NumPy, and almost all major 3rd party Python libraries use Sphinx to publish their documentation pages. <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings">Napolean</a> and <a class="reference external" href="https://github.com/numpy/numpydoc">numpydoc</a> are Sphinx
-extensions that allows Sphinx to parse and nicely render docstrings that adhere to the NumPy and Google docstring specifications.</p>
-<p><a class="reference external" href="https://github.com/meowklaski/custom_inherit">custom_inherit</a> is a lightweight tool for <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module4_OOP/Inheritance.html">inheriting</a> and merging docstrings. It provides rich support for merging the various sections of docstrings, and supports NumPy and Google-style docstrings natively. It also supports custom documentation styles.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>说明文档工具</strong>：</p>
+<p><a class="reference external" href="http://www.sphinx-doc.org/en/master/">Sphinx</a>是一个流行且极其强大的工具。它通过分析你代码中的docstring来为你生成HTML说明文档。Python，NumPy，和几乎所有重要的第三方Python模组都使用Sphinx来发布它们的说明文档页面。<a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings">Napolean</a>和<a class="reference external" href="https://github.com/numpy/numpydoc">numpydoc</a>是允许Sphinx分析并好看地渲染遵守NumPy和Google的风格的docstring的Sphinx拓展。</p>
+<p><a class="reference external" href="https://github.com/meowklaski/custom_inherit">custom_inherit</a>是一个<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module4_OOP/Inheritance.html">继承</a>和合并docstring的轻量工具。它提供了合并docstring不同部分的强大功能并原生支持NumPy和Google风格的docstring。它也支持自定义的说明文档风格。</p>
 </div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://www.python.org/dev/peps/">PEP 0: Index of Python Enhancement Proposals</a></li>
-<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0001/">PEP 1: Purpose and Guidelines</a></li>
-<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP 8: Style Guide for Python Code</a></li>
-<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0483/">PEP 483: The Theory of Type Hints</a></li>
-<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484: Type-Hinting</a></li>
-<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0526/">PEP 526: Syntax for Variable Annotations</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/typing.html">The standard library’s typing module</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/glossary.html#term-abstract-base-class">Definition: abstract base class</a></li>
-<li><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">NumPy Documentation Specification</a></li>
-<li><a class="reference external" href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args">Google Documentation Specification</a></li>
-<li><a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#">Napolean: Marching Towards Legible Docstrings</a></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/">PEP 0：所有Python增强协议的索引</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0001/">PEP 1：宗旨和准则</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP 8：Python代码的风格指南</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0483/">PEP 483：类型暗示的理论</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484：类型暗示</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0526/">PEP 526：变量注释的语法</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/typing.html">标准库的typing模组</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/glossary.html#term-abstract-base-class">定义：抽象基类</a></p></li>
+<li><p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">NumPy说明文档风格</a></p></li>
+<li><p><a class="reference external" href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#doc-function-args">Google说明文档风格</a></p></li>
+<li><p><a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#">Napolean：向更可读的docstring进军</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Type Hinting: Solutions</strong></p>
-<p>The following is a well-annotated version of <code class="docutils literal notranslate"><span class="pre">get_first_and_last</span></code>:</p>
+<div class="section" id="阅读理解答案：">
+<h2>阅读理解答案：<a class="headerlink" href="#阅读理解答案：" title="永久链接至标题">¶</a></h2>
+<p><strong>类型暗示：解</strong></p>
+<p>以下是一个注释过的 <code class="docutils literal notranslate"><span class="pre">get_first_and_last</span></code> 版本：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Any</span>
 
 <span class="k">def</span> <span class="nf">get_first_and_last</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Returns the first and last elements of `x`. `x` is</span>
-<span class="sd">    assumed to be non-empty</span>
+    <span class="sd">&quot;&quot;&quot;返回 `x` 的第一和最后一个成员。函数将假设 `x` 非空。</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>This function only requires that <code class="docutils literal notranslate"><span class="pre">x</span></code> can be indexed into. Referring to the <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes">abc’s for Python’s collections</a>, <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> is the simplest abstract base class that supports the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> syntax. Indeed, this was a trait characteristic that we saw for all of <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html">Python’s sequence types</a>. Lastly, note that we make no
-assumptions about the contents of <code class="docutils literal notranslate"><span class="pre">x</span></code>, thus we use the generic <code class="docutils literal notranslate"><span class="pre">Any</span></code> type.</p>
+<p>这个函数仅仅要求 <code class="docutils literal notranslate"><span class="pre">x</span></code> 可以被索引。参考<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes">Python集合的抽象基类</a>列表，<code class="docutils literal notranslate"><span class="pre">Sequence</span></code> 是最简单的支持 <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> 语法的抽象基类。确实，如我们所见，这是一个通用于所有<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html">Python序列类型</a>的属性。最后，请注意，我们对 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的成员不进行任何假设，所以我们使用了通用的 <code class="docutils literal notranslate"><span class="pre">Any</span></code> 类型。</p>
 </div>
 </div>
 
@@ -1051,7 +1038,7 @@ assumptions about the contents of <code class="docutils literal notranslate"><sp
         <a href="Matplotlib.html" class="btn btn-neutral float-right" title="Matplotlib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../module_5.html" class="btn btn-neutral float-left" title="Module 5: Odds and Ends" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../module_5.html" class="btn btn-neutral float-left" title="模组5：琐碎话题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

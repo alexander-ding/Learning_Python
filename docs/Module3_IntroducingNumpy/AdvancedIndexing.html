@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Advanced indexing with numpy arrays, Difficulty: Hard, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Advanced Indexing &mdash; Python Like You Mean It</title>
+  <title>进阶索引 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Module 3: Problems" href="../module_3_problems.html" />
-    <link rel="prev" title="Introducing Basic and Advanced Indexing" href="BasicIndexing.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="模组3：题目" href="../module_3_problems.html" />
+    <link rel="prev" title="基础和进阶索引简介" href="BasicIndexing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,36 +95,39 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">Basic Array Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced Indexing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Integer-Array-Indexing">Integer Array Indexing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Indexing-into-1-Dimensional-Arrays">Indexing into 1-Dimensional Arrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Indexing-into-N-Dimensional-Arrays">Indexing into N-Dimensional Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">基本的数组属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">迭代数组和数组遍历顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">数组广播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">进阶索引</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#整数数组索引">整数数组索引</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#索引一维数组">索引一维数组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#索引N维数组">索引N维数组</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Boolean-Array-Indexing">Boolean-Array Indexing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#In-Place-&amp;-Augmented-Assignments-via-Advanced-Indexing">In-Place &amp; Augmented Assignments via Advanced Indexing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Combining-Basic-and-Advanced-Indexing-Schemes">Combining Basic and Advanced Indexing Schemes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#布尔数组索引">布尔数组索引</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#将布尔索引数组转化为整数索引数组：numpy.where">将布尔索引数组转化为整数索引数组：numpy.where</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#通过进阶索引进行原地和增强赋值">通过进阶索引进行原地和增强赋值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#混合使用基础和进阶索引">混合使用基础和进阶索引</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -169,9 +173,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_3.html">Module 3: The Essentials of NumPy</a> &raquo;</li>
+          <li><a href="../module_3.html">模组3：NumPy基础</a> &raquo;</li>
         
-      <li>Advanced Indexing</li>
+      <li>进阶索引</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -214,17 +218,16 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Advanced-Indexing">
-<h1>Advanced Indexing<a class="headerlink" href="#Advanced-Indexing" title="Permalink to this headline">¶</a></h1>
-<p>We conclude our discussion of indexing into N-dimensional NumPy arrays by understanding advanced indexing. Unlike basic indexing, which allows us to access distinct elements and regular slices of an array, advanced indexing is significantly more flexible. For example, arrays of integers can be used to access arbitrary and even repeated entries from an array,</p>
+<div class="section" id="进阶索引">
+<h1>进阶索引<a class="headerlink" href="#进阶索引" title="永久链接至标题">¶</a></h1>
+<p>我们将通过理解进阶索引来为我们对索引N维NumPy数组的讨论收尾。和允许我们访问数组单个成员和规则切片的基础索引不同，进阶索引相比灵活很多。比如说，我们可以使用整数数组来作为索引访问数组任意多甚至重复的成员：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
 
-<span class="go"># Construct the following 2D array</span>
-<span class="go"># from the contents of `x`:</span>
+<span class="go"># 利用 `x` 的成员来创建以下2维数组：</span>
 <span class="go">#</span>
 <span class="go">#     [[x[0, 0], x[0, 1]],</span>
 <span class="go">#      [x[2, 2], x[2, 2]]]</span>
@@ -239,12 +242,10 @@
 <span class="go">       [8, 8]])</span>
 </pre></div>
 </div>
-<p>Additionally, it permits the use of <em>boolean-valued</em> arrays as indices,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use a boolean-valued array to access</span>
-<span class="c1"># the diagonal values of an array</span>
+<p>同时，它允许我们使用<em>布尔值</em>数组来作为索引：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用布尔值数组来访问数组对角线的值</span>
 
-<span class="c1"># Specify `True` wherever we want to access</span>
-<span class="c1"># the entry of `x`</span>
+<span class="c1"># 在我们想要访问的 `x` 的成员的位置提供 `True`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bool_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
 <span class="o">...</span>                        <span class="p">[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
 <span class="o">...</span>                        <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">]])</span>
@@ -253,7 +254,7 @@
 <span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Unlike basic indexing, advanced indexing always produces a copy of the underlying data.</p>
+<p>和基础索引不同，进阶索引永远都会返回内置数据的复制品。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">])</span>
 <span class="go">False</span>
 
@@ -261,32 +262,32 @@
 <span class="go">False</span>
 </pre></div>
 </div>
-<p>The flexibility permitted by advanced indexing makes it a difficult topic to treat exhaustively without delving into somewhat terse and abstract notation. It is best to refer to <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing">the official documentation</a> for such a treatment of the topic. Here, we will discuss the essential aspects of advanced indexing, with the aim of the discussion being both thorough and accessible.</p>
+<p>进阶索引提供的灵活性使得它很难在不深入理解一些抽象极短的符号的情况下完整地讨论。如果读者想要一个追求完整性的讨论，请参阅<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing">官方说明文档</a>。在这里，我们将会尽可能平衡深入性和易读性地讨论进阶索引的核心功能。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Advanced Indexing</strong>:</p>
-<p>Given an <span class="math notranslate nohighlight">\(N\)</span>-dimensional array, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">x[index]</span></code> invokes <strong>advanced indexing</strong> whenever <code class="docutils literal notranslate"><span class="pre">index</span></code> is:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>进阶索引</strong>：</p>
+<p>设 <span class="math notranslate nohighlight">\(N\)</span> 维数组 <code class="docutils literal notranslate"><span class="pre">x</span></code>，当 <code class="docutils literal notranslate"><span class="pre">index</span></code> 为以下之一时，<code class="docutils literal notranslate"><span class="pre">x[index]</span></code> 使用<strong>进阶索引</strong>（advanced indexing）：</p>
 <ul class="simple">
-<li>an integer-type or boolean-type <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></li>
-<li>a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> with at least one <em>sequence</em>-type object as an element (e.g.&nbsp;a list, tuple, or ndarray)</li>
+<li><p>整数或布尔类的 <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p></li>
+<li><p>一个至少有着一个<em>序列</em>类型对象（比如说列表，元组，或ndarray）成员的 <code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></li>
 </ul>
-<p>Accessing the contents of an array via advanced indexing <em>always returns a copy of those contents</em>, whereas basic indexing returns a view.</p>
+<p>通过进阶索引访问这些成员**永远都会返回数据的复制品*，而基础索引返回一个视阈。</p>
 </div>
-<div class="section" id="Integer-Array-Indexing">
-<h2>Integer Array Indexing<a class="headerlink" href="#Integer-Array-Indexing" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Indexing-into-1-Dimensional-Arrays">
-<h3>Indexing into 1-Dimensional Arrays<a class="headerlink" href="#Indexing-into-1-Dimensional-Arrays" title="Permalink to this headline">¶</a></h3>
-<p>Using an integer-type array as an index allows us to access the contents of an array arbitrarily, permitting items to be accessed out of order, and even repeatedly. Consider the following 1-dimensional array.</p>
+<div class="section" id="整数数组索引">
+<h2>整数数组索引<a class="headerlink" href="#整数数组索引" title="永久链接至标题">¶</a></h2>
+<div class="section" id="索引一维数组">
+<h3>索引一维数组<a class="headerlink" href="#索引一维数组" title="永久链接至标题">¶</a></h3>
+<p>使用整数数组作为索引允许我们任意——无序甚至重复地——访问数组成员。设以下1维数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>See that we can access an arbitrary number of the array’s contents in an unpatterned way, which is not permissible via basic index:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># advanced indexing with an integer-array</span>
+<p>我们可以无规律地访问任意多的数组成员；这在使用基础索引时是不允许的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用整数数组进行进阶索引</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>The instruction for accessing the contents of <code class="docutils literal notranslate"><span class="pre">y</span></code> in this way is straight-forward to interpret. Each entry of the index-array is used to access an element from <code class="docutils literal notranslate"><span class="pre">y</span></code>, as illustrated here:</p>
+<p>使用这种方法访问 <code class="docutils literal notranslate"><span class="pre">y</span></code> 成员的规则很容易理解。整数数组的每一个成员都被用来访问 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的一个成员，如下：</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
 \left(
@@ -301,19 +302,19 @@
   -2 &amp; -4 &amp; 0 &amp; -4 &amp; -4 &amp; -4
 \end{array}
 \right)
-\end{equation}</div><p>This returns a <em>copy</em> of the data, as do all occurrences of advanced indexing.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># advanced indexing returns a copy</span>
+\end{equation}</div><p>和所有进阶索引的结果一样，这将返回数据的<em>复制品</em>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 进阶索引返回复制品</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>The indexing array can have an arbitrary shape; <em>the resulting array will match that shape</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># utilizing a 2D-array as an index</span>
+<p>索引数组可以有着任意的形状；<em>返回的数组会有着相同的形状</em>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用2维数组作为索引</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">index_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">0</span><span class="p">],</span>
 <span class="o">...</span>                      <span class="p">[</span> <span class="mi">5</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
 <span class="o">...</span>                      <span class="p">[</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]])</span>
 
-<span class="c1"># the resulting shape matches the shape of the indexing array</span>
+<span class="c1"># 返回的数组形状于索引数组一样</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">[</span><span class="n">index_2d</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">0</span><span class="p">],</span>
        <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">],</span>
@@ -339,12 +340,12 @@
 \end{array}
 \right)
 \end{equation}</div><div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Integer Array Indexing (1-D)</strong></p>
-<p>Given the following array:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：整数数组索引（1维）</strong></p>
+<p>设以下数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Use advanced indexing, using an integer-array, to produce the following arrays:</p>
+<p>通过进阶索引，使用一个整数数组索引来产生以下数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
 <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
@@ -363,11 +364,11 @@
 </div>
 </div>
 </div>
-<div class="section" id="Indexing-into-N-Dimensional-Arrays">
-<h3>Indexing into N-Dimensional Arrays<a class="headerlink" href="#Indexing-into-N-Dimensional-Arrays" title="Permalink to this headline">¶</a></h3>
-<p>In the preceding examples, working with a 1-dimensional array, we specified a single index-array to access the contents along the only dimension of that array. As you may guess, in order to perform this variety of indexing on an <span class="math notranslate nohighlight">\(N\)</span>-dimensional array, we must specify <span class="math notranslate nohighlight">\(N\)</span> index-arrays; one for each dimension.</p>
-<p>Each of the <span class="math notranslate nohighlight">\(N\)</span> index-arrays must have the same shape, and their common shape determines the shape of the resulting array. The corresponding entries of each of the <span class="math notranslate nohighlight">\(N\)</span> index-arrays are used to specify a specific array element to be accessed. For example, consider the following 3-dimensional array whose elements we will be accessing:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Indexing a 3D array using integer index-arrays</span>
+<div class="section" id="索引N维数组">
+<h3>索引N维数组<a class="headerlink" href="#索引N维数组" title="永久链接至标题">¶</a></h3>
+<p>在之前处理1维数组的例子中，我们提供了一个索引数组来通过数组唯一的维度访问其成员。你可能也猜到了，为了用相似的方法访问 <span class="math notranslate nohighlight">\(N\)</span> 维数组，我们必须提供 <span class="math notranslate nohighlight">\(N\)</span> 个索引数组；每个对应一个维度。</p>
+<p>所有 <span class="math notranslate nohighlight">\(N\)</span> 个索引数组必须有着一样的形状，而且它们共享的形状决定了返回数组的形状。所有 <span class="math notranslate nohighlight">\(N\)</span> 个索引数组的对应成员将用来作为索引来访问数组的一个具体的成员。比如说，设以下3维数组：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用整数索引数组索引一个3维数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]],</span>
@@ -377,27 +378,27 @@
 <span class="o">...</span>                <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>We specify three index-arrays; the indices to be accessed along axis-0, axis-1, and axis-2, respectively. Suppose we want to produce the array: <code class="docutils literal notranslate"><span class="pre">array([</span> <span class="pre">3,</span> <span class="pre">23,</span>&#160; <span class="pre">4])</span></code>. The layout of these elements is as follows:</p>
+<p>我们输入三个索引数组，分别对应着在轴0，轴1，和轴2的该访问的索引。如果我们项返回数组：<code class="docutils literal notranslate"><span class="pre">array([</span> <span class="pre">3,</span> <span class="pre">23,</span>&#160; <span class="pre">4])</span></code>，这些成员的位置如下：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">3</span></code>: sheet-0, row-0, column-3</li>
-<li><code class="docutils literal notranslate"><span class="pre">23</span></code>: sheet-1, row-2, column-3</li>
-<li><code class="docutils literal notranslate"><span class="pre">4</span></code>: sheet-0, row-1, column-0</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code>：页0，行0，列3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">23</span></code>：页1，行2，列3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code>：页0，行1，列0</p></li>
 </ul>
-<p>Each index-array must have a shape (3,) in order to produce the result of the appropriate shape. The index-array supplied for axis-0 must be <code class="docutils literal notranslate"><span class="pre">np.array([0,</span> <span class="pre">1,</span> <span class="pre">0])</span></code> in order to select sheet-0 for <code class="docutils literal notranslate"><span class="pre">3</span></code>, sheet-1 for <code class="docutils literal notranslate"><span class="pre">23</span></code>, and then sheet-0 for <code class="docutils literal notranslate"><span class="pre">4</span></code>. The other index-arrays are formed similarly.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># specifies subsequent sheets to access</span>
+<p>每个索引数组必须有着形状 (3,) 来返回正确形状的数组。为轴0输入的数组必须是 <code class="docutils literal notranslate"><span class="pre">np.array([0,</span> <span class="pre">1,</span> <span class="pre">0])</span></code> 来为 <code class="docutils literal notranslate"><span class="pre">3</span></code> 选择页0，为 <code class="docutils literal notranslate"><span class="pre">23</span></code> 选择页1，和为 <code class="docutils literal notranslate"><span class="pre">4</span></code> 选择页0。另外两个索引数组也是相似的。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 描述每个成员的页</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
-<span class="c1"># specifies subsequent rows to access</span>
+<span class="c1"># 描述每个成员的行</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 
-<span class="c1"># specifies subsequent columns to access</span>
+<span class="c1"># 描述每个成员的列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">z</span><span class="p">[</span><span class="n">ind0</span><span class="p">,</span> <span class="n">ind1</span><span class="p">,</span> <span class="n">ind2</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Formally, the index-arrays are traversed simultaneously using <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">row-major ordering</a>, and each combination of integer-indices is used to index into <code class="docutils literal notranslate"><span class="pre">z</span></code> and populate the corresponding element in the resulting array.</p>
+<p>正式来讲，索引数组将通过<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">行优先顺序</a>被遍历，而每一个整数索引的组合将被用来索引 <code class="docutils literal notranslate"><span class="pre">z</span></code> 并填入返回数组的对应位置。</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
    z\big[ind_0[0], ind_1[0], ind_2[0]\big]
@@ -426,7 +427,7 @@ out[2] \\
   3 &amp; 23 &amp; 4
 \end{array}
 \right)
-\end{equation}</div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using integer index-arrays to produce a shape(2, 2) result</span>
+\end{equation}</div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用整数索引数组来返回一个形状为 (2, 2) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -452,8 +453,8 @@ out[2] \\
 \end{array}
 \right)
 \end{equation}</div><div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Integer Array Indexing (N-D)</strong></p>
-<p>Given the following array:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：整数数组索引（N维）</strong></p>
+<p>设以下数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]],</span>
@@ -463,7 +464,7 @@ out[2] \\
 <span class="gp">... </span>               <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>Use advanced indexing, using integer-arrays, to produce the following arrays:</p>
+<p>通过进阶索引，使用整数数组索引来返回以下数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
        <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">]])</span>
@@ -475,22 +476,22 @@ out[2] \\
 </div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway:</strong></p>
-<p>An <span class="math notranslate nohighlight">\(N\)</span>-dimensional array’s contents can be accessed by supplying <span class="math notranslate nohighlight">\(N\)</span> index-arrays of integers; one for each axis of data. The index-arrays must have the same shape as one another, and this common shape determines the shape of the resulting array. This is a form of advanced indexing, and thus a copy of the parent array’s data is created.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p><span class="math notranslate nohighlight">\(N\)</span> 维数组的成员可以通过输入 <span class="math notranslate nohighlight">\(N\)</span> 个整数的索引数组来访问，每个索引对应着数据的一个轴。索引数组之间形状必须相同，而它们共享的形状决定了返回数组的形状。这是进阶索引的一种，因此这将创建一份父数组的复制品。</p>
 </div>
 </div>
 </div>
-<div class="section" id="Boolean-Array-Indexing">
-<h2>Boolean-Array Indexing<a class="headerlink" href="#Boolean-Array-Indexing" title="Permalink to this headline">¶</a></h2>
-<p>NumPy also permits the use of a boolean-valued array as an index, to perform advanced indexing on an array. In its simplest form, this is an extremely intuitive and elegant method for selecting contents from an array based on logical conditions.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># advanced indexing using a boolean-array</span>
+<div class="section" id="布尔数组索引">
+<h2>布尔数组索引<a class="headerlink" href="#布尔数组索引" title="永久链接至标题">¶</a></h2>
+<p>NumPy也支持使用布尔值数组来作为索引的进阶索引数组的方法。在最简单的情况下，这是一个非常易懂优雅的根据逻辑条件选中数组成员的方法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用布尔数组进行进阶索引</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="o">-</span><span class="mf">0.26</span><span class="p">,</span>  <span class="mf">0.49</span><span class="p">,</span>  <span class="mf">0.18</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mf">0.43</span><span class="p">,</span>  <span class="mf">0.3</span> <span class="p">,</span>  <span class="mf">0.29</span><span class="p">]],</span>
 <span class="o">...</span>
 <span class="o">...</span>               <span class="p">[[</span><span class="o">-</span><span class="mf">0.44</span><span class="p">,</span>  <span class="mf">0.3</span> <span class="p">,</span>  <span class="mf">0.28</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mf">0.27</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.13</span><span class="p">]]])</span>
 
-<span class="c1"># `True` wherever `x` is positive</span>
+<span class="c1"># 当 `x` 为正数时是 `True`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bool_ind</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bool_ind</span>
 <span class="n">array</span><span class="p">([[[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
@@ -506,26 +507,26 @@ out[2] \\
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>In its simplest form, boolean indexing behaves as follows: Suppose <code class="docutils literal notranslate"><span class="pre">x</span></code> is an <span class="math notranslate nohighlight">\(N\)</span>-dimensional array, and <code class="docutils literal notranslate"><span class="pre">ind</span></code> is a boolean-value array <em>of the same shape as</em> <code class="docutils literal notranslate"><span class="pre">x</span></code>. Then <code class="docutils literal notranslate"><span class="pre">x[ind]</span></code> returns a 1-dimensional array, which is formed by traversing <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">ind</span></code> using <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">row-major ordering</a>. Wherever an element of <code class="docutils literal notranslate"><span class="pre">ind</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the corresponding entry of <code class="docutils literal notranslate"><span class="pre">x</span></code> is added to the end of the resulting
-array. Refer to the preceding example and convince yourself that this is the behavior that is exhibited.</p>
+<p>在最简单的情况下，布尔索引的行为如下：设 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为 <span class="math notranslate nohighlight">\(N\)</span> 维数组，<code class="docutils literal notranslate"><span class="pre">ind</span></code> 为一个和 <code class="docutils literal notranslate"><span class="pre">x</span></code> <em>一样形状</em>的布尔数组。那么 <code class="docutils literal notranslate"><span class="pre">x[ind]</span></code> 将返回一个1维数组，根据使用<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">行优先顺序</a>遍历 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ind</span></code> 产生。每当 <code class="docutils literal notranslate"><span class="pre">ind</span></code> 的一个成员为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 时，就往返回数组添加 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的对应成员。请检查以上范例来确认这个行为是否如这里所描述一样。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Boolean Indexing</strong></p>
-<p>Given the following array:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：布尔索引</strong></p>
+<p>设以下数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.01</span><span class="p">,</span>  <span class="mf">0.03</span><span class="p">,</span>  <span class="mf">0.1</span> <span class="p">,</span>  <span class="mf">0.25</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.38</span><span class="p">,</span>  <span class="mf">0.22</span><span class="p">,</span>  <span class="mf">0.15</span><span class="p">,</span>  <span class="mf">0.34</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="o">-</span><span class="mf">0.29</span><span class="p">,</span>  <span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26</span><span class="p">,</span>  <span class="mf">0.33</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Use boolean array-indexing and NumPy’s <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">logical functions</a> to select the contents of <code class="docutils literal notranslate"><span class="pre">h</span></code> that satisfy the following conditions. Because you are dealing with floating-point numbers, <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision">you should not require that two values are exactly equal</a>; rather, make use of the function
-<a class="reference external" href="https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html">numpy.isclose</a>.</p>
+<p>使用布尔数组索引和NumPy的<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">逻辑函数</a>来选中 <code class="docutils literal notranslate"><span class="pre">h</span></code> 满足一下条件的成员。因为你在处理浮点数，<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision">你不应该检查两值完全相等</a>；反而，使用函数<a class="reference external" href="https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html">numpy.isclose</a>。</p>
 <ol class="arabic simple">
-<li>All negative entries in <code class="docutils literal notranslate"><span class="pre">h</span></code></li>
-<li>All entries in <code class="docutils literal notranslate"><span class="pre">h</span></code> “equal” to <code class="docutils literal notranslate"><span class="pre">0.01</span></code> or <code class="docutils literal notranslate"><span class="pre">0.33</span></code></li>
-<li>All entries of <code class="docutils literal notranslate"><span class="pre">h</span></code> that fall within the domain `(0.1, 0.3)</li>
+<li><p>所有 <code class="docutils literal notranslate"><span class="pre">h</span></code> 的负成员</p></li>
+<li><p>所有 <code class="docutils literal notranslate"><span class="pre">h</span></code> “等于” <code class="docutils literal notranslate"><span class="pre">0.01</span></code> 或 <code class="docutils literal notranslate"><span class="pre">0.33</span></code> 的成员</p></li>
+<li><p>所有 <code class="docutils literal notranslate"><span class="pre">h</span></code> 在域 <code class="docutils literal notranslate"><span class="pre">(0.1,</span> <span class="pre">0.3)</span></code> 之间的成员。</p></li>
 </ol>
 </div>
-<p>The function <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html">numpy.where</a> can be used to take a boolean-valued array, and produce the <em>tuple</em> of index-arrays that access the <code class="docutils literal notranslate"><span class="pre">True</span></code> entries of that array, via integer array indexing (discussed at the beginning of this section).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating `np.where`</span>
+<div class="section" id="将布尔索引数组转化为整数索引数组：numpy.where">
+<h3>将布尔索引数组转化为整数索引数组：numpy.where<a class="headerlink" href="#将布尔索引数组转化为整数索引数组：numpy.where" title="永久链接至标题">¶</a></h3>
+<p>函数<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html">numpy.where</a>可以用来接受一个布尔值数组并返回一<em>元组</em>的通过整数数组索引（在本节开头讨论过）访问数组中为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 的成员的索引数组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `np.where`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bool_ind</span>
 <span class="n">array</span><span class="p">([[[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
         <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">]],</span>
@@ -539,52 +540,50 @@ array. Refer to the preceding example and convince yourself that this is the beh
  <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">int64</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>In this example, a tuple of three integer-valued index-arrays are returned, one for each dimension of <code class="docutils literal notranslate"><span class="pre">bool_ind</span></code>. See that index-arrays indicate the <code class="docutils literal notranslate"><span class="pre">True</span></code> entries of <code class="docutils literal notranslate"><span class="pre">bool_ind</span></code>. Furthermore, recall that <code class="docutils literal notranslate"><span class="pre">bool_ind</span></code> was created to access the positive entries of <code class="docutils literal notranslate"><span class="pre">x</span></code>; the tuple of index-arrays can thus be used to the exact same end.</p>
+<p>本例返回了三个整数索引数组的元组，每个数组对应 <code class="docutils literal notranslate"><span class="pre">bool_ind</span></code> 的一个维度。这些索引数组描述了 <code class="docutils literal notranslate"><span class="pre">bool_ind</span></code> 中为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 的位置。同时，请回忆，<code class="docutils literal notranslate"><span class="pre">bool_ind</span></code> 是为了访问 <code class="docutils literal notranslate"><span class="pre">x</span></code> 中正数而创建的数组；这个函数返回的索引数组元组也可以用来达成相同的目的。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ind0</span><span class="p">,</span> <span class="n">ind1</span><span class="p">,</span> <span class="n">ind2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">bool_ind</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="n">ind0</span><span class="p">,</span> <span class="n">ind1</span><span class="p">,</span> <span class="n">ind2</span><span class="p">]</span>
 <span class="go">array([ 0.49,  0.18,  0.43,  0.3 ,  0.29,  0.3 ,  0.28,  0.27])</span>
 
-<span class="go"># unpacking the arrays is not necessary, you can</span>
-<span class="go"># use the tuple as an index</span>
+<span class="go"># 没有必要解包这些数组。你可以之间将元组作为索引使用</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">bool_ind</span><span class="p">)]</span>
 <span class="go">array([ 0.49,  0.18,  0.43,  0.3 ,  0.29,  0.3 ,  0.28,  0.27])</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">np.where</span></code> is particularly useful when we want insight into <em>where</em> specific conditions are met within an array. Suppose, for instance, we want to know which sheets in <code class="docutils literal notranslate"><span class="pre">x</span></code> contain values greater than 0.4:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># which sheets in `x` contain a value</span>
-<span class="c1"># greater than 0.4?</span>
+<p><code class="docutils literal notranslate"><span class="pre">np.where</span></code> 在我们想要了解数组的<em>哪里</em>（where）满足了某个特殊条件时很有用。比如说，假设我们想要知道 <code class="docutils literal notranslate"><span class="pre">x</span></code> 中的哪些页包含了大于0.4的值：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `x` 的哪些页包含大于0.4的值？</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind0</span><span class="p">,</span> <span class="n">ind1</span><span class="p">,</span> <span class="n">ind2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mf">0.4</span><span class="p">)</span>
 
-<span class="c1"># get rid of redundant answers</span>
+<span class="c1"># 删除重复的答案</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">ind0</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">int64</span><span class="p">)</span>
 
-<span class="c1"># only sheet-0 contains such values</span>
+<span class="c1"># 只有页0有这样的值</span>
 </pre></div>
 </div>
-<p>Armed with NumPy’s suite of <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">logical functions</a>, boolean-array indexing provides a sleek interface for accessing the particular contents of an array, irrespective of the array’s shape and the layout of its contents. This method of indexing is especially powerful in the context of performing augmented updates to an array, which is the subject of the following subsection.</p>
+<p>有着对NumPy<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">逻辑函数</a>的理解，布尔数组索引为访问数组成员提供了一个方便，不在乎数组形状和内容格式的操作界面。这种索引方法在对数组进行进行增强更新时极其有用。我们将在下一小节讨论它。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: numpy.where</strong></p>
-<p>Given the array</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：numpy.where</strong></p>
+<p>设数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><em>Predict</em> what the output of <code class="docutils literal notranslate"><span class="pre">np.where(b)</span></code> is.</p>
+<p><em>预测</em> <code class="docutils literal notranslate"><span class="pre">np.where(b)</span></code> 的输出是什么。</p>
 </div>
 </div>
-<div class="section" id="In-Place-&amp;-Augmented-Assignments-via-Advanced-Indexing">
-<h2>In-Place &amp; Augmented Assignments via Advanced Indexing<a class="headerlink" href="#In-Place-&-Augmented-Assignments-via-Advanced-Indexing" title="Permalink to this headline">¶</a></h2>
-<p>Although advanced indexing does not produce a <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array">*view* of the underlying data</a>, it can still be used to facilitate in-place and augmented assignments to regions of an array. Suppose, for instance, that you want to threshold the contents of an array such that all of its negative-valued entries are replaced with 0. Boolean indexing makes this task trivial to perform via in-place
-assignment:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># assignment via advanced indexing</span>
+</div>
+<div class="section" id="通过进阶索引进行原地和增强赋值">
+<h2>通过进阶索引进行原地和增强赋值<a class="headerlink" href="#通过进阶索引进行原地和增强赋值" title="永久链接至标题">¶</a></h2>
+<p>虽然进阶索引不提供<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array">内置数据的*视阈*</a>，它依然可以用来帮助我们对数组其中的区域进行原地和增强赋值。比如说，假设你想要对数组进行阀值操作，使得其所有负成员都被0代替。通过原地复制，布尔索引将会使得这个工作极其轻松：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过进阶索引赋值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span>  <span class="mf">0.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.41</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span><span class="o">-</span><span class="mf">0.47</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.49</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">0.02</span><span class="p">,</span>  <span class="mf">0.4</span> <span class="p">,</span>  <span class="mf">0.33</span><span class="p">,</span>  <span class="mf">0.33</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.13</span><span class="p">]])</span>
 
-<span class="c1"># set all negative entries of `x` to 0 (broadcasting is used)</span>
+<span class="c1"># 将所有 `x` 的负成员设为0（这里自动使用了广播）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">0.38</span><span class="p">,</span>  <span class="mf">0.</span>  <span class="p">,</span>  <span class="mf">0.38</span><span class="p">,</span>  <span class="mf">0.</span>  <span class="p">,</span>  <span class="mf">0.</span>  <span class="p">],</span>
@@ -592,15 +591,15 @@ assignment:</p>
        <span class="p">[</span> <span class="mf">0.02</span><span class="p">,</span>  <span class="mf">0.4</span> <span class="p">,</span>  <span class="mf">0.33</span><span class="p">,</span>  <span class="mf">0.33</span><span class="p">,</span>  <span class="mf">0.</span>  <span class="p">]])</span>
 </pre></div>
 </div>
-<p>We also demonstrate the use of integer-valued index-arrays to perform an augmented assignment.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># augmented assignment via integer-arrays</span>
+<p>我们也将演示使用整数索引数组来进行增强赋值的方法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过整数数组进行增强赋值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="n">ind0</span><span class="p">,</span> <span class="n">ind1</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">])</span>
 
-<span class="c1"># equivalent: x[ 0, 0] *= 100</span>
-<span class="c1">#             x[-1, 1] *= 100</span>
+<span class="c1"># 等值于：x[ 0, 0] *= 100</span>
+<span class="c1">#        x[-1, 1] *= 100</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="n">ind0</span><span class="p">,</span> <span class="n">ind1</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">100</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
@@ -609,35 +608,35 @@ assignment:</p>
        <span class="p">[</span> <span class="mf">0.02</span><span class="p">,</span>  <span class="mf">40.</span> <span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span>  <span class="mf">0.33</span><span class="p">,</span>  <span class="mf">0.</span>  <span class="p">]])</span>
 </pre></div>
 </div>
-<p>Recall that redundant entries in an array can be specified via integer array indexing. An augmented assignment <em>will only be performed once on redundant entries</em>.</p>
+<p>请回忆，你可以通过整数数组索引来访问数组中重复的成员。增强赋值<em>只会为重复成员进行一次</em>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 
-<span class="go"># y[0] is accessed three times and y[2] one time</span>
+<span class="go"># y[0]被访问了三次，而y[2]被访问了一次</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])]</span>
 <span class="go">array([4, 4, 4, 8])</span>
 
-<span class="go"># the augmented update is only applied once to y[0]</span>
+<span class="go"># 增强更新仅仅对y[0]进行一次</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])]</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>
 <span class="go">array([5, 6, 9])</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Assignment via advanced indexing</strong></p>
-<p>Given the array</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：使用进阶索引赋值</strong></p>
+<p>设数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.58</span><span class="p">,</span>  <span class="mf">0.05</span><span class="p">,</span>  <span class="mf">0.84</span><span class="p">,</span>  <span class="mf">0.21</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.88</span><span class="p">,</span>  <span class="mf">0.98</span><span class="p">,</span>  <span class="mf">0.45</span><span class="p">,</span>  <span class="mf">0.13</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.1</span> <span class="p">,</span>  <span class="mf">0.52</span><span class="p">,</span>  <span class="mf">0.58</span><span class="p">,</span>  <span class="mf">0.38</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.84</span><span class="p">,</span>  <span class="mf">0.76</span><span class="p">,</span>  <span class="mf">0.25</span><span class="p">,</span>  <span class="mf">0.07</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Replace the diagonal elements of <code class="docutils literal notranslate"><span class="pre">x</span></code> with <code class="docutils literal notranslate"><span class="pre">(-1,</span> <span class="pre">-2,</span> <span class="pre">-3,</span> <span class="pre">-4)</span></code>, and add <code class="docutils literal notranslate"><span class="pre">1</span></code> to all values in <code class="docutils literal notranslate"><span class="pre">x</span></code> that are greater than <code class="docutils literal notranslate"><span class="pre">0.8</span></code>.</p>
+<p>将 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的对角线成员代替为 <code class="docutils literal notranslate"><span class="pre">(-1,</span> <span class="pre">-2,</span> <span class="pre">-3,</span> <span class="pre">-4)</span></code>，并对 <code class="docutils literal notranslate"><span class="pre">x</span></code> 中所有大于 <code class="docutils literal notranslate"><span class="pre">0.8</span></code> 的成员加 <code class="docutils literal notranslate"><span class="pre">1</span></code>。</p>
 </div>
 </div>
-<div class="section" id="Combining-Basic-and-Advanced-Indexing-Schemes">
-<h2>Combining Basic and Advanced Indexing Schemes<a class="headerlink" href="#Combining-Basic-and-Advanced-Indexing-Schemes" title="Permalink to this headline">¶</a></h2>
-<p>Integer- and boolean-valued arrays can be used in conjunction with <code class="docutils literal notranslate"><span class="pre">slice</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy.newaxis</span></code>, and <code class="docutils literal notranslate"><span class="pre">int</span></code> objects to form indices that combine basic and advanced indexing schemes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># combining advanced and basic indexing techniques</span>
+<div class="section" id="混合使用基础和进阶索引">
+<h2>混合使用基础和进阶索引<a class="headerlink" href="#混合使用基础和进阶索引" title="永久链接至标题">¶</a></h2>
+<p>整数和布尔值数组可以和 <code class="docutils literal notranslate"><span class="pre">slice</span></code>，<code class="docutils literal notranslate"><span class="pre">numpy.newaxis</span></code>，以及 <code class="docutils literal notranslate"><span class="pre">int</span></code> 对象混合使用来创建同时使用基础和进阶索引模式的索引。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 混合使用进阶和基础索引技巧</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]],</span>
@@ -648,25 +647,25 @@ assignment:</p>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ind0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">])</span>
 
-<span class="c1"># select sheet-0, all rows, last column</span>
+<span class="c1"># 选中页0，所有行，和最后一列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">z</span><span class="p">[</span><span class="n">ind0</span><span class="p">,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>The rules for resolving the various possible combinations of basic and advanced indexing are nontrivial. Refer to the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing">official NumPy documentation</a> for a detailed description for these rules. In practice, basic and advanced indexing can typically be used independently from one another.</p>
+<p>处理混合基础和进阶索引的规则不能被简短地在此讨论。请查看<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing">官方NumPy说明文档</a>来仔细阅读这些规则。实际操作中，基础和进阶索引一般都会单独使用。</p>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing">Advanced Indexing</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">Logical Functions</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html">numpy.where</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing">Combining Basics and Advanced Indexing</a></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing">进阶索引</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">逻辑函数</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html">numpy.where</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing">混合基础和进阶索引</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Integer Array Indexing (1-D): Solution</strong></p>
+<div class="section" id="阅读理解答案：">
+<h2>阅读理解答案：<a class="headerlink" href="#阅读理解答案：" title="永久链接至标题">¶</a></h2>
+<p><strong>整数数组索引（1维）：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -697,7 +696,7 @@ assignment:</p>
        <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p><strong>Integer Array Indexing (N-D): Solution</strong></p>
+<p><strong>整数数组索引（N维）：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]],</span>
@@ -741,19 +740,19 @@ assignment:</p>
 <span class="go">array([ 0.25,  0.22,  0.15,  0.13])</span>
 </pre></div>
 </div>
-<p><strong>numpy.where: Solution</strong></p>
-<p>Given the array</p>
+<p><strong>numpy.where：解</strong></p>
+<p>设数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><em>Predict</em> what the output of <code class="docutils literal notranslate"><span class="pre">np.where(b)</span></code> is.</p>
-<p>This will return a tuple of two integer-valued index-arrays. These contain the indices, along axis-0 and axis-1 respectively, where <code class="docutils literal notranslate"><span class="pre">b</span></code> contains the value <code class="docutils literal notranslate"><span class="pre">True</span></code>. The indices are ordered by traversing <code class="docutils literal notranslate"><span class="pre">b</span></code> in row-major order. It returns:</p>
+<p><em>预测</em> <code class="docutils literal notranslate"><span class="pre">np.where(b)</span></code> 的输出是什么。</p>
+<p>这将会返回一个有着两个整数索引数组的元组。它们分别包含着 <code class="docutils literal notranslate"><span class="pre">b</span></code> 的成员值为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 的位置对应轴0和轴1的索引。这些索引的顺序是根据行优先顺序遍历 <code class="docutils literal notranslate"><span class="pre">b</span></code> 产生的。这将返回：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p><strong>Assignment via advanced indexing</strong></p>
+<p><strong>使用进阶索引赋值：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.58</span><span class="p">,</span>  <span class="mf">0.05</span><span class="p">,</span>  <span class="mf">0.84</span><span class="p">,</span>  <span class="mf">0.21</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.88</span><span class="p">,</span>  <span class="mf">0.98</span><span class="p">,</span>  <span class="mf">0.45</span><span class="p">,</span>  <span class="mf">0.13</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.1</span> <span class="p">,</span>  <span class="mf">0.52</span><span class="p">,</span>  <span class="mf">0.58</span><span class="p">,</span>  <span class="mf">0.38</span><span class="p">],</span>
@@ -779,10 +778,10 @@ assignment:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../module_3_problems.html" class="btn btn-neutral float-right" title="Module 3: Problems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../module_3_problems.html" class="btn btn-neutral float-right" title="模组3：题目" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="BasicIndexing.html" class="btn btn-neutral float-left" title="Introducing Basic and Advanced Indexing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="BasicIndexing.html" class="btn btn-neutral float-left" title="基础和进阶索引简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

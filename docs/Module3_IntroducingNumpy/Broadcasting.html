@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Numpy array broadcasting, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Array Broadcasting &mdash; Python Like You Mean It</title>
+  <title>数组广播 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introducing Basic and Advanced Indexing" href="BasicIndexing.html" />
-    <link rel="prev" title="“Vectorized” Operations: Optimized Computations on NumPy Arrays" href="VectorizedOperations.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="基础和进阶索引简介" href="BasicIndexing.html" />
+    <link rel="prev" title="“矢量化”操作：对NumPy数组进行优化过的计算" href="VectorizedOperations.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,41 +95,41 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">Basic Array Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Array Broadcasting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Rules-of-Broadcasting">Rules of Broadcasting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#A-Simple-Application-of-Array-Broadcasting">A Simple Application of Array Broadcasting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Size-1-Axes-&amp;-The-newaxis-Object">Size-1 Axes &amp; The <code class="docutils literal notranslate"><span class="pre">newaxis</span></code> Object</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Inserting-Size-1-Dimensions-into-An-Array">Inserting Size-1 Dimensions into An Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Utilizing-Size-1-Dimensions-for-Broadcasting">Utilizing Size-1 Dimensions for Broadcasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">基本的数组属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">迭代数组和数组遍历顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">数组广播</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#广播的规则">广播的规则</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#数组广播的简单应用">数组广播的简单应用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#大小为1的轴和-newaxis-对象">大小为1的轴和 <code class="docutils literal notranslate"><span class="pre">newaxis</span></code> 对象</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#向数组插入大小为1的维度">向数组插入大小为1的维度</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#使用大小为1的维度来进行广播">使用大小为1的维度来进行广播</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#An-Advanced-Application-of-Broadcasting:-Pairwise-Distances">An Advanced Application of Broadcasting: Pairwise Distances</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Pairwise-Distances-Using-For-Loops">Pairwise Distances Using For-Loops</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Pairwise-Distances-Using-Broadcasting-(Unoptimized)">Pairwise Distances Using Broadcasting (Unoptimized)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Optimized-Pairwise-Distances">Optimized Pairwise Distances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#广播的高级运用：距离对">广播的高级运用：距离对</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#使用for循环计算距离对">使用for循环计算距离对</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#使用广播计算距离对（未优化）">使用广播计算距离对（未优化）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#优化过的距离对">优化过的距离对</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">Advanced Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">进阶索引</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -174,9 +175,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_3.html">Module 3: The Essentials of NumPy</a> &raquo;</li>
+          <li><a href="../module_3.html">模组3：NumPy基础</a> &raquo;</li>
         
-      <li>Array Broadcasting</li>
+      <li>数组广播</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,28 +220,28 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Array-Broadcasting">
-<h1>Array Broadcasting<a class="headerlink" href="#Array-Broadcasting" title="Permalink to this headline">¶</a></h1>
-<p>NumPy provides a mechanism for performing mathematical operations on arrays of <em>unequal</em> shapes:</p>
+<div class="section" id="数组广播">
+<h1>数组广播<a class="headerlink" href="#数组广播" title="永久链接至标题">¶</a></h1>
+<p>NumPy提供了用来广播（broadcast）对<em>不同</em>形状的数组进行数学操作的功能：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="go"># a shape-(3, 4) array</span>
+<span class="go"># 形状为 (3, 4) 的数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">]])</span>
 
-<span class="go"># a shape-(4,) array</span>
+<span class="go"># 形状为 (4,) 的数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 
-<span class="go"># multiplying a shape-(4,) array with a shape-(3, 4) array</span>
-<span class="go"># `y` is multiplied by each row of `x`</span>
+<span class="go"># 使用形状为 (4,) 的数组乘到形状为 (3, 4) 的数组</span>
+<span class="go"># `y` 被 `x` 的每一行乘上</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 <span class="go">array([[-0. , -0.2, -0.6, -1.2],</span>
 <span class="go">       [-0.4, -1. , -1.8, -2.8],</span>
 <span class="go">       [-0.8, -1.8, -3. , -4.4]])</span>
 </pre></div>
 </div>
-<p>In effect, NumPy treated <code class="docutils literal notranslate"><span class="pre">y</span></code> as if its contents had been broadcasted along a new dimension, such that <code class="docutils literal notranslate"><span class="pre">y</span></code> was a shape-(3, 4) 2D array, which makes it compatible for multiplying with <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<p>从结果上讲，NumPy将 <code class="docutils literal notranslate"><span class="pre">y</span></code> 在一个新的维度广播，使其成为形状是 (3, 4) 的二维数组，这样它的形状就和 <code class="docutils literal notranslate"><span class="pre">x</span></code> 相对应，支持相乘了：</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
 \left( \begin{array}{*{3}{X}}
@@ -265,11 +266,10 @@
   1 &amp; 2 &amp; 3 &amp; 4
 \end{array}\right)
 \
-\end{equation}</div><p>It is important to note that NumPy doesn’t really create this broadcasted version of <code class="docutils literal notranslate"><span class="pre">y</span></code> behind the scenes; it is able to do the necessary computations without having to redundantly copy its contents into a shape-(3,4) array. Doing so would be a waste of memory and computation. That being said, this replication process conveys exactly the mathematics of broadcast operations between arrays; thus the preceding diagram reflects how you should always envision broadcasting.</p>
-<p>Broadcasting is not reserved for operations between 1-D and 2-D arrays, and furthermore both arrays in an operation may undergo broadcasting. That being said, not all pairs of arrays are broadcast-compatible.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Broadcast multiplications between a</span>
-<span class="c1"># shape-(3, 1, 2) array and a shape-(3, 1)</span>
-<span class="c1"># array.</span>
+\end{equation}</div><p>请注意，NumPy并不会真的在幕后创建这个广播过的 <code class="docutils literal notranslate"><span class="pre">y</span></code> 版本；NumPy能够在不浪费地将它的成员复制到形状为 (3,4) 的数组的情况下进行必须的运算。因为这么做会浪费内存和计算时间。虽然如此，这个不存在的复制过程能够表达数组之间的数学运算，所以之前的图表假装这个复制过程存在。你在也可以假装内容被复制了来方便理解广播的结果。</p>
+<p>广播不仅仅作用域在1维和2维数组之间的操作，因此有些时候操作中的两个数组都需要被广播。虽然如此，但是不是所有对的数组都可以通过广播来兼容的（叫做广播不兼容——broadcast-incompatible）。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 广播形状为 (3, 1, 2) 的数组和形状为 (3, 1)</span>
+<span class="c1"># 的数组的乘法。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span>
 <span class="o">...</span>
 <span class="o">...</span>               <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span>
@@ -280,8 +280,8 @@
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">1</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 
-<span class="c1"># shape-(3, 1, 2) broadcast-multiply with</span>
-<span class="c1"># shape-(3, 1) produces shape-(3, 3, 2)</span>
+<span class="c1"># 形状 (3, 1, 2) 广播相乘形状 (3, 1)</span>
+<span class="c1"># 返回形状 (3, 3, 2)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 <span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">],</span>
         <span class="p">[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span>
@@ -295,44 +295,44 @@
         <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
         <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]]])</span>
 
-<span class="c1"># an example of broadcast-incompatible arrays</span>
-<span class="c1"># a shape-(2,) array with a shape-(3,) array</span>
+<span class="c1"># 一个广播不兼容数组对的例子</span>
+<span class="c1"># 形状为 (2,) 的数组和形状为 (3,) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="ne">ValueError</span><span class="p">:</span> <span class="n">operands</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">broadcast</span> <span class="n">together</span> <span class="k">with</span> <span class="n">shapes</span> <span class="p">(</span><span class="mi">2</span><span class="p">,)</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Definition: Array Broadcasting</strong></p>
-<p>Array Broadcasting is a mechanism used by NumPy to permit vectorized mathematical operations between arrays of unequal, but compatible shapes. Specifically, an array will be treated as if its contents have been replicated along the appropriate dimensions, such that the shape of this new, higher-dimensional array suits the mathematical operation being performed.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>定义：数组广播</strong></p>
+<p>数组广播（array broadcasting）是NumPy用来支持形状不同但兼容的多个数组之间的矢量化数学操作的功能。具体来讲，NumPy会假装数组的内容在某个合适的维度被复制，使得这个复制出来，更高维度的数组能够完成这里的数学操作。</p>
 </div>
-<p>We will now summarize the rules that determine if two arrays are broadcast-compatible with one another, and what the shape of the resulting array will be after the mathematical operation between the two arrays is performed.</p>
-<div class="section" id="Rules-of-Broadcasting">
-<h2>Rules of Broadcasting<a class="headerlink" href="#Rules-of-Broadcasting" title="Permalink to this headline">¶</a></h2>
-<p>Array broadcasting cannot accommodate arbitrary combinations of array shapes. For example, a (7,5)-shape array is incompatible with a shape-(11,3) array. Trying to add two such arrays would produce a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>. The following rules determine if two arrays are broadcast-compatible:</p>
+<p>现在我们将总结检查两个数组是否广播兼容的规则，以及在进行数学操作后得到的数组的形状。</p>
+<div class="section" id="广播的规则">
+<h2>广播的规则<a class="headerlink" href="#广播的规则" title="永久链接至标题">¶</a></h2>
+<p>数组广播并不能支持任何组合的数组形状。比如说，一个形状为 (7,5) 的数组就不和形状为 (11,3) 的数组兼容。试图将这两个数组相加会导致一个 <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>。以下规则可以用来决定两个数组是否广播兼容：</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Definition: Rules of Broadcasting</strong>:</p>
-<p>To determine if two arrays are broadcast-compatible, align the entries of their shapes such that their trailing dimensions are aligned, and then check that each pair of aligned dimensions satisfy either of the following conditions:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>定义：广播的规则</strong>：</p>
+<p>为检测两个数组是否广播兼容，将两个数组的形状靠尾对应，然后检查每对对应的维度是否满足以下条件之一：</p>
 <ul class="simple">
-<li>the aligned dimensions have the same size</li>
-<li>one of the dimensions has a size of 1</li>
+<li><p>对应的维度大小一样</p></li>
+<li><p>其中一个维度的大小是1</p></li>
 </ul>
-<p>The two arrays are broadcast-compatible if either of these conditions are satisfied for each pair of aligned dimensions.</p>
+<p>如果每对对应的维度都满足以上之一，那么这两个数组广播兼容。</p>
 </div>
-<p>Note that it is okay to have one array with a higher-dimensionality and thus to have “dangling” leading dimensions. Any size-1 dimension or “missing” dimension will be filled-in by broadcasting the content of that array.</p>
-<p>Considering the example from the preceding subsection, let’s see that the shape-(4,3) and shape-(3,) arrays satisfy these rules for broadcast-compatibility:</p>
+<p>请注意，如果一个数组的维度更高并导致前面有些维度没有和另外一个数组对应，这是没有问题的。任何大小为1的维度或”缺失“的维度都会通过广播来填充。</p>
+<p>请考虑前一小节的范例。请根据以上规则思考为什么形状为 (4,3) 和形状为 (3,) 的数组满足广播兼容的规则：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">array</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="mi">4</span> <span class="n">x</span> <span class="mi">3</span>
      <span class="n">array</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>     <span class="mi">3</span>
 <span class="n">result</span><span class="o">-</span><span class="n">shape</span><span class="p">:</span> <span class="mi">4</span> <span class="n">x</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<p>Let’s look an assortment of pairs of array-shapes and see whether or not they are broadcast-compatible:</p>
+<p>让我们来考虑各种数组形状的对并理解它们为何广播（不）兼容：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">array</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>         <span class="mi">8</span>
      <span class="n">array</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span> <span class="mi">5</span> <span class="n">x</span> <span class="mi">2</span> <span class="n">x</span> <span class="mi">8</span>
 <span class="n">result</span><span class="o">-</span><span class="n">shape</span><span class="p">:</span> <span class="mi">5</span> <span class="n">x</span> <span class="mi">2</span> <span class="n">x</span> <span class="mi">8</span>
 
      <span class="n">array</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>     <span class="mi">5</span> <span class="n">x</span> <span class="mi">2</span>
      <span class="n">array</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span> <span class="mi">5</span> <span class="n">x</span> <span class="mi">4</span> <span class="n">x</span> <span class="mi">2</span>
-<span class="n">result</span><span class="o">-</span><span class="n">shape</span><span class="p">:</span> <span class="n">INCOMPATIBLE</span>
+<span class="n">result</span><span class="o">-</span><span class="n">shape</span><span class="p">:</span> <span class="n">不兼容</span>
 
      <span class="n">array</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>     <span class="mi">4</span> <span class="n">x</span> <span class="mi">2</span>
      <span class="n">array</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span> <span class="mi">5</span> <span class="n">x</span> <span class="mi">4</span> <span class="n">x</span> <span class="mi">2</span>
@@ -348,21 +348,21 @@
 
      <span class="n">array</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span> <span class="n">x</span> <span class="mi">3</span> <span class="n">x</span> <span class="mi">2</span>
      <span class="n">array</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>     <span class="mi">8</span> <span class="n">x</span> <span class="mi">2</span>
-<span class="n">result</span><span class="o">-</span><span class="n">shape</span><span class="p">:</span> <span class="n">INCOMPATIBLE</span>
+<span class="n">result</span><span class="o">-</span><span class="n">shape</span><span class="p">:</span> <span class="n">不兼容</span>
 
      <span class="n">array</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="mi">2</span> <span class="n">x</span> <span class="mi">1</span>
      <span class="n">array</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>     <span class="mi">1</span>
 <span class="n">result</span><span class="o">-</span><span class="n">shape</span><span class="p">:</span> <span class="mi">2</span> <span class="n">x</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>NumPy provides the function <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.broadcast_to.html#numpy.broadcast_to">broadcast_to</a>, which can be used to broadcast an array to a specified shape. This can help us build our intuition for broadcasting. Let’s broadcast a shape-(3,4) array to a shape-(2,3,4) array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstrating `np.broadcast_to`</span>
+<p>NumPy提供函数<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.broadcast_to.html#numpy.broadcast_to">broadcast_to</a>来将数组广播到某个用户提供的形状。这可以用来帮助我们发展对广播的直观理解。让我们将形状为 (3,4) 的数组广播成一个形状为 (2,3,4) 的数组：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `np.broadcast_to`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
 
-<span class="c1"># Explicitly broadcast a shape-(3,4) array</span>
-<span class="c1"># to a shape-(2,3,4) array.</span>
+<span class="c1"># 显式将形状为 (3,4) 的数组广播成</span>
+<span class="c1"># 形状为 (2,3,4) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
         <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
@@ -374,23 +374,23 @@
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Broadcast Compatibility</strong></p>
-<p>Given the following pairs of array-shapes, determine what the resulting broadcasted shapes will be. Indicate if a pair is broadcast-incompatible.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：广播兼容性</strong></p>
+<p>设以下数组形状对，判断广播后得到的形状是什么并标注形状广播不兼容的对。</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">x</span> <span class="pre">2</span></code> with <code class="docutils literal notranslate"><span class="pre">7</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">4</span></code> with <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">4</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">1</span></code> with <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">x</span> <span class="pre">1</span> <span class="pre">x</span> <span class="pre">1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">x</span> <span class="pre">2</span> <span class="pre">x</span> <span class="pre">5</span></code> with <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">x</span> <span class="pre">5</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">3</span></code> with <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">2</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">x</span> <span class="pre">2</span></code> 和 <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code> 和 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">x</span> <span class="pre">1</span> <span class="pre">x</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">x</span> <span class="pre">2</span> <span class="pre">x</span> <span class="pre">5</span></code> 和 <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">x</span> <span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code> 和 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">2</span></code></p></li>
 </ol>
 </div>
 </div>
-<div class="section" id="A-Simple-Application-of-Array-Broadcasting">
-<h2>A Simple Application of Array Broadcasting<a class="headerlink" href="#A-Simple-Application-of-Array-Broadcasting" title="Permalink to this headline">¶</a></h2>
-<p>Here we provide a simple real-world example where broadcasting is useful. Suppose you have a grade book for 6 students, each of whom have taken 3 exams; naturally, you store these scores in a shape-(6,3) array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># grades for 6 students who have taken 3 exams</span>
-<span class="c1"># axis-0 (rows):    student</span>
-<span class="c1"># axis-1 (columns): exams</span>
+<div class="section" id="数组广播的简单应用">
+<h2>数组广播的简单应用<a class="headerlink" href="#数组广播的简单应用" title="永久链接至标题">¶</a></h2>
+<p>我们在此提供一个简单的使用广播的现实世界范例。假设你有着6个学生的成绩簿，每个成绩簿有着3个考试的成绩，你将这些成绩储存在一个形状为 (6,3) 的数组中：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6个学生3次考试的成绩</span>
+<span class="c1"># 轴0（行）：学生</span>
+<span class="c1"># 轴1（列）：考试</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">grades</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.79</span><span class="p">,</span>  <span class="mf">0.84</span><span class="p">,</span>  <span class="mf">0.84</span><span class="p">],</span>
 <span class="o">...</span>                    <span class="p">[</span> <span class="mf">0.87</span><span class="p">,</span>  <span class="mf">0.93</span><span class="p">,</span>  <span class="mf">0.78</span><span class="p">],</span>
@@ -400,32 +400,29 @@
 <span class="o">...</span>                    <span class="p">[</span> <span class="mf">0.83</span><span class="p">,</span>  <span class="mf">0.71</span><span class="p">,</span>  <span class="mf">0.85</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>We might be interested to see how each of these scores compare to the mean score for that specific exam. Based on our discussion from the last section, we can easily compute the mean-score for each exam (rounded to 2 decimal places):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute the mean score for each exam (rounded to 2 decimal places)</span>
+<p>我们可能会想要知道每个成绩和该考试的平均成绩是如何对比的。根据上一节的讨论，我们可以轻松地计算每个考试的平均成绩（四舍五入到小数点后两位）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算每个考试的平均值（四舍五入到小数点后两位）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mean_exam_scores</span> <span class="o">=</span> <span class="n">grades</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mean_exam_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">mean_exam_scores</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mean_exam_scores</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">0.79</span><span class="p">,</span>  <span class="mf">0.85</span><span class="p">,</span>  <span class="mf">0.82</span><span class="p">])</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">grades</span></code> is a shape-(6,3) array and <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code> is a shape-(3,) array, and we want to compute the offset of each exam score from its respective mean. At first glance, it seems like we will have to loop over each row of our <code class="docutils literal notranslate"><span class="pre">grades</span></code> array and subtract from it the <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code>, to compute the offset of each exam score from the respective mean-score:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using a for-loop to compute score offsets.</span>
+<p><code class="docutils literal notranslate"><span class="pre">grades</span></code> 是一个形状为 (6,3) 的数组，而 <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code> 是一个形状为 (3,) 的数组，而我们想要计算每个考试成绩和对应平均值的差。我们的第一反应可能是迭代 <code class="docutils literal notranslate"><span class="pre">grades</span></code> 的每一行并减去对应的 <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code> 来计算差：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用for循环来计算成绩差。</span>
 
-<span class="c1"># Shape-(6,3) array that will store (score - mean) for each</span>
-<span class="c1"># exam score.</span>
+<span class="c1"># 形状 (6,3) 的数组，用来储存每个考试的（成绩-平均值）</span>
 <span class="n">score_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
 
-<span class="c1"># iterates over each row of `grades`</span>
+<span class="c1"># 迭代 `grades` 的每一行</span>
 <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">scores_per_student</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">grades</span><span class="p">):</span>
-    <span class="c1"># `scores_per_student` is a shape-(3,) array of exam scores</span>
-    <span class="c1"># for a given student. This matches the shape of</span>
-    <span class="c1"># `mean_exam_scores`, thus we can perform this subtraction</span>
+    <span class="c1"># `scores_per_student` 是一个形状为 (3,) 的单个学生的考试成绩数组</span>
+    <span class="c1"># 这和 `mean_exam_scores` 相同，所以我们可以进行减法</span>
     <span class="n">score_offset</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores_per_student</span> <span class="o">-</span> <span class="n">mean_exam_scores</span>
 </pre></div>
 </div>
-<p>Given our discussion of vectorized operations from the last section, you should recoil at the sight of a for-loop in code that is performing array-arithmetic. We might as well get out our abacuses and spreadsheets at this point. Fortunately, we can make use of broadcasting to compute these offsets in a concise, vectorized way:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using broadcasting to subtract a shape-(3,) array</span>
-<span class="c1"># from a shape-(6,3) array.</span>
+<p>根据我们上一节对矢量化操作的讨论，你应该立刻因为进行数组算数代码中的for循环而感到作呕。都这样了干嘛不把我们的算盘和表格纸页拿出来。幸运的事，我们可以使用广播来简单，矢量化地计算这些差：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用广播来计算形状为 (6,3) 的数组和形状为 (3,) 的数组的差。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">score_offset</span> <span class="o">=</span> <span class="n">grades</span> <span class="o">-</span> <span class="n">mean_exam_scores</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">score_offset</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span>  <span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span>  <span class="mf">0.02</span><span class="p">],</span>
@@ -436,25 +433,22 @@
        <span class="p">[</span> <span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14</span><span class="p">,</span>  <span class="mf">0.03</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>According to the broadcasting rules detailed above, when you invoke <code class="docutils literal notranslate"><span class="pre">grades</span> <span class="pre">-</span> <span class="pre">mean_exam_scores</span></code>, NumPy will recognize that <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code> has the same shape as each row of <code class="docutils literal notranslate"><span class="pre">grades</span></code> and thus it will apply the subtraction operation on <em>each</em> row of <code class="docutils literal notranslate"><span class="pre">grades</span></code> with <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code>. In effect, the content of <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code> has been <em>broadcasted</em> to fill a shape-(6,3) array, so that the element-wise subtraction can be performed. Again, we emphasize that NumPy doesn’t actually
-unnecessarily replicate the data of <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code>, and that this model of broadcasting merely conveys the mathematical process that is transpiring.</p>
+<p>根据以上的广播规则，当你调用 <code class="docutils literal notranslate"><span class="pre">grades</span> <span class="pre">-</span> <span class="pre">mean_exam_scores</span></code> 时，NumPy会发现 <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code> 和 <code class="docutils literal notranslate"><span class="pre">grades</span></code> 的每一行有着相同的形状，因此它会 <code class="docutils literal notranslate"><span class="pre">grades</span></code> 的<em>每</em>一行减去 <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code>。也就是说，<code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code> 的内容被<em>广播</em>来填满一个形状为 (6,3) 的数组，使得对应成员的减法可以进行。我们再次强调，NumPy并不会真的不必要的复制 <code class="docutils literal notranslate"><span class="pre">mean_exam_scores</span></code> 的数据，且我们理解广播的模型仅仅是为了表达这过程中进行的数学运算。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Basic Broadcasting</strong></p>
-<p>Generate a random array of 10,000 2D points using <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code>. Compute the “center of mass” of these points, which is simply the average x-coordinate and the average y-coordinate of these 10,000 points. Then, use broadcasting to compute the shape-(10000,2) array that stores the position of the points <em>relative</em> to the center of mass. For example, if the center of mass is <span class="math notranslate nohighlight">\((0.5, 1)\)</span>, and the absolute position of a point is <span class="math notranslate nohighlight">\((2, 3)\)</span>, then the position of that point <em>relative</em> to
-the center of mass is simply <span class="math notranslate nohighlight">\((2, 3) - (0.5, 1) = (1.5, 2)\)</span></p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：基础广播</strong></p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code> 生成一个成员为10,000个2维点的随机数组。计算这些点的“质量中心”（center of mass），也就是这10,000个点的平均x坐标和平均y坐标。然后，使用广播来计算储存这些点<em>相对于</em>质量中心的坐标的形状为 (10000,2) 的数组。比如说，如果质量中心是 <span class="math notranslate nohighlight">\((0.5, 1)\)</span>，一个点的绝对坐标为 <span class="math notranslate nohighlight">\((2, 3)\)</span>，那么那个点<em>相对于</em>质量中心的位置就是 <span class="math notranslate nohighlight">\((2, 3) - (0.5, 1) = (1.5, 2)\)</span></p>
 </div>
 </div>
-<div class="section" id="Size-1-Axes-&amp;-The-newaxis-Object">
-<h2>Size-1 Axes &amp; The <code class="docutils literal notranslate"><span class="pre">newaxis</span></code> Object<a class="headerlink" href="#Size-1-Axes-&-The-newaxis-Object" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Inserting-Size-1-Dimensions-into-An-Array">
-<h3>Inserting Size-1 Dimensions into An Array<a class="headerlink" href="#Inserting-Size-1-Dimensions-into-An-Array" title="Permalink to this headline">¶</a></h3>
-<p>As conveyed by the broadcasting rules, dimensions of size-1 are special in that they can be broadcasted to any size. Here we will learn about introducing size-1 dimensions into an array, for the purpose of tailoring its shape for broadcasting.</p>
-<p>You can introduce size-1 dimensions to an array without changing the overall size (i.e.&nbsp;total number of entries in an array. Thus we are free to add size-1 dimensions to an array via the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> function. Let’s reshape a shape-(3,) array into a shape-(1, 3, 1, 1) array:</p>
+<div class="section" id="大小为1的轴和-newaxis-对象">
+<h2>大小为1的轴和 <code class="docutils literal notranslate"><span class="pre">newaxis</span></code> 对象<a class="headerlink" href="#大小为1的轴和-newaxis-对象" title="永久链接至标题">¶</a></h2>
+<div class="section" id="向数组插入大小为1的维度">
+<h3>向数组插入大小为1的维度<a class="headerlink" href="#向数组插入大小为1的维度" title="永久链接至标题">¶</a></h3>
+<p>广播规则也有提到，大小为1的维度因为可以广播成任何大小是特殊的。我们将在这里学习如何向数组中插入大小为1的维度来满足广播的需求。</p>
+<p>你可以在不改变数组总体大小（也就是数组中总共的成员数）的情况下插入大小为1的维度。所以我们可以随意通过 <code class="docutils literal notranslate"><span class="pre">reshape</span></code> 函数添加大小为1的维度。让我们将一个形状为 (3,) 的数组重塑成形状为 (1, 3, 1, 1) 的数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="go"># Reshaping an array to introduce size-1 dimensions.</span>
-<span class="go"># The size of the array is 3, regardless of introducing</span>
-<span class="go"># these extra size-1 dimensions.</span>
+<span class="go"># 通过重塑数组来插入大小为1的维度</span>
+<span class="go"># 在插入大小为1的维度前后数组的大小都是3.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="go">array([[[[1]],</span>
 
@@ -463,8 +457,8 @@ the center of mass is simply <span class="math notranslate nohighlight">\((2, 3)
 <span class="go">        [[3]]]])</span>
 </pre></div>
 </div>
-<p>Thus the 1-D array with three entries has been reshaped to possess 4-dimensions: “one stack of three sheets, each containing a single row and column”. There is another way to introduce size-1 dimensions. NumPy provides the <code class="docutils literal notranslate"><span class="pre">newaxis</span></code> object for this purpose. Let’s immediately demonstrate how <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code> can be used:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating the usage of the `numpy.newaxis` object</span>
+<p>就像这样，一个有着3个成员的1维数组就被重塑成了4维数组：“一打三页，每页有着一行一列”。我们有另外一种插入大小为1的维度的方法。NumPy为此提供了 <code class="docutils literal notranslate"><span class="pre">newaxis</span></code> 对象。让我们立刻演示一下 <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code> 可以如何使用：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `numpy.newaxis` 对象得使用方法</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
@@ -477,16 +471,14 @@ the center of mass is simply <span class="math notranslate nohighlight">\((2, 3)
 <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Indexing <code class="docutils literal notranslate"><span class="pre">x</span></code> as <code class="docutils literal notranslate"><span class="pre">x[np.newaxis,</span> <span class="pre">:,</span> <span class="pre">np.newaxis,</span> <span class="pre">np.newaxis]</span></code> returns a “view” of <code class="docutils literal notranslate"><span class="pre">x</span></code> as a 4D array with size-1 dimensions inserted as axes 0, 2, and 3. The resulting array is not a copy of <code class="docutils literal notranslate"><span class="pre">x</span></code>; it points to the exact same data as <code class="docutils literal notranslate"><span class="pre">x</span></code>, but merely with a different indexing layout. This is no different than what we achieved via reshaping: <code class="docutils literal notranslate"><span class="pre">x.reshape(1,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>.</p>
+<p>将 <code class="docutils literal notranslate"><span class="pre">x</span></code> 索引为 <code class="docutils literal notranslate"><span class="pre">x[np.newaxis,</span> <span class="pre">:,</span> <span class="pre">np.newaxis,</span> <span class="pre">np.newaxis]</span></code> 会返回一个 <code class="docutils literal notranslate"><span class="pre">x</span></code> 作为在轴0，2，和3中插入了大小为1的维度4维数组的视阈。得到的数组不是 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的复制品；它指向和 <code class="docutils literal notranslate"><span class="pre">x</span></code> 一样的内置数据，但它仅仅提供了一个不一样的索引框架。这和我们通过是重塑形状得到的结果没有任何区别：<code class="docutils literal notranslate"><span class="pre">x.reshape(1,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>。</p>
 </div>
-<div class="section" id="Utilizing-Size-1-Dimensions-for-Broadcasting">
-<h3>Utilizing Size-1 Dimensions for Broadcasting<a class="headerlink" href="#Utilizing-Size-1-Dimensions-for-Broadcasting" title="Permalink to this headline">¶</a></h3>
-<p>Moving on to a more pressing matter: why would we ever want to introduce these spurious dimensions into an array? Let’s take an example to demonstrate the utility of size-1 dimensions.</p>
-<p>Suppose that we want to multiply all possible pairs of entries between two arrays: <code class="docutils literal notranslate"><span class="pre">array([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code> with <code class="docutils literal notranslate"><span class="pre">array([4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7])</span></code>. That is, we want to perform twelve multiplications, and have access to each result. At first glance, combining a shape-(3,) array with a shape-(4,) array seems inadmissible for broadcasting; we seem to be doomed to perform nested for-loops like a bunch of cavemen and cavewomen. Fortunately, we can make clever use of size-1 dimensions so that we can perform this
-computation in a vectorized way.</p>
-<p>Let’s introduce size-1 dimensions into <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserting size-1 dimensions into `x` and `y` in</span>
-<span class="c1"># preparation of broadcasting.</span>
+<div class="section" id="使用大小为1的维度来进行广播">
+<h3>使用大小为1的维度来进行广播<a class="headerlink" href="#使用大小为1的维度来进行广播" title="永久链接至标题">¶</a></h3>
+<p>是时候回答一个更重要的问题了：我们在什么情况下会想要向数组中插入这些看起来没什么用的维度呢？让我们通过一个例子来了解大小为1的维度的作用。</p>
+<p>假设我们想要将以下两个数组的所有可能的对组合相乘：<code class="docutils literal notranslate"><span class="pre">array([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code> 和 <code class="docutils literal notranslate"><span class="pre">array([4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7])</span></code>。也就是说，我们想要进行12次乘法，并能够访问每个结果。第一眼看，形状为 (3,) 的数组和形状为 (4,) 的数组似乎广播不兼容；我们似乎一定要被迫像使一群史前穴居人一样用嵌套的for循环。幸运的是，我们可以通过聪明地使用大小为1的维度来矢量化地进行这个计算。</p>
+<p>让我们向 <code class="docutils literal notranslate"><span class="pre">x</span></code> 插入大小为1的维度：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 向 `x` 和 `y` 插入大小为1的维度来准备广播</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x_1d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x_1d</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
@@ -497,8 +489,8 @@ computation in a vectorized way.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">x</span></code> is now a shape-(3, 1) array and <code class="docutils literal notranslate"><span class="pre">y</span></code> is a shape-(4,) array. According to the broadcasting rules, these arrays are broadcast-compatible and will multiply to produce a shape-(3, 4) array. Let’s see that multiplying these two arrays will exactly produce the twelve numbers that we are after:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># broadcast-multiplying `x` and `y`</span>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> 现在是一个形状为 (3, 1) 的数组，而 <code class="docutils literal notranslate"><span class="pre">y</span></code> 是一个形状为 (4,) 的数组。根据广播的规则，这两个数组现在广播兼容，并将乘出一个形状为 (3, 4) 的数组。让我们看看将这两个数组相乘是如何会返回我们想要的刚好12个数字的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 广播相乘 `x` 和 `y`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
        <span class="p">[</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
@@ -536,12 +528,11 @@ computation in a vectorized way.</p>
   3\cdot4 &amp; 3\cdot5 &amp; 3\cdot6 &amp; 3\cdot7
 \end{array}\right)
 \
-\end{equation}</div><p>See that entry <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">j)</span></code> of the resulting array corresponds to <code class="docutils literal notranslate"><span class="pre">x_1d[i]</span> <span class="pre">*</span> <span class="pre">y[j]</span></code>.</p>
-<p>Through the use of simple reshaping, shrewdly inserting size-1 dimensions allowed us to coerce NumPy into performing exactly the combination-multiplication that we desired. Furthermore, a keen understanding of what broadcasting is provides us with a clear interpretation of the structure of the result of this calculation. That is, if I reshape <code class="docutils literal notranslate"><span class="pre">x</span></code> to be a shape-<span class="math notranslate nohighlight">\((M, 1)\)</span> array, and <code class="docutils literal notranslate"><span class="pre">y</span></code> is a shape-<span class="math notranslate nohighlight">\((N,)\)</span> array, then (according to broadcasting rules) <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code> would produce a
-shape-<span class="math notranslate nohighlight">\((M, N)\)</span> array storing the product of each of <code class="docutils literal notranslate"><span class="pre">x</span></code>’s <span class="math notranslate nohighlight">\(M\)</span> numbers with each of <code class="docutils literal notranslate"><span class="pre">y</span></code>’s <span class="math notranslate nohighlight">\(N\)</span> numbers.</p>
+\end{equation}</div><p>请注意，返回数组的成员 <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">j)</span></code> 对应着 <code class="docutils literal notranslate"><span class="pre">x_1d[i]</span> <span class="pre">*</span> <span class="pre">y[j]</span></code>。</p>
+<p>通过简单的重塑来精明地插入大小为1的维度使得我们可以逼迫NumPy来进行我们想要的组合乘法。同时，我们对广播的准确理解让我们可以对广播运算的结果形状有着清晰的解释。也就是说，如果我将 <code class="docutils literal notranslate"><span class="pre">x</span></code> 重塑为形状是 <span class="math notranslate nohighlight">\((M, 1)\)</span> 的数组，<code class="docutils literal notranslate"><span class="pre">y</span></code> 的形状为 <span class="math notranslate nohighlight">\((N,)\)</span>，那么（根据广播的规则）<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code> 将会返回一个形状是 <span class="math notranslate nohighlight">\((M, N)\)</span> 的数组，其储存着每个 <code class="docutils literal notranslate"><span class="pre">x</span></code> <span class="math notranslate nohighlight">\(M\)</span> 个成员之一和每个 <code class="docutils literal notranslate"><span class="pre">y</span></code> <span class="math notranslate nohighlight">\(N\)</span> 个成员之一的乘积。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Basic Broadcasting II</strong></p>
-<p>Given the shape-(2,3,4) array:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>R阅读理解：基础广播II</strong></p>
+<p>设以下形状为 (2,3,4) 的数组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]],</span>
@@ -551,42 +542,42 @@ shape-<span class="math notranslate nohighlight">\((M, N)\)</span> array storing
 <span class="gp">... </span>               <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>Normalize <code class="docutils literal notranslate"><span class="pre">x</span></code> such that <em>each of its rows, within each sheet, will sum to a value of 1</em>. Make use of the sequential function <code class="docutils literal notranslate"><span class="pre">np.sum</span></code>, which should be called only once, and broadcast-division.</p>
+<p>标准化 <code class="docutils literal notranslate"><span class="pre">x</span></code>，使其<em>每页中每行的数据的和都是1</em>。使用序列函数 <code class="docutils literal notranslate"><span class="pre">np.sum</span></code>，但你只需要调用它一次，并使用广播除法。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Basic Broadcasting III</strong></p>
-<p>A digital image is simply an array of numbers, which instructs a grid of pixels on a monitor to shine light of specific colors, according to the numerical values in that array.</p>
-<p>An RGB-image can thus be stored as a 3D NumPy array of shape-<span class="math notranslate nohighlight">\((V, H, 3)\)</span>. <span class="math notranslate nohighlight">\(V\)</span> is the number of pixels along the vertical direction, <span class="math notranslate nohighlight">\(H\)</span> is the number of pixels along the horizontal, and the size-3 dimension stores the red, blue, and green color values for a given pixel. Thus a <span class="math notranslate nohighlight">\((32, 32, 3)\)</span> array would be a 32x32 RBG image.</p>
-<p>You often work with a collection of images. Suppose we want to store N images in a single array; thus we now consider a 4D shape-(N, V, H, 3) array. For the sake of convenience, let’s simply generate a 4D-array of random numbers as a placeholder for real image data. We will generate 500, 48x48 RGB images:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：基础广播III</strong></p>
+<p>一张电子图片其实就是一个数字数组，其指示显示器的像素根据数组的值去发射具体颜色的光。</p>
+<p>因此，一张RGB图片可以作为一个3维NumPy数组储存，其形状为 <span class="math notranslate nohighlight">\((V, H, 3)\)</span>。<span class="math notranslate nohighlight">\(V\)</span> 是竖向的像素数量，<span class="math notranslate nohighlight">\(H\)</span> 是横向的像素数量，大小为3的维度储存了像素的红，蓝，绿颜色。因此，一个 <span class="math notranslate nohighlight">\((32, 32, 3)\)</span> 的数组将会是一张32x32的RGB图片。</p>
+<p>我们经常会需要处理图片集。假设我们想要将N张图片储存为一个数组，那么我们可以将其当作一个形状为 <span class="math notranslate nohighlight">\((N, V, H, 3)\)</span> 的4维数组。方便起见，让我们先产生成员为随机数字的4维数组来代替真实的图片数据。我们将会生成500张48x48的RGB图片：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Using the sequential function <code class="docutils literal notranslate"><span class="pre">np.max</span></code> and broadcasting, normalize <code class="docutils literal notranslate"><span class="pre">images</span></code> such that the largest value within <em>each color-channel of each image</em> is 1.</p>
+<p>使用序列函数 <code class="docutils literal notranslate"><span class="pre">np.max</span></code> 和广播，标准化 <code class="docutils literal notranslate"><span class="pre">images</span></code>，使其<em>每张图片的每个颜色频道</em>的最大值是1。</p>
 </div>
 </div>
 </div>
-<div class="section" id="An-Advanced-Application-of-Broadcasting:-Pairwise-Distances">
-<h2>An Advanced Application of Broadcasting: Pairwise Distances<a class="headerlink" href="#An-Advanced-Application-of-Broadcasting:-Pairwise-Distances" title="Permalink to this headline">¶</a></h2>
-<p>We will conclude this section by demonstrating an important, non-trivial example of array broadcasting. Here, we will find that the most straightforward use of broadcasting is <em>not</em> necessarily the right solution for our problem, and we will see that it can be important to first refactor the mathematical approach taken to perform a calculation before using broadcasting. Specifically, we will see that our initial approach for using of broadcasting is memory-inefficient.</p>
-<p>Suppose we have two, 2D arrays. <code class="docutils literal notranslate"><span class="pre">x</span></code> has a shape of <span class="math notranslate nohighlight">\((M, D)\)</span> and <code class="docutils literal notranslate"><span class="pre">y</span></code> has a shape of <span class="math notranslate nohighlight">\((N, D)\)</span>. We want to compute the Euclidean distance (a.k.a. the <span class="math notranslate nohighlight">\(L_2\)</span>-distance) between <em>each pair</em> of rows between the two arrays. That is, if a given row of <code class="docutils literal notranslate"><span class="pre">x</span></code> is represented by <span class="math notranslate nohighlight">\(D\)</span> numbers <span class="math notranslate nohighlight">\((x_0, x_1, \ldots, x_{D-1})\)</span>, and similarly, a row <code class="docutils literal notranslate"><span class="pre">y</span></code> is represented by <span class="math notranslate nohighlight">\((y_0, y_1, \ldots, y_{D-1})\)</span>, and we want to compute the Euclidean distance between the two rows:</p>
+<div class="section" id="广播的高级运用：距离对">
+<h2>广播的高级运用：距离对<a class="headerlink" href="#广播的高级运用：距离对" title="永久链接至标题">¶</a></h2>
+<p>我们将通过演示一个重要，相对复杂的数组广播例子来结束本节。在这个例子中，我们会发现最直接的广播方法<em>不</em>一定是我们问题的正确解决方法；我们也会注意到在广播之前首先重构数学公式的重要性。具体来讲，我们会注意到我们最初方法的内存使用效率低的问题。</p>
+<p>假设我们有着两个2维数组。<code class="docutils literal notranslate"><span class="pre">x</span></code> 的形状为 <span class="math notranslate nohighlight">\((M, D)\)</span>，而 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的形状为 <span class="math notranslate nohighlight">\((N, D)\)</span>。我们想要计算两个数组之间<em>每一对</em>行的欧氏距离（Euclidean distance，也叫 <span class="math notranslate nohighlight">\(L_2\)</span>-distance）。也就是说，如果 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的任何一行数据为 <span class="math notranslate nohighlight">\(D\)</span> 个数字 <span class="math notranslate nohighlight">\((x_0, x_1, \ldots, x_{D-1})\)</span>，而 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的一行数据为 <span class="math notranslate nohighlight">\((y_0, y_1, \ldots, y_{D-1})\)</span>，且我们想要计算这两行之间的欧氏距离：</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
 \sqrt{(x_{0} - y_{0})^2 + (x_{1} - y_{1})^2 + \ldots + (x_{D-1} - y_{D-1})^2} = \sqrt{\sum_{i=0}^{D-1}{(x_{i} - y_{i})^2}}
-\end{equation}</div><p>Doing this for each pair of rows should produce a total of <span class="math notranslate nohighlight">\(M\times N\)</span> distances. The previous subsection stepped us through a very similar calculation, albeit with lower-dimensional arrays. Let’s proceed by performing this computation in three different ways:</p>
+\end{equation}</div><p>为每一对行组合进行这个计算将会总共产生 <span class="math notranslate nohighlight">\(M\times N\)</span> 个距离。之前一小节演示了一个很相似，但低一维度的计算。让我们通过以下三种方法进行这个计算吧：</p>
 <ol class="arabic simple">
-<li>Using explicit for-loops</li>
-<li>Using straight-forward broadcasting</li>
-<li>Refactoring the problem and then using broadcasting</li>
+<li><p>使用显式for循环</p></li>
+<li><p>直接地使用广播</p></li>
+<li><p>首先重构问题然后再使用广播</p></li>
 </ol>
-<p>For the sake of being concrete, we will compute all of the pairwise Euclidean distances between the rows of these two arrays:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a shape-(5, 3) array</span>
+<p>为了让例子更加实际，我们将会计算以下两个数组之间所有行对的欧氏距离：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 形状为 (5, 3) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">8.54</span><span class="p">,</span>  <span class="mf">1.54</span><span class="p">,</span>  <span class="mf">8.12</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">3.13</span><span class="p">,</span>  <span class="mf">8.76</span><span class="p">,</span>  <span class="mf">5.29</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">7.73</span><span class="p">,</span>  <span class="mf">6.71</span><span class="p">,</span>  <span class="mf">1.31</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">6.44</span><span class="p">,</span>  <span class="mf">9.64</span><span class="p">,</span>  <span class="mf">8.44</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">7.27</span><span class="p">,</span>  <span class="mf">8.42</span><span class="p">,</span>  <span class="mf">5.27</span><span class="p">]])</span>
 
-<span class="c1"># a shape-(6, 3) array</span>
+<span class="c1"># 形状为 (6, 3) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">8.65</span><span class="p">,</span>  <span class="mf">0.27</span><span class="p">,</span>  <span class="mf">4.67</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">7.73</span><span class="p">,</span>  <span class="mf">7.26</span><span class="p">,</span>  <span class="mf">1.95</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">1.27</span><span class="p">,</span>  <span class="mf">7.27</span><span class="p">,</span>  <span class="mf">3.59</span><span class="p">],</span>
@@ -595,135 +586,12 @@ shape-<span class="math notranslate nohighlight">\((M, N)\)</span> array storing
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">7.85</span><span class="p">,</span>  <span class="mf">6.68</span><span class="p">,</span>  <span class="mf">6.13</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Thus we will want to compute a total of 30 distances, one for each pair of rows from <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
-<div class="section" id="Pairwise-Distances-Using-For-Loops">
-<h3>Pairwise Distances Using For-Loops<a class="headerlink" href="#Pairwise-Distances-Using-For-Loops" title="Permalink to this headline">¶</a></h3>
-<p>Performing this computation using for-loops proceeds as follows:</p>
+<p>因此我们会为 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的每一对行计算总共30个距离。</p>
+<div class="section" id="使用for循环计算距离对">
+<h3>使用for循环计算距离对<a class="headerlink" href="#使用for循环计算距离对" title="永久链接至标题">¶</a></h3>
+<p>使用for循环来计算距离如下：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise_dists_looped</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;  Computing pairwise distances using for-loops</span>
-
-<span class="sd">         Parameters</span>
-<span class="sd">         ----------</span>
-<span class="sd">         x : numpy.ndarray, shape=(M, D)</span>
-<span class="sd">         y : numpy.ndarray, shape=(N, D)</span>
-
-<span class="sd">         Returns</span>
-<span class="sd">         -------</span>
-<span class="sd">         numpy.ndarray, shape=(M, N)</span>
-<span class="sd">             The Euclidean distance between each pair of</span>
-<span class="sd">             rows between `x` and `y`.&quot;&quot;&quot;</span>
-    <span class="c1"># `dists[i, j]` will store the Euclidean</span>
-    <span class="c1"># distance between  `x[i]` and `y[j]`</span>
-    <span class="n">dists</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row_x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>     <span class="c1"># loops over rows of `x`</span>
-        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">row_y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y</span><span class="p">):</span> <span class="c1"># loops over rows of `y`</span>
-            <span class="c1"># Subtract corresponding entries of the rows,</span>
-            <span class="c1"># squares each difference, and then sums them. This</span>
-            <span class="c1"># exactly matches our equation for Euclidean</span>
-            <span class="c1"># distance (we will do the square root later)</span>
-            <span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">row_x</span> <span class="o">-</span> <span class="n">row_y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="c1"># we still need to take the square root of</span>
-    <span class="c1"># each of our numbers</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dists</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Be sure to step through this code and see that <code class="docutils literal notranslate"><span class="pre">dists</span></code> stores each pair of Euclidean distances between the rows of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
-</div>
-<div class="section" id="Pairwise-Distances-Using-Broadcasting-(Unoptimized)">
-<h3>Pairwise Distances Using Broadcasting (Unoptimized)<a class="headerlink" href="#Pairwise-Distances-Using-Broadcasting-(Unoptimized)" title="Permalink to this headline">¶</a></h3>
-<p>Now, let’s use of vectorization to perform this distance computation. It must be established immediately that the method that we about to develop here is memory-inefficient. We will address this issue in detail at the end of this subsection.</p>
-<p>We start off our vectorized computation by shrewdly inserting size-1 dimensions into <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, so that we can perform <span class="math notranslate nohighlight">\(M \times N\)</span> subtractions between their pairs of length-<span class="math notranslate nohighlight">\(D\)</span> rows. <em>This creates a shape-</em><span class="math notranslate nohighlight">\((M, N, D)\)</span> <em>array</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># subtract shape-(5, 1, 3) with shape-(1, 6, 3)</span>
-<span class="c1"># produces shape-(5, 6, 3)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">diffs</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">diffs</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>It is important to see, via broadcasting, that <code class="docutils literal notranslate"><span class="pre">diffs[i,</span> <span class="pre">j]</span></code> stores <code class="docutils literal notranslate"><span class="pre">x[i]</span> <span class="pre">-</span> <span class="pre">y[j]</span></code>. Thus we need to square each entry of <code class="docutils literal notranslate"><span class="pre">diffs</span></code>, sum over its last axis, and take the square root, in order to produce our <span class="math notranslate nohighlight">\(M \times N\)</span> Euclidean distances:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># producing the Euclidean distances</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">dists</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">diffs</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">dists</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Voilà! We have produced the distances in a vectorized way. Let’s write this out formally as a function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise_dists_crude</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;  Computing pairwise distances using vectorization.</span>
-
-<span class="sd">         This method uses memory-inefficient broadcasting.</span>
-
-<span class="sd">         Parameters</span>
-<span class="sd">         ----------</span>
-<span class="sd">         x : numpy.ndarray, shape=(M, D)</span>
-<span class="sd">         y : numpy.ndarray, shape=(N, D)</span>
-
-<span class="sd">         Returns</span>
-<span class="sd">         -------</span>
-<span class="sd">         numpy.ndarray, shape=(M, N)</span>
-<span class="sd">             The Euclidean distance between each pair of</span>
-<span class="sd">             rows between `x` and `y`.&quot;&quot;&quot;</span>
-    <span class="c1"># The use of `np.newaxis` here is equivalent to our</span>
-    <span class="c1"># use of the `reshape` function</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Regrettably, there is a glaring issue with the vectorized computation that we just performed. Consider the largest sized array that is created in the for-loop computation, compared to that of this vectorized computation. The for-loop version need only create a shape-<span class="math notranslate nohighlight">\((M, N)\)</span> array, whereas the vectorized computation creates an intermediate array (i.e. <code class="docutils literal notranslate"><span class="pre">diffs</span></code>) of shape-<span class="math notranslate nohighlight">\((M, N, D)\)</span>. This intermediate array is even created in the one-line version of the code. This will create a
-massive array if <span class="math notranslate nohighlight">\(D\)</span> is a large number!</p>
-<p>Suppose, for instance, that you are finding the Euclidean between pairs of RGB images that each have a resolution of <span class="math notranslate nohighlight">\(32 \times 32\)</span> (in order to see if the images resemble one another). Thus in this scenario, each image is comprised of <span class="math notranslate nohighlight">\(D = 32 \times 32 \times 3 = 3072\)</span> numbers (<span class="math notranslate nohighlight">\(32^2\)</span> pixels, and each pixel has 3 values: a red, blue, and green-color value). Computing all the distances between a stack of 5000 images with a stack of 100 images would form an intermediate array of
-shape-<span class="math notranslate nohighlight">\((5000, 100, 3072)\)</span>. Even though this large array only exists temporarily, it would have to consume over 6GB of RAM! The for-loop version requires <span class="math notranslate nohighlight">\(\frac{1}{3027}\)</span> as much memory (about 2MB).</p>
-<p>Is our goose cooked? Are we doomed to pick between either slow for-loops, or a memory-inefficient use of vectorization? No! We can refactor the mathematical form of the Euclidean distance in order to avoid the creation of that bloated intermediate array.</p>
-</div>
-<div class="section" id="Optimized-Pairwise-Distances">
-<h3>Optimized Pairwise Distances<a class="headerlink" href="#Optimized-Pairwise-Distances" title="Permalink to this headline">¶</a></h3>
-<p>Performing the pairwise subtraction between the respective rows of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> is what created the over-sized intermediate array in our previous calculation. Thus we want to rewrite the Euclidean distance equation such that none of the terms require broadcasting beyond the size of <span class="math notranslate nohighlight">\(M \times N\)</span>.</p>
-<p>The Euclidean distance equation, ignoring the square root for now, can be refactored by multiplying out each squared term as so:</p>
-<div class="math notranslate nohighlight">
-\begin{equation}
-\sum_{i=0}^{D-1}{(x_{i} - y_{i})^2} = \sum_{i=0}^{D-1}{x_{i}^2} + \sum_{i=0}^{D-1}{y_{i}^2} - 2\sum_{i=0}^{D-1}{x_{i} y_{i}}
-\end{equation}</div><p>Keep in mind that we must compute this for each pair of rows in <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. We will find that this formulation permits the use of matrix multiplication, such that we can avoid forming the shape-<span class="math notranslate nohighlight">\((M, N, D)\)</span> intermediate array.</p>
-<p>The first two terms in this equation are straight-forward to calculate, and, when combined, will only produce a shape-<span class="math notranslate nohighlight">\((M, N)\)</span> array. For both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, we square each element in the array and then sum over the columns for each row:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Computing the first two terms of the</span>
-<span class="c1"># refactored Euclidean distance equation</span>
-
-<span class="c1"># creates a shape-(5,) array</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x_sqrd_summed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># creates a shape-(6,) array</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y_sqrd_summed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>We must insert a size-1 dimension in <code class="docutils literal notranslate"><span class="pre">x</span></code> so that we can add all pairs of numbers between the resulting shape-<span class="math notranslate nohighlight">\((M, 1)\)</span> and shape-<span class="math notranslate nohighlight">\((N,)\)</span> arrays. This will compute <span class="math notranslate nohighlight">\(\sum_{i=0}^{D-1}{x_{i}^2} + \sum_{i=0}^{D-1}{y_{i}^2}\)</span> for all of the <span class="math notranslate nohighlight">\(M \times N\)</span> pairs of rows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># add a shape-(5, 1) array with a shape-(6, ) array</span>
-<span class="c1"># to create a shape-(5, 6) array</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x_y_sqrd</span> <span class="o">=</span> <span class="n">x_sqrd_summed</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">+</span> <span class="n">y_sqrd_summed</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x_y_sqrd</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This leaves the third term to be computed. It is left to the reader to show that computing this sum of products for each pair of rows in <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> is equivalent to performing the matrix multiplication <span class="math notranslate nohighlight">\(-2\;(x \cdot y^{T})\)</span>, where <code class="docutils literal notranslate"><span class="pre">y</span></code> has been transposed so that it has a shape of <span class="math notranslate nohighlight">\((D, N)\)</span>. This matrix multiplication of a shape-<span class="math notranslate nohighlight">\((M, D)\)</span> array with a shape-<span class="math notranslate nohighlight">\((D, N)\)</span> array produces a shape-<span class="math notranslate nohighlight">\((M, N)\)</span> array. Therefore, we can compute this final term without
-needing to create a larger, intermediate array.</p>
-<p>Thus the third term in our equation, <span class="math notranslate nohighlight">\(-2\sum_{i=0}^{D-1}{x_{i} y_{i}}\)</span>, for all <span class="math notranslate nohighlight">\(M \times N\)</span> pairs of rows, is:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># computing the third term in the distance</span>
-<span class="c1"># equation, for all pairs of rows</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x_y_prod</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>  <span class="c1"># `np.dot` can also be used to the same effect</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x_y_prod</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Having accounted for all three terms, we can finally compute the Euclidean distances:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># computing all the distances</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">dists</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x_y_sqrd</span> <span class="o">+</span> <span class="n">x_y_prod</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">dists</span><span class="o">.</span><span class="n">shape</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>In total, we have successfully used vectorization to compute the all pairs of distances, while only requiring an array of shape-<span class="math notranslate nohighlight">\((M, N)\)</span> to do so! This is the memory-efficient, vectorized form - the stuff that dreams are made of. Let’s write the function that performs this computation in full.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise_dists</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Computing pairwise distances using memory-efficient</span>
-<span class="sd">        vectorization.</span>
+    <span class="sd">&quot;&quot;&quot; 使用for循环计算距离对</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -733,8 +601,117 @@ needing to create a larger, intermediate array.</p>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        numpy.ndarray, shape=(M, N)</span>
-<span class="sd">            The Euclidean distance between each pair of</span>
-<span class="sd">            rows between `x` and `y`.&quot;&quot;&quot;</span>
+<span class="sd">            `x` 和 `y` 每一行对的欧氏距离。&quot;&quot;&quot;</span>
+    <span class="c1"># `dists[i, j]` 将会存储 `x[i]` and `y[j]`</span>
+    <span class="c1"># 的欧氏距离</span>
+    <span class="n">dists</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row_x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>     <span class="c1"># 循环遍历 `x` 的行</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">row_y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y</span><span class="p">):</span> <span class="c1"># 循环遍历 `y` 的行</span>
+            <span class="c1"># 将两行相对应的成员相减，求每个差的平方，然后求平方差的和。</span>
+            <span class="c1"># 这和之前给出的欧氏距离公式完全一样（我们会在之后再求</span>
+            <span class="c1"># 平方根）</span>
+            <span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">row_x</span> <span class="o">-</span> <span class="n">row_y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># 我们还需要求所有数字的平方根</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dists</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>请一步一步理解此代码，并注意到 <code class="docutils literal notranslate"><span class="pre">dists</span></code> 存储 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 每一对行的欧氏距离这一事实。</p>
+</div>
+<div class="section" id="使用广播计算距离对（未优化）">
+<h3>使用广播计算距离对（未优化）<a class="headerlink" href="#使用广播计算距离对（未优化）" title="永久链接至标题">¶</a></h3>
+<p>现在，让我们使用矢量化来进行这个距离计算。首先，请注意，我们将要使用的方法对内存的运用是不高效的。我们将会在本小节结尾仔细地处理此问题。</p>
+<p>我们首先将向 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 精明的地方插入大小为1的维度来让我们可以对它们长度为 <span class="math notranslate nohighlight">\(D\)</span> 的行对进行 <span class="math notranslate nohighlight">\(M \times N\)</span> 个减法。<em>这将创建一个形状为</em> <span class="math notranslate nohighlight">\((M, N, D)\)</span> <em>的数组</em>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将形状为 (5, 1, 3) 的数组和形状为 (1, 6, 3) 的数组相减</span>
+<span class="c1"># 来产生形状为 (5, 6, 3) 的数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">diffs</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">diffs</span><span class="o">.</span><span class="n">shape</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>请注意，通过广播，<code class="docutils literal notranslate"><span class="pre">diffs[i,</span> <span class="pre">j]</span></code> 现在储存着 <code class="docutils literal notranslate"><span class="pre">x[i]</span> <span class="pre">-</span> <span class="pre">y[j]</span></code>。因此我们需要将 <code class="docutils literal notranslate"><span class="pre">diffs</span></code> 的每个成员平方，求每行列在最后一轴的和，并最后平方根所有数字来返回 <span class="math notranslate nohighlight">\(M \times N\)</span> 个欧氏距离：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建欧氏距离</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dists</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">diffs</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dists</span><span class="o">.</span><span class="n">shape</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>就这么简单！我们通过矢量化方法创建了这些距离。现在，让我们将其正式编为一个函数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise_dists_crude</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; 使用矢量化计算距离对</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x : numpy.ndarray, shape=(M, D)</span>
+<span class="sd">        y : numpy.ndarray, shape=(N, D)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        numpy.ndarray, shape=(M, N)</span>
+<span class="sd">            `x` 和 `y` 每一行对的欧氏距离。&quot;&quot;&quot;</span>
+    <span class="c1"># 在这里使用的 `np.newaxis` 达到和我们之前运用 `reshape`</span>
+    <span class="c1"># 函数一样的结果</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>可惜的是，我们这里进行的矢量化计算有一个明显的问题。请对比在for循环版本中创建的大小最大的数组和在这个矢量化计算中创建的最大数组。for循环版本仅仅需要创建一个形状为 <span class="math notranslate nohighlight">\((M, N)\)</span> 的数组，而矢量化版本会创建一个形状为 <span class="math notranslate nohighlight">\((M, N, D)\)</span> 的过渡数组（也就是 <code class="docutils literal notranslate"><span class="pre">diffs</span></code>）。这个过渡数组甚至会在函数中的一行代码中被创建。当 <span class="math notranslate nohighlight">\(D\)</span> 是一个大数时这个过渡数组会非常大！</p>
+<p>比如说，假设你在试图计算分辨率为 <span class="math notranslate nohighlight">\(32 \times 32\)</span> 的RGB图片之间的欧氏距离（来计算图片是否相似）。那么在这个情况下，每张图片被 <span class="math notranslate nohighlight">\(D = 32 \times 32 \times 3 = 3072\)</span>（<span class="math notranslate nohighlight">\(32^2\)</span> 个像素，且每个像素有3个值：红，绿，蓝）个数字描述。那么计算一打5000张图片和一打100张图片之间的所有距离对会创建一个形状为 <span class="math notranslate nohighlight">\((5000, 100, 3072)\)</span> 的过渡数组。虽然这个大数组只会暂时存在，但是它会需要超过6GB的内存！for循环版本只需要 <span class="math notranslate nohighlight">\(\frac{1}{3027}\)</span> 多的内存（大约2MB）。</p>
+<p>是否已经木已成舟了？我们是否必须要在缓慢的for循环和内存使用效率低的矢量化中做选择呢？不！小孩子才做选择题，成年人当然是全都要！我们可以重构欧氏距离的数学公式来避免创建巨大的过渡数组。</p>
+</div>
+<div class="section" id="优化过的距离对">
+<h3>优化过的距离对<a class="headerlink" href="#优化过的距离对" title="永久链接至标题">¶</a></h3>
+<p>在之前的计算中，对 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的对应行进行减法是创建过大过渡数组的罪魁祸首。因此，我们想要重写欧氏距离公式来使得没有任何项需要广播到大于 <span class="math notranslate nohighlight">\(M \times N\)</span> 的数组。</p>
+<p>暂时抛开平方根，欧氏距离公式的每一项平方差可以被重构为如下：</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+\sum_{i=0}^{D-1}{(x_{i} - y_{i})^2} = \sum_{i=0}^{D-1}{x_{i}^2} + \sum_{i=0}^{D-1}{y_{i}^2} - 2\sum_{i=0}^{D-1}{x_{i} y_{i}}
+\end{equation}</div><p>请注意，我们必须为 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的每一对行计算这个差。我们将会发现这个版本的公式允许我们使用矩阵乘法来避免创建形状为 <span class="math notranslate nohighlight">\((M, N, D)\)</span> 的过渡数组。</p>
+<p>这个公式的前两项可以很直接地去计算并相加，而仅仅会创建形状为 <span class="math notranslate nohighlight">\((M, N)\)</span> 的数组。我们平方 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的每一项并在每一行求和：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算重构后的欧氏距离公式的前两项</span>
+
+<span class="c1"># 创建一个形状为 (5,) 的数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x_sqrd_summed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 创建一个形状为 (6,) 的数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y_sqrd_summed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>我们需要向 <code class="docutils literal notranslate"><span class="pre">x</span></code> 插入一个大小为1的维度来让我们将相加形状为 <span class="math notranslate nohighlight">\((M, 1)\)</span> 和 <span class="math notranslate nohighlight">\((N,)\)</span> 数组的每一对数。这将为所有 <span class="math notranslate nohighlight">\(M \times N\)</span> 个行对计算 <span class="math notranslate nohighlight">\(\sum_{i=0}^{D-1}{x_{i}^2} + \sum_{i=0}^{D-1}{y_{i}^2}\)</span>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将形状为 (5, 1) 和 (6, ) 的数组相加来创建形状为 (5, 6) 的数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x_y_sqrd</span> <span class="o">=</span> <span class="n">x_sqrd_summed</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">+</span> <span class="n">y_sqrd_summed</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x_y_sqrd</span><span class="o">.</span><span class="n">shape</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>现在，我们只剩下第三项需要计算。我们留给读者来证明计算 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 每一行对的乘积的和等值于矩阵乘法 <span class="math notranslate nohighlight">\(-2\;(x \cdot y^{T})\)</span>，其中 <code class="docutils literal notranslate"><span class="pre">y</span></code> 被转制为形状 <span class="math notranslate nohighlight">\((D, N)\)</span>。形状为 <span class="math notranslate nohighlight">\((M, D)\)</span> 的数组和形状为 <span class="math notranslate nohighlight">\((D, N)\)</span> 的数组的矩阵乘法将创建一个形状为 <span class="math notranslate nohighlight">\((M, N)\)</span> 的数组。因此，我们可以在不创建更大的过渡数组的情况下计算这最后一项。</p>
+<p>因此，我们所有 <span class="math notranslate nohighlight">\(M \times N\)</span> 个行对的公式第三项 <span class="math notranslate nohighlight">\(-2\sum_{i=0}^{D-1}{x_{i} y_{i}}\)</span> 为：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算所有行对的距离公式第三项</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x_y_prod</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>  <span class="c1"># 你也可以使用 `np.dot` 来达成一样的效果</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x_y_prod</span><span class="o">.</span><span class="n">shape</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在计算完全部三项后，我们终于可以计算欧氏距离了：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算所有距离</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dists</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x_y_sqrd</span> <span class="o">+</span> <span class="n">x_y_prod</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dists</span><span class="o">.</span><span class="n">shape</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>总结一下，我们成功地使用了矢量化方法来计算所有距离对，而过程中仅仅使用了形状为 <span class="math notranslate nohighlight">\((M, N)\)</span> 的数组！这方法既高效地使用了内存，又是矢量化版本——理想世界不过如此。让我们编写完整进行以上计算的函数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise_dists</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; 使用省内存的矢量化方法计算距离对。</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x : numpy.ndarray, shape=(M, D)</span>
+<span class="sd">        y : numpy.ndarray, shape=(N, D)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        numpy.ndarray, shape=(M, N)</span>
+<span class="sd">            `x` 和 `y` 每一行对的欧氏距离。&quot;&quot;&quot;</span>
     <span class="n">dists</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
     <span class="n">dists</span> <span class="o">+=</span>  <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
     <span class="n">dists</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -742,51 +719,50 @@ needing to create a larger, intermediate array.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>The specific form of an equation can have a major impact on the memory-footprint of its vectorized implementation in NumPy. This issue can be safely overlooked in cases where you can be certain that the array shapes at play will not lead to substantial memory consumption. Otherwise, take care to study the form of the equation, to see if it can be recast in a way that alleviates its memory-consumption bottlenecks.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>公式的具体格式可能会对NumPy矢量化的实现的内存使用量有着巨大的影响。在你可以确定数组形状不会导致明显的内存使用时可以安全地无视这个问题。但如果你不能确定，那么花些时间思考一下公式的格式来看看你是否能够重写它来减缓内存使用的瓶颈。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Checking the equivalence of the three pairwise distance functions</strong></p>
-<p>Use the function <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.allclose.html">numpy.allclose</a> to verify that the three methods for computing the pairwise distances produce the same numerical results.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：检查三个距离对公式是否等值</strong></p>
+<p>使用函数<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.allclose.html">numpy.allclose</a>来检查以上三种计算距离对的公式返回的结果是一样的。</p>
 </div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html#broadcasting">Basics of broadcasting</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html#changing-number-of-dimensions">Broadcasting routines</a></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html#broadcasting">广播基础</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html#changing-number-of-dimensions">广播常规</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Basic Broadcasting: Solution</strong></p>
-<p>Generating the random array of 10,000, 2D points, and their “center-of-mass”.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the mean x-coord and y-coord of the 10000 points</span>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>广播兼容性：解</strong></p>
+<ol class="arabic simple">
+<li><p>不兼容</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">x</span> <span class="pre">2</span> <span class="pre">x</span> <span class="pre">5</span></code></p></li>
+<li><p>不兼容</p></li>
+</ol>
+<p><strong>基础广播：解</strong></p>
+<p>生成成员为10,000个2维点的数组并计算它们的“质量中心”。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算10000个点的平均x和y坐标</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">center_of_mass</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># -&gt; array([mean_x, mean_y])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">center_of_mass</span><span class="o">.</span><span class="n">shape</span>
 <span class="p">(</span><span class="mi">2</span><span class="p">,)</span>
 
-<span class="c1"># Use broadcasting to compute the position of each point relative</span>
-<span class="c1"># to the center of mass. The center of mass coordinates are subtracted</span>
-<span class="c1"># from each of the 10000 points, via broadcast-subtraction</span>
+<span class="c1"># 使用广播来计算每个点相对质量中心的坐标。通过广播减法来为所有10000个点</span>
+<span class="c1"># 减去质量中心的坐标</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">relative_pos</span> <span class="o">=</span> <span class="n">pts</span> <span class="o">-</span> <span class="n">center_of_mass</span> <span class="c1"># shape-(10000,2) w/ shape-(2,)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">relative_pos</span><span class="o">.</span><span class="n">shape</span>
 <span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Broadcast Compatibility: Solution</strong></p>
-<ol class="arabic simple">
-<li>Incompatible</li>
-<li><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">4</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">x</span> <span class="pre">1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">x</span> <span class="pre">2</span> <span class="pre">x</span> <span class="pre">5</span></code></li>
-<li>Incompatible</li>
-</ol>
-<p><strong>Basic Broadcasting II: Solution</strong></p>
-<p>Normalize <code class="docutils literal notranslate"><span class="pre">x</span></code> such that <em>each of its rows, within each sheet, will sum to a value of 1</em>. Make use of the sequential function <code class="docutils literal notranslate"><span class="pre">np.sum</span></code>, which should be called only once, and broadcast-division.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a shape-(2, 3, 4) array</span>
+<p><strong>基础广播II：解</strong></p>
+<p>标准化 <code class="docutils literal notranslate"><span class="pre">x</span></code>，使其<em>每页中每行的数据的和都是1</em>。使用序列函数 <code class="docutils literal notranslate"><span class="pre">np.sum</span></code>，但你只需要调用它一次，并使用广播除法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 形状为 (2, 3, 4) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]],</span>
@@ -795,37 +771,34 @@ needing to create a larger, intermediate array.</p>
 <span class="o">...</span>                <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]]])</span>
 
-<span class="c1"># sum along each of the three rows within each sheet</span>
+<span class="c1"># 求每一页三行中的和</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">summed_rows</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">summed_rows</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">38</span><span class="p">],</span>
        <span class="p">[</span><span class="mi">54</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">86</span><span class="p">]])</span>
 
-<span class="c1"># this shape-(2, 3) array can be broadcast-divided</span>
-<span class="c1"># along the sheets and rows of `x`, if we insert a size-1 axis</span>
-<span class="c1"># at dimension-2 of the summed array, where the columns used to</span>
-<span class="c1"># be</span>
+<span class="c1"># 这个形状为 (2, 3) 的数组可以广播来于 `x` 的每一页和行相减。</span>
+<span class="c1"># 我们只需要在和数组的维度2中插入一个大小为1的轴来代替之前的行就行</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x_norm</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">summed_rows</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 
-<span class="c1"># verifying the solution</span>
+<span class="c1"># 检查答案</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x_norm</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
        <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p><strong>Basic Broadcasting III: Solution</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a collection of 500 48x48 RGB images</span>
+<p><strong>基础广播III：解</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 500张48x48RGB图的集合</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1"># finding the max-value within each color-channel of each image</span>
+<span class="c1"># 计算每张图每个颜色频道的最大值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">max_vals</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">max_vals</span><span class="o">.</span><span class="n">shape</span>
 <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1"># we can insert size-1 dimensions so that we can</span>
-<span class="c1"># broadcast-divide these max-values with</span>
-<span class="c1"># the pixels of the images.</span>
-<span class="c1"># broadcasting (500, 48, 48, 3) with (500, 1, 1, 3)</span>
+<span class="c1"># 我们可以通过插入大小为1的维度来广播相除这些最大值</span>
+<span class="c1"># 和图片中的像素。</span>
+<span class="c1"># 为相除形状 (500, 48, 48, 3) 将最大值数组广播为形状 (500, 1, 1, 3)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">normed_images</span> <span class="o">=</span> <span class="n">images</span> <span class="o">/</span> <span class="n">max_vals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="c1"># checking that all the max-values are 1</span>
@@ -838,13 +811,13 @@ needing to create a larger, intermediate array.</p>
        <span class="p">[</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">]])</span>
 
-<span class="c1"># a rigorous check</span>
+<span class="c1"># 严格的检查</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">normed_images</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p><strong>Checking the equivalence of the three pairwise distance functions: Solution</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">numpy.allclose</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if all pairwise elements between two arrays are almost-equal to one another.</p>
+<p><strong>检查三个距离对公式是否等值：解</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy.allclose</span></code> 当两个数组所有对应的成员基本相同时返回 <code class="docutils literal notranslate"><span class="pre">True</span></code>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">8.54</span><span class="p">,</span>  <span class="mf">1.54</span><span class="p">,</span>  <span class="mf">8.12</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">3.13</span><span class="p">,</span>  <span class="mf">8.76</span><span class="p">,</span>  <span class="mf">5.29</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">7.73</span><span class="p">,</span>  <span class="mf">6.71</span><span class="p">,</span>  <span class="mf">1.31</span><span class="p">],</span>
@@ -876,10 +849,10 @@ needing to create a larger, intermediate array.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="BasicIndexing.html" class="btn btn-neutral float-right" title="Introducing Basic and Advanced Indexing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="BasicIndexing.html" class="btn btn-neutral float-right" title="基础和进阶索引简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="VectorizedOperations.html" class="btn btn-neutral float-left" title="“Vectorized” Operations: Optimized Computations on NumPy Arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="VectorizedOperations.html" class="btn btn-neutral float-left" title="“矢量化”操作：对NumPy数组进行优化过的计算" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

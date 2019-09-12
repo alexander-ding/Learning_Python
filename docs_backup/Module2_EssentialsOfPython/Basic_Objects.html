@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Basics of Python Objects, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic Object Types &mdash; Python Like You Mean It</title>
+  <title>基本对象类型 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sequence Types" href="SequenceTypes.html" />
-    <link rel="prev" title="Module 2: The Essentials of Python" href="../module_2.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="序列类型" href="SequenceTypes.html" />
+    <link rel="prev" title="模组2：Python基础" href="../module_2.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,62 +95,62 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic Object Types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Number-Types">Number Types</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Python’s-math-module">Python’s math module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Integers">Integers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Floating-Point-Numbers">Floating-Point Numbers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Complex-Numbers">Complex Numbers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Augmented-Assignment-Statements">Augmented Assignment Statements</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Improving-The-Readability-of-Numbers">Improving The Readability of Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">基本对象类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#数字类型">数字类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Python的math模组">Python的math模组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#整数">整数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#浮点数">浮点数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#复数">复数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#赋值语句的简写">赋值语句的简写</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#提升数字的可读性">提升数字的可读性</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#The-Boolean-Type">The Boolean Type</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Logic-Operators">Logic Operators</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Boolean-Objects-are-Integers">Boolean Objects are Integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#布尔类">布尔类</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#逻辑运算符">逻辑运算符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#布尔值对象其实就是整数">布尔值对象其实就是整数</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#The-None-Type">The None-Type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Strings">Strings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Introducing-the-string-type">Introducing the string type</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#String-essentials">String essentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Formatting-strings">Formatting strings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Official-documentation-for-strings">Official documentation for strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#None类型">None类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#字符串">字符串</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#字符串类型简介">字符串类型简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#字符串基础">字符串基础</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#格式化字符串">格式化字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#字符串的官方说明文档">字符串的官方说明文档</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Lists">Lists</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Lists-are-sequences">Lists are sequences</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Lists-can-be-“mutated”">Lists can be “mutated”</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Official-documentation-for-lists">Official documentation for lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#列表">列表</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#列表是序列">列表是序列</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#列表是可变的">列表是可变的</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#列表的官方说明文档">列表的官方说明文档</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Summary">Summary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Exercise-Solutions:">Reading Comprehension Exercise Solutions:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#总结">总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -195,9 +196,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Basic Object Types</li>
+      <li>基本对象类型</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -240,117 +241,117 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Basic-Object-Types">
-<h1>Basic Object Types<a class="headerlink" href="#Basic-Object-Types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="基本对象类型">
+<h1>基本对象类型<a class="headerlink" href="#基本对象类型" title="永久链接至标题">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong>:</p>
-<p>There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>注</strong>：</p>
+<p>在本资源各处会有一些阅读理解练习。这些题目旨在帮助读者活学活用文中的知识点。练习题的答案可以在本页底部找到。</p>
 </div>
-<p>You will see the term “object” be used frequently throughout this text. In Python, the term “object” is quite the catch-all; including numbers, strings of characters, lists, functions - a Python object is essentially anything that you can assign to a variable. That being said, there are different <em>types</em> of objects: Python treats integers as a different <em>type</em> of object than a string, for instance.</p>
-<p>The different object types have manifestly different purposes and thus have different built-in functions available to them. Here, we will review some of the basic types that are built into Python, as a natural entry point to writing code. We will cover:</p>
+<p>本文会经常使用“对象”这一单词。在Python中，“对象”包含了很多东西：数字，字符串，列表，函数，等等。简单来讲，一个Python对象是任何可以赋值给变量的东西。尽管如此，对象是分<em>类型</em>（type）的：比如说在Python眼中，整数（integer）和字符串（string）的<em>类型</em>是不一样的。</p>
+<p>不同类型的对象为了不同目的而存在，而因此也有着不同的内置函数。在这里，我们将复习Python自带的一些基本类型并以此写一些代码。我们将会讨论：</p>
 <ul class="simple">
-<li>numbers (integers, floating-point numbers, and complex numbers)</li>
-<li>booleans</li>
-<li>the “null” type</li>
-<li>strings</li>
-<li>lists</li>
+<li><p>数字（整数，浮点数，复数）（number（integer，float-point number，complex number））</p></li>
+<li><p>布尔值（真或否）（boolean）</p></li>
+<li><p>“空”值类（the “null” type）</p></li>
+<li><p>字符串（string）</p></li>
+<li><p>列表（list）</p></li>
 </ul>
-<p>The built-in function <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> will allow us to check if an object is of a given type. You can also use the built-in <code class="docutils literal notranslate"><span class="pre">type</span></code> function to check an object’s type. For example, the following code checks if an object is an integer:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># assign the variable `x` to the integer 1</span>
+<p>Python自带的 <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> 函数允许我们检测对象是否为某一类型。你也可以用自带的 <code class="docutils literal notranslate"><span class="pre">type</span></code> 函数来查看对象的类型。比如说，下面的代码会检测一个对象是否是整数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 对变量 `x` 赋值整数 1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c1"># checking the type of `x`</span>
+<span class="c1"># 查看 `x` 的类型</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">int</span>
 
-<span class="c1"># verifying that `x` is an integer-type object</span>
+<span class="c1"># 检测 `x` 是否是整数类（integer）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>In a later module, you will learn “object-oriented” programming, which will allow you to create your own, customized objects!</p>
-<div class="section" id="Number-Types">
-<h2>Number Types<a class="headerlink" href="#Number-Types" title="Permalink to this headline">¶</a></h2>
-<p>Python has three basic types of numbers: integers, “floating-point” numbers, and complex numbers. Familiar mathematical symbols can be used to perform arithmetic on all of these numbers (comparison operators like “greater than” are not defined for complex numbers):</p>
-<table border="1" class="docutils">
+<p>在之后的模组中，你将学习“面对对象”的编程模式。这将允许你创建你自己的定制对象种类！</p>
+<div class="section" id="数字类型">
+<h2>数字类型<a class="headerlink" href="#数字类型" title="永久链接至标题">¶</a></h2>
+<p>Python有三种基本的数字类型：整数（integer），浮点数（floating-point number），和复数（complex number）。你可以使用你熟悉的数学运算符来对这三种数字进行算术操作（像“大于”这种比较性的运算符没有定义如何处理复数）:</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="19%" />
-<col width="81%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Operation</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>操作</p></th>
+<th class="head"><p>描述</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code></td>
-<td>Sum of two numbers</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code></p></td>
+<td><p>求两数相加的结果</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code></td>
-<td>Difference of two numbers</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code></p></td>
+<td><p>求两数相减的结果</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code></td>
-<td>Product of two numbers</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code></p></td>
+<td><p>求两数相乘的结果</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code></td>
-<td>Quotient of two numbers</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code></p></td>
+<td><p>求两数相除的结果</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">//</span> <span class="pre">y</span></code></td>
-<td>Quotient of two numbers, returned as an integer</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">//</span> <span class="pre">y</span></code></p></td>
+<td><p>求两数相除的整数商</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x</span></code> “modulo”: <code class="docutils literal notranslate"><span class="pre">y</span></code>: The remainder of <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code></p></td>
+<td><p>求两数的模（<code class="docutils literal notranslate"><span class="pre">x</span></code> modulo: <code class="docutils literal notranslate"><span class="pre">y</span></code>，也就是 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code> 的余数）</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">y</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">x</span></code> raised to the power <code class="docutils literal notranslate"><span class="pre">y</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">y</span></code></p></td>
+<td><p>求 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的幂 <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">-x</span></code></td>
-<td>A negated number</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-x</span></code></p></td>
+<td><p>求负数</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></td>
-<td>The absolute value of a number</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
+<td><p>求数的绝对值</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code></td>
-<td>Check if two numbers have the same value</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code></p></td>
+<td><p>检测两数是否等值</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">!=</span> <span class="pre">y</span></code></td>
-<td>Check if two numbers have different values</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">!=</span> <span class="pre">y</span></code></p></td>
+<td><p>检测两数是否不等值</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code></td>
-<td>Check if <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">y</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code></p></td>
+<td><p>检测 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是否大于 <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">y</span></code></td>
-<td>Check if <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than or equal to <code class="docutils literal notranslate"><span class="pre">y</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">y</span></code></p></td>
+<td><p>检测 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是否大于或等于 <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code></td>
-<td>Check if <code class="docutils literal notranslate"><span class="pre">x</span></code> is less than <code class="docutils literal notranslate"><span class="pre">y</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code></p></td>
+<td><p>检测 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是否小于 <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">y</span></code></td>
-<td>Check if <code class="docutils literal notranslate"><span class="pre">x</span></code> is less than or equal to <code class="docutils literal notranslate"><span class="pre">y</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">y</span></code></p></td>
+<td><p>检测 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是否小于或等于 <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>These operations obey the familiar order of operations from your mathematics class, with parentheses available for association:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># multiplication takes precedence over addition</span>
+<p>这些运算符和你平时在数学课上见到的运算顺序一样，在没有括号的情况下遵循先乘除后加减。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 先乘除后加减</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="mi">7</span>
 
-<span class="c1"># grouping operations with parentheses</span>
+<span class="c1"># 用括号更改运算顺序</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="mi">9</span>
 
-<span class="c1"># finding the remainder of division</span>
+<span class="c1"># 求余数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">11</span> <span class="o">%</span> <span class="mi">5</span>
 <span class="mi">1</span>
 
-<span class="c1"># checking an inequality</span>
+<span class="c1"># 检测不等式是否成立</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>It should be noted that in many other programming languages, including the out-dated Python 2, dividing two integers would always return an integer - even if mathematically the result should be a fraction. In Python 3, <em>the quotient of two integers will always return a floating-point number</em> (i.e.&nbsp;a number that includes a decimal point):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In many other languages, 3 / 2 returns the integer 1.</span>
-<span class="c1"># In Python 3, division always returns a floating-point number:</span>
+<p>请注意：在很多其他的编程语言中（包括Python 2），两个整数相除永远都会返回一个整数——就算数学上的结果应该是个分数。在Python 3中，<em>两个整数相除永远都会返回一个浮点数</em>（一个包含小数点的数字）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在很多别的语言中，3 / 2 会返回整数 1</span>
+<span class="c1"># 在Python 3中，除法返回一个浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="mf">1.5</span>
 
@@ -358,8 +359,8 @@
 <span class="mf">2.0</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">//</span></code> operator is known as the “floor-divide” operator: it performs division between two numbers and returns the result as an integer by discarding any decimal-places for that number (thus returning the “floor” of that number). This can be used to perform the integer-division traditionally used in other programming languages:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># floor-division</span>
+<p>运算符 <code class="docutils literal notranslate"><span class="pre">//</span></code> 英文叫做“floor-divide”（直译“地板除”）：它取两数相除之后去尾（去掉浮点数小数点后的数字）得到的整数（因为浮点数取整可以往上入——4.5入到5——或者往下舍——4.5舍到4——，所以去尾被称为地板除）。这可以用来进行很多其他语言中传统的整数相除：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># “地板除“</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># 0.3333.. -&gt; 0</span>
 <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># 1.5 -&gt; 1</span>
@@ -367,35 +368,34 @@
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Understanding the modulo operator</strong></p>
-<p>The modulo operator, <code class="docutils literal notranslate"><span class="pre">%</span></code>, is not commonly seen in mathematics textbooks. It is, however, a very useful operation to have at our disposal. <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> (said as x “mod” y in programmer’s jargon) returns the <em>remainder</em> of <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code>. For example:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：理解模运算符</strong></p>
+<p>模运算符 <code class="docutils literal notranslate"><span class="pre">%</span></code> 在数学教材中并不常见。但是它在我们手中是很有用的一个运算符。<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> (读作 x “模”（mod）y）返回 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code> 的余数。比如说：</p>
 <ul class="simple">
-<li><span class="math notranslate nohighlight">\(\frac{3}{2} = 1 + \frac{1}{2}\)</span>. 2 “goes into” 3 one time, leaving a remainder of 1. Thus <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">%</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">1</span></code></li>
-<li><span class="math notranslate nohighlight">\(\frac{9}{3} = 3\)</span>. 3 “goes into” 9 three times, and leaves no remainder. Thus <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">%</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">0</span></code></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{3}{2} = 1 + \frac{1}{2}\)</span>. 3 中可以去除一个 2，最后余下 1，所以 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">%</span> <span class="pre">2</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{9}{3} = 3\)</span>. 9 中可以去除三个 3，什么都不余下。所以 <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">%</span> <span class="pre">3</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
 </ul>
-<p>Given this description of the “mod” operator, simplify the following by hand, and then use the IPython console to check your work:</p>
+<p>根据以上对模运算符的解释，先自己猜测下方表达式的结果，并用IPython命令行检查你的答案:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">%</span> <span class="pre">5</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">%</span> <span class="pre">5</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">2</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">3</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">4</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">5</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">6</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">%</span> <span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">%</span> <span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">22</span> <span class="pre">%</span> <span class="pre">6</span></code></p></li>
 </ol>
-<p>Now, given any integer, <code class="docutils literal notranslate"><span class="pre">n</span></code>, what are the possible values that <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code> can return? See if you can come up with a simple rule for explaining the behavior of <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code>.</p>
+<p>假设 <code class="docutils literal notranslate"><span class="pre">n</span></code> 是任何整数，<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code> 可能返回哪些数值？尝试简明地解释 <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code> 的行为。</p>
 </div>
-<div class="section" id="Python’s-math-module">
-<h3>Python’s math module<a class="headerlink" href="#Python’s-math-module" title="Permalink to this headline">¶</a></h3>
-<p>The standard library’s math module provides us with many more mathematical functions, like logarithms and trigonometric functions. A complete listing of them <a class="reference external" href="https://docs.python.org/3/library/math.html#number-theoretic-and-representation-functions">can be found in the official Python documentation</a>. This module must be imported into your code in order to use its functions:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using the `math` module to use</span>
-<span class="c1"># additional mathematical functions</span>
+<div class="section" id="Python的math模组">
+<h3>Python的math模组<a class="headerlink" href="#Python的math模组" title="永久链接至标题">¶</a></h3>
+<p>标准库的math模组为我们提供更多的数学函数，像对数（logarithm）和三角函数。完整的列表<a class="reference external" href="https://docs.python.org/3/library/math.html#number-theoretic-and-representation-functions">可以在Python官网上找到</a>。要使用math模组里的函数，你必须先导入它。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `math` 模组里面的数学函数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">math</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">4.</span><span class="p">)</span>
 <span class="mf">2.0</span>
 
-<span class="c1"># base-10 log</span>
+<span class="c1"># 以10为底的对数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">10.</span><span class="p">)</span>
 <span class="mf">1.0</span>
 
@@ -405,38 +405,38 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="Integers">
-<h3>Integers<a class="headerlink" href="#Integers" title="Permalink to this headline">¶</a></h3>
-<p>As in traditional mathematics, an integer is any “whole” number: <span class="math notranslate nohighlight">\(\dots, -3, -2, -1, 0, 1, 2, 3, \dots\)</span>.</p>
-<p>Integers belong to the built-in type <code class="docutils literal notranslate"><span class="pre">int</span></code>, which can be used to convert objects to integers:</p>
+<div class="section" id="整数">
+<h3>整数<a class="headerlink" href="#整数" title="永久链接至标题">¶</a></h3>
+<p>像传统数学一样，一个整数是任何没有小数点的数字：<span class="math notranslate nohighlight">\(\dots, -3, -2, -1, 0, 1, 2, 3, \dots\)</span>。</p>
+<p>整数属于内置类 <code class="docutils literal notranslate"><span class="pre">int</span></code>，而 <code class="docutils literal notranslate"><span class="pre">int</span></code> 则可以用来将其它对象转化成整数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">int</span>
 
-<span class="go"># `1.3` is not an integer-type object</span>
+<span class="go"># `1.3` 不是整数对象</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="mf">1.3</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="go">False</span>
 
-<span class="go"># converting a string to an integer</span>
+<span class="go"># 将字符串转化成整数</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;10&quot;</span><span class="p">)</span>
 <span class="go">10</span>
 
-<span class="go"># converting a floating-point number to an integer</span>
+<span class="go"># 将浮点数转化成整数</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
 <span class="go">1</span>
 </pre></div>
 </div>
-<p>You can create as large an integer as you’d like; Python will allocate as much memory as needed (and ultimately, as is available) to store an integer’s exact value:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can make an integer as large as you&#39;d like</span>
+<p>整数想多大都可以；Python会分配相应该数字所需的内存来完全存储它（而不会丢失精度）。当然，说到底这还是受有多少内存可用的限制:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 你可以创建一个很大的整数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">large_int</span> <span class="o">=</span> <span class="mi">281938481039848500192847576920</span>
 </pre></div>
 </div>
-<p>Integers have some built-in functions available to them, which are detailed in the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types">official documentation</a>. The utility of these will likely be quite obscure to new programmers. Just note that they are here for now.</p>
+<p>整数有一些内置函数可用。完整的介绍可以在<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types">官方说明文档</a>中找到。很多这些函数的作用可能对新手而言比较难以理解。现在你只需要知道这些函数存在就行。</p>
 </div>
-<div class="section" id="Floating-Point-Numbers">
-<h3>Floating-Point Numbers<a class="headerlink" href="#Floating-Point-Numbers" title="Permalink to this headline">¶</a></h3>
-<p>A “floating-point” number is a number with a decimal point. Referred to as a “float” for short, this can be used to represent any number, up to a limited number of digits.</p>
-<p>These objects belong to the built-in type <code class="docutils literal notranslate"><span class="pre">float</span></code>, which can be used to convert objects to floats:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># examples of &quot;floating-point&quot; numbers</span>
+<div class="section" id="浮点数">
+<h3>浮点数<a class="headerlink" href="#浮点数" title="永久链接至标题">¶</a></h3>
+<p>一个浮点数（floating-point number，或float）是有小数点的数字。这可以用来表达任何数字，但其精度受数字位数的限制。</p>
+<p>这些对象属于内置类 <code class="docutils literal notranslate"><span class="pre">float</span></code>，而 <code class="docutils literal notranslate"><span class="pre">float</span></code> 则可以用来将其它对象转化成浮点数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 几个浮点数的例子</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">100.</span> <span class="o">**</span> <span class="mf">0.5</span>
 <span class="mf">10.0</span>
 
@@ -449,97 +449,93 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mf">2.1</span><span class="p">)</span>
 <span class="nb">float</span>
 
-<span class="c1"># the integer 10 is not a float-type object</span>
+<span class="c1"># 整数 10 并不是浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
 <span class="bp">False</span>
 
-<span class="c1"># including a decimal makes the number a float</span>
+<span class="c1"># 但加上一个小数点会让其成为浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mf">10.</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
 <span class="bp">True</span>
 
-<span class="c1"># converting a string to a floating-point number</span>
+<span class="c1"># 将字符串转化成浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;10.456&quot;</span><span class="p">)</span>
 <span class="mf">10.456</span>
 
-<span class="c1"># converting an integer to a floating-point number</span>
+<span class="c1"># 将整数转化成浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="o">-</span><span class="mi">22</span><span class="p">)</span>
 <span class="o">-</span><span class="mf">22.0</span>
 </pre></div>
 </div>
-<p>Floats have a couple of built-in functions available to them, as detailed in the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#additional-methods-on-float">official documentation</a>.</p>
-<div class="section" id="Scientific-Notation">
-<h4>Scientific Notation<a class="headerlink" href="#Scientific-Notation" title="Permalink to this headline">¶</a></h4>
-<p>A float can also be created using familiar scientific notation. The character <code class="docutils literal notranslate"><span class="pre">e</span></code> is used to represent <span class="math notranslate nohighlight">\(\times 10\)</span>, and the proceeding number is the exponent. Here are some examples of traditional scientific notation, and their corresponding representation in Python:</p>
+<p>浮点数有几个内置的函数可用。具体内容在<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#additional-methods-on-float">官方说明文件</a>中可以查阅。</p>
+<div class="section" id="科学计数法">
+<h4>科学计数法<a class="headerlink" href="#科学计数法" title="永久链接至标题">¶</a></h4>
+<p>浮点数也可以用常见的科学计数法来创建。字符 <code class="docutils literal notranslate"><span class="pre">e</span></code> 用来代表 <span class="math notranslate nohighlight">\(\times 10\)</span>，而在这字符后的数字是幂。以下为几个传统的科学计数法例子和它们对应的Python表达式：</p>
 <p><span class="math notranslate nohighlight">\(1.38 \times 10^{-4} \rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">1.38e-04</span></code></p>
 <p><span class="math notranslate nohighlight">\(-4.2 \times 10^{10} \rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">-4.2e10</span></code></p>
-<p>Python will automatically display a float that possesses many digits in scientific notation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python will display many-digit numbers using</span>
-<span class="c1"># scientific notation</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mf">0.0000001</span>  <span class="c1"># seven leading-zeros</span>
+<p>Python将自动用科学计数法来显示位数多的浮点数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python会用科学计数法来显示多位浮点数</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">0.0000001</span>  <span class="c1"># 7个前置0</span>
 <span class="mf">1e-07</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Understanding-Numerical-Precision">
-<h4>Understanding Numerical Precision<a class="headerlink" href="#Understanding-Numerical-Precision" title="Permalink to this headline">¶</a></h4>
-<p>Whereas a Python integer can be made to be as large as you’d like, a floating-point number is <em>limited in the number of digits it can store</em>. That is, your computer will only use a set amount of memory, 8 bytes (32 bits) on most machines, to store the value of a floating-point number.</p>
-<p>In effect, this means that a float can only be represented with a <em>numerical precision</em> of approximately 16 decimal places, when that number is written in scientific notation. The computer will not be able to reliably represent a number’s digits beyond those accounted for by the allotted 8 bytes. For instance, the following Python integer is defined with 100 digits, but when this number is converted to a float, it only retains 15 decimal places in scientific notation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstrating the finite-precision of a float.</span>
+<div class="section" id="理解数字精度">
+<h4>理解数字精度<a class="headerlink" href="#理解数字精度" title="永久链接至标题">¶</a></h4>
+<p>虽然Python整数无大小限制，浮点数的精度<em>受限于它能存储多少位数</em>。具体来讲，你的电脑只会用固定量的内存（在大部分机器上是8字节，也就是32比特）来储存一个浮点数的值。</p>
+<p>实际操作时，这意味着一个浮点数大概只能存储16位有效数字的<em>数值精度</em>。计算机并不能保证存这8字节之外的位数精度。比如说，接下来的代码定义了一个100位的整数。但当这个整数被转化成浮点数后，它只能保存16位的有效数字：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示浮点数的有限精度</span>
 
-<span class="c1"># An integer with 100 digits - Python will use as</span>
-<span class="c1"># much memory as needed to store an integer</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># creates a string with 100 1s and makes it an int</span>
+<span class="c1"># 一个100位的整数</span>
+<span class="c1"># Python会分配足够多的的内存来存储这个整数</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 创建一个含有100个“1”的字符串并将其转化成整数</span>
 <span class="mi">1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</span>
 
-<span class="c1"># Converted to a float, it retains only</span>
-<span class="c1"># 16 decimal places, when written in scientific</span>
-<span class="c1"># notation. This is the precision permitted by</span>
-<span class="c1"># 8 bytes of memory.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># creates a string with 100 1s and makes it a float</span>
+<span class="c1"># 当将同样的字符串转化成浮点数时，</span>
+<span class="c1"># 它只能存储16位的有效数字</span>
+<span class="c1"># 这也就是8字节内存能存储的大小</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 创建一个含有100个“1”的字符串并将其转化成浮点数</span>
 <span class="mf">1.111111111111111e+99</span>
 </pre></div>
 </div>
-<p>The computer cannot keep track of those last 84 decimal places because doing so would require more than 8 bytes of memory to store the entire value of that float. If you had been diligently counting stars in the sky (perhaps across many universes, this number far exceeds the estimated number of stars in our universe), you would have just lost track of over <span class="math notranslate nohighlight">\(1\times10^{83}\)</span> of them simply by converting your integer count to a float!</p>
-<p>As such, attempting to modify a floating point number in decimal places beyond its numerical precision does not have any effect:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># changing a float beyond its precision has no effect</span>
+<p>计算机无法存储最后84位数字的原因是这样做会需要远超于8字节的内存去存储整个浮点数。假如你在数星星的话，用浮点数而不是整数来存储这个数字会让你漏掉其中整整 <span class="math notranslate nohighlight">\(1\times10^{83}\)</span> 个！</p>
+<p>因此，试图用超过浮点数精度的数值去修改该浮点数并不会有任何效果：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 用超过浮点数精度的数值去修改该浮点数并不会有任何效果</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mf">1e-16</span>
 <span class="mf">1.0</span>
 </pre></div>
 </div>
-<p>Even in light of this discussion on float precision, you may be shocked and dismayed to see the following outcome of float arithmetic:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the finite-precision of floats</span>
-<span class="c1"># result in non-obvious behavior</span>
+<p>就算有了以上对浮点精度的讨论做铺垫，你也很可能会惊讶于以下浮点运算的结果：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这令人意外的结果源自浮点数的有限精度</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">==</span> <span class="mf">0.</span>
 <span class="bp">False</span>
 
-<span class="c1"># the effects of having finite numerical precision</span>
+<span class="c1"># 浮点数的有限精度的效果</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span>
 <span class="mf">5.551115123125783e-17</span>
 </pre></div>
 </div>
-<p>This is not a quirk of Python; this is a <a class="reference external" href="https://docs.python.org/3/tutorial/floatingpoint.html">well-understood</a> aspect of dealing with floating-point numbers with limited numerical precision. To accommodate this, don’t check if two floats are “equal”. Rather, you should check if they are “close enough in value”. Let me emphasize this:</p>
-<p><strong>You should never check to see if two floats are exactly equal in value. Instead, you should only check that two floats are approximately equal to one another</strong>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">math</span></code> module has a very nice function for this; <code class="docutils literal notranslate"><span class="pre">math.isclose</span></code> will check if the relative difference between two numbers is less than <span class="math notranslate nohighlight">\(1 \times 10^{-9}\)</span>. You can change this tolerance value along with the type of tolerance-checking used by the function; see its documentation <a class="reference external" href="https://docs.python.org/3/library/math.html#math.isclose">here</a>. Because in the previous example we compare values that are close to 0, we will check if their absolute difference is sufficiently small:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking if two float values are &quot;almost equal&quot;</span>
+<p>这并不是什么Python的奇怪特征；这是一个已经被<a class="reference external" href="https://docs.python.org/3/tutorial/floatingpoint.html">完全理解</a>的操作有限精度的浮点数的现象。为了应对这个问题，你不应该检查两个浮点数是否“相同”，而应该检查两个浮点数是否“够相近”。 让我重点强调一下：</p>
+<p><strong>你永远不应该检查两个浮点数是否完全相同。你应该检查两个浮点数是否足够相近。</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">math</span></code> 模组有一个解决这个需求的函数；<code class="docutils literal notranslate"><span class="pre">math.isclose</span></code> 会检查两个数字之间的差是否小于 <span class="math notranslate nohighlight">\(1 \times 10^{-9}\)</span>。你可以修改这个函数使用的容忍值；详见此函数的<a class="reference external" href="https://docs.python.org/3/library/math.html#math.isclose">说明文档</a>。因为在之前的例子中我们对比的数值都很接近0，我们将检查它们的差的绝对值是否够小：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查两个浮点数是否“足够接近”</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">math</span>
 
-<span class="c1"># check:</span>
+<span class="c1"># 检查</span>
 <span class="c1"># | (0.1 + 0.1 + 0.1 - 0.3) - 0 | &lt; 1x10^{-9}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">((</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">),</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>If you do not heed this lesson, it is inevitable that you will end up with serious, hard-to-find bugs in your code. Lastly, when doing numerical work in Python (and any other programming language), you must understand that the finite numerical precision of floating-point numbers is a source of error, akin to error associated with imprecision with a measuring device, and should be accounted for in your analysis (if error analysis is warranted).</p>
-<p>Python’s <a class="reference external" href="https://docs.python.org/3.0/library/decimal.html">decimal module</a> can be used to define higher (or lower) precision numbers than permitted by the standard 8-byte floats. Furthermore, all arithmetic involving decimal numbers from this module is guaranteed to be <em>exact</em>, meaning that <code class="docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span> <span class="pre">-</span> <span class="pre">0.3</span></code> would be exactly <code class="docutils literal notranslate"><span class="pre">0.</span></code>. There is also a built-in <a class="reference external" href="https://docs.python.org/3/library/fractions.html#module-fractions">fractions module</a>, which provides tools for working with
-exact representations of rational numbers. Although we will not be using them here, it is very important to keep in mind that these modules exist and that floating point numbers are not the only way around the number line in Python.</p>
+<p>如果你不记住这一课，你未来绝对会导致一些严重，难查的bug。在Python（以及任何其它编程语言）中做和数字有关的工作时，你一定要理解浮点数的有限精度是一个错误源，就像测量工具的不精确一样。因此在错误分析的时候要考虑到它（如果你需要做错误分析的话）。</p>
+<p>你可以用Python的<a class="reference external" href="https://docs.python.org/3.0/library/decimal.html">decimal模组</a>来定义比标准8字节的浮点数更高（或更低）精度的数字。任何使用这个模组的数学计算都是<em>完全精确</em>的，也就是说 <code class="docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span> <span class="pre">-</span> <span class="pre">0.3</span></code> 正好是 <code class="docutils literal notranslate"><span class="pre">0.</span></code>。Python还有一个自带的<a class="reference external" href="https://docs.python.org/3/library/fractions.html#module-fractions">fractions模组</a>提供精确表达和操作有理数的工具。虽然我们不会在本资源中使用这些模组，但是你也应该知道这些模组的存在以及浮点数并不是唯一的选择这事实。</p>
 </div>
 </div>
-<div class="section" id="Complex-Numbers">
-<h3>Complex Numbers<a class="headerlink" href="#Complex-Numbers" title="Permalink to this headline">¶</a></h3>
-<p>In mathematics, a “complex number” is a number with the form <span class="math notranslate nohighlight">\(a + bi\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are real-valued numbers, and <span class="math notranslate nohighlight">\(i\)</span> is defined to be the number that satisfies the relationship <span class="math notranslate nohighlight">\(i^2 = -1\)</span>. Because no real-valued number satisfies this relationship, <span class="math notranslate nohighlight">\(i\)</span> is called the “imaginary number”.</p>
-<p>Weirdo electrical engineers use the symbol <span class="math notranslate nohighlight">\(j\)</span> in place of <span class="math notranslate nohighlight">\(i\)</span>, which is why Python displays the complex number <span class="math notranslate nohighlight">\(2 + 3i\)</span> as <code class="docutils literal notranslate"><span class="pre">2+3j</span></code> (this is actually because <span class="math notranslate nohighlight">\(i\)</span> typically denotes current; we like electrical engineers too).</p>
-<p>Along with the <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">bj</span></code> syntax, built-in type <code class="docutils literal notranslate"><span class="pre">complex</span></code> can be used to create complex-type numbers:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating complex numbers</span>
+<div class="section" id="复数">
+<h3>复数<a class="headerlink" href="#复数" title="永久链接至标题">¶</a></h3>
+<p>在数学中，一个“复数”（complex number）是任何 <span class="math notranslate nohighlight">\(a + bi\)</span> 形式的数字（<span class="math notranslate nohighlight">\(a\)</span> 和 <span class="math notranslate nohighlight">\(b\)</span> 为实数，<span class="math notranslate nohighlight">\(i\)</span> 的定义为满足 <span class="math notranslate nohighlight">\(i^2 = -1\)</span> 关系的数）。因为没有任何实数满足上述关系，<span class="math notranslate nohighlight">\(i\)</span> 被称为“虚数”。</p>
+<p>奇奇怪怪的电气工程师用符号 <span class="math notranslate nohighlight">\(j\)</span> 来代替 <span class="math notranslate nohighlight">\(i\)</span>，所以Python会将复数 <span class="math notranslate nohighlight">\(2 + 3i\)</span> 打印成 <code class="docutils literal notranslate"><span class="pre">2+3j</span></code>（实际原因是 <span class="math notranslate nohighlight">\(i\)</span> 一般用来表达电流；我们还是要爱护电气工程师的）。</p>
+<p>除了 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">bj</span></code> 格式之外，内置的 <code class="docutils literal notranslate"><span class="pre">complex</span></code> 类可以用来创建复数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建复数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3j</span>
 <span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3j</span><span class="p">)</span>
 
@@ -556,19 +552,18 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">j</span></code> is not, by itself, reserved as a special placeholder for <span class="math notranslate nohighlight">\(i\)</span>. Rather, <code class="docutils literal notranslate"><span class="pre">j</span></code> must be preceded immediately with a numerical literal (i.e.&nbsp;you cannot use a variable) in order for the Python interpreter to treat it as a complex number.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `j` by itself is treated like any other character</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">j</span>
-<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;j&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+<p>请注意，<code class="docutils literal notranslate"><span class="pre">j</span></code> 自身并不是代表 <span class="math notranslate nohighlight">\(i\)</span> 的特殊字符。只有在一个数字常量（numerical literal）（不是变量的数字）后的 <code class="docutils literal notranslate"><span class="pre">j</span></code> 才会被Python直译器理解为复数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># 仅仅 &#39;j&#39; 本身并没有什么特殊含义
+&gt;&gt;&gt; j
+NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 
-<span class="c1"># `1j` is interpreted as the imaginary number</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">1j</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">0j</span><span class="p">)</span>
+# 而 `1j` 会被理解为虚数
+&gt;&gt;&gt; (1j) ** 2
+(-1+0j)
 </pre></div>
 </div>
-<p>You can access <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> from <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">bj</span></code>, the real and imaginary parts of the complex number, respectively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accessing the real and imaginary parts of</span>
-<span class="c1"># a complex number.</span>
+<p>你分别可以获取 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">bj</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">a</span></code> 和 <code class="docutils literal notranslate"><span class="pre">b</span></code>，也就是复数的实数（real）和虚数（imaginary）部分。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取复数的实数和虚数部分</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.4</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">real</span>
 <span class="mf">1.2</span>
@@ -576,11 +571,11 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="o">-</span><span class="mf">3.4</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">cmath</span></code> (“complex math”) module provides a collection of mathematical functions defined for complex numbers. For a complete listing of these functions, refer to the <a class="reference external" href="https://docs.python.org/3/library/cmath.html#module-cmath">official documentation</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">cmath</span></code>（“complex math”）模组定义了一组复数的数学函数。完整的列表可以在<a class="reference external" href="https://docs.python.org/3/library/cmath.html#module-cmath">官方说明文件</a>找到。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Working with numbers in Python</strong></p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：操作Python数字</strong></p>
 <ol class="arabic simple">
-<li>In Python, performing an arithmetic operation, such as addition or multiplication, on two integers will return an integer, and performing an operation on two floats will return a float:</li>
+<li><p>在Python中，对两个整数进行如加或乘的算术会返回一个整数，而对两个浮点数进行运算会返回一个浮点数：</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="go">6</span>
@@ -589,100 +584,100 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="go">6.0</span>
 </pre></div>
 </div>
-<p>For which operation, among <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">**</span></code>, does this <em>not</em> hold?</p>
+<p>上述语句对 <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">**</span></code> 这些运算符中哪个<em>不</em>成立？</p>
 <ol class="arabic simple" start="2">
-<li>What type of number will be returned if you perform a mathematical operation using an integer and a floating-point number? Does this hold for all the arithmetic operations? Determine this by trial and error.</li>
-<li>Given the function <span class="math notranslate nohighlight">\(f(x) = e^{|x - 2|}\)</span>, make use of the <code class="docutils literal notranslate"><span class="pre">math</span></code> module to compute <span class="math notranslate nohighlight">\(f(-0.2)\)</span>.</li>
-<li>Using Python’s syntax for scientific notation, write an expression that verifies that one trillion divided by one billion is equal to one thousand</li>
+<li><p>对一个整数和一个浮点数进行数学运算会返回哪种数字？是否所有的运算符都遵循这一规律？请在命令行中进行尝试以得到答案。</p></li>
+<li><p>定义 <span class="math notranslate nohighlight">\(f(x) = e^{|x - 2|}\)</span>。使用 <code class="docutils literal notranslate"><span class="pre">math</span></code> 模组来运算 <span class="math notranslate nohighlight">\(f(-0.2)\)</span>。</p></li>
+<li><p>使用Python的科学计数法语法来确认一万亿除以十亿等于一千。</p></li>
 </ol>
 </div>
 </div>
-<div class="section" id="Augmented-Assignment-Statements">
-<h3>Augmented Assignment Statements<a class="headerlink" href="#Augmented-Assignment-Statements" title="Permalink to this headline">¶</a></h3>
-<p>Python provides a nice “shortcut” for updating a variable via an arithmetic operation. For example, suppose you want to increase the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> by 1. Currently, we would update <code class="docutils literal notranslate"><span class="pre">x</span></code> as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># incrementing `x` by 1</span>
+<div class="section" id="赋值语句的简写">
+<h3>赋值语句的简写<a class="headerlink" href="#赋值语句的简写" title="永久链接至标题">¶</a></h3>
+<p>Python提供了一些方便你使用数学运算符更新变量的方式。假设你想要将 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的值增加 1，你可能会如此操作：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将 `x` 增加 1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="mi">6</span>
 </pre></div>
 </div>
-<p>We can make use of a special assignment operation <code class="docutils literal notranslate"><span class="pre">+=</span></code> to perform this update in an abbreviated way.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using `+=` to increment `x` by 1</span>
+<p>我们可以利用一个特殊的赋值符 <code class="docutils literal notranslate"><span class="pre">+=</span></code> 来简写这个更新操作。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `+=` 来将 `x` 增加 1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># equivalent to: `x = x + 1`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># 这和 `x = x + 1` 等值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="mi">6</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">+=</span></code> is a type of <em>augmented assignment statement</em>. In general, an augmented assignment performs a mathematical operation on a variable, and then updates that variable using the result. Augmented assignment statements are available for all of the arithmetic operations. Assuming <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code> are both types of numbers, the following summarizes the available arithmetic augmented assignment statements that we can perform on <code class="docutils literal notranslate"><span class="pre">x</span></code>, using <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">+=</span></code> 是一种<em>增强赋值语句</em>（augmented assignment statement）。总的来讲，一个增强赋值语句会对一个函数进行某种数学运算，并用运算的结果更新该函数。每个算术运算符都有着相对应的增强的赋值语句。假设 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">n</span></code> 为数字，以下列表将总结我们可以用 <code class="docutils literal notranslate"><span class="pre">n</span></code> 对 <code class="docutils literal notranslate"><span class="pre">x</span></code> 进行的增强算术赋值语句：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">n</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">-</span> <span class="pre">n</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">n</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">/</span> <span class="pre">n</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">//=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">//</span> <span class="pre">n</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">**</span> <span class="pre">n</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">-</span> <span class="pre">n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">/</span> <span class="pre">n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">//=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">//</span> <span class="pre">n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**=</span> <span class="pre">n</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">**</span> <span class="pre">n</span></code></p></li>
 </ul>
 </div>
-<div class="section" id="Improving-The-Readability-of-Numbers">
-<h3>Improving The Readability of Numbers<a class="headerlink" href="#Improving-The-Readability-of-Numbers" title="Permalink to this headline">¶</a></h3>
-<p>Python version 3.6 introduced the ability to include underscores between the digits of a number as a visual delimiter. This character can be used to improve the readability of long numbers in your code. For example the number <code class="docutils literal notranslate"><span class="pre">662607004</span></code> can be rewritten as <code class="docutils literal notranslate"><span class="pre">662_607_004</span></code>, using <code class="docutils literal notranslate"><span class="pre">_</span></code> to delimit digits separated by orders of one thousand. Leading, trailing, or multiple underscores in a row are not allowed; otherwise this character can be included anywhere within a numerical literal.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># examples of using `_` as a visual delimiter in numbers</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="n">_000_000</span>  <span class="c1"># this is nice!</span>
+<div class="section" id="提升数字的可读性">
+<h3>提升数字的可读性<a class="headerlink" href="#提升数字的可读性" title="永久链接至标题">¶</a></h3>
+<p>Python 3.6版本提供了在数字位数之间插入下划线来视觉上划分它们的功能。这个符号可以用来提升多位数的可读性。比如说，利用 <code class="docutils literal notranslate"><span class="pre">_</span></code> 来区分每三位的数字，<code class="docutils literal notranslate"><span class="pre">662607004</span></code> 可以被重写成为 <code class="docutils literal notranslate"><span class="pre">662_607_004</span></code>。下划线不能出现在数字首位，尾位，或另一个下划线旁边，但除此以外这个符号可以出现在数字常量中间的任何位置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 利用 `_` 来视觉上划分数字</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="n">_000_000</span>  <span class="c1"># 这很实用！</span>
 <span class="mi">1000000</span>
 
-<span class="c1"># this is gross but is permitted</span>
+<span class="c1"># 虽然看起来挺恶心的，但这是合法的Python代码</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="n">_3_4</span><span class="o">.</span><span class="mi">5</span><span class="n">_6_7</span>
 <span class="mf">234.567</span>
 
-<span class="c1"># underscores work with all variety of numerical literals</span>
+<span class="c1"># 你可以在任何类型的数字中插入下划线</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="n">_000j</span>
 <span class="mi">10000j</span>
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Compatibility Warning</strong></p>
-<p>The permitted use of the underscore character, <code class="docutils literal notranslate"><span class="pre">_</span></code>, in numerical literals was introduced in Python 3.6. Thus utilizing this syntax in your code will render it incompatible with Python 3.5 and earlier.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>兼容性警告</strong></p>
+<p>在数字常量中插入下划线 <code class="docutils literal notranslate"><span class="pre">_</span></code> 的功能是在Python 3.6版本加入的。如果你使用此功能，那你的代码会和Python 3.5和更早的版本不兼容。</p>
 </div>
 </div>
 </div>
-<div class="section" id="The-Boolean-Type">
-<h2>The Boolean Type<a class="headerlink" href="#The-Boolean-Type" title="Permalink to this headline">¶</a></h2>
-<p>There are two boolean-type objects: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>; they belong to the built-in type <code class="docutils literal notranslate"><span class="pre">bool</span></code>. We have already seen that the <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> function either returns <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, as a given object either is or isn’t an instance of a specific type.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the two boolean-objects: `True` and `False`</span>
+<div class="section" id="布尔类">
+<h2>布尔类<a class="headerlink" href="#布尔类" title="永久链接至标题">¶</a></h2>
+<p>Python有两种布尔类（boolean）的对象：<code class="docutils literal notranslate"><span class="pre">True</span></code>（真）和 <code class="docutils literal notranslate"><span class="pre">False</span></code>（否）；它们属于内置的 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 类型。我们在之前见到 <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> 函数根据对象是否是某类的实例（instance）而返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> 或 <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 两种布尔类的对象：`True` 和 `False`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 <span class="nb">bool</span>
 
-<span class="c1"># `False` is a boolean-type object</span>
+<span class="c1"># `False` 是一个布尔类的对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> must be specified with capital letters in Python. These should not be confused with strings; note that there are no quotation marks used here.</p>
-<div class="section" id="Logic-Operators">
-<h3>Logic Operators<a class="headerlink" href="#Logic-Operators" title="Permalink to this headline">¶</a></h3>
-<p>Python provides familiar operators for performing basic boolean logic:</p>
-<table border="1" class="docutils">
+<p>在Python中，<code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code> 必须要首字母大写。请不要将它们和字符串搞混；注意布尔值并两边没有引号。</p>
+<div class="section" id="逻辑运算符">
+<h3>逻辑运算符<a class="headerlink" href="#逻辑运算符" title="永久链接至标题">¶</a></h3>
+<p>Python提供常见的布尔逻辑的操作符：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="47%" />
-<col width="53%" />
+<col style="width: 68%" />
+<col style="width: 32%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Logic Operation</th>
-<th class="head">Symbolic Operator</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>逻辑运算名称</p></th>
+<th class="head"><p>运算符号</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">and</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">&amp;</span></code></td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">and</span></code>（逻辑与）</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">or</span></code></td>
-<td>|</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">or</span></code> （逻辑或）</p></td>
+<td><p>|</p></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating boolean-logic operators</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示布尔逻辑运算符</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
 <span class="bp">True</span>
 
@@ -693,22 +688,23 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>Operator symbols are available in place of the reserved words <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating the symbolic logic operators</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="o">|</span> <span class="bp">True</span>  <span class="c1"># equivalent to: `False or True`</span>
+<p>译者注：原文因为 <code class="docutils literal notranslate"><span class="pre">not</span></code>（逻辑否）在英文中很好理解没有多讨论。读者只需知道：<code class="docutils literal notranslate"><span class="pre">not</span></code> 返回输入的布尔值的反值。</p>
+<p>你也可以使用 <code class="docutils literal notranslate"><span class="pre">and</span></code> 和 <code class="docutils literal notranslate"><span class="pre">or</span></code> 对应的运算符号：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示逻辑运算符</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="o">|</span> <span class="bp">True</span>  <span class="c1"># 和 `False or True` 等值</span>
 <span class="bp">True</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="o">&amp;</span> <span class="bp">True</span>  <span class="c1"># equivalent to: `False and True`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="o">&amp;</span> <span class="bp">True</span>  <span class="c1"># 和 `False and True` 等值</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>That being said, it is generally more “Pythonic” (i.e.&nbsp;in-vogue with Python users) to favor the use of the word-operators over the symbolic ones.</p>
-<p>Multiple logic operators can be used in a single line and parentheses can be used to group expressions:</p>
+<p>一般来讲，使用运算名称，而不是符号，是更加“Python风格“的做法（也就是说这个方法在Python编程者之间更时兴）。</p>
+<p>你可以在同行使用多个逻辑运算符，并用括号来细述运算顺序：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">True</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Comparison statements used in basic mathematics naturally return boolean objects.</p>
+<p>基本的比大小语句自然会返回布尔类的对象。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span>
 <span class="go">True</span>
 
@@ -719,11 +715,11 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="go">False</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">bool</span></code> type has additional utilities, which will be discussed in the “Conditional Statements” section.</p>
+<p><code class="docutils literal notranslate"><span class="pre">bool</span></code> 类有着其它方便操作的方法。我们将在“条件语”小节讨论它们。</p>
 </div>
-<div class="section" id="Boolean-Objects-are-Integers">
-<h3>Boolean Objects are Integers<a class="headerlink" href="#Boolean-Objects-are-Integers" title="Permalink to this headline">¶</a></h3>
-<p>The two boolean objects <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> formally belong to the <code class="docutils literal notranslate"><span class="pre">int</span></code> type in addition to <code class="docutils literal notranslate"><span class="pre">bool</span></code>, and are associated with the values <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code>, respectively:</p>
+<div class="section" id="布尔值对象其实就是整数">
+<h3>布尔值对象其实就是整数<a class="headerlink" href="#布尔值对象其实就是整数" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code> 这两个布尔值对象正式而言也是 <code class="docutils literal notranslate"><span class="pre">int</span></code> 类型的成员，其分别对应 <code class="docutils literal notranslate"><span class="pre">1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">0</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="go">True</span>
 
@@ -737,41 +733,42 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="go">0</span>
 </pre></div>
 </div>
-<p>As such, they can be used in mathematical expressions interchangeably with <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">*</span><span class="bp">True</span> <span class="o">-</span> <span class="bp">False</span>  <span class="c1"># equivalent to: 3*1 + 0</span>
+<p>因此，在数学运算中它们和 <code class="docutils literal notranslate"><span class="pre">1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">0</span></code> 的作用一样：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">*</span><span class="bp">True</span> <span class="o">-</span> <span class="bp">False</span>  <span class="c1"># 和 3*1 + 0 等值</span>
 <span class="go">3</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">/</span> <span class="bp">False</span>  <span class="c1"># equivalent to: 1 / 0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">/</span> <span class="bp">False</span>  <span class="c1"># 和 1 / 0 等值</span>
 <span class="go">---------------------------------------------------------------------------</span>
 <span class="go">ZeroDivisionError                         Traceback (most recent call last)</span>
 <span class="go">&lt;ipython-input-4-f8487d9d0863&gt; in &lt;module&gt;()</span>
 <span class="go">----&gt; 1 True / False</span>
 
 <span class="go">ZeroDivisionError: division by zero</span>
+<span class="go">（因为除以零所以直译器报错）</span>
 </pre></div>
 </div>
-<p>The purpose of having <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> double as integers is beyond the scope of this section. It is simply useful to be aware of these facts so that this behavior is not completely alien to you as you begin to write code in Python.</p>
+<p>为何 <code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code> 同时也是整数的原因超出了本节的纲领。熟悉这一特征会让你在写Python代码的时候避免一些错误。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Boolean expressions</strong></p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：布尔表达式</strong></p>
 <ol class="arabic simple">
-<li>Assuming <code class="docutils literal notranslate"><span class="pre">x</span></code> is a an integer-type, write a comparison statement that will return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is an even number, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. (Hint: recall the purpose of the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator)</li>
-<li>Assuming <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are both real-valued numbers (i.e.&nbsp;not complex numbers), write a line of code that will return <code class="docutils literal notranslate"><span class="pre">False</span></code> if: <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are within 0.9 of one another, and <code class="docutils literal notranslate"><span class="pre">x</span></code> is a positive number. (Hint: try writing the expression that will return <code class="docutils literal notranslate"><span class="pre">True</span></code> for this condition, and then negate it)</li>
-<li>Write an expression that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is a boolean-type object or a float-type object.</li>
+<li><p>假设 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是整数类。编写一个表达式，在 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是偶数时返回 <code class="docutils literal notranslate"><span class="pre">True</span></code>，其它情况返回 <code class="docutils literal notranslate"><span class="pre">False</span></code>。（提示：回忆 <code class="docutils literal notranslate"><span class="pre">%</span></code> 运算符的功能）</p></li>
+<li><p>假设 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 都是实数（也就是不是复数的数字）。编写一行代码，在以下情况中返回 <code class="docutils literal notranslate"><span class="pre">False</span></code>：<code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 相差小于0.9，且 <code class="docutils literal notranslate"><span class="pre">x</span></code> 大于零。（提示：尝试先编写在这个情况中会返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> 的代码，然后再取反）</p></li>
+<li><p>编写一个表达式，当 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是布尔类型或浮点类型对象时返回 <code class="docutils literal notranslate"><span class="pre">True</span></code>。</p></li>
 </ol>
 </div>
 </div>
 </div>
-<div class="section" id="The-None-Type">
-<h2>The None-Type<a class="headerlink" href="#The-None-Type" title="Permalink to this headline">¶</a></h2>
-<p>There is a simple type, <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> that has exactly one object: <code class="docutils literal notranslate"><span class="pre">None</span></code>. <code class="docutils literal notranslate"><span class="pre">None</span></code> is used to represent “null”… nothing.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `None` is the *only* object belonging to NoneType</span>
+<div class="section" id="None类型">
+<h2>None类型<a class="headerlink" href="#None类型" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code>（None类型）仅仅只有一个对象：<code class="docutils literal notranslate"><span class="pre">None</span></code>。<code class="docutils literal notranslate"><span class="pre">None</span></code> 用来表达“无”/“空”，也就是什么都没有的意思。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `None` 是*唯一*属于NoneType的对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
 <span class="n">NoneType</span>
 </pre></div>
 </div>
-<p>As such, instead of checking if an object belongs to NoneType, you should simply check if the object is <code class="docutils literal notranslate"><span class="pre">None</span></code>. Python reserves <code class="docutils literal notranslate"><span class="pre">is</span></code> as an operation that checks if two objects are identical. This is different than <code class="docutils literal notranslate"><span class="pre">==</span></code>, which checks if two objects are associated with the same value or state:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if an object &quot;is&quot; None, instead</span>
-<span class="c1"># of checking if it is of NoneType</span>
+<p>因此，与其检查某对象是否属于NoneType，你应该直接检查该对象是否就是 <code class="docutils literal notranslate"><span class="pre">None</span></code>。Python保留 <code class="docutils literal notranslate"><span class="pre">is</span></code> 为检查两个对象是否相同的运算符。这和检查两个对象是否有着同样的值或态的 <code class="docutils literal notranslate"><span class="pre">==</span></code> 运算符不一样：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查对象是否*是*（is）None，而不是</span>
+<span class="c1"># 检查对象是否是NoneType类的实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">22</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
@@ -786,12 +783,12 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">None</span></code> appears frequently, and is often used as a placeholder in code. Here is a simple example where <code class="docutils literal notranslate"><span class="pre">None</span></code> could be useful; don’t worry that this code may not make perfect sense to you yet:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstrating the use of `None` as a placeholder</span>
+<p>译者注：<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code> 和 <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(x</span> <span class="pre">is</span> <span class="pre">None)</span></code> 等值，但前者因更符合英文语法而也被支持。</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> 经常作为占位符使用。以下代码将演示 <code class="docutils literal notranslate"><span class="pre">None</span></code> 在实际操作中的用法；如果你并不能完全理解这代码，不要担心：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示将 `None` 作为占位符的用法</span>
 
-<span class="c1"># In this code, we want to get the first</span>
-<span class="c1"># item in a list that is greater than 10, and notify</span>
-<span class="c1"># the user if there is no such number</span>
+<span class="c1"># 在本代码中，我们想要找到列表中第一个大于10的物件</span>
+<span class="c1"># 如果该物件不存在，我们将如实告诉用户</span>
 
 <span class="n">large_num</span> <span class="o">=</span> <span class="bp">None</span>
 
@@ -805,33 +802,32 @@ exact representations of rational numbers. Although we will not be using them he
 </pre></div>
 </div>
 </div>
-<div class="section" id="Strings">
-<h2>Strings<a class="headerlink" href="#Strings" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Introducing-the-string-type">
-<h3>Introducing the string type<a class="headerlink" href="#Introducing-the-string-type" title="Permalink to this headline">¶</a></h3>
-<p>The string type is used to store written characters. A string can be formed using:</p>
+<div class="section" id="字符串">
+<h2>字符串<a class="headerlink" href="#字符串" title="永久链接至标题">¶</a></h2>
+<div class="section" id="字符串类型简介">
+<h3>字符串类型简介<a class="headerlink" href="#字符串类型简介" title="永久链接至标题">¶</a></h3>
+<p>字符串（string）类型被用于存储多个字符。你可以用一下语法创建字符串：</p>
 <ul class="simple">
-<li>single quotes: <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">world'</span></code></li>
-<li>double quotes: <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world&quot;</span></code></li>
-<li>triple quotes: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Hello</span> <span class="pre">world&quot;&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'''Hello</span> <span class="pre">world'''</span></code></li>
+<li><p>单引号：<code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">world'</span></code></p></li>
+<li><p>双引号：<code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world&quot;</span></code></p></li>
+<li><p>三引号：<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Hello</span> <span class="pre">world&quot;&quot;&quot;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">'''Hello</span> <span class="pre">world'''</span></code></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strings contain written characters, even those</span>
-<span class="c1"># not found in the english alphabet!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 字符串可以存储任何字符，</span>
+<span class="c1"># 不仅仅是英文字母表中的字母！</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;hello, 你好, Olá, 123&quot;</span>
 <span class="s1">&#39;hello, 你好, Olá, 123&#39;</span>
 </pre></div>
 </div>
-<p>By default, Python 3 uses <a class="reference external" href="https://docs.python.org/3/howto/unicode.html#unicode-howto">UTF-8 unicode</a> to represent this wide variety of characters. Don’t worry about this detail beyond making note of it, for now.</p>
-<p>Strings belong to the built-in <code class="docutils literal notranslate"><span class="pre">str</span></code> type, which can be used to convert non-string objects into strings.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the type `str`</span>
+<p>Python 3默认使用<a class="reference external" href="https://docs.python.org/3/howto/unicode.html#unicode-howto">UTF-8 unicode</a>来表达这些多样化的字符。暂时没必要太过关注这个细节，知道它存在就行。</p>
+<p>字符串属于内置的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 类型。<code class="docutils literal notranslate"><span class="pre">str</span></code> 则可以用来将非字符串对象转化成字符串。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `str` 类型</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 <span class="nb">str</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;83&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 <span class="bp">True</span>
 
-<span class="c1"># Using the type `str` to convert non-string objects</span>
-<span class="c1"># into strings.</span>
+<span class="c1"># 利用 `str` 类型来将非字符串对象转化成字符串</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mf">10.34</span><span class="p">)</span>
 <span class="s1">&#39;10.34&#39;</span>
 
@@ -839,8 +835,8 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="s1">&#39;True&#39;</span>
 </pre></div>
 </div>
-<p>Once a string is formed, it cannot be changed (without creating an entirely new string). Thus a given string object cannot be “mutated” - a string is an <em>immutable</em> object.</p>
-<p>As the string stores a <em>sequence</em> of characters, Python provides a means for accessing individual characters and subsequences of characters from a string:</p>
+<p>当一个字符串被创建后，它的值无法被改变（除非你创建一个全新的字符串）。因此，任何一个字符串都无法被“改变”——字符串是*不可变*（immutable）的对象。</p>
+<p>因为Python存储一<em>序列</em>（sequence）的字符，Python提供了调用字符串中单个字符和子字符串的工具：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;The cat in the hat.&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sentence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">&#39;T&#39;</span>
@@ -848,20 +844,20 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="go">&#39;The&#39;</span>
 </pre></div>
 </div>
-<p>Strings are not the only sequence-type in Python; lists and tuples are examples of sequences as well. We will reserve a separate section to learn about the common interface that Python has for all of its types that are sequential in nature, including the “indexing” and “slicing” demonstrated here.</p>
+<p>字符串并不是Python中唯一的序列类；列表（list）和元组（tuple）也同样是序列的一种。我们在未来将专门花一节课来讨论Python提供的通用序列操作。这包括了以上展示的“索引“（indexing）和”切片“（slicing）。</p>
 </div>
-<div class="section" id="String-essentials">
-<h3>String essentials<a class="headerlink" href="#String-essentials" title="Permalink to this headline">¶</a></h3>
-<p>We will only scratch the surface with strings, touching on some essentials. Please refer to the <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">official Python tutorial</a> for a more extensive, but still informal, overview of strings.</p>
-<p>In a string, <code class="docutils literal notranslate"><span class="pre">\n</span></code> is treated as a single character. It denotes a new-line in a string, and will be rendered thusly when the string is printed. Similarly, <code class="docutils literal notranslate"><span class="pre">\t</span></code> will render as a tab-character.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using `\n` to create a newline</span>
+<div class="section" id="字符串基础">
+<h3>字符串基础<a class="headerlink" href="#字符串基础" title="永久链接至标题">¶</a></h3>
+<p>我们只会学习一些字符串的基础。如果你想要一个更全面的非正式字符串教程，请查阅<a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">官方Python教程</a>。</p>
+<p>在字符串中，<code class="docutils literal notranslate"><span class="pre">\n</span></code> 被视为一个字符。它代表着字符串的新行（new-line）。在打印时它也会如此显示。相似的 <code class="docutils literal notranslate"><span class="pre">\t</span></code> 会显示为一个tab字符。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `\n` 来创建新行</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;hi...</span><span class="se">\n</span><span class="s2">...bye&quot;</span><span class="p">)</span>
 <span class="n">hi</span><span class="o">...</span>
 <span class="o">...</span><span class="n">bye</span>
 </pre></div>
 </div>
-<p>Using triple quotes allows you to write a block-string, meaning that you can include text on multiple lines, and it is all still treated as one string:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using triple-quotes to write a multi-line string</span>
+<p>三引号将允许你编写一整块字符串，也就是说你可以在多行中编写同一个字符串：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用三引号来编写一个多行字符串</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot; I am a string.</span>
 <span class="s2">I am part of the same string.</span>
 <span class="s2">    me... too!&quot;&quot;&quot;</span>
@@ -870,123 +866,123 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="s1">&#39; I am a string.</span><span class="se">\n</span><span class="s1">I am part of the same string.</span><span class="se">\n</span><span class="s1">    me... too!&#39;</span>
 </pre></div>
 </div>
-<p>Python’s strings have a large number of fantastic, built-in functions available to them. It is <em>very important</em> that you familiarize yourself with these functions by looking over <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">the official documentation</a>. To demonstrate a few of these:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating a few of the built-in functions for strings</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<p>Python的字符串有着大量很有用的内置函数。熟悉了解这些函数<em>极其重要</em>。详见<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">官方说明文件</a>。以下是其中一些函数的演示：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示几个字符串的内置函数</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="c1"># 译者注：首字母大写</span>
 <span class="s1">&#39;Hello&#39;</span>
 
-<span class="c1"># join a list of strings, using &quot;...&quot;</span>
+<span class="c1"># 使用“...”来讲多个字符串连接在一起</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;...&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;item1&quot;</span><span class="p">,</span> <span class="s2">&quot;item2&quot;</span><span class="p">,</span> <span class="s2">&quot;item3&quot;</span><span class="p">])</span>
 <span class="s1">&#39;item1...item2...item3&#39;</span>
 
-<span class="c1"># split a string wherever &quot;, &quot; occurs</span>
+<span class="c1"># 每当“, ”出现时切分字符串</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;item1, item2, item3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;item1&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">]</span>
 
-<span class="c1"># does this string end with &quot;.py&quot;?</span>
+<span class="c1"># 该字符串是否以“.py”结尾?</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;script.py&quot;</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.py&quot;</span><span class="p">)</span>
 <span class="bp">True</span>
 
-<span class="c1"># does this string start with &quot;sc&quot;?</span>
+<span class="c1"># 该字符串是否以“sc”打头?</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;script.py&quot;</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;sc&quot;</span><span class="p">)</span>
 <span class="bp">True</span>
 
-<span class="c1"># insert objects into a string, in its</span>
-<span class="c1"># &quot;formatting&quot; fields {}</span>
+<span class="c1"># 在占位符 {} 中将对象转化为字符串并插入</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;x: {}, y: {}, z: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="s1">&#39;x: 3.2, y: 8.4, z: -1.0&#39;</span>
 
-<span class="c1"># Are the characters in the string</span>
-<span class="c1"># numerical digits?</span>
+<span class="c1"># 该字符串的字符是否时数字位数？</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;7&quot;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Formatting-strings">
-<h3>Formatting strings<a class="headerlink" href="#Formatting-strings" title="Permalink to this headline">¶</a></h3>
-<p>Python provides multiple syntaxes for formatting strings; these permit us to do things like programmatically inject the values of variables into strings, align fields using whitespace, and control the number of decimal places with which numbers are displayed in a string. This section is designed to simply expose the reader to the different varieties of string-formatting.</p>
-<p><a class="reference external" href="https://pyformat.info">pyformat.info</a> is the best resource to consult to see an exhaustive (but still intuitive) treatment of string-formatting in Python. You can also refer to the official documentation <a class="reference external" href="https://docs.python.org/3/library/string.html#format-examples">here</a>.</p>
-<p>In Python 3, you can leverage the <code class="docutils literal notranslate"><span class="pre">format</span></code> method towards this end:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using `format` to replace placeholders with values</span>
+<div class="section" id="格式化字符串">
+<h3>格式化字符串<a class="headerlink" href="#格式化字符串" title="永久链接至标题">¶</a></h3>
+<p>Python提供多种设置字符串格式的语法；利用这些语法，我们可以轻松地将变量数值插入到字符串中，利用空格对齐行列，并控制字符串显示小数点后几位数。本节旨在向读者展示这些不同的字符串格式。</p>
+<p>如果你想要完整（但仍然易懂）的Python字符串格式教程，请查阅<a class="reference external" href="https://pyformat.info">pyformat.info</a>。你也可以查阅<a class="reference external" href="https://docs.python.org/3/library/string.html#format-examples">官方教程</a>。</p>
+<p>在Python 3中，你可以使用 <code class="docutils literal notranslate"><span class="pre">format</span></code> 方法来格式化字符串：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `format` 来用函数值代替占位符</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;{name} is {age} years old&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bruce&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
 <span class="s1">&#39;Bruce is 80 years old&#39;</span>
 
-<span class="c1"># padding a string with leading-spaces so that it has at least 8 characters</span>
+<span class="c1"># 以下语法会前置空格来保证字符串至少有8字符长</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;{item:&gt;8}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="s2">&quot;stew&quot;</span><span class="p">)</span>
 <span class="s1">&#39;   stew&#39;</span>
 </pre></div>
 </div>
-<p>Note that you may encounter the use of the cryptic <code class="docutils literal notranslate"><span class="pre">%</span></code> operator to format strings to the same effect:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using `%` to  format strings (avoid this)</span>
+<p>你有时可能会见到别人用 <code class="docutils literal notranslate"><span class="pre">%</span></code> 运算符来格式化字符串：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `%` 来格式化字符串（注意不要使用此方法）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Selina&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;My name is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">name</span>
 <span class="s1">&#39;My name is Selina&#39;</span>
 </pre></div>
 </div>
-<p>this is a relic of Python 2; it is recommend that you avoid this formatting syntax.</p>
-<p>If you are using Python 3.6 or beyond, then you have the luxury of being able to use f-strings, which provide a supremely convenient means for formatting strings. Here is an example of an f-string in action:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># an example of an &#39;f-string&#39;</span>
+<p>这是Python 2的遗留物；你应注意避免使用此语法。</p>
+<p>如果你在用Python 3.6和之后的版本，你可以使用f-string（f字符串），一种很方便格式化字符串的方法。以下是一个f字符串的范例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># “f字符串”范例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">batman</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">catwoman</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s2">&quot;Batman has {batman} apples. Catwoman has {catwoman} apples. Together, they have {batman + catwoman} apples&quot;</span>
 <span class="s1">&#39;Batman has 12 apples. Catwoman has 10 apples. Together, they have 22 apples&#39;</span>
 </pre></div>
 </div>
-<p>See that an f-string has a special syntax; an f-string is denoted by preceding the opening quotation mark with the lowercase f character:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is a typical empty string</span>
+<p>请注意f字符串是一种特殊语法；在第一个引号前输入小写字符f来使用f字符串：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这是一个常见的空字符串</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;&quot;</span>
 <span class="s1">&#39;&#39;</span>
 
-<span class="c1"># this is an empty f-string</span>
+<span class="c1"># 这是一个空的f字符串</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s2">&quot;&quot;</span>
 <span class="s1">&#39;&#39;</span>
 </pre></div>
 </div>
-<p>An f-string is special because it permits us to write Python code <em>within</em> a string; any expression within curly brackets, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, will be executed as Python code, and the resulting value will be converted to a string and inserted into the f-string at that position.</p>
+<p>f字符串的特殊之处在于它允许我们在字符串<em>中</em>编写Python代码；任何在 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 中的表达式都会作为Python代码被执行，其结果将会被转化成字符串并插入在 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 在f字符串中的位置。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">7.9</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="s2">&quot;x is a {type(x)}-number. Its value is {x}. The statement &#39;x is greater than 5&#39; is {x &gt; 5}&quot;</span>
 <span class="go">&quot;x is a &lt;class &#39;float&#39;&gt;-number. Its value is 7.9. The statement &#39;x is greater than 5&#39; is True&quot;</span>
+<span class="go">（“x是一个浮点数类数字。它的值为7.9。表达式‘x大于5’为真”）</span>
 </pre></div>
 </div>
-<p>As seen in the preceding examples, this permits us to elegantly include variables in our strings and even do things like call functions within the string construction syntax.</p>
+<p>如例中所见，这将允许我们优雅地在字符串创建时插入变量并甚至调用函数的输出。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>f-string Compatibility</strong>:</p>
-<p>The ‘f-string’ syntax was introduced in Python 3.6. It is not available in earlier versions of Python.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>f字符串兼容性</strong>：</p>
+<p>f字符串是Python 3.6才加入的新语法。它在之前的Python版本不可用。</p>
 </div>
 </div>
-<div class="section" id="Official-documentation-for-strings">
-<h3>Official documentation for strings<a class="headerlink" href="#Official-documentation-for-strings" title="Permalink to this headline">¶</a></h3>
-<p>It is highly recommended that you take time to read over all of the functions that are built-in to a string.</p>
+<div class="section" id="字符串的官方说明文档">
+<h3>字符串的官方说明文档<a class="headerlink" href="#字符串的官方说明文档" title="永久链接至标题">¶</a></h3>
+<p>本文强烈建议读者花些时间了解所有字符串的自带函数。</p>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">Built-in functions for strings</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/string.html#format-examples">Formatting strings</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">字符串自带函数</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/string.html#format-examples">格式化字符串</a></p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Strings</strong></p>
-<p>To answer some of the following questions, you will need to peruse the documentation for the built-in functions of strings. It may take a bit of experimentation to understand the documentation’s use of square-brackets to indicate optional inputs for a function.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：字符串</strong></p>
+<p>为了回答以下问题，你会需要查阅字符串内置函数的说明文档。你可能需要进行一些尝试才能理解说明文档的“[]”格式（用于表达函数的可选输入）。</p>
 <ol class="arabic simple">
-<li>Use a function that will take the string <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code>, and returns the string <code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160;&#160; <span class="pre">cat</span>&#160;&#160;&#160; <span class="pre">&quot;</span></code> (which has a length of 11, including the letters c, a, t). Now, change the way you call the function so that it returns <code class="docutils literal notranslate"><span class="pre">&quot;----cat----&quot;</span></code> instead.</li>
-<li>Replace the first three periods of this string with a space-character: <code class="docutils literal notranslate"><span class="pre">&quot;I.am.aware.that.spaces.are.a.thing&quot;</span></code></li>
-<li>Remove the whitespace from both ends of: <code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160; <span class="pre">basket</span>&#160;&#160;&#160; <span class="pre">&quot;</span></code></li>
-<li>Create a string that will print as (the second line begins with a tab-character):</li>
+<li><p>使用一个函数，在输入字符串 <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> 时返回字符串 <code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160;&#160;&#160; <span class="pre">cat</span>&#160;&#160;&#160; <span class="pre">&quot;</span></code>（输出的长度为11个字符；这包含字符c，a，t）。之后，修改你调用该函数的方法以返回 <code class="docutils literal notranslate"><span class="pre">&quot;----cat----&quot;</span></code>。</p></li>
+<li><p>用空格代替以下字符串的前三个句号：<code class="docutils literal notranslate"><span class="pre">&quot;I.am.aware.that.spaces.are.a.thing&quot;</span></code></p></li>
+<li><p>去除该字符串两边的所有空格：<code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160; <span class="pre">basket</span>&#160;&#160;&#160; <span class="pre">&quot;</span></code>。</p></li>
+<li><p>创建一个打印时会如下显示的字符串（第二行打头的是一个tab符号）：</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hello</span>
     <span class="n">over</span> <span class="n">there</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li>Convert the integer <code class="docutils literal notranslate"><span class="pre">12</span></code> to the string <code class="docutils literal notranslate"><span class="pre">&quot;12&quot;</span></code>.</li>
-<li>Only kids 13 and up are allowed to see Wayne’s World. Given the variables <code class="docutils literal notranslate"><span class="pre">name</span></code> (a string) and <code class="docutils literal notranslate"><span class="pre">age</span></code> (an integer), use an f-string that will display: “NAME is old enough to watch the movie: BOOL”, where NAME is to be replaced with the kid’s name, and BOOL should be <code class="docutils literal notranslate"><span class="pre">True</span></code> if the kid is at least 13 years old, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</li>
+<li><p>将整数 <code class="docutils literal notranslate"><span class="pre">12</span></code> 转化成字符串 <code class="docutils literal notranslate"><span class="pre">&quot;12&quot;</span></code>。</p></li>
+<li><p>只有13岁和以上的孩子可以观看电影《反斗智多星》。设变量 <code class="docutils literal notranslate"><span class="pre">name</span></code>（字符串）和 <code class="docutils literal notranslate"><span class="pre">age</span></code>（整数）。使用f字符串来显示：“NAME is old enough to watch the movie: BOOL”（“NAME可以看这电影：BOOL”）。NAME应该用孩子的名字来代替，而BOOL在孩子13岁或以上时为 <code class="docutils literal notranslate"><span class="pre">True</span></code>，不然为 <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p></li>
 </ol>
 </div>
 </div>
 </div>
-<div class="section" id="Lists">
-<h2>Lists<a class="headerlink" href="#Lists" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal notranslate"><span class="pre">list</span></code> is a type of Python object that allows us to store a sequence of other objects. One of its major utilities is that it provides us with means for updating the contents of a list later on.</p>
-<p>A list object is created using square-brackets, and its contents are separated by commas: <code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2,</span> <span class="pre">...,</span> <span class="pre">itemN]</span></code>. Its contents need not be of the same type of object.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list-type object stores a sequence of other objects</span>
+<div class="section" id="列表">
+<h2>列表<a class="headerlink" href="#列表" title="永久链接至标题">¶</a></h2>
+<p>一个 <code class="docutils literal notranslate"><span class="pre">list</span></code>（列表）是一个允许我们存储一序列Python对象的对象。列表的一大功能就是我们在未来可以更新列表中的内容。</p>
+<p>你可以用方括号来创建列表，并用逗号区分其中的成员：<code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2,</span> <span class="pre">...,</span> <span class="pre">itemN]</span></code>。它的成员可以是各种不同的类型。</p>
+<p>译者注：注意使用英文的方括号和逗号。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列表对象可以存储一序列的其它对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">]</span>
 <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">]</span>
 
@@ -996,134 +992,133 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="nb">list</span><span class="p">)</span>
 <span class="bp">True</span>
 
-<span class="c1"># constructing an empty list</span>
+<span class="c1"># 空列表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[]</span>
 <span class="p">[]</span>
 
-<span class="c1"># constructing a list with only one member</span>
+<span class="c1"># 只有一个成员的列表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">]</span>
 <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>You can also include variables, equations, and other Python expressions in the list constructor; Python will simplify these expressions and construct the list with the resulting objects.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the list constructor will simplify expressions</span>
-<span class="c1"># and store their resulting objects</span>
+<p>你也可以在创建列表时使用变量，公式，和其它Python表达式；Python会计算这些表达式并用计算的结果作为列表的成员。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建列表时会计算表达式并储存计算后的输出对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
-<p>The built-in <code class="docutils literal notranslate"><span class="pre">list</span></code> type can be used to convert other types of sequences (and more generally, any <em>iterable</em> object, which we will discuss later) into a list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `list` forms a list out of the contents of other sequences</span>
+<p>内置的 <code class="docutils literal notranslate"><span class="pre">list</span></code> 类型可以用来将其它任何类型的序列（更广义来讲，任何<em>可迭代</em>的对象——我们会在之后对其进行讨论）转化成列表：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `list` 利用其它序列的内容来创建新列表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="section" id="Lists-are-sequences">
-<h3>Lists are sequences<a class="headerlink" href="#Lists-are-sequences" title="Permalink to this headline">¶</a></h3>
-<p>Like a string, the ordering of a list’s contents matters, meaning that a list is sequential in nature.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list&#39;s ordering matters</span>
+<div class="section" id="列表是序列">
+<h3>列表是序列<a class="headerlink" href="#列表是序列" title="永久链接至标题">¶</a></h3>
+<p>就像字符串一样，列表内容的排列顺序是很重要的。这也就是说，列表是序列性（sequential）的。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列表是分顺序的</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>Thus a list supports the same mechanism for accessing its contents, via indexing and slicing, as does a string. Indexing and slicing will be covered in detail in the next section.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accessing the contents of a list with indexing and slicing</span>
+<p>因此，像字符串一样，你可以通过索引（indexing）和切片（slicing）来访问列表的内容。我们将在下一节中更具体地介绍索引和切片。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过索引和切片来访问列表的内容</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="c1"># `x` contains five items</span>
+<span class="c1"># `x` 里有5个物件</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="mi">5</span>
 
-<span class="c1"># access the 0th item in the list via &quot;indexing&quot;</span>
+<span class="c1"># 通过索引来访问列表的第0个物件</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="mi">2</span>
 
-<span class="c1"># access a subsequence of the list via &quot;slicing&quot;</span>
+<span class="c1"># 通过切片来访问列表的子序列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Lists-can-be-“mutated”">
-<h3>Lists can be “mutated”<a class="headerlink" href="#Lists-can-be-“mutated”" title="Permalink to this headline">¶</a></h3>
-<p>We will encounter other types of containers in Python, what makes the list stand out is that the <em>contents of a list can be changed after the list has already been constructed</em>. Thus a list is an example of a <em>mutable</em> object.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># changing a list after it has been constructed</span>
+<div class="section" id="列表是可变的">
+<h3>列表是可变的<a class="headerlink" href="#列表是可变的" title="永久链接至标题">¶</a></h3>
+<p>我们会在之后遇到其它的Python容器。使得列表不同的是<em>列表的内容可以在列表创建后被修改</em>。因此，列表是<em>可变</em>对象的一种。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在列表被创建后修改它</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="c1"># &quot;set&quot; the string &#39;apple&#39; into position 1 of `x`</span>
+<span class="c1"># 将列表 `x` 第1位的物件“设置”（set）成字符串 &#39;apple&#39;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;apple&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
 <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="c1"># replace a subsequence of `y`</span>
+<span class="c1"># 修改 `y` 的子序列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span>
 <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The built-in list-functions “append” and “extend” allow us to add one item and multiple items to the end of a list, respectively:</p>
+<p>自带的列表函数“append”和“extend”允许我们分别在列表结尾添加一个和多个的成员：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="go"># use `append` to add a single object to the end of a list</span>
+<span class="go"># 用 `append` 在列表结尾添加一个对象</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;moo&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">[2, 4, 6, 8, 10, &#39;moo&#39;]</span>
 
-<span class="go"># use `extend` to add a sequence of items to the end of a list</span>
+<span class="go"># 用 `extend` 在列表结尾添加一序列的对象</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">None</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">[2, 4, 6, 8, 10, &#39;moo&#39;, True, False, None]</span>
 </pre></div>
 </div>
-<p>The “pop” and “remove” functions allow us to remove an item from a list based on its position in the list, or by specifying the item itself, respectively.</p>
+<p>“pop”和“remove”函数允许我们分别根据成员在列表中的位置和值来将它们从列表中移出。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
 
-<span class="go"># pop the position-1 item out from a list</span>
-<span class="go"># `pop` will return the item that gets removed.</span>
+<span class="go"># 将列表中位置1的物件“pop”（跳）出来</span>
+<span class="go"># `pop` 会返回被移出的物件</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">&#39;b&#39;</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">[&#39;a&#39;, &#39;c&#39;, &#39;d&#39;]</span>
 
-<span class="go"># remove the object &quot;d&quot; from the list</span>
+<span class="go"># 将对象 `&quot;d&quot;` 从列表中移出</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">[&#39;a&#39;, &#39;c&#39;]</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Official-documentation-for-lists">
-<h3>Official documentation for lists<a class="headerlink" href="#Official-documentation-for-lists" title="Permalink to this headline">¶</a></h3>
-<p>It is highly recommended that you take time to read over all of the functions that are built-in to a list. These are all designed to allow us to either inspect or mutate the contents of a list.</p>
+<div class="section" id="列表的官方说明文档">
+<h3>列表的官方说明文档<a class="headerlink" href="#列表的官方说明文档" title="永久链接至标题">¶</a></h3>
+<p>本文强烈建议读者花些时间了解列表的所有自带函数。这些函数都旨在帮助我们访问或修改列表的内容。</p>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">Built-in functions for a list</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">列表的内置函数</a></p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Lists</strong></p>
-<p>To answer some of the following questions, you will need to peruse the documentation for the built-in functions of lists.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：列表</strong></p>
+<p>为了回答以下问题，你会需要查阅列表内置函数的说明文档。</p>
 <ol class="arabic simple">
-<li>Create a list whose sole entry is the <code class="docutils literal notranslate"><span class="pre">None</span></code> object.</li>
-<li>Assign to the variable <code class="docutils literal notranslate"><span class="pre">k</span></code> a list that contains an integer, a boolean, and a string, in that order. Then, add two more entries to the end of the list: a float and a complex number.</li>
-<li>Alphabetize the list of names: <code class="docutils literal notranslate"><span class="pre">[&quot;Jane&quot;,</span> <span class="pre">&quot;Adam&quot;,</span> <span class="pre">&quot;Ryan&quot;,</span> <span class="pre">&quot;Bob&quot;,</span> <span class="pre">&quot;Zordon&quot;,</span> <span class="pre">&quot;Jack&quot;,</span> <span class="pre">&quot;Jackenzie&quot;]</span></code>.</li>
+<li><p>创建一个列表，其唯一的物件是 <code class="docutils literal notranslate"><span class="pre">None</span></code> 对象。</p></li>
+<li><p>向变量 <code class="docutils literal notranslate"><span class="pre">k</span></code> 赋值一个内容为一个整数，一个布尔值，和一个字符串（顺序也是如此）的列表。然后在列表结尾添加两个项目：一个浮点数和一个复数。</p></li>
+<li><p>根据字母顺序排序以下列表：<code class="docutils literal notranslate"><span class="pre">[&quot;Jane&quot;,</span> <span class="pre">&quot;Adam&quot;,</span> <span class="pre">&quot;Ryan&quot;,</span> <span class="pre">&quot;Bob&quot;,</span> <span class="pre">&quot;Zordon&quot;,</span> <span class="pre">&quot;Jack&quot;,</span> <span class="pre">&quot;Jackenzie&quot;]</span></code>。</p></li>
 </ol>
 </div>
 </div>
 </div>
-<div class="section" id="Summary">
-<h2>Summary<a class="headerlink" href="#Summary" title="Permalink to this headline">¶</a></h2>
-<p>The term “object” is a catch-all in Python, meaning anything that we can assign to a variable. Objects behave differently from one another according to what “type” a given object is.</p>
-<p>We reviewed several fundamental object types in Python:</p>
+<div class="section" id="总结">
+<h2>总结<a class="headerlink" href="#总结" title="永久链接至标题">¶</a></h2>
+<p>“对象”（object）在Python中泛指任何可以赋值于一个变量的东西。对象根据其“类型”（type）不同会有不同的行为。</p>
+<p>我们复习了Python几种不同的基本对象类型：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">complex</span></code>: the numerical types</li>
-<li><code class="docutils literal notranslate"><span class="pre">bool</span></code>: the boolean type. <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are the only boolean-type objects</li>
-<li><code class="docutils literal notranslate"><span class="pre">NoneType</span></code>: the “null” type; <code class="docutils literal notranslate"><span class="pre">None</span></code> is <em>the only object that belongs to this type</em></li>
-<li><code class="docutils literal notranslate"><span class="pre">str</span></code>: the string type</li>
-<li><code class="docutils literal notranslate"><span class="pre">list</span></code>: the list type</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>，<code class="docutils literal notranslate"><span class="pre">float</span></code>，<code class="docutils literal notranslate"><span class="pre">complex</span></code>：数字类型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code>：布尔（boolean）类型，其唯二的布尔类对象为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code>：“空”类；<code class="docutils literal notranslate"><span class="pre">None</span></code> 是<em>唯一的这类对象</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>：字符串类</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code>：列表类</p></li>
 </ul>
-<p>The built-in function <code class="docutils literal notranslate"><span class="pre">type</span></code> permits us to check the type of any object:</p>
+<p>Python自带的 <code class="docutils literal notranslate"><span class="pre">type</span></code> 函数允许我们查看任何对象的类型：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mf">3.2</span><span class="p">)</span>
 <span class="go">float</span>
 
@@ -1131,19 +1126,19 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="go">bool</span>
 </pre></div>
 </div>
-<p>The built-in function <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> should be used to check if an object is of a specific type:</p>
+<p>我们应该用自带的 <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> 函数来查看一个对象是否属于某类型：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>The only exception to this is if you want to check if an object is of the type <code class="docutils literal notranslate"><span class="pre">NoneType</span></code>, since this is only possible if the object is <code class="docutils literal notranslate"><span class="pre">None</span></code>; thus it is “cleaner” to directly check this:</p>
+<p>唯一例外的是当你想要检查某个对象是否属于 <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> 类型，因为这类型只有 <code class="docutils literal notranslate"><span class="pre">None</span></code> 一个对象；因此，如下直接检查会更加“干净”：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Objects of different types have different built-in functions available to them:</p>
+<p>不同类型的对象有着不同的内置函数可用：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;I am a farmer.. moo&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="go">&#39;I AM A FARMER.. MOO&#39;</span>
@@ -1158,15 +1153,15 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="go">[1, 2, 3]</span>
 </pre></div>
 </div>
-<p>You should leverage the official documentation, for which links were provided throughout this section, whenever you are wondering how to best do a specific task with a given type of object.</p>
-<p>As a final reminder, we saw that that an integer in Python is able to hold a value with arbitrarily-many digits. A floating-point number, on the other hand, is restricted in the number of “significant” digits it can hold. Thus, where it is perfectly fine to check if two integers are exactly equal:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking if two integers are equal is great!</span>
+<p>当你在试图寻找操作某类型对象的最佳方法时，你应当查阅官方说明文档（本节多次提供其链接）。</p>
+<p>最后，Python整数类可以存储任意多的位数，而浮点数只能存储有限的“有效”位数。因此，你可以直接检查两个整数是否完全相等：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查两个整数是否完全相等没有任何问题！</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>you should never rely on two floats being exactly equal. Instead, check if they are close in value:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking if two floats are equal is lame!</span>
+<p>但你不应该检测两个浮点数是否完全相等。你应该检查它们的值是否足够接近：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查两个浮点数是否完全相等会有一些奇怪的结果！</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">==</span> <span class="mf">0.</span>
 <span class="bp">False</span>
 
@@ -1174,35 +1169,36 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>It is very important to remember this issue of the limited numerical precision of a floating point number.</p>
+<p>切记浮点数的有限精度问题。</p>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types">Integers</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#additional-methods-on-float">Floating point numbers</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/math.html#number-theoretic-and-representation-functions">The standard library’s math module</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/cmath.html#module-cmath">The standard library’s complex-valued math module</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">Strings</a><ul>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">String tutorial</a></li>
-<li><a class="reference external" href="https://docs.python.org/3.4/library/string.html#format-examples">Formatting strings</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#additional-methods-on-integer-types">整数</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#additional-methods-on-float">浮点数</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/math.html#number-theoretic-and-representation-functions">标准库的math模组</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/cmath.html#module-cmath">标准库的复数math模组</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">字符串</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">字符串教程</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3.4/library/string.html#format-examples">字符串格式</a></p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">Lists</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">列表</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Exercise-Solutions:">
-<h2>Reading Comprehension Exercise Solutions:<a class="headerlink" href="#Reading-Comprehension-Exercise-Solutions:" title="Permalink to this headline">¶</a></h2>
-<p><strong>Understanding the modulo operator: Solution</strong></p>
-<p>If <code class="docutils literal notranslate"><span class="pre">n</span></code> is an integer, then 2 will divide into it evenly, and thus there is no remainder. If <code class="docutils literal notranslate"><span class="pre">n</span></code> is odd, then <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">/</span> <span class="pre">2</span></code> must have a remainder of 1. Thus:</p>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>理解模运算符：解</strong></p>
+<p>如果 <code class="docutils literal notranslate"><span class="pre">n</span></code> 是偶数，那么它将被2整除，所以余数为0。如果 <code class="docutils literal notranslate"><span class="pre">n</span></code> 是单数，那 <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">/</span> <span class="pre">2</span></code> 的余数为1。所以：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code> = 0 if <code class="docutils literal notranslate"><span class="pre">n</span></code> is an even number</li>
-<li><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code> = 1 if <code class="docutils literal notranslate"><span class="pre">n</span></code> is an odd number</li>
+<li><p>当 <code class="docutils literal notranslate"><span class="pre">n</span></code> 是偶数时 <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code> = 0</p></li>
+<li><p>当 <code class="docutils literal notranslate"><span class="pre">n</span></code> 是单数时 <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code> = 1</p></li>
 </ul>
-<p><strong>Working with numbers in Python: Solution</strong></p>
+<p><strong>操作Python数字：解</strong></p>
 <ol class="arabic simple">
-<li>The division operator, <code class="docutils literal notranslate"><span class="pre">/</span></code>, will return a floating-point number even if it is operating on two integer-type numbers.</li>
-<li>For all of the arithmetic operations, <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">**</span></code>, operating on a floating-point number and an integer will return a floating-point number:</li>
+<li><p>除法操作符 <code class="docutils literal notranslate"><span class="pre">/</span></code> 永远都会返回浮点数，就算它在将两个整数相除。</p></li>
+<li><p>所有算术运算符 <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">**</span></code> 对一个整数一个浮点数操作时都会返回一个浮点数：</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="mf">3.0</span>
 <span class="go">6.0</span>
@@ -1212,7 +1208,7 @@ exact representations of rational numbers. Although we will not be using them he
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>Given the function <span class="math notranslate nohighlight">\(f(x) = e^{|x - 2|}\)</span>, make use of the <code class="docutils literal notranslate"><span class="pre">math</span></code> module to compute <span class="math notranslate nohighlight">\(f(-0.2)\)</span>.</li>
+<li><p>设函数 <span class="math notranslate nohighlight">\(f(x) = e^{|x - 2|}\)</span>。用 <code class="docutils literal notranslate"><span class="pre">math</span></code> 模组来计算 <span class="math notranslate nohighlight">\(f(-0.2)\)</span>。</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
@@ -1221,9 +1217,9 @@ exact representations of rational numbers. Although we will not be using them he
 </pre></div>
 </div>
 <ol class="arabic" start="4">
-<li><p class="first">Using Python’s syntax for scientific notation, write an expression that verifies that one trillion divided by one billion is equal to one thousand.</p>
+<li><p>使用Python的科学计数法语法来确认一万亿处以十亿等于一千。</p>
 <blockquote>
-<div><p>As cautioned above, we should avoid checking to see if two floating point numbers are exactly equal, and instead simply ensure that they are close in value. Keep in mind that a number written Python’s using scientific syntax will produce a float.</p>
+<div><p>如上文所警示的一样，我们应该避免检查两个浮点数是否完全相等，而应当检查两浮点数是否足够相近。注意在Python中用科学计数法写出的数字会是浮点类的。</p>
 </div></blockquote>
 </li>
 </ol>
@@ -1232,27 +1228,27 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="go">True</span>
 </pre></div>
 </div>
-<p><strong>Boolean expressions: Solutions</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Write an a comparison-statement that will return</span>
-<span class="c1">#    True if x is an even number</span>
+<p><strong>布尔表达式：解</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 编写一个表达式，在 `x` 是偶数时返回 `True`，</span>
+<span class="c1">#    其它情况返回 `False`。</span>
 <span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Write a line of code that will return False if:</span>
-<span class="c1">#    x and y are within 0.9 of one another, and x is a positive number.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. 编写一行代码，在以下情况中返回 `False`：</span>
+<span class="c1">#    `x` 和 `y` 相差小于0.9，且 `x` 大于零。</span>
 <span class="ow">not</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.9</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">)</span>
-<span class="c1"># alternatively,</span>
+<span class="c1"># 或者</span>
 <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.9</span> <span class="ow">or</span> <span class="mi">0</span> <span class="o">&gt;</span> <span class="n">x</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Write an expression that returns True if</span>
-<span class="c1">#    x is a boolean-type object or a float-type object</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. 编写一个表达式，当 `x` 是布尔类型</span>
+<span class="c1">#    或浮点类型对象时返回 `True`。</span>
 <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Strings: Solutions</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.  Use a function that will take the string &quot;cat&quot;</span>
-<span class="c1">#     and returns the string &quot;   cat    &quot;</span>
+<p><strong>字符串：解</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.  使用一个函数，在输入字符串 `&quot;cat&quot;` 时</span>
+<span class="c1">#     返回字符串 `&quot;    cat    &quot;`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;cat&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
 <span class="s1">&#39;    cat    &#39;</span>
 
@@ -1260,14 +1256,12 @@ exact representations of rational numbers. Although we will not be using them he
 <span class="s1">&#39;----cat----&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Replace the first three periods of this string with</span>
-<span class="c1">#    a space-character:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. 用空格代替以下字符串的前三个句号：</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;I.am.aware.that.spaces.are.a.thing&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="s1">&#39;I am aware that.spaces.are.a.thing&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Remove the whitespace from both ends</span>
-<span class="c1">#    of: &quot;  basket    &quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. 去除该字符串两边的所有空格：`&quot;  basket    &quot;`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;  basket    &quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="s1">&#39;basket&#39;</span>
 </pre></div>
@@ -1278,46 +1272,46 @@ exact representations of rational numbers. Although we will not be using them he
     <span class="n">over</span> <span class="n">there</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5. Convert the integer 12 to the string &quot;12&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5. 将整数 `12` 转化成字符串 `&quot;12&quot;`。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
 <span class="s1">&#39;12&#39;</span>
 </pre></div>
 </div>
-<p>Only kids 13 and up are allowed to see Wayne’s World. Given the variables <code class="docutils literal notranslate"><span class="pre">name</span></code> (a string) and <code class="docutils literal notranslate"><span class="pre">age</span></code> (an integer), use an f-string that will display: “NAME is old enough to watch the movie: BOOL”, where NAME is to be replaced with the kid’s name, and BOOL should be <code class="docutils literal notranslate"><span class="pre">True</span></code> if the kid is at least 13 years old, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. Use the example <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;Alfred&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">=</span> <span class="pre">10</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6. Use an f-string that will display:</span>
-<span class="c1"># &quot;NAME is old enough to watch the movie: BOOL&quot;,</span>
-<span class="c1"># where NAME is to be replaced with the kid&#39;s name,</span>
-<span class="c1"># and BOOL should be `True` if the kid is at least</span>
-<span class="c1"># 13 years old, and `False` otherwise.</span>
+<p>只有13岁和以上的孩子可以观看电影《反斗智多星》。假设你有函数 <code class="docutils literal notranslate"><span class="pre">name</span></code>（字符串）和 <code class="docutils literal notranslate"><span class="pre">age</span></code>（整数）。使用f字符串来显示：“NAME is old enough to watch the movie: BOOL”（“NAME可以看这电影：BOOL”）。NAME应该用孩子的名字来代替，而BOOL在孩子至少13岁以上时应为 <code class="docutils literal notranslate"><span class="pre">True</span></code>，不然为 <code class="docutils literal notranslate"><span class="pre">False</span></code>。为测试我们使用 <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;Alfred&quot;</span></code>，<code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">=</span> <span class="pre">10</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6. 只有13岁和以上的孩子可以观看电影《反斗智多星》。</span>
+<span class="c1">#    假设你有函数 `name`（字符串）和 `age`（整数）。</span>
+<span class="c1">#    使用f字符串来显示：&quot;NAME is old enough to watch</span>
+<span class="c1">#    the movie: BOOL&quot;（“NAME可以看这电影：BOOL”）。</span>
+<span class="c1">#    用NAME应该用孩子的名字来代替，而BOOL在孩子至少13岁以上</span>
+<span class="c1">#    时应为 `True`，不然是 `False`。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alfred&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s2">&quot;{name} is old enough to watch the movie: {age &gt;= 13}&quot;</span>
 <span class="s1">&#39;Alfred is old enough to watch the movie: False&#39;</span>
 </pre></div>
 </div>
-<p><strong>Lists: Solutions</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a list whose sole entry is the None object.</span>
+<p><strong>列表：解</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个列表，其唯一的物件是 `None` 对象。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span>
 <span class="p">[</span><span class="bp">None</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Assign the variable k to a list that contains an</span>
-<span class="c1">#    integer, a boolean, and a string, in that order.</span>
-<span class="c1">#    Then, add two more entries to the end of the</span>
-<span class="c1">#    list - a float and a complex number.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. 向变量 `k` 赋值一个内容为一个整数，一个布尔值，</span>
+<span class="c1">#    和一个字符串（顺序也是如此）的列表。然后在列表结尾</span>
+<span class="c1">#    添加两个项目：一个浮点数和一个复数。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">k</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">k</span>
 <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="s1">&#39;moo&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">(</span><span class="mi">9</span><span class="o">-</span><span class="mi">2j</span><span class="p">)]</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Alphabetize the list of names:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. 根据字母顺序排序以下列表：</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">,</span> <span class="s2">&quot;Ryan&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Zordon&quot;</span><span class="p">,</span> <span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="s2">&quot;Jackenzie&quot;</span><span class="p">]</span>
 
-<span class="c1"># The documentation for `sort` says that the sorting happens &quot;in-place&quot;. This</span>
-<span class="c1"># means that the original list is replaced by the sorted list. The alternative</span>
-<span class="c1"># would be that `sort` returns a new, sorted list, without changing the list</span>
-<span class="c1"># assigned to `names`.</span>
+<span class="c1"># `sort` 的说明文档说排序是“in-place”（当场）的，</span>
+<span class="c1"># 这意思就是原本的列表会被新的排序好的列表代替。</span>
+<span class="c1"># 如果不是“in-place”的话，那可能 `sort` 会返回一个排序好</span>
+<span class="c1"># 的列表，而不修改原本名为 `names` 的列表。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">names</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">names</span>
 <span class="p">[</span><span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="s1">&#39;Jackenzie&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span> <span class="s1">&#39;Zordon&#39;</span><span class="p">]</span>
@@ -1334,10 +1328,10 @@ exact representations of rational numbers. Although we will not be using them he
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="SequenceTypes.html" class="btn btn-neutral float-right" title="Sequence Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="SequenceTypes.html" class="btn btn-neutral float-right" title="序列类型" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../module_2.html" class="btn btn-neutral float-left" title="Module 2: The Essentials of Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../module_2.html" class="btn btn-neutral float-left" title="模组2：Python基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

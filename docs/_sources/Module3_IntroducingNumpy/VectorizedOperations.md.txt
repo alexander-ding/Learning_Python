@@ -19,52 +19,49 @@ jupyter:
 ```
 
 <!-- #region -->
-# "Vectorized" Operations: Optimized Computations on NumPy Arrays
+# “矢量化”操作：对NumPy数组进行优化过的计算
 
-In this section, we will:
+在本节中，我们将会：
 
-- Define the term vectorization, as it is used in the context of Python/NumPy.
-- Prescribe the use of NumPy's vectorized functions for performing optimized numerical computations on arrays.
-- Compare the performance of a simple non-vectorized computation to a vectorized one.
-- Describe how unary, binary, and sequential functions are defined on NumPy arrays.
-- Provide a brief overview of linear algebra functions and logical operations.
+- 在Python/NumPy的环境中定义矢量化（vectorization）一词。
+- 指示如何使用NumPy矢量化的函数来进行优化过的数组计算。
+- 对比未矢量化的计算和矢量化的计算效率。
+- 描述NumPy数组的一元，二元，和序列函数是如何定义的。
+- 快速地过一下线性代数函数和逻辑操作。
 
-## Basic Mathematical Operations Using Arrays
-The ND-array can be utilized in mathematical expressions to perform mathematical computations using an array's entries. In general, NumPy implements mathematical functions such that, when a function acts on an array, the mathematical operation is applied to *each* entry in the array.   
+## 使用数组进行基本数学操作
+你可以在数学表达式中使用N维数组来对数组的成员来进行数学运算。一般来讲，NumPy实现的数学函数会在作用于数组时对数组的*每个*成员进行该数学操作。
 ```python
-# Demonstrating the application of common
-# mathematical operations to a NumPy array
+# 演示对NumPy数组进行常用的数学操作
 >>> import numpy as np
 
 >>> x = np.array([[ 0.,  1.,  2.],
 ...               [ 3.,  4.,  5.],
 ...               [ 6.,  7.,  8.]])
 
-# `x ** 2` squares each entry in the array `x`
+# `x ** 2` 将数组 `x` 的每个成员都求平方
 >>> x ** 2
 array([[  0.,   1.,   4.],
        [  9.,  16.,  25.],
        [ 36.,  49.,  64.]])
 
-# `np.sqrt(x)` takes the square-root
-# of each entry in the array `x`
+# `np.sqrt(x)` 求数组 `x` 的每个成员的平方根
 >>> np.sqrt(x)
 array([[ 0.        ,  1.        ,  1.41421356],
        [ 1.73205081,  2.        ,  2.23606798],
        [ 2.44948974,  2.64575131,  2.82842712]])
 
-# Slices return arrays, thus you can operate
-# on these too. Add .5 to each entry in row-0
-# of `x`
+# 切片也返回数组，因此你也可以对切片进行操作
+# 向 `x` 行0的所有成员加.5
 >>> .5 + x[0, :]
 array([ 0.5,  1.5,  2.5])
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-Similarly, mathematical operations performed between two arrays are designed to act on the corresponding pairs of entries between the two arrays:
+相似的，对两个数组进行的数学操作会将数组的成员一一对应并进行操作：
 ```python
-# Demonstrating mathematical operations between two arrays
+# 演示两个数组之间的数学操作
 >>> x = np.array([[ 0.,  1.,  2.],
 ...               [ 3.,  4.,  5.],
 ...               [ 6.,  7.,  8.]])
@@ -73,8 +70,7 @@ Similarly, mathematical operations performed between two arrays are designed to 
 ...               [-2.5, -2. , -1.5],
 ...               [-1. , -0.5, -0. ]])
 
-# `x + y` will add the corresponding entries of
-# the arrays `x` and `y`
+# `x + y` 会将数组 `x` 和 `y` 对应的数字相加
 >>> x + y
 array([[-4. , -2.5, -1. ],
        [ 0.5,  2. ,  3.5],
@@ -86,55 +82,53 @@ array([[-0. , -3.5, -6. ],
        [-6. , -3.5, -0. ]])
 ```
 
-There are also mathematical operations which are designed to operate on sequences of numbers, such as the sum function. NumPy's sequential functions can act on an array's entries as if they form a single sequence, or act on subsequences of the array's entries, according to the array's axes.
+Python有着旨在对数字序列进行操作的数学函数。相应的，NumPy的序列函数对数组成员进行操作时会假装所有成员都在一个序列中，或会根据数组的轴对相应的子序列进行操作。
 ```python
-# applying the sequential function, `np.sum`
-# on an array
+# 对数组使用序列函数 `np.sum`
 >>> x = np.array([[ 0.,  1.,  2.],
 ...               [ 3.,  4.,  5.],
 ...               [ 6.,  7.,  8.]])
 
-# summing over all of the array's entries
+# 这将求数组所有成员的和
 >>> np.sum(x)
 36.0
 
-# summing over the rows, within each column
-# of the array
+# 求数组每一列中所有行的和
 >>> np.sum(x, axis=0)
 array([  9.,  12.,  15.])
 ```
 
-We will use this section to provide a more thorough overview of the various mathematical functions that are provided by NumPy, as well as the behavior of its sequential mathematical operations. However, we must first understand that NumPy performs these "vectorized operations" in a highly-optimized fashion, such that pure Python code can never rival its efficiency. By the end of this section, "vectorized operation" will become a phrase of endearment.
+我们将在本节中提供更加细致的对NumPy提供的数学函数以及NumPy的序列数学操作的解析。但是，我们必须首先理解NumPy使用高效的“矢量化操作”来达到纯Python代码无法对比的效率这一点。在本节最后，“矢量化操作”将会成为对NumPy表达爱意的词汇。
 
 <!-- #endregion -->
 
 <!-- #region -->
-## Vectorized Operations
-Recall that NumPy's ND-arrays are *homogeneous*: an array can only contain data of a single type. For instance, an array can contain 8-bit integers or 32-bit floating point numbers, but not a mix of the two. This is in stark contrast to Python's lists and tuples, which are entirely unrestricted in the variety of contents they can possess; a given list could simultaneously contain strings, integers, and other objects. This restriction on an array's contents comes at a great benefit; in "knowing" that an array's contents are homogeneous in data type, NumPy is able to delegate the task of performing mathematical operations on the array's contents to optimized, compiled C code. This is a process that is referred to as **vectorization**. The outcome of this can be a *tremendous* speedup relative to the analogous computation performed in Python, which must painstakingly check the data type of *every* one of the items as it iterates over the arrays, since Python typically works with lists with unrestricted contents.    
+## 矢量化操作
+请回忆，NumPy的N维数组是*同质*的：一个数组只能存储单个类型的数据。比如说，单个数组可以存储8比特整数或32比特浮点数，但是不能这两种数都有。这和Python的完全不限制成员种类数的列表和元组极其不同；一个列表可以同时存储字符串，整数，和其它对象。这个对数组成员的限制带来着大量的好处；因为NumPy提前“知道”数组成员的种类是同质的，它可以将对数组成员进行的数学操作代理给优化过，提前编译的C代码。这个过程叫做**矢量化**（vectorization）。这么做的结果是和纯Python代码运算相比*巨大的*速度提升。Python需要在迭代数组成员时*一个个*检查成员的数据类型，因为Python一般操作的列表是不限制数据类型的。
 
 <div class="alert alert-info"> 
 
-**Definition**: 
+**定义**：
 
-In the context of high-level languages like Python, Matlab, and R, the term **vectorization** describes the use of optimized, pre-compiled code written in a low-level language (e.g. C) to perform mathematical operations over a sequence of data. This is done in place of an explicit iteration written in the native language code (e.g. a "for-loop" written in Python). 
+在像Python，Matlab，和R这类的高级语言里，**矢量化**一词指使用高效，提前编译的低级语言（如C）代码来对数据序列进行数学操作。这代替了在同语言中写的显性迭代代码（如Python中的for循环）。
 
 </div>
 
-Consider, for instance, the task of summing the integers 0-9,999 stored in an array. Calling NumPy's `sum` function cues optimized C code to iterate over the integers in the array and tally the sum. `np.sum` is therefore a "vectorized" function. Let's time how long it takes to compute this sum: 
+比如说，假设我们想要求数组中存储的整数0-9，999的和，那调用NumPy的 `sum` 函数将使用高效的C代码来迭代数组中的整数并求和。因此，`np.sum` 是一个“矢量化”的函数。让我们计算一下求这个和花了多少时间：
 
 ```python
 >>> import numpy as np
 
-# sum an array, using NumPy's vectorized 'sum' function
->>> np.sum(np.arange(10000))  # takes 11 microseconds on my computer
+# 使用NumPy的矢量化 'sum' 函数求和
+>>> np.sum(np.arange(10000))  # 在我的机器上花了11微秒
 49995000
 ```
 
-Now let's compare this to the time required to *explicitly* loop over the array in Python and tally up the sum. Python is unable to take advantage of the fact that the array's contents are all of a single data type - it has to check, for every iteration, if it is dealing with an integer, a string, a floating point number, etc, just as it does when iterating over a list. This will slow down the computation massively.
+现在，让我们将这个对比在Python中*显性*迭代这个数组并求和花的时间。Python无法利用函数成员都是同一数据类型这一信息——它必须在每一轮迭代都检查数据的类型，就像在迭代列表一样。这回大幅度地降低运算速度。
 
 ```python
-# sum an array by explicitly looping over the array in Python
-# this takes 822 microseconds on my computer
+# 在Python中显性迭代数组来求和sum an array by explicitly looping over the array in Python
+# 在我的机器上花了822微秒
 >>> total = 0
 >>> for i in np.arange(10000):
 ...     total = i + total
@@ -144,94 +138,93 @@ Now let's compare this to the time required to *explicitly* loop over the array 
 <!-- #endregion -->
 
 <!-- #region -->
-Timed on my computer, the sum is **over 50 times faster when performed in using NumPy's vectorized function**! This should make it clear that, whenever computational efficiency is important, one should avoid performing explicit for-loops over long sequences of data in Python, be them lists or NumPy arrays. NumPy provides a whole suite of vectorized functions. In fact, the name of the game when it comes to leveraging NumPy to do computations over arrays of numbers is to exclusively leverage its vectorized functions. The following computations all invoke vectorized functions: 
+根据我机器上花的时间，求和**在使用NumPy矢量化的函数时快了超过50倍**！我希望这澄清了我们在计算速度重要时应避免对Python长序列数据（不管是列表还是NumPy数组）使用显性for循环一事。NumPy提供了一整套的矢量化函数。事实上，使用NumPy对数组进行计算的中心围绕着仅仅使用矢量化函数。以下运算全部都调用矢量化函数：
 
 ```python
 >>> import numpy as np
 
-# multiply 2 with each number in the array
+# 对数组中每个数乘以2
 >>> 2 * np.array([2, 3, 4]) 
 array([4, 6, 8])
 
-# subtract the corresponding entries of the two arrays
+# 将两个数组中的对应成员相减
 >>> np.array([10.2, 3.5, -0.9]) - np.array([8.2, 3.5, 6.5])
 array([ 2. ,  0. , -7.4])
 
-# Take the "dot product" of the two arrays 
-# "dot product" means: multiply their corresponding entries and sum the result
+# 求两个数组的“点积”（dot product）
+# 点积指的是：将数组对应成员相乘并求乘积的和
 >>> np.dot(np.array([1, -3, 4]), np.array([2, 0, 1]))
 6
 ```
 
-All of the mathematical functions that are introduced in the remainder of this section perform vectorized operations.
+所有本节之后介绍的数学函数都是矢量化的操作。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-NumPy provides highly-optimized functions for performing mathematical operations on arrays of numbers. Performing extensive iterations (e.g. via 'for-loops') in Python to perform repeated mathematical computations should nearly always be replaced by the use of vectorized functions on arrays. This informs the entire design paradigm of NumPy.  
+NumPy提供了高度优化的函数来对数字数组进行数学运算。使用Python进行大量的迭代（如使用“for循环”）来达到重复的数学运算的地方基本都应该由对数组进行矢量化函数代替。这就是使用NumPy的设计方法。
 
 </div>
 
 <!-- #region -->
-## NumPy's Mathematical Functions
-We will now take some time to survey the various types of vectorized mathematical functions that NumPy supplies, and how these mathematical operations, which traditionally are defined on individual numbers, are applied to arrays of numbers. We will look at
+## NumPy的数学函数
+我们将花一些时间来探索NumPy提供的多种矢量化数学函数，以及这些传统上仅仅处理单个数字的数学操作是如何处理数组的。我们将会讨论
 
-- unary functions: $f(x)$
-- binary functions: $f(x,y)$
-- functions that operate on sequences of numbers: $f(\{x_i\}_{i=0}^{n-1})$ 
+- 一元（unary）函数：$f(x)$
+- 二元（binary）函数：$f(x,y)$
+- 操作数字序列的函数：$f(\{x_i\}_{i=0}^{n-1})$
 
-These represent a substantial portion of the essential mathematical tools in the NumPy library. An exhaustive list of NumPy's mathematical functions is available in the [official documentation](https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations).
+这些函数代表着NumPy模组核心数学工具中的很大一部分。完整的NumPy数学函数列表可以在[官方说明文档](https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations)中找到。
 
-### Unary Functions
-A unary function is a mathematical function that only accepts one operand (i.e. argument): $f(x)$. NumPy supplies many familiar unary functions:
+### 一元函数
+一元函数是只接受一个操作数（也就是参数）的数学函数：$f(x)$。NumPy提供了很多熟悉的一元函数：
 
-| Unary Function: $f(x)$    | NumPy Function |
+| 一元函数：$f(x)$    | NumPy函数 |
 | ------------- |:-------------:|
-| $\vert x \vert$ | `np.absolute` |   
-| $\sqrt{x}$ | `np.sqrt` | 
-| **Trigonometric Functions** | <br> | 
-| $\sin{x}$ | `np.sin` |   
-| $\cos{x}$ | `np.cos` | 
-| $\tan{x}$ | `np.tan` | 
-| **Logarithmic Functions** | <br> | 
-| $\ln{x}$ | `np.log` |   
-| $\log_{10}{x}$ | `np.log10` | 
-| $\log_{2}{x}$ | `np.log2` | 
-| **Exponential Functions** | <br> | 
-| $e^{x}$ | `np.exp` |   
+| $\vert x \vert$ | `np.absolute` |
+| $\sqrt{x}$ | `np.sqrt` |
+| **三角函数** | <br> |
+| $\sin{x}$ | `np.sin` |
+| $\cos{x}$ | `np.cos` |
+| $\tan{x}$ | `np.tan` |
+| **对数函数** | <br> |
+| $\ln{x}$ | `np.log` |
+| $\log_{10}{x}$ | `np.log10` |
+| $\log_{2}{x}$ | `np.log2` |
+| **指数函数** | <br> |
+| $e^{x}$ | `np.exp` |
 
-This is by no means an exhaustive list of the available unary functions, for example the hyperbolic and inverse trigonometric functions are available too. These familiar functions are defined to work on individual numbers (i.e. "scalars"), not sequences of numbers. How, then, does NumPy implement these functions so that they behave in a coherent way when operating on arrays? The answer is that it **maps** the function over the array - applying $f(x)$ to each element within the array, and producing a new array as a result (i.e. the input array is not overwritten).
+当然，这完全不是所有可用一元函数的完整列表。比如说，双曲函数和逆三角函数也有着对应的NumPy版本。这些熟悉的函数是为单个数字（也就是“标量”），而不是数字序列，定义的。那么DumPy是如何实现这些函数使得它们对数组操作时依然有条理呢？答案是NumPy将这个函数**映射**（map）到数组上——使用 $f(x)$ 对数组中的每个成员进行操作，并将结果返回为一个新数组（也就是说输入数组并没有被重写）。
 
 ```python
 import numpy as np
 >>> x = np.array([0., 1., 2.])
 
-# produces array([exp(0.), exp(1.), exp(2.)])
-# x is not overwritten by this; a new array
-# is created
+# 返回 array([exp(0.), exp(1.), exp(2.)])
+# x 并没有被次重写；这创建了一个新数组
 >>> np.exp(x) 
 array([ 1. ,  2.71828183,  7.3890561 ])
 ```
 
-This process generalizes to arrays of any dimensionality and shape.
+这个规则可以拓展到任何维度和形状的数组上。
 
 ```python
-# example of a unary function operating on a 2D array
+# 范例一元函数对2维数组进行操作
 >>> x = np.array([[-1, 2], [-3, 4]])
 >>> x
 array([[-1,  2],
        [-3,  4]])
 
->>> np.square(x)  # equivalent to: `x**2`
+>>> np.square(x)  # 等值于：`x**2`
 array([[ 1,  4],
        [ 9, 16]])
 ```
 
-Because slicing returns an array, you can utilize these in mathematical operations as well
+因为切片返回一个数组，你可以对切片进行数学操作
 ```python
-# square column-0 of `x`
+# 求 `x` 第一列的平方
 >>> x[:, 0] ** 2
 array([1, 9])
 ```
@@ -239,18 +232,18 @@ array([1, 9])
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-Applying a unary NumPy function, $f(x)$, to an N-dimensional array will apply $f(x)$ elementwise on the array. 
+将一元NumPy函数 $f(x)$ 应用于N维数组将会将 $f(x)$ 作用于数组的每一个成员。
 
 </div>
 
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**Reading Comprehension: Unary Functions**
+**阅读理解：一元函数**
 
-Given the 2D array:
+设以下2维数组：
 ```python
 >>> x = np.array([[ 0,  1,  2,  3],
 ...               [ 4,  5,  6,  7],
@@ -258,15 +251,15 @@ Given the 2D array:
 ...               [12, 13, 14, 15]])
 ```
 
-Take the natural-logarithm of the 1st and 3rd element in the 3rd-row of `x`, producing a shape-(2,) result. 
+求 `x` 第三行的第一和第三个成员的自然对数以得到形状为 (2,) 的结果。
 
 </div>
 <!-- #endregion -->
 
-### Binary Functions
-A binary function has the form $f(x,y)$. The arithmetic operations are all binary functions:
+### 二元函数
+二元函数的形式为 $f(x,y)$。算数操作都是二元函数：
 
-| Binary Function: $f(x, y)$    | NumPy Function | Python operator |
+| 二元函数：$f(x, y)$    | NumPy函数 | Python操作符 |
 | ------------- |:-------------:|:-------------:|
 | $x\cdot y$ | `np.multiply` | `*`|   
 | $x\div y$ | `np.divide` | `/`|   
@@ -277,65 +270,65 @@ A binary function has the form $f(x,y)$. The arithmetic operations are all binar
 
 <div class="alert alert-warning"> 
 
-**Recall**: 
+**回忆**：
 
-The "modulo" function ("mod" for short), denoted by $\%$, is defined to return the *remainder* of division: $5 \% 3 = 2$
+符号是 $\%$ 的 “模”函数（modulo，简写为mod）的定义使其返回除法的*余数*：$5 \% 3 = 2$
 
 </div>
 
-As indicated in this table, these NumPy functions can be called by invoking the familiar Python math-operators, when used in the context of NumPy arrays.
+如上表所示，这些NumPy函数可以通过对NumPy数组使用熟悉的Python数学操作符来调用。
 
-Here are some other common binary functions:
+以下是另外一些常见的二元函数：
 
-| Binary Function: $f(x, y)$    | NumPy Function | 
+| 二元函数：f(x, y)$    | NumPy函数 |
 | ------------- |:-------------:|
 | $\max(x, y)$ | `np.maximum` |
-| $\min(x, y)$ | `np.minimum` |   
+| $\min(x, y)$ | `np.minimum` |
 
-There are two cases that we must consider when working with binary functions, in the context of NumPy arrays:
+在用二元函数操作NumPy函数时，我们需要考虑两种情况：
 
-  1. When both operands of the function are arrays (of the same shape).
-  2. When one operand of the function is a scalar (i.e. a single number) and the other is an array.
+  1. 当函数两个操作数都是（相同形状的）数组时。
+  2. 当函数的一个操作数是标量（也就是单个数字），另外一个操作数是数组时。
   
 
 <!-- #region -->
-Similar to the behavior of unary functions applied to an array, a binary function will operate on two same-shape arrays by applying the function to their pairwise elements.
+和对数组运用一元函数时的行为相似，二元数组会对两个形状相同的数组的对应成员进行操作。
 
 ```python
 >>> x = np.array([0., 1., 2.])
 >>> y = np.array([-1., 1., -2.])
 
-# pair-wise addition of elements in `x` and `y`
->>> x + y  # convenient notation for calling `np.add(x, y)`
+# 对 `x` 和 `y` 对应的成员对进行操作
+>>> x + y  # 这等值于：`np.add(x, y)`
 array([-1.,  2.,  0.])
 ```
 
-This process generalizes to arrays of any dimensionality and shape, as long as the two operands have the same shape.
+这个过程可以拓展到任何维度和形状的数组，只需要两个操作数的形状一样。
 <!-- #endregion -->
 
 <div class="alert alert-warning"> 
 
-**Important Note**: 
+**重要的注释**：
 
-You *can* apply binary NumPy functions to arrays of unlike shapes. For instance, you may want to add a single shape-(2,) array with ten of such arrays, which are stored as a single shape-(10,2) array. This process is known as **broadcasting**, and will be covered in detail in a later section.  
+你*可以*将二元NumPy函数运用到形状不同的数组上。比如说，你可以会希望将一个形状为 (2,) 的数组加到十个形状相似的数组（被存在一个形状为 (10,2) 的数组中）中。这个过程叫做**广播**（broadcasting）。我们将在后面一节中对其讨论。
 
 </div>
 
 
 <!-- #region -->
 ```python
-# example of a binary function operating on two 2D arrays
+# 二元函数操作两个2维数组的例子
 >>> x = np.array([[10,  2],
 ...               [ 3,  5]])
 
 >>> y = np.array([[ 1,   0],
 ...               [ -4,  -1]])
 
->>> np.add(x, y)  # equivalent to `x + y`
+>>> np.add(x, y)  # 等值于 `x + y`
 array([[11,  2],
        [-1,  4]])
 
-# add column-0 of `x` and row-1 of `y`
+# 将 `x` 的列0和 `y` 的行1相加
 >>> x[:, 0] + y[1, :]
 array([6, 2])
 ```
@@ -343,18 +336,18 @@ array([6, 2])
 
 <div class="alert alert-info"> 
 
-**Takeaway**: 
+**经验**：
 
-Applying a binary NumPy-function, $f(x,y)$, to two same-shape arrays will apply $f(x,y)$ to each of their pairwise elements, producing an array of the same shape as either of the operands.  
+将一个二元NumPy函数 $f(x,y)$ 运用于两个形状相同的数组上会将 $f(x,y)$ 应用于两个数组的所有对应成员对，并将讲过作为一个形状相同的数组返回。
 
 </div>
 
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**Reading Comprehension: Binary Functions**
+**阅读理解：二元函数**
 
-Given the 2D array:
+设2维数组：
 ```python
 >>> x = np.array([[ 0,  1,  2,  3],
 ...               [ 4,  5,  6,  7],
@@ -362,27 +355,27 @@ Given the 2D array:
 ...               [12, 13, 14, 15]])
 ```
 
-Add the four quadrants of `x`, producing a shape-(2, 2) output. 
+将 `x` 的四个象限（比如说 [[ 0,  1], [ 4,  5]] 就是一个象限) 相加，返回形状为 (2, 2) 的输出。
 
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-By now, you may be able to guess NumPy's behavior when you perform feed a binary function a scalar (i.e. a single number) and an array: the function is applied elementwise on the array, with each application filling one of the function's arguments, and the single scalar provided everywhere as the other operand. This matches exactly the behavior seen in traditional linear algebra.
+现在，你可能已经可以猜出NumPy二元函数操作一个标量（也就是单个数字）和一个数组时的行为。函数将对数组的每个成员进行操作；每次运算将会提供数组的某一个成员和不变的向量。这和传统的线性代数的行为完全一样。
 
 ```python
->>> 3 * np.array([0., 1., 2.])  # convenient notation for calling `np.multiply(3, x)`
+>>> 3 * np.array([0., 1., 2.])  # 等值于：`np.multiply(3, x)`
 array([ 0.,  3.,  6.])
 
->>> np.array([1., 2., 3.]) ** 2  # convenient notation for calling `np.power(x, 2)`
+>>> np.array([1., 2., 3.]) ** 2  # 等值于：`np.power(x, 2)`
 array([ 1.,  4.,  9.])
 ```
 
-This process generalizes to an array of any dimensionality and shape. 
+这个过程可以扩展到任何维度和形状的数组。
 
 
 ```python
-# examples of a binary function operating on a scalar & an array
+# 二元函数操作一个标量和一个数组的范例
 >>> x = np.array([[10,  2],
 ...               [ 3,  5]])
 
@@ -390,7 +383,7 @@ This process generalizes to an array of any dimensionality and shape.
 array([[10,  4],
        [ 4,  5]])
 
-# a 3D array of shape-(2, 2, 8)
+# 一个形状为 (2, 2, 8) 的3维数组
 >>> y = np.array([[[ 0,  1,  2,  3,  4,  5,  6,  7],
 ...                [ 8,  9, 10, 11, 12, 13, 14, 15]],
 ...                  
@@ -406,106 +399,105 @@ array([[  0,  -2,  -4,  -6],
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-Applying a binary NumPy function, $f(x,y)$, to an array and a scalar amounts to "distributing" the function elementwise over the array, everywhere utilizing the scalar as the other operand for the binary function.
+将二维NumPy函数 $f(x,y)$ 应用到一个数组和一个标量将会导致函数将标量“分配”到数组的每一个成员并以此进行二元运算。
 
 </div>
 
 <!-- #region -->
-### Sequential Functions
-A sequential function expects a variable-length sequence of numbers as an input, and produces a single number as an output: $f(\{x_i\}_{i=0}^{n-1})$. The following are some sequential NumPy functions:
+### 序列函数
+序列函数接受任意长度的数字序列并返回一个数字：$f(\{x_i\}_{i=0}^{n-1})$。以下是一些NumPy的序列函数：
 
-| Sequential Function: $f(\{x_i\}_{i=0}^{n-1})$    | NumPy Function |
+| 序列函数：$f(\{x_i\}_{i=0}^{n-1})$    | NumPy函数 |
 | ------------- |:-------------:|
-| Mean of $\{x_i\}_{i=0}^{n-1}$ | `np.mean` |
-| Median of $\{x_i\}_{i=0}^{n-1}$ | `np.median` | 
-| Variance of $\{x_i\}_{i=0}^{n-1}$ | `np.var` | 
-| Standard Deviation of $\{x_i\}_{i=0}^{n-1}$ | `np.std` | 
-| Maximum Value of $\{x_i\}_{i=0}^{n-1}$ | `np.max` |
-| Minimum Value of $\{x_i\}_{i=0}^{n-1}$ | `np.min` |
-| Index of the Maximum Value of $\{x_i\}_{i=0}^{n-1}$ | `np.argmax` |
-| Index of the Minimum Value of $\{x_i\}_{i=0}^{n-1}$ | `np.argmin` |
-| Sum of $\{x_i\}_{i=0}^{n-1}$ | `np.sum` | 
+| $\{x_i\}_{i=0}^{n-1}$ 的平均值 | `np.mean` |
+| $\{x_i\}_{i=0}^{n-1}$ 的中间值 | `np.median` | 
+| $\{x_i\}_{i=0}^{n-1}$ 的差额 | `np.var` | 
+| $\{x_i\}_{i=0}^{n-1}$ 的标准差 | `np.std` | 
+| $\{x_i\}_{i=0}^{n-1}$ 的最大值 | `np.max` |
+| $\{x_i\}_{i=0}^{n-1}$ 的最小值 | `np.min` |
+| $\{x_i\}_{i=0}^{n-1}$ 最大值的索引 | `np.argmax` |
+| $\{x_i\}_{i=0}^{n-1}$ 最小值的索引 | `np.argmin` |
+| $\{x_i\}_{i=0}^{n-1}$ 的和 | `np.sum` | 
 
-The implementation of sequential NumPy functions is straightforward when working with 1-dimensional arrays:
+序列NumPy函数的实现在操作1维数组时很简单易懂：
 ```python
-# demonstrating sequential functions
+# 演示序列函数
 >>> x = np.array([0., 2., 4.])
->>> np.sum(x)  # can also be invoked as `x.sum()`
+>>> np.sum(x)  # 等值于：`x.sum()`
 6.
->>> np.mean(x)  # can also be invoked as `x.mean()`
+>>> np.mean(x)  # 等值于：`x.mean()`
 2.
 ```
-How do these functions behave when they are fed multi-dimensional arrays? By default, NumPy's sequential functions treat any multidimensional array as if it had been reshaped to a 1-dimensional array. For example:
+这些函数在操作多维数组时的行为会是如何呢？NumPy的序列函数默认把任何多维数组当作重塑为1维数组的版本对待。比如说：
 
 ```python
 >>> x = np.array([[0, 1],
 ...               [2, 3],
 ...               [4, 5]])
 
-# `sum`  will treat a multidimensional array 
-# as if it is a single sequence of numbers, by default
+# `sum` 默认将会将多维数组当成一个数字序列对待
 >>> np.sum(x)
 15
 ```
 
-This default behavior of sequential NumPy functions can be overwritten by specifying the keyword argument `axis` within the sequential function. This is a very useful and common thing to do. We will carefully study what the axis argument is used for in these and other NumPy functions.
+你可以通过关键词参数 `axis` 来覆盖NumPy序列函数的默认行为。这是一个很有用和常见的功能。我们将会仔细学习axis参数在这些和其它NumPy函数中是如何使用的。
 <!-- #endregion -->
 
 <!-- #region -->
-### Specifying the `axis` Keyword Argument in Sequential NumPy Functions
-Let's delve into the meaning of the `axis` argument by first seeing it in action:
+### 在NumPy序列函数中提供 `axis` 关键词参数
+让我们通过一些例子来探索 `axis` 参数的意义：
 
 ```python
-# creating a shape-(3,2) array
+# 创建一个形状为 (3,2) 的数组
 >>> x = np.array([[0, 1],
 ...               [2, 3],
 ...               [4, 5]])
 
-# sum over axis-0, within axis-1
-# i.e. sum over the rows, within each column
->>> np.sum(x, axis=0)  # equivalent: x.sum(axis=0)
+# 在轴1内对轴0求值
+# 也就是说，在每一列中求其中行的和
+>>> np.sum(x, axis=0)  # 等值于：x.sum(axis=0)
 array([6, 9])
 
-# sum over axis-1, within axis-0
-# i.e. sum over the columns, within each row
->>> np.sum(x, axis=1)  # equivalent: x.sum(axis=1)
+# 在轴0内对轴1求值
+# 也就是说，在每一行中求其中列的和
+>>> np.sum(x, axis=1)  # 等值于：x.sum(axis=1)
 array([1, 5, 9])
 
-# negative axis-indices can be used too
->>> np.sum(x, axis=-1)  # equivalent: np.sum(x, axis=1)
+# 你也可以使用负的轴索引
+>>> np.sum(x, axis=-1)  # 等值于：np.sum(x, axis=1)
 array([1, 5, 9])
 
-# sum over axis-0 and axis-1
-# i.e. sum the array as if it were a 1D sequence (default behavior)
->>> np.sum(x, axis=(0, 1))  # equivalent: x.sum(axis=(0, 1))
+# 在轴0和轴1内求值
+# 也就是说，假装数组是1维序列来求值（默认行为）
+>>> np.sum(x, axis=(0, 1))  # 等值于：x.sum(axis=(0, 1))
 15
 
 ```
 
-The `axis` argument thus specifies which axis or axes are traversed to produce the input sequences for the sequential function to act on. One sequence is designated for each valid combination of indices of the non-traversed axes. For example, `np.sum(x, axis=0)` says: "for each of the columns of `x`, sum over its rows". Thus the following sequences are summed over:
+如上，`axis` 参数提供了在为序列函数创建输入序列时遍历哪个或哪几个轴。每个成员为没有提供的轴的组合都会创建一个序列。比如说，`np.sum(x, axis=0)` 等于在说：“对 `x` 的每一列求其行的和”。因此，以下序列将会被求和：
 
 ```
-x[:, 0] -> array([0, 2, 4])  # traverse all rows within column-0
-x[:, 1] -> array([1, 3, 5])  # traverse all rows within column-1
+x[:, 0] -> array([0, 2, 4])  # 遍历列0中的所有行
+x[:, 1] -> array([1, 3, 5])  # 遍历列1中的所有行
 ```
-Thus each column of `x` is summed over, producing a shape-(2,) array containing the result of the two sums. Similarly, `np.sum(x, axis=1)` produces a shape-(3,) array, which stores the sum along each of the three rows in `x`. 
+如此，`x` 的每一列都会被求和，最终返回一个形状为 (2,) 的数组，其成员为这两个和。相似的， `np.sum(x, axis=1)` 返回一个形状为 (3,) 的数组，其成员为 `x` 三行求和的结果。
 
-You can also supply *multiple* axes to the keyword argument by specifying them in a "tuple" of integers (using a list instead of a tuple will *not* work). `np.sum(x, axis=(0,1))` cues NumPy to traverse *both* of `x`'s axes, designating the entirety of `x`'s contents as the sequence, and summing to the single sequence into one number. Recall that this matches the default behavior when no `axis` keyword argument is specified.
+你也可以通过提供整数“元组”（如果是列表而不是元组的话*不*会被接受）提供*多个*轴。`np.sum(x, axis=(0,1))` 会告诉NumPy去遍历 `x` 的全部两个轴，并将 `x` 全部的成员当作一个序列来求和，返回一个数字。请回忆，这和不提供 `axis` 关键词参数时的默认行为一样。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Takeaway**: 
+**经验**：
 
-All sequential NumPy functions have an `axis` keyword argument that can be specified. `axis` is to be fed a single integer or a tuple of integers, which indicate which array axes are to be traversed to designate the sequences of array data to be operated on. A sequence is generated for each valid combination of indices for the non-traversed axes. By default, **all** of the input-array's axes are included, thus the entire content of the array is treated as a single sequence.
+所有序列性的函数都可以接受关键词参数 `axis`。`axis` 可以接受单个整数或一元组的整数来描述在指定数组数据序列时要遍历哪些轴。每个合法的未被遍历的轴的索引的组合都会生成一个序列。默认情况下，**所有**输入元组的轴都会被包含，因此数组的所有成员都会被当作一个序列对待。
 
 </div>
 
 <!-- #region -->
-#### Understanding the `axis` argument with a  Multi-Dimensional Array
-The key to understanding the `axis` keyword argument, when working with multi-dimensional arrays, is to be comfortable with how array traversal works in NumPy. Refer to Section 5 of this module for a refresher on this topic. Consider the following shape-(4,2,3) array:
+#### 理解多维数组中的 `axis` 参数
+理解处理多维数组时的 `axis` 关键词参数的秘密在于熟悉NumPy遍历数组的方法。如果需要复习一下这个话题，请查阅本模组的第五节。设以下形状为 (4,2,3) 的数组：
 
 ```python
 >>> x = np.arange(24).reshape(4,2,3)
@@ -523,17 +515,17 @@ array([[[ 0,  1,  2],
         [21, 22, 23]]])
 ```
 
-We can think of this array as possessing four, 2x3 sheets of numbers. Traversing along axis-0 of `x` amounts to stepping from sheet to sheet, given each valid combination of axis-1 and axis-2 indices. Thus `np.mean(x, axis=0)` says: "for each combination of row and column, take the mean along the sheets of `x`". Therefore six distinct sequences within `x` are designated for this sequential function to act on:
+我们可以认为这个数组有着4页2x3的纸张。遍历 `x` 的轴0相当于根据每个合理的轴1和轴2索引组合在纸张之间跳跃。如此，`np.mean(x, axis=0)` 相当于在说：“为每一个行和列的组合求 `x` 在不同页的平均值”。所以这将在 `x` 中设定6个不同的序列来让这个序列函数进行操作：
 ```
-x[:, 0, 0] -> array([ 0,  6, 12, 18])  {mean =  9}
-x[:, 0, 1] -> array([ 1,  7, 13, 19])  {mean = 10}
-x[:, 0, 2] -> array([ 2,  8, 14, 20])  {mean = 11}
-x[:, 1, 0] -> array([ 3,  9, 15, 21])  {mean = 12}
-x[:, 1, 1] -> array([ 4, 10, 16, 22])  {mean = 13}
-x[:, 1, 2] -> array([ 5, 11, 17, 23])  {mean = 14}
+x[:, 0, 0] -> array([ 0,  6, 12, 18])  {平均值 =  9}
+x[:, 0, 1] -> array([ 1,  7, 13, 19])  {平均值 = 10}
+x[:, 0, 2] -> array([ 2,  8, 14, 20])  {平均值 = 11}
+x[:, 1, 0] -> array([ 3,  9, 15, 21])  {平均值 = 12}
+x[:, 1, 1] -> array([ 4, 10, 16, 22])  {平均值 = 13}
+x[:, 1, 2] -> array([ 5, 11, 17, 23])  {平均值 = 14}
 ```
 
-Also, notice that the set of valid combinations of axis-1 and axis-2 indices corresponds to the two-by-three grid associated with they layout of a sheet. NumPy will return the six mean values in a shape-(2,3) array, so that the correspondence between each sequence and its mean-value is unambiguous:
+同时，请注意，轴1和轴2的合理组合的集对应着数组一页的2x3格位。NumPy会将这6个平均值作为形状为 (2,3) 的数组返回，使得序列和它平均值之间的对应关系没有歧义：
 
 ```python
 >>> np.mean(x, axis=0)
@@ -543,30 +535,30 @@ array([[  9.,  10.,  11.],
 
 <div class="alert alert-warning"> 
 
-**Recall**: 
+**回忆**：
 
-Recall that NumPy uses row-major ordering (a.k.a C-ordering) when traversing arrays.
+NumPy使用行优先顺序（也叫做C顺序）来遍历数组。
 
 </div>
 
-Suppose we specify two axes, say axis-0 and axis-2; traversing these two axes amounts to stepping along the sheets and columns of `x`, for each axis-1 index. Thus two sequences are produced:
+假设我们提供了两个轴，轴0和轴2，遍历这两个轴相当于为每一个轴1的索引遍历 `x` 的页和列。因此，这将创建两个序列：
 
 ```
-x[:, 0, :] -> array([ 0,  1,  2,  6,  7,  8, 12, 13, 14, 18, 19, 20])  {mean = 10}
-x[:, 1, :] -> array([ 3,  4,  5,  9, 10, 11, 15, 16, 17, 21, 22, 23])  {mean = 13}
+x[:, 0, :] -> array([ 0,  1,  2,  6,  7,  8, 12, 13, 14, 18, 19, 20])  {平均值 = 10}
+x[:, 1, :] -> array([ 3,  4,  5,  9, 10, 11, 15, 16, 17, 21, 22, 23])  {平均值 = 13}
 ```
 
 ```python
 >>> np.mean(x, axis=(0, 2))
 array([ 10.,  13.])
 ```
-These observations lead us to the following general result:
+以上这些注意到的点让我们可以进行一下总结：
 
 <div class="alert alert-info"> 
 
-**Result**: 
+**结果**：
 
-If $X$ is an $N$-dimensional array, and $j$ (with $j \leq N$) axes are specified in the `axis` keyword argument for a sequential NumPy function, then a $N-j$-dimensional array will be produced by this function. The shape of the result will be that of $X$, but with the entries associated with those $j$ axes removed.
+如果 $X$ 是一个 $N$ 维数组，`axis` 关键词参数为一个NumPy序列函数提供了 $j$（满足 $j \leq N$）个轴，那么这个函数将会返回一个 $N-j$ 维数组。返回数组的形状是 $X$ 的形状除去那 $j$ 个轴的结果。
 
 </div>
 <!-- #endregion -->
@@ -574,64 +566,64 @@ If $X$ is an $N$-dimensional array, and $j$ (with $j \leq N$) axes are specified
 <!-- #region -->
 <div class="alert alert-info"> 
 
-**Reading Comprehension: Basic Sequential Functions**
+**阅读理解：基本序列函数**
 
-A digital image is simply an array of numbers, which instructs a grid of pixels on a monitor to shine light of specific colors, according to the numerical values in that array. 
+一张电子图片其实就是一个数字数组，其指示显示器的像素根据数组的值去发射具体颜色的光。
 
-An RGB-image can thus be stored as a 3D NumPy array of shape-$(V, H, 3)$. $V$ is the number of pixels along the vertical direction, $H$ is the number of pixels along the horizontal, and the size-3 dimension stores the red, blue, and green color values for a given pixel. Thus a $(32, 32, 3)$ array would be a 32x32 RBG image.
+因此，一张RGB图片可以作为一个3维NumPy数组储存，其形状为 $(V, H, 3)$。$V$ 是竖向的像素数量，$H$ 是横向的像素数量，大小为3的维度储存了像素的红，蓝，绿颜色。因此，一个 $(32, 32, 3)$ 的数组将会是一张RGB图片。
 
-It is common to work with a collection of images. Suppose we want to store N images in a single array; thus we now consider a 4D shape-$(N, V, H, 3)$ array. 
+我们经常会需要处理图片集。假设我们想要将N张图片储存为一个数组，那么我们可以将其当作一个形状为 $(N, V, H, 3)$ 的4维数组。
 
-Let's collect some statistics on a collection of images. For the sake of convenience, let's simply generate a 4D-array of random numbers as a placeholder for real image data. We will generate 100, 32x32 RGB images:
+让我们收集一些关于这个图片集的统计数据。方便起见，让我们先产生成员为随机数字的4维数组来代替真实的图片数据。我们将会生成100张32x32的RGB图片：
 
 ```python
 >>> images = np.random.rand(100, 32, 32, 3)
 ```
 
-Now, compute the following:
+现在，计算以下：
 
-1\. The average 32x32 RGB image.
+1\. 所有图片平均下来的 32x32 RGB图.
 
-2\. The total sum of all the values in the array.
+2\. 数组中所有值的和。
 
-3\. The minimum blue value, respective to each image.
+3\. 每张图片的最小的蓝色值。
 
-4\. The standard deviation among all the RGB values in all the images, respective to each pixel position (thus you should produce a shape-(32, 32) array of values).
+4\. 每个像素位置在所有图片的RGB值的标准偏差（所以说你应该返回形状为 (32, 32) 的数组值）。
 
-5\. The maximum red-value in the top-left quadrant, respective to each image.
+5\. 每张图片左上象限的最大红色值。
 
 </div>
 <!-- #endregion -->
 
 <!-- #region -->
-## Logical Operations
-NumPy provides [a suite of logical operations](https://docs.scipy.org/doc/numpy/reference/routines.logic.html) that can operate on arrays. Many of these map logical operations over array entries in the same fashion as NumPy's mathematical functions. These functions return either a single boolean object, or a boolean-type array.
+## 逻辑运算
+NumPy提供了的[一系列逻辑运算](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)来操作数组。很多这些函数使用和NumPy的数学函数一样的方式将逻辑操作衍射到每个数组操作。这些函数返回一个布尔对象或一个布尔类的数组。
 
 ```python
-# check which entries of `x` are less than 6
+# 检查 `x` 的哪些成员小于6
 >>> x = np.array([[ 0,  1,  2,  3],
 ...               [ 4,  5,  6,  7],
 ...               [ 8,  9, 10, 11],
 ...               [12, 13, 14, 15]])
 
-# returns a boolean-type array
->>> x < 6  # equivalent to `np.less(x, 6)`
+# 返回布尔类的数组
+>>> x < 6  # 等值于：`np.less(x, 6)`
 array([[ True,  True,  True,  True],
        [ True,  True, False, False],
        [False, False, False, False],
        [False, False, False, False]], dtype=bool)
 
-# performing a logical comparison between two arrays
+# 对两个数组进行逻辑对比
 >>> np.array([1, 5, 10]) <=  np.array([1, 5, -1]) 
 array([ True,  True, False], dtype=bool)
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-Recall from the Essentials of Python module that, due to effect of floating point numbers having limited numerical precision, that you should never rely on two floating point numbers being exactly equal. Rather, you should require that they are sufficiently "close" in value. In this same vein, you ought not check that the entries of two float-type arrays are precisely equal. Towards this end, the function `allclose` can be used to verify that all corresponding pairs of entries between two arrays are approximately equal in value:
+请从Python基础模组回忆，因为浮点数的精度有限，你永远不应该假设两个浮点数会完全相同。反而，你应该检查它们的值是否足够“接近”。相似的，你不应该检查两个浮点类数组是否完全相同。为了达到这个目的，函数 `allclose` 可以用来检查两个数组的对应值是否足够接近：
 
 ```python
-# checking if two arrays match, using `np.allclose`
+# 使用 `np.allclose` 检查两个数组是否对应
 >>> x = np.array([0.1, 0.2, 0.3])
 >>> y = np.array([1., 2., 3.]) / 10
 
@@ -640,29 +632,29 @@ True
 ```
 <!-- #endregion -->
 
-## Linear Algebra
-Lastly, we note that NumPy provides a suite of functions that can perform optimized computations and routines relevant to linear algebra. Included here are functions for performing matrix products and tensor products, solving eigenvalue problems, inverting matrices, and computing vector normalizations. Please refer to the [official NumPy documentation](https://docs.scipy.org/doc/numpy/reference/routines.linalg.html) for a full listing of these functions.
+## 线性代数
+最后，请注意，NumPy有一组可以用来进行优化过的线性代数运算和常规工作的函数。这组工具包括进行矩阵乘法和张量乘法，解特征值问题，矩阵求逆，和矢量归一化的函数。请查看[官方NumPy说明文档](https://docs.scipy.org/doc/numpy/reference/routines.linalg.html)来阅读这些函数的完整列表。
 
 
 
 
-## Conclusion
-NumPy provides users with a wide variety of functions capable of performing operations on arrays of data. Its use of **vectorization** makes these functions incredibly fast, when compared to the analogous computations performed in pure Python. Although the preceding discussion laid out a substantial number of rules for how these functions work, one should not worry about memorizing them. Rather, it is best to apply these functions to arrays of various dimensionality, and build an intuition for them. You may be pleasantly surprised by how easy it is to get a hang of this material by simply putting it to practice.
+## 总结
+NumPy为用户提供了各式各样的对数组数据进行操作的函数。它对**矢量化**的使用使得这些函数相比同样功能的纯Python代码非常快。虽然之前的讨论列出了很多这些函数如何工作的规则，读者不应该去尝试记忆它们。反而，最好的做法是将这些函数运用于各种维度的数组上来发展对其的直观理解。你可能会惊讶于通过实践学习这些材料有多简单。
 
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Math functions](https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations)
-- [Logic functions](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)
-- [Linear algebra functions](https://docs.scipy.org/doc/numpy/reference/routines.linalg.html)
+- [数学函数](https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations)
+- [逻辑函数](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)
+- [线性代数函数](https://docs.scipy.org/doc/numpy/reference/routines.linalg.html)
 
 
-## Reading Comprehension Solutions
+## 阅读理解答案：
 
 <!-- #region -->
-**Unary Functions: Solution**
+**一元函数：解**
 
-Take the natural-logarithm of the 1st and 3rd element in the 3rd-row of `x`, producing a shape-(2,) result. 
+求 `x` 第三行的第一和第三个成员的自然对数以得到形状为 (2,) 的结果。
 
 ```python
 >>> x = np.array([[ 0,  1,  2,  3],
@@ -676,9 +668,9 @@ array([ 2.07944154,  2.30258509])
 <!-- #endregion -->
 
 <!-- #region -->
-**Binary Functions: Solution**
+**二元函数：解**
 
-Add the four quadrants of `x`, producing a shape-(2, 2) output.
+将 `x` 的四个象限相加，返回形状为 (2, 2) 的输出。
 
 ```python
 >>> x = np.array([[ 0,  1,  2,  3],
@@ -686,7 +678,7 @@ Add the four quadrants of `x`, producing a shape-(2, 2) output.
 ...               [ 8,  9, 10, 11],
 ...               [12, 13, 14, 15]])
 
-    # top-left  top-right    bottom-left  bottom-right
+    #  左上         右上          左下          右下
 >>> x[:2, :2] + x[:2, -2:] + x[-2:, :2] + x[-2:, -2:]
 array([[20, 24],
        [36, 40]])
@@ -694,32 +686,31 @@ array([[20, 24],
 <!-- #endregion -->
 
 <!-- #region -->
-**Basic Sequential Functions: Solutions**
+**基本序列函数：解**
 ```python
 >>> images = np.random.rand(100, 32, 32, 3)
 
-# 1. The average 32x32 RGB image. 
+# 1. 所有图片平均下来的 32x32 RGB图.
 >>> mean_imag = images.mean(axis=0)
 >>> mean_imag.shape
 (32, 32, 3)
 
-# 2. The total sum of all the values in the array.
+# 2. 数组中所有值的和。
 >>> images.sum()
 153422.97903817348
 
-# 3. The minimum blue value, respective to each image.
-# the colors are ordered red-blue-green along axis-3
+# 3. 每张图片的最小的蓝色值。
+# 在轴3的颜色顺序为红绿蓝
 >>> min_blue = images[:, :, :, 2].min(axis=(1, 2))
 >>> min_blue.shape
 (100,)
 
-# 4. The standard deviation among all the RGB values in all the images, 
-#    respective to each pixel.
+# 4. 每个像素位置在所有图片的RGB值的标准偏差。
 >>> pixel_std_dev = images.std(axis=(0, 3))
 >>> pixel_std_dev.shape
 (32, 32)
 
-# The maximum red-value in the top-left quadrant, respective to each image.
+# 5. 每张图片左上象限的最大红色值。
 >>> max_red_quad = images[:, :16, :16, 0].max(axis=(1, 2))
 >>> max_red_quad.shape
 (100,)

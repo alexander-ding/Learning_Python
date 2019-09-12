@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Applications of object-oriented programming, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Applications of Object Oriented Programming &mdash; Python Like You Mean It</title>
+  <title>面向对象编程的应用 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Special Methods" href="Special_Methods.html" />
-    <link rel="prev" title="Methods" href="Methods.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="特殊方法" href="Special_Methods.html" />
+    <link rel="prev" title="方法" href="Methods.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,26 +95,26 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">Introduction to Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">Defining a New Class of Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">Instances of a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">A Brief Summary of Terms and Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Applications of Object Oriented Programming</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Shopping-List">Shopping List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">面向对象编程简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">定义新对象类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">类实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">术语和概念的快速总结</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Methods.html">方法</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">面向对象编程的应用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#购物清单">购物清单</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">Special Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">特殊方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">继承</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -159,9 +160,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_4.html">Module 4: Object Oriented Programming</a> &raquo;</li>
+          <li><a href="../module_4.html">模组4：面向对象编程</a> &raquo;</li>
         
-      <li>Applications of Object Oriented Programming</li>
+      <li>面向对象编程的应用</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -402,74 +403,74 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Applications-of-Object-Oriented-Programming">
-<h1>Applications of Object Oriented Programming<a class="headerlink" href="#Applications-of-Object-Oriented-Programming" title="Permalink to this headline">¶</a></h1>
-<p>We have spent a considerable amount of time learning about the syntax and definitions of classes, class objects, instances, and methods. Let’s take a moment to gather our knowledge and create a useful class. This will help develop a sense for the ways in which object oriented programming can be useful for us. We will try to take care to make some recommendations when one should and shouldn’t define their own classes.</p>
-<div class="section" id="Shopping-List">
-<h2>Shopping List<a class="headerlink" href="#Shopping-List" title="Permalink to this headline">¶</a></h2>
-<p>Let’s create a shopping list class, where an instance of this class stores a list of item-names (strings) to be purchased and a list of names that have already been purchased. We will write an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function that accepts one or more strings, which will be added to the shopping list. Then, we will create methods that will allow us to:</p>
+<div class="section" id="面向对象编程的应用">
+<h1>面向对象编程的应用<a class="headerlink" href="#面向对象编程的应用" title="永久链接至标题">¶</a></h1>
+<p>我们花了不少时间学习类，类对象，实例，和方法的语法和定义。让我们花一些时间来总结我们的知识并创建一个有用的类。这将帮助我们发展对面向对象编程如何能为我们所用的理解。我们将试图推荐一些决定我们何时该和何时不该定义我们自己的类的守则。</p>
+<div class="section" id="购物清单">
+<h2>购物清单<a class="headerlink" href="#购物清单" title="永久链接至标题">¶</a></h2>
+<p>让我们创建一个购物清单类，其实例将纯粗一列表的要购买的物品名字（字符串）和一列表的已经购买的物品名字。我们将编写一个 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 函数来接受一个或多个字符串来加入到购物清单中。然后，我们将创建方法来允许我们：</p>
 <ul class="simple">
-<li>add new items to the shopping list</li>
-<li>mark items on the list as “purchased”</li>
-<li>remove items, purchased or not, from the list</li>
-<li>list the name of the items to-be purchased (in alphabetical order)</li>
-<li>list the name of the items have been purchased (in alphabetical order)</li>
+<li><p>向购物清单添加新物品</p></li>
+<li><p>将列表的物品标记为“已购买”</p></li>
+<li><p>从列表中删除物品，不管其是否已经购买</p></li>
+<li><p>（根据字母顺序）列出需要购买的物品名字</p></li>
+<li><p>（根据字母顺序）列出已经购买的物品名字</p></li>
 </ul>
-<p>We do not want redundant items to be included on our shopping list - if someone enters “apples” twice, we should only list it once. Thus we will make use of <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure">sets</a>, which store unique elements, to store the items on our list.</p>
-<p>Lastly, we will want our methods to accept a variable that is either a single item name (a string) or multiple item names (a list/tuple/iterable of strings). To accommodate this, if we receive a sole string as an input, we will place it in a list before carrying on. This will ensure that we are always working with an iterable containing a string.</p>
+<p>我们不想要在购物清单中有着重复的物品——如果有人输入了“apple”两次，我们应该仅仅列该物品一次。因此，我们将使用存储不重复成员的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure">集</a>来存储列表中的成员。</p>
+<p>最后，我们想要我们的方法来接受一个为单个物品名（字符串）或多个物品名（一列表/元组/可迭代物的字符串）的变量。为了容纳这两种情况，如果我们仅仅收到了一个字符串，我们将首先将其放入一个列表中。这将保证我们永远都会操作成员为字符串的可迭代物。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>class ShoppingList:
-    def __init__(self, items):
-        &quot;&quot;&quot; Parameters
-            ----------
-            items : Union[str, Iterable[str]]
-                Iterable of item-names to add to shopping list&quot;&quot;&quot;
-        if isinstance(items, str):
-            items = [items]
-        self._needed = set(items)
-        self._purchased = set()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">ShoppingList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            items : Union[str, Iterable[str]]</span>
+<span class="sd">                要加入到购物列表的成员为物品名字的可迭代物&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">items</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_purchased</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
-    def add_new_items(self, items):
-        &quot;&quot;&quot; Add more items to the shopping list
+    <span class="k">def</span> <span class="nf">add_new_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Add more items to the shopping list</span>
 
-            Parameters
-            ----------
-            items : Union[str, Iterable[str]]
-                Iterable of item-names to add to shopping list&quot;&quot;&quot;
-        if isinstance(items, str):
-            items = [items]
-        # set.update adds elements of an iterable to a set
-        self._needed.update(items)
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            items : Union[str, Iterable[str]]</span>
+<span class="sd">                要加入到购物列表的成员为物品名字的可迭代物&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">items</span><span class="p">]</span>
+        <span class="c1"># set.update 将可迭代物中的成员添加到集中</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needed</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
 
-    def mark_purchased_items(self, items):
-        &quot;&quot;&quot; Provide names of items to mark as &#39;purchased&#39;
+    <span class="k">def</span> <span class="nf">mark_purchased_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; 提供用来标记成“已购买”的物品的名字</span>
 
-            Parameters
-            ----------
-            items : Union[str, Iterable[str]]&quot;&quot;&quot;
-        if isinstance(items, str):
-            items = [items]
-        # only mark items as purchased that are on our list to begin with
-        self._purchased.update(set(items) &amp; self._needed)
-        # remove all purchased items from out unpurchased set
-        self._needed.difference_update(self._purchased)
+<span class="sd">            Parameters</span>
+<span class="sd">            ----------</span>
+<span class="sd">            items : Union[str, Iterable[str]]&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">items</span><span class="p">]</span>
+        <span class="c1"># 仅仅将已经在列表中的物品标记为已购买</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_purchased</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_needed</span><span class="p">)</span>
+        <span class="c1"># 从未购买的集中删除删除所有已购买物品</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needed</span><span class="o">.</span><span class="n">difference_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_purchased</span><span class="p">)</span>
 
-    def list_purchased_items(self):
-        &quot;&quot;&quot; Return a sorted list of the items that have been purchased&quot;&quot;&quot;
-        return sorted(self._purchased)
+    <span class="k">def</span> <span class="nf">list_purchased_items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; 返回已购买物品的排序列表&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_purchased</span><span class="p">)</span>
 
-    def list_unpurchased_items(self):
-        &quot;&quot;&quot; Return a sorted list of the items still on the list&quot;&quot;&quot;
-        return sorted(self._needed)
+    <span class="k">def</span> <span class="nf">list_unpurchased_items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; 返回未购买物品的排序列表&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_needed</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Let’s create a shopping list with a few items on it:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating a shopping list</span>
+<p>让我们创建一个有几个物品的购物列表：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个购物清单</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_list</span> <span class="o">=</span> <span class="n">ShoppingList</span><span class="p">([</span><span class="s2">&quot;apples&quot;</span><span class="p">,</span> <span class="s2">&quot;apples&quot;</span><span class="p">,</span> <span class="s2">&quot;grapes&quot;</span><span class="p">,</span> <span class="s2">&quot;peaches&quot;</span><span class="p">,</span> <span class="s2">&quot;milk&quot;</span><span class="p">,</span> <span class="s2">&quot;bread&quot;</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_list</span><span class="o">.</span><span class="n">list_unpurchased_items</span><span class="p">()</span>
 <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;bread&#39;</span><span class="p">,</span> <span class="s1">&#39;grapes&#39;</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">,</span> <span class="s1">&#39;peaches&#39;</span><span class="p">]</span>
@@ -477,8 +478,8 @@ div.rendered_html tbody tr:hover {
 <span class="p">[]</span>
 </pre></div>
 </div>
-<p>Notice that I mistakenly placed apples on my list twice. However our use of sets under the hood handles this gracefully, reducing all redundant entries automatically. Supposing that we are carrying on with our shopping and we purchase several items, let’s mark them as such.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mark items as purchased on our list</span>
+<p>请注意，我不小心在列表中输入了“apples”两次。但是，我们在幕后使用的集能够优雅地处理这个错误并自动删除所有重复的物品。假设我们带着购物清单并购买了几个物品，让我们如此标记。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在购物列表中标记几个物品为已购买</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_list</span><span class="o">.</span><span class="n">mark_purchased_items</span><span class="p">([</span><span class="s2">&quot;grapes&quot;</span><span class="p">,</span> <span class="s2">&quot;pineapples&quot;</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_list</span><span class="o">.</span><span class="n">list_purchased_items</span><span class="p">()</span>
 <span class="p">[</span><span class="s1">&#39;grapes&#39;</span><span class="p">]</span>
@@ -486,12 +487,12 @@ div.rendered_html tbody tr:hover {
 <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;bread&#39;</span><span class="p">,</span> <span class="s1">&#39;milk&#39;</span><span class="p">,</span> <span class="s1">&#39;peaches&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>See that “grapes” were appropriately removed from our unpurchased set and added to our purchased set. Additionally, our implementation gracefully ignores our request to mark pineapples as being purchased, as pineapples weren’t even on our list to begin with.</p>
-<p>In the next section we will augment our <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> class with some special methods to make it easier to view the items, purchased and not, on our list.</p>
+<p>请注意我们在未购买组中正确的删除了“grapes”并将其加入到了购买组中。同时，我们的实现优雅地忽略了将“pineapple”标记为已购买的请求，因为我们本来就没有在列表中加入“pineapple”。</p>
+<p>在下一节中我们将会为我们的 <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> 类添加一些特殊方法来使得我们可以更加简单地浏览我们购买和未购买物品的列表。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Caution: Using Class Definitions Responsibly</strong></p>
-<p>Our <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> class’ main utility is that it coordinates two sets of items for us, making the logic of tracking unpurchased and purchased items intuitive and simple. If we did not care about keeping track of purchased items, then we ought not define a class at all. We should instead just store our items in a <code class="docutils literal notranslate"><span class="pre">list</span></code> and use its methods to add and remove items.</p>
-<p>When possible, it is preferable to use Python’s built-in types in lieu of defining a new class. Doing so will help keep your code simple, portable, and compatible with other code.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>注意：负责地使用类定义</strong></p>
+<p>我们 <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> 类的主要功能是为我们管理两个物品集，使得记录未购买和购买物品的逻辑简单易懂。如果我们不在乎记录物品是否已经购买，那么我们根本不应该定义一个类。我们应该直接将物品名存入一个 <code class="docutils literal notranslate"><span class="pre">list</span></code> 中并使用它的方法来添加和删除物品。</p>
+<p>当可以的时候，我们应当优先使用Python的内置类型，而不是定义一个新类。这么做会使得你的代码简单，轻便，并和其它代码兼容。</p>
 </div>
 </div>
 </div>
@@ -504,10 +505,10 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Special_Methods.html" class="btn btn-neutral float-right" title="Special Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Special_Methods.html" class="btn btn-neutral float-right" title="特殊方法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Methods.html" class="btn btn-neutral float-left" title="Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Methods.html" class="btn btn-neutral float-left" title="方法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

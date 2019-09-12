@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Creating numpy arrays, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Functions for Creating NumPy Arrays &mdash; Python Like You Mean It</title>
+  <title>创建NumPy数组的函数 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Iterating Over Arrays &amp; Array-Traversal Order" href="ArrayTraversal.html" />
-    <link rel="prev" title="Basic Array Attributes" href="BasicArrayAttributes.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="迭代数组和数组遍历顺序" href="ArrayTraversal.html" />
+    <link rel="prev" title="基本的数组属性" href="BasicArrayAttributes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,33 +95,33 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">Basic Array Attributes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Functions for Creating NumPy Arrays</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Creating-Arrays-from-Python-Sequences">Creating Arrays from Python Sequences</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Creating-Constant-Arrays:-zeros-and-ones">Creating Constant Arrays: <code class="docutils literal notranslate"><span class="pre">zeros</span></code> and <code class="docutils literal notranslate"><span class="pre">ones</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Creating-Sequential-Arrays:-arange-and-linspace">Creating Sequential Arrays: <code class="docutils literal notranslate"><span class="pre">arange</span></code> and <code class="docutils literal notranslate"><span class="pre">linspace</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Creating-Arrays-Using-Random-Sampling">Creating Arrays Using Random Sampling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Creating-an-Array-with-a-Specified-Data-Type">Creating an Array with a Specified Data Type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Joining-Arrays-Together">Joining Arrays Together</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">基本的数组属性</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">创建NumPy数组的函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#使用Python序列创建数组">使用Python序列创建数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#创建常量数组：zeros-和-ones">创建常量数组：<code class="docutils literal notranslate"><span class="pre">zeros</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ones</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#创建序列数组：arange-和-linspace">创建序列数组：<code class="docutils literal notranslate"><span class="pre">arange</span></code> 和 <code class="docutils literal notranslate"><span class="pre">linspace</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#随机取值来生成数组">随机取值来生成数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#创建某数据类型的数组">创建某数据类型的数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#合并数组">合并数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">Advanced Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArrayTraversal.html">迭代数组和数组遍历顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">数组广播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">进阶索引</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -166,9 +167,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_3.html">Module 3: The Essentials of NumPy</a> &raquo;</li>
+          <li><a href="../module_3.html">模组3：NumPy基础</a> &raquo;</li>
         
-      <li>Functions for Creating NumPy Arrays</li>
+      <li>创建NumPy数组的函数</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,53 +212,52 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Functions-for-Creating-NumPy-Arrays">
-<h1>Functions for Creating NumPy Arrays<a class="headerlink" href="#Functions-for-Creating-NumPy-Arrays" title="Permalink to this headline">¶</a></h1>
-<p>This section presents standard methods for creating NumPy arrays of varying shapes and contents. NumPy provides a laundry list of functions for creating arrays:</p>
+<div class="section" id="创建NumPy数组的函数">
+<h1>创建NumPy数组的函数<a class="headerlink" href="#创建NumPy数组的函数" title="永久链接至标题">¶</a></h1>
+<p>本节将会讨论创建不同形状和内容的NumPy数组的方法。NumPy提供了非常多的创建数组的函数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="go"># creating an array from a Python sequence</span>
+<span class="go"># 使用Python序列创建数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
 <span class="go">array([ 0,  1,  4,  9, 16])</span>
 
-<span class="go"># creating an array filled with ones</span>
+<span class="go"># 创建成员都是1的数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="go">array([[ 1.,  1.,  1.,  1.],</span>
 <span class="go">       [ 1.,  1.,  1.,  1.]])</span>
 
-<span class="go"># creating an array of evenly-spaced points</span>
+<span class="go"># 创建成员为均匀分布数字的数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="go">array([  0. ,   2.5,   5. ,   7.5,  10. ])</span>
 
-<span class="go"># creating an array by sampling 10 numbers</span>
-<span class="go"># randomly from a mean-1, std-dev-5 normal</span>
-<span class="go"># distribution</span>
+<span class="go"># 通过随机从平均值为1，标准差为5的正态分布中</span>
+<span class="go"># 抽取10个数字来创建一个数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="go">array([ 2.549537  ,  2.75144951,  0.60031823,  3.75185732,  4.65543858,</span>
 <span class="go">        0.55779525,  1.15574987, -1.98461337,  5.39771083, -7.81395192])</span>
 
-<span class="go"># creating an array of a specified datatype</span>
+<span class="go"># 创建某个特定数据类型的数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.20</span><span class="p">,</span> <span class="mf">5.78</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="go">array([1, 3, 5])</span>
 </pre></div>
 </div>
-<div class="section" id="Creating-Arrays-from-Python-Sequences">
-<h2>Creating Arrays from Python Sequences<a class="headerlink" href="#Creating-Arrays-from-Python-Sequences" title="Permalink to this headline">¶</a></h2>
-<p>You can create an array from a Python <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> by using NumPy’s <code class="docutils literal notranslate"><span class="pre">array</span></code> function. NumPy will interpret the structure of the data it receives to determine the dimensionality and shape of the array. For example, a single list of numbers will be used to create a 1-dimensional array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of numbers will become a 1D-array</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>  <span class="c1"># shape: (3,)</span>
+<div class="section" id="使用Python序列创建数组">
+<h2>使用Python序列创建数组<a class="headerlink" href="#使用Python序列创建数组" title="永久链接至标题">¶</a></h2>
+<p>你可以利用NumPy的 <code class="docutils literal notranslate"><span class="pre">array</span></code> 函数利用Python的 <code class="docutils literal notranslate"><span class="pre">list</span></code> 或 <code class="docutils literal notranslate"><span class="pre">tuple</span></code> 来创建数组。NumPy将分析它接受的数据结构来决定数组的维度和形状。比如说，一列表的数字将会被用来创建一个1维数组：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一列表的数字会成为1维数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>  <span class="c1"># 形状：(3,)</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Nested lists/tuples will be used to construct multidimensional arrays. For example, a “list of equal-length lists of numbers” will lead to a 2-dimensional array; each of the inner-lists comprises a row of the array. Thus a list of two, length-three lists will produce a (2,3)-shaped array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of lists of numbers will produce a 2D-array</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>  <span class="c1"># shape: (2, 3)</span>
+<p>嵌套的列表/元组将会被用来创建多维数组。比如说，“成员为等长的数字列表的列表”将会成为2维数组；列表中的每一个子列表都会成为数组中的一行。因此，一个长度为2，成员为长度为3的列表将会导致一个形状为 (2,3) 的数组被创建：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一列表的数字列表将会创建2维数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>  <span class="c1"># 形状：(2, 3)</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">4.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span>  <span class="mf">6.</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>A “list of equal-length lists, of equal-length lists of numbers” creates a 3D-array, and so on. Recall that using repeated concatenation, <code class="docutils literal notranslate"><span class="pre">[0]*3</span></code> will produce <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code>. Using this, let’s create two lists, each containing three lists, each containing four zeros; feeding this to <code class="docutils literal notranslate"><span class="pre">np.array</span></code> thus produces a 2x3x4 array of zeros:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of lists of lists of zeros creates a 3D-array</span>
+<p>“成员为成员为等长的数字列表的等长数字列表的列表”将会成为3维数组，如此反复。请回忆，通过使用重复粘贴，<code class="docutils literal notranslate"><span class="pre">[0]*3</span></code> 将会创建 <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code>。让我们使用这个来创建两个成员为三个每个包含四个0的列表的列表吧；因此将这个列表输入到 <code class="docutils literal notranslate"><span class="pre">np.array</span></code> 中会创建一个2x3x4的内容为0的数组：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一列表的数字0列表的列表会成为一个3维数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -268,93 +268,92 @@
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>You will seldom use lists to form high-dimensional arrays like this. Instead, there are other array-creation functions that are more amendable to generating high-dimensional data, which we will introduce next. For example, we will see that the <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> function is a much more civilized way to create a high-dimensional array of zeros.</p>
+<p>你很少会需要使用列表来像这样创建高维数组。与其如此，我们将在下面介绍其它更加方便生成高维度数据的数组创建函数。比如说，我们将会看到 <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> 函数为我们提供了一个更文明的创建高维0数组的方法。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Warning!</strong></p>
-<p>You actually <em>can</em> create an array from lists of <em>unequal</em> lengths. The resulting array is <strong>not</strong> an ND-array as it has no well-defined dimensionality. Instead, something called an <em>object-array</em> is produced, which does not benefit from the majority of NumPy’s features. This is a relatively obscure feature of the NumPy library, and should be avoided unless you really know what you’re doing!</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>警告</strong>！</p>
+<p>你其实<em>可以</em>通过成员为<em>不等长</em>列表的列表来创建数组。这样做产生的数组并<em>不是</em>一个N维数组，因为它没有定义明确的维度。这样做会产生一个<em>对象数组</em>（object array），而它并不能享受大部分的NumPy功能和好处。这是NumPy模组比较少见的一个特征。如果你不真的很清楚自己在做什么的话就避免使用它！</p>
 </div>
 </div>
-<div class="section" id="Creating-Constant-Arrays:-zeros-and-ones">
-<h2>Creating Constant Arrays: <code class="docutils literal notranslate"><span class="pre">zeros</span></code> and <code class="docutils literal notranslate"><span class="pre">ones</span></code><a class="headerlink" href="#Creating-Constant-Arrays:-zeros-and-ones" title="Permalink to this headline">¶</a></h2>
-<p>NumPy provides the functions <code class="docutils literal notranslate"><span class="pre">zeros</span></code> and <code class="docutils literal notranslate"><span class="pre">ones</span></code>, which will fill an array of user-specified shape with 0s and 1s, respectively:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a 3x4 array of zeros</span>
+<div class="section" id="创建常量数组：zeros-和-ones">
+<h2>创建常量数组：<code class="docutils literal notranslate"><span class="pre">zeros</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ones</span></code><a class="headerlink" href="#创建常量数组：zeros-和-ones" title="永久链接至标题">¶</a></h2>
+<p>NumPy提供了函数 <code class="docutils literal notranslate"><span class="pre">zeros</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ones</span></code>，其创建用户提供形状的成员数字分别为0和1的数组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个 3x4 的0数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">]])</span>
 
-<span class="c1"># create a shape-(4,) array of ones</span>
+<span class="c1"># 创建一个形状为 (4,) 的1数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,))</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>NumPy provides additional functions for creating constant-valued arrays. Please refer to <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#ones-and-zeros">the official documentation</a> for a complete listing.</p>
+<p>NumPy提供了额外的创建常数值数组的函数。请查看<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#ones-and-zeros">官方说明文档</a>来阅读完整的列表。</p>
 </div>
-<div class="section" id="Creating-Sequential-Arrays:-arange-and-linspace">
-<h2>Creating Sequential Arrays: <code class="docutils literal notranslate"><span class="pre">arange</span></code> and <code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#Creating-Sequential-Arrays:-arange-and-linspace" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html#numpy.arange">arange</a> function allows you to initialize a sequence of integers based on a starting point (inclusive), stopping point (exclusive), and step size. This is very similar to the <code class="docutils literal notranslate"><span class="pre">range</span></code> function; however <code class="docutils literal notranslate"><span class="pre">arange</span></code> immediately creates this sequence as an array, whereas <code class="docutils literal notranslate"><span class="pre">range</span></code> produces a generator.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># start (included): 0, stop (excluded): 10, step:1</span>
+<div class="section" id="创建序列数组：arange-和-linspace">
+<h2>创建序列数组：<code class="docutils literal notranslate"><span class="pre">arange</span></code> 和 <code class="docutils literal notranslate"><span class="pre">linspace</span></code><a class="headerlink" href="#创建序列数组：arange-和-linspace" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html#numpy.arange">arange</a>函数允许你根据一个起始点（start）（包含），结尾点（stop）（不包含），和步距（step）来初始化一序列的整数。这和 <code class="docutils literal notranslate"><span class="pre">range</span></code> 函数很相似；但是，<code class="docutils literal notranslate"><span class="pre">arange</span></code> 将立刻将这个序列创建成数组，而 <code class="docutils literal notranslate"><span class="pre">range</span></code> 返回一个生成器。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># start（包含）：0，stop（不包含）：10，step：1</span>
 <span class="go">array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
 
-<span class="go"># supplying one value to `arange` amounts to specifying the stop value</span>
-<span class="go"># start=0 and step=1 are then used as defaults</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># equivalent to: start: 0, stop: 10, step:1</span>
+<span class="go"># 仅仅为 `arange` 提供一个数字相当于为其提供结尾点</span>
+<span class="go"># 默认使用start=0 和 step=1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 等值于：start：0，stop：10，step：1</span>
 <span class="go">array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># start (included): -5, stop (excluded): 6, step:2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># start（包含）：-5，stop（不包含）：6，step：2</span>
 <span class="go">array([-5, -3, -1,  1,  3,  5])</span>
 </pre></div>
 </div>
-<p>The <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html">linspace</a> function allows you to generate <span class="math notranslate nohighlight">\(N\)</span> <em>evenly-spaced</em> points within a user-specified interval <span class="math notranslate nohighlight">\([i, j]\)</span> (<span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are included in the interval). This is often used to generate a domain of values on which to evaluate a mathematical function (e.g.&nbsp;if you want to the sine function from <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(\pi\)</span> on a finely-divided grid).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate five evenly-spaced points on the interval [-1, 1]</span>
+<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html">linspace</a>函数提供了在用户提供的范围 <span class="math notranslate nohighlight">\([i, j]\)</span>（<span class="math notranslate nohighlight">\(i\)</span> 和 <span class="math notranslate nohighlight">\(j\)</span> 都在这个范围内包括）内生成 <span class="math notranslate nohighlight">\(N\)</span> 个<em>等距</em>的点的功能。这函数经常用来生成计算数学函数时使用的输入域值（例，在 <span class="math notranslate nohighlight">\(-\pi\)</span> to <span class="math notranslate nohighlight">\(\pi\)</span> 之间等距计算sine函数的值）。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在 [-1, 1] 中生成5个等距的点</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span>  <span class="mf">0.</span> <span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span>  <span class="mf">1.</span> <span class="p">])</span>
 
-<span class="c1"># generate two evenly-spaced points on the interval [3, 4]</span>
+<span class="c1"># 在 [3, 4] 中生成2个等距的点</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">3.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">])</span>
 
-<span class="c1"># generate 100 evenly-spaced points on the interval [-pi, pi]</span>
+<span class="c1"># 在 [-pi, pi] 中生成100个等距的点</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.14159265</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="mf">3.14159265</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Numpy has other functions for creating sequential arrays, such as producing an array spaced evenly on a log-scaled interval. See the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#numerical-ranges">official documentation</a> for a complete listing.</p>
+<p>NumPy提供了其它用来创建序列数组的函数，如在对数刻度上创建等距数组。请查看<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#numerical-ranges">官方说明文档</a>来阅读完整列表。</p>
 </div>
-<div class="section" id="Creating-Arrays-Using-Random-Sampling">
-<h2>Creating Arrays Using Random Sampling<a class="headerlink" href="#Creating-Arrays-Using-Random-Sampling" title="Permalink to this headline">¶</a></h2>
-<p>Several functions can be accessed from <code class="docutils literal notranslate"><span class="pre">np.random</span></code>, which populate arrays of a user-specified shape by drawing randomly from a specified statistical distribution:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a shape-(3,3) array by drawing its entries randomly</span>
-<span class="c1"># from the uniform distribution [0, 1)</span>
+<div class="section" id="随机取值来生成数组">
+<h2>随机取值来生成数组<a class="headerlink" href="#随机取值来生成数组" title="永久链接至标题">¶</a></h2>
+<p>在 <code class="docutils literal notranslate"><span class="pre">np.random</span></code> 中有多个函数可以根据用户的形状创建数组，其值由某用户选择的统计分布中随机抽取得到：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过在 [0, 1) 中均匀分布来创建形状为 (3,3) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">0.09542611</span><span class="p">,</span>  <span class="mf">0.13183498</span><span class="p">,</span>  <span class="mf">0.39836068</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">0.7358235</span> <span class="p">,</span>  <span class="mf">0.77640024</span><span class="p">,</span>  <span class="mf">0.74913595</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">0.37702688</span><span class="p">,</span>  <span class="mf">0.86617624</span><span class="p">,</span>  <span class="mf">0.39846429</span><span class="p">]])</span>
 
-<span class="c1"># create a shape-(5,) array by drawing its entries randomly</span>
-<span class="c1"># from a mean-0, variance-1 normal (a.k.a. Gaussian) distribution</span>
+<span class="c1"># 通过从平均值为0，方差为1的正态分布（也就是高斯分布）中抽取值</span>
+<span class="c1"># 来创建形状为 (5,) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.11262121</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.35392007</span><span class="p">,</span>  <span class="mf">0.4245215</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.81995588</span><span class="p">,</span>  <span class="mf">0.65412323</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>There are <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.random.html#distributions">many more functions</a> to read about that allow you to draw from a wide variety of statistical distributions. This only scratches the surface of random number generation in NumPy.</p>
+<p>当然，NumPy有着<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.random.html#distributions">非常多其它的函数</a>来允许你从很多种类的统计分布中抽取值。本文介绍的内容仅仅NumPy中随机生成数字功能的皮毛而已。</p>
 </div>
-<div class="section" id="Creating-an-Array-with-a-Specified-Data-Type">
-<h2>Creating an Array with a Specified Data Type<a class="headerlink" href="#Creating-an-Array-with-a-Specified-Data-Type" title="Permalink to this headline">¶</a></h2>
-<p>Each of the preceding functions used to create an array can be passed a so-called ‘keyword’ argument, <code class="docutils literal notranslate"><span class="pre">dtype</span></code>, which instructs NumPy to use a specified data type when producing the contents of the array.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># populate an array using 32-bit floating point numbers</span>
+<div class="section" id="创建某数据类型的数组">
+<h2>创建某数据类型的数组<a class="headerlink" href="#创建某数据类型的数组" title="永久链接至标题">¶</a></h2>
+<p>在之前的所有函数中你都可以向其输入一个关键词参数 <code class="docutils literal notranslate"><span class="pre">dtype</span></code> 来指示NumPy在创建函数内容时使用指定的数据类型。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 向数组中填满32比特的浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="c1"># default data type produced by `arange` is 32-bit integers</span>
+<span class="c1"># `arange` 使用的默认数据类型为32比特整数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span>
 <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
 
-<span class="c1"># the data type produced by `arange` can be specified otherwise</span>
+<span class="c1"># 通过设置 `dtype` 你可以调整 `arange` 产生的数据类型</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float16&quot;</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float16</span><span class="p">)</span>
 
-<span class="c1"># generate shape-(4,4) array of 64-bit complex-valued 0s</span>
+<span class="c1"># 生成形状为 (4,4) 的数组，其成员为64比特的复数0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;complex64&quot;</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">],</span>
        <span class="p">[</span> <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">],</span>
@@ -362,36 +361,36 @@
        <span class="p">[</span> <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">,</span>  <span class="mf">0.</span><span class="o">+</span><span class="mf">0.j</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">complex64</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Refer to <a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.types.html#array-types-and-conversions-between-types">the official NumPy documentation</a> for the complete list of available array datatypes.</p>
+<p>请查看<a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.types.html#array-types-and-conversions-between-types">NumPy官方说明文档</a>来阅读完整的可用数组数据类型列表。</p>
 </div>
-<div class="section" id="Joining-Arrays-Together">
-<h2>Joining Arrays Together<a class="headerlink" href="#Joining-Arrays-Together" title="Permalink to this headline">¶</a></h2>
-<p>Similar to Python lists and tuples, NumPy arrays can be concatenated together. However, because NumPy’s arrays can be multi-dimensional, we can choose the dimension along which arrays are joined.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating methods for joining arrays</span>
+<div class="section" id="合并数组">
+<h2>合并数组<a class="headerlink" href="#合并数组" title="永久链接至标题">¶</a></h2>
+<p>和Python的列表和元组类似，1你可以粘连多个NumPy数组。但是，因为NumPy的数组可以是多维度的，我们可以选择粘连数组的维度。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示合并数组的方法</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 
-<span class="c1"># stack `x` and `y` &quot;vertically&quot;</span>
+<span class="c1"># 将 `x` 和 `y` “竖向”（vertically）堆积（stack）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
        <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]])</span>
 
-<span class="c1"># stack `x` and `y` &quot;horizontally&quot;</span>
+<span class="c1"># 将 `x` 和 `y` “横向”（horizontally）堆积</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
 <span class="n">array</span><span class="p">([</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>A complete listing of functions for joining arrays can be <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html#joining-arrays">found in the official NumPy documentation</a>. There are also corresponding functions for splitting an array into independent arrays.</p>
+<p>合并数组的完整函数列表<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html#joining-arrays">可以在NumPy官方说明文档</a>找到。NumPy也提供对应的函数来将单个数组切分成多个独立数组。</p>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#ones-and-zeros">Constant arrays</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy-array">numpy.array</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#numerical-ranges">Sequential arrays</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.random.html#distributions">Random distributions</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.types.html#array-types-and-conversions-between-types">Array types</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html#joining-arrays">Joining arrays</a></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#ones-and-zeros">常数数组</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy-array">numpy.array</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html#numerical-ranges">序列数组</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.random.html#distributions">随机分布</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.types.html#array-types-and-conversions-between-types">数组类型</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html#joining-arrays">合并数组</a></p></li>
 </ul>
 </div>
 </div>
@@ -404,10 +403,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ArrayTraversal.html" class="btn btn-neutral float-right" title="Iterating Over Arrays &amp; Array-Traversal Order" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ArrayTraversal.html" class="btn btn-neutral float-right" title="迭代数组和数组遍历顺序" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="BasicArrayAttributes.html" class="btn btn-neutral float-left" title="Basic Array Attributes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="BasicArrayAttributes.html" class="btn btn-neutral float-left" title="基本的数组属性" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

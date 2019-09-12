@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: variable score and namespaces in python, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Scope &mdash; Python Like You Mean It</title>
+  <title>作用域 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Structures (Part I): Introduction" href="DataStructures.html" />
-    <link rel="prev" title="Basics of Functions" href="Functions.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="数据结构（第一部分）：简介" href="DataStructures.html" />
+    <link rel="prev" title="函数基础" href="Functions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,33 +95,33 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Scope</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Variable-Shadowing">Variable Shadowing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">作用域</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#变量重影">变量重影</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -166,9 +167,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Scope</li>
+      <li>作用域</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,122 +212,121 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Scope">
-<h1>Scope<a class="headerlink" href="#Scope" title="Permalink to this headline">¶</a></h1>
-<p>A valuable aspect of the “encapsulation” provided by functions is that the function’s input argument variables, and any variables defined within the function, cannot be “seen” nor accessed outside of the function. That is, these variables are said to have a restricted <strong>scope</strong>.</p>
+<div class="section" id="作用域">
+<h1>作用域<a class="headerlink" href="#作用域" title="永久链接至标题">¶</a></h1>
+<p>函数“封装”（encapsulation）提供的一大好处在于你无法在函数外面“看到”或访问参数变量或其中定义的任何其它变量。也就是说，这些变量的<strong>作用域</strong>（scope）是有限的。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Definition</strong>:</p>
-<p>The <strong>scope</strong> of a variable refers to the context in which that variable is visible/accessible to the Python interpreter.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>定义</strong>：</p>
+<p>一个变量的<strong>作用域</strong>指其在Python直译器眼中可见/可访问的环境。</p>
 </div>
-<p>Until our work with comprehension-statements and functions, we had only encountered variables that have <strong>file scope</strong>. This means that a variable, once defined, is visible to all parts of the code contained in the same file. Variables with file scope can even be accessed <em>within functions</em>. By contrast, the variables defined within a function or as input arguments to a function have a <strong>restricted scope</strong> - they can only be accessed within the context of the function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># `x` has file scope. It can be even be accessed</span>
-       <span class="c1"># within a function, even if it isn&#39;t passed to</span>
-       <span class="c1"># the function as an argument</span>
+<p>直到我们理解语句和函数的讨论之前，我们仅仅遇到过有<strong>文件作用域</strong>（file scope）的变量。这意味着被定义后，该变量对任何相同文件中的代码而言都可见。有着文件作用域的变量甚至可以<em>在函数内</em>使用。相比文件作用域，函数中定义的变量或函数的输入参数则有着<strong>有限作用域</strong>（restricted scope）——它们只能在函数内使用：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># `x` 有着文件作用域。就算它没有作为参数输入到函数中，</span>
+       <span class="c1"># 它也可以在其中被访问</span>
 
-<span class="c1"># `my_func` has file scope (after it is defined)</span>
+<span class="c1"># `my_func` 在其被定义后有着文件作用域</span>
 <span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-    <span class="n">func_var</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">+</span> <span class="n">x</span>  <span class="c1"># `x` will have the value 3</span>
-    <span class="c1"># the scope of `y` and `func_var` is restricted to this function</span>
+    <span class="n">func_var</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">+</span> <span class="n">x</span>  <span class="c1"># `x` 的值将为3</span>
+    <span class="c1"># 变量 `y` 和 `func_var` 的作用域限制在本函数中</span>
     <span class="k">return</span> <span class="n">y</span>
 
-<span class="c1"># `func_var` and `y` do not exist here</span>
-<span class="k">print</span><span class="p">(</span><span class="n">func_var</span><span class="p">)</span>  <span class="c1"># raises NameError: name `func_var` not defined</span>
-<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>         <span class="c1"># raises NameError: name `y` not defined</span>
+<span class="c1"># `func_var` 和 `y` 在此不存在</span>
+<span class="k">print</span><span class="p">(</span><span class="n">func_var</span><span class="p">)</span>  <span class="c1"># 导致 NameError：名字 `func_var` 未定义</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>         <span class="c1"># 导致 NameError：名字 `y` 未定义</span>
 </pre></div>
 </div>
-<p>Python’s scoping rules are quite liberal compared to those of other languages, like C++. In most situations, Python will give variables file scope. Let’s briefly survey the various contexts in which variables are defined, along with their corresponding scoping rules. Assume that the following code represents the entire contents of the Python script “example_scope.py”:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this demonstrates scope of variables in different contexts</span>
-<span class="c1"># nothing meaningful is computed in this file</span>
+<p>Python的作用域规则其实相比其他如C++的语言相当直接。在大部分情况下，Python会给予变量文件作用域。让我们快速总结一下定义变量的不同环境以及它们相对应的作用域规则。假设以下代码代表着Python脚本“example_scope.py”的全部内容：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示变量在不同情况下的作用域</span>
+<span class="c1"># 本文件并不计算任何有意义的结果</span>
 
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>  <span class="c1"># `combinations` has file scope</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>  <span class="c1"># `combinations` 有文件作用域</span>
 
-<span class="c1"># `my_func` has file scope</span>
-<span class="c1"># `in_arg1` has restricted scope</span>
-<span class="c1"># `in_arg2` has restricted scope</span>
-<span class="c1"># `func_block` has restricted scope</span>
+<span class="c1"># `my_func` 有文件作用域</span>
+<span class="c1"># `in_arg1` 有有限作用域</span>
+<span class="c1"># `in_arg2` 有有限作用域</span>
+<span class="c1"># `func_block` 有有限作用域</span>
 <span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">in_arg1</span><span class="p">,</span> <span class="n">in_arg2</span><span class="o">=</span><span class="s2">&quot;cat&quot;</span><span class="p">):</span>
     <span class="n">func_block</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="bp">None</span>
 
-<span class="c1"># `file_var` has file scope</span>
-<span class="c1"># `comp_var` has restricted scope</span>
+<span class="c1"># `file_var` 有文件作用域</span>
+<span class="c1"># `comp_var` 有有限作用域</span>
 <span class="n">file_var</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp_var</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">comp_var</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]]</span>
 
-<span class="c1"># `if_block` has file scope</span>
+<span class="c1"># `if_block` 有文件作用域</span>
 <span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
     <span class="n">if_block</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">if_block</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="c1"># `it_var` has file scope</span>
-<span class="c1"># `for_block` has file scope</span>
+<span class="c1"># `it_var` 有文件作用域</span>
+<span class="c1"># `for_block` 有文件作用域</span>
 <span class="k">for</span> <span class="n">it_var</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
     <span class="n">for_block</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c1"># `while_block` has file scope</span>
+<span class="c1"># `while_block` 有文件作用域</span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="n">while_block</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="k">break</span>
 </pre></div>
 </div>
-<p>In the preceding code, the following variables have <em>file scope</em>:</p>
+<p>在以上代码中，以下变量有着<em>文件作用域</em>：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">combinations</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">my_func</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">file_var</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">if_block</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">it_var</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">for_block</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">while_block</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">combinations</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_func</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_var</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if_block</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">it_var</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for_block</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while_block</span></code></p></li>
 </ul>
-<p>whereas the following variables have <em>restricted scope</em>:</p>
+<p>而以下变量有着<em>有限作用域</em>：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">in_arg1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">in_arg2</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">func_block</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">comp_var</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in_arg1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in_arg2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func_block</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">comp_var</span></code></p></li>
 </ul>
-<p>In C++, the variables <code class="docutils literal notranslate"><span class="pre">if_block</span></code>, <code class="docutils literal notranslate"><span class="pre">it_var</span></code>, <code class="docutils literal notranslate"><span class="pre">for_block</span></code>, and <code class="docutils literal notranslate"><span class="pre">while_block</span></code> all would have had restricted scopes - these variables would not be defined outside of their respective if/for/while blocks.</p>
+<p>在C++中，变量 <code class="docutils literal notranslate"><span class="pre">if_block</span></code>，<code class="docutils literal notranslate"><span class="pre">it_var</span></code>，<code class="docutils literal notranslate"><span class="pre">for_block</span></code>，和 <code class="docutils literal notranslate"><span class="pre">while_block</span></code> 会有着有限作用域——这些函数在它们对应的if/for/while区块外不会被定义。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>Variables defined within a function have a <em>restricted scope</em> such that they do not exist outside of that function. Most other contexts for defining variables in Python produce variables with <em>file scope</em> (i.e.&nbsp;they can be accessed anywhere in the file’s code, subsequent to their definition).</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>在函数中定义的变量有着<em>有限作用域</em>。这将导致它们在函数外不存在。大部分其它情况下定义的Python变量都有着<em>文件作用域</em>（也就是说它们在定义后可以被同文件的任何代码使用）。</p>
 </div>
-<div class="section" id="Variable-Shadowing">
-<h2>Variable Shadowing<a class="headerlink" href="#Variable-Shadowing" title="Permalink to this headline">¶</a></h2>
-<p>What happens when a file-scope variable and a function-scope variable share the same name? This type of circumstance is known as <strong>variable shadowing</strong>. Python resolves this by giving precedence to the variable <em>with the most restricted scope</em>, when inside that scope:</p>
+<div class="section" id="变量重影">
+<h2>变量重影<a class="headerlink" href="#变量重影" title="永久链接至标题">¶</a></h2>
+<p>当一个文件作用域的变量和一个函数作用域的变量有着同样名字时会发生什么？这种情况叫做<strong>变量重影</strong>（variable shadowing）。Python通过优先使用可用作用域中<em>最受限制的作用域</em>的变量来解决这个冲突：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="c1"># input-arg `x` overrides file-scope version of `x`</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># overrides file-scope version of `y`</span>
+    <span class="c1"># 输入参数 `x` 凌驾于文件作用域版本的 `x` 之上</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 凌驾于文件作用域版本的 `y` 之上</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-<span class="c1"># `x` is 2 here, once again</span>
-<span class="c1"># `y` is 3 here, once again</span>
+<span class="c1"># `x` 在这里是 2</span>
+<span class="c1"># `y` 在这里是 3</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># prints 0</span>
-<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>      <span class="c1"># prints 2  3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 打印 0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>      <span class="c1"># 打印 2 3</span>
 </pre></div>
 </div>
-<p>and similarly,</p>
+<p>相似的：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">it</span> <span class="o">=</span> <span class="s2">&quot;cow&quot;</span>
 
 <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
-    <span class="n">it</span> <span class="o">=</span> <span class="s2">&quot;dog&quot;</span> <span class="c1"># overrides file-scope version of `it`</span>
-    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">it</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>  <span class="c1"># within the list comprehension, the func-scope `it` is overridden</span>
-    <span class="c1"># `it` is &quot;dog&quot; here, once again</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="s2">&quot;dog&quot;</span> <span class="c1"># 凌驾于文件作用域版本的 `it` 之上</span>
+    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">it</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>  <span class="c1"># 在列表理解中，函数作用域版本的 `it` 被覆盖了</span>
+    <span class="c1"># `it` 在这里是 &quot;dog&quot;</span>
     <span class="k">return</span> <span class="bp">None</span>
 
-<span class="c1"># `it` is &quot;cow&quot; here, once again</span>
+<span class="c1"># `it` 在这里是 &quot;cow&quot;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces">Scopes and namespaces</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/reference/executionmodel.html">Python’s execution model</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces">作用域和命名空间</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/executionmodel.html">Python的执行模型</a></p></li>
 </ul>
 </div>
 </div>
@@ -339,10 +339,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="DataStructures.html" class="btn btn-neutral float-right" title="Data Structures (Part I): Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="DataStructures.html" class="btn btn-neutral float-right" title="数据结构（第一部分）：简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Functions.html" class="btn btn-neutral float-left" title="Basics of Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Functions.html" class="btn btn-neutral float-left" title="函数基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

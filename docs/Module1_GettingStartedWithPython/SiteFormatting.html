@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Overview of formatting in Python Like You Mean It, Difficulty: Easy, Category: Instructions" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>A Quick Guide to Formatting &mdash; Python Like You Mean It</title>
+  <title>代码格式的简单指南 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introducing the Python Programming Language" href="GettingStartedWithPython.html" />
-    <link rel="prev" title="Module 1: Getting Started with Python" href="../module_1.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="介绍Python编程语言" href="GettingStartedWithPython.html" />
+    <link rel="prev" title="模组1：Python入门" href="../module_1.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,21 +95,21 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">A Quick Guide to Formatting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GettingStartedWithPython.html">Introducing the Python Programming Language</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_Python.html">Installing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Informal_Intro_Python.html">An Informal Introduction to Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Getting_Started_With_IDEs_and_Notebooks.html">Setting Up a Development Environment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_1.html">模组1：Python入门</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">代码格式的简单指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStartedWithPython.html">介绍Python编程语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_Python.html">安装Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Informal_Intro_Python.html">非正式的Python介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter记事本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting_Started_With_IDEs_and_Notebooks.html">设置开发环境</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -154,9 +155,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_1.html">Module 1: Getting Started with Python</a> &raquo;</li>
+          <li><a href="../module_1.html">模组1：Python入门</a> &raquo;</li>
         
-      <li>A Quick Guide to Formatting</li>
+      <li>代码格式的简单指南</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -397,50 +398,50 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="A-Quick-Guide-to-Formatting">
-<h1>A Quick Guide to Formatting<a class="headerlink" href="#A-Quick-Guide-to-Formatting" title="Permalink to this headline">¶</a></h1>
-<p>This section provides a brief overview of the code formatting style that will be used throughout this text. You are not expected to understand the details of the code, here. This merely provides a guide for what is to come.</p>
-<p>Any code that is included in-line within plain text will be formatted distinctly as so: “the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> was updated…”. Such items will be distinguished with backticks wherever such formatting is not available. Take for example the following commented line within Python code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the variable `x` will be updated</span>
+<div class="section" id="代码格式的简单指南">
+<h1>代码格式的简单指南<a class="headerlink" href="#代码格式的简单指南" title="永久链接至标题">¶</a></h1>
+<p>本节将快速介绍本文将采用的代码格式和风格。你暂时不需要理解这些代码的具体细节。这个指南仅仅是为了让你了解接下来的内容的样貌。</p>
+<p>任何嵌入在正文中的代码都会遵循如此格式：“变量 <code class="docutils literal notranslate"><span class="pre">x</span></code> 被更新…”。当这种格式不可用时，这类小代码片段会被两个反引号围绕。如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 变量 `x` 将被更新</span>
 </pre></div>
 </div>
-<p>Python code will be displayed within distinct, colorized code blocks. These will typically begin with a comment, which is meant to serve as a caption that summarizes the purpose of the code block:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating a basic for-loop</span>
+<p>长篇的Python代码则会存在于专门的彩色代码块中。这些代码块一般会由一行总结代码块作用的注解打头：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示基本的for循环</span>
 <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1">#`cnt` is now 10</span>
+<span class="c1"># `cnt` 现在是10</span>
 </pre></div>
 </div>
-<p>The symbol <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> appears within code blocks to indicate “console-style” code, which distinguishes between code being entered by a user and the resulting output. The purpose of this is that it allows us to easily display the result of a computation without having to rely on calling the <code class="docutils literal notranslate"><span class="pre">print</span></code> function. For instance, the following code assigns the integer <code class="docutils literal notranslate"><span class="pre">1</span></code> to the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, and then displays the result of <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating the distinction of</span>
-<span class="c1"># input and output via &gt;&gt;&gt;</span>
+<p>符号 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> 出现于“命令行风格”的代码中，用于区分用户输入的代码和命令行的输出。这类代码块的可以帮助我们轻松地显示计算结果，而不需要老是调用 <code class="docutils literal notranslate"><span class="pre">print</span></code> 函数。比如说，接下来的代码将设定变量 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为整数 <code class="docutils literal notranslate"><span class="pre">1</span></code>，然后显示 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span></code> 的结果：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过 &gt;&gt;&gt; 演示输入和输出的不同格式</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="mi">3</span>
 </pre></div>
 </div>
-<p>The code blocks throughout a given section of the text should be understood to be persistent even if there is a mix of “pure” code blocks and “console-style” code blocks. For example, a function may be defined at the beginning of a section, and then referenced throughout the rest of that section:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># defining an example function</span>
+<p>译者注：命令行在这里泛指各大平台上的类似Windows命令行的程序——你可能会叫它们Git Bash，Terminal，命令行，Shell，Kernel，等等。全文将用“命令台”一词来指代这种程序。</p>
+<p>不管是“纯粹”的代码块还是“命令行风格”的代码块，请在章节内认为它们的效应是持久化的。比如说，在某一节开始定义的函数完全在这一节后面被调用：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一个范例函数</span>
 <span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
-<p>We can spend some time talking about <code class="docutils literal notranslate"><span class="pre">my_func</span></code> and then see it in action:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating `my_func`</span>
+<p>我们可以花些时间讨论 <code class="docutils literal notranslate"><span class="pre">my_func</span></code> 并调用它：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `my_func`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_func</span><span class="p">(</span><span class="mf">10.</span><span class="p">)</span>
 <span class="mf">100.</span>
 </pre></div>
 </div>
-<p>Lastly, the input and output of an iPython console and a Jupyter notebook alike is displayed as follows:</p>
+<p>最后，iPython命令台和Jupyter记事本的输入和输出都像如下显示：</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>2 + 3
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
@@ -463,10 +464,10 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="GettingStartedWithPython.html" class="btn btn-neutral float-right" title="Introducing the Python Programming Language" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="GettingStartedWithPython.html" class="btn btn-neutral float-right" title="介绍Python编程语言" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../module_1.html" class="btn btn-neutral float-left" title="Module 1: Getting Started with Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../module_1.html" class="btn btn-neutral float-left" title="模组1：Python入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -19,36 +19,36 @@ jupyter:
 ```
 
 <!-- #region -->
-# Basics of Functions
+# 函数基础
 <div class="alert alert-warning">
 
-**Note**: 
+**注**：
 
-There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.
+在本资源各处会有一些阅读理解练习。这些题目旨在帮助读者活学活用文中的知识点。练习题的答案可以在本页底部找到。
 </div>
 
-Defining a function allows you to encapsulate a segment of code, specifying the information that enters and leaves the code. You can make use of this "code-capsule" repeatedly and in many different contexts. For example, suppose you want to count how many vowels are in a string. The following defines a function that accomplishes this:
+定义函数允许我们包装代码片段并描述进入和离开其中的信息。你可以在各种情况下重复使用这个“代码胶囊”。比如说，假设你想要数一个字符串中有多少元音，你可以定义以下的函数来达到该目的：
 
 ```python
 def count_vowels(in_string):
-    """ Returns the number of vowels contained in `in_string`"""
+    """ 返回 `in_string` 中有多少元音 """
     num_vowels = 0
     vowels = "aeiouAEIOU"
     
     for char in in_string:
         if char in vowels:
-            num_vowels += 1  # equivalent to num_vowels = num_vowels + 1
+            num_vowels += 1  # 等值于 num_vowels = num_vowels + 1
     return num_vowels
 ```
 
-Executing this code will define the *function* `count_vowels`. This function expects to be passed one object, represented by `in_string`, as an *input argument*, and it will *return* the number of vowels stored in that object. Invoking `count_vowels`, passing it an input object, is referred to as *calling* the function:
+执行此代码会定义*函数* `count_vowels`。这个函数期待一个对象作为*输入参数*（input argument），由 `in_string` 代名，并会*返回*（return）该对象中元音的数量。使用 `count_vowels` 并向其输入一个对象的过程叫做*调用*（call）该函数：
 
 ```python
 >>> count_vowels("Hi my name is Ryan")
 5
 ```
 
-The great thing about this is that it can be used over and over!
+最棒的一点在于你可以重复使用这个函数！
 
 ```python
 >>> count_vowels("Apple")
@@ -58,62 +58,62 @@ The great thing about this is that it can be used over and over!
 4
 ```
 
-In this section, we will learn about the syntax for defining and calling functions in Python
+在本节中，我们将会了解定义和调用Python函数的语法。
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Definition**: 
+**定义**：
 
-A Python **function** is an object that encapsulates code. *Calling* the function will execute the encapsulated code and *return* an object. A function can be defined so that it accepts *arguments*, which are objects that are to be passed to the encapsulated code.  
+Python**函数**（function）是一个包装代码的对象。*调用*（call）函数将会执行包装的代码并*返回*（return）一个对象。你可以定义函数使其接受*参数*（argument），也就是输入进包装代码的对象。
 </div>
 
 <!-- #region -->
-## The `def` Statement
-Similar to `if`, `else`, and `for`, the `def` statement is reserved by the Python language to signify the definition of functions (and a few other things that we'll cover later). The following is the general syntax for defining a Python function:
+## `def` 语句
+类似于 `if`，`else`，和 `for`，Python保留了 `def` 语句来表达函数（以及我们会在之后讨论的其它几个构造体）的定义。以下是Python函数定义的一般形式：
 
 ```
 def <function name>(<function signature>):
-    """ documentation string """
+    """ 说明字符串 """
     <encapsulated code>
     return <object>
 ```
 
-- `<function name>` can be any valid variable name, and *must* be followed by parentheses and then a colon.
-- `<function signature>` specifies the input arguments to the function, and may be left blank if the function does not accept any arguments (the parentheses must still be included, but will not encapsulate anything).
-- The documentation string (commonly referred to as a "docstring") may span multiple lines, and should indicate what the function's purpose is. It is optional.
-- `<encapsulated code>` can consist of general Python code, and is demarcated by being indented relative to the `def` statement.
-- `return` if reached by the encapsulated code, triggers the function to return the specified object and end its own execution immediately.
- 
-The `return` statement is also reserved by Python. It denotes the end of a function; if reached, a `return` statement immediately concludes the execution of the function and returns the specified object. 
+- `<function name>` 是任何合法的变量名，在这之后*必须*跟随一对括号和一个冒号。
+- `<function signature>` 描述函数的输入参数。如果函数不接受任何变量，你可以留白这一部分（你仍然需要提供括号，但是仅仅括号并不会包装任何参数）。
+- 说明字符串（documentation string）（一般叫做“docstring”）可以长达多行并解释函数的目的。它是可选的。
+- `<encapsulated code>` 包含正常的Python代码，其由相对于 `def` 语句的缩进限定。
+- `return` 当函数中包装的代码遇到这个标示后，函数会返回标示后跟随的对象并立刻终止函数的执行。
 
-Note that, like an if-statement and a for-loop, the `def` statment must end in a colon and the body of the function is [delimited by whitespace](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope):
+Python同样保留了 `return` 语句来表达函数的终止；如果遇到了 `return`，那程序将立即终止函数的执行并返回 `return` 右边的对象。
+
+请注意，与if语句和for循环一样，`def` 语句必须由冒号结尾，且函数的主体代码必须[由空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)：
 <!-- #endregion -->
 
 <!-- #region -->
 ```python
-# wrong indentation
+# 错误的缩进
 def bad_func1():
 x = 1
     return x + 2
 ```
 ***
 ```python
-# wrong indentation
+# 错误的缩进
 def bad_func2():
     x = 1
 return x + 2
 ```
 ***
 ```python
-# missing colon
+# 漏了冒号
 def bad_func3()
     x = 1
     return x + 2
 ```
 ***
 ```python
-# missing parenthesis
+# 漏了括号
 def bad_func4:
     x = 1
     return x + 2
@@ -121,7 +121,7 @@ def bad_func4:
 
 ***
 ```python
-# this is ok
+# 这个没问题
 def ok_func():
     x = 1
     return x + 2
@@ -130,37 +130,37 @@ def ok_func():
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Writing a Basic Function**
+**阅读理解：编写简单函数**
 
-Write a function named `count_even`. It should accept one input argument, named `numbers`, which will be an iterable containing integers. Have the function return the number of even-valued integers contained in the list. Include a reasonable docstring.
+编写一个名为 `count_even` 的函数。它应该接受一个名为 `numbers` 的整数可迭代物作为参数。该函数应该返回列表中偶数的数量。注意包含一个合理的docstring。
 
 </div>
 
 <!-- #region -->
-## The `return` Statement
-In general, any Python object can follow a function's `return` statement. Furthermore, an **empty** `return` statement can be specified, or the **return** statement of a function can be omitted altogether. In both of these cases, *the function will return the `None` object*.
+## `return` 语句
+一般来讲，`return` 语句可以返回任何Python对象。同时，你可以使用一个**空的** `return` 语句或在函数中完全不使用**返回**（return）语句。在这两种情况下，*函数都会返回 `None` 对象*。
 
 ```python
-# this function returns `None`
-# an "empty" return statement
+# 本函数返回 `None`
+# 一个“空”的返回语句
 def f():
     x = 1
     return
 ```
 
 ```python
-# this function returns `None`
-# return statement is omitted
+# 本函数返回 `None`
+# 完全没有用返回语句
 def f():
     x = 1
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-All Python functions return *something*. Even the built-in `print` function returns `None` after it prints to standard-output! 
+所有Python函数都会返回*某个对象*。就算是内置的 `print` 函数在打印后也会返回 `None`！
 
 ```python
-# the `print` function returns `None`
+# `print` 函数返回 `None`
 >>> x = print("hi")
 hi
 
@@ -169,28 +169,28 @@ True
 ```
 <div class="alert alert-warning">
 
-**Warning!** 
+**警告**！
 
-Take care to not *mistakenly* omit a return statement or leave it blank. You will still be able to call your function, but it will return `None` no matter what!
+请注意不要*错误地*漏掉或使用空的返回语句。你将依然能够调用你的函数，但是它在任何情况下都会返回 `None`！
 </div>
 
-A function also need not have any additional code beyond its return statement. For example, we can make use of `sum` and a generator comprehension (see the previous section of this module) to shorten our `count_vowels` function:
+函数并不一定要有除了返回语句之外的代码。比如说，我们可以使用 `sum` 和生成器理解（见本模组前一节）来简化我们的 `count_vowels` 函数：
 
 ```python
-# the returned object of a function can be specified straight-away
+# 你可以直接描述函数返回的对象
 def count_vowels(in_string): 
-    """ Returns the number of vowels contained in `in_string`"""
+    """ 返回 `in_string` 中元音的数量 """
     return sum(1 for char in in_string if char in "aeiouAEIOU")
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-### Multiple `return` Statements
-You can specify more than one `return` statement within a function. This can be useful for handling edge-cases or optimizations in your code. Suppose you want your function to compute $e^{x}$, using a [Taylor series](https://en.wikipedia.org/wiki/Taylor_series#Exponential_function) approximation. The function should immediately return `1.0` in the case that $x = 0$:
+### 多个 `return` 语句
+你可以在一个函数内使用不止一个 `return` 语句。在处理边缘情况或优化代码时这可能会有用。假设你想要你的函数通过[泰勒级数](https://en.wikipedia.org/wiki/Taylor_series#Exponential_function)（Taylor series）来模糊计算 $e^{x}$，当 $x = 0$ 时函数应该立刻返回 `1.0`：
 
 ```python
 def compute_exp(x):
-    """ Use a Taylor Series to compute e^x """
+    """ 使用泰勒级数来计算 e^x """
     if x == 0:
         return 1.0
 
@@ -198,21 +198,21 @@ def compute_exp(x):
     return sum(x**n / factorial(n) for n in range(100))
 ```
 
-If `x==0` is `True`, then the first `return` statement is reached. `1.0` will be returned and the function will be "exited" immediately, without ever reaching the code following it.
+如果 `x==0` 为 `True`，那么程序将执行第一个 `return` 语句，返回 `1.0` 并立刻“终止”该函数，且不执行之后的代码。
 <!-- #endregion -->
 
-As stated above, a `return` statement will trigger a function to end its execution immediately when reached, even when subsequent code follows it. *It is impossible for multiple `return` statements to be visited within a single function call*. Thus if you want to return multiple items, then your function must return a single container of those items, like a list or a tuple.
+如上所述，就算下方有额外的代码，`return` 语句也会导致函数立刻终止且不执行之后的代码。*在一次函数调用中，程序不可能遇到多个 `return` 语句*。因此，如果你想要返回多个对象，那么你的函数必须返回单个包含这些项目的容器，如列表会元组。
 
 <!-- #region -->
 ```python
-# Returning multiple items from a function
-def bad_f(x):
-    """ return x**2 and x**3"""
-    return x**2 
-    # this code can never be reached!
+# 函数返回多个项目
+def bad_f(x): # 译者注：函数名字大意为：不好的函数
+    """ 返回 x**2 和 x**3"""
+    return x**2
+    # 此代码永远都不会被执行！
     return x**3
 
-def good_f(x):
+def good_f(x): # 译者注：函数名字大意为：好的函数
     """ return x**2 and x**3"""
     return (x**2, x**3)
 ```
@@ -226,122 +226,122 @@ def good_f(x):
 <!-- #endregion -->
 
 <!-- #region -->
-## Inline Functions
-Functions can be defined in-line, as a single return statement:
+## 单行函数
+你可以在一行内定义只有一个返回语句的函数：
 
 ```python
 def add_2(x):
     return x + 2
 ```
 
-can be rewritten as:
+可以被重写为：
 
 ```python
 def add_2(x): return x + 2
 ```
 
-This should be used sparingly, for exceedingly simple functions that can be easily understood without docstrings.
+尽量只在函数极其简单到不需要docstring就能理解时使用此功能。切记不要滥用。
 <!-- #endregion -->
 
 <!-- #region -->
-## Arguments
-A sequence of comma-separated variable names can specified in the function signature to indicated *positional* arguments for the function. For example, the following specifies `x`, `lower`, and `upper` as input arguments to a function, `is_bounded`:
+## 参数
+你可以在函数签名（function signature）部分通过一序列由逗号隔开的变量名来描述函数的*位置*参数（positional argument）。比如说，以下代码为函数 `is_bounded` 提供了 `x`，`lower`，和 `upper` 三个参数：
 
 ```python
 def is_bounded(x, lower, upper):
     return lower <= x <= upper
 ```
 
-This function can then be passed its arguments in several way:
+你可以用几种不同的方法来向函数提供参数：
 
-### Specifying Arguments by Position
-The objects passed to `is_bounded` will be assigned to its input variables based on their positions. That is, `is_bounded(3, 2, 4)` will assign `x=3`, `lower=2`, and `upper=4`, in accordance with the positional ordering of the function's input arguments:
+### 通过位置提供参数
+输入到 `is_bounded` 中的对象会根据它们的位置来赋值函数的输入变量。也就是说，`is_bounded(3, 2, 4)` 会赋值 `x=3`，`lower=2`，和 `upper=4`，其根据函数输入参数的位置顺序来对应：
 
 ```python
-# evaluate: 2 <= 3 <= 4
-# specifying inputs based on position
+# 计算：2 <= 3 <= 4
+# 通过位置来提供输入
 >>> is_bounded(3, 2, 4)
 True
 ```
 
-Feeding a function too few or too many arguments will raise a `TypeError`
+向函数输入太少或太多参数会导致 `TypeError`。
 ```python
-# too few inputs: raises error
+# 输入太少：报错
 is_bounded(3)
 
-# too many inputs: raises error
+# 输入太多：报错
 is_bounded(1, 2, 3, 4)
 ```
 
-### Specifying Arguments by Name
-You can provide explicit names when specifying the inputs to a function, in which case ordering does not matter. This is very nice for writing clear and flexible code:
+### 通过关键词提供参数
+在顺序不重要的时候，你也可以在给函数输入参数时提供它们的关键词（也就是名字）来对应对象和参数。这会帮助你编写易读和灵活的代码：
 ```python
-# evaluate: 2 <= 3 <= 4
-# specify inputs using explicit input names
+# 计算：2 <= 3 <= 4
+# 通过参数名字来提供输入对象
 >>> is_bounded(lower=2, x=3, upper=4)
 True
 ```
 
-You can mix-and-match positional and named input by using position-based inputs first:
+你可以混合关键词参数和位置参数，但位置参数应该在前：
 
 ```python
-# evaluate: 2 <= 3 <= 4
-# `x` is specified based on position
-# `lower` and `upper` are specified by name
+# 计算：2 <= 3 <= 4
+# `x` 是位置参数
+# `lower` 和 `upper` 关键词参数
 >>> is_bounded(3, upper=4, lower=2)
 True
 ```
 
-Note that if you provide a named input, all the inputs following it must also be named:
+请注意，如果你提供了一个关键词参数，那么它之后所有的参数都应该是关键词参数：
 
 ```python
-# positional arguments cannot follow named arguments
+# 你不可以在关键词参数后使用位置参数
 >>> is_bounded(3, lower=2, 4)
 SyntaxError: positional argument follows keyword argument
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-### Default-Valued Arguments
-You can specify default values for input arguments to a function. Their default values are utilized if a user does not specify these inputs when calling the function. Recall our `count_vowels` function. Suppose we want the ability to include "y" as a vowel. We know, however, that people will typically want to exclude "y" from their vowels, so we can exclude "y" by default:
+### 有默认值的参数
+你可以提供参数的默认值。如果用户在调用函数时没有提供此参数，那么函数将会使用定义的默认值。请回忆我们的 `count_vowels` 函数。假设我们想要提供将“y”算为一个元音的选择。因为我们知道人们一般不会将“y”视为元音，所以我们可以默认将“y”除外：
 
 ```python
-def count_vowels(in_string, include_y=False): 
-    """ Returns the number of vowels contained in `in_string`"""
+def count_vowels(in_string, include_y=False):
+    """ 返回 `in_string` 中元音的数量"""
     vowels = "aeiouAEIOU"
     if include_y:
-        vowels += "yY"  # add "y" to vowels  
+        vowels += "yY"  # 将 "y" 加到元音列表中
     return sum(1 for char in in_string if char in vowels)
 ```
 
-Now, if only `in_string` is specified when calling `count_vowels`, `include_y` will be passed the value `False` by default:
+现在，如果在调用 `count_vowels` 时只提供了 `in_string`，那么 `include_y` 会使用默认值 `False`：
 
 ```python
-# using the default value: exclude y from vowels
+# 使用默认值：不将y算为元音
 >>> count_vowels("Happy")
 1
 ```
 
-This default value can be overridden:
+我们可以提供默认值之外的输入：
 ```python
-# overriding the default value: include y as a vowel
+# 不使用不认值：将y算为元音
 >>> count_vowels("Happy", True)
 2
 
-# you can still specify inputs by name
+# 你依然可以通过名字来描述输入参数
 >>> count_vowels(include_y=True, in_string="Happy")
 2
 ```
 
-Default-valued input arguments must come after all positional input arguments in the function signature:
+在函数签名中，有默认值的输入参数必须在所有位置参数之后：
 ```python
-# this is ok
+# 这没问题
 def f(x, y, z, count=1, upper=2):
     return None
 ```
 
 ```python
-# this will raise a syntax error
+# 这会导致语法错误
 def f(x, y, count=1, upper=2, z):
     return None
 ```
@@ -349,48 +349,48 @@ def f(x, y, count=1, upper=2, z):
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Functions and Arguments**
+**阅读理解：函数和参数**
 
-Write a function, `max_or_min`, which accepts two positional arguments, `x` and `y` (which will hold numerical values), and a `mode` variable that has the default value `"max"`. 
+编写一个函数 `max_or_min`。它接受两个位置参数 `x` 和 `y`（将会被赋值为数字）以及一个 `mode` 变量，其默认值为 `"max"`。
 
-The function should return `min(x, y)` or `max(x, y)` according to the `mode`. Have the function return `None` if `mode` is neither `"max"` nor `"min"`. 
+此函数应该根据 `mode` 返回 `min(x, y)` 或 `max(x, y)`。如果 `mode` 既不是 `"max"` 也不是 `"min"` 的时候让函数返回 `None`。
 
-Include a descriptive doc-string.
+包含一个描述性的docstring。
 
 </div>
 
 <!-- #region -->
-### Accommodating an Arbitrary Number of Positional Arguments
-Python provides us with a syntax for defining a function, which can be called with an arbitrary number of positional arguments. This is signaled by the syntax `def f(*<var_name>)`.
+### 支持任意多的位置参数
+Python提供了定义可以接受任意多位置参数的函数的语法。使用 `def f(*<var_name>)` 语法来定义这类输入。
 
 ```python
-# The * symbol indicates that an arbitrary number of
-# arguments can be passed to `args`, when calling `f`.
+# * 符号表明调用 `f` 时可以向 `args`
+# 输入任意多的参数。
 def f(*args):
-    #  All arguments passed to `f` will be "packed" into a 
-    #  tuple that is assigned to the variable `args`.
-    # `f()`  will assign `args = tuple()`
-    # `f(x, y, ...)` will assign `args = (x, y, ...)`
+    #  所有向 `f` 输入的参数都会被“打包”成一个元组
+    #  并赋值给变量 `args`。
+    # `f()` 会赋值 `args = tuple()`
+    # `f(x, y, ...)` 会赋值 `args = (x, y, ...)`
     return args
 ```
 
-Because Python cannot foresee how many arguments will be passed to `f`, all of the objects that are passed to it will be *packed into a tuple*, which is then assigned to the variable `args`:
+因为Python不能提前知道 `f` 会收到多少个参数，因此它所有的输入参数都会被*打包成一个元组*并赋值给变量 `args`：
 
 ```python
-# pass zero arguments to `f`
->>> f()            
+# 向 `f` 输入0个参数
+>>> f()
 ()
 
-# pass one argument to `f`
->>> f(1)           
+# 向 `f` 输入1个参数
+>>> f(1)
 (1,)
 
-# pass three arguments to `f`
+# 向 `f` 输入3个参数
 >>> f((0, 1), True, "cow")  
 ((0, 1), True, "cow")
 ```
 
-This syntax can be combined with positional arguments and default arguments. Any variables specified after a packed variable *must be called by name*:
+你可以将此语法与位置参数和默认参数混合使用。任何在被打包的变量后的变量*必须提供参数名*：
 ```python
 def f(x, *seq, y):
     print("x is: ", x)
@@ -399,40 +399,39 @@ def f(x, *seq, y):
     return None
 ```
 ```python
->>> f(1, 2, 3, 4, y=5)  # `y` must be specified by name
+>>> f(1, 2, 3, 4, y=5)  # 必须提供 `y` 的名字
 ```
 ```
-x   is:  1
-seq is:  (2, 3, 4)
-y   is:  5
+x   是： 1
+seq 是： (2, 3, 4)
+y   是： 5
 ```
 ```python
->>> f("cat", y="dog")  # no additional positional arguments are passed
+>>> f("cat", y="dog")  # 没有输入任何额外的位置参数
 ```
 ```
-x   is:  "cat"
-seq is:  ()
-y   is:  "dog"
+x   是： "cat"
+seq 是： ()
+y   是： "dog"
 ```
 <!-- #endregion -->
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Arbitrary Arguments**
+**阅读理解：任意多的参数**
 
-Write a function named `mean`, which accepts and arbitrary number of numerical arguments, and computes the mean of all of the values passed to the function. Thus `mean(1, 2, 3)` should return $\frac{1 + 2 + 3}{3} = 2.0$ 
+编写一个名为 `mean` 的函数，其接受任意多的数字参数并计算所有数字的平均值。如，`mean(1, 2, 3)` 应返回 $\frac{1 + 2 + 3}{3} = 2.0$
 
-This function should return `0.` if no arguments are passed to it. Be sure to test your function, and include a docstring.
+如果没有收到任何输入，函数应返回 `0.`。记得测试你的函数并编写一个docstring。
 
 </div>
 
 <!-- #region -->
-We see that `*` indicates the *packing of an arbitrary number of arguments into a tuple*, when used in the signature of a function definition. Simultaneously, `*` signals the *unpacking of an iterable* to pass each of its members as a positional argument to a function, when used in the context of calling a function:
+如我们所见，在函数定义的签名中使用 `*` 意味着*将任意多的参数打包成一个元组*。同时，在调用函数时 `*` 也意味着*解包可迭代物*并将其作为位置参数输入到函数中：
 
 ```python
-# Using `*` when calling a function, to unpack an 
-# iterable. Passing its members as distinct arguments 
-# to the function
+# 在调用函数时使用 `*` 来解包可迭代物，并将其
+# 成员作为位置参数输入到函数中
 
 def f(x, y, z):
     return x + y + z
@@ -440,20 +439,17 @@ def f(x, y, z):
 >>> f(1, 2, 3)
 6
 
-# `*` means: unpack the contents of [1, 2, 3]
-# passing each item as x, y, and z,
-# respectively
->>> f(*[1, 2, 3])  # equivalent to: f(1, 2, 3)
+# `*` 意味着：解包 `[1, 2, 3]` 的内容并将每个
+# 物件分别输入为x，y，和z
+>>> f(*[1, 2, 3])  # 等值于：f(1, 2, 3)
 6
 ```
 <!-- #endregion -->
 
-In the following example, we use `*` to: 
+在以下范例中，我们使用 `*` 来：
 
-   1. Define a function to accept an arbitrary
-      number of arguments, which get packed into a tuple.
-   2. Call the function, passing it  an arbitrary 
-      number of arguments, by unpacking an iterable.
+   1. 定义一个接受任意多参数并将其打包为元组的函数
+   2. 通过解包可迭代物来调用函数并输入任意多的参数
 
 <!-- #region -->
 ```python
@@ -466,66 +462,68 @@ def number_of_args(*args):
 
 >>> some_list = [1, 2, 3, 4, 5]
 
-# passing the list itself as the sole argument
+# 将列表本身作为唯一的参数输入
 >>> number_of_args(some_list)
 1
 
-# unpacking the 5 members of the list, 
-# passing each one as an argument to the function
+# 将列表的5个成员解包并作为多个参数输入进函数
 >>> number_of_args(*some_list)
 5
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-### Accommodating an Arbitrary Number of Keyword Arguments
-We can also define a function that is able to accept an arbitrary number of *keyword* arguments, using the syntax: `def f(**<var_name>)` 
+### 支持任意多的关键词参数
+我们可以使用 `def f(**<var_name>)` 语法来定义一个接受任意多的*关键词*（keyword）参数的函数。
 
-Note that a single asterisk, `*`, was used to denote an arbitrary number of *positional* arguments, whereas `**` signals the acceptance of an arbitrary number of *keyword* arguments. 
+注意单个星号 `*` 用来代表任意多的*位置*参数，而 `**` 代表着任意多的*关键词*参数。
 
 ```python
-# The ** symbol indicates that an arbitrary number of
-# keyword arguments can be passed to `args`, when calling `f`.
+# ** 符号意味着在调用 `f` 时可以向 `args` 输入
+# 任意多的关键词参数。
 def f(**args):
-    #  All keyword arguments passed to `f` will be "packed" into a 
-    #  dictionary that is assigned to the variable `args`.
-    # `f()`  will assign `args = {}` (an empty dictionary)
-    # `f(x=1, y=2, ...)` will assign `args = {"x":1, "y":2, ...}`
+    # 所有输入到 `f` 的关键词参数都会被“打包”成一个词典
+    # 并赋值到变量 `args` 中
+    # `f()` 会赋值 `args = {}`（一个空词典）
+    # `f(x=1, y=2, ...)` 会赋值 `args = {"x":1, "y":2, ...}`
     return args
 ```
 
-Because Python cannot foresee how many arguments will be passed to `f`, all of the keyword arguments that are passed to it will be packed into a *dictionary*, where a given keyword is set as a key (cast as a string) that maps to the corresponding value. This dictionary is then assigned to the variable `args`. Dictionaries will be discussed in detail in a [later section](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html).
+因为Python无法预先知道 `f` 会收到多少个关键词参数，所以所有收到的关键词参数都会被打包成一个*词典*（dictionary）。词典允许你通过关键词（将其转化成字符串）查询并设置关键词对应的值。这个词典被赋值到变量 `args` 上。我们会在[后面一节](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)专门讨论词典。
 
 ```python
->>> f()            # pass zero arguments to `f`
+>>> f()            # 向 `f` 输入0个参数
 {}
 
->>> f(x=1)           # pass one argument to `f`
+>>> f(x=1)           # 向 `f` 输入1个参数
 {'x': 1}
 
->>> f(x=(0, 1), val=True, moo="cow")  # pass three arguments to `f`
+>>> f(x=(0, 1), val=True, moo="cow")  # 向 `f` 输入3个参数
 {'moo': 'cow', 'val': True, 'x': (0, 1)}
 ```
 
-This syntax can be combined with positional arguments and default arguments. No additional arguments may come after a `**` entry in a function-definition signature:
+这一语法可以和位置参数和默认参数混合使用。在函数定义签名中，`**` 后不能有任何额外的参数：
 ```python
 def f(x, y=2, **kwargs):
-    print("x is: ", x)
-    print("y is: ", y)
-    print("kwargs is: ", kwargs)
+    print("x 是：", x)
+    print("y 是：", y)
+    print("kwargs 是：", kwargs)
     return None
+
+# 译者注：kwargs是keyword arguments的缩写，也就是关键词参数。
+# 译者注：此命名方式是传统，所以请尽量遵循
 ```
 ```python
-# passing arbitrary keyword arguments to `f`
+# 向 `f` 输入任意的关键词参数
 >>> f(1, y=9, z=3, k="hi")
 ```
 ```
-x is:  1
-y is:  9
-kwargs is:  {'z': 3, 'k': 'hi'}
+x 是： 1
+y 是： 9
+kwargs 是： {'z': 3, 'k': 'hi'}
 ```
 ```python
-# no additional keyword arguments are passed
+# 没有输入任何额外的关键词参数
 >>> f("cat", y="dog")  
 ```
 ```
@@ -534,13 +532,13 @@ y is:  dog
 kwargs is:  {}
 ```
 
-The following function accepts an arbitrary number of positional arguments *and* an arbitrary number of keyword arguments:
+以下函数接受任意多的位置参数*和*任意多的关键词参数：
 
 ```python
-# accepting arbitrary positional and keyword arguments
+# 接受任意多的位置和关键词参数
 def f(*x, **y):
-    # all positional arguments get packed into the tuple `x`
-    # all keyword arguments get packed into the dictionary `y` 
+    # 所有位置参数都打包成元组 `x`
+    # 所有关键词参数都打包成词典 `y`
     print(x)  
     print(y)
     return None
@@ -554,12 +552,11 @@ def f(*x, **y):
 <!-- #endregion -->
 
 <!-- #region -->
-We see that `**` indicates the *packing of an arbitrary number of keyword arguments into a dictionary*, when used in the signature of a function definition. Simultaneously, `**` signals the *unpacking of a dictionary* to pass each of its key-value pairs as a keyword argument to a function, when used in the context of calling a function:
+如上所见，在函数定义的签名中 `**` 意味着*将任意多的关键词参数打包成一个词典*。同时，在调用函数时 `**` 意味着*解包词典*并将其的键值对（key-value pair）作为函数关键词参数输入：
 
 ```python
-# Using `**` when calling a function, to unpack a 
-# dictionary, passing its members as keyword arguments 
-# to the function
+# 在调用函数时使用 `**` 来解包词典并将其成员作为
+# 关键词参数输入到函数中
 def f(x, y, z):
     return 0*x + 1*y + 2*z
 
@@ -567,17 +564,15 @@ def f(x, y, z):
 21
 
 >>> args = {"x": 9, "y": 1, "z": 10}
->>> f(**args)  # equivalent to: f(x=9, y=1, z=10)
+>>> f(**args)  # 等值于：f(x=9, y=1, z=10)
 21
 ```
 <!-- #endregion -->
 
-In the following example, we use `**` to: 
+在以下范例中，我们用 `**` 来：
 
-   1. Define a function to accept an arbitrary
-      number of keyword arguments, which get packed into a dictionary.
-   2. Call the function, passing it  an arbitrary 
-      number of keyword arguments, by unpacking a dictionary.
+   1. 定义一个接受任意多关键词参数的函数并将其打包成词典。
+   2. 调用函数并通过解包词典向其输入任意多的关键词参数。
 
 <!-- #region -->
 ```python
@@ -590,105 +585,102 @@ def print_kwargs(**args):
 
 >>> some_dict = {"hi":1, "bye":2}
 
-# unpacking the key-value pairs of the dictionary
-# as keyword arguments and values, to the function
+# 解包词典的键值对并将其作为关键词参数输入到函数中
 >>> print_kwargs(a=2, umbrella=True, **some_dict)
 {'a': 2, 'umbrella': True, 'hi': 1, 'bye': 2}
 ```
 <!-- #endregion -->
 
 <!-- #region -->
-## Functions are Objects
-Once defined, a function behaves like any other Python object, like a list or string or integer. You can assign a variable to a function-object:
+## 函数也是对象
+在定义之后，函数和任何其它Python对象，如列表或字符串或整数，的行为差不多。你可以将函数赋值到变量上：
 ```python
->>> var = count_vowels  # `var` now references the function `count_vowels`
->>> var("Hello")        # you can now "call" `var`
+>>> var = count_vowels  # `var` 现在引用函数 `count_vowels`
+>>> var("Hello")        # 你现在可以“调用” `var`
 2
 ```
 
-You can store functions in a list:
+你可以将函数存储到一个列表中：
 ```python
 my_list = [count_vowels, print]
 
 for func in my_list:
     func("hello")
     
-# iteration 0: calls `count_vowels("hello")` 
-# iteration 1: calls `print("hello")`
+# 迭代0：调用 `count_vowels("hello")`
+# 迭代1：调用 `print("hello")`
 ```
 
-You can also call functions anywhere, and their return-value will be returned in-place:
+你也可以在代码任何地方调用函数，且它的返回值会在原地返回：
 ```python
 if count_vowels("pillow") > 1:
     print("that's a lot of vowels!")
 ```
 
-And, of course, this works within comprehension expressions as well:
+当然，这在列表理解表达式中也成立：
 ```python
 >>> sum(count_vowels(word, include_y=True) for word in ["hi", "bye", "guy", "sigh"])
 6
 ```
 
-"Printing" a function isn't very revealing. It simply tells you the memory address where the function-object is stored:
+“打印”一个函数并不会揭露些什么。这仅仅打印此函数对象在内存中的地址：
 ```python
 >>> print(count_vowels)
 <function count_vowels at 0x000002A32898C6A8>
 ```
 <!-- #endregion -->
 
-## Links to Official Documentation
+## 官方说明文档链接
 
-- [Definition of 'function'](https://docs.python.org/3/library/stdtypes.html#functions)
-- [Defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
-- [Default argument values](https://docs.python.org/3/tutorial/controlflow.html#default-argument-values)
-- [Keyword arguments](https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments)
-- [Specifying arbitrary arguments](https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists)
-- [Unpacking arguments](https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists)
-- [Documentation strings](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings)
-- [Function annotations](https://docs.python.org/3/tutorial/controlflow.html#function-annotations)
+- [“函数”的定义](https://docs.python.org/3/library/stdtypes.html#functions)
+- [定义函数](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+- [定义参数值](https://docs.python.org/3/tutorial/controlflow.html#default-argument-values)
+- [关键词参数](https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments)
+- [提供任意多的参数](https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists)
+- [解包参数](https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists)
+- [docstring](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings)
+- [函数注解](https://docs.python.org/3/tutorial/controlflow.html#function-annotations)
 
 <!-- #region -->
-## Reading Comprehension Exercise Solutions:
+## 阅读理解答案
 
-**Writing a Basic Function: Solution**
+**编写简单函数：解**
 
 ```python
 def count_even(numbers):
-    """ Counts the number of even integers in an iterable"""
+    """ 返回可迭代物中偶数的数量 """
     total_even = 0
     for num in numbers:
         if num % 2 == 0:
             total += 1
     return total
 ```
-or, using a generator comprehension:
+或通过使用生成器理解：
 
 ```python
 def count_even(numbers):
-    """ Counts the number of even integers in an iterable"""
+    """ 返回可迭代物中偶数的数量 """
     return sum(1 for num in numbers if num % 2 == 0)
 ```
 
-**Functions and Arguments: Solution**
+**函数和参数：解**
 
 ```python
 def max_or_min(x, y, mode="max"):
-    """ Return either `max(x,y)` or `min(x,y)`,
-        according to the `mode` argument.
-        
+    """ 根据 `mode` 参数返回 `max(x,y)` 或 `min(x,y)`。
+
         Parameters
         ----------
         x : Number
-   
+
         y : Number
-   
+
         mode : str
-           Either 'max' or 'min'
-        
+            'max' 或 'min'
+
         Returns
         -------
-        The max or min of the two values. `None` is
-        returned if an invalid mode was specified."""
+        两值的最大或最小值。如果mode不合法那么会返回 `None`。"""
     if mode == "max":
         return max(x, y)
     elif mode == "min":
@@ -697,9 +689,9 @@ def max_or_min(x, y, mode="max"):
         return None
 ```
 
-Note that you can actually have your function raise an "exception" (an error) in the case that `mode` wasn't passed a proper value. In fact, that is likely the more appropriate behavior for this function. 
+请注意你其实可以在 `mode` 输入不正确时让你的函数报错（raise an “exception”）。事实上，这才应该是这种情况下更加合理的函数行为。
 
-Such a solution would look like:
+这种解决方案如下：
 ```python
 def max_or_min(x, y, mode="max"):
     if mode == "max":
@@ -710,11 +702,11 @@ def max_or_min(x, y, mode="max"):
         raise Exception("`mode` was passed an invalid value: {}".format(mode))
 ```
 
-**Arbitrary Arguments: Solution**
+**任意多的参数：解**
 
 ```python
 def mean(*seq):
-    """ Returns the mean of the function's arguments """
+    """ 返回函数参数的平均值 """
     if len(seq) == 0:
         return 0
     
@@ -724,14 +716,14 @@ def mean(*seq):
     return total / len(seq)
 ```
 
-or, being a bit more fancy :
+或者我们可以利用以下两点来做一些骚操作：
 
-- using the fact that `bool(seq)` is `False` if `seq` is empty
-- using the inline if-else syntax
+- 当 `seq` 为空时 `bool(seq)` 是 `False` 的事实
+- 单行if-else语法
 
 ```python
 def mean(*seq):
-    """ Returns the mean of the function's arguments """
+    """ 返回函数参数的平均值 """
     return sum(seq) / len(seq) if seq else 0
 ```
 <!-- #endregion -->

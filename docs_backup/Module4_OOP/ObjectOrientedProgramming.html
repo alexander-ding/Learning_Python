@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -27,6 +27,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -38,8 +39,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,13 +91,13 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -384,11 +385,11 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <div class="section" id="Object-Oriented-Programming">
-<h1>Object Oriented Programming<a class="headerlink" href="#Object-Oriented-Programming" title="Permalink to this headline">¶</a></h1>
+<h1>Object Oriented Programming<a class="headerlink" href="#Object-Oriented-Programming" title="永久链接至标题">¶</a></h1>
 <p>Up until now, we’ve written functions that encapsulate code for easy re-use. We can pass data to our functions, which may operate on them and return results. However, we have been limited in the types of data we can work with. This section introduces the concept of object-oriented programming (often referred to as OOP).</p>
 <p>An <em>object</em> bundles together data and functions. For example, a Python <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">List</a> is an object. It contains data (its elements) and functions (such as <code class="docutils literal notranslate"><span class="pre">sort</span></code>, <code class="docutils literal notranslate"><span class="pre">append</span></code> and <code class="docutils literal notranslate"><span class="pre">count</span></code>).</p>
 <div class="section" id="Defining-Objects">
-<h2>Defining Objects<a class="headerlink" href="#Defining-Objects" title="Permalink to this headline">¶</a></h2>
+<h2>Defining Objects<a class="headerlink" href="#Defining-Objects" title="永久链接至标题">¶</a></h2>
 <p>When we define our own objects, we will write a <em>class</em> containing data and functions. Let’s start with a simple example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -411,7 +412,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Inheritance">
-<h2>Inheritance<a class="headerlink" href="#Inheritance" title="Permalink to this headline">¶</a></h2>
+<h2>Inheritance<a class="headerlink" href="#Inheritance" title="永久链接至标题">¶</a></h2>
 <p>Working with objects provides powerful abstractions and an incredible amount of code re-use. For example, let’s implement a <code class="docutils literal notranslate"><span class="pre">Square</span></code> class. One way to write <code class="docutils literal notranslate"><span class="pre">Square</span></code> would be the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -453,7 +454,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Operator-Overloading">
-<h2>Operator Overloading<a class="headerlink" href="#Operator-Overloading" title="Permalink to this headline">¶</a></h2>
+<h2>Operator Overloading<a class="headerlink" href="#Operator-Overloading" title="永久链接至标题">¶</a></h2>
 <p>Recall a few operators in Python: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, and so on. As you know, these operators behave differently depending on context:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
 <span class="go">5</span>
@@ -569,14 +570,14 @@ return gcd(a, -b)
 </div>
 <p>We’ll take some time now to walk through some of the details behind what we implemented. By now, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function should look pretty familiar to you. A <code class="docutils literal notranslate"><span class="pre">Rational</span></code> object can take 0 parameters (which gives you the <code class="docutils literal notranslate"><span class="pre">Rational</span></code> <span class="math notranslate nohighlight">\(\frac{0}{1}\)</span>), 1 parameter (which gives you <span class="math notranslate nohighlight">\(\frac{a}{1}\)</span>), or 2 parameters (which gives you <span class="math notranslate nohighlight">\(\frac{a}{b}\)</span>). We’ve overloaded several common operators:</p>
 <div class="section" id="add">
-<h3><strong>add</strong><a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
+<h3><strong>add</strong><a class="headerlink" href="#add" title="永久链接至标题">¶</a></h3>
 <p>By overloading the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> function, we allow the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator to be used with <code class="docutils literal notranslate"><span class="pre">Rational</span></code>s. For example, we can add two <code class="docutils literal notranslate"><span class="pre">Rational</span></code>s together:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Rational</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 <span class="go">Rational(51, 14)</span>
 </pre></div>
 </div>
 <div class="section" id="radd">
-<h4><strong>radd</strong><a class="headerlink" href="#radd" title="Permalink to this headline">¶</a></h4>
+<h4><strong>radd</strong><a class="headerlink" href="#radd" title="永久链接至标题">¶</a></h4>
 <p>This may look a little strage at first; especially when you see that this function just calls <code class="docutils literal notranslate"><span class="pre">__add__</span></code>. Under the hood, our <code class="docutils literal notranslate"><span class="pre">__add__</span></code> function call really looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">Rational</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -620,19 +621,19 @@ this is what’s happening by examining the error message:</p>
 <p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Operator Overloading</strong></p>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> and <code class="docutils literal notranslate"><span class="pre">__sub__</span></code> implementations as a base, implement the operators:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">*</span></code> (<code class="docutils literal notranslate"><span class="pre">__mul__</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">/</span></code> (<code class="docutils literal notranslate"><span class="pre">__truediv__</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">**</span></code> (<code class="docutils literal notranslate"><span class="pre">__pow__</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> (<code class="docutils literal notranslate"><span class="pre">__le__</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">!=</span></code> (<code class="docutils literal notranslate"><span class="pre">__ne__</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">__gt__</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (<code class="docutils literal notranslate"><span class="pre">__ge__</span></code>)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> (<code class="docutils literal notranslate"><span class="pre">__mul__</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> (<code class="docutils literal notranslate"><span class="pre">__truediv__</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> (<code class="docutils literal notranslate"><span class="pre">__pow__</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> (<code class="docutils literal notranslate"><span class="pre">__le__</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> (<code class="docutils literal notranslate"><span class="pre">__ne__</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">__gt__</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (<code class="docutils literal notranslate"><span class="pre">__ge__</span></code>)</p></li>
 </ul>
 <p>for the <code class="docutils literal notranslate"><span class="pre">Rational</span></code> class.</p>
 </div>
 </div>
 <div class="section" id="Reading-Comprehension-Solution">
-<h4>Reading Comprehension Solution<a class="headerlink" href="#Reading-Comprehension-Solution" title="Permalink to this headline">¶</a></h4>
+<h4>Reading Comprehension Solution<a class="headerlink" href="#Reading-Comprehension-Solution" title="永久链接至标题">¶</a></h4>
 <p>```python class Rational: ’’‘A rational number (a/b, where a and b are integers)’’’ def <strong>init</strong>(self, num=0, denom=1): assert denom != 0, “Cannot have zero in the denom”</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">denom</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">num</span> <span class="o">=</span> <span class="o">-</span><span class="n">num</span>

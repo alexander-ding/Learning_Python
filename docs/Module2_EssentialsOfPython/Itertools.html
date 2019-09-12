@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: simple use cases of python itertools, Difficulty: Easy, Category: Tutorial" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python’s “Itertools” &mdash; Python Like You Mean It</title>
+  <title>Python的“Itertools” &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Basics of Functions" href="Functions.html" />
-    <link rel="prev" title="Generators &amp; Comprehension Expressions" href="Generators_and_Comprehensions.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="函数基础" href="Functions.html" />
+    <link rel="prev" title="生成器和理解表达式" href="Generators_and_Comprehensions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,33 +95,33 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Python’s “Itertools”</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension:-Solutions">Reading Comprehension: Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python的“Itertools”</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -166,9 +167,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Python’s “Itertools”</li>
+      <li>Python的“Itertools”</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,21 +212,20 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Python’s-“Itertools”">
-<h1>Python’s “Itertools”<a class="headerlink" href="#Python’s-“Itertools”" title="Permalink to this headline">¶</a></h1>
-<p>Python has an <a class="reference external" href="https://docs.python.org/3/library/itertools.html">itertools module</a>, which provides a core set of fast, memory-efficient tools for creating iterators. We will briefly showcase a few itertools here. The majority of these functions create <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html">generators</a>, thus we will have to iterate over them in order to explicitly demonstrate their use. It is hard to overstate the utility of this
-module - it is strongly recommended that you take some time to see what it has in store.</p>
-<p>There are three built-in functions, <code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, and <code class="docutils literal notranslate"><span class="pre">zip</span></code>, that belong in itertools, but they are so useful that they are made accessible immediately and do not need to be imported. It is essential that <code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, and <code class="docutils literal notranslate"><span class="pre">zip</span></code> become tools that you are comfortable using.</p>
+<div class="section" id="Python的“Itertools”">
+<h1>Python的“Itertools”<a class="headerlink" href="#Python的“Itertools”" title="永久链接至标题">¶</a></h1>
+<p>Python的<a class="reference external" href="https://docs.python.org/3/library/itertools.html">itertools模组</a>提供了一套快速的高效使用内存的创建迭代器的核心工具。我会将在本节快速地展示一些itertool的工具。大部分这些函数都会创建<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html">生成器</a>，因此我们将会需要迭代这些生成器才能展示它们的使用方法。此模组极其有用——本文强烈建议你花一些时间去了解该模组的内容。</p>
+<p>Python有三个属于itertools的内置函数 <code class="docutils literal notranslate"><span class="pre">range</span></code>，<code class="docutils literal notranslate"><span class="pre">enumerate</span></code>，<code class="docutils literal notranslate"><span class="pre">zip</span></code>，但因为它们极其有用，所以Python允许你在不导入它们的情况下直接就可以使用这些函数。熟练使用 <code class="docutils literal notranslate"><span class="pre">range</span></code>，<code class="docutils literal notranslate"><span class="pre">enumerate</span></code>，和 <code class="docutils literal notranslate"><span class="pre">zip</span></code> 是很重要的技能。</p>
 <p><strong>range</strong></p>
-<p>Generate a sequence of integers in the specified “range”:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will generate 0.. 1.. 2.. ... 8.. 9</span>
+<p>生成包含描述的“界限”（range）中的整数列表：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将会生成 0.. 1.. 2.. ... 8.. 9</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 
-<span class="c1"># will generate 0.. 3.. 6.. 9</span>
+<span class="c1"># 将会生成 0.. 3.. 6.. 9</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
@@ -234,8 +234,8 @@ module - it is strongly recommended that you take some time to see what it has i
 </pre></div>
 </div>
 <p><strong>enumerate</strong></p>
-<p>Enumerates the items in an iterable: yielding a tuple containing the iteration count (starting with 0) and the corresponding item from the the iterable.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will generate (0, &#39;apple&#39;).. (1, &#39;banana&#39;).. (2, &#39;cat&#39;).. (3, &#39;dog&#39;)]</span>
+<p>枚举可迭代物中的对象：每轮迭代提供一元组，其内容为迭代轮数（从0开始）以及对应的可迭代物成员。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将会生成 (0, &#39;apple&#39;).. (1, &#39;banana&#39;).. (2, &#39;cat&#39;).. (3, &#39;dog&#39;)]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">])</span>
 <span class="o">&lt;</span><span class="nb">enumerate</span> <span class="n">at</span> <span class="mh">0x23e3557b3f0</span><span class="o">&gt;</span>
 
@@ -244,12 +244,12 @@ module - it is strongly recommended that you take some time to see what it has i
 </pre></div>
 </div>
 <p><strong>zip</strong></p>
-<p>Zips together the corresponding elements of several iterables into tuples. This is valuable for “pairing” corresponding items across multiple iterables.</p>
+<p>将多个可迭代物的对应成员拉链（zip）到元组中。这为凑对多个可迭代物中对象很有用。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Angie&quot;</span><span class="p">,</span> <span class="s2">&quot;Brian&quot;</span><span class="p">,</span> <span class="s2">&quot;Cassie&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">exam_1_scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">87</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">exam_2_scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">91</span><span class="p">]</span>
 
-<span class="go"># will generate (&#39;Angie&#39;, 90, 95).. (&#39;Brian&#39;, 82, 84).. (&#39;Cassie&#39;, 79, 72).. (&#39;David&#39;, 87, 91)]</span>
+<span class="go"># 将会生成 (&#39;Angie&#39;, 90, 95).. (&#39;Brian&#39;, 82, 84).. (&#39;Cassie&#39;, 79, 72).. (&#39;David&#39;, 87, 91)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">exam_1_scores</span><span class="p">,</span> <span class="n">exam_2_scores</span><span class="p">)</span>
 <span class="go">&lt;zip at 0x20de1082608&gt;</span>
 
@@ -258,48 +258,48 @@ module - it is strongly recommended that you take some time to see what it has i
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>The following are some of the many useful tools provided by the <code class="docutils literal notranslate"><span class="pre">itertools</span></code> module:</p>
+<p>以下是一些 <code class="docutils literal notranslate"><span class="pre">itertools</span></code> 模组中有用的函数：</p>
 <p><strong>itertools.chain</strong></p>
-<p>Chains together multiple iterables, end-to-end, forming a single iterable:</p>
+<p>将多个可迭代物背靠背连接在一起，返回单个可迭代物：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gen_1</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>               <span class="c1"># 0.. 2.. 4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gen_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># 9.. 16.. 25</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">iter_3</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">iter_4</span> <span class="o">=</span> <span class="s2">&quot;him&quot;</span>
 
-<span class="go"># will generate: 0.. 2.. 4.. 9.. 16.. 25.. &#39;moo&#39;.. &#39;cow&#39;.. &#39;h&#39;.. &#39;i&#39;.. &#39;m&#39;</span>
+<span class="go"># 将会生成：0.. 2.. 4.. 9.. 16.. 25.. &#39;moo&#39;.. &#39;cow&#39;.. &#39;h&#39;.. &#39;i&#39;.. &#39;m&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">chain</span><span class="p">(</span><span class="n">gen_1</span><span class="p">,</span> <span class="n">gen_2</span><span class="p">,</span> <span class="n">iter_3</span><span class="p">,</span> <span class="n">iter_4</span><span class="p">)</span>
 <span class="go">&lt;itertools.chain at 0x20de109ec18&gt;</span>
 </pre></div>
 </div>
-<p><strong>itertools.combinations</strong> Generate all length-n tuples storing “combinations” of items from an iterable:</p>
+<p><strong>itertools.combinations</strong> 生成所有长度为n的可迭代物成员“组合”：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
 
-<span class="go"># will generate: (0, 1, 2).. (0, 1, 3).. (0, 2, 3).. (1, 2, 3)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">combinations</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># generate all length-3 combinations from [0, 1, 2, 3]</span>
+<span class="go"># 将会生成：(0, 1, 2).. (0, 1, 3).. (0, 2, 3).. (1, 2, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">combinations</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 从 [0, 1, 2, 3] 的数字生成所有长度为3的组合</span>
 <span class="go">&lt;itertools.combinations at 0x20de10a7728&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Itertools I</strong></p>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">itertools.combinations</span></code> function, find the probability that two randomly drawn items from the list <code class="docutils literal notranslate"><span class="pre">[&quot;apples&quot;,</span> <span class="pre">&quot;bananas&quot;,</span> <span class="pre">&quot;pears&quot;,</span> <span class="pre">&quot;pears&quot;,</span> <span class="pre">&quot;oranges&quot;]</span></code> would yield a combination of “apples” and “pears”.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：Itertools第一部分</strong></p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">itertools.combinations</span></code> 函数来找出从列表 <code class="docutils literal notranslate"><span class="pre">[&quot;apples&quot;,</span> <span class="pre">&quot;bananas&quot;,</span> <span class="pre">&quot;pears&quot;,</span> <span class="pre">&quot;pears&quot;,</span> <span class="pre">&quot;oranges&quot;]</span></code> 随机选择两个成员会提供“apples”和“pears”组合的几率。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Itertools II</strong></p>
-<p>Given the list <code class="docutils literal notranslate"><span class="pre">x_vals</span> <span class="pre">=</span> <span class="pre">[0.1,</span> <span class="pre">0.3,</span> <span class="pre">0.6,</span> <span class="pre">0.9]</span></code>, create a generator, <code class="docutils literal notranslate"><span class="pre">y_gen</span></code>, that will generate the y-value <span class="math notranslate nohighlight">\(y = x^2\)</span> for each value of <span class="math notranslate nohighlight">\(x\)</span>. Then, using <code class="docutils literal notranslate"><span class="pre">zip</span></code>, create a list of the <span class="math notranslate nohighlight">\((x, y)\)</span> pairs, each pair stored in a tuple.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：Itertools第二部分</strong></p>
+<p>设列表 <code class="docutils literal notranslate"><span class="pre">x_vals</span> <span class="pre">=</span> <span class="pre">[0.1,</span> <span class="pre">0.3,</span> <span class="pre">0.6,</span> <span class="pre">0.9]</span></code>，创建一个生成器 <code class="docutils literal notranslate"><span class="pre">y_gen</span></code> 来生成 <span class="math notranslate nohighlight">\(y = x^2\)</span> 在每一个 <span class="math notranslate nohighlight">\(x\)</span> 对应的的y值。然后，使用 <code class="docutils literal notranslate"><span class="pre">zip</span></code> 来创建一个包含 <span class="math notranslate nohighlight">\((x, y)\)</span> 元组的列表。</p>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq-range">range</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/functions.html#enumerate">enumerate</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/functions.html#zip">zip</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/library/itertools.html">itertools</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq-range">range</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#enumerate">enumerate</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#zip">zip</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/itertools.html">itertools</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension:-Solutions">
-<h2>Reading Comprehension: Solutions<a class="headerlink" href="#Reading-Comprehension:-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Itertools I: Solution</strong></p>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>Itertools第一部分：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apples&quot;</span><span class="p">,</span> <span class="s2">&quot;bananas&quot;</span><span class="p">,</span> <span class="s2">&quot;pears&quot;</span><span class="p">,</span> <span class="s2">&quot;pears&quot;</span><span class="p">,</span> <span class="s2">&quot;oranges&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">comb_ls</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -307,14 +307,14 @@ module - it is strongly recommended that you take some time to see what it has i
 <span class="go">0.2</span>
 </pre></div>
 </div>
-<p><strong>Itertools II: Solution</strong></p>
+<p><strong>Itertools第二部分：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_gen</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_vals</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_gen</span><span class="p">))</span>
 <span class="go">[(0.1, 0.01), (0.3, 0.09), (0.6, 0.36), (0.9, 0.81)]</span>
 </pre></div>
 </div>
-<p>In this instance, the use of <code class="docutils literal notranslate"><span class="pre">zip</span></code> is a bit contrived. We could have foregone creating <code class="docutils literal notranslate"><span class="pre">y_gen</span></code> by just using the following list-comprehension:</p>
+<p>在这个情况下，使用 <code class="docutils literal notranslate"><span class="pre">zip</span></code> 其实有点没必要的复杂化了。我们完全可以跳过创建 <code class="docutils literal notranslate"><span class="pre">y_gen</span></code> 并使用列表理解：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_vals</span><span class="p">]</span>
 <span class="go">[(0.1, 0.01), (0.3, 0.09), (0.6, 0.36), (0.9, 0.81)]</span>
@@ -331,10 +331,10 @@ module - it is strongly recommended that you take some time to see what it has i
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Functions.html" class="btn btn-neutral float-right" title="Basics of Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Functions.html" class="btn btn-neutral float-right" title="函数基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Generators_and_Comprehensions.html" class="btn btn-neutral float-left" title="Generators &amp; Comprehension Expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Generators_and_Comprehensions.html" class="btn btn-neutral float-left" title="生成器和理解表达式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

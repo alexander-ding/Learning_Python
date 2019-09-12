@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Class inheritance, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Inheritance &mdash; Python Like You Mean It</title>
+  <title>继承 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Module 5: Odds and Ends" href="../module_5.html" />
-    <link rel="prev" title="Special Methods" href="Special_Methods.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="模组5：琐碎话题" href="../module_5.html" />
+    <link rel="prev" title="特殊方法" href="Special_Methods.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,27 +95,27 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">Introduction to Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">Defining a New Class of Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">Instances of a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">A Brief Summary of Terms and Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">Applications of Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">Special Methods</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Inheritance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Summary-of-Inheritance">Summary of Inheritance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">面向对象编程简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">定义新对象类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">类实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">术语和概念的快速总结</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Methods.html">方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">面向对象编程的应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">特殊方法</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">继承</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#继承总结">继承总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -160,9 +161,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_4.html">Module 4: Object Oriented Programming</a> &raquo;</li>
+          <li><a href="../module_4.html">模组4：面向对象编程</a> &raquo;</li>
         
-      <li>Inheritance</li>
+      <li>继承</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,12 +206,12 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Inheritance">
-<h1>Inheritance<a class="headerlink" href="#Inheritance" title="Permalink to this headline">¶</a></h1>
-<p>A final topic for us to discuss in this introduction to object oriented programming is the concept of inheritance. Working with inheritance provides powerful abstractions and elegant code re-use - it permits a class to inherit and build off of the attributes of another class.</p>
-<p>Let’s immediately consider an example of inheritance in action. Let’s revisit the <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> class that we wrote in the introduction to this module.</p>
+<div class="section" id="继承">
+<h1>继承<a class="headerlink" href="#继承" title="永久链接至标题">¶</a></h1>
+<p>我们对面向对象编程的讨论的最后一个话题就是继承（inheritance）的概念。使用继承将提供强大的抽象概念和优雅的代码重运用——它允许某类继承另外一类的属性并以其为基础增加额外的功能。</p>
+<p>让我们立刻考虑一个使用继承的例子。让我们重新讨论在本模组介绍中编写的 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> 类。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; A class of Python object that describes the properties of a rectangle&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 一类描述长方形特征的Python对象&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
@@ -225,26 +226,24 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
 </pre></div>
 </div>
-<p>Now suppose that we also want to write a <code class="docutils literal notranslate"><span class="pre">Square</span></code> class, such that only a single side length need be specified to determine its size. Recognize that a square is a special type of rectangle - one whose width and height are equal. In light of this, we ought to leverage the code that we already wrote for <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>. We can do this by defining a <code class="docutils literal notranslate"><span class="pre">Square</span></code> class that is a <em>subclass</em> of <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>. This means that <code class="docutils literal notranslate"><span class="pre">Square</span></code> will <em>inherit</em> all of the attributes of <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, including its
-methods. Let’s proceed with writing this subclass:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating Square, a subclass of Rectangle</span>
+<p>现在，假设我们也想编写一个 <code class="docutils literal notranslate"><span class="pre">Square</span></code> 类，使得用户只需提供一个变长就能决定其大小。注意，正方形只是一种特殊的长方形而已——它的长和宽相同。在注意到这一点后，我们应该利用为 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> 编写的代码。我们可以定义一个为 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> <em>子类</em>（subclass）的 <code class="docutils literal notranslate"><span class="pre">Square</span></code> 类。这意味着 <code class="docutils literal notranslate"><span class="pre">Square</span></code> 将会<em>继承</em> <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> 的所有属性，包括它的方法。让我们来编写这个子类：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建 Square，Rectangle 的子类</span>
 <span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
-        <span class="c1"># equivalent to `Rectangle.__init__(self, side, side, center)`</span>
+        <span class="c1"># 等值于 `Rectangle.__init__(self, side, side, center)`</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">center</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Specifying <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Square(Rectangle)</span></code> signals that <code class="docutils literal notranslate"><span class="pre">Square</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> and thus it will have inherited the attributes of <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>. Next, see that we overwrote the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method that <code class="docutils literal notranslate"><span class="pre">Square</span></code> inherited; instead of accepting a height and a width, <code class="docutils literal notranslate"><span class="pre">Square</span></code> should by specified by a single side length. Within this new <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method, we pass in that single side length as both the width and height to <code class="docutils literal notranslate"><span class="pre">Rectangle.__init__</span></code>. <code class="docutils literal notranslate"><span class="pre">super</span></code> always refers to the
-“super class” or “parent class” of a given class, thus <code class="docutils literal notranslate"><span class="pre">super</span></code> is <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> here.</p>
-<p>Having defined our subclass, we can leverage the other methods of <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> as-is. Let’s see <code class="docutils literal notranslate"><span class="pre">Square</span></code> in action:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a square of side-length 2</span>
+<p>编写 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Square(Rectangle)</span></code> 将会标示 <code class="docutils literal notranslate"><span class="pre">Square</span></code> 是 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> 的子类，并因此会使其继承 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> 的属性。接下来，请注意，我们重写了 <code class="docutils literal notranslate"><span class="pre">Square</span></code> 继承的 <code class="docutils literal notranslate"><span class="pre">__init__</span></code>；与其接受一个高和宽，<code class="docutils literal notranslate"><span class="pre">Square</span></code> 应该通过提供单个边长描述。在这个新的 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法中，我们将收到的单个边长为左 <code class="docutils literal notranslate"><span class="pre">Rectangle.__init__</span></code> 中的长和宽输入。<code class="docutils literal notranslate"><span class="pre">super</span></code> 永远引用着某一类的“父类”或“超类”（super class），因此 <code class="docutils literal notranslate"><span class="pre">super</span></code> 在这里指 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>。</p>
+<p>定义完我们的子类后，我们可以直接使用 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> 的其它方法。让我们看看 <code class="docutils literal notranslate"><span class="pre">Square</span></code> 是如何工作的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个边长为 2 的正方形</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># using the inherited `get_area` method</span>
+<span class="c1"># 使用继承的 `get_area` 方法</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_square</span><span class="o">.</span><span class="n">get_area</span><span class="p">()</span>
 <span class="mi">4</span>
 
-<span class="c1"># a square is a rectangle with equal height/width</span>
+<span class="c1"># 正方形是一个有着相同长宽的长方形</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_square</span>
 <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
 
@@ -252,16 +251,16 @@ methods. Let’s proceed with writing this subclass:</p>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>The built-in <code class="docutils literal notranslate"><span class="pre">issubclass</span></code> function allows us to verify the relationship between <code class="docutils literal notranslate"><span class="pre">Square</span></code> and <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `Square` and `Rectangle` are distinct classes</span>
+<p>内置的 <code class="docutils literal notranslate"><span class="pre">issubclass</span></code> 函数允许我们确定 <code class="docutils literal notranslate"><span class="pre">Square</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> 之间的关系。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `Square` 和 `Rectangle` 是不同的类</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Square</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Rectangle</span>
 <span class="bp">True</span>
 
-<span class="c1"># `Square` is a subclass of `Rectangle`</span>
+<span class="c1"># `Square` 是 `Rectangle` 的子类</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Square</span><span class="p">,</span> <span class="n">Rectangle</span><span class="p">)</span>
 <span class="bp">True</span>
 
-<span class="c1"># `my_square is an both an instance of `Square` and `Rectangle`</span>
+<span class="c1"># `my_square` 同时是 `Square` 和 `Rectangle` 实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">my_square</span><span class="p">,</span> <span class="n">Square</span><span class="p">)</span>
 <span class="bp">True</span>
 
@@ -269,26 +268,26 @@ methods. Let’s proceed with writing this subclass:</p>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<div class="section" id="Summary-of-Inheritance">
-<h2>Summary of Inheritance<a class="headerlink" href="#Summary-of-Inheritance" title="Permalink to this headline">¶</a></h2>
-<p>In general, if you have a class <code class="docutils literal notranslate"><span class="pre">A</span></code>, then you can define a subclass of <code class="docutils literal notranslate"><span class="pre">A</span></code> via:</p>
+<div class="section" id="继承总结">
+<h2>继承总结<a class="headerlink" href="#继承总结" title="永久链接至标题">¶</a></h2>
+<p>一般而言，如果你有类 <code class="docutils literal notranslate"><span class="pre">A</span></code>，那么你可以通过以下定义子类 <code class="docutils literal notranslate"><span class="pre">A</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
     <span class="n">attr</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">0</span>
 
-<span class="c1"># `B` is a subclass of `A`</span>
+<span class="c1"># `B` 是 `A` 的子类</span>
 <span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="c1"># inherits `attr` and `method`</span>
-    <span class="n">b_attr</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>  <span class="c1"># class attribute distinct to `B`</span>
+    <span class="c1"># 继承 `attr` 和 `method`</span>
+    <span class="n">b_attr</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>  <span class="c1"># 和 `B` 不同的类属性</span>
 
     <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># overwrites inherited `method`</span>
+        <span class="c1"># 重写继承的 `method`</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">B</span></code> will have inherited all of the attributes and methods of <code class="docutils literal notranslate"><span class="pre">A</span></code>. Defining attributes and methods within the definition of <code class="docutils literal notranslate"><span class="pre">B</span></code> will overwrite those that already exist in <code class="docutils literal notranslate"><span class="pre">A</span></code>. <code class="docutils literal notranslate"><span class="pre">B</span></code> is also free to have its own distinct attributes and methods be defined, irrespective of <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">B</span></code> 将会继承 <code class="docutils literal notranslate"><span class="pre">A</span></code> 的所有属性和方法。在 <code class="docutils literal notranslate"><span class="pre">B</span></code> 中定义属性和方法将重写 <code class="docutils literal notranslate"><span class="pre">A</span></code> 中已经存在的同名属性。<code class="docutils literal notranslate"><span class="pre">B</span></code> 也可以随意定义属于它自己的不同属性和方法，并和 <code class="docutils literal notranslate"><span class="pre">A</span></code> 无关。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">issubclass</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
 <span class="go">True</span>
 
@@ -308,12 +307,12 @@ methods. Let’s proceed with writing this subclass:</p>
 <span class="go">-2</span>
 </pre></div>
 </div>
-<p>We have only scratched the surface of the topic of class inheritance. That being said, this section does convey the essential functionality and utility of class inheritance.</p>
+<p>我们仅仅摸到了类继承这一话题的皮毛。虽然如此，本节向读者展示了类继承的基本功能和用法。</p>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#inheritance">Official Tutorial: Inheritance</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#inheritance">官方教程：继承</a></p></li>
 </ul>
 </div>
 </div>
@@ -326,10 +325,10 @@ methods. Let’s proceed with writing this subclass:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../module_5.html" class="btn btn-neutral float-right" title="Module 5: Odds and Ends" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../module_5.html" class="btn btn-neutral float-right" title="模组5：琐碎话题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Special_Methods.html" class="btn btn-neutral float-left" title="Special Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Special_Methods.html" class="btn btn-neutral float-left" title="特殊方法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

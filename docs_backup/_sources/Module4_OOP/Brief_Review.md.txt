@@ -19,9 +19,9 @@ jupyter:
 ```
 
 <!-- #region -->
-## A Brief Summary of Terms and Concepts
+## 术语和概念的快速总结
 
-Let's do a quick rundown of some of the concepts and terms discussed thus far.  The following code is a *class definition*, which specifies the *attributes* of objects that belong to the class/type `Example`.
+让我们快速地复习一下我们已经讨论的一些概念和术语。以下代码是一个*类定义*（class definition），其描述了属于类/类型 `Example` 对象的*属性*（attribute）。
 
 ```python
 class Example:
@@ -31,9 +31,9 @@ class Example:
         self.b = "apple"
 ```
 
-Once executed, this code produces the *class object* `Example`, which encapsulates the above definition and can be used to create objects that are instances of this class/type. `Example.a` and `Example.__init__` are both attributes of this class. `Example.__init__` is more specifically a special method, which is automatically invoked whenever an instance of this class is created. 
+在执行之后，以上代码将创建*类对象* `Example`，其包装了以上的定义并可以被用来创建这个类/类型的实例对象。`Example.a` 和 `Example.__init__` 都是该类的属性。`Example.__init__` 更加仔细来讲是一个特殊方法；当创建这类的实例时会自动调用它。
 
-The following code creates an *instance* of `Example`, assigning that instance to the variable `ex`. This means that the object belongs to the type (a.k.a class) `Example`.
+以下代买创建了 `Example` 的一个*实例*，并将这个实例赋值给变量 `ex`。这意味着这个对象术语类型（也就是类）`Example`。
 
 ```python
 >>> ex = Example()
@@ -51,7 +51,7 @@ True
 __main__.Example
 ```
 
-Upon this instantiation, the instance-level attribute `b` was defined via execution of the `__init__` method, wherein Python passed the instance object being created as the argument `self` to the method. Thus `b` is an *instance-level* attribute, which is not possessed by `Example` itself.
+在实例化后，实例属性 `b` 会通过 `__init__` 方法的执行而被定义。而Python会自动向 `__init__` 方法将被创建的对象作为参数 `self` 输入。所以，`b` 是一个*实例级别*（instance level）的属性，而实例属性属于 `Example` 类对象本身。
 
 ```python
 >>> Example.b

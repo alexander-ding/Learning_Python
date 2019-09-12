@@ -19,20 +19,20 @@ jupyter:
 ```
 
 <!-- #region -->
-# Instances of a Class
+# 类实例
 
-Thus far we have learned about the syntax for defining a new class of object, specifying its name, attributes, and methods (which are attributes that are functions). Once we leave the scope of the class definition, a class object is formed - the resulting *class object* is the singular object that encapsulates our class definition. We seldom will want to pass around or manipulate this class object once it is created. Rather, we will want to use it to create individual *instances* of that class. To be more concrete, `list` is a class object (remember that "class" and "type" are synonymous) - it is the same sort of object that is produced when a `class` definition is executed. As you saw in [Module 2](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists), we can use this class object to create individual *instances* of the list class, each one containing its own sequence of items.
+到现在为止，我们学习了定义新对象类，提供其名字，属性，和方法（也就是函数属性）的语法。当我们离开类定义的作用域外，一个类对象将被创建——定义创建的*类对象*（class object）是单个包装我们类定义的对象。我们很少会想要在类对象创建后将其作为参数输入或操作它。反而，我们将想要使用它来创建该类的一个个*实例*（instance）。具体来讲，`list` 是一个类对象（请记住，“类”和“类型”是一个意思）——它和 `class` 定义执行后创建的对象是同一种类的。就如你在[模组2](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists)中看到的一样，我们可以使用这个类对象来创建列表类单独的*实例*，而每个实例有着属于自己的对象序列。
 
 ```python
-# using the class object `list` to create list-instances
->>> list()  # create a `list`-instance that is empty
+# 使用类对象 `list` 来创建列表实例
+>>> list()  # 创建一个空的 `list` 实例
 []
 
->>> list((1, 2, 3))  # create a `list`-instance containing 1, 2, and 3
+>>> list((1, 2, 3))  # 创建一个包括1，2，和3的 `list` 实例
 [1, 2, 3]
 
-# `a` and `b` are distinct instances of the list class/type
-# even though they contain the same sequence of integers
+# `a` 和 `b` 是两个不同的列表类/类型实例，虽然它们储存着相同的
+# 整数序列
 >>> a = list((1, 2, 3))
 >>> b = list((1, 2, 3))
 >>> a is b
@@ -44,8 +44,7 @@ True
 >>> isinstance(b, list)
 True
 
-# Calling the append method on `a` only affects that particular 
-# list-instance.
+# 对 `a` 调用append方法只会影响该列表实例。
 >>> a.append(-1)
 >>> a
 [1, 2, 3, -1]
@@ -54,9 +53,9 @@ True
 [1, 2, 3]
 ```
 
-Each of these instances share the common attributes `append`, `count`, `reverse`, and so on, as specified in the definition of Python's list class, which is encapsulated by the `list` class object. That being said, the specific content of any given list is an attribute of that particular list instance; that is, the content of a particular list is an *instance attribute* rather than a class attribute. Thus far, we do not have the ability to create instance-level attributes. Let's change that.
+以上每一个实例都共享着属性 `append`，`count`，`reverse`，等等，如被 `list` 类对象包装的列表类定义描述得一般。虽然如此，每个列表的内容是一个属于该列表实例的属性；也就是说，列表的成员是一个*实例属性*（instance attribute）而不是一个类属性（class attribute）。到现在为止，我们还没有办法创建实例级别的属性。让我们改变这一事实。
 
-Suppose that we want to make our own `Person` class. Each person should have her/his own name, thus the name should be an instance-level attribute. We will learn to define a special initialization method that allows us to define and set instance-level attributes. In the context of `Person`, this will allow us to give each person their own name:
+假设我们想要创建自己的 `Person` 类。每个人都应该有着自己的名字，所以名字应该是实例属性。我们将学习如何定义一个特殊的初始化方法来允许我们定义并设置实例属性。在 `Person` 的情况下，这将允许我们为每一个人提供自己的名字：
 
 ```python
 >>> class Person:
@@ -78,91 +77,90 @@ True
 
 <!-- #endregion -->
 
-We will learn about the `__init__` method and that peculiar `self` argument momentarily. First, we will learn about creating an instance object from a class object.
+我们接下来会马上学习 `__init__` 方法和奇怪的 `self` 参数。首先，我们将学习如何使用类对象来创建实例对象。
 
 <!-- #region -->
-## Object Identity and Creating an Instance
+## 对象身份和创建实例
 
-Here we will learn the basic mechanism for creating an instance of a class. Consider the following trivial class definition:
+我们将在这里学习创建对象实例的基本方法。设以下简单的类定义：
 
 ```python
 class Dummy:
     x = 1
 ```
 
-We can use the "call" syntax on `Dummy`, `Dummy()`, to create individual instances of this class:
+我们可以对 `Dummy` 使用“调用”语法 `Dummy()` 来创建该类的单独实例：
 
 ```python
-# create an object that is an instance of our Dummy class
+# 创建一个为 Dummy 类实例的对象
 >>> d1 = Dummy()
 
 >>> isinstance(d1, Dummy)
 True
 ```
 
-Recall that the `is` operator checks to see if two items reference the exact same object in your computer's memory. Also recall that the built-in `isinstance` function checks to see if an object is an instance of a class/type. These will help us understand the relationship between class objects, their instances, and references to objects.
+请回忆，`is` 操作符检查两个变量是否引用了电脑内存中一样的对象。同时，请回忆，内置的 `isinstance` 函数会检查一个对象是否是某一类/类型的实例。这些函数将帮助我们理解类对象，类实例，和对象引用之间的关系。
 
 ```python
-# `Dummy` is the class object that encapsulates
-# our class definition
+# `Dummy` 是一个包含我们类定义的类对象
 >>> Dummy
 __main__.Dummy
 
-# `d1` is an object that is an instance of our Dummy class.
-# this instance resides at some memory address (0x2ae8f68f2e8)
+# `d1` 是我们 Dummy 类的一个实例。
+# 这个实例存在于某内存地址中（0x2ae8f68f2e8）
 >>> d1
 <__main__.Dummy at 0x2ae8f68f2e8>
 
-# d1 is not Dummy; it is an instance of Dummy
+# d1 不是 Dummy；它是 Dummy 的一个实例
 >>> d1 is Dummy 
 False
 
 >>> isinstance(d1, Dummy)
 True
 ```
-See that `Dummy` is to `d1` as `list` is to `[1, 4, "a"]`  
+请注意，`Dummy` 和 `d1` 的关系就像 `list` 和 `[1, 4, "a"]` 的关系一样。
 
-Let's create another instance of `Dummy`. It is important to understand that this new instance is *distinct* from the one that we already created.
+让我们创建另外一额 `Dummy` 的实例。理解这个新实例和之前创建的实例是*不同的*很重要。
 
 ```python
-# `d2` is a new instance of our Dummy class.
-# It resides at a distinct memory address (0x2ae8f666f60)
+# `d2` 是我们 Dummy 类的一个新实例。
+# 它存在于某内存地址中（0x2ae8f666f60）
 >>> d2 = Dummy()
 >>> d2
 <__main__.Dummy at 0x2ae8f666f60>
 
->>> d2 is d1  # `d2` and `d1` are distinct instances of `Dummy`
+>>> d2 is d1  # `d2` 和 `d1` 是 `Dummy` 的不同实例
 False
 
 >>> isinstance(d2, Dummy)
 True
 ```
 
-Python's [rules for referencing objects with variables](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html) still apply here: assigning an object to a variable, be it a class object or an instance, does not create a distinct copy of that object. The variable merely references that object, serving only as an alias for it.
+Python的[变量引用对象的规则](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html)在此依然成立：向某个变量赋值一个对象，不管是类对象还是其实例，都不会创建该对象的复制品。这个变量仅仅会引用该对象并作为它的一个代名词。
 
 ```python
-# `A` references `Dummy`
+# `A` 引用 `Dummy`
 >>> A = Dummy
 
 >>> A is Dummy
 True
 
-# creates an instance of `Dummy`, using `A`
+# 使用 `A` 来创建 `Dummy` 的实例
 >>> dummy_instance = A()  
 >>> dummy_instance 
 <__main__.Dummy at 0x2ae8f65fcf8>
 
->>> isinstance(dummy_instance, A)  # equivalent to `isinstance(dummy_instance, Dummy)`
+>>> isinstance(dummy_instance, A)  # 等值于：`isinstance(dummy_instance, Dummy)`
 True
 
-# `var` references the Dummy-instance `dummy_instance`
+# `var` 引用 Dummy 的实例 `dummy_instance`
 >>> var = dummy_instance
 
 >>> var is dummy_instance
 True
 
-# setting a new value to `var.x` is equivalent to 
-# setting that value to `dummy_instance.x`
+# 向 `var.x` 设置一个新值等值于向 `dummy_instance.x`
+# 设置一个新值
 >>> var.x = 22
 >>> dummy_instance.x
 22
@@ -172,20 +170,20 @@ True
 
 <div class="alert alert-info">
 
-**Reading Comprehension: Class Initialization**
+**阅读理解：类初始化**
 
-Using the `Dummy` class defined above, create a list consisting of 10 *distinct* instances of this type. Write code to explicitly verify that each entry is distinct from the other, and that each entry is an instance of the `Dummy` class.
+使用以上定义的 `Dummy` 类，创建一个包含10个这一类的*不同*实例的列表。编写代码来显式检查每一个成员互不相同，以及每个成员都是 `Dummy` 类的实例。
 
-Then, create a tuple that contains a *single* instance of `Dummy` stored ten times. Write code to explicitly verify that the entries all reference the exact same object, and that each entry is an instance of the `Dummy` class.
+然后，创建一个包含*一个* `Dummy` 实例被分别储存10次的元组。编写代码来显式检查每一个成员都引用相同的对象，以及每个成员都是 `Dummy` 类的实例。
 
 </div>
 
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Terminology**
+**阅读理解：术语**
 
-Given:
+设：
 ```python
 >>> class Cat:
 ...     pass
@@ -197,18 +195,18 @@ Given:
 >>> y1 = y
 ```
 
-What relationship do `x` and `Cat` share?
+`x` 和 `Cat` 共享着什么关系？
 
-What relationship do `y` and `Cat` share?
+`y` 和 `Cat` 共享着什么关系？
 
-What relationship do `x` and `y` share?
+`x` 和 `y` 共享着什么关系？
 
-What relationship do `x2` and `y` share?
+`x2` 和 `y` 共享着什么关系？
 
-What relationship do `y` and `y1` share?
+`y` 和 `y1` 共享着什么关系？
 <!-- #endregion -->
 
-Next, identify each of the following objects as a class object or an instance (and if instance, an instance of what)
+接下来，指出以下每个对象是类对象还是类实例（如果是实例，是哪个类的实例）？
 
  - `"hello world"`
  - `True`
@@ -219,55 +217,54 @@ Next, identify each of the following objects as a class object or an instance (a
 </div>
 
 
-Now that we know the basics of how to create an instance of a class, understand the relationship between class objects and instances, and understand the distinction between instances that are independent from one another, we can move on to learning about creating instance-level attributes for our class.
+在学习了如何创建类实例，理解类对象和实例的关系，并理解了不同实例之间的区别后，我们可以学习如何为我们的类创建实例级别的属性了。
 
 <!-- #region -->
-## Defining Instance-Level Attributes: the `__init__` Method
+## 定义实例级别的属性：`__init__` 方法
 
-As demonstrated in the `Person` class that we defined earlier in this section, and the `Rectangle` class that we defined in this module's introduction section, there is a special method, `__init__`, that allows us to define instance-level attributes for our class. This is a critically-important method, which we will leverage often. Note that the name of this is: "underscore-underscore-init-underscore-underscore", which can be pronounced as "dunder-init" (where "dunder" stands for double-underscore).  
+就像这一节之前用 `Person` 类和本模组简介节定义的 `Rectangle` 类演示的一样，Python提供了一个特殊方法 `__init__` 来允许我们定义类的实例级别的属性。这是一个极其重要的，我们会经常使用的方法。请注意这个方法的名字是：“下划线-下划线-init-下划线-下划线”，而你可以将其读作“dunder-init”（“dunder”代表着“double-underscore”）。
 
-Consider the slightly-modified definition of `Person`, which also includes the class-attribute `x`:
+设以下稍微修改过的 `Person` 定义，其同时包含了类属性 `x`：
 
 ```python
 class Person:
-    x = 1  # this sets a class-level attribute, common to all instances of `Person`
+    x = 1  # 这设置了一个类级别的属性，通用于所有 `Person` 实例
     
     def __init__(self, name):
-        """ This method is executed every time we create a new `Person` instance. 
-            `self` is the object instance being created."""
-        self.name = name   # set the attribute `name` to the Person-instance `self`
+        """ 本方法在每次创建一个新 `Person` 实例时将被执行。
+            `self` 指向被创建的对象实例。"""
+        self.name = name   # 为 Person 实例 `self` 设置属性 `name`
         
-        # __init__ cannot not return any value other than `None`. Its sole purpose is to affect
-        # `self`, the instance of `Person` that is being created.
+        # __init__ 不能反悔任何除了 `None` 以外的对象。它的唯一目的是修改
+        # `self`，也就是被创建的 `Person` 实例。
 ```
 
-Invoking `Person()` actually calls `__init__()` "under the hood", and any argument that we feed to `Person()` gets passed to `__init__`. Looking at our definition of `__init__` it looks like we must pass two values to this method: `self` and `name`. This first argument, `self`, actually represents the object instance of `Person` that is being created. Python will pass the appropriate object for `self` to `__init__` automatically, thus we need only worry about passing a value for `name`. 
+调用 `Person()` 其实在“幕后”调用 `__init__()`，且任何输入到 `Person()` 中的参数会被送到 `__init__` 中。乍一眼看 `__init__` 的定义，我们好像需要向这个方法输入两个参数：`self` 和 `name`。第一个参数 `self` 其实代表着正在被创建的 `Person` 对象实例。Python会自动向 `__init__` 的 `self` 输入相应对象，所以我们只需要担心向其输入 `name` 的值。
 
-Let's make an instance of our `Person` class, passing the string `"Kamasi"` as the name:
+让我们创建 `Person` 类的一个实例，并使用字符串 `"Kamasi"` 来作为名字：
 
 ```python
-# Creates the instance `self`,  passes it 
-# and `"Kamasi"` to `Person.__init__`, and then
-# returns the instance-object that was created
+# 创建实例 `self`，将其和 `"Kamasi"` 输入到 `Person.__init__` 中，
+# 然后返回被创建的实例对象
 >>> p = Person("Kamasi")  
 
->>> p.name  # access the instance-attribute `name`
+>>> p.name  # 访问实例属性 `name`
 'Kamasi'
->>> p.x     # access the class-attribute `x`
+>>> p.x     # 访问类属性 `x`
 1
 ```
 
-Here is what is going on "under the hood" when we create this instance of `Person` (**this is very important**):
+当我们创建 `Person` 的一个实例时，以下是“幕后”发生的事情（**这很重要**）：
 
-- Invoking `Person("Kamasi")` first creates an instance of `Person` as if there was no `__init__` method specified. The resulting object does not yet have a `name` attribute. It only has the class-level attribute `x`.
-- Next, that instance of `Person` is passed to `__init__` as the argument `self`, and `"Kamasi"`, which we provided explicitly, is passed as the argument `name`. 
-- With these arguments, `Person.__init__(self, "Kamasi")` executes its body of instructions. Specifically, `self.name = name` sets the attribute `name` on `self`, using the value `"Kamasi"`. 
-- Having finished executing the `__init__` method, `Person("Kamasi")` resolves by returning the instance-object that was created.
+- 调用 `Person("Kamasi")` 首先会假装 `__init__` 方法不存在一样创建 `Person` 的一个实例。返回的对象在这时并没有 `name` 属性。它只拥有类级别的属性 `x`。
+- 然后，`Person` 的那个实例会作为参数 `self` 被输入到 `__init__` 中，而我们显式提供的 `"Kamasi"` 将会作为参数 `name` 被输入。
+- 有了这些参数后，`Person.__init__(self, "Kamasi")` 将会执行它的主体代码。具体来讲，`self.name = name` 将使用值 `"Kamasi"` 为 `self` 设置属性。
+- 在执行完 `__init__` 方法后，`Person("Kamasi")` 会返回被创建的实例对象。
 
-We now have the ability to define and set attributes on an instance-level! Understanding this process is critical to mastering object oriented programming in Python. Let's create several `Person`-instances, all stored in a list:
+我们现在有了在实例级别上定义和设置属性的能力！理解这个过程对掌握Python的面向对象编程至关重要。让我们创建多个 `Person` 实例并将它们存储在一个列表中：
 
 ```python
-# creating several instances of `Person`
+# 创建多个 `Person` 的实例
 >>> list_of_people = [Person(n) for n in ("Fermi", "Noether", "Euler")]
 
 >>> for person in list_of_people:
@@ -281,12 +278,12 @@ Euler
 1
 ```
 
-Updating the class-level attribute `x` of `Person` affects all instances of `Person`:
+更新 `Person` 的类级别的属性 `x` 会影响所有 `Person` 的实例：
 ```python
-# setting a new value to the class-attribute `x`
+# 为类属性 `x` 设置一个新值
 >>> Person.x = 22 
 
-# this affects all instances of `Person`
+# 这会影响 `Person` 的所有实例
 >>> for person in list_of_people:
 ...    print(person.name)
 ...    print(person.x)
@@ -302,11 +299,11 @@ Euler
 <!-- #region -->
 <div class="alert alert-info">
 
-**Reading Comprehension: Instance Attributes**
+**阅读理解：实例属性**
 
-Define a class, `Tmp`, that has three instance attributes: `x`, `y`, and `z`. `x` and `y` should be numbers that are set according to values passed to the instance creation, and `z` should be the product of these two values. 
+定义类 `Tmp`，其有着三个实例属性：`x`，`y`，和 `z`。`x` 和 `y` 应为根据在实例创建时输入的值设定的数字，而 `z` 应为这两个值的乘积。
 
-For example:
+比如说：
 ```python
 >>> tmp = Tmp(2.1, 3.0)
 >>> tmp.x
@@ -322,21 +319,21 @@ For example:
 </div>
 <!-- #endregion -->
 
-You should now have a grasp of how the special `__init__` method can be used to define and set instance-level attributes for your classes. Furthermore, the basic process by which invoking class instantiation produces an instance object which then automatically gets passed to `__init__` as the `self` argument, should be salient. In the following section, we will encounter three varieties of methods: instance methods, class methods, and static methods. Additionally, we will encounter even more so-called "special methods", similar to `__init__`, which can be used to more broadly specify how your class behaves and interacts with Python's operators. 
+现在，你应该对特殊的 `__init__` 方法能如何用来为你的类定义和设置实例级别的属性有一定的了解了。同时，调用类实例化会如何创建实例对象并将其作为 `self` 参数自动输入到 `__init__` 的过程也应该很明显易懂。在接下来的一节，我们将会遇到三种不同的方法：实例方法，类方法，和静态（static）方法。我们还会遭遇类似于 `__init__` 的所谓“特殊方法”（special method）；我们可以使用它们来更加广泛地描述你的类的行为和它如何和Python的操作符交互。
 
 
-## Reading Comprehension Solutions
+## 阅读理解答案：
 
 <!-- #region -->
-**Solution: Class Initialization**
+**解：类初始化**
 
-Using the `Dummy` class defined above, create a list consisting of 10 *distinct* instances of this type
+使用以上定义的 `Dummy` 类，创建一个包含10个这一类的*不同*实例的列表。
 
 ```python
-# will call `Dummy()` once for each iteration
+# 会在每次迭代中调用 `Dummy()` 一次
 >>> list_of_dummies = [Dummy() for i in range(10)] 
 
-# note the distinct memory addresses
+# 请注意以下不相同的内存地址
 >>> list_of_dummies
 [<__main__.Dummy at 0x1d50de89940>,
  <__main__.Dummy at 0x1d50de896d8>,
@@ -350,12 +347,12 @@ Using the `Dummy` class defined above, create a list consisting of 10 *distinct*
  <__main__.Dummy at 0x1d50de89b38>]
 ```
 
-Write code to explicitly verify that each entry is distinct from the other, and that each entry is an instance of the `Dummy` class.
+编写代码来显式检查每一个成员互不相同，以及每个成员都是 `Dummy` 类的实例。
 
 ```python
 >>> from itertools import combinations
-# `combinations(list_of_dummies, 2)` loops over all pairs of entries
-# in `list_of_dummies`
+# `combinations(list_of_dummies, 2)` 会循环 `list_of_dummies` 中所有
+# 成员对
 >>> all(a is not b for a,b in combinations(list_of_dummies, 2))
 True
 
@@ -363,12 +360,12 @@ True
 True
 ```
 
-Create a tuple contains a *single* instance of `Dummy` ten times. Note here that we initialize `Dummy` once, and that the tuple-comprehension merely populates the tuple with that same instance ten times.  
+创建一个包含*一个* `Dummy` 实例被分别储存10次的元组。请注意在这里，我们仅仅初始化了 `Dummy` 一次，而元组理解语句仅仅向元组中输入了10次相同的实例。
 ```python
->>> dummy = Dummy()  # a single instance of `Dummy`
+>>> dummy = Dummy()  # 一个 `Dummy` 实例
 >>> tuple_of_dummy = tuple(dummy for i in range(10))
 
-# note that the memory addresses are identical
+# 请注意所有的内存地址都是相同的
 >>> tuple_of_dummy
 (<__main__.Dummy at 0x1d50de887b8>,
  <__main__.Dummy at 0x1d50de887b8>,
@@ -382,7 +379,7 @@ Create a tuple contains a *single* instance of `Dummy` ten times. Note here that
  <__main__.Dummy at 0x1d50de887b8>)
 ```
 
-Write code to explicitly verify that the entries all reference the exact same object, and that each entry is an instance of the `Dummy` class.
+编写代码来显式检查每一个成员都引用相同的对象，以及每个成员都是 `Dummy` 类的实例。
 
 ```python
 >>> all(dummy is i for i in tuple_of_dummy)
@@ -394,9 +391,9 @@ True
 <!-- #endregion -->
 
 <!-- #region -->
-**Reading Comprehension: Terminology**
+**解：术语**
 
-Given:
+设：
 ```python
 >>> class Cat:
 ...     pass
@@ -408,29 +405,29 @@ Given:
 >>> y1 = y
 ```
 
-What relationship do `x` and `Cat` share?: `x` and `Cat` reference the same class object.
+`x` 和 `Cat` 共享着什么关系？：`x` 和 `Cat` 引用相同的类对象。
 
-What relationship do `y` and `Cat` share?: `y` is an instance of the `Cat` class.
+`y` 和 `Cat` 共享着什么关系？：`y` 是 `Cat` 类的一个实例。
 
-What relationship do `x` and `y` share?: `x` references `Cat`, and `y` is an instance of `Cat`. Thus `y` is an instance of `x`.
+`x` 和 `y` 共享着什么关系？：`x` 引用 `Cat`，而 `y` 是 `Cat` 的一个实例。因此，`y` 是 `x` 的一个实例。
 
-What relationship do `x2` and `y` share?: They are independent instances of `Cat`
+`x2` 和 `y` 共享着什么关系？：它们是 `Cat` 的不同实例。
 
-What relationship do `y` and `y1` share?: They reference the same instance of `Cat`.
+`y` 和 `y1` 共享着什么关系？：它们引用相同的 `Cat` 实例。
 <!-- #endregion -->
 
-Identify each of the following objects as a class object or an instance (and if so, an instance of what)
+接下来，指出以下每个对象是类对象还是类实例（如果是实例，是哪个类的实例）？
 
- - `"hello world"`: An instance of the `str` type (a.k.a class)
- - `True`: an instance of the `bool` type
- - `int`: a class object describing integers
- - `{"a" : 22}`: an instance of the `dict` type 
- - `tuple`: a class object describing tuples
+ - `"hello world"`： `str` 类型（也就是类）的一个实例
+ - `True`：`bool` 类型的一个实例
+ - `int`：一个描述整数的类对象
+ - `{"a" : 22}`：`dict` 类型的一个实例
+ - `tuple`：一个描述元组的类对象
 
 <!-- #region -->
-**Reading Comprehension: Instance Attributes**
+**解：实例属性**
 
-Define a class, `Tmp`, that has three instance attributes: `x`, `y`, and `z`. `x` and `y` should be numbers that are set according to values passed to the instance creation, and `z` should be the product of these two values.
+定义类 `Tmp`，其有着三个实例属性：`x`，`y`，和 `z`。`x` 和 `y` 应为根据在实例创建时输入的值设定的数字，而 `z` 应为这两个值的乘积。
 
 ```python
 class Tmp:

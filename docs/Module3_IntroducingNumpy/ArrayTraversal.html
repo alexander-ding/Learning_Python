@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Numpy array traversal ordering, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Iterating Over Arrays &amp; Array-Traversal Order &mdash; Python Like You Mean It</title>
+  <title>迭代数组和数组遍历顺序 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="“Vectorized” Operations: Optimized Computations on NumPy Arrays" href="VectorizedOperations.html" />
-    <link rel="prev" title="Functions for Creating NumPy Arrays" href="FunctionsForCreatingNumpyArrays.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="“矢量化”操作：对NumPy数组进行优化过的计算" href="VectorizedOperations.html" />
+    <link rel="prev" title="创建NumPy数组的函数" href="FunctionsForCreatingNumpyArrays.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,28 +95,28 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">Basic Array Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Iterating Over Arrays &amp; Array-Traversal Order</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#How-to-Traverse-an-Array:-Row-major-(C)-vs-Column-major-(F)-Traversal-Ordering">How to Traverse an Array: Row-major (C) vs Column-major (F) Traversal Ordering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicArrayAttributes.html">基本的数组属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">迭代数组和数组遍历顺序</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#如何遍历数组：行优先（C）vs-列优先（F）遍历顺序">如何遍历数组：行优先（C）vs 列优先（F）遍历顺序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">Advanced Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Broadcasting.html">数组广播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdvancedIndexing.html">进阶索引</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -161,9 +162,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_3.html">Module 3: The Essentials of NumPy</a> &raquo;</li>
+          <li><a href="../module_3.html">模组3：NumPy基础</a> &raquo;</li>
         
-      <li>Iterating Over Arrays &amp; Array-Traversal Order</li>
+      <li>迭代数组和数组遍历顺序</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,25 +207,25 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Iterating-Over-Arrays-&amp;-Array-Traversal-Order">
-<h1>Iterating Over Arrays &amp; Array-Traversal Order<a class="headerlink" href="#Iterating-Over-Arrays-&-Array-Traversal-Order" title="Permalink to this headline">¶</a></h1>
-<p>In this section, you will learn:</p>
+<div class="section" id="迭代数组和数组遍历顺序">
+<h1>迭代数组和数组遍历顺序<a class="headerlink" href="#迭代数组和数组遍历顺序" title="永久链接至标题">¶</a></h1>
+<p>在本节中，你将会学到：</p>
 <ul class="simple">
-<li>About NumPy’s functions for iterating over an array</li>
-<li>That there is more than one valid way for NumPy to perform this operation, which amounts to how NumPy traverses a multidimensional array.</li>
-<li>The row-major array traversal methodology, which is utilized by NumPy by default.</li>
+<li><p>NumPy迭代数组的函数。</p></li>
+<li><p>有不止一个合理的方法用NumPy在迭代数组，区别仅仅在于NumPy遍历多维数组的方法。</p></li>
+<li><p>NumPy默认使用的行优先的遍历方法。</p></li>
 </ul>
-<p>NumPy provides valuable tools for iterating over any array, such that each element can be visited in the array, regardless of the array’s shape. For example, recall that Python’s built-in <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> function permits us to produce each item in an iterable, along with its index of iteration:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># enumerating the items in an iterable</span>
+<p>NumPy提供了无论数组形状都可以完整迭代数组每一个成员的重要工具。比如说，请回忆，Python内置的 <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> 函数允许我们一个一个获取可迭代物中的每一个成员，以及它在迭代中的索引：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 枚举可迭代物中的成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s2">&quot;abcdef&quot;</span><span class="p">)]</span>
 <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>Similarly, NumPy provides the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndenumerate.html#numpy.ndenumerate">ndenumerate</a> function, which enumerates each element in an N-dimensional array, specifying the N-dimensional index for each element.</p>
+<p>相似的，NumPy提供了<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndenumerate.html#numpy.ndenumerate">ndenumerate</a>函数。它枚举N维数组中的每一个成员并同时提供它在数组中的N维索引。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="go"># Demonstrating `np.ndenumerate`.</span>
-<span class="go"># A shape-(2, 2, 3) array</span>
+<span class="go"># 演示 `np.ndenumerate`</span>
+<span class="go"># 形状为 (2, 2, 3) 的数组</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span> <span class="mi">25</span><span class="p">,</span>   <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">35</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span>  <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">29</span><span class="p">]],</span>
 <span class="gp">...</span>
@@ -246,7 +247,7 @@
 <span class="go"> ((1, 1, 2), -45)]</span>
 </pre></div>
 </div>
-<p>See that each triplet of integers specifies the index for the corresponding array element:</p>
+<p>请注意，有三个成员的整数数组描述了对应数组成员的索引：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="go">25</span>
 
@@ -260,33 +261,30 @@
 <span class="go">9</span>
 </pre></div>
 </div>
-<p>See <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.indexing.html#iterating-over-arrays">the official NumPy documentation</a> for a complete listing of functions that facilitate iterating over arrays. The official documentation also provides <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.nditer.html#iterating-over-arrays">a detailed treatment of array iteration</a>, which is far more detailed than is warranted here. Next, we must discuss the default ordering that NumPy uses when
-traversing a N-dimensional array.</p>
-<div class="section" id="How-to-Traverse-an-Array:-Row-major-(C)-vs-Column-major-(F)-Traversal-Ordering">
-<h2>How to Traverse an Array: Row-major (C) vs Column-major (F) Traversal Ordering<a class="headerlink" href="#How-to-Traverse-an-Array:-Row-major-(C)-vs-Column-major-(F)-Traversal-Ordering" title="Permalink to this headline">¶</a></h2>
-<p>Note the order in which <code class="docutils literal notranslate"><span class="pre">np.ndenumerate</span></code> iterated over <code class="docutils literal notranslate"><span class="pre">x</span></code>. It first traversed the columns within row-0 of sheet-0 of <code class="docutils literal notranslate"><span class="pre">x</span></code>, and then it traversed the columns within the row-1 of sheet-0, and so on. What is special about this traversal order? Why, for instance, didn’t it traverse the rows within a given column instead? We can also see that there is not a unique ordering for a <code class="docutils literal notranslate"><span class="pre">reshape</span></code> function to adhere to. For example, the following reshape operation could sensibly return either of the
-following results:</p>
+<p>请查看<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.indexing.html#iterating-over-arrays">官方NumPy说明文档</a>来阅读完整的辅助迭代数组的函数列表。官方说明文档同时提供了<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.nditer.html#iterating-over-arrays">一个细致的迭代数组的教程</a>，相比本文完整细致多很多。接下来，我们需要讨论NumPy在遍历N维数组时使用的默认顺序。</p>
+<div class="section" id="如何遍历数组：行优先（C）vs-列优先（F）遍历顺序">
+<h2>如何遍历数组：行优先（C）vs 列优先（F）遍历顺序<a class="headerlink" href="#如何遍历数组：行优先（C）vs-列优先（F）遍历顺序" title="永久链接至标题">¶</a></h2>
+<p>请注意 <code class="docutils literal notranslate"><span class="pre">np.ndenumerate</span></code> 迭代 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的顺序。它首先遍历了 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的页0行0的列，然后它遍历了页0行1的列，如此反复。这个遍历顺序有什么特殊的呢？比如说，为什么它不首先遍历每一列中的行呢？我们也可以发现 <code class="docutils literal notranslate"><span class="pre">reshape</span></code> 函数没有必要遵循什么独特的顺序。不如说，以下的重塑操作完全可以合理地返回两个结果中的任何一个</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">--&gt;</span>  <span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="ow">or</span>   <span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
                                                     <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>             <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Both arrays are of the appropriate shape and preserve the ordering of the original sequence of numbers, depending on how you traverse them. The left array preserves the ordering of the original data if you traverse the columns within a row, and then proceed to the next row. This is known as <strong>row-major</strong> ordering. The array on the right preserves the ordering if you traverse the rows within a given column, and then transition to the next column. This is thus referred to as <strong>column-major</strong>
-ordering. One ordering is not inherently better than the other. That being said, <em>NumPy always defaults to row-major ordering whenever one of its functions involves array traversal</em>.</p>
+<p>这两个返回的数组都有着合理的形状且，根据你遍历它们，都保存了原本数字序列的顺序。左边的数组当你首先遍历每一行中的列，然后再遍历下一行的时候保存了顺序。因此，这个叫做<strong>行优先</strong>顺序。右边的数组当你首先遍历每一列中的行，然后再遍历下一列的时候保存了顺序。因此，这个叫做<strong>列优先</strong>排序。没有说一个排序就一定比另外一个好。虽然如此，<em>NumPy的函数需要遍历数组时永远都会默认使用行优先顺序</em>。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Remember This:</strong></p>
-<p>NumPy utilizes row-major ordering, as a default, for any operation that requires an array to be traversed.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>记住这点</strong>：</p>
+<p>NumPy在任何数组遍历操作时默认使用行优先顺序。</p>
 </div>
-<p>These two orderings are simple enough to follow for a 2D-array, but how do they manifest in arrays with higher dimensions, where we have to worry not only about rows and columns, but potentially “stacks of sheets with rows and columns” (which would be a 4D array) and so on? The generic rules are as follows:</p>
+<p>在处理2维数组时这两个顺序不是很烧脑，但是在处理更高维数组时它们该如何表现呢？我们不仅仅需要担心行和列，而可能会需要处理“几打成员为行列的页”（这会是一个4维数组）这种拗口的情况。基本规则如下：</p>
 <ul class="simple">
-<li><strong>Row-major ordering (C ordering) {NumPy’s default}</strong>: traverse an array by advancing the index of the <em>last axis</em>, first, until the end of that axis is reached, and then advance the index of the second-to last axis, and so on.</li>
-<li><strong>Column-major ordering (F ordering)</strong>: traverse an array by advancing the index of the <em>first axis</em>, first, until the end of that axis is reached, and then advance the index of the second axis, and so on.</li>
+<li><p><strong>行优先顺序（C顺序）{NumPy默认}</strong>：遍历时首先增加<em>最后轴</em>的索引，直到遇到该轴的结尾，然后再增加倒数第二个索引，如此反复。</p></li>
+<li><p><strong>列优先顺序（F顺序）</strong>：遍历时首先增加<em>第一个轴</em>的索引，直到该轴的结尾，然后再增加第二个轴的索引，如此反复。</p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong>:</p>
-<p>“Row-major” ordering is also referred to as “C-ordering” because this is the traversal method utilized in the C language. “Column-major” ordering, on the other hand, is also referred to as “F-ordering”, because it is used by the Fortran language. NumPy functions, like <code class="docutils literal notranslate"><span class="pre">reshape</span></code> allow you to specify either <code class="docutils literal notranslate"><span class="pre">order=&quot;C&quot;</span></code> (which is the default) or <code class="docutils literal notranslate"><span class="pre">order=&quot;F&quot;</span></code> to control the order in which an array is traversed; these options thus correspond to row-major and column-major ordering.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>注</strong>：</p>
+<p>“行优先”排序也称为“C顺序”的原因是因为这也是C语言使用的遍历方法。反之，“列优先”排序也称为“F排序”的原因是这也是Fortran语言使用的遍历方法。像 <code class="docutils literal notranslate"><span class="pre">reshape</span></code> 的NumPy函数允许你选择 <code class="docutils literal notranslate"><span class="pre">order=&quot;C&quot;</span></code>（默认）或 <code class="docutils literal notranslate"><span class="pre">order=&quot;F&quot;</span></code> 来控制数组遍历的顺序；这些选择对应行优先和列优先顺序。</p>
 </div>
-<p>To make this more concrete, let’s consider how NumPy reshapes a shape-(24,) array into a shape-(2,3,4) array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># reshape a shape-(24,) array into a shape-(2,3,4) array</span>
+<p>为了使以上讨论更加实际，让我们考虑NumPy是如何将形状为 (24,) 的数组重塑为形状为 (2,3,4) 的数组：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将形状为 (24,) 的数组重塑为形状为 (2,3,4) 的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
         <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
@@ -297,75 +295,74 @@ ordering. One ordering is not inherently better than the other. That being said,
         <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]]])</span>
 </pre></div>
 </div>
-<p>Following NumPy’s default row-major ordering, we can perform this reshaping by following these steps:</p>
+<p>根据NumPy的默认行优先顺序，我们可以根据以下步骤进行重塑：</p>
 <ol class="arabic simple">
-<li>Create an empty array of the desired shape: (2, 3, 4).</li>
-<li>Start by inserting the 0th element from the input array into the (0, 0, 0) element of the output array.</li>
-<li>Advance the index by <em>increasing the index of the last axis, first</em>, and inserting the following element from the input array.</li>
-<li>If you reach the end of an axis (axis-2, for instance, only has 4 slots), reset the index for that axis to 0, and advance the index of the preceding axis. Go back to 3.</li>
+<li><p>创建一个形状为期望形状的空数组：(2, 3, 4)。</p></li>
+<li><p>首先将输入数组的第0个成员插入到输出数组的 (0, 0, 0) 位置。</p></li>
+<li><p><em>通过首先增加最后轴的索引</em>来进入到下一个位置，并将输入数组的下一个成员插入。</p></li>
+<li><p>如果你遇到了某轴的结尾（比如说，轴2只有4个位置），重置该轴的索引为0，并增加前面一个轴的索引。回到第3步。</p></li>
 </ol>
-<p>This traversal process is easier to understand when laid out explicitly:</p>
+<p>这个遍历过程在一步步看到之后会更好理解：</p>
 <hr class="docutils" />
-<p><strong>Reshaping a shape-(24,) array to a shape-(2,3,4) array, using NumPy’s default “row-major” ordering</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Input Array     Output Array
+<p><strong>使用NumPy默认的“行优先”顺序，将形状为 (24,) 的数组重塑为形状为 (2,3,4) 的数组</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  输入数组          输出数组
 -----------    ---------------
- entry: 0  -&gt;  entry: (0, 0, 0)
- entry: 1  -&gt;  entry: (0, 0, 1)
- entry: 2  -&gt;  entry: (0, 0, 2)
- entry: 3  -&gt;  entry: (0, 0, 3) *row-0 of sheet 0, filled. go to next row*
- entry: 4  -&gt;  entry: (0, 1, 0)
- entry: 5  -&gt;  entry: (0, 1, 1)
- entry: 6  -&gt;  entry: (0, 1, 2)
- entry: 7  -&gt;  entry: (0, 1, 3) *row-1 of sheet 0, filled. go to next row*
- entry: 8  -&gt;  entry: (0, 2, 0)
- entry: 9  -&gt;  entry: (0, 2, 1)
- entry:10  -&gt;  entry: (0, 2, 2)
- entry:11  -&gt;  entry: (0, 2, 3) *row-2 of sheet 0, filled. go to next sheet!*
+  成员: 0    -&gt; 成员: (0, 0, 0)
+  成员: 1    -&gt; 成员: (0, 0, 1)
+  成员: 2    -&gt; 成员: (0, 0, 2)
+  成员: 3    -&gt; 成员: (0, 0, 3) *页0行0填满。进入到下一行*
+  成员: 4    -&gt; 成员: (0, 1, 0)
+  成员: 5    -&gt; 成员: (0, 1, 1)
+  成员: 6    -&gt; 成员: (0, 1, 2)
+  成员: 7    -&gt; 成员: (0, 1, 3) *页1行0填满。进入到下一行*
+  成员: 8    -&gt; 成员: (0, 2, 0)
+  成员: 9    -&gt; 成员: (0, 2, 1)
+  成员:10    -&gt; 成员: (0, 2, 2)
+  成员:11    -&gt; 成员: (0, 2, 3) *页0行2填满。进入到下一页！*
 
- entry:12  -&gt;  entry: (1, 0, 0)
- entry:13  -&gt;  entry: (1, 0, 1)
- entry:14  -&gt;  entry: (1, 0, 2)
- entry:15  -&gt;  entry: (1, 0, 3) *row-0 of sheet 1, filled. go to next row*
- entry:16  -&gt;  entry: (1, 1, 0)
- entry:17  -&gt;  entry: (1, 1, 1)
- entry:18  -&gt;  entry: (1, 1, 2)
- entry:19  -&gt;  entry: (1, 1, 3) *row-1 of sheet 1, filled. go to next row*
- entry:20  -&gt;  entry: (1, 2, 0)
- entry:21  -&gt;  entry: (1, 2, 1)
- entry:22  -&gt;  entry: (1, 2, 2)
- entry:23  -&gt;  entry: (1, 2, 3) *row-2 of sheet 1, filled. Done!*
+  成员:12    -&gt; 成员: (1, 0, 0)
+  成员:13    -&gt; 成员: (1, 0, 1)
+  成员:14    -&gt; 成员: (1, 0, 2)
+  成员:15    -&gt; 成员: (1, 0, 3) *页1行0填满。进入到下一行*
+  成员:16    -&gt; 成员: (1, 1, 0)
+  成员:17    -&gt; 成员: (1, 1, 1)
+  成员:18    -&gt; 成员: (1, 1, 2)
+  成员:19    -&gt; 成员: (1, 1, 3) *页1行1填满。进入到下一行*
+  成员:20    -&gt; 成员: (1, 2, 0)
+  成员:21    -&gt; 成员: (1, 2, 1)
+  成员:22    -&gt; 成员: (1, 2, 2)
+  成员:23    -&gt; 成员: (1, 2, 3) *页1行2填满。完成！*
 </pre></div>
 </div>
 <hr class="docutils" />
-<p>The same process can be extended to reshape one multidimensional array into another multidimensional array of a different shape. The input and output arrays are simply traversed, respectively, according to “row-major” rules. Suppose we want to reshape a shape-(2,3,4) array into a shape-(6,4) array. This process would be carried out as follows:</p>
+<p>同样的过程可以扩展到将单个多维数组重塑成另外一个形状不同的多维数组的情况下。我们只需要使用“行优先”规则来分别遍历输入和输出数组就行了。假设我们想要将一个形状为 (2,3,4) 的数组重塑为形状为 (6,4) 的数组，过程如下：</p>
 <hr class="docutils" />
-<p><strong>Reshaping a shape-(2,3,4) into a shape(6,4) array using NumPy’s default “row-major” ordering</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">Input</span> <span class="n">Array</span>       <span class="n">Output</span> <span class="n">Array</span>
+<p><strong>使用NumPy默认的“行优先”顺序，将形状为 (2,3,4) 的数组重塑为形状为 (6,4) 的数组</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">输入数组</span>             <span class="n">输出数组</span>
 <span class="o">----------------</span>    <span class="o">---------------</span>
-<span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">...</span>
-<span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">entry</span><span class="p">:</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+ <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="o">-&gt;</span>  <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+ <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="o">-&gt;</span>  <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+ <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="o">-&gt;</span>  <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+ <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="o">-&gt;</span>  <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+ <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="o">-&gt;</span>  <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+ <span class="o">...</span>
+ <span class="o">...</span>
+ <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="o">-&gt;</span>  <span class="n">成员</span><span class="p">:</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Although this bookkeeping may seem a bit tedious at first glance, you will likely find that you are able to build up enough intuition for row-major ordering, to the point where you never need to write out these tables in full! The ability to reshape an array to adjust the way you can access an array’s data is commonly used in data science applications. Furthermore, understanding how NumPy handles array traversal is critical to understanding more advanced concepts like array-broadcasting and
-advanced indexing.</p>
+<p>虽然这样的记录可能第一眼看起来很麻烦，但是你很可能将会发现自己对行优先排序有了足够的直观理解来永远不需要像上面这样写整个表格！重塑数组形状来修改你访问数组数据的能力在数据科学应用中非常常用。同时，理解NumPy如何处理数组遍历是理解类似于数组广播（array broadcasting）和进阶索引（advanced indexing）必不可缺的奠基石。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reshape is its own inverse</strong>:</p>
-<p>According to this discussion, <code class="docutils literal notranslate"><span class="pre">reshape</span></code> can effectively “undo” itself: <code class="docutils literal notranslate"><span class="pre">np.arange(10).reshape(5,2).reshape(10)</span></code> will return <code class="docutils literal notranslate"><span class="pre">array([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9])</span></code>. Take some time to consider why this will always be true, no matter how many intermediary reshapes are performed.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>reshape是它自己的逆操作</strong>：</p>
+<p>根据以上的讨论，<code class="docutils literal notranslate"><span class="pre">reshape</span></code> 完全可以“逆反”它自己的作用：<code class="docutils literal notranslate"><span class="pre">np.arange(10).reshape(5,2).reshape(10)</span></code> 将会返回 <code class="docutils literal notranslate"><span class="pre">array([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9])</span></code>。花些时间来理解为什么这一点永远成立，不论中间有着多少步重塑。</p>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/glossary.html#term-row-major">Definition of row major ordering</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/glossary.html#term-column-major">Definition of column major ordering</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.indexing.html#iterating-over-arrays">Routines for iterating over arrays</a></li>
-<li><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.nditer.html#iterating-over-arrays">Detailed description of array iteration</a></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/glossary.html#term-row-major">行优先顺序的定义</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/glossary.html#term-column-major">列优先顺序的定义</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.indexing.html#iterating-over-arrays">迭代数组常规</a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.nditer.html#iterating-over-arrays">数组迭代的细致描述</a></p></li>
 </ul>
 </div>
 </div>
@@ -378,10 +375,10 @@ advanced indexing.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="VectorizedOperations.html" class="btn btn-neutral float-right" title="“Vectorized” Operations: Optimized Computations on NumPy Arrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="VectorizedOperations.html" class="btn btn-neutral float-right" title="“矢量化”操作：对NumPy数组进行优化过的计算" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="FunctionsForCreatingNumpyArrays.html" class="btn btn-neutral float-left" title="Functions for Creating NumPy Arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="FunctionsForCreatingNumpyArrays.html" class="btn btn-neutral float-left" title="创建NumPy数组的函数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Class instances versus objects, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Instances of a Class &mdash; Python Like You Mean It</title>
+  <title>类实例 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="A Brief Summary of Terms and Concepts" href="Brief_Review.html" />
-    <link rel="prev" title="Defining a New Class of Object" href="ClassDefinition.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="术语和概念的快速总结" href="Brief_Review.html" />
+    <link rel="prev" title="定义新对象类" href="ClassDefinition.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,28 +95,28 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">Introduction to Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">Defining a New Class of Object</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Instances of a Class</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Object-Identity-and-Creating-an-Instance">Object Identity and Creating an Instance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Defining-Instance-Level-Attributes:-the-__init__-Method">Defining Instance-Level Attributes: the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> Method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">面向对象编程简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">定义新对象类</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">类实例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#对象身份和创建实例">对象身份和创建实例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#定义实例级别的属性：__init__-方法">定义实例级别的属性：<code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">A Brief Summary of Terms and Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">Applications of Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">Special Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">术语和概念的快速总结</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Methods.html">方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">面向对象编程的应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">特殊方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">继承</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -161,9 +162,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_4.html">Module 4: Object Oriented Programming</a> &raquo;</li>
+          <li><a href="../module_4.html">模组4：面向对象编程</a> &raquo;</li>
         
-      <li>Instances of a Class</li>
+      <li>类实例</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,19 +207,19 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Instances-of-a-Class">
-<h1>Instances of a Class<a class="headerlink" href="#Instances-of-a-Class" title="Permalink to this headline">¶</a></h1>
-<p>Thus far we have learned about the syntax for defining a new class of object, specifying its name, attributes, and methods (which are attributes that are functions). Once we leave the scope of the class definition, a class object is formed - the resulting <em>class object</em> is the singular object that encapsulates our class definition. We seldom will want to pass around or manipulate this class object once it is created. Rather, we will want to use it to create individual <em>instances</em> of that class.
-To be more concrete, <code class="docutils literal notranslate"><span class="pre">list</span></code> is a class object (remember that “class” and “type” are synonymous) - it is the same sort of object that is produced when a <code class="docutils literal notranslate"><span class="pre">class</span></code> definition is executed. As you saw in <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists">Module 2</a>, we can use this class object to create individual <em>instances</em> of the list class, each one containing its own sequence of items.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using the class object `list` to create list-instances</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">()</span>  <span class="c1"># create a `list`-instance that is empty</span>
+<div class="section" id="类实例">
+<h1>类实例<a class="headerlink" href="#类实例" title="永久链接至标题">¶</a></h1>
+<p>到现在为止，我们学习了定义新对象类，提供其名字，属性，和方法（也就是函数属性）的语法。当我们离开类定义的作用域外，一个类对象将被创建——定义创建的<em>类对象</em>（class object）是单个包装我们类定义的对象。我们很少会想要在类对象创建后将其作为参数输入或操作它。反而，我们将想要使用它来创建该类的一个个<em>实例</em>（instance）。具体来讲，<code class="docutils literal notranslate"><span class="pre">list</span></code> 是一个类对象（请记住，“类”和“类型”是一个意思）——它和 <code class="docutils literal notranslate"><span class="pre">class</span></code>
+定义执行后创建的对象是同一种类的。就如你在<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists">模组2</a>中看到的一样，我们可以使用这个类对象来创建列表类单独的<em>实例</em>，而每个实例有着属于自己的对象序列。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用类对象 `list` 来创建列表实例</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">()</span>  <span class="c1"># 创建一个空的 `list` 实例</span>
 <span class="p">[]</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># create a `list`-instance containing 1, 2, and 3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># 创建一个包括1，2，和3的 `list` 实例</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="c1"># `a` and `b` are distinct instances of the list class/type</span>
-<span class="c1"># even though they contain the same sequence of integers</span>
+<span class="c1"># `a` 和 `b` 是两个不同的列表类/类型实例，虽然它们储存着相同的</span>
+<span class="c1"># 整数序列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
@@ -230,8 +231,7 @@ To be more concrete, <code class="docutils literal notranslate"><span class="pre
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
 <span class="bp">True</span>
 
-<span class="c1"># Calling the append method on `a` only affects that particular</span>
-<span class="c1"># list-instance.</span>
+<span class="c1"># 对 `a` 调用append方法只会影响该列表实例。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -240,9 +240,8 @@ To be more concrete, <code class="docutils literal notranslate"><span class="pre
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Each of these instances share the common attributes <code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">reverse</span></code>, and so on, as specified in the definition of Python’s list class, which is encapsulated by the <code class="docutils literal notranslate"><span class="pre">list</span></code> class object. That being said, the specific content of any given list is an attribute of that particular list instance; that is, the content of a particular list is an <em>instance attribute</em> rather than a class attribute. Thus far, we do not have the ability to create instance-level attributes. Let’s change
-that.</p>
-<p>Suppose that we want to make our own <code class="docutils literal notranslate"><span class="pre">Person</span></code> class. Each person should have her/his own name, thus the name should be an instance-level attribute. We will learn to define a special initialization method that allows us to define and set instance-level attributes. In the context of <code class="docutils literal notranslate"><span class="pre">Person</span></code>, this will allow us to give each person their own name:</p>
+<p>以上每一个实例都共享着属性 <code class="docutils literal notranslate"><span class="pre">append</span></code>，<code class="docutils literal notranslate"><span class="pre">count</span></code>，<code class="docutils literal notranslate"><span class="pre">reverse</span></code>，等等，如被 <code class="docutils literal notranslate"><span class="pre">list</span></code> 类对象包装的列表类定义描述得一般。虽然如此，每个列表的内容是一个属于该列表实例的属性；也就是说，列表的成员是一个<em>实例属性</em>（instance attribute）而不是一个类属性（class attribute）。到现在为止，我们还没有办法创建实例级别的属性。让我们改变这一事实。</p>
+<p>假设我们想要创建自己的 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 类。每个人都应该有着自己的名字，所以名字应该是实例属性。我们将学习如何定义一个特殊的初始化方法来允许我们定义并设置实例属性。在 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 的情况下，这将允许我们为每一个人提供自己的名字：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
 <span class="gp">... </span>   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="gp">... </span>       <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -260,34 +259,33 @@ that.</p>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>We will learn about the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method and that peculiar <code class="docutils literal notranslate"><span class="pre">self</span></code> argument momentarily. First, we will learn about creating an instance object from a class object.</p>
-<div class="section" id="Object-Identity-and-Creating-an-Instance">
-<h2>Object Identity and Creating an Instance<a class="headerlink" href="#Object-Identity-and-Creating-an-Instance" title="Permalink to this headline">¶</a></h2>
-<p>Here we will learn the basic mechanism for creating an instance of a class. Consider the following trivial class definition:</p>
+<p>我们接下来会马上学习 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法和奇怪的 <code class="docutils literal notranslate"><span class="pre">self</span></code> 参数。首先，我们将学习如何使用类对象来创建实例对象。</p>
+<div class="section" id="对象身份和创建实例">
+<h2>对象身份和创建实例<a class="headerlink" href="#对象身份和创建实例" title="永久链接至标题">¶</a></h2>
+<p>我们将在这里学习创建对象实例的基本方法。设以下简单的类定义：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dummy</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>We can use the “call” syntax on <code class="docutils literal notranslate"><span class="pre">Dummy</span></code>, <code class="docutils literal notranslate"><span class="pre">Dummy()</span></code>, to create individual instances of this class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an object that is an instance of our Dummy class</span>
+<p>我们可以对 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 使用“调用”语法 <code class="docutils literal notranslate"><span class="pre">Dummy()</span></code> 来创建该类的单独实例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个为 Dummy 类实例的对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">()</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">Dummy</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>Recall that the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator checks to see if two items reference the exact same object in your computer’s memory. Also recall that the built-in <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> function checks to see if an object is an instance of a class/type. These will help us understand the relationship between class objects, their instances, and references to objects.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `Dummy` is the class object that encapsulates</span>
-<span class="c1"># our class definition</span>
+<p>请回忆，<code class="docutils literal notranslate"><span class="pre">is</span></code> 操作符检查两个变量是否引用了电脑内存中一样的对象。同时，请回忆，内置的 <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> 函数会检查一个对象是否是某一类/类型的实例。这些函数将帮助我们理解类对象，类实例，和对象引用之间的关系。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `Dummy` 是一个包含我们类定义的类对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Dummy</span>
 <span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span>
 
-<span class="c1"># `d1` is an object that is an instance of our Dummy class.</span>
-<span class="c1"># this instance resides at some memory address (0x2ae8f68f2e8)</span>
+<span class="c1"># `d1` 是我们 Dummy 类的一个实例。</span>
+<span class="c1"># 这个实例存在于某内存地址中（0x2ae8f68f2e8）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span>
 <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x2ae8f68f2e8</span><span class="o">&gt;</span>
 
-<span class="c1"># d1 is not Dummy; it is an instance of Dummy</span>
+<span class="c1"># d1 不是 Dummy；它是 Dummy 的一个实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="ow">is</span> <span class="n">Dummy</span>
 <span class="bp">False</span>
 
@@ -295,57 +293,57 @@ that.</p>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>See that <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> is to <code class="docutils literal notranslate"><span class="pre">d1</span></code> as <code class="docutils literal notranslate"><span class="pre">list</span></code> is to <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">4,</span> <span class="pre">&quot;a&quot;]</span></code></p>
-<p>Let’s create another instance of <code class="docutils literal notranslate"><span class="pre">Dummy</span></code>. It is important to understand that this new instance is <em>distinct</em> from the one that we already created.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `d2` is a new instance of our Dummy class.</span>
-<span class="c1"># It resides at a distinct memory address (0x2ae8f666f60)</span>
+<p>请注意，<code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 和 <code class="docutils literal notranslate"><span class="pre">d1</span></code> 的关系就像 <code class="docutils literal notranslate"><span class="pre">list</span></code> 和 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">4,</span> <span class="pre">&quot;a&quot;]</span></code> 的关系一样。</p>
+<p>让我们创建另外一额 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 的实例。理解这个新实例和之前创建的实例是<em>不同的</em>很重要。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `d2` 是我们 Dummy 类的一个新实例。</span>
+<span class="c1"># 它存在于某内存地址中（0x2ae8f666f60）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span>
 <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x2ae8f666f60</span><span class="o">&gt;</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="ow">is</span> <span class="n">d1</span>  <span class="c1"># `d2` and `d1` are distinct instances of `Dummy`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="ow">is</span> <span class="n">d1</span>  <span class="c1"># `d2` 和 `d1` 是 `Dummy` 的不同实例</span>
 <span class="bp">False</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="n">Dummy</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>Python’s <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html">rules for referencing objects with variables</a> still apply here: assigning an object to a variable, be it a class object or an instance, does not create a distinct copy of that object. The variable merely references that object, serving only as an alias for it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `A` references `Dummy`</span>
+<p>Python的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html">变量引用对象的规则</a>在此依然成立：向某个变量赋值一个对象，不管是类对象还是其实例，都不会创建该对象的复制品。这个变量仅仅会引用该对象并作为它的一个代名词。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `A` 引用 `Dummy`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">Dummy</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="ow">is</span> <span class="n">Dummy</span>
 <span class="bp">True</span>
 
-<span class="c1"># creates an instance of `Dummy`, using `A`</span>
+<span class="c1"># 使用 `A` 来创建 `Dummy` 的实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dummy_instance</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dummy_instance</span>
 <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x2ae8f65fcf8</span><span class="o">&gt;</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dummy_instance</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>  <span class="c1"># equivalent to `isinstance(dummy_instance, Dummy)`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dummy_instance</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>  <span class="c1"># 等值于：`isinstance(dummy_instance, Dummy)`</span>
 <span class="bp">True</span>
 
-<span class="c1"># `var` references the Dummy-instance `dummy_instance`</span>
+<span class="c1"># `var` 引用 Dummy 的实例 `dummy_instance`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">var</span> <span class="o">=</span> <span class="n">dummy_instance</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">var</span> <span class="ow">is</span> <span class="n">dummy_instance</span>
 <span class="bp">True</span>
 
-<span class="c1"># setting a new value to `var.x` is equivalent to</span>
-<span class="c1"># setting that value to `dummy_instance.x`</span>
+<span class="c1"># 向 `var.x` 设置一个新值等值于向 `dummy_instance.x`</span>
+<span class="c1"># 设置一个新值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">var</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">22</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dummy_instance</span><span class="o">.</span><span class="n">x</span>
 <span class="mi">22</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Class Initialization</strong></p>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> class defined above, create a list consisting of 10 <em>distinct</em> instances of this type. Write code to explicitly verify that each entry is distinct from the other, and that each entry is an instance of the <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> class.</p>
-<p>Then, create a tuple that contains a <em>single</em> instance of <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> stored ten times. Write code to explicitly verify that the entries all reference the exact same object, and that each entry is an instance of the <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> class.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：类初始化</strong></p>
+<p>使用以上定义的 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 类，创建一个包含10个这一类的<em>不同</em>实例的列表。编写代码来显式检查每一个成员互不相同，以及每个成员都是 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 类的实例。</p>
+<p>然后，创建一个包含<em>一个</em> <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 实例被分别储存10次的元组。编写代码来显式检查每一个成员都引用相同的对象，以及每个成员都是 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 类的实例。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Terminology</strong></p>
-<p>Given:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：术语</strong></p>
+<p>设：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">pass</span>
 
@@ -356,62 +354,59 @@ that.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y1</span> <span class="o">=</span> <span class="n">y</span>
 </pre></div>
 </div>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> share?</p>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> share?</p>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> share?</p>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">x2</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> share?</p>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">y1</span></code> share?</p>
-<p>Next, identify each of the following objects as a class object or an instance (and if instance, an instance of what)</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 共享着什么关系？</p>
+<p><code class="docutils literal notranslate"><span class="pre">y</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 共享着什么关系？</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 共享着什么关系？</p>
+<p><code class="docutils literal notranslate"><span class="pre">x2</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 共享着什么关系？</p>
+<p><code class="docutils literal notranslate"><span class="pre">y</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y1</span></code> 共享着什么关系？</p>
+<p>接下来，指出以下每个对象是类对象还是类实例（如果是实例，是哪个类的实例）？</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">True</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">int</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">{&quot;a&quot;</span> <span class="pre">:</span> <span class="pre">22}</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">tuple</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{&quot;a&quot;</span> <span class="pre">:</span> <span class="pre">22}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></li>
 </ul>
 </div>
-<p>Now that we know the basics of how to create an instance of a class, understand the relationship between class objects and instances, and understand the distinction between instances that are independent from one another, we can move on to learning about creating instance-level attributes for our class.</p>
+<p>在学习了如何创建类实例，理解类对象和实例的关系，并理解了不同实例之间的区别后，我们可以学习如何为我们的类创建实例级别的属性了。</p>
 </div>
-<div class="section" id="Defining-Instance-Level-Attributes:-the-__init__-Method">
-<h2>Defining Instance-Level Attributes: the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> Method<a class="headerlink" href="#Defining-Instance-Level-Attributes:-the-__init__-Method" title="Permalink to this headline">¶</a></h2>
-<p>As demonstrated in the <code class="docutils literal notranslate"><span class="pre">Person</span></code> class that we defined earlier in this section, and the <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> class that we defined in this module’s introduction section, there is a special method, <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, that allows us to define instance-level attributes for our class. This is a critically-important method, which we will leverage often. Note that the name of this is: “underscore-underscore-init-underscore-underscore”, which can be pronounced as “dunder-init” (where “dunder” stands for
-double-underscore).</p>
-<p>Consider the slightly-modified definition of <code class="docutils literal notranslate"><span class="pre">Person</span></code>, which also includes the class-attribute <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="section" id="定义实例级别的属性：__init__-方法">
+<h2>定义实例级别的属性：<code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法<a class="headerlink" href="#定义实例级别的属性：__init__-方法" title="永久链接至标题">¶</a></h2>
+<p>就像这一节之前用 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 类和本模组简介节定义的 <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> 类演示的一样，Python提供了一个特殊方法 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 来允许我们定义类的实例级别的属性。这是一个极其重要的，我们会经常使用的方法。请注意这个方法的名字是：“下划线-下划线-init-下划线-下划线”，而你可以将其读作“dunder-init”（“dunder”代表着“double-underscore”）。</p>
+<p>设以下稍微修改过的 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 定义，其同时包含了类属性 <code class="docutils literal notranslate"><span class="pre">x</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># this sets a class-level attribute, common to all instances of `Person`</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 这设置了一个类级别的属性，通用于所有 `Person` 实例</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; This method is executed every time we create a new `Person` instance.</span>
-<span class="sd">            `self` is the object instance being created.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>   <span class="c1"># set the attribute `name` to the Person-instance `self`</span>
+        <span class="sd">&quot;&quot;&quot; 本方法在每次创建一个新 `Person` 实例时将被执行。</span>
+<span class="sd">            `self` 指向被创建的对象实例。&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>   <span class="c1"># 为 Person 实例 `self` 设置属性 `name`</span>
 
-        <span class="c1"># __init__ cannot not return any value other than `None`. Its sole purpose is to affect</span>
-        <span class="c1"># `self`, the instance of `Person` that is being created.</span>
+        <span class="c1"># __init__ 不能反悔任何除了 `None` 以外的对象。它的唯一目的是修改</span>
+        <span class="c1"># `self`，也就是被创建的 `Person` 实例。</span>
 </pre></div>
 </div>
-<p>Invoking <code class="docutils literal notranslate"><span class="pre">Person()</span></code> actually calls <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> “under the hood”, and any argument that we feed to <code class="docutils literal notranslate"><span class="pre">Person()</span></code> gets passed to <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. Looking at our definition of <code class="docutils literal notranslate"><span class="pre">__init__</span></code> it looks like we must pass two values to this method: <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code>. This first argument, <code class="docutils literal notranslate"><span class="pre">self</span></code>, actually represents the object instance of <code class="docutils literal notranslate"><span class="pre">Person</span></code> that is being created. Python will pass the appropriate object for <code class="docutils literal notranslate"><span class="pre">self</span></code> to <code class="docutils literal notranslate"><span class="pre">__init__</span></code> automatically, thus we need only worry about passing a
-value for <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<p>Let’s make an instance of our <code class="docutils literal notranslate"><span class="pre">Person</span></code> class, passing the string <code class="docutils literal notranslate"><span class="pre">&quot;Kamasi&quot;</span></code> as the name:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creates the instance `self`,  passes it</span>
-<span class="c1"># and `&quot;Kamasi&quot;` to `Person.__init__`, and then</span>
-<span class="c1"># returns the instance-object that was created</span>
+<p>调用 <code class="docutils literal notranslate"><span class="pre">Person()</span></code> 其实在“幕后”调用 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>，且任何输入到 <code class="docutils literal notranslate"><span class="pre">Person()</span></code> 中的参数会被送到 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 中。乍一眼看 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 的定义，我们好像需要向这个方法输入两个参数：<code class="docutils literal notranslate"><span class="pre">self</span></code> 和 <code class="docutils literal notranslate"><span class="pre">name</span></code>。第一个参数 <code class="docutils literal notranslate"><span class="pre">self</span></code> 其实代表着正在被创建的 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 对象实例。Python会自动向 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 的 <code class="docutils literal notranslate"><span class="pre">self</span></code> 输入相应对象，所以我们只需要担心向其输入 <code class="docutils literal notranslate"><span class="pre">name</span></code> 的值。</p>
+<p>让我们创建 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 类的一个实例，并使用字符串 <code class="docutils literal notranslate"><span class="pre">&quot;Kamasi&quot;</span></code> 来作为名字：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建实例 `self`，将其和 `&quot;Kamasi&quot;` 输入到 `Person.__init__` 中，</span>
+<span class="c1"># 然后返回被创建的实例对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Kamasi&quot;</span><span class="p">)</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span>  <span class="c1"># access the instance-attribute `name`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span>  <span class="c1"># 访问实例属性 `name`</span>
 <span class="s1">&#39;Kamasi&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">x</span>     <span class="c1"># access the class-attribute `x`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">x</span>     <span class="c1"># 访问类属性 `x`</span>
 <span class="mi">1</span>
 </pre></div>
 </div>
-<p>Here is what is going on “under the hood” when we create this instance of <code class="docutils literal notranslate"><span class="pre">Person</span></code> (<strong>this is very important</strong>):</p>
+<p>当我们创建 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 的一个实例时，以下是“幕后”发生的事情（<strong>这很重要</strong>）：</p>
 <ul class="simple">
-<li>Invoking <code class="docutils literal notranslate"><span class="pre">Person(&quot;Kamasi&quot;)</span></code> first creates an instance of <code class="docutils literal notranslate"><span class="pre">Person</span></code> as if there was no <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method specified. The resulting object does not yet have a <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute. It only has the class-level attribute <code class="docutils literal notranslate"><span class="pre">x</span></code>.</li>
-<li>Next, that instance of <code class="docutils literal notranslate"><span class="pre">Person</span></code> is passed to <code class="docutils literal notranslate"><span class="pre">__init__</span></code> as the argument <code class="docutils literal notranslate"><span class="pre">self</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Kamasi&quot;</span></code>, which we provided explicitly, is passed as the argument <code class="docutils literal notranslate"><span class="pre">name</span></code>.</li>
-<li>With these arguments, <code class="docutils literal notranslate"><span class="pre">Person.__init__(self,</span> <span class="pre">&quot;Kamasi&quot;)</span></code> executes its body of instructions. Specifically, <code class="docutils literal notranslate"><span class="pre">self.name</span> <span class="pre">=</span> <span class="pre">name</span></code> sets the attribute <code class="docutils literal notranslate"><span class="pre">name</span></code> on <code class="docutils literal notranslate"><span class="pre">self</span></code>, using the value <code class="docutils literal notranslate"><span class="pre">&quot;Kamasi&quot;</span></code>.</li>
-<li>Having finished executing the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method, <code class="docutils literal notranslate"><span class="pre">Person(&quot;Kamasi&quot;)</span></code> resolves by returning the instance-object that was created.</li>
+<li><p>调用 <code class="docutils literal notranslate"><span class="pre">Person(&quot;Kamasi&quot;)</span></code> 首先会假装 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法不存在一样创建 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 的一个实例。返回的对象在这时并没有 <code class="docutils literal notranslate"><span class="pre">name</span></code> 属性。它只拥有类级别的属性 <code class="docutils literal notranslate"><span class="pre">x</span></code>。</p></li>
+<li><p>然后，<code class="docutils literal notranslate"><span class="pre">Person</span></code> 的那个实例会作为参数 <code class="docutils literal notranslate"><span class="pre">self</span></code> 被输入到 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 中，而我们显式提供的 <code class="docutils literal notranslate"><span class="pre">&quot;Kamasi&quot;</span></code> 将会作为参数 <code class="docutils literal notranslate"><span class="pre">name</span></code> 被输入。</p></li>
+<li><p>有了这些参数后，<code class="docutils literal notranslate"><span class="pre">Person.__init__(self,</span> <span class="pre">&quot;Kamasi&quot;)</span></code> 将会执行它的主体代码。具体来讲，<code class="docutils literal notranslate"><span class="pre">self.name</span> <span class="pre">=</span> <span class="pre">name</span></code> 将使用值 <code class="docutils literal notranslate"><span class="pre">&quot;Kamasi&quot;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">self</span></code> 设置属性。</p></li>
+<li><p>在执行完 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法后，<code class="docutils literal notranslate"><span class="pre">Person(&quot;Kamasi&quot;)</span></code> 会返回被创建的实例对象。</p></li>
 </ul>
-<p>We now have the ability to define and set attributes on an instance-level! Understanding this process is critical to mastering object oriented programming in Python. Let’s create several <code class="docutils literal notranslate"><span class="pre">Person</span></code>-instances, all stored in a list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating several instances of `Person`</span>
+<p>我们现在有了在实例级别上定义和设置属性的能力！理解这个过程对掌握Python的面向对象编程至关重要。让我们创建多个 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 实例并将它们存储在一个列表中：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建多个 `Person` 的实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">list_of_people</span> <span class="o">=</span> <span class="p">[</span><span class="n">Person</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;Fermi&quot;</span><span class="p">,</span> <span class="s2">&quot;Noether&quot;</span><span class="p">,</span> <span class="s2">&quot;Euler&quot;</span><span class="p">)]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">list_of_people</span><span class="p">:</span>
@@ -425,11 +420,11 @@ value for <code class="docutils literal notranslate"><span class="pre">name</spa
 <span class="mi">1</span>
 </pre></div>
 </div>
-<p>Updating the class-level attribute <code class="docutils literal notranslate"><span class="pre">x</span></code> of <code class="docutils literal notranslate"><span class="pre">Person</span></code> affects all instances of <code class="docutils literal notranslate"><span class="pre">Person</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># setting a new value to the class-attribute `x`</span>
+<p>更新 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 的类级别的属性 <code class="docutils literal notranslate"><span class="pre">x</span></code> 会影响所有 <code class="docutils literal notranslate"><span class="pre">Person</span></code> 的实例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 为类属性 `x` 设置一个新值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Person</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">22</span>
 
-<span class="c1"># this affects all instances of `Person`</span>
+<span class="c1"># 这会影响 `Person` 的所有实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">list_of_people</span><span class="p">:</span>
 <span class="o">...</span>    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="o">...</span>    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
@@ -442,9 +437,9 @@ value for <code class="docutils literal notranslate"><span class="pre">name</spa
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Instance Attributes</strong></p>
-<p>Define a class, <code class="docutils literal notranslate"><span class="pre">Tmp</span></code>, that has three instance attributes: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code>. <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> should be numbers that are set according to values passed to the instance creation, and <code class="docutils literal notranslate"><span class="pre">z</span></code> should be the product of these two values.</p>
-<p>For example:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：实例属性</strong></p>
+<p>定义类 <code class="docutils literal notranslate"><span class="pre">Tmp</span></code>，其有着三个实例属性：<code class="docutils literal notranslate"><span class="pre">x</span></code>，<code class="docutils literal notranslate"><span class="pre">y</span></code>，和 <code class="docutils literal notranslate"><span class="pre">z</span></code>。<code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 应为根据在实例创建时输入的值设定的数字，而 <code class="docutils literal notranslate"><span class="pre">z</span></code> 应为这两个值的乘积。</p>
+<p>比如说：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmp</span> <span class="o">=</span> <span class="n">Tmp</span><span class="p">(</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tmp</span><span class="o">.</span><span class="n">x</span>
 <span class="go">2.1</span>
@@ -457,17 +452,16 @@ value for <code class="docutils literal notranslate"><span class="pre">name</spa
 </pre></div>
 </div>
 </div>
-<p>You should now have a grasp of how the special <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method can be used to define and set instance-level attributes for your classes. Furthermore, the basic process by which invoking class instantiation produces an instance object which then automatically gets passed to <code class="docutils literal notranslate"><span class="pre">__init__</span></code> as the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument, should be salient. In the following section, we will encounter three varieties of methods: instance methods, class methods, and static methods. Additionally, we will encounter even
-more so-called “special methods”, similar to <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, which can be used to more broadly specify how your class behaves and interacts with Python’s operators.</p>
+<p>现在，你应该对特殊的 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法能如何用来为你的类定义和设置实例级别的属性有一定的了解了。同时，调用类实例化会如何创建实例对象并将其作为 <code class="docutils literal notranslate"><span class="pre">self</span></code> 参数自动输入到 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 的过程也应该很明显易懂。在接下来的一节，我们将会遇到三种不同的方法：实例方法，类方法，和静态（static）方法。我们还会遭遇类似于 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 的所谓“特殊方法”（special method）；我们可以使用它们来更加广泛地描述你的类的行为和它如何和Python的操作符交互。</p>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Solution: Class Initialization</strong></p>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> class defined above, create a list consisting of 10 <em>distinct</em> instances of this type</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will call `Dummy()` once for each iteration</span>
+<div class="section" id="阅读理解答案：">
+<h2>阅读理解答案：<a class="headerlink" href="#阅读理解答案：" title="永久链接至标题">¶</a></h2>
+<p><strong>解：类初始化</strong></p>
+<p>使用以上定义的 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 类，创建一个包含10个这一类的<em>不同</em>实例的列表。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 会在每次迭代中调用 `Dummy()` 一次</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">list_of_dummies</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dummy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 
-<span class="c1"># note the distinct memory addresses</span>
+<span class="c1"># 请注意以下不相同的内存地址</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">list_of_dummies</span>
 <span class="p">[</span><span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x1d50de89940</span><span class="o">&gt;</span><span class="p">,</span>
  <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x1d50de896d8</span><span class="o">&gt;</span><span class="p">,</span>
@@ -481,10 +475,10 @@ more so-called “special methods”, similar to <code class="docutils literal n
  <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x1d50de89b38</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Write code to explicitly verify that each entry is distinct from the other, and that each entry is an instance of the <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> class.</p>
+<p>编写代码来显式检查每一个成员互不相同，以及每个成员都是 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 类的实例。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
-<span class="go"># `combinations(list_of_dummies, 2)` loops over all pairs of entries</span>
-<span class="go"># in `list_of_dummies`</span>
+<span class="go"># `combinations(list_of_dummies, 2)` 会循环 `list_of_dummies` 中所有</span>
+<span class="go"># 成员对</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">all</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="n">list_of_dummies</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="go">True</span>
 
@@ -492,11 +486,11 @@ more so-called “special methods”, similar to <code class="docutils literal n
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Create a tuple contains a <em>single</em> instance of <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> ten times. Note here that we initialize <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> once, and that the tuple-comprehension merely populates the tuple with that same instance ten times.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dummy</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">()</span>  <span class="c1"># a single instance of `Dummy`</span>
+<p>创建一个包含<em>一个</em> <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 实例被分别储存10次的元组。请注意在这里，我们仅仅初始化了 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 一次，而元组理解语句仅仅向元组中输入了10次相同的实例。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dummy</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">()</span>  <span class="c1"># 一个 `Dummy` 实例</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_dummy</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">dummy</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 
-<span class="go"># note that the memory addresses are identical</span>
+<span class="go"># 请注意所有的内存地址都是相同的</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_dummy</span>
 <span class="go">(&lt;__main__.Dummy at 0x1d50de887b8&gt;,</span>
 <span class="go"> &lt;__main__.Dummy at 0x1d50de887b8&gt;,</span>
@@ -510,7 +504,7 @@ more so-called “special methods”, similar to <code class="docutils literal n
 <span class="go"> &lt;__main__.Dummy at 0x1d50de887b8&gt;)</span>
 </pre></div>
 </div>
-<p>Write code to explicitly verify that the entries all reference the exact same object, and that each entry is an instance of the <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> class.</p>
+<p>编写代码来显式检查每一个成员都引用相同的对象，以及每个成员都是 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 类的实例。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">all</span><span class="p">(</span><span class="n">dummy</span> <span class="ow">is</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tuple_of_dummy</span><span class="p">)</span>
 <span class="go">True</span>
 
@@ -518,8 +512,8 @@ more so-called “special methods”, similar to <code class="docutils literal n
 <span class="go">True</span>
 </pre></div>
 </div>
-<p><strong>Reading Comprehension: Terminology</strong></p>
-<p>Given:</p>
+<p><strong>解：术语</strong></p>
+<p>设：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">pass</span>
 
@@ -530,21 +524,21 @@ more so-called “special methods”, similar to <code class="docutils literal n
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y1</span> <span class="o">=</span> <span class="n">y</span>
 </pre></div>
 </div>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> share?: <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> reference the same class object.</p>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> share?: <code class="docutils literal notranslate"><span class="pre">y</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class.</p>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> share?: <code class="docutils literal notranslate"><span class="pre">x</span></code> references <code class="docutils literal notranslate"><span class="pre">Cat</span></code>, and <code class="docutils literal notranslate"><span class="pre">y</span></code> is an instance of <code class="docutils literal notranslate"><span class="pre">Cat</span></code>. Thus <code class="docutils literal notranslate"><span class="pre">y</span></code> is an instance of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">x2</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> share?: They are independent instances of <code class="docutils literal notranslate"><span class="pre">Cat</span></code></p>
-<p>What relationship do <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">y1</span></code> share?: They reference the same instance of <code class="docutils literal notranslate"><span class="pre">Cat</span></code>.</p>
-<p>Identify each of the following objects as a class object or an instance (and if so, an instance of what)</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 共享着什么关系？：<code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 引用相同的类对象。</p>
+<p><code class="docutils literal notranslate"><span class="pre">y</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 共享着什么关系？：<code class="docutils literal notranslate"><span class="pre">y</span></code> 是 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 类的一个实例。</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 共享着什么关系？：<code class="docutils literal notranslate"><span class="pre">x</span></code> 引用 <code class="docutils literal notranslate"><span class="pre">Cat</span></code>，而 <code class="docutils literal notranslate"><span class="pre">y</span></code> 是 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 的一个实例。因此，<code class="docutils literal notranslate"><span class="pre">y</span></code> 是 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的一个实例。</p>
+<p><code class="docutils literal notranslate"><span class="pre">x2</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 共享着什么关系？：它们是 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 的不同实例。</p>
+<p><code class="docutils literal notranslate"><span class="pre">y</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y1</span></code> 共享着什么关系？：它们引用相同的 <code class="docutils literal notranslate"><span class="pre">Cat</span></code> 实例。</p>
+<p>接下来，指出以下每个对象是类对象还是类实例（如果是实例，是哪个类的实例）？</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;</span></code>: An instance of the <code class="docutils literal notranslate"><span class="pre">str</span></code> type (a.k.a class)</li>
-<li><code class="docutils literal notranslate"><span class="pre">True</span></code>: an instance of the <code class="docutils literal notranslate"><span class="pre">bool</span></code> type</li>
-<li><code class="docutils literal notranslate"><span class="pre">int</span></code>: a class object describing integers</li>
-<li><code class="docutils literal notranslate"><span class="pre">{&quot;a&quot;</span> <span class="pre">:</span> <span class="pre">22}</span></code>: an instance of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> type</li>
-<li><code class="docutils literal notranslate"><span class="pre">tuple</span></code>: a class object describing tuples</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;</span></code>： <code class="docutils literal notranslate"><span class="pre">str</span></code> 类型（也就是类）的一个实例</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>：<code class="docutils literal notranslate"><span class="pre">bool</span></code> 类型的一个实例</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>：一个描述整数的类对象</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{&quot;a&quot;</span> <span class="pre">:</span> <span class="pre">22}</span></code>：<code class="docutils literal notranslate"><span class="pre">dict</span></code> 类型的一个实例</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>：一个描述元组的类对象</p></li>
 </ul>
-<p><strong>Reading Comprehension: Instance Attributes</strong></p>
-<p>Define a class, <code class="docutils literal notranslate"><span class="pre">Tmp</span></code>, that has three instance attributes: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code>. <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> should be numbers that are set according to values passed to the instance creation, and <code class="docutils literal notranslate"><span class="pre">z</span></code> should be the product of these two values.</p>
+<p><strong>解：实例属性</strong></p>
+<p>定义类 <code class="docutils literal notranslate"><span class="pre">Tmp</span></code>，其有着三个实例属性：<code class="docutils literal notranslate"><span class="pre">x</span></code>，<code class="docutils literal notranslate"><span class="pre">y</span></code>，和 <code class="docutils literal notranslate"><span class="pre">z</span></code>。<code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 应为根据在实例创建时输入的值设定的数字，而 <code class="docutils literal notranslate"><span class="pre">z</span></code> 应为这两个值的乘积。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tmp</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
@@ -572,10 +566,10 @@ more so-called “special methods”, similar to <code class="docutils literal n
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Brief_Review.html" class="btn btn-neutral float-right" title="A Brief Summary of Terms and Concepts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Brief_Review.html" class="btn btn-neutral float-right" title="术语和概念的快速总结" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ClassDefinition.html" class="btn btn-neutral float-left" title="Defining a New Class of Object" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ClassDefinition.html" class="btn btn-neutral float-left" title="定义新对象类" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

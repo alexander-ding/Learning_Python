@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Understanding imports modules and packages, Difficulty: Easy, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Import: Modules and Packages &mdash; Python Like You Mean It</title>
+  <title>导入：模组和包 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,9 +41,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Working with Files" href="WorkingWithFiles.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="操作文件" href="WorkingWithFiles.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,33 +94,33 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Writing_Good_Code.html">Writing Good Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Writing_Good_Code.html">编写好代码</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingWithFiles.html">Working with Files</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Import: Modules and Packages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Modules">Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Import-Statements">Import Statements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Packages">Packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Intra-Module-Imports">Intra-Module Imports</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Absolute-Imports">Absolute Imports</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Relative-Imports">Relative Imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingWithFiles.html">操作文件</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">导入：模组和包</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#模组">模组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#导入语句">导入语句</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#包">包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#模组内导入">模组内导入</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#绝对导入">绝对导入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#相对导入">相对导入</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Installing-a-Package">Installing a Package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#PYTHONPATH-and-Site-Packages">PYTHONPATH and Site-Packages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Installing-Your-Own-Python-Package">Installing Your Own Python Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#安装包">安装包</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#PYTHONPATH和site-packages">PYTHONPATH和site-packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#安装你自己的Python包">安装你自己的Python包</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#pip-and-conda:-Package-Managers">pip and conda: Package Managers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Exercise-Solutions:">Reading Comprehension Exercise Solutions:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pip和conda：包管理器">pip和conda：包管理器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
 </ul>
@@ -169,9 +170,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_5.html">Module 5: Odds and Ends</a> &raquo;</li>
+          <li><a href="../module_5.html">模组5：琐碎话题</a> &raquo;</li>
         
-      <li>Import: Modules and Packages</li>
+      <li>导入：模组和包</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -214,38 +215,35 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Import:-Modules-and-Packages">
-<h1>Import: Modules and Packages<a class="headerlink" href="#Import:-Modules-and-Packages" title="Permalink to this headline">¶</a></h1>
-<p>Our tour through the essentials of Python and NumPy required us to regularly make use of <code class="docutils literal notranslate"><span class="pre">import</span></code> statements. This allowed us to access the functions and objects that are provided by the standard library and by NumPy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># accessing `defaultdict` from the standard library&#39;s `collections` package</span>
+<div class="section" id="导入：模组和包">
+<h1>导入：模组和包<a class="headerlink" href="#导入：模组和包" title="永久链接至标题">¶</a></h1>
+<p>在之前学习Python和NumPy基础时，我们需要经常使用 <code class="docutils literal notranslate"><span class="pre">import</span></code> 语句。这允许我们访问标准库和NumPy提供的函数和对象。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 访问标准库中 `collections` 模组的 `defaultdict`</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
-<span class="c1"># import the entire numpy package, giving it the alias &#39;np&#39;</span>
+<span class="c1"># 导入整个numpy包并将给其代名词“np”</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
-<p>Despite our regular use of the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement, we have thus far swept its details under the rug. Here, we will finally pay our due diligence and discuss Python’s import system, which entails understanding the way that code can be organized into modules and packages. Modules are individual <code class="docutils literal notranslate"><span class="pre">.py</span></code> files from which we can import functions and objects, and packages are collections of such modules. Detailing this packaging system will not only provide us with insight into the organization of
-the standard library and other collections of Python code, but it will permit us to create our own packages of code.</p>
-<p>To conclude this section, we will demonstrate the process of installing a Python package on your system; supposing that you have written your own Python package, installing it enables you to import it anywhere on your system. A brief overview will be provided of the two most popular venues for hosting Python packages to the world at large: the Python Package Index (PyPI) and Anaconda.org.</p>
-<p>The <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">official Python tutorial</a> provides a nice overview of this material and dives into details that we will not concern ourselves with here.</p>
+<p>尽管我们经常食用 <code class="docutils literal notranslate"><span class="pre">import</span></code> 语句，我们到现在为止都还没有讨论它具体的运作细节。在这里，我们将给予其足够的注意力并讨论Python的导入系统，也就是代码被组织成模组（module）和包（package）的方法。模组是单独的 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 文件，而我们可以从模组中导入函数和对象；包则是这些模组的集合。具体讨论这个包系统不仅仅将帮助我们理解标准库和其它Python代码集的组织方法，这也将允许我们创建我们自己的代码包。</p>
+<p>作为本节的总结，我们将演示在系统安装一个Python包的过程；假设你编写了你自己的Python包，安装该包将允许你从系统的任何地方导入它。我们将会简短地讨论两个最常用的向全世界提供Python包储存和下载功能的服务：Python Package Index（PyPI）和 Anaconda.org。</p>
+<p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">官方Python教程</a>提供了很棒的有关本节材料的总结以及在这里没有讨论的细节。</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Auto-reload</strong>:</p>
-<p>As you follow along with this section in a Jupyter notebook include the following code at the top of you notebook:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>自动重载</strong>：</p>
+<p>当你在Jupyter记事本中跟随本节的操作时，请将以下代码包含在记事本的顶端：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
 <span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>Executing these “magic commands” will inform your notebook to actively reload all imported modules and packages as they are modified. If you do not execute these commands, your notebook will not “see” any changes that you have made to a module that has already been imported, unless you restart the kernel for that notebook.</p>
+<p>执行这些“魔法命令”将会告知你的记事本在任何导入的模组和包被修改后重新导入它们。如果你不执行这些命令，你的记事本将不会“看到”你对已经导入的模组进行的修改，除非你重新启动该记事本的壳。</p>
 </div>
-<div class="section" id="Modules">
-<h2>Modules<a class="headerlink" href="#Modules" title="Permalink to this headline">¶</a></h2>
-<p>A Python ‘module’ refers to a single <code class="docutils literal notranslate"><span class="pre">.py</span></code> file that contains function definitions and variable-assignment statements. Importing a module will execute these statements, rendering the resulting objects available via the imported module.</p>
-<p>Let’s create our own module and import it into an interactive Python session. Open a Jupyter notebook or IPython console in a known directory on your computer. Now, with an <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html#Integrated-Development-Environments">IDE</a> or simple text editor (not software like Microsoft Word!) create a text file named <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> in the same directory as you Python session. The contents of
-<code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> should be:</p>
+<div class="section" id="模组">
+<h2>模组<a class="headerlink" href="#模组" title="永久链接至标题">¶</a></h2>
+<p>Python“模组”指包含函数定义和变量赋值语句的单个 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 文件。导入一个模组将执行这些命令并通过被导入的模组使得命令产生的对象可以被访问。</p>
+<p>让我们创建属于自己的模组并将其导入到一个互动式的Python进程中吧。在你计算机中的某个路径中打开一个Jupyter记事本或IPython命令行。使用<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html#Integrated-Development-Environments">IDE</a>或简单的文本编辑器（不要用像Microsoft Word这样的软件！）在进程的路径中创建一个名为 <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> 的文本文件。<code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> 的内容应为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Our first Python module. This initial string is a module-level documentation string.</span>
-<span class="sd">It is not a necessary component of the module. It is a useful way to describe the</span>
-<span class="sd">purpose of your module.</span>
+<span class="sd">我们的第一个Python模组。这个开头的字符串是模组级别的说明文档字符串（docstring）。</span>
+<span class="sd">它并不是该模组必要的一部分，但它对描述你的模组的目的很有用。</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;I am being executed!&quot;</span><span class="p">)</span>
@@ -259,12 +257,12 @@ the standard library and other collections of Python code, but it will permit us
     <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<p>Returning to our interactive Python session we can import this module into our session. Python is able to “find” this module because it is in the present directory - more on this later. Importing <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> will execute all of its code in order from top to bottom, and will produce a Python object named <code class="docutils literal notranslate"><span class="pre">my_module</span></code>; this is an instance of the built-in <code class="docutils literal notranslate"><span class="pre">module</span></code> type. Note that we do not include the <code class="docutils literal notranslate"><span class="pre">.py</span></code> suffix in our import statement.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># importing my_module in our interactive session
+<p>回到我们的互动式Python进程，我们可以将这个模组导入到该进程中。因为它就在当前的路径中，Python能够直接“找到”这个模组——我们会在之后对此多做讨论。导入 <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> 将会从上到下执行它所有的代码，并会创建一个名为 <code class="docutils literal notranslate"><span class="pre">my_module</span></code> 的Python对象；这是内置的 <code class="docutils literal notranslate"><span class="pre">module</span></code> 类型的一个实例。请注意，我们在导入语句中没有包含 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 后缀。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># 将 my_module 导入到我们的互动进程中
 &gt;&gt;&gt; import my_module
 I am being executed!
 
-# produced is a object that is an instance of the module-type
+# 创建了一个模组类的实例对象
 &gt;&gt;&gt; my_module
 &lt;module &#39;my_module&#39; from &#39;usr/my_dir/my_module.py&#39;&gt;
 
@@ -272,9 +270,8 @@ I am being executed!
 module
 </pre></div>
 </div>
-<p>As expected, importing our module causes our <code class="docutils literal notranslate"><span class="pre">print</span></code> statement to be executed, which explains why <code class="docutils literal notranslate"><span class="pre">'I</span> <span class="pre">am</span> <span class="pre">being</span> <span class="pre">executed!'</span></code> is printed to the console. Next, the objects <code class="docutils literal notranslate"><span class="pre">some_list</span></code>, <code class="docutils literal notranslate"><span class="pre">square</span></code>, and <code class="docutils literal notranslate"><span class="pre">cube</span></code> are defined as the remaining code is executed. <em>These are made available as attributes of our module object</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># all of the variables assigned in the module are made</span>
-<span class="c1"># available as attributes of the module object</span>
+<p>正如所料，导入我们的模组导致 <code class="docutils literal notranslate"><span class="pre">print</span></code> 语句被执行，因此 <code class="docutils literal notranslate"><span class="pre">'I</span> <span class="pre">am</span> <span class="pre">being</span> <span class="pre">executed!'</span></code> 被打印到了命令行中。然后，对象 <code class="docutils literal notranslate"><span class="pre">some_list</span></code>，<code class="docutils literal notranslate"><span class="pre">square</span></code>，和 <code class="docutils literal notranslate"><span class="pre">cube</span></code> 在剩余的代码被执行时也被定义了。<em>我们可以通过模组对象来访问它们</em>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 我们可以通过模组对象访问模组中定义的所有变量</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_module</span><span class="o">.</span><span class="n">some_list</span>
 <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
 
@@ -288,8 +285,7 @@ module
 <span class="mi">8</span>
 </pre></div>
 </div>
-<p>It is critical to understand that this is the means by which the contents of a module is made available to the environment in which it was imported. In this vein, a good way to get to know the contents of a module is to make use of the <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Informal_Intro_Python.html#Dabbling-with-Numbers">auto-completion</a> feature provided by IDEs and interactive consoles to list all of the attributes of a module object. The built-in <code class="docutils literal notranslate"><span class="pre">help</span></code>
-function can also be used to summarize a module’s contents:</p>
+<p>你一定要理解这就是模组内容能够被导入它的环境访问的方法。知道这点后，了解模组的成员的一个好办法是使用IDE和互动命令行的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Informal_Intro_Python.html#Dabbling-with-Numbers">自动完成</a>功能来列出模组对象的所有属性。内置的 <code class="docutils literal notranslate"><span class="pre">help</span></code> 函数可以用来总结模组的内容：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">my_module</span><span class="p">)</span>
 <span class="go">Help on module my_module:</span>
 
@@ -297,8 +293,8 @@ function can also be used to summarize a module’s contents:</p>
 <span class="go">    my_module</span>
 
 <span class="go">DESCRIPTION</span>
-<span class="go">    Our first Python module. This initial string is a module-level documentation string.</span>
-<span class="go">    It is not a necessary component of the module.</span>
+<span class="go">    我们的第一个Python模组。这个开头的字符串是模组级别的说明文档字符串（docstring）。</span>
+<span class="go">    它并不是该模组必要的一部分，但它对描述你的模组的目的很有用。</span>
 
 <span class="go">FUNCTIONS</span>
 <span class="go">    cube(x)</span>
@@ -313,26 +309,26 @@ function can also be used to summarize a module’s contents:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>A module is simply a text file named with a .py suffix, whose contents consist of Python code. A module can be imported into an interactive console environment (e.g.&nbsp;a Jupyter notebook) or into another module. Importing a module executes that module’s code and produces a module-type object instance. Any variables that were assigned during the import are bound as attributes to that object.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>模组仅仅是一个包含.py后缀的文本文件，其内容为Python代码。你可以在互动命令行环境（如Jupyter记事本）或另外一个模组中导入模组。导入模组会执行模组的代码并创建一个模组类型的对象实例。任何在导入时赋值的变量都被绑定到这个模组对象上。</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Creating a simple module</strong></p>
-<p>Create a simple math module named <code class="docutils literal notranslate"><span class="pre">basic_math.py</span></code>. It should make available the irrational numbers <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(e\)</span>, and the function <code class="docutils literal notranslate"><span class="pre">deg_to_rad</span></code>, which converts an angle from degrees to radians.</p>
-<p>Next, import this module and compute <span class="math notranslate nohighlight">\(e^{i\pi}\)</span> and compute 45 degrees in radians.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：创建简单模组</strong></p>
+<p>创建一个名为 <code class="docutils literal notranslate"><span class="pre">basic_math.py</span></code> 的简单数学模组。它应该提供无理数 <span class="math notranslate nohighlight">\(\pi\)</span> 和 <span class="math notranslate nohighlight">\(e\)</span>，以及函数 <code class="docutils literal notranslate"><span class="pre">deg_to_rad</span></code>，其将角度数转化成弧度数。</p>
+<p>然后，导入这个模组，计算 <span class="math notranslate nohighlight">\(e^{i\pi}\)</span>，并将45度转化为对应的弧度。</p>
 </div>
 </div>
-<div class="section" id="Import-Statements">
-<h2>Import Statements<a class="headerlink" href="#Import-Statements" title="Permalink to this headline">¶</a></h2>
-<p>Python provides a flexible framework for importing modules and specific members of a module. We have already seen in our work with NumPy that we can specify an <em>alias</em> in our import statement; this can be especially convenient for import modules with long names:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the module object for numpy is returned with the variable name `np`</span>
+<div class="section" id="导入语句">
+<h2>导入语句<a class="headerlink" href="#导入语句" title="永久链接至标题">¶</a></h2>
+<p>Python提供了导入模组和具体模组成员的灵活框架。我们已经在关于NumPy的讨论中见到了我们可以在导入语句提供一个<em>代名词</em>（alias）这一点；这在导入长名字的模组时非常方便：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPy的模组对象由名为 `np` 的变量代表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
 <span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>In general we can perform an alias for an import via: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;module_name&gt;</span> <span class="pre">as</span> <span class="pre">&lt;alias_name&gt;</span></code>.</p>
-<p>Next, the pattern <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module_name&gt;</span> <span class="pre">import</span> <span class="pre">&lt;thing1&gt;,</span> <span class="pre">&lt;thing2&gt;,</span> <span class="pre">...</span></code> permits us to import specific objects from the module instead of the importing the entire module as a whole. Let’s import <code class="docutils literal notranslate"><span class="pre">square</span></code> and <code class="docutils literal notranslate"><span class="pre">some_list</span></code> from basic_module.py:</p>
+<p>一般而言，我们可以如此为导入的模组设置代名词：<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;module_name&gt;</span> <span class="pre">as</span> <span class="pre">&lt;alias_name&gt;</span></code>。</p>
+<p>然后，语法 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module_name&gt;</span> <span class="pre">import</span> <span class="pre">&lt;thing1&gt;,</span> <span class="pre">&lt;thing2&gt;,</span> <span class="pre">...</span></code> 允许我们从模组导入具体的对象，而不是整个模组。让我们从 <code class="docutils literal notranslate"><span class="pre">basic_module.py</span></code> 导入 <code class="docutils literal notranslate"><span class="pre">square</span></code> 和 <code class="docutils literal notranslate"><span class="pre">some_list</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="n">square</span><span class="p">,</span> <span class="n">some_list</span>
 <span class="go">I am being executed!</span>
 
@@ -343,30 +339,30 @@ function can also be used to summarize a module’s contents:</p>
 <span class="go">4</span>
 </pre></div>
 </div>
-<p>Note that the module is still being executed in full, however instead of producing the module-instance <code class="docutils literal notranslate"><span class="pre">my_module</span></code>, this imort statement instead only returns the specified objects that were defined in the module.</p>
-<p>Lastly, you can specify <code class="docutils literal notranslate"><span class="pre">*</span></code> to refer to all of the module’s attributes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all of the contents of `my_module`</span>
+<p>请注意，模组依然整个被执行，但是与其创建模组实例 <code class="docutils literal notranslate"><span class="pre">my_module</span></code>，这个导入语句仅仅返回了模组中定义的对象中在我们导入语句中提供名字的那些。</p>
+<p>最后，你可以提供 <code class="docutils literal notranslate"><span class="pre">*</span></code> 来代表模组的所有属性。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 `my_module` 的所有成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
-<p>You can include in your module a list named <code class="docutils literal notranslate"><span class="pre">__all__</span></code>, which stores attribute names as strings, to restrict those attributes that are referred to by <code class="docutils literal notranslate"><span class="pre">*</span></code>. That is, if we included <code class="docutils literal notranslate"><span class="pre">__all__</span> <span class="pre">=</span> <span class="pre">[&quot;cube&quot;,</span> <span class="pre">&quot;some_list&quot;]</span></code> within <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code>, then <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">my_module</span> <span class="pre">import</span> <span class="pre">*</span></code> will only import <code class="docutils literal notranslate"><span class="pre">cube</span></code> and <code class="docutils literal notranslate"><span class="pre">some_list</span></code>, and not <code class="docutils literal notranslate"><span class="pre">square</span></code>.</p>
-<p>Lastly, we can also make use of aliasing for this style of import:</p>
+<p>你可以在模组中提供一个名为 <code class="docutils literal notranslate"><span class="pre">__all__</span></code> 的列表，其将属性名储存为字符串，来限制 <code class="docutils literal notranslate"><span class="pre">*</span></code> 代表的属性。也就是说，如果我们在 <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> 中包含了 <code class="docutils literal notranslate"><span class="pre">__all__</span> <span class="pre">=</span> <span class="pre">[&quot;cube&quot;,</span> <span class="pre">&quot;some_list&quot;]</span></code>，那么 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">my_module</span> <span class="pre">import</span> <span class="pre">*</span></code> 将只会导入 <code class="docutils literal notranslate"><span class="pre">cube</span></code> 和 <code class="docutils literal notranslate"><span class="pre">some_list</span></code>，而不会导入 <code class="docutils literal notranslate"><span class="pre">square</span></code>。</p>
+<p>最后，我们也可以在这种风格的导入中使用代名词：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="n">cube</span> <span class="k">as</span> <span class="n">my_cube</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_cube</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">8</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Packages">
-<h2>Packages<a class="headerlink" href="#Packages" title="Permalink to this headline">¶</a></h2>
-<p>It is not unusual, when working on larger scale projects, to want to organize one’s code into several modules. For example, suppose that we are writing software for performing facial recognition. We might want to have a camera module for taking pictures, a face-detection module for storing a model-class capable of detecting faces, and a database module that is used to store and update “seen” faces. These modules can be stored in a collective <em>package</em>.</p>
-<p>A Python package is a directory containing a file with the name <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>, along with other Python modules and subpackages (i.e.&nbsp;subdirectories, each with its own <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and associated modules). The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file is of special importance - it serves as the indicator that its housing directory is to be treated as a package. For example, let’s build a bare-bones package with the following directory structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">your</span> <span class="n">current</span> <span class="n">Jupyter</span> <span class="n">notebook</span> <span class="o">/</span> <span class="n">console</span> <span class="n">session</span>
+<div class="section" id="包">
+<h2>包<a class="headerlink" href="#包" title="永久链接至标题">¶</a></h2>
+<p>在大项目中工作时，你经常会想要将你的代码组织成多个模组。比如说，假设我们在编写脸部识别的软件。我们可以会需要一个摄像机模组来获取照片，一个脸部识别模组来储存能够识别人脸的类，以及一个数据库模组来储存和更新“见过的”脸。这些模组可以在一个共同的<em>包</em>（package）中。</p>
+<p>Python包是一个包含名为 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 的文件的路径，以及其它Python模组和子包（也就是说，有着属于自己的 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 文件和有关模组的子路径）。<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 文件有着特殊的重要性——它用来标示其所在的路径应作为包处理。作为一个例子，让我们创建一个最基础的包，其文件结构如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">你当前的Jupyter记事本进程</span><span class="o">/</span><span class="n">命令行进程</span>
 <span class="o">-</span> <span class="n">a_dir</span><span class="o">/</span>
     <span class="o">|--</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>Note that your interactive Python session (e.g.&nbsp;Jupyter notebook) should be in active in the same directory as <code class="docutils literal notranslate"><span class="pre">a_dir/</span></code>. The name of the directory containing the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file is the name of the package, thus the name of this package is <code class="docutils literal notranslate"><span class="pre">a_dir</span></code>. Suppose the contents of <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> is as follows:</p>
+<p>请注意，你的互动Python进程（如Jupyter记事本）应该在和 <code class="docutils literal notranslate"><span class="pre">a_dir/</span></code> 相同的路径下活跃。包含 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 文件的路径名字就是包的名字，因此这个包的名字为 <code class="docutils literal notranslate"><span class="pre">a_dir</span></code>。假设 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 的内容如下：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
@@ -374,14 +370,14 @@ function can also be used to summarize a module’s contents:</p>
     <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
 </pre></div>
 </div>
-<p>As with a module, importing this package will execute the contents of <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> and make available <code class="docutils literal notranslate"><span class="pre">sum_func</span></code> and <code class="docutils literal notranslate"><span class="pre">divide_func</span></code> as attributes of the resulting module object:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing a python package</span>
+<p>和模组一样，导入这个包会执行 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 的内容并将 <code class="docutils literal notranslate"><span class="pre">sum_func</span></code> 和 <code class="docutils literal notranslate"><span class="pre">divide_func</span></code> 提供为创建的模组对象的属性：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入Python包</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">a_dir</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a_dir</span><span class="o">.</span><span class="n">divide_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="mf">0.5</span>
 </pre></div>
 </div>
-<p>Let’s graduate to a more fleshed out package, which contains modules and subpackages. The following package, <code class="docutils literal notranslate"><span class="pre">face_detection</span></code>, possesses the modules <code class="docutils literal notranslate"><span class="pre">utils</span></code>, <code class="docutils literal notranslate"><span class="pre">database</span></code>, and <code class="docutils literal notranslate"><span class="pre">model</span></code>. It also contains the subpackage <code class="docutils literal notranslate"><span class="pre">camera</span></code>, which contains the <code class="docutils literal notranslate"><span class="pre">config</span></code> module and the <code class="docutils literal notranslate"><span class="pre">calibration</span></code> module.</p>
+<p>让我们讨论一个更加成熟的包，其包含模组和子包。下面的包，<code class="docutils literal notranslate"><span class="pre">face_detection</span></code>，包含了模组 <code class="docutils literal notranslate"><span class="pre">utils</span></code>，<code class="docutils literal notranslate"><span class="pre">database</span></code>，和 <code class="docutils literal notranslate"><span class="pre">model</span></code>。它也包含了子包 <code class="docutils literal notranslate"><span class="pre">camera</span></code>，其包含了 <code class="docutils literal notranslate"><span class="pre">config</span></code> 模组和 <code class="docutils literal notranslate"><span class="pre">calibration</span></code> 模组。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">face_detection</span><span class="o">/</span>
     <span class="o">|--</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
     <span class="o">|--</span> <span class="n">utils</span><span class="o">.</span><span class="n">py</span>
@@ -393,43 +389,43 @@ function can also be used to summarize a module’s contents:</p>
         <span class="o">|--</span> <span class="n">config</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>We can access the contents of these modules via <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;.&lt;module&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;.&lt;subpackage&gt;.&lt;module&gt;</span></code> and so on. Consider the following examples:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing a function from the `database` module</span>
+<p>我们可以通过 <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;.&lt;module&gt;</span></code>，<code class="docutils literal notranslate"><span class="pre">&lt;package&gt;.&lt;subpackage&gt;.&lt;module&gt;</span></code>，和类似的语法来访问这些模组的内容。如以下范例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 从 `database` 模组导入一个函数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">face_detection.database</span> <span class="kn">import</span> <span class="n">load_database</span>
 
-<span class="c1"># importing the entire `model` module</span>
+<span class="c1"># 导入整个 `model` 模组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">face_detection</span> <span class="kn">import</span> <span class="n">model</span>
 
-<span class="c1"># importing a function from the `camera` subpackage</span>
+<span class="c1"># 从 `camera` 子包导入一个函数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">face_detection.camera.config</span> <span class="kn">import</span> <span class="n">restore_default</span>
 </pre></div>
 </div>
-<p>See that the <code class="docutils literal notranslate"><span class="pre">.</span></code> syntax allows us to drill progressively deeper down into modules and subpackages, relative to our top-level package.</p>
+<p>请注意，<code class="docutils literal notranslate"><span class="pre">.</span></code> 语法允许我们相对顶层包一层层深入其中的模组和子包。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Packages</strong></p>
-<p>Suppose that we are working with a package named <code class="docutils literal notranslate"><span class="pre">mail</span></code>. The <code class="docutils literal notranslate"><span class="pre">mail/</span></code> directory contains an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> module whose contents are:</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：包</strong></p>
+<p>假设我们在使用一个名为 <code class="docutils literal notranslate"><span class="pre">mail</span></code> 的包。路径 <code class="docutils literal notranslate"><span class="pre">mail/</span></code> 包含了一个 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 模组，其内容为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">send_mail</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span>
 
 <span class="n">phrase_of_the_day</span> <span class="o">=</span> <span class="s2">&quot;get that package delievered!&quot;</span>
 </pre></div>
 </div>
-<p>It also contains the module <code class="docutils literal notranslate"><span class="pre">delivery.py</span></code> with the contents:</p>
+<p>它也包含了一个模组 <code class="docutils literal notranslate"><span class="pre">delivery.py</span></code>，其内容为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_zip</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;just a dummy function&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">871092</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>Create this package.</li>
-<li>Import the send_mail function</li>
-<li>Import the delivery module and then execute it’s get-zip function</li>
+<li><p>创建这个包。</p></li>
+<li><p>导入 <code class="docutils literal notranslate"><span class="pre">send_mail</span></code> 函数。</p></li>
+<li><p>导入 <code class="docutils literal notranslate"><span class="pre">delivery</span></code> 模组并执行它的 <code class="docutils literal notranslate"><span class="pre">get_zip</span></code> 函数</p></li>
 </ol>
 </div>
 </div>
-<div class="section" id="Intra-Module-Imports">
-<h2>Intra-Module Imports<a class="headerlink" href="#Intra-Module-Imports" title="Permalink to this headline">¶</a></h2>
-<p>Modules within a package can import from one another; suppose, for instance, that both <code class="docutils literal notranslate"><span class="pre">face_detection.database</span></code> and <code class="docutils literal notranslate"><span class="pre">face_detection.camera.calibration</span></code> both want to leverage the <code class="docutils literal notranslate"><span class="pre">face_detection.utils</span></code> module. Recall the layout of this package:</p>
+<div class="section" id="模组内导入">
+<h2>模组内导入<a class="headerlink" href="#模组内导入" title="永久链接至标题">¶</a></h2>
+<p>包中的模组可以互相导入；比如说，假设 <code class="docutils literal notranslate"><span class="pre">face_detection.database</span></code> 和 <code class="docutils literal notranslate"><span class="pre">face_detection.camera.calibration</span></code> 都想要使用 <code class="docutils literal notranslate"><span class="pre">face_detection.utils</span></code> 模组。请回忆本包的结构：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">face_detection</span><span class="o">/</span>
     <span class="o">|--</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
     <span class="o">|--</span> <span class="n">utils</span><span class="o">.</span><span class="n">py</span>
@@ -441,48 +437,48 @@ function can also be used to summarize a module’s contents:</p>
         <span class="o">|--</span> <span class="n">config</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>There are two import styles that can be used to facilitate these inter-module imports: absolute imports and relative imports.</p>
-<div class="section" id="Absolute-Imports">
-<h3>Absolute Imports<a class="headerlink" href="#Absolute-Imports" title="Permalink to this headline">¶</a></h3>
-<p>The absolute import style works by specifying all modules in terms of their absolute position in relation to the topmost package. Suppose that we want to import the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module in our <code class="docutils literal notranslate"><span class="pre">model</span></code> module, stated as an absolute import, this would be:</p>
+<p>我们有两种导入风格来进行模组之间的导入：绝对导入和相对导入。</p>
+<div class="section" id="绝对导入">
+<h3>绝对导入<a class="headerlink" href="#绝对导入" title="永久链接至标题">¶</a></h3>
+<p>绝对导入风格允许你通过提供模组相对顶层包的绝对位置来选择模组。假设我们想要在 <code class="docutils literal notranslate"><span class="pre">model</span></code> 模组中通过绝对导入来导入 <code class="docutils literal notranslate"><span class="pre">utils</span></code> 模组，那么代码将是：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">face_detection.utils</span>
 </pre></div>
 </div>
-<p>or, using an alias</p>
+<p>或，使用代名词：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">face_detection.utils</span> <span class="kn">as</span> <span class="nn">utils</span>
 </pre></div>
 </div>
-<p>Suppose that we want to import the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module in <code class="docutils literal notranslate"><span class="pre">face_detection.camera.calibration</span></code> as well; the absolute import would look identical since the absolute location of <code class="docutils literal notranslate"><span class="pre">utils</span></code> relative to the top-level package does not change based on where we are using this import statement.</p>
-<p>As an additional example, to import the camera configuration module anywhere in the package, the absolute import statement would appear as:</p>
+<p>假设我们也想要在 <code class="docutils literal notranslate"><span class="pre">face_detection.camera.calibration</span></code> 中导入 <code class="docutils literal notranslate"><span class="pre">utils</span></code> 模组；绝对导入的语句和之前一样，因为 <code class="docutils literal notranslate"><span class="pre">utils</span></code> 相对顶层包的相对位置不会根据我们导入它的路径改变。</p>
+<p>作为一个额外的例子，在包中任何位置导入 <code class="docutils literal notranslate"><span class="pre">camera</span></code> 的 <code class="docutils literal notranslate"><span class="pre">config</span></code> 模组的绝对导入语句如下：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">face_detection.camera.config</span>
 </pre></div>
 </div>
-<p>The absolute import syntax supports all of the variations the we enumerated above, such as aliased imports and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module&gt;</span> <span class="pre">import</span> <span class="pre">&lt;object&gt;</span></code>.</p>
+<p>绝对导入语法支持我们上方枚举的所有变化，如代名词和 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module&gt;</span> <span class="pre">import</span> <span class="pre">&lt;object&gt;</span></code>。</p>
 </div>
-<div class="section" id="Relative-Imports">
-<h3>Relative Imports<a class="headerlink" href="#Relative-Imports" title="Permalink to this headline">¶</a></h3>
-<p>Relative imports use dots to indicate the relative position of the imported module, based on the location of the module doing the importing. For example, suppose that we want to import the <code class="docutils literal notranslate"><span class="pre">utils</span></code> module in our <code class="docutils literal notranslate"><span class="pre">model</span></code> module using a relative import statement:</p>
+<div class="section" id="相对导入">
+<h3>相对导入<a class="headerlink" href="#相对导入" title="永久链接至标题">¶</a></h3>
+<p>相对导入使用点来表达被导入模组的相对于执行导入命令的模组的位置。比如说，假设我们想要在 <code class="docutils literal notranslate"><span class="pre">model</span></code> 模组中使用相对导入来导入 <code class="docutils literal notranslate"><span class="pre">utils</span></code> 模组：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utils</span>
 </pre></div>
 </div>
-<p>See that <code class="docutils literal notranslate"><span class="pre">.</span></code> serves to represent “the current package”. <code class="docutils literal notranslate"><span class="pre">..</span></code> then refers to “one package above the current one”. Thus a relative import of <code class="docutils literal notranslate"><span class="pre">utils</span></code> from <code class="docutils literal notranslate"><span class="pre">face_detection/camera/calibration.py</span></code> would look like:</p>
+<p>请注意，<code class="docutils literal notranslate"><span class="pre">.</span></code> 用来表达“当前包”。而 <code class="docutils literal notranslate"><span class="pre">..</span></code> 代表着“当前包上一级的包”。因此，从 <code class="docutils literal notranslate"><span class="pre">face_detection/camera/calibration.py</span></code> 相对导入 <code class="docutils literal notranslate"><span class="pre">utils</span></code> 会是：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">utils</span>
 </pre></div>
 </div>
-<p>We use <code class="docutils literal notranslate"><span class="pre">..</span></code> because <code class="docutils literal notranslate"><span class="pre">utils</span></code> is not in the same package as <code class="docutils literal notranslate"><span class="pre">calibration.py</span></code>, but is one package above it. We can also import specific contents from a module in this way:</p>
+<p>我们使用 <code class="docutils literal notranslate"><span class="pre">..</span></code> 的原因是 <code class="docutils literal notranslate"><span class="pre">utils</span></code> 并不和 <code class="docutils literal notranslate"><span class="pre">calibration.py</span></code> 在同一个包中，而在它往上一层的包中。我们也可以如此导入模组中的具体内容：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">some_util_func</span>
 </pre></div>
 </div>
-<p>The relative import style is more restricted than the absolute import style. It is only able to embody the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module&gt;</span> <span class="pre">import</span> <span class="pre">&lt;thing1&gt;,</span> <span class="pre">&lt;thing2&gt;</span></code> form of import statements. Despite their limited form, relative imports can be nice to use if you are dealing with a project with deeply nested sub-packages.</p>
+<p>相对导入风格对比绝对导入风格限制更多。它只能包含 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module&gt;</span> <span class="pre">import</span> <span class="pre">&lt;thing1&gt;,</span> <span class="pre">&lt;thing2&gt;</span></code> 格式的导入语句。虽然它的格式有所限制，相对导入在有着复杂的嵌套子包时可能很方便。</p>
 </div>
 </div>
-<div class="section" id="Installing-a-Package">
-<h2>Installing a Package<a class="headerlink" href="#Installing-a-Package" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="PYTHONPATH-and-Site-Packages">
-<h3>PYTHONPATH and Site-Packages<a class="headerlink" href="#PYTHONPATH-and-Site-Packages" title="Permalink to this headline">¶</a></h3>
-<p>Thus far in our reading of Python packages we have had to take care that all of the modules and packages that we have written reside in the same directory as our interactive Python session. How is it that we are able to import NumPy in any session or module, without any knowledge of where that package is located? This is because we have installed <em>NumPy</em>, which means that the package has been placed in our “Python path”, which is indicated as <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> specifies the directories that the Python interpreter will look in when importing modules. You can check your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> using <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># looking up `PYTHONPATH`</span>
+<div class="section" id="安装包">
+<h2>安装包<a class="headerlink" href="#安装包" title="永久链接至标题">¶</a></h2>
+<div class="section" id="PYTHONPATH和site-packages">
+<h3>PYTHONPATH和site-packages<a class="headerlink" href="#PYTHONPATH和site-packages" title="永久链接至标题">¶</a></h3>
+<p>到现在为止，我们的Python包阅读都确保了所有我们编写的模组和包都和我们的互动Python进程在同一个路径下。那么我们是如何能够在不知道包的位置的情况下在任何进程或模组中导入NumPy呢？这是因为我们已经安装了<em>NumPy</em>；这意味着这个包已经被放在了我们的“Python路径”中，其由 <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> 代表。</p>
+<p><code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> 描述了Python在导入模组时会搜索的路径。你可以使用 <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> 来查看你的 <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看 `PYTHONPATH`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
 <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
@@ -494,22 +490,22 @@ function can also be used to summarize a module’s contents:</p>
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>Note that the first entry in <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> is <code class="docutils literal notranslate"><span class="pre">''</span></code>, meaning that the Python interpreter will first look in the current directory when trying to do an import. If it does not find any package or module that satisfies the import statement, then it will proceed to check the next entry in <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>. This is why we took care to create our modules and packages in the same directory as our active Python session.</p>
-<p>Now note the last directory in <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>: site-packages. <em>Site-packages is the target directory in which all installed Python packages are placed by default</em>. We can import NumPy wherever we’d like because it was placed in site-packages when it was installed, and the Python interpreter will always look in site-packages when attempting to fulfill an import statement.</p>
-<p>In lieu of printing out your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>, you can look up the location of your site-packages directly:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># looking up your site-packages</span>
+<p>请注意，<code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> 的第一个成员为 <code class="docutils literal notranslate"><span class="pre">''</span></code>，意味着Python直译器会在试图导入时首先查看当前路径。如果它没有找到任何满足导入语句的包或模组，那么它会检查 <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> 的下一个成员。这就是为什么我们在之前将我们的模组和包创建在和当前Python进程中一样的路径。</p>
+<p>现在，请注意 <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> 的最后一个路径：“site-packages”（站点包）。<em>site-packages是所有Python包安装的默认路径</em>。我们可以在任何路径导入NumPy的原因是因为在安装时它被放入了“site-packages”中，而Python直译器将会在试图满足导入语句时检查“site-packages”。</p>
+<p>如果你不想打印 <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> 的话，你可以直接检查你的“site-packages“的位置：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查你的site-packages</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">site</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">site</span><span class="o">.</span><span class="n">getsitepackages</span><span class="p">()</span>
 <span class="p">[</span><span class="s1">&#39;/home/TerranceWasabi/miniconda3/lib/python3.6/site-packages&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>It must be mentioned that we are sweeping some details under the rug here. Installing NumPy does not merely entail copying its various modules and packages wholesale into site-packages. That being said, we will not dive any deeper into the technical details of package installation beyond understanding where packages are installed and thus where our Python interpreter looks to import them.</p>
+<p>我们在这里必须指出我们其实省略了一些细节。安装NumPy并不会将它的各个模组和包完整复制到site-packages中。虽然如此，我们并不会更加细致地讨论包安装的技术性细节。你只需要知道包安装的位置以及Python直译器在导入时检查的路径就行了。</p>
 </div>
-<div class="section" id="Installing-Your-Own-Python-Package">
-<h3>Installing Your Own Python Package<a class="headerlink" href="#Installing-Your-Own-Python-Package" title="Permalink to this headline">¶</a></h3>
-<p>Suppose that we are happy with the work we have done on our <code class="docutils literal notranslate"><span class="pre">face_detector</span></code> project. We will want to install this package - placing it in our site-packages directory so that we can import it irrespective of our Python interpreter’s working directory. Here we will construct a basic setup script that will allow us to accomplish this.</p>
-<p>We note outright that the purpose of this section is strictly to provide you with the minimum set of instructions needed to install a package. We will not be diving into what is going on under the hood at all. Please refer to <a class="reference external" href="https://docs.python.org/3/distutils/introduction.html#an-introduction-to-distutils">An Introduction to Distutils</a> and <a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/#packaging-your-project">Packaging Your Project</a> for a deeper treatment of this topic.</p>
-<p>Carrying on, we will want to create a setup-script, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, <em>in the same directory as our package</em>. That is, our directory structure should look like:</p>
+<div class="section" id="安装你自己的Python包">
+<h3>安装你自己的Python包<a class="headerlink" href="#安装你自己的Python包" title="永久链接至标题">¶</a></h3>
+<p>假设我们对 <code class="docutils literal notranslate"><span class="pre">face_detector</span></code> 项目的工作很满意，并想要安装这个包——将其放置到我们的“site-packages”路径来允许我们无论Python直译器的工作路径都可以导入它。在这里，我们将会创建一个基础的安装脚本来允许我们达成这一点。</p>
+<p>我们将直接指出，本模组的目的仅仅只是为你提供安装包的最少指令集。我们不将会讨论幕后发生的事情。请查看<a class="reference external" href="https://docs.python.org/3/distutils/introduction.html#an-introduction-to-distutils">Distutils简介</a>和<a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/#packaging-your-project">包装你的项目</a>来阅读本话题的更多细节。</p>
+<p>回到我们的工作，我们将在<em>和我们包相同的路径下</em>创建一个设置脚本 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>。也就是说，我们的路径结构如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
 <span class="o">-</span> <span class="n">face_detection</span><span class="o">/</span>
     <span class="o">|--</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
@@ -522,8 +518,8 @@ function can also be used to summarize a module’s contents:</p>
         <span class="o">|--</span> <span class="n">config</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>The bare bones build script for preparing your package for installation, <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, is as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># contents of setup.py</span>
+<p>最简单的为安装准备你的包的构建脚本 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> 如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># setup.py 的内容</span>
 <span class="kn">import</span> <span class="nn">setuptools</span>
 
 <span class="n">setuptools</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span>
@@ -533,56 +529,53 @@ function can also be used to summarize a module’s contents:</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>If you read through the additional materials linked above, you will see that there are many more fields of optional information that can be provided in this setup script, such as the author name, any installation requirements that the package has, and more.</p>
-<p>Armed with this script, we are ready to install our package locally on our machine! In your terminal, navigate to the directory containing this setup script and your package that it being installed. Run</p>
+<p>如果你阅读了以上链接的额外材料，你将会注意你可以向这个设置脚本提供更多的可选信息，如作者名字，包的安装要求，等等。</p>
+<p>有了这个脚本后，我们可以在本地机器上安装我们的包了！在你的命令行中，导航到包含这个设置脚本和被安装的包的路径中。运行：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python setup.py install
 </pre></div>
 </div>
-<p>and voilà, your package <code class="docutils literal notranslate"><span class="pre">face_detection</span></code> will have been installed to site-packages. You are now free to import this package from any directory on your machine. In order to uninstall this package from your machine execute the following from your terminal:</p>
+<p>就像这样，你的包 <code class="docutils literal notranslate"><span class="pre">face_detection</span></code> 将被安装到“site-packages”中。你现在可以从计算机的任何路径中导入这个模组。在命令行中执行以下代码来从你的机器上卸载这个包：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip uninstall face_detection
 </pre></div>
 </div>
-<p>One final but important detail. The installed version of your package will no longer “see” the source code. That is, if you go on to make any changes to your code, you will have to uninstall and reinstall your package before your will see the effects system-wide. Instead you can install your package in develop mode, such that a symbolic link to your source code is placed in your site-packages. Thus any changes that you make to your code will immediately be reflected in your system-wide
-installation. Thus, instead of running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>, execute the following to install a package in develop mode:</p>
+<p>我们在这里提供最后一个重要细节。你的包的被安装的版本将不会“看到”它的源代码。也就是，当你对你的代码进行修改时，你将会需要首先卸载并重装你的包来使得你的修改在整个系统可见。你可以将你的包在开发（develop）模式下安装来使得程序在“site-packages”路径下创建一个指向源代码的符号链接（symbolic link）。如此，任何对源代码进行的修改都会立刻在全系统都反映出来。因此，与其运行 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>，执行以下代码来在开发模式下安装一个包：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python setup.py develop
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="pip-and-conda:-Package-Managers">
-<h2>pip and conda: Package Managers<a class="headerlink" href="#pip-and-conda:-Package-Managers" title="Permalink to this headline">¶</a></h2>
-<p>Python packages can be shared worldwide. There are two widely-used Python package managers, <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>. <code class="docutils literal notranslate"><span class="pre">pip</span></code> downloads and installs packages from <a class="reference external" href="https://pypi.org/">The Python Package Index (PyPI)</a>, whereas <code class="docutils literal notranslate"><span class="pre">conda</span></code> downloads and installs packages from the Anaconda Cloud. Both <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> are installed as part of the <a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html#Installing-Anaconda">Anaconda distribution</a>.</p>
-<p>To install a package via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, you execute</p>
+<div class="section" id="pip和conda：包管理器">
+<h2>pip和conda：包管理器<a class="headerlink" href="#pip和conda：包管理器" title="永久链接至标题">¶</a></h2>
+<p>你可以在在全世界共享Python包。市面上有两个常用的包管理器，<code class="docutils literal notranslate"><span class="pre">pip</span></code> 和 <code class="docutils literal notranslate"><span class="pre">conda</span></code>。<code class="docutils literal notranslate"><span class="pre">pip</span></code> 从<a class="reference external" href="https://pypi.org/">The Python Package Index (PyPI)</a>（Python包索引）下载并安装包, 而 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 从Anaconda Cloud下载并安装包。<code class="docutils literal notranslate"><span class="pre">conda</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 都已经作为<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html#Installing-Anaconda">Anaconda分布</a>的一部分被安装在你的机器上了。</p>
+<p>执行以下来使用 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 安装包：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install &lt;package_name&gt;
 </pre></div>
 </div>
-<p>To install a package via <code class="docutils literal notranslate"><span class="pre">conda</span></code>, you execute</p>
+<p>执行以下来使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 安装包：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install &lt;package_name&gt;
 </pre></div>
 </div>
-<p>Both managers will install packages to your site-packages directory.</p>
-<p>There are substantial benefits for using <code class="docutils literal notranslate"><span class="pre">conda</span></code> rather than <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install packages. First and foremost, <code class="docutils literal notranslate"><span class="pre">conda</span></code> has a powerful “environment solver”, which tracks the inter-dependencies of Python packages. Thus it will attempt to install, upgrade, and downgrade packages as needed to accommodate your installations. Additionally, the default list of packages available via <code class="docutils literal notranslate"><span class="pre">conda</span></code> are curated and maintained by Continuum Analytics, the creators of Anaconda. To elucidate one of the
-benefits of this, installing NumPy via <code class="docutils literal notranslate"><span class="pre">pip</span></code> will deliver the vanilla version of NumPy to you; <code class="docutils literal notranslate"><span class="pre">conda</span></code> will install an <a class="reference external" href="https://software.intel.com/en-us/articles/numpyscipy-with-intel-mkl">mkl-optimized version of NumPy</a>, which can execute routines substantially faster. Finally, <code class="docutils literal notranslate"><span class="pre">conda</span></code> also serves as <a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html">an environment manager</a>, which allows you to maintain multiple, non-conflicting environments that can house different
-configurations of installed Python packages and even different versions of Python itself.</p>
-<p>That being said, there are some benefits to using <code class="docutils literal notranslate"><span class="pre">pip</span></code>. PyPi is accessible and easy to upload packages to; this is likely the easiest means for distributing a Python package worldwide. As such, <code class="docutils literal notranslate"><span class="pre">pip</span></code> provides access to a wider range of Python packages. That being said, <code class="docutils literal notranslate"><span class="pre">conda</span></code> can also be directed to install packages from custom channels - providing access to packages outside of the curated Anaconda distribution. This has become a popular method of installation for machine learning
-libraries like PyTorch and TensorFlow.</p>
-<p>You are free to install some packages using <code class="docutils literal notranslate"><span class="pre">conda</span></code> and others with <code class="docutils literal notranslate"><span class="pre">pip</span></code>. Just take care not to accidentally install the same package with both - this can lead to a real mess.</p>
+<p>两个管理器都会向你的“site-packages”路径安装包。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 来安装包有着显著的好处。首先，<code class="docutils literal notranslate"><span class="pre">conda</span></code> 有着一个强大的“环境计算器”来记录Python包之间的互相依赖性。因此，它会试图按需安装，升级，并降级包来满足你安装的需求。同时，<code class="docutils literal notranslate"><span class="pre">conda</span></code> 默认提供的包列表由Continuum Analytics，也就是Anaconda的创造者，提供并维持。这样做的好处之一在于，通过 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 安装NumPy会为你提供标准的NumPy版本，而 <code class="docutils literal notranslate"><span class="pre">conda</span></code>
+将会安装<a class="reference external" href="https://software.intel.com/en-us/articles/numpyscipy-with-intel-mkl">mkl优化过的NumPy版本</a>，其执行速度快很多。最后，<code class="docutils literal notranslate"><span class="pre">conda</span></code> 也能作为一个<a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html">环境管理器</a>，其支持你维持多个，互相不冲突的环境来储存不同的Python包安装情况以及甚至不同的Python版本。</p>
+<p>话说如此，使用 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 也是有一些好处的。PyPi易用也容易上传包；这很可能是向全世界分布Python包最简单的方法。因此，<code class="docutils literal notranslate"><span class="pre">pip</span></code> 提供了更广阔的包选择。但是，你也可以使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 来从自定义频道安装包——如此为你提供Anaconda分布的包列表之外的包。这已经成为了一个流行的安装如PyTorch和TensorFlow的机器学习库的方法。</p>
+<p>你可以使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 来安装一部分包，而用 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 来安装其它包。唯一需要注意的是不要不小心使用两个管理器安装相同的包——这会搞出大麻烦。</p>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">Python Tutorial: Modules</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/distutils/introduction.html#an-introduction-to-distutils">An Introduction to Distutils</a></li>
-<li><a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/#packaging-your-project">Packaging Your Project</a></li>
-<li><a class="reference external" href="https://pypi.org/">PyPi</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">Python教程：模组</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/distutils/introduction.html#an-introduction-to-distutils">Distutils简介</a></p></li>
+<li><p><a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/#packaging-your-project">包装你的项目</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/">PyPi</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Exercise-Solutions:">
-<h2>Reading Comprehension Exercise Solutions:<a class="headerlink" href="#Reading-Comprehension-Exercise-Solutions:" title="Permalink to this headline">¶</a></h2>
-<p><strong>Creating a simple module: Solution</strong></p>
-<p>Create a simple math module named <code class="docutils literal notranslate"><span class="pre">basic_math.py</span></code>. It should make available the irrational numbers <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(e\)</span>, and the function <code class="docutils literal notranslate"><span class="pre">deg_to_rad</span></code>, which converts an angle from degrees to radians.</p>
-<p>The contents of <code class="docutils literal notranslate"><span class="pre">basic_math.py</span></code> should be:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Basic math constants and functions&quot;&quot;&quot;</span>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>创建简单模组：解</strong></p>
+<p>创建一个名为 <code class="docutils literal notranslate"><span class="pre">basic_math.py</span></code> 的简单数学模组。它应该提供无理数 <span class="math notranslate nohighlight">\(\pi\)</span> 和 <span class="math notranslate nohighlight">\(e\)</span>，以及函数 <code class="docutils literal notranslate"><span class="pre">deg_to_rad</span></code>，其将角度数转化成弧度数。</p>
+<p><code class="docutils literal notranslate"><span class="pre">basic_math.py</span></code> 的内容应为：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;基本的数学常量和函数&quot;&quot;&quot;</span>
 
 <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653589793</span>
 <span class="n">e</span> <span class="o">=</span> <span class="mf">2.718281828459045</span>
@@ -593,7 +586,7 @@ libraries like PyTorch and TensorFlow.</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">basic_math</span>
 
-<span class="go"># Euler&#39;s formula: e**(i * pi) = -1</span>
+<span class="go"># Euler公式：e**(i * pi) = -1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">basic_math</span><span class="o">.</span><span class="n">e</span> <span class="o">**</span> <span class="p">(</span><span class="n">basic_math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 <span class="go">(-1+1.2246467991473532e-16j)</span>
 
@@ -601,9 +594,9 @@ libraries like PyTorch and TensorFlow.</p>
 <span class="go">0.7853981633974483</span>
 </pre></div>
 </div>
-<p><strong>Packages: Solutions</strong></p>
+<p><strong>包：解</strong></p>
 <ol class="arabic simple">
-<li>Create this package.</li>
+<li><p>创建这个包。</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mail</span><span class="o">/</span>
     <span class="o">|--</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
@@ -611,13 +604,13 @@ libraries like PyTorch and TensorFlow.</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Import the send_mail function</li>
+<li><p>导入 <code class="docutils literal notranslate"><span class="pre">send_mail</span></code> 函数</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mail</span> <span class="kn">import</span> <span class="n">send_mail</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>Import the delivery module and then execute it’s get-zip function</li>
+<li><p>导入 <code class="docutils literal notranslate"><span class="pre">delivery</span></code> 模组并执行它的 <code class="docutils literal notranslate"><span class="pre">get-zip</span></code> 函数</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mail</span> <span class="kn">import</span> <span class="n">delivery</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">delivery</span><span class="o">.</span><span class="n">get_zip</span><span class="p">()</span>
@@ -636,7 +629,7 @@ libraries like PyTorch and TensorFlow.</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="WorkingWithFiles.html" class="btn btn-neutral float-left" title="Working with Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="WorkingWithFiles.html" class="btn btn-neutral float-left" title="操作文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

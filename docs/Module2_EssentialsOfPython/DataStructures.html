@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Data Structures, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Structures (Part I): Introduction &mdash; Python Like You Mean It</title>
+  <title>数据结构（第一部分）：简介 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Structures (Part II): Dictionaries" href="DataStructures_II_Dictionaries.html" />
-    <link rel="prev" title="Scope" href="Scope.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="数据结构（第二部分）：词典" href="DataStructures_II_Dictionaries.html" />
+    <link rel="prev" title="作用域" href="Scope.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,37 +95,37 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Functions.html">Basics of Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Structures (Part I): Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Describing-Algorithm-Complexity">Describing Algorithm Complexity</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Sequential-Data-Structures:-Lists-and-Tuples">Sequential Data Structures: Lists and Tuples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#List/Tuple-Complexities">List/Tuple Complexities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#List-Complexities">List Complexities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">函数基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">数据结构（第一部分）：简介</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#描述算法复杂度">描述算法复杂度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#序列性数据结构：列表和元组">序列性数据结构：列表和元组</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#列表/元组复杂度">列表/元组复杂度</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#列表复杂度">列表复杂度</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -170,9 +171,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Data Structures (Part I): Introduction</li>
+      <li>数据结构（第一部分）：简介</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,174 +216,173 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Data-Structures-(Part-I):-Introduction">
-<h1>Data Structures (Part I): Introduction<a class="headerlink" href="#Data-Structures-(Part-I):-Introduction" title="Permalink to this headline">¶</a></h1>
-<p>Here we survey Python’s built-in data structures. You should already be familiar with its lists and tuples, two data structures that facilitate working with sequential data. Two other critical, built-in data structures to be introduced are:</p>
+<div class="section" id="数据结构（第一部分）：简介">
+<h1>数据结构（第一部分）：简介<a class="headerlink" href="#数据结构（第一部分）：简介" title="永久链接至标题">¶</a></h1>
+<p>我们在此介绍Python内置的数据结构（data structure）。你应该已经了解了列表和元组，两个帮助处理序列数据的数据结构。我们将会介绍另外两个重要的内置数据结构：</p>
 <ul class="simple">
-<li>dictionary: a mapping from “keys” to “values”</li>
-<li>sets: an unordered collection of items that can be used to perform set-algebraic operations (e.g.&nbsp;union and intersection)</li>
+<li><p>词典（dictionary）：一对一对应“键”（key）和“值”（value）</p></li>
+<li><p>集（set）：用来进行集运算（如并集和交集）的无序集合</p></li>
 </ul>
-<p>These data structures are not merely convenient constructs with some nice pre-written functionality; they also provide an interface to some optimized core utilities that have been written in C (or whatever language your Python interpreter is written in). For example, let’s write a function that checks if an item is contained within an iterable:</p>
+<p>这些数据结构不仅仅是一些有着好用核心功能的方便构造题；它们同时也提供了用C语言（或你使用的Python直译器编译用的语言）编译的高效核心功能的接口。比如说，让我们来编写一个检查某对象是否为可迭代物成员的函数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_in</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Returns True if `target` is contained in `seq`.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 如果 `target` 在 `seq` 中则返回真&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">True</span>
     <span class="k">return</span> <span class="bp">False</span>
 </pre></div>
 </div>
-<p>This function mirrors the C-algorithm that Python uses “under the hood” for checking for membership in a list (assuming you are using the CPython interpreter, which you almost definitely are). Because their function is implemented “at a lower level”, and need not be interpreted, we expect it to be faster than ours:</p>
+<p>以上函数和Python在“幕后”使用的C语言成员检测算法（当然，这是假设你在使用CPython直译器，但极大可能是这个情况）是一样的。因为内置的成员检测函数是在“更底层”实现的并因此不需要被直译，所以它比我们在Python中定义的函数更快：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">is_in</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># takes 980 nanoseconds on my machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_in</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 在我的机子上花了 980 纳秒</span>
 <span class="go">False</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">x</span>       <span class="c1"># takes 320 nanoseconds on my machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">x</span>       <span class="c1"># 在我的机子上花了 320 纳秒</span>
 <span class="go">False</span>
 </pre></div>
 </div>
-<p>Here, Python’s built-in sequence-membership function is 3x faster than using our own function. Furthermore, it will be important to know the advantages provided by each of the data structures. For instance, testing for membership in a set is even faster than is checking for membership in a list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test for membership in a list</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>  <span class="c1"># takes 295 nanoseconds on my machine</span>
+<p>在此，Python的内置成员检测函数比我们的版本快了三倍。同时，我们应该了解各个数据结构的优势。比如说，集（set）的成员检测比列表还要快：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在列表中检测是否为成员</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>  <span class="c1"># 在我的机子上花了 295 纳秒</span>
 <span class="bp">False</span>
 
-<span class="c1"># test for membership in a set</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>  <span class="c1"># takes 65 nanoseconds on my machine</span>
+<span class="c1"># 在集中检测是否为成员</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>  <span class="c1"># 在我的机子上花了 65 纳秒</span>
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>We get a 4.5x speedup in our membership test just by using a set instead of a list, because the use of a set permits Python to use an entirely different algorithm for checking for membership. On our end, we merely replaced square brackets with curly braces! Hopefully this is sufficient motivation for learning about Python’s data structures and the algorithms that they utilize “under the hood”.</p>
+<p>通过使用集而不是列表，我们得到了4.5倍的速度优化。这是因为集允许Python使用一个完全不同的成员检测算法。在Python程序员的角度上，我们仅仅将方括号替换成了花括号！我希望以上范例为你提供了足够学习Python数据结构和它们“幕后”使用的算法的理由。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>Python’s data structures come with a wealth of built-in functionality. Furthermore, understanding where each data structure “shines” is critical for writing efficient Python code. It is not necessary to memorize this information, but you should know that it exists and should be referenced frequently.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>Python的数据结构有着自己内置的功能。同时，理解每个数据结构适合的工作对编写高效的Python代码极其重要。你不需要死记这些信息，但是你应该知道这些信息存在并经常查阅这些信息。</p>
 </div>
-<div class="section" id="Describing-Algorithm-Complexity">
-<h2>Describing Algorithm Complexity<a class="headerlink" href="#Describing-Algorithm-Complexity" title="Permalink to this headline">¶</a></h2>
-<p>In order to meaningfully compare the relative efficiency of algorithms, it is useful to summarize how algorithms “scale” with problem size. Two sorting algorithms may be comparable when sorting tens of items, and yet they may have wildly different performances when sorting thousands of items.</p>
-<p>“Big-O” notation allows us to denote how an algorithm’s run time scales against problem size. Specifically, it signifies the “worst-case scenario” performance of an algorithm.</p>
-<p>Let’s take, for instance, the <code class="docutils literal notranslate"><span class="pre">is_in</span></code> function that we wrote at the beginning of this section. In it, we iterate over a collection to check if it contains a specific item. The worst-case scenario for this algorithm is when the item is not a member of the collection at all - we have to iterate over the entire collection before we can conclude that it does not possess our item. So if we increase the collection to be <span class="math notranslate nohighlight">\(n\)</span> times larger in size, it should take <span class="math notranslate nohighlight">\(n\)</span> times as long to
-iterate over it to determine that the item is not a member of the collection (again, dealing with the worst-case scenario). Because the worst-case scenario run time of <code class="docutils literal notranslate"><span class="pre">is_in</span></code> scales linearly with the size of the collection, <span class="math notranslate nohighlight">\(n\)</span>, we denote it’s run time complexity, using big-O notation, as <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p>
-<p>Now suppose we did a truly terrible job writing a membership algorithm, and performed a nested iteration over our collection:</p>
+<div class="section" id="描述算法复杂度">
+<h2>描述算法复杂度<a class="headerlink" href="#描述算法复杂度" title="永久链接至标题">¶</a></h2>
+<p>为了有意义地比较算法的效率，总结算法在问题大小变化时如何表现是很有用的信息。两个排序算法可能在排列几十个项目时速度相当，但它们完全可能在排列几千个项目时有着很不一样的效率。</p>
+<p>“大O”符号（big-O notation）允许我们表达算法在问题大小变化时运算时间如何改变。具体来讲，它代表着算法在“最坏情况下”的表现。</p>
+<p>比如说，拿在本节开始写的 <code class="docutils literal notranslate"><span class="pre">is_in</span></code> 函数来讲，我们迭代了一个集合并检查它是否有着某个项目。这个算法的最坏情况就是当项目并不是集合的成员——我们需要迭代整个集合才能确定它并不拥有我们要找的项目。所以如果我们将该集合的大小扩大 <span class="math notranslate nohighlight">\(n\)</span> 倍，那它会花 <span class="math notranslate nohighlight">\(n\)</span> 倍多的时间来迭代整个集合并决定一个项目不是其成员（在此同样假设最坏情况）。因为 <code class="docutils literal notranslate"><span class="pre">is_in</span></code> 的最坏情况的运行时间和集合的大小 <span class="math notranslate nohighlight">\(n\)</span> 呈线性关系，所以我们用大O符号来将该算法的运行时间复杂度写为 <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>。</p>
+<p>现在，假设我们写的成员检查函数很糟糕，其进行了嵌套迭代：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_in_slow</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Returns True if `target` is contained in `seq`.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 如果 `target` 为 `seq` 成员，返回真。&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
-        <span class="c1"># for each item in seq, iterate over seq in its entirety!</span>
+        <span class="c1"># 我们为seq中的项目重新迭代整个seq！</span>
         <span class="k">for</span> <span class="n">item2</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">True</span>
     <span class="k">return</span> <span class="bp">False</span>
 </pre></div>
 </div>
-<p>For each item in <code class="docutils literal notranslate"><span class="pre">seq</span></code> we iterate over <code class="docutils literal notranslate"><span class="pre">seq</span></code> again, thus in the worst-case scenario we need to iterate over <span class="math notranslate nohighlight">\(n\)</span> items, <span class="math notranslate nohighlight">\(n\)</span> separate times - a total of <span class="math notranslate nohighlight">\(n^{2}\)</span> “steps” in our algorithm. Thus we would say that <code class="docutils literal notranslate"><span class="pre">is_in_slow</span></code> is a <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2})\)</span> algorithm: whereas doubling size of <code class="docutils literal notranslate"><span class="pre">seq</span></code> would increase the run time of our <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> algorithm by a factor of 2 (linear scaling), it would increase the run time of this <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2})\)</span> algorithm
-by 4 (quadratic scaling).</p>
-<p>Here is a more formal description of this notation:</p>
-<div class="alert alert-block alert-info"><p><strong>“Big-O” Notation</strong>: Suppose that <span class="math notranslate nohighlight">\(n\)</span> denotes the “size” of the input to an algorithm, and that the mathematical expression <span class="math notranslate nohighlight">\(f(n)\)</span> describes how many computational steps the algorithm must take in its <em>worst-case scenario</em>, given that input. Then the algorithm’s run time complexity can be denoted using the <strong>“Big-O”</strong> notation: <span class="math notranslate nohighlight">\(\mathcal{O}(f(n))\)</span>.</p>
-</div><p>A few important notes:</p>
+<p>我们为 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 中的每个项目重新迭代 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 一次，因此在最坏情况下我们需要迭代 <span class="math notranslate nohighlight">\(n\)</span> 个成员 <span class="math notranslate nohighlight">\(n\)</span> 次——总共在算法中走了 <span class="math notranslate nohighlight">\(n^{2}\)</span> “步”。因此，我们说 <code class="docutils literal notranslate"><span class="pre">is_in_slow</span></code> 是一个 <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2})\)</span> 的算法：当我们将 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 的大小翻倍时，我们的 <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> 算法会花两倍多的时间（线性增加），而我们的 <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2})\)</span> 算法会花四倍多的时间（平方增加）。</p>
+<p>以下是大O符号更加正式的定义：</p>
+<div class="alert alert-block alert-info"><p><strong>“大O”符号</strong>（big-O notation）：假设 <span class="math notranslate nohighlight">\(n\)</span> 代表着算法输入的“大小”，且数学表达式 <span class="math notranslate nohighlight">\(f(n)\)</span> 描述该算法在<em>最坏情况</em>下需要花多少计算步骤处理大小为 <span class="math notranslate nohighlight">\(n\)</span> 的输入，那么算法的运行时间复杂度用<strong>“大O”符号</strong>表达为 <span class="math notranslate nohighlight">\(\mathcal{O}(f(n))\)</span>。</p>
+</div><p>几个重要的点：</p>
 <ul class="simple">
-<li>We only care about the “highest-order” term in <span class="math notranslate nohighlight">\(f(n)\)</span>. That is, <span class="math notranslate nohighlight">\(\mathcal{O}(n + n^{2})\)</span> should just be written as <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2})\)</span>.</li>
-<li>We never care about constant factors in our scaling. That is, even if an algorithm iterates over a sequence twice, its big-O complexity should be written as <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>, rather than <span class="math notranslate nohighlight">\(\mathcal{O}(2n)\)</span>.</li>
-<li>An algorithm whose run time <em>does not depend on the size of its input</em> is a <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> algorithm.<ul>
-<li>Example: a function that returns the second element from a list.</li>
+<li><p>我们仅仅在乎 <span class="math notranslate nohighlight">\(f(n)\)</span> 最高次数的项。也就是说，<span class="math notranslate nohighlight">\(\mathcal{O}(n + n^{2})\)</span> 应被写为 <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2})\)</span>。</p></li>
+<li><p>我们永远不在乎关系中的常数。也就是说，就算一个算法迭代某序列两次，它的大O复杂度应该被写为 <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>，而不是 <span class="math notranslate nohighlight">\(\mathcal{O}(2n)\)</span>。</p></li>
+<li><p>一个运行时间<em>不根据输入大小而改变</em>的算法是一个 <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> 算法。</p>
+<ul>
+<li><p>例：一个返回列表中第二个成员的函数。</p></li>
 </ul>
 </li>
-<li>There are more nuanced methods for analyzing algorithm complexity than solely considering the worst-case scenario, which can be overly pessimistic. Know that “big-O” notation can be used to convey mean performance, <a class="reference external" href="https://en.wikipedia.org/wiki/Amortized_analysis">amortized</a> performance, and other types of analysis. Here, we will simply stick to the worst-case analysis.</li>
+<li><p>我们有其它更加微妙，不仅仅考虑最坏情况的分析算法复杂度的方法，因为最坏情况分析可能太过悲观。“大O”符号“也可以用来代表平均表现，<a class="reference external" href="https://en.wikipedia.org/wiki/Amortized_analysis">摊销</a>（amortized）表现，和其它分析类型。在此，我们仅仅使用最坏情况分析。</p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Takeaway</strong>:</p>
-<p>We will be using the “big-O” notation, <span class="math notranslate nohighlight">\(\mathcal{O}(f(n))\)</span>, to summarize the performance of the algorithms used by Python’s data structures.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
+<p>我们将会使用“大O”符号 <span class="math notranslate nohighlight">\(\mathcal{O}(f(n))\)</span> 来总结Python数据结构使用的算法的表现。</p>
 </div>
 </div>
-<div class="section" id="Sequential-Data-Structures:-Lists-and-Tuples">
-<h2>Sequential Data Structures: Lists and Tuples<a class="headerlink" href="#Sequential-Data-Structures:-Lists-and-Tuples" title="Permalink to this headline">¶</a></h2>
-<p>The “Sequence Types” section already introduced lists and tuples. Recall that both provide the same interface for accessing and summarizing the contents of a heterogeneous sequence of objects. However, a list can be mutated - updated, removed from, and added to - whereas a tuple cannot be mutated. Thus a list is <em>mutable</em>, whereas a tuple is <em>immutable</em>. Here you will find a summary of the algorithmic complexities of many of the built-in functions that work on sequential data structures.</p>
-<p>For a complete rundown of the functions available to Python’s list, go <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">here</a>.</p>
-<div class="section" id="List/Tuple-Complexities">
-<h3>List/Tuple Complexities<a class="headerlink" href="#List/Tuple-Complexities" title="Permalink to this headline">¶</a></h3>
-<p>Let <code class="docutils literal notranslate"><span class="pre">seq</span></code> represent a <strong>list or tuple</strong> of length <span class="math notranslate nohighlight">\(n\)</span>; <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are integers drawn randomly from the interval <span class="math notranslate nohighlight">\([0, n-1]\)</span>; <span class="math notranslate nohighlight">\(k\)</span> is the length of any subsequence involved in the operation. The following is a summary of the complexities associated with various common operations using lists and tuple (according to their implementations in CPython):</p>
-<table border="1" class="docutils">
+<div class="section" id="序列性数据结构：列表和元组">
+<h2>序列性数据结构：列表和元组<a class="headerlink" href="#序列性数据结构：列表和元组" title="永久链接至标题">¶</a></h2>
+<p>“序列类型”小节已经介绍了列表和元组。请回忆这两个数据结构都提供了相同的交互界面来访问和总结其不同类型对象的成员序列。但是，列表是可以被改变的——你可以对其更新，删除，并添加项目——而元组不可变。因此列表<em>可变</em>，而元组<em>不可变</em>。在本节你将会找到很多操作序列数据结构的内置函数的算法复杂度。</p>
+<p>你可以在<a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">这里</a>找到所有的Python列表函数。</p>
+<div class="section" id="列表/元组复杂度">
+<h3>列表/元组复杂度<a class="headerlink" href="#列表/元组复杂度" title="永久链接至标题">¶</a></h3>
+<p>设 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 为长度为 <span class="math notranslate nohighlight">\(n\)</span> 的<strong>列表或元组</strong>；<span class="math notranslate nohighlight">\(i\)</span> 和 <span class="math notranslate nohighlight">\(j\)</span> 为从区间 <span class="math notranslate nohighlight">\([0, n-1]\)</span> 中随意抽取的整数；<span class="math notranslate nohighlight">\(k\)</span> 为任何在此操作中使用的子序列的长度。以下为各种常见的列表和元组操作（根据CPython的实现）的复杂度：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="26%" />
-<col width="13%" />
-<col width="61%" />
+<col style="width: 34%" />
+<col style="width: 12%" />
+<col style="width: 54%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Operation</th>
-<th class="head">Complexity</th>
-<th class="head">Explanation</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>操作</p></th>
+<th class="head"><p>复杂度</p></th>
+<th class="head"><p>解释</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">len(seq)</span></code></td>
-<td>O(1)</td>
-<td>Return the number of items in the sequence</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">len(seq)</span></code></p></td>
+<td><p>O(1)</p></td>
+<td><p>返回序列中成员的数量</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">seq[i]</span></code></td>
-<td>O(1)</td>
-<td>Retrieve any item from the sequence</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">seq[i]</span></code></p></td>
+<td><p>O(1)</p></td>
+<td><p>从序列中获取单个成员</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">seq[i:j]</span></code></td>
-<td>O(k)</td>
-<td>Retrieve a length-k slice from the sequence</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">seq[i:j]</span></code></p></td>
+<td><p>O(k)</p></td>
+<td><p>从序列中获取长度k的切片</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">seq..</span></code></td>
-<td>O(n)</td>
-<td>Iterate over the sequence</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">seq..</span></code></p></td>
+<td><p>O(n)</p></td>
+<td><p>迭代序列</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">in</span> <span class="pre">seq</span></code></td>
-<td>O(n)</td>
-<td>Check if <code class="docutils literal notranslate"><span class="pre">obj</span></code> is a member of <code class="docutils literal notranslate"><span class="pre">seq</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">in</span> <span class="pre">seq</span></code></p></td>
+<td><p>O(n)</p></td>
+<td><p>检查 <code class="docutils literal notranslate"><span class="pre">obj</span></code> 是否为 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 的成员</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">seq.count(obj)</span></code></td>
-<td>O(n)</td>
-<td>Count the number of occurrences of <code class="docutils literal notranslate"><span class="pre">obj</span></code> in <code class="docutils literal notranslate"><span class="pre">seq</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">seq.count(obj)</span></code></p></td>
+<td><p>O(n)</p></td>
+<td><p>返回 <code class="docutils literal notranslate"><span class="pre">obj</span></code> 在 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 出现的次数</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">seq.index(obj)</span></code></td>
-<td>O(n)</td>
-<td>Return position-index of <code class="docutils literal notranslate"><span class="pre">obj</span></code> in <code class="docutils literal notranslate"><span class="pre">seq</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">seq.index(obj)</span></code></p></td>
+<td><p>O(n)</p></td>
+<td><p>返回 <code class="docutils literal notranslate"><span class="pre">obj</span></code> 在 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 中的索引</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="List-Complexities">
-<h3>List Complexities<a class="headerlink" href="#List-Complexities" title="Permalink to this headline">¶</a></h3>
-<p>Here we consider some mutating operations, like <code class="docutils literal notranslate"><span class="pre">append</span></code>, that are available to lists and not tuples. It is important to note that lists are implemented such that:</p>
+<div class="section" id="列表复杂度">
+<h3>列表复杂度<a class="headerlink" href="#列表复杂度" title="永久链接至标题">¶</a></h3>
+<p>我们在此考虑一些列表可用而元组不可用的改变序列的操作，如 <code class="docutils literal notranslate"><span class="pre">append</span></code>。请注意列表的实现导致：</p>
 <ul class="simple">
-<li>operations that add-to or remove-from the <em>end</em> of the list are <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></li>
-<li>operations that add-to or remove-from the <em>beginning</em> of the list are <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></li>
+<li><p>在列表<em>结尾</em>添加或删除成员的操作为 <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></li>
+<li><p>在列表<em>开头</em>添加或删除成员的操作为 <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p></li>
 </ul>
-<p>Let <code class="docutils literal notranslate"><span class="pre">my_list</span></code> represent a list of length <span class="math notranslate nohighlight">\(n\)</span>, and <code class="docutils literal notranslate"><span class="pre">i</span></code> is an integer drawn randomly from the interval <span class="math notranslate nohighlight">\([0, n-1]\)</span>. The following is a summary of the complexities associated with various operations using a list (according to its implementation in CPython):</p>
-<table border="1" class="docutils">
+<p>设 <code class="docutils literal notranslate"><span class="pre">my_list</span></code> 为长度为 <span class="math notranslate nohighlight">\(n\)</span> 的列表，而 <code class="docutils literal notranslate"><span class="pre">i</span></code> 为从区间 <span class="math notranslate nohighlight">\([0, n-1]\)</span> 随意抽取的整数。以下为列表各种操作（在CPython实现中）的复杂度：</p>
+<table class="docutils align-default">
 <colgroup>
-<col width="28%" />
-<col width="13%" />
-<col width="59%" />
+<col style="width: 37%" />
+<col style="width: 18%" />
+<col style="width: 46%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Operation</th>
-<th class="head">Complexity</th>
-<th class="head">Explanation</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>操作</p></th>
+<th class="head"><p>复杂度</p></th>
+<th class="head"><p>解释</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">my_list[i]</span> <span class="pre">=</span> <span class="pre">obj</span></code></td>
-<td>O(1)</td>
-<td>Set the ith entry of the list with a new object.</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">my_list[i]</span> <span class="pre">=</span> <span class="pre">obj</span></code></p></td>
+<td><p>O(1)</p></td>
+<td><p>将列表第i位的项目设为新对象。</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">my_list.append(obj)</span></code></td>
-<td>O(1)</td>
-<td>Append a new object to the end of the list.</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">my_list.append(obj)</span></code></p></td>
+<td><p>O(1)</p></td>
+<td><p>在列表结尾添加新对象。</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">my_list.pop()</span></code></td>
-<td>O(1)</td>
-<td>Remove the object from the <em>end</em> of the list.</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">my_list.pop()</span></code></p></td>
+<td><p>O(1)</p></td>
+<td><p>删除在列表<em>结尾</em>的对象。</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">my_list.pop(0)</span></code></td>
-<td>O(n)</td>
-<td>Remove the object from the <em>beginning</em> of the list.</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">my_list.pop(0)</span></code></p></td>
+<td><p>O(n)</p></td>
+<td><p>删除在列表<em>开头</em>的对象。</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">my_list.sort()</span></code></td>
-<td>O(nlog(n))</td>
-<td>Return a sorted version of the list.</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">my_list.sort()</span></code></p></td>
+<td><p>O(nlog(n))</p></td>
+<td><p>返回同列表的顺序版本。</p></td>
 </tr>
 </tbody>
 </table>
@@ -398,10 +398,10 @@ by 4 (quadratic scaling).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="DataStructures_II_Dictionaries.html" class="btn btn-neutral float-right" title="Data Structures (Part II): Dictionaries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="DataStructures_II_Dictionaries.html" class="btn btn-neutral float-right" title="数据结构（第二部分）：词典" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Scope.html" class="btn btn-neutral float-left" title="Scope" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Scope.html" class="btn btn-neutral float-left" title="作用域" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

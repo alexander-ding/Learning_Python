@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Functions and Function Signatures, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basics of Functions &mdash; Python Like You Mean It</title>
+  <title>函数基础 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scope" href="Scope.html" />
-    <link rel="prev" title="Python’s “Itertools”" href="Itertools.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="作用域" href="Scope.html" />
+    <link rel="prev" title="Python的“Itertools”" href="Itertools.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,48 +95,48 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">Basic Object Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">Sequence Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">Variables &amp; Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introducing Control Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">Conditional Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For-Loops and While-Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Iterables.html">Iterables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">Generators &amp; Comprehension Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python’s “Itertools”</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics of Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#The-def-Statement">The <code class="docutils literal notranslate"><span class="pre">def</span></code> Statement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#The-return-Statement">The <code class="docutils literal notranslate"><span class="pre">return</span></code> Statement</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Multiple-return-Statements">Multiple <code class="docutils literal notranslate"><span class="pre">return</span></code> Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_2.html">模组2：Python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Basic_Objects.html">基本对象类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequenceTypes.html">序列类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Variables_and_Assignment.html">变量和赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">控制流简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConditionalStatements.html">条件语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ForLoops.html">For循环和While循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Iterables.html">可迭代物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generators_and_Comprehensions.html">生成器和理解表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Itertools.html">Python的“Itertools”</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">函数基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#def-语句"><code class="docutils literal notranslate"><span class="pre">def</span></code> 语句</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#return-语句"><code class="docutils literal notranslate"><span class="pre">return</span></code> 语句</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#多个-return-语句">多个 <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Inline-Functions">Inline Functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Arguments">Arguments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Specifying-Arguments-by-Position">Specifying Arguments by Position</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Specifying-Arguments-by-Name">Specifying Arguments by Name</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Default-Valued-Arguments">Default-Valued Arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Accommodating-an-Arbitrary-Number-of-Positional-Arguments">Accommodating an Arbitrary Number of Positional Arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Accommodating-an-Arbitrary-Number-of-Keyword-Arguments">Accommodating an Arbitrary Number of Keyword Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#单行函数">单行函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#参数">参数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#通过位置提供参数">通过位置提供参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#通过关键词提供参数">通过关键词提供参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#有默认值的参数">有默认值的参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#支持任意多的位置参数">支持任意多的位置参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#支持任意多的关键词参数">支持任意多的关键词参数</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Functions-are-Objects">Functions are Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Exercise-Solutions:">Reading Comprehension Exercise Solutions:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#函数也是对象">函数也是对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Scope.html">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">Data Structures (Part I): Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">Data Structures (Part II): Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">Data Structures (Part III): Sets &amp; the Collections Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scope.html">作用域</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures.html">数据结构（第一部分）：简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_II_Dictionaries.html">数据结构（第二部分）：词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataStructures_III_Sets_and_More.html">数据结构（第三部分）：集和集合模组</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -181,9 +182,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_2.html">Module 2: The Essentials of Python</a> &raquo;</li>
+          <li><a href="../module_2.html">模组2：Python基础</a> &raquo;</li>
         
-      <li>Basics of Functions</li>
+      <li>函数基础</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -226,30 +227,30 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Basics-of-Functions">
-<h1>Basics of Functions<a class="headerlink" href="#Basics-of-Functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="函数基础">
+<h1>函数基础<a class="headerlink" href="#函数基础" title="永久链接至标题">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong>:</p>
-<p>There are reading-comprehension exercises included throughout the text. These are meant to help you put your reading to practice. Solutions for the exercises are included at the bottom of this page.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>注</strong>：</p>
+<p>在本资源各处会有一些阅读理解练习。这些题目旨在帮助读者活学活用文中的知识点。练习题的答案可以在本页底部找到。</p>
 </div>
-<p>Defining a function allows you to encapsulate a segment of code, specifying the information that enters and leaves the code. You can make use of this “code-capsule” repeatedly and in many different contexts. For example, suppose you want to count how many vowels are in a string. The following defines a function that accomplishes this:</p>
+<p>定义函数允许我们包装代码片段并描述进入和离开其中的信息。你可以在各种情况下重复使用这个“代码胶囊”。比如说，假设你想要数一个字符串中有多少元音，你可以定义以下的函数来达到该目的：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">in_string</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Returns the number of vowels contained in `in_string`&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 返回 `in_string` 中有多少元音 &quot;&quot;&quot;</span>
     <span class="n">num_vowels</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="s2">&quot;aeiouAEIOU&quot;</span>
 
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">in_string</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
-            <span class="n">num_vowels</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># equivalent to num_vowels = num_vowels + 1</span>
+            <span class="n">num_vowels</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># 等值于 num_vowels = num_vowels + 1</span>
     <span class="k">return</span> <span class="n">num_vowels</span>
 </pre></div>
 </div>
-<p>Executing this code will define the <em>function</em> <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code>. This function expects to be passed one object, represented by <code class="docutils literal notranslate"><span class="pre">in_string</span></code>, as an <em>input argument</em>, and it will <em>return</em> the number of vowels stored in that object. Invoking <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code>, passing it an input object, is referred to as <em>calling</em> the function:</p>
+<p>执行此代码会定义<em>函数</em> <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code>。这个函数期待一个对象作为<em>输入参数</em>（input argument），由 <code class="docutils literal notranslate"><span class="pre">in_string</span></code> 代名，并会<em>返回</em>（return）该对象中元音的数量。使用 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 并向其输入一个对象的过程叫做<em>调用</em>（call）该函数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;Hi my name is Ryan&quot;</span><span class="p">)</span>
 <span class="go">5</span>
 </pre></div>
 </div>
-<p>The great thing about this is that it can be used over and over!</p>
+<p>最棒的一点在于你可以重复使用这个函数！</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;Apple&quot;</span><span class="p">)</span>
 <span class="go">2</span>
 
@@ -257,86 +258,86 @@
 <span class="go">4</span>
 </pre></div>
 </div>
-<p>In this section, we will learn about the syntax for defining and calling functions in Python</p>
+<p>在本节中，我们将会了解定义和调用Python函数的语法。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Definition</strong>:</p>
-<p>A Python <strong>function</strong> is an object that encapsulates code. <em>Calling</em> the function will execute the encapsulated code and <em>return</em> an object. A function can be defined so that it accepts <em>arguments</em>, which are objects that are to be passed to the encapsulated code.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>定义</strong>：</p>
+<p>Python<strong>函数</strong>（function）是一个包装代码的对象。<em>调用</em>（call）函数将会执行包装的代码并<em>返回</em>（return）一个对象。你可以定义函数使其接受<em>参数</em>（argument），也就是输入进包装代码的对象。</p>
 </div>
-<div class="section" id="The-def-Statement">
-<h2>The <code class="docutils literal notranslate"><span class="pre">def</span></code> Statement<a class="headerlink" href="#The-def-Statement" title="Permalink to this headline">¶</a></h2>
-<p>Similar to <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and <code class="docutils literal notranslate"><span class="pre">for</span></code>, the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement is reserved by the Python language to signify the definition of functions (and a few other things that we’ll cover later). The following is the general syntax for defining a Python function:</p>
+<div class="section" id="def-语句">
+<h2><code class="docutils literal notranslate"><span class="pre">def</span></code> 语句<a class="headerlink" href="#def-语句" title="永久链接至标题">¶</a></h2>
+<p>类似于 <code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">else</span></code>，和 <code class="docutils literal notranslate"><span class="pre">for</span></code>，Python保留了 <code class="docutils literal notranslate"><span class="pre">def</span></code> 语句来表达函数（以及我们会在之后讨论的其它几个构造体）的定义。以下是Python函数定义的一般形式：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def &lt;function name&gt;(&lt;function signature&gt;):
-    &quot;&quot;&quot; documentation string &quot;&quot;&quot;
+    &quot;&quot;&quot; 说明字符串 &quot;&quot;&quot;
     &lt;encapsulated code&gt;
     return &lt;object&gt;
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">name&gt;</span></code> can be any valid variable name, and <em>must</em> be followed by parentheses and then a colon.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">signature&gt;</span></code> specifies the input arguments to the function, and may be left blank if the function does not accept any arguments (the parentheses must still be included, but will not encapsulate anything).</li>
-<li>The documentation string (commonly referred to as a “docstring”) may span multiple lines, and should indicate what the function’s purpose is. It is optional.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;encapsulated</span> <span class="pre">code&gt;</span></code> can consist of general Python code, and is demarcated by being indented relative to the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement.</li>
-<li><code class="docutils literal notranslate"><span class="pre">return</span></code> if reached by the encapsulated code, triggers the function to return the specified object and end its own execution immediately.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">name&gt;</span></code> 是任何合法的变量名，在这之后<em>必须</em>跟随一对括号和一个冒号。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">signature&gt;</span></code> 描述函数的输入参数。如果函数不接受任何变量，你可以留白这一部分（你仍然需要提供括号，但是仅仅括号并不会包装任何参数）。</p></li>
+<li><p>说明字符串（documentation string）（一般叫做“docstring”）可以长达多行并解释函数的目的。它是可选的。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;encapsulated</span> <span class="pre">code&gt;</span></code> 包含正常的Python代码，其由相对于 <code class="docutils literal notranslate"><span class="pre">def</span></code> 语句的缩进限定。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> 当函数中包装的代码遇到这个标示后，函数会返回标示后跟随的对象并立刻终止函数的执行。</p></li>
 </ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is also reserved by Python. It denotes the end of a function; if reached, a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement immediately concludes the execution of the function and returns the specified object.</p>
-<p>Note that, like an if-statement and a for-loop, the <code class="docutils literal notranslate"><span class="pre">def</span></code> statment must end in a colon and the body of the function is <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope">delimited by whitespace</a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># wrong indentation</span>
+<p>Python同样保留了 <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句来表达函数的终止；如果遇到了 <code class="docutils literal notranslate"><span class="pre">return</span></code>，那程序将立即终止函数的执行并返回 <code class="docutils literal notranslate"><span class="pre">return</span></code> 右边的对象。</p>
+<p>请注意，与if语句和for循环一样，<code class="docutils literal notranslate"><span class="pre">def</span></code> 语句必须由冒号结尾，且函数的主体代码必须<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域">由空格限定</a>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 错误的缩进</span>
 <span class="k">def</span> <span class="nf">bad_func1</span><span class="p">():</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># wrong indentation</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 错误的缩进</span>
 <span class="k">def</span> <span class="nf">bad_func2</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># missing colon</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 漏了冒号</span>
 <span class="k">def</span> <span class="nf">bad_func3</span><span class="p">()</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># missing parenthesis</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 漏了括号</span>
 <span class="k">def</span> <span class="nf">bad_func4</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is ok</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这个没问题</span>
 <span class="k">def</span> <span class="nf">ok_func</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Writing a Basic Function</strong></p>
-<p>Write a function named <code class="docutils literal notranslate"><span class="pre">count_even</span></code>. It should accept one input argument, named <code class="docutils literal notranslate"><span class="pre">numbers</span></code>, which will be an iterable containing integers. Have the function return the number of even-valued integers contained in the list. Include a reasonable docstring.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：编写简单函数</strong></p>
+<p>编写一个名为 <code class="docutils literal notranslate"><span class="pre">count_even</span></code> 的函数。它应该接受一个名为 <code class="docutils literal notranslate"><span class="pre">numbers</span></code> 的整数可迭代物作为参数。该函数应该返回列表中偶数的数量。注意包含一个合理的docstring。</p>
 </div>
 </div>
-<div class="section" id="The-return-Statement">
-<h2>The <code class="docutils literal notranslate"><span class="pre">return</span></code> Statement<a class="headerlink" href="#The-return-Statement" title="Permalink to this headline">¶</a></h2>
-<p>In general, any Python object can follow a function’s <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. Furthermore, an <strong>empty</strong> <code class="docutils literal notranslate"><span class="pre">return</span></code> statement can be specified, or the <strong>return</strong> statement of a function can be omitted altogether. In both of these cases, <em>the function will return the ``None`` object</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this function returns `None`</span>
-<span class="c1"># an &quot;empty&quot; return statement</span>
+<div class="section" id="return-语句">
+<h2><code class="docutils literal notranslate"><span class="pre">return</span></code> 语句<a class="headerlink" href="#return-语句" title="永久链接至标题">¶</a></h2>
+<p>一般来讲，<code class="docutils literal notranslate"><span class="pre">return</span></code> 语句可以返回任何Python对象。同时，你可以使用一个<strong>空的</strong> <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句或在函数中完全不使用<strong>返回</strong>（return）语句。在这两种情况下，<em>函数都会返回 ``None`` 对象</em>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 本函数返回 `None`</span>
+<span class="c1"># 一个“空”的返回语句</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">return</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this function returns `None`</span>
-<span class="c1"># return statement is omitted</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 本函数返回 `None`</span>
+<span class="c1"># 完全没有用返回语句</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>All Python functions return <em>something</em>. Even the built-in <code class="docutils literal notranslate"><span class="pre">print</span></code> function returns <code class="docutils literal notranslate"><span class="pre">None</span></code> after it prints to standard-output!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the `print` function returns `None`</span>
+<p>所有Python函数都会返回<em>某个对象</em>。就算是内置的 <code class="docutils literal notranslate"><span class="pre">print</span></code> 函数在打印后也会返回 <code class="docutils literal notranslate"><span class="pre">None</span></code>！</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `print` 函数返回 `None`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
 <span class="n">hi</span>
 
@@ -345,21 +346,21 @@
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Warning!</strong></p>
-<p>Take care to not <em>mistakenly</em> omit a return statement or leave it blank. You will still be able to call your function, but it will return <code class="docutils literal notranslate"><span class="pre">None</span></code> no matter what!</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>警告</strong>！</p>
+<p>请注意不要<em>错误地</em>漏掉或使用空的返回语句。你将依然能够调用你的函数，但是它在任何情况下都会返回 <code class="docutils literal notranslate"><span class="pre">None</span></code>！</p>
 </div>
-<p>A function also need not have any additional code beyond its return statement. For example, we can make use of <code class="docutils literal notranslate"><span class="pre">sum</span></code> and a generator comprehension (see the previous section of this module) to shorten our <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the returned object of a function can be specified straight-away</span>
+<p>函数并不一定要有除了返回语句之外的代码。比如说，我们可以使用 <code class="docutils literal notranslate"><span class="pre">sum</span></code> 和生成器理解（见本模组前一节）来简化我们的 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 函数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 你可以直接描述函数返回的对象</span>
 <span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">in_string</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Returns the number of vowels contained in `in_string`&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 返回 `in_string` 中元音的数量 &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">in_string</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="s2">&quot;aeiouAEIOU&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="Multiple-return-Statements">
-<h3>Multiple <code class="docutils literal notranslate"><span class="pre">return</span></code> Statements<a class="headerlink" href="#Multiple-return-Statements" title="Permalink to this headline">¶</a></h3>
-<p>You can specify more than one <code class="docutils literal notranslate"><span class="pre">return</span></code> statement within a function. This can be useful for handling edge-cases or optimizations in your code. Suppose you want your function to compute <span class="math notranslate nohighlight">\(e^{x}\)</span>, using a <a class="reference external" href="https://en.wikipedia.org/wiki/Taylor_series#Exponential_function">Taylor series</a> approximation. The function should immediately return <code class="docutils literal notranslate"><span class="pre">1.0</span></code> in the case that <span class="math notranslate nohighlight">\(x = 0\)</span>:</p>
+<div class="section" id="多个-return-语句">
+<h3>多个 <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句<a class="headerlink" href="#多个-return-语句" title="永久链接至标题">¶</a></h3>
+<p>你可以在一个函数内使用不止一个 <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句。在处理边缘情况或优化代码时这可能会有用。假设你想要你的函数通过<a class="reference external" href="https://en.wikipedia.org/wiki/Taylor_series#Exponential_function">泰勒级数</a>（Taylor series）来模糊计算 <span class="math notranslate nohighlight">\(e^{x}\)</span>，当 <span class="math notranslate nohighlight">\(x = 0\)</span> 时函数应该立刻返回 <code class="docutils literal notranslate"><span class="pre">1.0</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_exp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Use a Taylor Series to compute e^x &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 使用泰勒级数来计算 e^x &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">1.0</span>
 
@@ -367,16 +368,16 @@
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">n</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>If <code class="docutils literal notranslate"><span class="pre">x==0</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then the first <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is reached. <code class="docutils literal notranslate"><span class="pre">1.0</span></code> will be returned and the function will be “exited” immediately, without ever reaching the code following it.</p>
-<p>As stated above, a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement will trigger a function to end its execution immediately when reached, even when subsequent code follows it. <em>It is impossible for multiple ``return`` statements to be visited within a single function call</em>. Thus if you want to return multiple items, then your function must return a single container of those items, like a list or a tuple.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returning multiple items from a function</span>
-<span class="k">def</span> <span class="nf">bad_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; return x**2 and x**3&quot;&quot;&quot;</span>
+<p>如果 <code class="docutils literal notranslate"><span class="pre">x==0</span></code> 为 <code class="docutils literal notranslate"><span class="pre">True</span></code>，那么程序将执行第一个 <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句，返回 <code class="docutils literal notranslate"><span class="pre">1.0</span></code> 并立刻“终止”该函数，且不执行之后的代码。</p>
+<p>如上所述，就算下方有额外的代码，<code class="docutils literal notranslate"><span class="pre">return</span></code> 语句也会导致函数立刻终止且不执行之后的代码。<em>在一次函数调用中，程序不可能遇到多个 ``return`` 语句</em>。因此，如果你想要返回多个对象，那么你的函数必须返回单个包含这些项目的容器，如列表会元组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 函数返回多个项目</span>
+<span class="k">def</span> <span class="nf">bad_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># 译者注：函数名字大意为：不好的函数</span>
+    <span class="sd">&quot;&quot;&quot; 返回 x**2 和 x**3&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-    <span class="c1"># this code can never be reached!</span>
+    <span class="c1"># 此代码永远都不会被执行！</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
 
-<span class="k">def</span> <span class="nf">good_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">good_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># 译者注：函数名字大意为：好的函数</span>
     <span class="sd">&quot;&quot;&quot; return x**2 and x**3&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -390,142 +391,142 @@
 </div>
 </div>
 </div>
-<div class="section" id="Inline-Functions">
-<h2>Inline Functions<a class="headerlink" href="#Inline-Functions" title="Permalink to this headline">¶</a></h2>
-<p>Functions can be defined in-line, as a single return statement:</p>
+<div class="section" id="单行函数">
+<h2>单行函数<a class="headerlink" href="#单行函数" title="永久链接至标题">¶</a></h2>
+<p>你可以在一行内定义只有一个返回语句的函数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>can be rewritten as:</p>
+<p>可以被重写为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>This should be used sparingly, for exceedingly simple functions that can be easily understood without docstrings.</p>
+<p>尽量只在函数极其简单到不需要docstring就能理解时使用此功能。切记不要滥用。</p>
 </div>
-<div class="section" id="Arguments">
-<h2>Arguments<a class="headerlink" href="#Arguments" title="Permalink to this headline">¶</a></h2>
-<p>A sequence of comma-separated variable names can specified in the function signature to indicated <em>positional</em> arguments for the function. For example, the following specifies <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">lower</span></code>, and <code class="docutils literal notranslate"><span class="pre">upper</span></code> as input arguments to a function, <code class="docutils literal notranslate"><span class="pre">is_bounded</span></code>:</p>
+<div class="section" id="参数">
+<h2>参数<a class="headerlink" href="#参数" title="永久链接至标题">¶</a></h2>
+<p>你可以在函数签名（function signature）部分通过一序列由逗号隔开的变量名来描述函数的<em>位置</em>参数（positional argument）。比如说，以下代码为函数 <code class="docutils literal notranslate"><span class="pre">is_bounded</span></code> 提供了 <code class="docutils literal notranslate"><span class="pre">x</span></code>，<code class="docutils literal notranslate"><span class="pre">lower</span></code>，和 <code class="docutils literal notranslate"><span class="pre">upper</span></code> 三个参数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_bounded</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">lower</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">upper</span>
 </pre></div>
 </div>
-<p>This function can then be passed its arguments in several way:</p>
-<div class="section" id="Specifying-Arguments-by-Position">
-<h3>Specifying Arguments by Position<a class="headerlink" href="#Specifying-Arguments-by-Position" title="Permalink to this headline">¶</a></h3>
-<p>The objects passed to <code class="docutils literal notranslate"><span class="pre">is_bounded</span></code> will be assigned to its input variables based on their positions. That is, <code class="docutils literal notranslate"><span class="pre">is_bounded(3,</span> <span class="pre">2,</span> <span class="pre">4)</span></code> will assign <code class="docutils literal notranslate"><span class="pre">x=3</span></code>, <code class="docutils literal notranslate"><span class="pre">lower=2</span></code>, and <code class="docutils literal notranslate"><span class="pre">upper=4</span></code>, in accordance with the positional ordering of the function’s input arguments:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluate: 2 &lt;= 3 &lt;= 4</span>
-<span class="c1"># specifying inputs based on position</span>
+<p>你可以用几种不同的方法来向函数提供参数：</p>
+<div class="section" id="通过位置提供参数">
+<h3>通过位置提供参数<a class="headerlink" href="#通过位置提供参数" title="永久链接至标题">¶</a></h3>
+<p>输入到 <code class="docutils literal notranslate"><span class="pre">is_bounded</span></code> 中的对象会根据它们的位置来赋值函数的输入变量。也就是说，<code class="docutils literal notranslate"><span class="pre">is_bounded(3,</span> <span class="pre">2,</span> <span class="pre">4)</span></code> 会赋值 <code class="docutils literal notranslate"><span class="pre">x=3</span></code>，<code class="docutils literal notranslate"><span class="pre">lower=2</span></code>，和 <code class="docutils literal notranslate"><span class="pre">upper=4</span></code>，其根据函数输入参数的位置顺序来对应：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算：2 &lt;= 3 &lt;= 4</span>
+<span class="c1"># 通过位置来提供输入</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_bounded</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>Feeding a function too few or too many arguments will raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># too few inputs: raises error</span>
+<p>向函数输入太少或太多参数会导致 <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 输入太少：报错</span>
 <span class="n">is_bounded</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="c1"># too many inputs: raises error</span>
+<span class="c1"># 输入太多：报错</span>
 <span class="n">is_bounded</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Specifying-Arguments-by-Name">
-<h3>Specifying Arguments by Name<a class="headerlink" href="#Specifying-Arguments-by-Name" title="Permalink to this headline">¶</a></h3>
-<p>You can provide explicit names when specifying the inputs to a function, in which case ordering does not matter. This is very nice for writing clear and flexible code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluate: 2 &lt;= 3 &lt;= 4</span>
-<span class="c1"># specify inputs using explicit input names</span>
+<div class="section" id="通过关键词提供参数">
+<h3>通过关键词提供参数<a class="headerlink" href="#通过关键词提供参数" title="永久链接至标题">¶</a></h3>
+<p>在顺序不重要的时候，你也可以在给函数输入参数时提供它们的关键词（也就是名字）来对应对象和参数。这会帮助你编写易读和灵活的代码：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算：2 &lt;= 3 &lt;= 4</span>
+<span class="c1"># 通过参数名字来提供输入对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_bounded</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>You can mix-and-match positional and named input by using position-based inputs first:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluate: 2 &lt;= 3 &lt;= 4</span>
-<span class="c1"># `x` is specified based on position</span>
-<span class="c1"># `lower` and `upper` are specified by name</span>
+<p>你可以混合关键词参数和位置参数，但位置参数应该在前：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算：2 &lt;= 3 &lt;= 4</span>
+<span class="c1"># `x` 是位置参数</span>
+<span class="c1"># `lower` 和 `upper` 关键词参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_bounded</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>Note that if you provide a named input, all the inputs following it must also be named:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># positional arguments cannot follow named arguments</span>
+<p>请注意，如果你提供了一个关键词参数，那么它之后所有的参数都应该是关键词参数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 你不可以在关键词参数后使用位置参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_bounded</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">positional</span> <span class="n">argument</span> <span class="n">follows</span> <span class="n">keyword</span> <span class="n">argument</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Default-Valued-Arguments">
-<h3>Default-Valued Arguments<a class="headerlink" href="#Default-Valued-Arguments" title="Permalink to this headline">¶</a></h3>
-<p>You can specify default values for input arguments to a function. Their default values are utilized if a user does not specify these inputs when calling the function. Recall our <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> function. Suppose we want the ability to include “y” as a vowel. We know, however, that people will typically want to exclude “y” from their vowels, so we can exclude “y” by default:</p>
+<div class="section" id="有默认值的参数">
+<h3>有默认值的参数<a class="headerlink" href="#有默认值的参数" title="永久链接至标题">¶</a></h3>
+<p>你可以提供参数的默认值。如果用户在调用函数时没有提供此参数，那么函数将会使用定义的默认值。请回忆我们的 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 函数。假设我们想要提供将“y”算为一个元音的选择。因为我们知道人们一般不会将“y”视为元音，所以我们可以默认将“y”除外：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">in_string</span><span class="p">,</span> <span class="n">include_y</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Returns the number of vowels contained in `in_string`&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 返回 `in_string` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="s2">&quot;aeiouAEIOU&quot;</span>
     <span class="k">if</span> <span class="n">include_y</span><span class="p">:</span>
-        <span class="n">vowels</span> <span class="o">+=</span> <span class="s2">&quot;yY&quot;</span>  <span class="c1"># add &quot;y&quot; to vowels</span>
+        <span class="n">vowels</span> <span class="o">+=</span> <span class="s2">&quot;yY&quot;</span>  <span class="c1"># 将 &quot;y&quot; 加到元音列表中</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">in_string</span> <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now, if only <code class="docutils literal notranslate"><span class="pre">in_string</span></code> is specified when calling <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code>, <code class="docutils literal notranslate"><span class="pre">include_y</span></code> will be passed the value <code class="docutils literal notranslate"><span class="pre">False</span></code> by default:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># using the default value: exclude y from vowels</span>
+<p>现在，如果在调用 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 时只提供了 <code class="docutils literal notranslate"><span class="pre">in_string</span></code>，那么 <code class="docutils literal notranslate"><span class="pre">include_y</span></code> 会使用默认值 <code class="docutils literal notranslate"><span class="pre">False</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用默认值：不将y算为元音</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;Happy&quot;</span><span class="p">)</span>
 <span class="mi">1</span>
 </pre></div>
 </div>
-<p>This default value can be overridden:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># overriding the default value: include y as a vowel</span>
+<p>我们可以提供默认值之外的输入：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 不使用不认值：将y算为元音</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;Happy&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
 <span class="mi">2</span>
 
-<span class="c1"># you can still specify inputs by name</span>
+<span class="c1"># 你依然可以通过名字来描述输入参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">(</span><span class="n">include_y</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">in_string</span><span class="o">=</span><span class="s2">&quot;Happy&quot;</span><span class="p">)</span>
 <span class="mi">2</span>
 </pre></div>
 </div>
-<p>Default-valued input arguments must come after all positional input arguments in the function signature:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is ok</span>
+<p>在函数签名中，有默认值的输入参数必须在所有位置参数之后：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这没问题</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">None</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this will raise a syntax error</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这会导致语法错误</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">None</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Functions and Arguments</strong></p>
-<p>Write a function, <code class="docutils literal notranslate"><span class="pre">max_or_min</span></code>, which accepts two positional arguments, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> (which will hold numerical values), and a <code class="docutils literal notranslate"><span class="pre">mode</span></code> variable that has the default value <code class="docutils literal notranslate"><span class="pre">&quot;max&quot;</span></code>.</p>
-<p>The function should return <code class="docutils literal notranslate"><span class="pre">min(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">max(x,</span> <span class="pre">y)</span></code> according to the <code class="docutils literal notranslate"><span class="pre">mode</span></code>. Have the function return <code class="docutils literal notranslate"><span class="pre">None</span></code> if <code class="docutils literal notranslate"><span class="pre">mode</span></code> is neither <code class="docutils literal notranslate"><span class="pre">&quot;max&quot;</span></code> nor <code class="docutils literal notranslate"><span class="pre">&quot;min&quot;</span></code>.</p>
-<p>Include a descriptive doc-string.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：函数和参数</strong></p>
+<p>编写一个函数 <code class="docutils literal notranslate"><span class="pre">max_or_min</span></code>。它接受两个位置参数 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code>（将会被赋值为数字）以及一个 <code class="docutils literal notranslate"><span class="pre">mode</span></code> 变量，其默认值为 <code class="docutils literal notranslate"><span class="pre">&quot;max&quot;</span></code>。</p>
+<p>此函数应该根据 <code class="docutils literal notranslate"><span class="pre">mode</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">min(x,</span> <span class="pre">y)</span></code> 或 <code class="docutils literal notranslate"><span class="pre">max(x,</span> <span class="pre">y)</span></code>。如果 <code class="docutils literal notranslate"><span class="pre">mode</span></code> 既不是 <code class="docutils literal notranslate"><span class="pre">&quot;max&quot;</span></code> 也不是 <code class="docutils literal notranslate"><span class="pre">&quot;min&quot;</span></code> 的时候让函数返回 <code class="docutils literal notranslate"><span class="pre">None</span></code>。</p>
+<p>包含一个描述性的docstring。</p>
 </div>
 </div>
-<div class="section" id="Accommodating-an-Arbitrary-Number-of-Positional-Arguments">
-<h3>Accommodating an Arbitrary Number of Positional Arguments<a class="headerlink" href="#Accommodating-an-Arbitrary-Number-of-Positional-Arguments" title="Permalink to this headline">¶</a></h3>
-<p>Python provides us with a syntax for defining a function, which can be called with an arbitrary number of positional arguments. This is signaled by the syntax <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">f(*&lt;var_name&gt;)</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The * symbol indicates that an arbitrary number of</span>
-<span class="c1"># arguments can be passed to `args`, when calling `f`.</span>
+<div class="section" id="支持任意多的位置参数">
+<h3>支持任意多的位置参数<a class="headerlink" href="#支持任意多的位置参数" title="永久链接至标题">¶</a></h3>
+<p>Python提供了定义可以接受任意多位置参数的函数的语法。使用 <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">f(*&lt;var_name&gt;)</span></code> 语法来定义这类输入。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># * 符号表明调用 `f` 时可以向 `args`</span>
+<span class="c1"># 输入任意多的参数。</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="c1">#  All arguments passed to `f` will be &quot;packed&quot; into a</span>
-    <span class="c1">#  tuple that is assigned to the variable `args`.</span>
-    <span class="c1"># `f()`  will assign `args = tuple()`</span>
-    <span class="c1"># `f(x, y, ...)` will assign `args = (x, y, ...)`</span>
+    <span class="c1">#  所有向 `f` 输入的参数都会被“打包”成一个元组</span>
+    <span class="c1">#  并赋值给变量 `args`。</span>
+    <span class="c1"># `f()` 会赋值 `args = tuple()`</span>
+    <span class="c1"># `f(x, y, ...)` 会赋值 `args = (x, y, ...)`</span>
     <span class="k">return</span> <span class="n">args</span>
 </pre></div>
 </div>
-<p>Because Python cannot foresee how many arguments will be passed to <code class="docutils literal notranslate"><span class="pre">f</span></code>, all of the objects that are passed to it will be <em>packed into a tuple</em>, which is then assigned to the variable <code class="docutils literal notranslate"><span class="pre">args</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pass zero arguments to `f`</span>
+<p>因为Python不能提前知道 <code class="docutils literal notranslate"><span class="pre">f</span></code> 会收到多少个参数，因此它所有的输入参数都会被<em>打包成一个元组</em>并赋值给变量 <code class="docutils literal notranslate"><span class="pre">args</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 向 `f` 输入0个参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">()</span>
 <span class="p">()</span>
 
-<span class="c1"># pass one argument to `f`</span>
+<span class="c1"># 向 `f` 输入1个参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
 
-<span class="c1"># pass three arguments to `f`</span>
+<span class="c1"># 向 `f` 输入3个参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">)</span>
 <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This syntax can be combined with positional arguments and default arguments. Any variables specified after a packed variable <em>must be called by name</em>:</p>
+<p>你可以将此语法与位置参数和默认参数混合使用。任何在被打包的变量后的变量<em>必须提供参数名</em>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">seq</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;x is: &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;seq is: &quot;</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span>
@@ -533,31 +534,30 @@
     <span class="k">return</span> <span class="bp">None</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># `y` must be specified by name</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 必须提供 `y` 的名字</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>   <span class="ow">is</span><span class="p">:</span>  <span class="mi">1</span>
-<span class="n">seq</span> <span class="ow">is</span><span class="p">:</span>  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">y</span>   <span class="ow">is</span><span class="p">:</span>  <span class="mi">5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>x   是： 1
+seq 是： (2, 3, 4)
+y   是： 5
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>  <span class="c1"># no additional positional arguments are passed</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>  <span class="c1"># 没有输入任何额外的位置参数</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>   <span class="ow">is</span><span class="p">:</span>  <span class="s2">&quot;cat&quot;</span>
-<span class="n">seq</span> <span class="ow">is</span><span class="p">:</span>  <span class="p">()</span>
-<span class="n">y</span>   <span class="ow">is</span><span class="p">:</span>  <span class="s2">&quot;dog&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>x   是： &quot;cat&quot;
+seq 是： ()
+y   是： &quot;dog&quot;
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Arbitrary Arguments</strong></p>
-<p>Write a function named <code class="docutils literal notranslate"><span class="pre">mean</span></code>, which accepts and arbitrary number of numerical arguments, and computes the mean of all of the values passed to the function. Thus <code class="docutils literal notranslate"><span class="pre">mean(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> should return <span class="math notranslate nohighlight">\(\frac{1 + 2 + 3}{3} = 2.0\)</span></p>
-<p>This function should return <code class="docutils literal notranslate"><span class="pre">0.</span></code> if no arguments are passed to it. Be sure to test your function, and include a docstring.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：任意多的参数</strong></p>
+<p>编写一个名为 <code class="docutils literal notranslate"><span class="pre">mean</span></code> 的函数，其接受任意多的数字参数并计算所有数字的平均值。如，<code class="docutils literal notranslate"><span class="pre">mean(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> 应返回 <span class="math notranslate nohighlight">\(\frac{1 + 2 + 3}{3} = 2.0\)</span></p>
+<p>如果没有收到任何输入，函数应返回 <code class="docutils literal notranslate"><span class="pre">0.</span></code>。记得测试你的函数并编写一个docstring。</p>
 </div>
-<p>We see that <code class="docutils literal notranslate"><span class="pre">*</span></code> indicates the <em>packing of an arbitrary number of arguments into a tuple</em>, when used in the signature of a function definition. Simultaneously, <code class="docutils literal notranslate"><span class="pre">*</span></code> signals the <em>unpacking of an iterable</em> to pass each of its members as a positional argument to a function, when used in the context of calling a function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using `*` when calling a function, to unpack an</span>
-<span class="c1"># iterable. Passing its members as distinct arguments</span>
-<span class="c1"># to the function</span>
+<p>如我们所见，在函数定义的签名中使用 <code class="docutils literal notranslate"><span class="pre">*</span></code> 意味着<em>将任意多的参数打包成一个元组</em>。同时，在调用函数时 <code class="docutils literal notranslate"><span class="pre">*</span></code> 也意味着<em>解包可迭代物</em>并将其作为位置参数输入到函数中：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在调用函数时使用 `*` 来解包可迭代物，并将其</span>
+<span class="c1"># 成员作为位置参数输入到函数中</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
@@ -565,17 +565,16 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="mi">6</span>
 
-<span class="c1"># `*` means: unpack the contents of [1, 2, 3]</span>
-<span class="c1"># passing each item as x, y, and z,</span>
-<span class="c1"># respectively</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># equivalent to: f(1, 2, 3)</span>
+<span class="c1"># `*` 意味着：解包 `[1, 2, 3]` 的内容并将每个</span>
+<span class="c1"># 物件分别输入为x，y，和z</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># 等值于：f(1, 2, 3)</span>
 <span class="mi">6</span>
 </pre></div>
 </div>
-<p>In the following example, we use <code class="docutils literal notranslate"><span class="pre">*</span></code> to:</p>
+<p>在以下范例中，我们使用 <code class="docutils literal notranslate"><span class="pre">*</span></code> 来：</p>
 <ol class="arabic simple">
-<li>Define a function to accept an arbitrary number of arguments, which get packed into a tuple.</li>
-<li>Call the function, passing it an arbitrary number of arguments, by unpacking an iterable.</li>
+<li><p>定义一个接受任意多参数并将其打包为元组的函数</p></li>
+<li><p>通过解包可迭代物来调用函数并输入任意多的参数</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">number_of_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
@@ -586,60 +585,62 @@
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
-<span class="go"># passing the list itself as the sole argument</span>
+<span class="go"># 将列表本身作为唯一的参数输入</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">number_of_args</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span>
 <span class="go">1</span>
 
-<span class="go"># unpacking the 5 members of the list,</span>
-<span class="go"># passing each one as an argument to the function</span>
+<span class="go"># 将列表的5个成员解包并作为多个参数输入进函数</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">number_of_args</span><span class="p">(</span><span class="o">*</span><span class="n">some_list</span><span class="p">)</span>
 <span class="go">5</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Accommodating-an-Arbitrary-Number-of-Keyword-Arguments">
-<h3>Accommodating an Arbitrary Number of Keyword Arguments<a class="headerlink" href="#Accommodating-an-Arbitrary-Number-of-Keyword-Arguments" title="Permalink to this headline">¶</a></h3>
-<p>We can also define a function that is able to accept an arbitrary number of <em>keyword</em> arguments, using the syntax: <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">f(**&lt;var_name&gt;)</span></code></p>
-<p>Note that a single asterisk, <code class="docutils literal notranslate"><span class="pre">*</span></code>, was used to denote an arbitrary number of <em>positional</em> arguments, whereas <code class="docutils literal notranslate"><span class="pre">**</span></code> signals the acceptance of an arbitrary number of <em>keyword</em> arguments.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The ** symbol indicates that an arbitrary number of</span>
-<span class="c1"># keyword arguments can be passed to `args`, when calling `f`.</span>
+<div class="section" id="支持任意多的关键词参数">
+<h3>支持任意多的关键词参数<a class="headerlink" href="#支持任意多的关键词参数" title="永久链接至标题">¶</a></h3>
+<p>我们可以使用 <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">f(**&lt;var_name&gt;)</span></code> 语法来定义一个接受任意多的<em>关键词</em>（keyword）参数的函数。</p>
+<p>注意单个星号 <code class="docutils literal notranslate"><span class="pre">*</span></code> 用来代表任意多的<em>位置</em>参数，而 <code class="docutils literal notranslate"><span class="pre">**</span></code> 代表着任意多的<em>关键词</em>参数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ** 符号意味着在调用 `f` 时可以向 `args` 输入</span>
+<span class="c1"># 任意多的关键词参数。</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
-    <span class="c1">#  All keyword arguments passed to `f` will be &quot;packed&quot; into a</span>
-    <span class="c1">#  dictionary that is assigned to the variable `args`.</span>
-    <span class="c1"># `f()`  will assign `args = {}` (an empty dictionary)</span>
-    <span class="c1"># `f(x=1, y=2, ...)` will assign `args = {&quot;x&quot;:1, &quot;y&quot;:2, ...}`</span>
+    <span class="c1"># 所有输入到 `f` 的关键词参数都会被“打包”成一个词典</span>
+    <span class="c1"># 并赋值到变量 `args` 中</span>
+    <span class="c1"># `f()` 会赋值 `args = {}`（一个空词典）</span>
+    <span class="c1"># `f(x=1, y=2, ...)` 会赋值 `args = {&quot;x&quot;:1, &quot;y&quot;:2, ...}`</span>
     <span class="k">return</span> <span class="n">args</span>
 </pre></div>
 </div>
-<p>Because Python cannot foresee how many arguments will be passed to <code class="docutils literal notranslate"><span class="pre">f</span></code>, all of the keyword arguments that are passed to it will be packed into a <em>dictionary</em>, where a given keyword is set as a key (cast as a string) that maps to the corresponding value. This dictionary is then assigned to the variable <code class="docutils literal notranslate"><span class="pre">args</span></code>. Dictionaries will be discussed in detail in a <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html">later section</a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">()</span>            <span class="c1"># pass zero arguments to `f`</span>
+<p>因为Python无法预先知道 <code class="docutils literal notranslate"><span class="pre">f</span></code> 会收到多少个关键词参数，所以所有收到的关键词参数都会被打包成一个<em>词典</em>（dictionary）。词典允许你通过关键词（将其转化成字符串）查询并设置关键词对应的值。这个词典被赋值到变量 <code class="docutils literal notranslate"><span class="pre">args</span></code> 上。我们会在<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html">后面一节</a>专门讨论词典。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">()</span>            <span class="c1"># 向 `f` 输入0个参数</span>
 <span class="go">{}</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># pass one argument to `f`</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># 向 `f` 输入1个参数</span>
 <span class="go">{&#39;x&#39;: 1}</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">val</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">moo</span><span class="o">=</span><span class="s2">&quot;cow&quot;</span><span class="p">)</span>  <span class="c1"># pass three arguments to `f`</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">val</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">moo</span><span class="o">=</span><span class="s2">&quot;cow&quot;</span><span class="p">)</span>  <span class="c1"># 向 `f` 输入3个参数</span>
 <span class="go">{&#39;moo&#39;: &#39;cow&#39;, &#39;val&#39;: True, &#39;x&#39;: (0, 1)}</span>
 </pre></div>
 </div>
-<p>This syntax can be combined with positional arguments and default arguments. No additional arguments may come after a <code class="docutils literal notranslate"><span class="pre">**</span></code> entry in a function-definition signature:</p>
+<p>这一语法可以和位置参数和默认参数混合使用。在函数定义签名中，<code class="docutils literal notranslate"><span class="pre">**</span></code> 后不能有任何额外的参数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;x is: &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;y is: &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;kwargs is: &quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;x 是：&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;y 是：&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;kwargs 是：&quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">None</span>
+
+<span class="c1"># 译者注：kwargs是keyword arguments的缩写，也就是关键词参数。</span>
+<span class="c1"># 译者注：此命名方式是传统，所以请尽量遵循</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># passing arbitrary keyword arguments to `f`</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 向 `f` 输入任意的关键词参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="ow">is</span><span class="p">:</span>  <span class="mi">1</span>
-<span class="n">y</span> <span class="ow">is</span><span class="p">:</span>  <span class="mi">9</span>
-<span class="n">kwargs</span> <span class="ow">is</span><span class="p">:</span>  <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="s1">&#39;hi&#39;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>x 是： 1
+y 是： 9
+kwargs 是： {&#39;z&#39;: 3, &#39;k&#39;: &#39;hi&#39;}
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># no additional keyword arguments are passed</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 没有输入任何额外的关键词参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -648,11 +649,11 @@
 <span class="n">kwargs</span> <span class="ow">is</span><span class="p">:</span>  <span class="p">{}</span>
 </pre></div>
 </div>
-<p>The following function accepts an arbitrary number of positional arguments <em>and</em> an arbitrary number of keyword arguments:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># accepting arbitrary positional and keyword arguments</span>
+<p>以下函数接受任意多的位置参数<em>和</em>任意多的关键词参数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 接受任意多的位置和关键词参数</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">y</span><span class="p">):</span>
-    <span class="c1"># all positional arguments get packed into the tuple `x`</span>
-    <span class="c1"># all keyword arguments get packed into the dictionary `y`</span>
+    <span class="c1"># 所有位置参数都打包成元组 `x`</span>
+    <span class="c1"># 所有关键词参数都打包成词典 `y`</span>
     <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">None</span>
@@ -664,10 +665,9 @@
 <span class="p">{</span><span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bye&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;sigh&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>We see that <code class="docutils literal notranslate"><span class="pre">**</span></code> indicates the <em>packing of an arbitrary number of keyword arguments into a dictionary</em>, when used in the signature of a function definition. Simultaneously, <code class="docutils literal notranslate"><span class="pre">**</span></code> signals the <em>unpacking of a dictionary</em> to pass each of its key-value pairs as a keyword argument to a function, when used in the context of calling a function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using `**` when calling a function, to unpack a</span>
-<span class="c1"># dictionary, passing its members as keyword arguments</span>
-<span class="c1"># to the function</span>
+<p>如上所见，在函数定义的签名中 <code class="docutils literal notranslate"><span class="pre">**</span></code> 意味着<em>将任意多的关键词参数打包成一个词典</em>。同时，在调用函数时 <code class="docutils literal notranslate"><span class="pre">**</span></code> 意味着<em>解包词典</em>并将其的键值对（key-value pair）作为函数关键词参数输入：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在调用函数时使用 `**` 来解包词典并将其成员作为</span>
+<span class="c1"># 关键词参数输入到函数中</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">z</span>
 
@@ -675,14 +675,14 @@
 <span class="mi">21</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>  <span class="c1"># equivalent to: f(x=9, y=1, z=10)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>  <span class="c1"># 等值于：f(x=9, y=1, z=10)</span>
 <span class="mi">21</span>
 </pre></div>
 </div>
-<p>In the following example, we use <code class="docutils literal notranslate"><span class="pre">**</span></code> to:</p>
+<p>在以下范例中，我们用 <code class="docutils literal notranslate"><span class="pre">**</span></code> 来：</p>
 <ol class="arabic simple">
-<li>Define a function to accept an arbitrary number of keyword arguments, which get packed into a dictionary.</li>
-<li>Call the function, passing it an arbitrary number of keyword arguments, by unpacking a dictionary.</li>
+<li><p>定义一个接受任意多关键词参数的函数并将其打包成词典。</p></li>
+<li><p>调用函数并通过解包词典向其输入任意多的关键词参数。</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
@@ -693,66 +693,65 @@
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">some_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;hi&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;bye&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
 
-<span class="go"># unpacking the key-value pairs of the dictionary</span>
-<span class="go"># as keyword arguments and values, to the function</span>
+<span class="go"># 解包词典的键值对并将其作为关键词参数输入到函数中</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">print_kwargs</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">umbrella</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">some_dict</span><span class="p">)</span>
 <span class="go">{&#39;a&#39;: 2, &#39;umbrella&#39;: True, &#39;hi&#39;: 1, &#39;bye&#39;: 2}</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="Functions-are-Objects">
-<h2>Functions are Objects<a class="headerlink" href="#Functions-are-Objects" title="Permalink to this headline">¶</a></h2>
-<p>Once defined, a function behaves like any other Python object, like a list or string or integer. You can assign a variable to a function-object:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">count_vowels</span>  <span class="c1"># `var` now references the function `count_vowels`</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>        <span class="c1"># you can now &quot;call&quot; `var`</span>
+<div class="section" id="函数也是对象">
+<h2>函数也是对象<a class="headerlink" href="#函数也是对象" title="永久链接至标题">¶</a></h2>
+<p>在定义之后，函数和任何其它Python对象，如列表或字符串或整数，的行为差不多。你可以将函数赋值到变量上：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">count_vowels</span>  <span class="c1"># `var` 现在引用函数 `count_vowels`</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>        <span class="c1"># 你现在可以“调用” `var`</span>
 <span class="go">2</span>
 </pre></div>
 </div>
-<p>You can store functions in a list:</p>
+<p>你可以将函数存储到一个列表中：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">count_vowels</span><span class="p">,</span> <span class="k">print</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
     <span class="n">func</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 
-<span class="c1"># iteration 0: calls `count_vowels(&quot;hello&quot;)`</span>
-<span class="c1"># iteration 1: calls `print(&quot;hello&quot;)`</span>
+<span class="c1"># 迭代0：调用 `count_vowels(&quot;hello&quot;)`</span>
+<span class="c1"># 迭代1：调用 `print(&quot;hello&quot;)`</span>
 </pre></div>
 </div>
-<p>You can also call functions anywhere, and their return-value will be returned in-place:</p>
+<p>你也可以在代码任何地方调用函数，且它的返回值会在原地返回：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;pillow&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;that&#39;s a lot of vowels!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>And, of course, this works within comprehension expressions as well:</p>
+<p>当然，这在列表理解表达式中也成立：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">count_vowels</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">include_y</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;bye&quot;</span><span class="p">,</span> <span class="s2">&quot;guy&quot;</span><span class="p">,</span> <span class="s2">&quot;sigh&quot;</span><span class="p">])</span>
 <span class="go">6</span>
 </pre></div>
 </div>
-<p>“Printing” a function isn’t very revealing. It simply tells you the memory address where the function-object is stored:</p>
+<p>“打印”一个函数并不会揭露些什么。这仅仅打印此函数对象在内存中的地址：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">count_vowels</span><span class="p">)</span>
 <span class="go">&lt;function count_vowels at 0x000002A32898C6A8&gt;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Links-to-Official-Documentation">
-<h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="官方说明文档链接">
+<h2>官方说明文档链接<a class="headerlink" href="#官方说明文档链接" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#functions">Definition of ‘function’</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">Defining functions</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#default-argument-values">Default argument values</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments">Keyword arguments</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists">Specifying arbitrary arguments</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists">Unpacking arguments</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#documentation-strings">Documentation strings</a></li>
-<li><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#function-annotations">Function annotations</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#functions">“函数”的定义</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">定义函数</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#default-argument-values">定义参数值</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments">关键词参数</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists">提供任意多的参数</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists">解包参数</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#documentation-strings">docstring</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#function-annotations">函数注解</a></p></li>
 </ul>
 </div>
-<div class="section" id="Reading-Comprehension-Exercise-Solutions:">
-<h2>Reading Comprehension Exercise Solutions:<a class="headerlink" href="#Reading-Comprehension-Exercise-Solutions:" title="Permalink to this headline">¶</a></h2>
-<p><strong>Writing a Basic Function: Solution</strong></p>
+<div class="section" id="阅读理解答案">
+<h2>阅读理解答案<a class="headerlink" href="#阅读理解答案" title="永久链接至标题">¶</a></h2>
+<p><strong>编写简单函数：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_even</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Counts the number of even integers in an iterable&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 返回可迭代物中偶数的数量 &quot;&quot;&quot;</span>
     <span class="n">total_even</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -760,16 +759,15 @@
     <span class="k">return</span> <span class="n">total</span>
 </pre></div>
 </div>
-<p>or, using a generator comprehension:</p>
+<p>或通过使用生成器理解：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_even</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Counts the number of even integers in an iterable&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 返回可迭代物中偶数的数量 &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Functions and Arguments: Solution</strong></p>
+<p><strong>函数和参数：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_or_min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;max&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Return either `max(x,y)` or `min(x,y)`,</span>
-<span class="sd">        according to the `mode` argument.</span>
+    <span class="sd">&quot;&quot;&quot; 根据 `mode` 参数返回 `max(x,y)` 或 `min(x,y)`。</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -778,12 +776,11 @@
 <span class="sd">        y : Number</span>
 
 <span class="sd">        mode : str</span>
-<span class="sd">           Either &#39;max&#39; or &#39;min&#39;</span>
+<span class="sd">            &#39;max&#39; 或 &#39;min&#39;</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        The max or min of the two values. `None` is</span>
-<span class="sd">        returned if an invalid mode was specified.&quot;&quot;&quot;</span>
+<span class="sd">        两值的最大或最小值。如果mode不合法那么会返回 `None`。&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;max&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;min&quot;</span><span class="p">:</span>
@@ -792,8 +789,8 @@
         <span class="k">return</span> <span class="bp">None</span>
 </pre></div>
 </div>
-<p>Note that you can actually have your function raise an “exception” (an error) in the case that <code class="docutils literal notranslate"><span class="pre">mode</span></code> wasn’t passed a proper value. In fact, that is likely the more appropriate behavior for this function.</p>
-<p>Such a solution would look like:</p>
+<p>请注意你其实可以在 <code class="docutils literal notranslate"><span class="pre">mode</span></code> 输入不正确时让你的函数报错（raise an “exception”）。事实上，这才应该是这种情况下更加合理的函数行为。</p>
+<p>这种解决方案如下：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_or_min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;max&quot;</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;max&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -803,9 +800,9 @@
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;`mode` was passed an invalid value: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">))</span>
 </pre></div>
 </div>
-<p><strong>Arbitrary Arguments: Solution</strong></p>
+<p><strong>任意多的参数：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="o">*</span><span class="n">seq</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Returns the mean of the function&#39;s arguments &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 返回函数参数的平均值 &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
 
@@ -815,13 +812,13 @@
     <span class="k">return</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>or, being a bit more fancy :</p>
+<p>或者我们可以利用以下两点来做一些骚操作：</p>
 <ul class="simple">
-<li>using the fact that <code class="docutils literal notranslate"><span class="pre">bool(seq)</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> if <code class="docutils literal notranslate"><span class="pre">seq</span></code> is empty</li>
-<li>using the inline if-else syntax</li>
+<li><p>当 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 为空时 <code class="docutils literal notranslate"><span class="pre">bool(seq)</span></code> 是 <code class="docutils literal notranslate"><span class="pre">False</span></code> 的事实</p></li>
+<li><p>单行if-else语法</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="o">*</span><span class="n">seq</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Returns the mean of the function&#39;s arguments &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; 返回函数参数的平均值 &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="k">if</span> <span class="n">seq</span> <span class="k">else</span> <span class="mi">0</span>
 </pre></div>
 </div>
@@ -836,10 +833,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Scope.html" class="btn btn-neutral float-right" title="Scope" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Scope.html" class="btn btn-neutral float-right" title="作用域" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Itertools.html" class="btn btn-neutral float-left" title="Python’s “Itertools”" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Itertools.html" class="btn btn-neutral float-left" title="Python的“Itertools”" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

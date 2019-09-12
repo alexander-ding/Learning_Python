@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: The different kinds of class methods, Difficulty: Medium, Category: Section" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Methods &mdash; Python Like You Mean It</title>
+  <title>方法 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../_static/gtag.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Applications of Object Oriented Programming" href="Applications_of_OOP.html" />
-    <link rel="prev" title="A Brief Summary of Terms and Concepts" href="Brief_Review.html" /> 
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="面向对象编程的应用" href="Applications_of_OOP.html" />
+    <link rel="prev" title="术语和概念的快速总结" href="Brief_Review.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,32 +95,32 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">Module 4: Object Oriented Programming</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">Introduction to Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">Defining a New Class of Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">Instances of a Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">A Brief Summary of Terms and Concepts</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Methods</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Instance-Methods">Instance Methods</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#The-self-Argument">The <code class="docutils literal notranslate"><span class="pre">self</span></code> Argument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module_4.html">模组4：面向对象编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Introduction_to_OOP.html">面向对象编程简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassDefinition.html">定义新对象类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassInstances.html">类实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Brief_Review.html">术语和概念的快速总结</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">方法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#实例方法">实例方法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#self-参数"><code class="docutils literal notranslate"><span class="pre">self</span></code> 参数</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Class-Methods">Class Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Static-Methods">Static Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#类方法">类方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#静态方法">静态方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">Applications of Object Oriented Programming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">Special Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Applications_of_OOP.html">面向对象编程的应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Special_Methods.html">特殊方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">继承</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -165,9 +166,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module_4.html">Module 4: Object Oriented Programming</a> &raquo;</li>
+          <li><a href="../module_4.html">模组4：面向对象编程</a> &raquo;</li>
         
-      <li>Methods</li>
+      <li>方法</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,93 +211,84 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Methods">
-<h1>Methods<a class="headerlink" href="#Methods" title="Permalink to this headline">¶</a></h1>
-<p>Recall that a method is an attribute of a class that is a function. For example, “append” is a method that is defined for the <code class="docutils literal notranslate"><span class="pre">list</span></code> class and “capitalize” is a method of the <code class="docutils literal notranslate"><span class="pre">str</span></code> (string) class.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an instance of the `list` class/type</span>
-<span class="c1"># and invoke the instance method `append`</span>
+<div class="section" id="方法">
+<h1>方法<a class="headerlink" href="#方法" title="永久链接至标题">¶</a></h1>
+<p>请回忆，方法就是一个是函数的类属性。比如说，“append”是一个为 <code class="docutils literal notranslate"><span class="pre">list</span></code> 类定义的方法，而“capitalize”是 <code class="docutils literal notranslate"><span class="pre">str</span></code>（字符串）类的方法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建 `list` 类/类型的实例并调用实例方法 `append`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="c1"># create an instance of the `str` class/type</span>
-<span class="c1"># and invoke the instance method `capitalize`</span>
+<span class="c1"># 创建 `str` 类/类型的实例并调用实例方法 `capitalize`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;moo&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
 <span class="s1">&#39;Moo&#39;</span>
 </pre></div>
 </div>
-<p>Here we will encounter three varieties of methods:</p>
+<p>在这里我们会遭遇三种不同的方法：</p>
 <ul class="simple">
-<li>instance methods</li>
-<li>class methods</li>
-<li>static methods</li>
+<li><p>实例方法（instance method）</p></li>
+<li><p>类方法（class method）</p></li>
+<li><p>静态方法（static method）</p></li>
 </ul>
-<p>whose differences are relatively minor but are important to understand. The functions “append” and “capitalize” are both examples of instance methods, specifically, as they are designed to be invoked by a particular list instance and string instance, respectively.</p>
-<p>We have already worked with the instance method <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, which is special in that it is reserved by Python to be executed whenever class-initialization is invoked. Similarly, the special instance method <code class="docutils literal notranslate"><span class="pre">__add__</span></code> informs how an object interacts with the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator. For example, <code class="docutils literal notranslate"><span class="pre">float.__add__</span></code> specifies that <code class="docutils literal notranslate"><span class="pre">+</span></code> will sum the values of <code class="docutils literal notranslate"><span class="pre">float</span></code> instances, whereas <code class="docutils literal notranslate"><span class="pre">list.__add__</span></code> specifies that <code class="docutils literal notranslate"><span class="pre">+</span></code> will concatenate <code class="docutils literal notranslate"><span class="pre">list</span></code> instances together. We will conclude our discussion of
-methods by surveying a number of these special methods - they will greatly bolster our ability to define convenient, user-friendly classes.</p>
-<div class="section" id="Instance-Methods">
-<h2>Instance Methods<a class="headerlink" href="#Instance-Methods" title="Permalink to this headline">¶</a></h2>
-<p>An <em>instance method</em> is defined whenever a function definition is specified within the body of a class. This may seem trivial but there is still a significant nuance that must be cleared up, which is that ‘<code class="docutils literal notranslate"><span class="pre">self</span></code>’ is the defacto first-argument for any instance method. This is something that we encountered when working with <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. Let’s proceed naively so that we will hit a very common error, which will bring this matter to light. We begin by creating a class with an instance method that
-simply accepts one argument and then returns that argument unchanged:</p>
+<p>它们之间的区别相对而言很小，但是这些区别很重要。函数“append”和“capitalize”都是实例方法的例子，因为它们旨在分别被某个列表实例和字符串实例调用。</p>
+<p>我们已经见过实例方法 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 了。因为它被Python保留，所以它是一个特殊方法，会在实例类初始化时被自动调用。相似的，特殊实例方法 <code class="docutils literal notranslate"><span class="pre">__add__</span></code> 将告诉对象如何和 <code class="docutils literal notranslate"><span class="pre">+</span></code> 操作符交互。比如说，<code class="docutils literal notranslate"><span class="pre">float.__add__</span></code> 指示了 <code class="docutils literal notranslate"><span class="pre">+</span></code> 将会将两个 <code class="docutils literal notranslate"><span class="pre">float</span></code> 实例的值相加，而 <code class="docutils literal notranslate"><span class="pre">list.__add__</span></code> 指示了 <code class="docutils literal notranslate"><span class="pre">+</span></code> 会将两个 <code class="docutils literal notranslate"><span class="pre">list</span></code> 实例粘连在一起。我们将会通过了解一些这种特殊方法来为我们对方法的讨论结尾——这将大幅度地提升我们定义方便，对用户友善地类的能力。</p>
+<div class="section" id="实例方法">
+<h2>实例方法<a class="headerlink" href="#实例方法" title="永久链接至标题">¶</a></h2>
+<p><em>实例方法</em>（instance method）是任何在类主体代码中的函数定义。我们必须要撇清一个看起来琐碎但是很重要的细节：‘<code class="docutils literal notranslate"><span class="pre">self</span></code>’ 是实际上任何实例方法的第一个参数。这是我们在操作 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 时遇到的一个细节。让我们单纯地编写代码以遭遇一个常见的错误来演示以上细节的重要性。我们首先创建一个有着一个接受一个参数并直接返回该参数的实例方法的类：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dummy</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; An instance method that returns `x` unchanged.</span>
-<span class="sd">            This is a bad version of this instance method!&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot; 一个直接 `x` 的实例方法。</span>
+<span class="sd">            这是一个有问题的实例方法版本！&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
-<p>We can call this method from the class object <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> itself, and it will behave as-expected:</p>
+<p>我们可以通过类对象 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 本身调用这个函数，而它的行为会和定义的一样：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Dummy</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">2</span>
 </pre></div>
 </div>
-<p>but something strange happens when we try to call <code class="docutils literal notranslate"><span class="pre">func</span></code> from an instance of <code class="docutils literal notranslate"><span class="pre">Dummy</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># calling `func` from an instance of `Dummy` produces</span>
-<span class="c1"># an unexpected error</span>
+<p>但是当我们试图从 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 的实例调用 <code class="docutils literal notranslate"><span class="pre">func</span></code> 时发生了一些奇怪的事情：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 从 `Dummy` 的实例调用 `func` 导致了一个预期之外的错误</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="ne">TypeError</span><span class="p">:</span> <span class="n">func</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">1</span> <span class="n">positional</span> <span class="n">argument</span> <span class="n">but</span> <span class="mi">2</span> <span class="n">were</span> <span class="n">given</span>
 </pre></div>
 </div>
-<p>At first glance, this error message doesn’t seem to make any sense. It is indeed true that <code class="docutils literal notranslate"><span class="pre">func</span></code> only accepts one argument - we specified that it should accept the argument <code class="docutils literal notranslate"><span class="pre">x</span></code> in its function definition. How is it that <code class="docutils literal notranslate"><span class="pre">inst.func(2)</span></code> specifies <em>two</em> arguments? It seems like we are solely passing <code class="docutils literal notranslate"><span class="pre">2</span></code> to our method. Herein lies an extremely important detail:</p>
+<p>第一眼看上去，这个错误信息完全不讲道理。<code class="docutils literal notranslate"><span class="pre">func</span></code> 确实只接受一个参数——我们在函数定义时让其接受一个参数 <code class="docutils literal notranslate"><span class="pre">x</span></code>。但调用 <code class="docutils literal notranslate"><span class="pre">inst.func(2)</span></code> 怎么会提供<em>两个</em>参数呢？看起来，我们仅仅向我们的方法输入了 <code class="docutils literal notranslate"><span class="pre">2</span></code>。在这里藏着一个重要的细节：</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Important!</strong></p>
-<p>When you call an instance method (e.g. <code class="docutils literal notranslate"><span class="pre">func</span></code>) from an instance object (e.g. <code class="docutils literal notranslate"><span class="pre">inst</span></code>), Python automatically passes that instance object as the first argument, in addition to any other arguments that were passd in by the user.</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>重要</strong>！</p>
+<p>当你从一个实例对象（如 <code class="docutils literal notranslate"><span class="pre">inst</span></code>）调用一个实例方法（如 <code class="docutils literal notranslate"><span class="pre">func</span></code>）时，Python会在用户提供的参数之外自动将该实例对象作为第一个参数输入到函数中。</p>
 </div>
-<p>So according to this, <code class="docutils literal notranslate"><span class="pre">inst</span></code> is being passed as the argument <code class="docutils literal notranslate"><span class="pre">x</span></code> and we are attempting to pass <code class="docutils literal notranslate"><span class="pre">2</span></code> as a second argument to the method; this explains the error message complaining about passing <code class="docutils literal notranslate"><span class="pre">func</span></code> two arguments. By this logic we should be able to call <code class="docutils literal notranslate"><span class="pre">a.func()</span></code> and see that <code class="docutils literal notranslate"><span class="pre">inst</span></code> is being passed as the argument <code class="docutils literal notranslate"><span class="pre">x</span></code> - recall that <code class="docutils literal notranslate"><span class="pre">func</span></code> is defined to simply return <code class="docutils literal notranslate"><span class="pre">x</span></code> unchanged. Let’s confirm this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># verifying that `inst` is being passed as the first argument</span>
-<span class="c1"># of the instance-method `func`</span>
+<p>根据以上，<code class="docutils literal notranslate"><span class="pre">inst</span></code> 被作为参数 <code class="docutils literal notranslate"><span class="pre">x</span></code> 被输入，而我们在试图将 <code class="docutils literal notranslate"><span class="pre">2</span></code> 作为第二个参数输入到方法中；这解释了向 <code class="docutils literal notranslate"><span class="pre">func</span></code> 输入两个函数的错误。根据这个逻辑，我们应该能够调用 <code class="docutils literal notranslate"><span class="pre">a.func()</span></code> 并发现 <code class="docutils literal notranslate"><span class="pre">inst</span></code> 是作为参数 <code class="docutils literal notranslate"><span class="pre">x</span></code> 输入——请回忆，<code class="docutils literal notranslate"><span class="pre">func</span></code> 的定义使得它直接返回 <code class="docutils literal notranslate"><span class="pre">x</span></code>。让我们确定这个：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 确认 `inst` 是被作为第一个参数输入到实例方法 `func`</span>
 
-<span class="c1"># note the memory address of the Dummy-instance `inst`</span>
+<span class="c1"># 请注意 Dummy 实例 `inst` 的内存地址</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span>
 <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x284f0008da0</span><span class="o">&gt;</span>
 
-<span class="c1"># `inst.func()` automatically receives `inst` as the</span>
-<span class="c1"># input argument, which is then returned unchanged</span>
+<span class="c1"># `inst.func()` 自动接受 `inst` 为输入参数，并直接返回它</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span><span class="o">.</span><span class="n">func</span><span class="p">()</span>
 <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x284f0008da0</span><span class="o">&gt;</span>
 
-<span class="c1"># `inst` is indeed being passed to, and</span>
-<span class="c1"># returned by, `func`</span>
+<span class="c1"># `inst` 确实被输入到并返回于 `func`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">out</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">func</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span> <span class="ow">is</span> <span class="n">out</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p><em>Note that this “under the hood” behavior only occurs when the method is being called from an instance</em>; this is why we didn’t face this issue when invoking <code class="docutils literal notranslate"><span class="pre">func</span></code> from <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> - <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> is a class object, not an instance. Thus, <code class="docutils literal notranslate"><span class="pre">inst.func()</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">Dummy.func(inst)</span></code>:</p>
+<p><em>请注意，这个“幕后”的行为仅仅在方法通过实例调用的情况才会发生</em>；这就是为什么我们通过 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">func</span></code> 时没有遇到这个问题——<code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 是一个类对象，不是一个实例。因此，<code class="docutils literal notranslate"><span class="pre">inst.func()</span></code> 等值于 <code class="docutils literal notranslate"><span class="pre">Dummy.func(inst)</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="o">=</span> <span class="n">Dummy</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="ow">is</span> <span class="n">inst</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>In its current form, there is no way for us to pass an argument to <code class="docutils literal notranslate"><span class="pre">func</span></code> when we are calling it from an instance of <code class="docutils literal notranslate"><span class="pre">Dummy</span></code>. To solve this issue, we will refactor our definition of <code class="docutils literal notranslate"><span class="pre">func</span></code> to anticipate the passing of the instance object as the first argument.</p>
-<div class="section" id="The-self-Argument">
-<h3>The <code class="docutils literal notranslate"><span class="pre">self</span></code> Argument<a class="headerlink" href="#The-self-Argument" title="Permalink to this headline">¶</a></h3>
-<p>We will want to define our instance methods in a way that anticipates that Python will automatically pass an instance object as the first argument. Thus if we want our method to accept <span class="math notranslate nohighlight">\(N\)</span> external argument, we should define its signature to have <span class="math notranslate nohighlight">\(N+1\)</span> arguments, with the understanding that Python will pass the instance object as the first argument. The accepted convention is to call this first argument <code class="docutils literal notranslate"><span class="pre">self</span></code>. There is no significance to this name beyond it being the
-widely-adopted convention among Python users; “self” is meant to indicate that the instance object is passing itself as the first argument of the method. Consider the following example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate the use of `self` in instance arguments</span>
+<p>在现在的情况下，我们没有任何办法在从 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 实例调用 <code class="docutils literal notranslate"><span class="pre">func</span></code> 时向其输入一个参数。为了解决这个问题，我们将重构 <code class="docutils literal notranslate"><span class="pre">func</span></code> 的定义来预知实例对象将作为第一个参数输入的这一点。</p>
+<div class="section" id="self-参数">
+<h3><code class="docutils literal notranslate"><span class="pre">self</span></code> 参数<a class="headerlink" href="#self-参数" title="永久链接至标题">¶</a></h3>
+<p>我们将想要定义我们的实例方法来提前预知Python会自动将实例对象作为第一个参数输入到方法这一点。因此，如果我们想要我们的方法接受 <span class="math notranslate nohighlight">\(N\)</span> 个外部参数，我们应该定义它的签名来有着 <span class="math notranslate nohighlight">\(N+1\)</span> 个参数，因为我们知道Python会将实例作为第一个参数输入。广泛使用的传统是将这个第一个参数叫做 <code class="docutils literal notranslate"><span class="pre">self</span></code>。这个名字没有任何特殊的意义，仅仅是它是Python用户广泛使用的传统；“self”旨在指出实例对象在将自己作为第一个参数输入到方法中一事。设以下范例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `self` 在实例参数中的作用</span>
 <span class="k">class</span> <span class="nc">Number</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
@@ -305,105 +297,100 @@ widely-adopted convention among Python users; “self” is meant to indicate th
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">new_value</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># calls __init__, setting self.value = 4.0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 调用 __init__，设 self.value = 4.0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Number</span><span class="p">(</span><span class="mf">4.0</span><span class="p">)</span>
 
-<span class="c1"># `x` gets passed to `self`</span>
+<span class="c1"># `x` 输入为 `self` 参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
 <span class="mf">6.0</span>
 
-<span class="c1"># Calling the instance method from the class object.</span>
-<span class="c1"># We must explicitly pass an object to `self`</span>
+<span class="c1"># 从类对象调用这个实例方法。我们必须显式地为 `self` 输入一个对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Number</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="mf">6.0</span>
 </pre></div>
 </div>
-<p>Note the utility of having <code class="docutils literal notranslate"><span class="pre">self</span></code> be automatically passed in as an argument to both <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and <code class="docutils literal notranslate"><span class="pre">add</span></code>. An instance method is meant to have access to the instance object that is calling it - when you call <code class="docutils literal notranslate"><span class="pre">capitalize</span></code> from a string instance, it is obvious that you want to capitalize <em>that</em> specific string. It would be tedious and redundant if Python did not manage that automatically.</p>
-<p>Next, we will see that we can also define class-methods, which automatically have <em>class objects</em> get passed as their first arguments, and static methods, which do not have any objects passed to them under the hood.</p>
+<p>请注意将 <code class="docutils literal notranslate"><span class="pre">self</span></code> 自动作为参数输入到 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 和 <code class="docutils literal notranslate"><span class="pre">add</span></code> 的有用之处。实例方法旨在能够访问调用它的实例对象——当你从一个字符串实例调用 <code class="docutils literal notranslate"><span class="pre">capitalize</span></code> 时，你当然想要它大小<em>该</em>字符串。如果Python不自动这么做，每次输入实例本身将会很乏味和重复。</p>
+<p>接下来，我们将注意我们也可以定义类方法和静态方法。类方法会自动将<em>类对象</em>作为第一个参数输入，而静态方法不会自动在幕后输入任何对象。</p>
 <div class="admonition note">
-<p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: Invoking Instance Methods</strong></p>
-<p>Rewrite <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> so that its instance method <code class="docutils literal notranslate"><span class="pre">func</span></code> accepts two arguments: the instance object that Python automatically passes and the argument <code class="docutils literal notranslate"><span class="pre">x</span></code>, which we want <code class="docutils literal notranslate"><span class="pre">func</span></code> to return unchanged. Create an instance of <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> and call <code class="docutils literal notranslate"><span class="pre">func</span></code> from this instance and pass it the string <code class="docutils literal notranslate"><span class="pre">&quot;hi&quot;</span></code>, what will be returned? What will happen if you try to call <code class="docutils literal notranslate"><span class="pre">Dummy.func(&quot;hi&quot;)</span></code>? Why? How can we modify this call from <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> itself so that the method will work as desired?</p>
+<p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：调用实例方法</strong></p>
+<p>重写 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 使得它的实例方法 <code class="docutils literal notranslate"><span class="pre">func</span></code> 接受两个参数：Python自动输入的实例对象和我们想要 <code class="docutils literal notranslate"><span class="pre">func</span></code> 直接返回的参数 <code class="docutils literal notranslate"><span class="pre">x</span></code>。创建一个 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 的实例，从这个实例调用 <code class="docutils literal notranslate"><span class="pre">func</span></code>，并向其输入字符串 <code class="docutils literal notranslate"><span class="pre">&quot;hi&quot;</span></code>。这会返回什么呢？当你试图调用 <code class="docutils literal notranslate"><span class="pre">Dummy.func(&quot;hi&quot;)</span></code> 时会发生什么呢？为什么？我们该如何修改这个直接从 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 进行的调用来使得这个方法会像我们希望的一样操作呢？</p>
 </div>
 </div>
 </div>
-<div class="section" id="Class-Methods">
-<h2>Class Methods<a class="headerlink" href="#Class-Methods" title="Permalink to this headline">¶</a></h2>
-<p>A class method is similar to an instance method, but it has a <em>class object</em> passed as its first argument. Recall that, when an instance method is called from an instance object, that instance object is automatically passed as the first argument to the method. By contrast, when a <em>class method</em> is called from a either a class object or an instance object, the class object is automatically passed as the first argument to the method. Instead of calling this first argument <code class="docutils literal notranslate"><span class="pre">self</span></code>, the convention
-is to name it <code class="docutils literal notranslate"><span class="pre">cls</span></code>.</p>
-<p>To define a class method you must <em>decorate</em> the method definition with a special built-in decorator <code class="docutils literal notranslate"><span class="pre">classmethod</span></code>. We have not discussed decorators. Suffice it to know that this simply “tags” the method, so that Python knows to treat it like a class method instead of an instance method. The following demonstrates this decoration process:</p>
+<div class="section" id="类方法">
+<h2>类方法<a class="headerlink" href="#类方法" title="永久链接至标题">¶</a></h2>
+<p>一个类方法类似于实例方法，但它会自动将<em>类对象</em>作为第一个参数输入。请回忆，当实例方法从实例对象中调用时，它会自动将实例对象作为方法的第一个参数输入。相比之下，当一个<em>类方法</em>从类对象或实例对象调用时，它将自动将类对象作为方法的第一个参数输入。与其叫这个第一个参数 <code class="docutils literal notranslate"><span class="pre">self</span></code>，传统是将其称为 <code class="docutils literal notranslate"><span class="pre">cls</span></code>。</p>
+<p>为了定义一个类方法，你必须使用一个特殊的内置装饰器 <code class="docutils literal notranslate"><span class="pre">classmethod</span></code> 来<em>装饰</em>（decorate）该方法定义。我们还没有讨论装饰器。现在你只需要知道它们会“标记”该方法，使得Python知道该将其作为一个类方法而不是实例方法对待。以下演示了装饰的过程：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dummy</span><span class="p">:</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">class_func</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; A class method defined to simply</span>
-<span class="sd">            return `cls` unchanged&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot; 定义来直接返回 `cls` 的类方法</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">cls</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `Dummy` gets passed as `cls` automatically.</span>
-<span class="c1">#  We defined `class_func` to return `cls` unchanged</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `Dummy` 会自动作为 `cls` 输入。</span>
+<span class="c1">#  我们定义 `class_func` 使其直接返回 `cls` 而不做修改</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Dummy</span><span class="o">.</span><span class="n">class_func</span><span class="p">()</span>
 <span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span>
 
-<span class="c1"># `Dummy.class_func()` returns `Dummy`</span>
+<span class="c1"># `Dummy.class_func()` 返回 `Dummy`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">out</span> <span class="o">=</span> <span class="n">Dummy</span><span class="o">.</span><span class="n">class_func</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">out</span> <span class="ow">is</span> <span class="n">Dummy</span>
 <span class="bp">True</span>
 
-<span class="c1"># `Dummy` gets passed as `cls` automatically</span>
-<span class="c1"># even when `class_func` is called from an instance</span>
+<span class="c1"># 就算我们从实例中调用 `class_func`，`Dummy` 也会自动作为</span>
+<span class="c1"># `cls` 被输入</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span><span class="o">.</span><span class="n">class_func</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span><span class="o">.</span><span class="n">class_func</span><span class="p">()</span>
 <span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">dict.fromkeys</span></code> is an example of a class method that takes in an iterable, and returns a dictionary whose keys are the elements of that iterable, and whose values all default to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dict.fromkeys</span></code> 是一个接受可迭代物并返回键为可迭代物成员，值都默认为 <code class="docutils literal notranslate"><span class="pre">None</span></code> 的词典的类方法。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="s2">&quot;abcd&quot;</span><span class="p">)</span>
 <span class="go">{&#39;a&#39;: 2.3, &#39;b&#39;: 2.3, &#39;c&#39;: 2.3, &#39;d&#39;: 2.3}</span>
 </pre></div>
 </div>
-<p>It is sensible that this is a class method rather than an instance method, as the method creates a brand new dictionary from scratch. It need only have access to the <code class="docutils literal notranslate"><span class="pre">dict</span></code> object (i.e.&nbsp;the <code class="docutils literal notranslate"><span class="pre">cls</span></code> argument) so that it can construct the dictionary. The following is what an implementation of <code class="docutils literal notranslate"><span class="pre">fromkeys</span></code> could look like, were we to define <code class="docutils literal notranslate"><span class="pre">dict</span></code> ourselves:</p>
+<p>这作为一个类方法而不是实例方法是很合理的，因为这个方法会凭空创建一个新词典。它只需要能够调用 <code class="docutils literal notranslate"><span class="pre">dict</span></code> 对象（也就是 <code class="docutils literal notranslate"><span class="pre">cls</span></code> 参数）就能创建这个词典。以下是如果我们自己定义 <code class="docutils literal notranslate"><span class="pre">dict</span></code> 类的话 <code class="docutils literal notranslate"><span class="pre">fromkeys</span></code> 的可能实现：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">dict</span><span class="p">:</span>
-    <span class="c1"># assume all other dictionary methods are defined here</span>
+    <span class="c1"># 假设所有其他的词典方法都在这里定义了</span>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">fromkeys</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Creates a dictionary whose keys are the elements of `iterable`. All</span>
-<span class="sd">        keys map to `value`.</span>
+        <span class="sd">&quot;&quot;&quot; 创建一个词典，其键为 `iterable` 的成员。所有值这些键都是`value`。</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        iterable: Iterable[Hashable]</span>
-<span class="sd">            An iterable of valid dictionary keys (i.e. any object that is hashable).</span>
+<span class="sd">            成员为合法词典键（也就是任何可哈希的对象）的可迭代物。</span>
 
 <span class="sd">        value : Optional[Any]</span>
-<span class="sd">            The value that all of the keys will map to. Defaults to `None`.</span>
+<span class="sd">            所有键会对应的值。默认是 `None`。</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        dict &quot;&quot;&quot;</span>
-        <span class="n">new_dict</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>  <span class="c1"># equivalent to `dict()`: creates a new dictionary instance</span>
+        <span class="n">new_dict</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>  <span class="c1"># 等值于 `dict()`：创建一个新的词典实例</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
             <span class="n">new_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
         <span class="k">return</span> <span class="n">new_dict</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Static-Methods">
-<h2>Static Methods<a class="headerlink" href="#Static-Methods" title="Permalink to this headline">¶</a></h2>
-<p>A static method is simply a method whose arguments must all be passed explicitly by the user. That is, Python doesn’t pass anything to a static method automatically. The built-in decorator <code class="docutils literal notranslate"><span class="pre">staticmethod</span></code> is used to distinguish a method as being static rather than an instance method.</p>
+<div class="section" id="静态方法">
+<h2>静态方法<a class="headerlink" href="#静态方法" title="永久链接至标题">¶</a></h2>
+<p>静态方法就是所有参数都需要用户显式输入的方法。也就是说，Python不会向静态方法输入任何参数。你可以使用内置的装饰器 <code class="docutils literal notranslate"><span class="pre">staticmethod</span></code> 来将一个静态方法和实例方法区分。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dummy</span><span class="p">:</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">static_func</span><span class="p">():</span>
-        <span class="sd">&quot;&quot;&quot; A static method defined to always returns</span>
-<span class="sd">            the string `&#39;hi&#39;`&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot; 永远返回 `&#39;hi&#39;` 的静态方法</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s1">&#39;hi&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A static method can be called from a class object</span>
-<span class="c1"># or an instance object; nothing gets passed to it</span>
-<span class="c1"># automatically.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 静态方法可以从类对象或实例对象调用；没有任何自动向其输入的参数。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Dummy</span><span class="o">.</span><span class="n">static_func</span><span class="p">()</span>
 <span class="s1">&#39;hi&#39;</span>
 
@@ -413,27 +400,29 @@ is to name it <code class="docutils literal notranslate"><span class="pre">cls</
 </pre></div>
 </div>
 </div>
-<div class="section" id="Reading-Comprehension-Solutions">
-<h2>Reading Comprehension Solutions<a class="headerlink" href="#Reading-Comprehension-Solutions" title="Permalink to this headline">¶</a></h2>
-<p><strong>Invoking Instance Methods: Solution</strong></p>
-<p>Rewrite <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> so that its instance method <code class="docutils literal notranslate"><span class="pre">func</span></code> accepts two arguments: the instance object that Python automatically passes and the argument <code class="docutils literal notranslate"><span class="pre">x</span></code>, which we want <code class="docutils literal notranslate"><span class="pre">func</span></code> to return unchanged.</p>
+<div class="section" id="阅读理解答案：">
+<h2>阅读理解答案：<a class="headerlink" href="#阅读理解答案：" title="永久链接至标题">¶</a></h2>
+<p><strong>调用实例方法：解</strong></p>
+<p>重写 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 使得它的实例方法 <code class="docutils literal notranslate"><span class="pre">func</span></code> 接受两个参数：Python自动输入的实例对象和我们想要 <code class="docutils literal notranslate"><span class="pre">func</span></code> 直接返回的参数 <code class="docutils literal notranslate"><span class="pre">x</span></code>。</p>
 <blockquote>
-<div>We will rewite func to accept an argument called ‘self’, which will accept the instance object that is passed “under the hood” , and ‘x’. As you will see in the reading, the name argument ‘self’ is simply used by convention.</div></blockquote>
+<div><p>我们将重写 <code class="docutils literal notranslate"><span class="pre">func</span></code> 来接受名为“self”的参数，其将接受“幕后”输入的实例对象和“x”。就像你在阅读中所见的一样，参数的名字“self”仅仅是传统而已。</p>
+</div></blockquote>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dummy</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
-<p>Create an instance of <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> and call <code class="docutils literal notranslate"><span class="pre">func</span></code> from this instance and pass it the string <code class="docutils literal notranslate"><span class="pre">&quot;hi&quot;</span></code>.</p>
+<p>创建一个 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 的实例，从这个实例调用 <code class="docutils literal notranslate"><span class="pre">func</span></code>，并向其输入字符串 <code class="docutils literal notranslate"><span class="pre">&quot;hi&quot;</span></code>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inst</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>  <span class="c1"># `inst` is passed to the argument `self`</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inst</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>  <span class="c1"># `inst` 被输入到参数 `self` 中</span>
 <span class="go">&#39;hi&#39;</span>
 </pre></div>
 </div>
-<p>What will happen if you try to call <code class="docutils literal notranslate"><span class="pre">Dummy.func(&quot;hi&quot;)</span></code>? Why?</p>
+<p>当你试图调用 <code class="docutils literal notranslate"><span class="pre">Dummy.func(&quot;hi&quot;)</span></code> 时会发生什么呢？为什么？</p>
 <blockquote>
-<div>This will raise an error, which complains that func expects two arguments, and that we have only passed it one. Indeed, we will have only passed it the object “hi” and nothing else. Dummy is a class object, not an instance object. Thus Python does not do anything special “under the hood” when we call Dummy.func. We must pass something to the self argument. Because this particular method doesn’t do anything with self, we can just pass it None, or any other object, really.</div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dummy.func(&quot;hi&quot;) would raise an error</span>
+<div><p>这将导致一个错误，其反应 <code class="docutils literal notranslate"><span class="pre">func</span></code> 期待两个参数但只收到了一个。确实，我们仅仅向其输入了对象 “hi”。Dummy是一个类对象，而不是实例对象。因此，在调用Dummy.func时Python不会自动在“幕后”做任何特别的事情。我们必须为self参数输入些什么。因为这个方法不会使用self做任何事情，我们可以向其输入None，或其它任何对象。</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dummy.func(&quot;hi&quot;) 会导致一个错误</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Dummy</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">)</span>
 <span class="s1">&#39;hi&#39;</span>
 </pre></div>
@@ -449,10 +438,10 @@ is to name it <code class="docutils literal notranslate"><span class="pre">cls</
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Applications_of_OOP.html" class="btn btn-neutral float-right" title="Applications of Object Oriented Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Applications_of_OOP.html" class="btn btn-neutral float-right" title="面向对象编程的应用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Brief_Review.html" class="btn btn-neutral float-left" title="A Brief Summary of Terms and Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Brief_Review.html" class="btn btn-neutral float-left" title="术语和概念的快速总结" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

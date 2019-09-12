@@ -19,52 +19,53 @@ jupyter:
 ```
 
 <!-- #region -->
-# A Quick Guide to Formatting
-This section provides a brief overview of the code formatting style that will be used throughout this text. You are not expected to understand the details of the code, here. This merely provides a guide for what is to come. 
+# 代码格式的简单指南
+本节将快速介绍本文将采用的代码格式和风格。你暂时不需要理解这些代码的具体细节。这个指南仅仅是为了让你了解接下来的内容的样貌。
 
-Any code that is included in-line within plain text will be formatted distinctly as so: "the variable `x` was updated...". Such items will be distinguished with backticks wherever such formatting is not available. Take for example the following commented line within Python code:
+任何嵌入在正文中的代码都会遵循如此格式：“变量 `x` 被更新...”。当这种格式不可用时，这类小代码片段会被两个反引号围绕。如下：
 
 ```python
-# the variable `x` will be updated
+# 变量 `x` 将被更新
 ```
 
-Python code will be displayed within distinct, colorized code blocks. These will typically begin with a comment, which is meant to serve as a caption that summarizes the purpose of the code block:
+长篇的Python代码则会存在于专门的彩色代码块中。这些代码块一般会由一行总结代码块作用的注解打头：
 
 ```python
-# demonstrating a basic for-loop
+# 演示基本的for循环
 cnt = 0
 for i in range(10):
     cnt += 1
 
-#`cnt` is now 10
+# `cnt` 现在是10
 ```
 
-The symbol `>>>` appears within code blocks to indicate "console-style" code, which distinguishes between code being entered by a user and the resulting output. The purpose of this is that it allows us to easily display the result of a computation without having to rely on calling the `print` function. For instance, the following code assigns the integer `1` to the variable `x`, and then displays the result of `x + 2`:
+符号 `>>>` 出现于“命令行风格”的代码中，用于区分用户输入的代码和命令行的输出。这类代码块的可以帮助我们轻松地显示计算结果，而不需要老是调用 `print` 函数。比如说，接下来的代码将设定变量 `x` 为整数 `1`，然后显示 `x + 2` 的结果：
 
 ```python
-# demonstrating the distinction of
-# input and output via >>>
+# 通过 >>> 演示输入和输出的不同格式
 
 >>> x = 1
 >>> x + 2
 3
 ```
 
-The code blocks throughout a given section of the text should be understood to be persistent even if there is a mix of "pure" code blocks and "console-style" code blocks. For example, a function may be defined at the beginning of a section, and then referenced throughout the rest of that section:
+译者注：命令行在这里泛指各大平台上的类似Windows命令行的程序——你可能会叫它们Git Bash，Terminal，命令行，Shell，Kernel，等等。全文将用“命令台”一词来指代这种程序。
+
+不管是“纯粹”的代码块还是“命令行风格”的代码块，请在章节内认为它们的效应是持久化的。比如说，在某一节开始定义的函数完全在这一节后面被调用：
 ```python
-# defining an example function
+# 定义一个范例函数
 def my_func(x):
     return x**2
 ```
 
-We can spend some time talking about `my_func` and then see it in action:
+我们可以花些时间讨论 `my_func` 并调用它：
 ```python
-# demonstrating `my_func`
+# 演示 `my_func`
 >>> my_func(10.)
 100.
 ```
 
-Lastly, the input and output of an iPython console and a Jupyter notebook alike is displayed as follows:
+最后，iPython命令台和Jupyter记事本的输入和输出都像如下显示：
 <!-- #endregion -->
 
 ```python

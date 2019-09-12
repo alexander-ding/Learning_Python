@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="Topic: Within Margin Exercise, Difficulty: Medium, Category: Practice Problem" name="description" />
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Within Margin Percentage &mdash; Python Like You Mean It</title>
+  <title>错误范围内百分比 &mdash; Python Like You Mean It</title>
   
 
   
@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="../../_static/gtag.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -40,10 +41,10 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Difference Fanout" href="DifferenceFanout.html" />
-    <link rel="prev" title="Is Palindrome" href="Palindrome.html" /> 
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="扇出差" href="DifferenceFanout.html" />
+    <link rel="prev" title="回文判断" href="Palindrome.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,23 +95,23 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../module_2_problems.html">Module 2: Problems</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="MergeMaxDicts.html">Merging Two Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Palindrome.html">Is Palindrome</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Within Margin Percentage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Solution">Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../module_2_problems.html">模组2：题目</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="MergeMaxDicts.html">合并两个词典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Palindrome.html">回文判断</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">错误范围内百分比</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#解">解</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="DifferenceFanout.html">Difference Fanout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EncodeAsString.html">Encode as String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DifferenceFanout.html">扇出差</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EncodeAsString.html">编码为字符串</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_3.html">Module 3: The Essentials of NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_3.html">模组3：NumPy基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -156,9 +157,9 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../module_2_problems.html">Module 2: Problems</a> &raquo;</li>
+          <li><a href="../../module_2_problems.html">模组2：题目</a> &raquo;</li>
         
-      <li>Within Margin Percentage</li>
+      <li>错误范围内百分比</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -201,90 +202,90 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Within-Margin-Percentage">
-<h1>Within Margin Percentage<a class="headerlink" href="#Within-Margin-Percentage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="错误范围内百分比">
+<h1>错误范围内百分比<a class="headerlink" href="#错误范围内百分比" title="永久链接至标题">¶</a></h1>
 <blockquote>
-<div>An algorithm is required to test out what percentage of the parts that a factory is producing fall within a safety margin of the design specifications. Given a list of values recording the metrics of the manufactured parts, a list of values representing the desired metrics required by the design, and a margin of error allowed by the design, compute what fraction of the values are within the safety margin (<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>)</div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example behavior</span>
+<div><p>我们需要设计一个算法来测试某工厂制造的零件有多少百分比属于设计规格的可接受范围内。函数接受一列表的零件度量，一列表的设计规格的理想度量，以及一个可以接受的错误范围，并返回有多少部分的零件属于安全范围内（<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>）。</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 范例行为</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">within_margin_percentage</span><span class="p">(</span><span class="n">desired</span><span class="o">=</span><span class="p">[</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span>
 <span class="o">...</span>                          <span class="n">actual</span><span class="o">=</span> <span class="p">[</span><span class="mf">10.3</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span>
 <span class="o">...</span>                          <span class="n">margin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="mf">0.8</span>
 </pre></div>
 </div>
-<p>See that <span class="math notranslate nohighlight">\(4/5\)</span> of the values fall within the margin of error: <span class="math notranslate nohighlight">\(1.2\)</span> deviates from <span class="math notranslate nohighlight">\(2\)</span> by more than <span class="math notranslate nohighlight">\(0.5\)</span>.</p>
-<p>Complete the following function; consider the edge case where <code class="docutils literal notranslate"><span class="pre">desired</span></code> and <code class="docutils literal notranslate"><span class="pre">actual</span></code> are empty lists.</p>
+<p>注意 <span class="math notranslate nohighlight">\(4/5\)</span> 的值都处于错误范围内：<span class="math notranslate nohighlight">\(1.2\)</span> 离 <span class="math notranslate nohighlight">\(2\)</span> 差的超过 <span class="math notranslate nohighlight">\(0.5\)</span>。</p>
+<p>完成以下的函数；请考虑 <code class="docutils literal notranslate"><span class="pre">desired</span></code> 和 <code class="docutils literal notranslate"><span class="pre">actual</span></code> 是空列表的边缘情况。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">within_margin_percentage</span><span class="p">(</span><span class="n">desired</span><span class="p">,</span> <span class="n">actual</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Compute the percentage of values that fall within</span>
-<span class="sd">        a margin of error of the desired values</span>
+    <span class="sd">&quot;&quot;&quot; 计算多少部分的值属于期望值的错误范围内</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        desired: List[float]</span>
-<span class="sd">            The desired metrics</span>
+<span class="sd">            期望值</span>
 
 <span class="sd">        actual: List[float]</span>
-<span class="sd">            The corresponding actual metrics.</span>
-<span class="sd">            Assume `len(actual) == len(desired)`</span>
+<span class="sd">            对应的实际值</span>
+<span class="sd">            假设 `len(actual) == len(desired)`</span>
 
 <span class="sd">        margin: float</span>
-<span class="sd">            The allowed margin of error</span>
+<span class="sd">            可接受的错误范围</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        float</span>
-<span class="sd">            The fraction of values where |actual - desired| &lt;= margin</span>
+<span class="sd">            多少部分的值满足 |actual - desired| &lt;= margin</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># YOUR CODE HERE</span>
+    <span class="c1"># 你的代码</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>You will want to be familiar with <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#Comparison-Operations">comparison operators</a>, <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html">control flow</a>, and <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Introducing-Indexing-and-Slicing">indexing lists</a> lists to solve this problem.</p>
-<div class="section" id="Solution">
-<h2>Solution<a class="headerlink" href="#Solution" title="Permalink to this headline">¶</a></h2>
-<p>This problem can solved by simply looping over the pairs of actual and desired values and tallying the pairs that fall within the margin:</p>
+<p>你会需要熟悉<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#比较运算">对比操作符</a>，<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html">控制流</a>，和<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#索引和切片简介">列表索引</a>来解决本问题。</p>
+<div class="section" id="解">
+<h2>解<a class="headerlink" href="#解" title="永久链接至标题">¶</a></h2>
+<p>本题可以通过简单地循环实际和可接受值并计算其中多少属于安全范围内来解决：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">within_margin_percentage</span><span class="p">(</span><span class="n">desired</span><span class="p">,</span> <span class="n">actual</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Compute the percentage of values that fall within</span>
-<span class="sd">        a margin of error of the desired values</span>
+    <span class="sd">&quot;&quot;&quot; 计算多少部分的值属于期望值的错误范围内</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        desired: List[float]</span>
-<span class="sd">            The desired metrics</span>
+<span class="sd">            期望值</span>
 
 <span class="sd">        actual: List[float]</span>
-<span class="sd">            The actual metrics</span>
+<span class="sd">            对应的实际值</span>
+<span class="sd">            假设 `len(actual) == len(desired)`</span>
 
 <span class="sd">        margin: float</span>
-<span class="sd">            The allowed margin of error</span>
+<span class="sd">            可接受的错误范围</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        float</span>
-<span class="sd">            The fraction of values where |actual - desired| &lt;= margin</span>
+<span class="sd">            多少部分的值满足 |actual - desired| &lt;= margin</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># tally of how values are within margin</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># 计算多少值属于范围内</span>
     <span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">desired</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">desired</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">actual</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">margin</span><span class="p">:</span>
-            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Equivalent to `count = count + 1`</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># 等值于 `count = count + 1`</span>
     <span class="k">return</span> <span class="n">count</span> <span class="o">/</span> <span class="n">total</span> <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">1.0</span>
 </pre></div>
 </div>
-<p>See that we handle the edge case where <code class="docutils literal notranslate"><span class="pre">desired</span></code> and <code class="docutils literal notranslate"><span class="pre">actual</span></code> are empty lists: the <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#Inline-if-else-statements">inline if-else statement</a> <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">/</span> <span class="pre">total</span> <span class="pre">if</span> <span class="pre">total</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">else</span> <span class="pre">1</span></code> will return <code class="docutils literal notranslate"><span class="pre">1</span></code> when <code class="docutils literal notranslate"><span class="pre">total</span></code> is 0:</p>
+<p>注意我们处理了 <code class="docutils literal notranslate"><span class="pre">desired</span></code> 和 <code class="docutils literal notranslate"><span class="pre">actual</span></code> 是空列表的边缘情况：<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#单行的if-else语句">单行if-else语法</a> <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">/</span> <span class="pre">total</span> <span class="pre">if</span> <span class="pre">total</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">else</span> <span class="pre">1</span></code> 将在 <code class="docutils literal notranslate"><span class="pre">total</span></code> 为0时返回1:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">within_margin_percentage</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">margin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="go">1.0</span>
 </pre></div>
 </div>
-<p>which is arguably the appropriate behavior for this scenario (no values fall outside of the margin). Had we not anticipated this edge case, <code class="docutils literal notranslate"><span class="pre">within_margin_percentage([],</span> <span class="pre">[],</span> <span class="pre">margin=0.5)</span></code> would raise <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>.</p>
-<p>It is also possible to write this solution using the built-in <code class="docutils literal notranslate"><span class="pre">sum</span></code> function and a <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Creating-your-own-generator:-generator-comprehensions">generator comprehension</a> that filters out those pairs of items that fall outside of the desired margin:</p>
+<p>以上行为应该是这种情况下的正确行为（因为没有任何值在安全范围外面）。如果我们没有处理这个边缘情况，<code class="docutils literal notranslate"><span class="pre">within_margin_percentage([],</span> <span class="pre">[],</span> <span class="pre">margin=0.5)</span></code> 会导致 <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>。</p>
+<p>你也可能会使用内置的 <code class="docutils literal notranslate"><span class="pre">sum</span></code> 函数和<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#创建你自己的生成器：生成器理解">生成器理解</a>来过滤在安全范围外的成员对：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">within_margin_percentage</span><span class="p">(</span><span class="n">desired</span><span class="p">,</span> <span class="n">actual</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">desired</span><span class="p">)</span>
     <span class="n">count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total</span><span class="p">)</span> <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">actual</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">desired</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">margin</span><span class="p">)</span>
     <span class="k">return</span>  <span class="n">count</span> <span class="o">/</span> <span class="n">total</span> <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">1.0</span>
 </pre></div>
 </div>
-<p>It is debatable whether this refactored solution is superior to the original one - it depends largely on how comfortable you, and anyone else who will be reading your code, are with the generator comprehension syntax.</p>
+<p>后者是否强于前者是有待商榷——这取决于你和任何其它会阅读你的代码的人有多熟悉生成器理解语法。</p>
 </div>
 </div>
 
@@ -296,10 +297,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="DifferenceFanout.html" class="btn btn-neutral float-right" title="Difference Fanout" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="DifferenceFanout.html" class="btn btn-neutral float-right" title="扇出差" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Palindrome.html" class="btn btn-neutral float-left" title="Is Palindrome" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Palindrome.html" class="btn btn-neutral float-left" title="回文判断" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

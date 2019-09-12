@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Module 3: The Essentials of NumPy &mdash; Python Like You Mean It</title>
+  <title>模组3：NumPy基础 &mdash; Python Like You Mean It</title>
   
 
   
@@ -27,6 +27,7 @@
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script type="text/javascript" src="_static/gtag.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -38,10 +39,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introducing the ND-array" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html" />
-    <link rel="prev" title="Encode as String" href="Module2_EssentialsOfPython/Problems/EncodeAsString.html" /> 
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="N维数组简介" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html" />
+    <link rel="prev" title="编码为字符串" href="Module2_EssentialsOfPython/Problems/EncodeAsString.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,24 +93,24 @@
               <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Python Like You Mean It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_1.html">Module 1: Getting Started with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_2.html">Module 2: The Essentials of Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_2_problems.html">Module 2: Problems</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 3: The Essentials of NumPy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html">Introducing the ND-array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicArrayAttributes.html">Basic Array Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html">Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html">Introducing Basic and Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html">Advanced Indexing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_1.html">模组1：Python入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_2.html">模组2：Python基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_2_problems.html">模组2：题目</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">模组3：NumPy基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html">N维数组简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicArrayAttributes.html">基本的数组属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html">迭代数组和数组遍历顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html">数组广播</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html">基础和进阶索引简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html">进阶索引</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="module_3_problems.html">Module 3: Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_4.html">Module 4: Object Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_5.html">Module 5: Odds and Ends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_3_problems.html">模组3：题目</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_4.html">模组4：面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_5.html">模组5：琐碎话题</a></li>
 </ul>
 
             
@@ -155,7 +156,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Module 3: The Essentials of NumPy</li>
+      <li>模组3：NumPy基础</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -198,82 +199,82 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="module-3-the-essentials-of-numpy">
-<h1>Module 3: The Essentials of NumPy<a class="headerlink" href="#module-3-the-essentials-of-numpy" title="Permalink to this headline">¶</a></h1>
-<p>NumPy is the reason why Python stands among the ranks of R, Matlab, and Julia, as one of the most popular languages for doing STEM-related computing. It is a third-party library (i.e. it is not part of Python’s standard library) that facilitates numerical computing in Python by providing users with a versatile N-dimensional array object for storing data, and powerful mathematical functions for operating on those arrays of numbers. NumPy implements its features in ways that are highly optimized, via a process known as vectorization, that enables a degree of computational efficiency that is otherwise unachievable by the Python language.</p>
-<p>The impact that NumPy has had on the landscape of numerical computing in Python is hard to overstate. Whether you are plotting data in matplotlib, analyzing tabular data via <a class="reference external" href="https://pandas.pydata.org">pandas</a> and <a class="reference external" href="https://xarray.pydata.org/en/stable">xarray</a>, using <a class="reference external" href="https://opencv.org">OpenCV</a> for image and video processing, doing astrophysics research with the help of <a class="reference external" href="www.astropy.org">astropy</a>, or trying out machine learning with <a class="reference external" href="https://scikit-learn.org/stable/index.html">Scikit-Learn</a> and <a class="reference external" href="https://mygrad.readthedocs.io">MyGrad</a>, you are using Python libraries that bare the indelible mark of NumPy. At their core, each of these libraries depend on NumPy’s N-dimensional array and its efficient vectorization capabilities. NumPy also fundamentally impacts the designs of these libraries and the way that they interface with their users. Thus, one cannot leverage these tools effectively, and cannot do STEM work in Python in general, without having a solid foundation in NumPy.</p>
-<p>This module presents to us the essentials of NumPy. We will first define what the term dimensionality means and will develop an intuition for what zero, one, two, and N-dimensional arrays are, and why they are invaluable for data science applications. Next, we will discuss the ambiguities of array traversal-order and NumPy’s default use of row-major ordering. We will then arrive at the critical topic of vectorization, which prescribes the ways in which NumPy dispatches mathematical operations over arrays of numbers. This will also give us keen insight into how NumPy achieves its tremendous computational efficiency. Finally, we will dive into some of NumPy’s more advanced features. These include its rules for broadcasting mathematical operations between arrays of different shapes, as well as its mechanisms for accessing and updating an array’s contents via basic and advanced indexing. Armed with these techniques, we will be able to write concise and powerful numerical code using NumPy and Python’s many other STEM libraries!</p>
+<div class="section" id="numpy">
+<h1>模组3：NumPy基础<a class="headerlink" href="#numpy" title="永久链接至标题">¶</a></h1>
+<p>NumPy就是Python能和R，Matlab，和Julia这一级别的语言在进行科学有关的数据处理工作相提并论的原因。它作为一个第三方模组（也就是说它不是Python标准库的一部分）为用户提供了一个多功能的数组对象和强大的操作这些数组的数学函数；这些都用来帮助用户使用Python进行数字工作。NumPy通过矢量化（vectorization）这一过程来高度优化它很多的功能并取得Python语言正常情况下无法达到的计算效率。</p>
+<p>NumPy对Python数据处理界的影响毋庸置疑。不管你是在matplotlib中绘制数据，通过 <a class="reference external" href="https://pandas.pydata.org">pandas</a> 和 <a class="reference external" href="https://xarray.pydata.org/en/stable">xarray</a> 分析数据，使用 <a class="reference external" href="https://opencv.org">OpenCV</a> 处理图片和视屏，用 <a class="reference external" href="www.astropy.org">astropy</a> 进行天文学研究，或是通过 <a class="reference external" href="https://scikit-learn.org/stable/index.html">Scikit-Learn</a> 和 <a class="reference external" href="https://mygrad.readthedocs.io">MyGrad</a> 来尝试机器学习，你走在使用受到NumPy深远影响的Python模组。在它们的最核心，这些模组都依赖着NumPy的N维数组和它高效的矢量化功能。NumPy也从根本性上影响了这些模组的设计以及它们对用户开放的接口。因此，熟练使用这些工具并进行Python科学工作都建立在对NumPy扎实的理解上。</p>
+<p>本模组向我们介绍NumPy的基础。我们将首先定义维度（dimensionality）一词的具体含义并发展对零，一，二，和N维数组以及它们为什么对数据科学应用如此重要的直观理解。然后，我们将会讨论数组遍历顺序的不明确点以及NumPy默认使用的行优先排序。然后我们将会讨论极其重要的矢量化，其描述了NumPy向发送对数组进行的数学操作的方法。这也将帮助我们理解NumPy如何得到它如此高的计算效率。最后，我们将会深入讨论NumPy的高级功能。这包括它为不同形状的数组之间的数学操作进行广播（broadcast）的规则，以及通过基础和进阶索引来访问和更新数组的内容的方法。有了这些技巧折后，我们将能够使用NumPy和Python很多其它的科学模组来编写短小精悍的数组处理代码！</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html">Introducing the ND-array</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html">N维数组简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/IntroducingTheNDarray.html#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html">Accessing Data Along Multiple Dimensions in an Array</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#One-dimensional-Arrays">One-dimensional Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#Two-dimensional-Arrays">Two-dimensional Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#N-dimensional-Arrays">N-dimensional Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#Zero-dimensional-Arrays">Zero-dimensional Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#Manipulating-Arrays">Manipulating Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#一维数组">一维数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#二维数组">二维数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#N维数组">N维数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#零维数组">零维数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#操作数组">操作数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/BasicArrayAttributes.html">Basic Array Attributes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicArrayAttributes.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/BasicArrayAttributes.html">基本的数组属性</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicArrayAttributes.html#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html">Functions for Creating NumPy Arrays</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#Creating-Arrays-from-Python-Sequences">Creating Arrays from Python Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#Creating-Constant-Arrays:-zeros-and-ones">Creating Constant Arrays: <code class="docutils literal notranslate"><span class="pre">zeros</span></code> and <code class="docutils literal notranslate"><span class="pre">ones</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#Creating-Sequential-Arrays:-arange-and-linspace">Creating Sequential Arrays: <code class="docutils literal notranslate"><span class="pre">arange</span></code> and <code class="docutils literal notranslate"><span class="pre">linspace</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#Creating-Arrays-Using-Random-Sampling">Creating Arrays Using Random Sampling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#Creating-an-Array-with-a-Specified-Data-Type">Creating an Array with a Specified Data Type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#Joining-Arrays-Together">Joining Arrays Together</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html">创建NumPy数组的函数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#使用Python序列创建数组">使用Python序列创建数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#创建常量数组：zeros-和-ones">创建常量数组：<code class="docutils literal notranslate"><span class="pre">zeros</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ones</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#创建序列数组：arange-和-linspace">创建序列数组：<code class="docutils literal notranslate"><span class="pre">arange</span></code> 和 <code class="docutils literal notranslate"><span class="pre">linspace</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#随机取值来生成数组">随机取值来生成数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#创建某数据类型的数组">创建某数据类型的数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#合并数组">合并数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/FunctionsForCreatingNumpyArrays.html#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html">Iterating Over Arrays &amp; Array-Traversal Order</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html#How-to-Traverse-an-Array:-Row-major-(C)-vs-Column-major-(F)-Traversal-Ordering">How to Traverse an Array: Row-major (C) vs Column-major (F) Traversal Ordering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html">迭代数组和数组遍历顺序</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html#如何遍历数组：行优先（C）vs-列优先（F）遍历顺序">如何遍历数组：行优先（C）vs 列优先（F）遍历顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/ArrayTraversal.html#官方说明文档链接">官方说明文档链接</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html">“Vectorized” Operations: Optimized Computations on NumPy Arrays</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#Basic-Mathematical-Operations-Using-Arrays">Basic Mathematical Operations Using Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#Vectorized-Operations">Vectorized Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#NumPy’s-Mathematical-Functions">NumPy’s Mathematical Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#Logical-Operations">Logical Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#Linear-Algebra">Linear Algebra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#Conclusion">Conclusion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html">“矢量化”操作：对NumPy数组进行优化过的计算</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#使用数组进行基本数学操作">使用数组进行基本数学操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#矢量化操作">矢量化操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#NumPy的数学函数">NumPy的数学函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#逻辑运算">逻辑运算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#线性代数">线性代数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#总结">总结</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/VectorizedOperations.html#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html">Array Broadcasting</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#Rules-of-Broadcasting">Rules of Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#A-Simple-Application-of-Array-Broadcasting">A Simple Application of Array Broadcasting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#Size-1-Axes-&amp;-The-newaxis-Object">Size-1 Axes &amp; The <code class="docutils literal notranslate"><span class="pre">newaxis</span></code> Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#An-Advanced-Application-of-Broadcasting:-Pairwise-Distances">An Advanced Application of Broadcasting: Pairwise Distances</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html">数组广播</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#广播的规则">广播的规则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#数组广播的简单应用">数组广播的简单应用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#大小为1的轴和-newaxis-对象">大小为1的轴和 <code class="docutils literal notranslate"><span class="pre">newaxis</span></code> 对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#广播的高级运用：距离对">广播的高级运用：距离对</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/Broadcasting.html#阅读理解答案">阅读理解答案</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html">Introducing Basic and Advanced Indexing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#Basic-Indexing">Basic Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array">Producing a View of an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#Augmenting-the-Underlying-Data-of-an-Array">Augmenting the Underlying Data of an Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html">基础和进阶索引简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#基础索引">基础索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#创建数组视阈">创建数组视阈</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#增强数组的内置数据">增强数组的内置数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/BasicIndexing.html#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html">Advanced Indexing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#Integer-Array-Indexing">Integer Array Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#Boolean-Array-Indexing">Boolean-Array Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#In-Place-&amp;-Augmented-Assignments-via-Advanced-Indexing">In-Place &amp; Augmented Assignments via Advanced Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#Combining-Basic-and-Advanced-Indexing-Schemes">Combining Basic and Advanced Indexing Schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#Links-to-Official-Documentation">Links to Official Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#Reading-Comprehension-Solutions">Reading Comprehension Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html">进阶索引</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#整数数组索引">整数数组索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#布尔数组索引">布尔数组索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#通过进阶索引进行原地和增强赋值">通过进阶索引进行原地和增强赋值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#混合使用基础和进阶索引">混合使用基础和进阶索引</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#官方说明文档链接">官方说明文档链接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Module3_IntroducingNumpy/AdvancedIndexing.html#阅读理解答案：">阅读理解答案：</a></li>
 </ul>
 </li>
 </ul>
@@ -288,10 +289,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Module3_IntroducingNumpy/IntroducingTheNDarray.html" class="btn btn-neutral float-right" title="Introducing the ND-array" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Module3_IntroducingNumpy/IntroducingTheNDarray.html" class="btn btn-neutral float-right" title="N维数组简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Module2_EssentialsOfPython/Problems/EncodeAsString.html" class="btn btn-neutral float-left" title="Encode as String" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Module2_EssentialsOfPython/Problems/EncodeAsString.html" class="btn btn-neutral float-left" title="编码为字符串" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
