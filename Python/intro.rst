@@ -8,6 +8,8 @@ Python Like You Mean It
   
   翻译 `Alex Ding <https://alexding123.github.io/>`_
 
+  `English Version <https://www.pythonlikeyoumeanit.com`_
+
 这是什么
 --------
 Python Like You Mean It (PLYMI) 是一个免费学习Python和NumPy基础的在线资源，其旨在帮助读者熟练地使用Python。本资源主要讨论的Python特征侧重于对科学应用感兴趣的读者（如数据分析，机器学习，数字相关工作，等等）。
