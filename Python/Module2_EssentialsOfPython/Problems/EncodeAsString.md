@@ -19,9 +19,9 @@ jupyter:
 ```
 
 # 编码为字符串
-有时，我们将需要在函数中对不同输入类型进行不同的操作。本题将考察你对类型，控制流，词典，和更多概念的掌握。
+有时，我们需要在函数中根据输入类型的不同进行不同的操作。本题将考察你对类型，控制流，词典，和更多概念的掌握。
 
->我们想要将一序列Python对象编码为一个字符串。以下描述了对每种对象类型的编码规则。每个对象的翻译结果应由 `" | "` 隔开，而你应返回一个长字符串。
+>我们想要将一序列的Python对象编码为一个字符串。以下描述了对每种对象类型的编码规则。每个对象的翻译结果应由 `" | "` 隔开，并在最后函数应返回一个长字符串。
 
 - 如果对象是整数，通过拼写它在10进制下每一位数字将其转化为字符串，如下：
 `142` $\rightarrow$ `one-four-two`；`-12` $\rightarrow$ `neg-one-two`。
@@ -39,16 +39,16 @@ jupyter:
 'one-two | neg-one-four and float | hello | <OTHER> | Aha | one-zero and float | <OTHER> | five'
 ```
 
-**提示**：查阅在[这里](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html)介绍的 `isinstance` 函数来处理不同的数据类型。同时，可以考虑创建一个辅助函数来进行整数到我们特殊格式的字符串，因为我们在处理整数和浮点数时都要用到。在任何情况下，将重复进行的工作抽取为函数都是一个好习惯。你将会需要硬编码（hardcode）每个数字到它英文名字的转化表。
+**提示**：查阅在[这里](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html)介绍的 `isinstance` 函数来处理不同的数据类型。同时，你可以考虑创建一个辅助函数来将整数编码到我们特殊格式的字符串，因为我们在处理整数和浮点数时都要用到它。在任何情况下，将重复进行的工作抽取为函数都是一个好习惯。你将会需要硬编码（hardcode）每个数字到它英文名字的转化表。
 <!-- #endregion -->
 
 <!-- #region -->
 ## 解
-我们的解总分化为三个简单的函数。`int_to_str` 用来将有符号整数转化成英语单词。`item_to_transcript` 将任何类型的对象转化为根据本题描述的字符串格式。最后，`concat_to_str` 迭代输入列表，调用另外两个辅助函数，并将每个对象转化为字符串表达方法，并由 `' | '` 链接这些字符串。
+我们的解总分化为三个简单的函数。`int_to_str` 用来将整数转化成英语单词。`item_to_transcript` 将任何类型的对象转化为根据本题描述的字符串格式。最后，`concat_to_str` 迭代输入列表，调用另外两个辅助函数，将每个对象转化为字符串表达方法，并由 `' | '` 链接这些字符串。
 
 ```python
 def int_to_str(n):
-    """ 
+    """
     接受一个整数并将其格式化为字符串：
         e.g. 142 -> "one-four-two"
              -12 -> "neg-one-two"
@@ -57,7 +57,7 @@ def int_to_str(n):
                "4": "four", "5": "five", "6": "six", "7": "seven",
                "8": "eight", "9": "nine", "-": "neg"}
     return "-".join(mapping[digit] for digit in str(n))
-    
+
 def item_to_transcript(item):
     """ Any -> str """
     if isinstance(item, bool): return '<OTHER>'
@@ -67,7 +67,7 @@ def item_to_transcript(item):
     return '<OTHER>'
 
 def concat_to_str(l):
-    """ 
+    """
     将一列表的对象转化成字符串表达方式并粘连在一起
 
     Parameters
@@ -98,7 +98,7 @@ for x in some_iterable_of_strings:
     out += "<hi>" + x
 ```
 
-`int_to_str` 为了将整数的每位数转化成字符串使用了一个小技巧——它将整数用 `str` 转化为字符串。而字符串是一个[序列](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html)。这允许我们访问整数的每一位数，甚至迭代它们：
+`int_to_str` 为了将整数的每位数转化成字符串使用了一个小技巧——它用 `str` 将整数转化为字符串。而字符串是一个[序列](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html)。这允许我们访问整数的每一位数，甚至迭代它们：
 
 ```python
 # 将整数转化为字符串让我们可以通过索引/迭代来
@@ -111,7 +111,7 @@ for x in some_iterable_of_strings:
 >>> x[-1]
 '3'
 ```
-因此，`"-".join(mapping[digit] for digit in str(n))` 将整数转化为字符串，迭代其每一位数，并使用函数中定义的[词典](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)来将其转换成对应的单词。
+因此，`"-".join(mapping[digit] for digit in str(n))` 将整数转化为字符串，迭代其每一位数，并使用函数中定义的[词典](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_II_Dictionaries.html)来将其转换成对应的单词。
 
 `item_to_transcript` 是一个特别骚操作的函数。首先，它并不使用elif语句，但这：
 ```python
@@ -138,9 +138,9 @@ def item_to_transcript_alt(item):
     else:
         return '<OTHER>'
 ```
-后者使用了熟悉的[if-elif-else](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html)语句，且为一个完全合理可接受的版本。但请注意在 `item_to_transcript` 中的[多个返回语句](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Multiple-return-Statements)达成了一样的逻辑。也就是说如果某个条件被满足后，它对应的值会被返回，且后面的任何代码都会被跳过。比如说，如果 `item` 是一个整数，那么第二个if条件会运算为真且 `int_to_str(item)` 会被返回，并立即从函数主体跳出。
+后者使用了熟悉的[if-elif-else](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html)语句，且为一个完全合理可接受的版本。但请注意在 `item_to_transcript` 中的[多个返回语句](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Multiple-return-Statements)实现了一样的逻辑。也就是说如果某个条件被满足，它对应的值会被返回，且后面的任何代码都会被跳过。比如说，如果 `item` 是一个整数，那么第二个if条件会运算为真并返回 `int_to_str(item)`，同时，程序立即从函数主体跳出。
 
-在两个函数中选“更好”的终归是一个风格上的偏好。你也可能注意到了单行的 `if-return` 表达式。这也仅仅是一个风格的选择。这：
+在两个函数中选哪个“更好”终归是一个风格上的偏好。你可能注意到了单行的 `if-return` 表达式。这也仅仅是一个风格的选择。这：
 ```python
 if isinstance(item, int): return int_to_str(item)
 ```
@@ -149,7 +149,7 @@ if isinstance(item, int): return int_to_str(item)
 if isinstance(item, int): 
     return int_to_str(item)
 ```
-在 `item_to_transcript` 中使用单行的 `if-return` 表达式强调了该函数像词典一般的行为：代码的格式很好地对应了其功能。但就算如此，这样的单行语句要谨慎使用。有些人可能认为这是一个可爱的小技巧。我也觉得它很可爱。这代码很可爱。我写的代码很可爱。
+在 `item_to_transcript` 中使用单行的 `if-return` 表达式强调了该函数像词典一般的行为：代码的格式很好地对应了其功能。但就算如此，这样的单行语句也要谨慎使用。有些人可能认为这是一个可爱的小技巧。我也觉得它很可爱。这代码很可爱。我写的代码很可爱。
 
 最后，你可能在代码中注意到一个像是重复的部分：我们的第一个 `if` 语句当 `item` 为 `True` 或 `False`（布尔值）时返回 `'<OTHER>'`，而我们的最后一行代码在以上所有情况都没有满足时（也就是当 `item` 不是 `bool`，`int`，`float`，或 `str` 类型对象时）会返回 `'<OTHER>'`。为什么我们不将最后一行和第一个 `if` 句段合并呢？不这样做的原因是 `True` 和 `False` 不仅仅是布尔类型的实例，它们也是整数！`True` 的行为类似于整数 `1` 而 `False` 像 `0`：
 

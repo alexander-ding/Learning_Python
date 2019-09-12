@@ -107,7 +107,7 @@ TypeError                                 Traceback (most recent call last)
 TypeError: 'tuple' object does not support item assignment
 ```
 
-### 可变和不可变类对象
+### 可变和不可变对象类型
 以下是Python中常见的一些可变和不可变对象。在我们开始讨论词典（dictionary）和集（set）时这些知识会很有用。
 <!-- #endregion -->
 
