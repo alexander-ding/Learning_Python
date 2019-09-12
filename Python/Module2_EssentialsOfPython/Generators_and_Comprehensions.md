@@ -438,7 +438,7 @@ TypeError: 'list' object is not an iterator
 
 <!-- #region -->
 ## 列表和元组理解
-因为使用生成器理解来初始化列表的流程极其有用，Python专门为其定义了专门的语法，叫做列表理解（list comprehension）。**列表理解**是一种创建列表的语法，和发生器理解语法完全类似：
+因为使用生成器理解来初始化列表的流程极其有用，Python专门为其定义了专门的语法，叫做列表理解（list comprehension）。**列表理解**是一种创建列表的语法，和生成器理解语法完全类似：
 
 ```
 [<expression> for <var> in <iterable> {if <condition}]
