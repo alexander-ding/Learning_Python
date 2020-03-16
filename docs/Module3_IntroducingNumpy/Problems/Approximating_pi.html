@@ -21,14 +21,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="../../_static/gtag.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="../../_static/gtag.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -90,7 +90,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_1.html">模组1：Python入门</a></li>
@@ -426,8 +426,8 @@ P_{circle} = \frac{Area_{circle}}{Area_{square}} = \frac{\pi r^2}{(2r)^2}
 </div>
 <div class="section" id="相关阅读">
 <h2>相关阅读<a class="headerlink" href="#相关阅读" title="永久链接至标题">¶</a></h2>
-<p>你会需要熟悉NumPy的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html">矢量化操作</a>和<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions">根据轴求和</a>。你也很可能会发现<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/AdvancedIndexing.html#Boolean-Array-Indexing">布尔索引</a>很有用。</p>
-<p>这里强烈建议你使用matplotlib来可视化你对 <span class="math notranslate nohighlight">\(\pi\)</span> 每一轮后的约算值。你可以参阅<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Matplotlib.html#Plotting-and-Saving-a-Figure">PLYMI的这一小节</a>来学习如何创建一个简单的线图。</p>
+<p>你会需要熟悉NumPy的<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html">矢量化操作</a>和<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions">根据轴求和</a>。你也很可能会发现<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/AdvancedIndexing.html#Boolean-Array-Indexing">布尔索引</a>很有用。</p>
+<p>这里强烈建议你使用matplotlib来可视化你对 <span class="math notranslate nohighlight">\(\pi\)</span> 每一轮后的约算值。你可以参阅<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Matplotlib.html#Plotting-and-Saving-a-Figure">PLYMI的这一小节</a>来学习如何创建一个简单的线图。</p>
 </div>
 <div class="section" id="提示">
 <h2>提示<a class="headerlink" href="#提示" title="永久链接至标题">¶</a></h2>
@@ -561,7 +561,7 @@ P_{circle} = \frac{Area_{circle}}{Area_{square}} = \frac{\pi r^2}{(2r)^2}
 </pre></div>
 </div>
 </div>
-<p>最后，我们想要计算每一轮后落入圆中的总镖数。<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Boolean-Objects-are-Integers">请回忆</a>，<code class="docutils literal notranslate"><span class="pre">True</span></code> 的行为类似 <code class="docutils literal notranslate"><span class="pre">1</span></code>，而 <code class="docutils literal notranslate"><span class="pre">False</span></code> 的行为类似 <code class="docutils literal notranslate"><span class="pre">0</span></code>。因此，我们可以对 <code class="docutils literal notranslate"><span class="pre">in_circle</span></code> 进行累计和来计算这个。</p>
+<p>最后，我们想要计算每一轮后落入圆中的总镖数。<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Boolean-Objects-are-Integers">请回忆</a>，<code class="docutils literal notranslate"><span class="pre">True</span></code> 的行为类似 <code class="docutils literal notranslate"><span class="pre">1</span></code>，而 <code class="docutils literal notranslate"><span class="pre">False</span></code> 的行为类似 <code class="docutils literal notranslate"><span class="pre">0</span></code>。因此，我们可以对 <code class="docutils literal notranslate"><span class="pre">in_circle</span></code> 进行累计和来计算这个。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>

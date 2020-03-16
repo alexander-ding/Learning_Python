@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Measuring classification accuracy, Difficulty: Easy, Category: Practice Problem
    :keywords: numpy, vectorization, practice, machine learning, classifier
-```
+<!-- #endraw -->
 
 <!-- #region -->
 # 测量分类模型的精度
@@ -89,7 +89,7 @@ def classification_accuracy(classification_scores, true_labels):
 ### 未矢量化的解
 此问题的一个简单处理方法就是首先迭代我们分类分数的每一行。我们知道每一行数据储存着一个数据点每个类型的分数，而每一行最高分数的*索引*将会为我们提供该数据点（如我们例子中的图片）的预测标签。然后我们可以直接将预测的标签和正确的标签进行对比来计算精确度。
 
-我们可以使用函数 `numpy.argmax` 来获取每个数据点的最高分数的索引并由此获得其预测的类型ID。请回忆，NumPy数组使用[行优先遍历顺序](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html#How-to-Traverse-an-Array:-Row-major-%28C%29-vs-Column-major-%28F%29-Traversal-Ordering)，所以for循环 `classification_scores` 将会一次返回数组的一行。
+我们可以使用函数 `numpy.argmax` 来获取每个数据点的最高分数的索引并由此获得其预测的类型ID。请回忆，NumPy数组使用[行优先遍历顺序](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html#How-to-Traverse-an-Array:-Row-major-%28C%29-vs-Column-major-%28F%29-Traversal-Ordering)，所以for循环 `classification_scores` 将会一次返回数组的一行。
 
 ```python
 pred_labels = []  # 将会储存N个预测的类型ID
@@ -107,7 +107,7 @@ for i in range(len(pred_labels)):
         num_correct += 1
 ```
 
-我们也可以使用[生成器理解](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Creating-your-own-generator:-generator-comprehensions)和[itertools](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html)来简化以上代码：
+我们也可以使用[生成器理解](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Creating-your-own-generator:-generator-comprehensions)和[itertools](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Itertools.html)来简化以上代码：
 
 ```python
 # 请回忆：int(True) -> 1, int(False) -> 0
@@ -148,12 +148,12 @@ def unvectorized_accuracy(classification_scores, true_labels):
 >>> unvectorized_accuracy(scores, labels)
 0.6
 ```
-耶！我们有一个可用的精确度函数了！但是，这个函数可以通过[矢量化](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html)大幅度地简化和优化。
+耶！我们有一个可用的精确度函数了！但是，这个函数可以通过[矢量化](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html)大幅度地简化和优化。
 <!-- #endregion -->
 
 <!-- #region -->
 ### 矢量化的解
-`numpy.argmax` 是NumPy的一个[矢量化序列函数](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Sequential-Functions)。如此，它接受[关键词参数axis](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions)。这意味着，与其对 `classification_scores` 的每一行通过for循环调用 `np.argmax`，我们可以直接通过提供 `axis=1` 来告诉 `np.argmax` 去对*数组每一行的列*进行操作。
+`numpy.argmax` 是NumPy的一个[矢量化序列函数](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Sequential-Functions)。如此，它接受[关键词参数axis](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions)。这意味着，与其对 `classification_scores` 的每一行通过for循环调用 `np.argmax`，我们可以直接通过提供 `axis=1` 来告诉 `np.argmax` 去对*数组每一行的列*进行操作。
 
 ```python
 # 返回 `classification_scores` 每行中最大值列的索引

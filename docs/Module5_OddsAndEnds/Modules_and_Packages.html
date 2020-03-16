@@ -23,14 +23,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="../_static/gtag.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="../_static/gtag.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -91,7 +91,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
@@ -240,7 +240,7 @@
 <div class="section" id="模组">
 <h2>模组<a class="headerlink" href="#模组" title="永久链接至标题">¶</a></h2>
 <p>Python“模组”指包含函数定义和变量赋值语句的单个 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 文件。导入一个模组将执行这些命令并通过被导入的模组使得命令产生的对象可以被访问。</p>
-<p>让我们创建属于自己的模组并将其导入到一个互动式的Python进程中吧。在你计算机中的某个路径中打开一个Jupyter记事本或IPython命令行。使用<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html#Integrated-Development-Environments">IDE</a>或简单的文本编辑器（不要用像Microsoft Word这样的软件！）在进程的路径中创建一个名为 <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> 的文本文件。<code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> 的内容应为：</p>
+<p>让我们创建属于自己的模组并将其导入到一个互动式的Python进程中吧。在你计算机中的某个路径中打开一个Jupyter记事本或IPython命令行。使用<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html#Integrated-Development-Environments">IDE</a>或简单的文本编辑器（不要用像Microsoft Word这样的软件！）在进程的路径中创建一个名为 <code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> 的文本文件。<code class="docutils literal notranslate"><span class="pre">my_module.py</span></code> 的内容应为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">我们的第一个Python模组。这个开头的字符串是模组级别的说明文档字符串（docstring）。</span>
 <span class="sd">它并不是该模组必要的一部分，但它对描述你的模组的目的很有用。</span>
@@ -285,7 +285,7 @@ module
 <span class="mi">8</span>
 </pre></div>
 </div>
-<p>你一定要理解这就是模组内容能够被导入它的环境访问的方法。知道这点后，了解模组的成员的一个好办法是使用IDE和互动命令行的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Informal_Intro_Python.html#Dabbling-with-Numbers">自动完成</a>功能来列出模组对象的所有属性。内置的 <code class="docutils literal notranslate"><span class="pre">help</span></code> 函数可以用来总结模组的内容：</p>
+<p>你一定要理解这就是模组内容能够被导入它的环境访问的方法。知道这点后，了解模组的成员的一个好办法是使用IDE和互动命令行的<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Informal_Intro_Python.html#Dabbling-with-Numbers">自动完成</a>功能来列出模组对象的所有属性。内置的 <code class="docutils literal notranslate"><span class="pre">help</span></code> 函数可以用来总结模组的内容：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">my_module</span><span class="p">)</span>
 <span class="go">Help on module my_module:</span>
 
@@ -546,7 +546,7 @@ module
 </div>
 <div class="section" id="pip和conda：包管理器">
 <h2>pip和conda：包管理器<a class="headerlink" href="#pip和conda：包管理器" title="永久链接至标题">¶</a></h2>
-<p>你可以在在全世界共享Python包。市面上有两个常用的包管理器，<code class="docutils literal notranslate"><span class="pre">pip</span></code> 和 <code class="docutils literal notranslate"><span class="pre">conda</span></code>。<code class="docutils literal notranslate"><span class="pre">pip</span></code> 从<a class="reference external" href="https://pypi.org/">The Python Package Index (PyPI)</a>（Python包索引）下载并安装包, 而 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 从Anaconda Cloud下载并安装包。<code class="docutils literal notranslate"><span class="pre">conda</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 都已经作为<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html#Installing-Anaconda">Anaconda分布</a>的一部分被安装在你的机器上了。</p>
+<p>你可以在在全世界共享Python包。市面上有两个常用的包管理器，<code class="docutils literal notranslate"><span class="pre">pip</span></code> 和 <code class="docutils literal notranslate"><span class="pre">conda</span></code>。<code class="docutils literal notranslate"><span class="pre">pip</span></code> 从<a class="reference external" href="https://pypi.org/">The Python Package Index (PyPI)</a>（Python包索引）下载并安装包, 而 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 从Anaconda Cloud下载并安装包。<code class="docutils literal notranslate"><span class="pre">conda</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 都已经作为<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html#Installing-Anaconda">Anaconda分布</a>的一部分被安装在你的机器上了。</p>
 <p>执行以下来使用 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 安装包：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install &lt;package_name&gt;
 </pre></div>

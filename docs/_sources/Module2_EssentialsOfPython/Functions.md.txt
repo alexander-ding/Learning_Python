@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Functions and Function Signatures, Difficulty: Medium, Category: Section
    :keywords: functions, *args, **kwargs, signature, default parameter, docstring, return, vowel count, syntax, basics
-```
+<!-- #endraw -->
 
 <!-- #region -->
 # 函数基础
@@ -68,7 +68,7 @@ def count_vowels(in_string):
 Python**函数**（function）是一个包装代码的对象。*调用*（call）函数将会执行包装的代码并*返回*（return）一个对象。你可以定义函数使其接受*参数*（argument），也就是输入进包装代码的对象。
 </div>
 
-<!-- #region -->
+
 ## `def` 语句
 类似于 `if`，`else`，和 `for`，Python保留了 `def` 语句来表达函数（以及我们会在之后讨论的其它几个构造体）的定义。以下是Python函数定义的一般形式：
 
@@ -88,7 +88,6 @@ def <function name>(<function signature>):
 Python同样保留了 `return` 语句来表达函数的终止；如果遇到了 `return`，那程序将立即终止函数的执行并返回 `return` 右边的对象。
 
 请注意，与if语句和for循环一样，`def` 语句必须由冒号结尾，且函数的主体代码必须[由空格限定](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python使用空格来限定区域)：
-<!-- #endregion -->
 
 <!-- #region -->
 ```python

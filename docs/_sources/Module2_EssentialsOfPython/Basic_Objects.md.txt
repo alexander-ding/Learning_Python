@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Basics of Python Objects, Difficulty: Easy, Category: Section
    :keywords: integers, booleans, floats, floating point precision, lists, strings, fundamentals
-```
+<!-- #endraw -->
 
 <!-- #region -->
 # 基本对象类型
@@ -802,7 +802,7 @@ f字符串是Python 3.6才加入的新语法。它在之前的Python版本不可
 
 3\. 去除该字符串两边的所有空格：`"  basket    "`。
 
-<!-- #region -->
+
 4\. 创建一个打印时会如下显示的字符串（第二行打头的是一个tab符号）：
 ```
 Hello
@@ -814,7 +814,6 @@ Hello
 6\. 只有13岁和以上的孩子可以观看电影《反斗智多星》。设变量 `name`（字符串）和 `age`（整数）。使用f字符串来显示："NAME is old enough to watch the movie: BOOL"（“NAME可以看这电影：BOOL”）。NAME应该用孩子的名字来代替，而BOOL在孩子13岁或以上时为 `True`，不然为 `False`。
 
 </div>
-<!-- #endregion -->
 
 <!-- #region -->
 ## 列表

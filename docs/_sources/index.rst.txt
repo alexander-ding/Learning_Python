@@ -2,6 +2,8 @@
 Python Like You Mean It
 =======================
 
+  更新到原文 `Commit 3199f71884fa9b9dc64e9dba829e80905dd93abf <https://github.com/rsokl/Learning_Python/commit/3199f71884fa9b9dc64e9dba829e80905dd93abf>`
+
   作者 `Ryan Soklaski <https://scholar.google.com/citations?hl=en&user=coXsftgAAAAJ&view_op=list_works&gmla=AJsN-F7Eg769ERNBQDKZ5-5xmT9qh2G2chKgH0Lwbd3zujR7FAPiWmVp_57dFPKG_h7ghPeLG8oGysj5YWziwXib4oHb6kr2HA>`_ (Twitter/GitHub:`@rsokl <https://twitter.com/rsokl>`_)
   
   编辑 `David Mascharka <https://davidmascharka.com/>`_
@@ -26,12 +28,12 @@ Python Like You Mean It (PLYMI) 是一个免费学习Python和NumPy基础的在�
 
 那Python书籍呢？
 ----------------
-书和博客在很多情况下很有帮助。我个人认为编程书籍经常为完整性太过复杂冗长，以至于读者难以在好几百页的书里分辨哪些话题最重要。其次，在网上发表本文更加合理；用户可以轻松地搜索话题，复制代码，并在手机端浏览时刻更新的最新内容。
+书籍和博客文章在很多情况下是有用的。我个人的意见是，很多编程书籍为了追求完整性导致内容太过复杂冗长；读者难以在好几百页的书里分辨哪些话题最重要。其次，像PLYMI这样的资源作为电子文档更加合理；用户可以轻松地搜索话题，复制代码，并在手机端浏览时刻更新的最新内容。
 
 
 Python不应该太简单
 ------------------
-Python是一门相对而言比较简单的语言。编写能用的代码并不困难。不幸的是，这意味着很多Python用户仅仅知道足够的知识来达成自己的需求，但缺乏对这门语言健全的理解。切记不要沦落到“知道足够的Python来做蠢事”的境地；这容易导致自满，学习停滞，和很多低质量的代码。各位一定要学好学清楚。
+Python是一门相对而言比较简单的语言；编写能用的代码并不困难。不幸的是，这意味着很多Python程序员仅仅按需学习，但却没有整体地学通这门语言。切记不要只懂得如何编写能用的低质量代码；这容易导致自满，停滞，和很多危险的代码。各位一定要学好学清楚。
 
 
 PLYMI为GitHub开源项目
@@ -53,12 +55,12 @@ PLYMI为GitHub开源项目
 
 关于作者
 --------
-我刚开始学习使用Python的时候是为了我研究生时的物理实验。当时我的Python使用差得无可救药。幸运的是，一个实验室里更加熟悉Python的同事点醒了我，让我理解了我的代码和工作流程有多糟糕。他指向了一些工具，代码风格指南，和说明文档来帮助我提升编程水平（我认为本资源对当年的我会是一个巨大的帮助）。如今我已经使用了Python至少六年，并比较仔细地了解着这门语言的新特征和变化。现在我在做机器学习的研究，也作为一名核心人员开发过一个机器学习的模组。我很喜欢教书--因此这个项目对我而言非常有意思！
+我刚开始学习使用Python的时候是为了我研究生时的物理实验。当时我的Python使用差得无可救药。幸运的是，一个实验室里更加熟悉Python的同事点醒了我，让我理解了我的代码和工作流程有多糟糕。他指向了一些工具，代码风格指南，和说明文档来帮助我提升编程水平（我认为本资源对当年的我会是一个巨大的帮助）。如今我已经使用了Python至少六年，并比较仔细地了解着这门语言的新特征和变化。现在我在做机器学习的研究，也作为一名核心人员开发过一个机器学习的模组。我很喜欢教书，所以做这个这个项目也算是一种享受。
 
   
 .. toctree::
    :maxdepth: 2
-   :caption: Table of Contents:
+   :caption: 目录:
 
    intro.rst
    module_1.rst
@@ -69,8 +71,8 @@ PLYMI为GitHub开源项目
    module_4.rst
    module_5.rst	     
 
-Indices and tables
-==================
+索引和目录
+==========
 
 * :ref:`genindex`
 * :ref:`modindex`

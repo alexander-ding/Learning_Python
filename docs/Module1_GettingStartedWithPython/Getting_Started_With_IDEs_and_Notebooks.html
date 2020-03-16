@@ -23,14 +23,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="../_static/gtag.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="../_static/gtag.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -92,7 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../module_1.html">模组1：Python入门</a><ul class="current">
@@ -212,27 +212,27 @@
 <div class="section" id="你将学到什么">
 <h2>你将学到什么<a class="headerlink" href="#你将学到什么" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>集成开发环境（IDE）是一套允许你编辑，运行，和调试代码的复杂的文本编辑器。</p></li>
+<li><p>集成开发环境（IDE）是一套用来编辑，运行，和调试代码的复杂的文本编辑器。</p></li>
 <li><p>Python壳（shell）是一个用以输入和直接在计算机命令行中运行Python代码的接口。</p></li>
-<li><p>IPython壳是一个更加完善的Python壳版本——它提供语法高亮，自动完成，和其它功能。</p></li>
-<li><p>Jupyter记事本是一个强大的编写，实验新代码的工具。它同时也可以用来可视化数据和编写格式化的文本。我们将会在本资源中经常使用它。</p></li>
+<li><p>IPython壳是一个更加完善的Python壳——它提供语法高亮，自动完成，以及其它有用的功能。</p></li>
+<li><p>Jupyter记事本是用来编写，测试新代码的强大工具。它同时也可以用来可视化数据和编写格式化的文本。我们将会在本资源中经常使用它。</p></li>
 </ul>
 </div>
 <div class="section" id="集成开发环境（IDE）">
 <h2>集成开发环境（IDE）<a class="headerlink" href="#集成开发环境（IDE）" title="永久链接至标题">¶</a></h2>
-<p>在本模组的第一节中，我们了解了Python脚本仅仅是包含Python代码的文本文件这一事实。除了使用 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 为文件后缀名之外，Python脚本对比其它文本文件没有什么特殊的特征。虽然如此，一般来说用简单的文本编辑器来编写Python代码并不有效（而使用类似Microsoft Word的文字处理软件也是万万不可取的）。我们需要一个“集成开发环境”（IDE）来帮助我们开发代码。</p>
-<p>首先，一个好的IDE会提供一个拥有如下功能的文本编辑器：</p>
+<p>在本模组的第一节中，我们了解了Python脚本仅仅是包含Python代码的文本文件这一事实。除了使用 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 为文件后缀名之外，Python脚本对比其它文本文件没有什么特殊的特征。话说如此，使用文本编辑器来编写Python代码很不效率（而使用Microsoft Word这样的文字处理软件是万万不可取的）。我们需要一个“集成开发环境”（IDE）来帮助我们开发代码。</p>
+<p>首先，一个好的IDE会提供拥有如下功能的文本编辑器：</p>
 <ul class="simple">
-<li><p>检查你的代码以找出并标记语法错误（拼错的函数名，调用不存在的变量，等等）</p></li>
-<li><p>彩色化你的代码使其更容易分辨。比如说，这可以帮助你区分数字和字符串。</p></li>
-<li><p>让你可以轻松地查阅函数的定义和说明文件。</p></li>
+<li><p>检查你的代码并标记语法错误（如拼错的函数名，不存在的变量，等等）</p></li>
+<li><p>彩色化你的代码来使其更容易分辨。比如说，这可以帮助你区分数字和字符串。</p></li>
+<li><p>允许你轻松地查阅函数的定义和说明文件。</p></li>
 <li><p>在你输入变量和函数时自动完成它们的名字。</p></li>
 </ul>
-<p>一个IDE同时也经常提供调试工具来帮助你测试你的代码；它也经常会提供一个和像Git这样的版本控制软件（version-control software）的交互接口来帮助你在修改代码的同时跟踪代码的版本。虽然它们很有用，我们在这里并不会讨论这些更高级的功能。</p>
+<p>很多IDE也会提供帮助你测试你的代码的调试工具以及帮助你在修改代码的同时记录代码版本的版本控制软件（version-control software）（如Git）。虽然它们很有用，我们在此并不讨论这些高级功能。</p>
 <div class="section" id="推荐的IDE">
 <h3>推荐的IDE<a class="headerlink" href="#推荐的IDE" title="永久链接至标题">¶</a></h3>
-<p>市面上有很多很棒的IDE可以调试以配合Python使用。我们在这里推荐两个IDE：</p>
-<p><a class="reference external" href="https://www.jetbrains.com/pycharm/download">PyCharm</a>: 一个专门针对Python的强大IDE。</p>
+<p>市面上有很多IDE支持Python代码。我们在这里推荐两个：</p>
+<p><a class="reference external" href="https://www.jetbrains.com/pycharm/download">PyCharm</a>: 一个专门针对Python开发的强大IDE。</p>
 <p><strong>好处</strong></p>
 <ul class="simple">
 <li><p>下载即用，无需太多设置就很好用</p></li>
@@ -242,20 +242,20 @@
 </ul>
 <p><strong>坏处</strong></p>
 <ul class="simple">
-<li><p>特别对手提电脑来说可能很耗资源</p></li>
-<li><p>对新用户而言可能会难易上手（但它有很好的教程和说明文件）</p></li>
+<li><p>很耗资源，特别对手提电脑而言</p></li>
+<li><p>功能多导致新用户难以上手（但它有很好的教程和说明文件）</p></li>
 </ul>
 <p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> 以及它的 <a class="reference external" href="https://code.visualstudio.com/docs/languages/python">Python拓展</a>: 一个轻便，宜定制的IDE。</p>
 <p><strong>好处</strong></p>
 <ul class="simple">
 <li><p>轻便优雅</p></li>
-<li><p>支持很多不同的语言，这样你只需要学习一个IDE</p></li>
+<li><p>支持其它的编程语言，这样你只需要学习使用一个IDE</p></li>
 <li><p>有极其多的拓展可供下载以提供编辑器新功能；这些拓展是由一个大社区的开源开发者编写的。</p></li>
 </ul>
 <p><strong>坏处</strong></p>
 <ul class="simple">
-<li><p>PyCharm暂时比起更完善和强大，但注意Microsoft现在正式支持Python拓展了</p></li>
-<li><p>可能需要细微的调试才能使用某些功能</p></li>
+<li><p>PyCharm暂时比其更完善和强大，但Visual Studio Code现在正式支持其Python拓展了</p></li>
+<li><p>可能需要细微的设置才能使用某些功能</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>:</p>
@@ -263,7 +263,7 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title fa fa-exclamation-circle"><strong>Jupyter Lab</strong>:</p>
-<p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">Jupyter Lab</a>是由Jupyter Notebook团队开发的一个全新的IDE。它的设计宗旨是为了将传统IDE的完善和强大和记事本环境的方便和好用。在编写本文时，Jupyter Lab还在beta测试期。鉴于Jupyter Notebook的流行度，Jupyter Lab也很有可能会很快成为一个常用的IDE。</p>
+<p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">Jupyter Lab</a>是由Jupyter Notebook团队开发的一个全新的IDE。它的设计宗旨是合并传统IDE的完善和强大和记事本环境的方便和好用。在编写本文时，Jupyter Lab还在beta测试期。鉴于Jupyter Notebook的流行度，Jupyter Lab也可能会快速成为一个常用的IDE。</p>
 </div>
 </div>
 </div>

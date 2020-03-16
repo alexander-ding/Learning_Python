@@ -23,14 +23,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="../_static/gtag.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="../_static/gtag.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -92,7 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
@@ -251,15 +251,15 @@
 <p>设 <span class="math notranslate nohighlight">\(N\)</span> 维数组 <code class="docutils literal notranslate"><span class="pre">x</span></code>，<code class="docutils literal notranslate"><span class="pre">x[index]</span></code> 使用<strong>基础索引</strong>的时候是当 <code class="docutils literal notranslate"><span class="pre">index</span></code> 是一个含有以下任何对象类型组合的<em>元组</em>：</p>
 <ul class="simple">
 <li><p>整数</p></li>
-<li><p><a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Slicing">切片</a>对象</p></li>
+<li><p><a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Slicing">切片</a>对象</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#Ellipsis">省略号</a>（ellipsis）对象</p></li>
-<li><p><a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/Broadcasting.html#Inserting-Size-1-Dimensions-into-An-Array">numpy.newaxis</a>对象</p></li>
+<li><p><a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/Broadcasting.html#Inserting-Size-1-Dimensions-into-An-Array">numpy.newaxis</a>对象</p></li>
 </ul>
 <p>通过基础索引来访问数组对象<em>并不会复制数组的成员</em>。反而，这会创建一个内置数据的“视阈”。</p>
 </div>
 <div class="section" id="用整数和切片对象索引">
 <h3>用整数和切片对象索引<a class="headerlink" href="#用整数和切片对象索引" title="永久链接至标题">¶</a></h3>
-<p>我们在<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a>一节已经提供了完整的使用整数和切片来访问数组成员的教程。根据之前的定义，<em>这些都是基础索引的范例</em>。</p>
+<p>我们在<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html">访问数组多维度的内容</a>一节已经提供了完整的使用整数和切片来访问数组成员的教程。根据之前的定义，<em>这些都是基础索引的范例</em>。</p>
 <p>作为那一节讨论的内容的复习，请回忆，你可以通过提供 <span class="math notranslate nohighlight">\(N\)</span> 个整数或切片对象或两种混合来选中 <span class="math notranslate nohighlight">\(N\)</span> 维数组的单个成员或“子部分”。我们也了解了当你提供少于 <span class="math notranslate nohighlight">\(N\)</span> 个索引时NumPy会自动将剩余位置用末尾切片“填满”。请记住，索引从0开始，所以 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的第4列对应着列3。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 访问 `x` 行1，最后一列的成员</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -276,7 +276,7 @@
 <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>请回忆，我们熟悉的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Slicing">切片</a>语法其实在“幕后”会创建 <code class="docutils literal notranslate"><span class="pre">slice</span></code> 对象。</p>
+<p>请回忆，我们熟悉的<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Slicing">切片</a>语法其实在“幕后”会创建 <code class="docutils literal notranslate"><span class="pre">slice</span></code> 对象。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 复习 `slice` 对象</span>
 
 <span class="c1"># 等值于：x[:2, :3]</span>
@@ -288,7 +288,7 @@
 </div>
 <div class="section" id="将元组作为N维索引使用">
 <h3>将元组作为N维索引使用<a class="headerlink" href="#将元组作为N维索引使用" title="永久链接至标题">¶</a></h3>
-<p>根据基础索引的定义，我们必须将我们的数组索引以元组的形式来提供才能使用基础索引。事实上，我们一直以来都在使用索引元组！也就是说，每当我们使用语法 <code class="docutils literal notranslate"><span class="pre">x[i,</span> <span class="pre">j,</span> <span class="pre">k]</span></code> 来索引一个数组时，我们其实是在创建一个包含这些索引的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Tuples">元组</a>。也就是说，<code class="docutils literal notranslate"><span class="pre">x[i,</span> <span class="pre">j,</span> <span class="pre">k]</span></code> 等值于 <code class="docutils literal notranslate"><span class="pre">x[(i,</span> <span class="pre">j,</span> <span class="pre">k)]</span></code>。</p>
+<p>根据基础索引的定义，我们必须将我们的数组索引以元组的形式来提供才能使用基础索引。事实上，我们一直以来都在使用索引元组！也就是说，每当我们使用语法 <code class="docutils literal notranslate"><span class="pre">x[i,</span> <span class="pre">j,</span> <span class="pre">k]</span></code> 来索引一个数组时，我们其实是在创建一个包含这些索引的<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Tuples">元组</a>。也就是说，<code class="docutils literal notranslate"><span class="pre">x[i,</span> <span class="pre">j,</span> <span class="pre">k]</span></code> 等值于 <code class="docutils literal notranslate"><span class="pre">x[(i,</span> <span class="pre">j,</span> <span class="pre">k)]</span></code>。</p>
 <p><code class="docutils literal notranslate"><span class="pre">x[i,</span> <span class="pre">j,</span> <span class="pre">k]</span></code> 将创建元组 <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code> 并将其输入到数组的“获取成员”功能中。因此， <code class="docutils literal notranslate"><span class="pre">x[0,</span> <span class="pre">3]</span></code> 等值于 <code class="docutils literal notranslate"><span class="pre">x[(0,</span> <span class="pre">3)]</span></code>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用元组的N维索引</span>
 <span class="c1"># `x[i, j, k]` 等值于 `x[(i, j, k)]`</span>
@@ -322,7 +322,7 @@
 </div>
 <div class="section" id="省略号和newaxis对象">
 <h3>省略号和newaxis对象<a class="headerlink" href="#省略号和newaxis对象" title="永久链接至标题">¶</a></h3>
-<p>根据从之前对广播的讨论，<code class="docutils literal notranslate"><span class="pre">numpy.newaxis</span></code> 对象可以作为数组的索引使用来<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/Broadcasting.html#Inserting-Size-1-Dimensions-into-An-Array">向数组插入大小为1的维度</a>。</p>
+<p>根据从之前对广播的讨论，<code class="docutils literal notranslate"><span class="pre">numpy.newaxis</span></code> 对象可以作为数组的索引使用来<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/Broadcasting.html#Inserting-Size-1-Dimensions-into-An-Array">向数组插入大小为1的维度</a>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过 `np.newaxis` 插入大小为1的维度</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
 <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -535,7 +535,7 @@
 </div>
 <div class="section" id="增强赋值">
 <h3>增强赋值<a class="headerlink" href="#增强赋值" title="永久链接至标题">¶</a></h3>
-<p>我们对Python基础数学表达式的讨论提到了<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Augmented-Assignment-Statements">增强赋值语句</a>（augmented assignment statement）。它为我们提供了一个方便的更新变量值的简写语法。比如说，赋值表达式 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">5</span></code> 可以通过增强赋值来重写为 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">5</span></code>。</p>
+<p>我们对Python基础数学表达式的讨论提到了<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Augmented-Assignment-Statements">增强赋值语句</a>（augmented assignment statement）。它为我们提供了一个方便的更新变量值的简写语法。比如说，赋值表达式 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">5</span></code> 可以通过增强赋值来重写为 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">5</span></code>。</p>
 <p>虽然 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">5</span></code> 在处理Python基础对象（整数，浮点数，等等）时真的只是一个简写，<em>但是NumPy数组的增强赋值和它们更长的版本有着根本性不同的行为</em>。具体来讲，它们会直接更新数组引用的内置数据，而不会创建一个新的不同的数组。因此这会影响所有该数组的视阈。我们在以下演示。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示对NumPy数组的增强赋值会更新该数组引用的内置数据。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
@@ -574,7 +574,7 @@
 </div>
 <div class="section" id="提供-out-来原地进行NumPy操作">
 <h3>提供 <code class="docutils literal notranslate"><span class="pre">out</span></code> 来原地进行NumPy操作<a class="headerlink" href="#提供-out-来原地进行NumPy操作" title="永久链接至标题">¶</a></h3>
-<p>我们没有任何理由只能在算数操作时可以原地更新数据。<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#NumPy%E2%80%99s-Mathematical-Functions">NumPy的各种数学函数</a>提供了一个可选的关键词参数 <code class="docutils literal notranslate"><span class="pre">out</span></code> 来提供“储存”数学运算结果的地方。默认的情况下，这个操作会在内存中创建一个不同的新数组并不修改输入数据。</p>
+<p>我们没有任何理由只能在算数操作时可以原地更新数据。<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#NumPy%E2%80%99s-Mathematical-Functions">NumPy的各种数学函数</a>提供了一个可选的关键词参数 <code class="docutils literal notranslate"><span class="pre">out</span></code> 来提供“储存”数学运算结果的地方。默认的情况下，这个操作会在内存中创建一个不同的新数组并不修改输入数据。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在 `numpy.exp` 中提供 &#39;out&#39; 参数来原地更新数组数据</span>
 
 <span class="c1"># `b` 是 `a` 的视阈</span>

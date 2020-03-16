@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: The rules for defining classes in python, Difficulty: Easy, Category: Section
    :keywords: class definition, scope, class object, attribute, method
-```
+<!-- #endraw -->
 
 
 <!-- #region -->
@@ -92,7 +92,7 @@ class ClassName:
 
 每个 `<statement-j>` 为该类对象定义一个属性（例：`z = "hi"` 定义属性 `z`，而函数定义则创建一个方法）。
 
-就像函数定义一样，类定义在可以包含基本任何Python代码，且其定义有着属于自己的[作用域](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Scope.html)；但是，*任何*在类定义中赋值的变量都可以作为属性来调用。
+就像函数定义一样，类定义在可以包含基本任何Python代码，且其定义有着属于自己的[作用域](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Scope.html)；但是，*任何*在类定义中赋值的变量都可以作为属性来调用。
 
 ```python
 # 任何在类定义中赋值的变量将作为对象类的属性可用。

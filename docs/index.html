@@ -21,14 +21,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="_static/gtag.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="_static/gtag.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -89,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_1.html">模组1：Python入门</a></li>
@@ -190,7 +190,8 @@
 <div class="section" id="python-like-you-mean-it">
 <h1>Python Like You Mean It<a class="headerlink" href="#python-like-you-mean-it" title="永久链接至标题">¶</a></h1>
 <blockquote>
-<div><p>作者 <a class="reference external" href="https://scholar.google.com/citations?hl=en&amp;user=coXsftgAAAAJ&amp;view_op=list_works&amp;gmla=AJsN-F7Eg769ERNBQDKZ5-5xmT9qh2G2chKgH0Lwbd3zujR7FAPiWmVp_57dFPKG_h7ghPeLG8oGysj5YWziwXib4oHb6kr2HA">Ryan Soklaski</a> (Twitter/GitHub:<a class="reference external" href="https://twitter.com/rsokl">&#64;rsokl</a>)</p>
+<div><p>更新到原文 <cite>Commit 3199f71884fa9b9dc64e9dba829e80905dd93abf &lt;https://github.com/rsokl/Learning_Python/commit/3199f71884fa9b9dc64e9dba829e80905dd93abf&gt;</cite></p>
+<p>作者 <a class="reference external" href="https://scholar.google.com/citations?hl=en&amp;user=coXsftgAAAAJ&amp;view_op=list_works&amp;gmla=AJsN-F7Eg769ERNBQDKZ5-5xmT9qh2G2chKgH0Lwbd3zujR7FAPiWmVp_57dFPKG_h7ghPeLG8oGysj5YWziwXib4oHb6kr2HA">Ryan Soklaski</a> (Twitter/GitHub:<a class="reference external" href="https://twitter.com/rsokl">&#64;rsokl</a>)</p>
 <p>编辑 <a class="reference external" href="https://davidmascharka.com/">David Mascharka</a></p>
 <p>翻译 <a class="reference external" href="https://alexding123.github.io/">Alex Ding</a></p>
 <p><a class="reference external" href="https://www.pythonlikeyoumeanit.com/">English Version</a></p>
@@ -207,11 +208,11 @@
 </div>
 <div class="section" id="python">
 <h2>那Python书籍呢？<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h2>
-<p>书和博客在很多情况下很有帮助。我个人认为编程书籍经常为完整性太过复杂冗长，以至于读者难以在好几百页的书里分辨哪些话题最重要。其次，在网上发表本文更加合理；用户可以轻松地搜索话题，复制代码，并在手机端浏览时刻更新的最新内容。</p>
+<p>书籍和博客文章在很多情况下是有用的。我个人的意见是，很多编程书籍为了追求完整性导致内容太过复杂冗长；读者难以在好几百页的书里分辨哪些话题最重要。其次，像PLYMI这样的资源作为电子文档更加合理；用户可以轻松地搜索话题，复制代码，并在手机端浏览时刻更新的最新内容。</p>
 </div>
 <div class="section" id="id3">
 <h2>Python不应该太简单<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>Python是一门相对而言比较简单的语言。编写能用的代码并不困难。不幸的是，这意味着很多Python用户仅仅知道足够的知识来达成自己的需求，但缺乏对这门语言健全的理解。切记不要沦落到“知道足够的Python来做蠢事”的境地；这容易导致自满，学习停滞，和很多低质量的代码。各位一定要学好学清楚。</p>
+<p>Python是一门相对而言比较简单的语言；编写能用的代码并不困难。不幸的是，这意味着很多Python程序员仅仅按需学习，但却没有整体地学通这门语言。切记不要只懂得如何编写能用的低质量代码；这容易导致自满，停滞，和很多危险的代码。各位一定要学好学清楚。</p>
 </div>
 <div class="section" id="plymigithub">
 <h2>PLYMI为GitHub开源项目<a class="headerlink" href="#plymigithub" title="永久链接至标题">¶</a></h2>
@@ -231,9 +232,9 @@
 </div>
 <div class="section" id="id6">
 <h2>关于作者<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<p>我刚开始学习使用Python的时候是为了我研究生时的物理实验。当时我的Python使用差得无可救药。幸运的是，一个实验室里更加熟悉Python的同事点醒了我，让我理解了我的代码和工作流程有多糟糕。他指向了一些工具，代码风格指南，和说明文档来帮助我提升编程水平（我认为本资源对当年的我会是一个巨大的帮助）。如今我已经使用了Python至少六年，并比较仔细地了解着这门语言的新特征和变化。现在我在做机器学习的研究，也作为一名核心人员开发过一个机器学习的模组。我很喜欢教书–因此这个项目对我而言非常有意思！</p>
+<p>我刚开始学习使用Python的时候是为了我研究生时的物理实验。当时我的Python使用差得无可救药。幸运的是，一个实验室里更加熟悉Python的同事点醒了我，让我理解了我的代码和工作流程有多糟糕。他指向了一些工具，代码风格指南，和说明文档来帮助我提升编程水平（我认为本资源对当年的我会是一个巨大的帮助）。如今我已经使用了Python至少六年，并比较仔细地了解着这门语言的新特征和变化。现在我在做机器学习的研究，也作为一名核心人员开发过一个机器学习的模组。我很喜欢教书，所以做这个这个项目也算是一种享受。</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<p class="caption"><span class="caption-text">目录:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Python Like You Mean It</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#id1">这是什么</a></li>
@@ -316,8 +317,8 @@
 </li>
 </ul>
 </div>
-<div class="section" id="indices-and-tables">
-<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h3>索引和目录<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">模块索引</span></a></p></li>

@@ -23,14 +23,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="../_static/gtag.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="../_static/gtag.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -92,7 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
@@ -244,7 +244,7 @@ manager）<code class="docutils literal notranslate"><span class="pre">open</spa
 <span class="go">WindowsPath(&#39;.&#39;)</span>
 </pre></div>
 </div>
-<p>如果我在一台Linux或MacOS机器上运行此代码，它则会创建一个 <code class="docutils literal notranslate"><span class="pre">PosixPath</span></code> 对象。幸运得是，这些类会自动处理这些细节，所以我们不需要担心它们！<code class="docutils literal notranslate"><span class="pre">Path</span></code> 类有着很多我们可以使用的有用方法。首先，请注意，它自动重载了 <code class="docutils literal notranslate"><span class="pre">/</span></code> 操作符（通过实现<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html">特殊方法</a>）来允许我们创建到子文件夹的路径。让我们看看这是怎么用的：</p>
+<p>如果我在一台Linux或MacOS机器上运行此代码，它则会创建一个 <code class="docutils literal notranslate"><span class="pre">PosixPath</span></code> 对象。幸运得是，这些类会自动处理这些细节，所以我们不需要担心它们！<code class="docutils literal notranslate"><span class="pre">Path</span></code> 类有着很多我们可以使用的有用方法。首先，请注意，它自动重载了 <code class="docutils literal notranslate"><span class="pre">/</span></code> 操作符（通过实现<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html">特殊方法</a>）来允许我们创建到子文件夹的路径。让我们看看这是怎么用的：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建指向在子文件夹 &#39;data&#39; 中的 &#39;data1.txt&#39; 文件的路径</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">path_to_data1</span> <span class="o">=</span> <span class="n">root</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;data1.txt&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">path_to_data1</span>
@@ -447,7 +447,7 @@ manager）<code class="docutils literal notranslate"><span class="pre">open</spa
 <span class="o">*</span><span class="n">number</span><span class="o">*.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">pathlib</span></code> 模组提供了glob文件的方便功能。当我们创建了一个 <code class="docutils literal notranslate"><span class="pre">Path</span></code> 后，我们可以直接对其调用 <code class="docutils literal notranslate"><span class="pre">glob()</span></code> 并提供一个glob字符串。这将返回一个生成所有符合规律的文件的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Introducing-Generators">生成器</a>。</p>
+<p><code class="docutils literal notranslate"><span class="pre">pathlib</span></code> 模组提供了glob文件的方便功能。当我们创建了一个 <code class="docutils literal notranslate"><span class="pre">Path</span></code> 后，我们可以直接对其调用 <code class="docutils literal notranslate"><span class="pre">glob()</span></code> 并提供一个glob字符串。这将返回一个生成所有符合规律的文件的<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Introducing-Generators">生成器</a>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># glob当前路径下所有开头为“test”和结尾为“.txt“的文本文件</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">root_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">files</span> <span class="o">=</span> <span class="n">root_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;test*.txt&#39;</span><span class="p">)</span>  <span class="c1"># 这返回一个生成器</span>

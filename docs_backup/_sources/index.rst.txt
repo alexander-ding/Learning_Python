@@ -8,7 +8,7 @@ Python Like You Mean It
   
   翻译 `Alex Ding <https://alexding123.github.io/>`_
 
-  `English Version <https://www.pythonlikeyoumeanit.com`_
+  `English Version <https://www.pythonlikeyoumeanit.com/>`_
 
 这是什么
 --------
