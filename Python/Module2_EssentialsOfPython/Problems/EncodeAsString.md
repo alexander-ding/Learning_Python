@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: String Encoding Exercise, Difficulty: Medium, Category: Practice Problem
    :keywords: function, string, casting, practice problem
-```
+<!-- #endraw -->
 
 # 编码为字符串
 有时，我们需要在函数中根据输入类型的不同进行不同的操作。本题将考察你对类型，控制流，词典，和更多概念的掌握。
@@ -30,7 +30,7 @@ jupyter:
 - 如果对象是字符串，直接附加不需要额外操作。
 - 如果对象是任何其它类，附加`'<OTHER>'`。
 
-<!-- #region -->
+
 ``` Python
 # 范例行为
 >>> s = concat_to_str([12,-14.23,"hello", True,
@@ -40,7 +40,6 @@ jupyter:
 ```
 
 **提示**：查阅在[这里](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html)介绍的 `isinstance` 函数来处理不同的数据类型。同时，你可以考虑创建一个辅助函数来将整数编码到我们特殊格式的字符串，因为我们在处理整数和浮点数时都要用到它。在任何情况下，将重复进行的工作抽取为函数都是一个好习惯。你将会需要硬编码（hardcode）每个数字到它英文名字的转化表。
-<!-- #endregion -->
 
 <!-- #region -->
 ## 解

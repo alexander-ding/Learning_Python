@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Working with aths and files, Difficulty: Medium, Category: Section
    :keywords: open file, read file, pathlib, join directory, context manager, close file, rb, binary file, utf-8, encoding, pickle, numpy, load, archive, npy, npz, pkl, glob, read lines, write, save
-```
+<!-- #endraw -->
 
 # 操作文件
 本节将会讨论编写读写文件的最佳做法。我们将学习内置的 `pathlib.Path` 对象，其将帮助我们保证我们编写的代码在不同的操作系统（OS）（如Windows，MacOS，Linux）都可以直接使用。我们也将介绍*环境管理器*（context manager）`open`。这将允许我们安全地读写文件；在这里，“安全”的意思是我们可以确信每个我们打开的文档都会早晚被正确地关闭，这样就算我们的代码出错文件也不会被损害。接下来，我们将学习如何“glob”文件，也就是说我们会学习如何搜索并列出名字符合具体规则的文件。最后，我们将快速地过学习允许我们向和从电脑文件系统中分别储存（或“pickle”，“腌制”）和读取Python对象的 `pickle` 模组。
@@ -244,7 +244,6 @@ with open("a_poem.txt", mode="r") as my_open_file:
 ```
 <!-- #endregion -->
 
-<!-- #region -->
 ## 使用glob寻找文件
 
 很多情况下，我们会想要创建用来迭代的文件列表。比如说，如果我们有多个数据文件，那么创建一个可以迭代并顺序处理的文件列表会很有用。达成这个目的的一个方法为手动创建这个文件列表：
@@ -311,9 +310,8 @@ data/*.txt
 - glob所有文件名首字母为“q”，包含一个“w”，且结尾为“.npy“后缀的文件
 
 </div>
-<!-- #endregion -->
 
-<!-- #region -->
+
 `*` 通配符并不是唯一可用的规律。有时我们会想要配对一组字符。比如说，我们可能仅仅想要配对开头为数字的文件。如果我们仅仅只能使用 `*` 通配符，那这是不可能的。幸运的是，这些常见的使用情况都被支持。
 
 我们可以使用方括号来配对一组字符：`[abc]*` 会配对任何开头为“a”，“b”，或“c“的文件名，但它不会配对任何其它名字。我们也可以在方括号中使用一个”-“来glob字符组。比如说：
@@ -339,7 +337,6 @@ data/*.txt
 - 所有名字中有”q“或”z“的txt文件
 
 </div>
-<!-- #endregion -->
 
 <!-- #region -->
 ## 储存并读取Python对象：pickle

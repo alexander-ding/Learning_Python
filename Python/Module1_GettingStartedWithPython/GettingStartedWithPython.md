@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Basic description of the Python programming language, Difficulty: Easy, Category: Background
    :keywords: python, install, basics, scripts, interpreter, foundations
-```
+<!-- #endraw -->
 
 <!-- #region -->
 # 介绍Python编程语言
@@ -78,7 +78,7 @@ x = 2 ~ 3
 
 在有一个Python脚本后，该如何让电脑读取并执行脚本的指示呢？你需要在你的计算机上安装一个**Python直译器**。当人们说你需要“安装Python”的时候，这就是他们具体的意思。
 
-<!-- #region -->
+
 ## Python直译器是什么？“安装Python”意味着什么？
 
 Python直译器泛指任何可以执行以下的电脑程序：
@@ -118,7 +118,6 @@ python my_script.py
 在实际使用中，不管你从任何文件夹中执行 `python my_script.py`，你的计算机也应该会知道如何去找到名为 `python` 程序。相应的设置会在安装过程中完成。
 
 理解Python语言是被一个用另外语言编写的程序来直译的事实可能比较绕脑。如果是这样，那另外那个语言是怎么被直译的呢？在CPython的情况下，答案就是C代码并不会被直译；有程序存在于Windows，Mac，和Linux上可以直接将C代码翻译成电脑直接执行的机器指令。
-<!-- #endregion -->
 
 <!-- #region -->
 ## 为什么选择Python？

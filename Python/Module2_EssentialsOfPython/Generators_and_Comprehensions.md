@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: generators comprehensions and efficiency, Difficulty: Easy, Category: Section
    :keywords: generator, range, list comprehension, generator comprehension, nested comprehensions, inline for-loop, filtered, iterator
-```
+<!-- #endraw -->
 
 # 生成器和理解表达式
 <div class="alert alert-warning">
@@ -197,7 +197,6 @@ for item in example_gen:
 </div>
 <!-- #endregion -->
 
-<!-- #region -->
 <div class="alert alert-info">
 
 **阅读理解：编写生成器理解**:
@@ -212,7 +211,6 @@ for item in example_gen:
 迭代该生成器并打印其内容以确认你的答案。
 
 </div>
-<!-- #endregion -->
 
 <!-- #region -->
 ### 存储生成器

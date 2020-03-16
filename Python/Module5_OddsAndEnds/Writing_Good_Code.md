@@ -4,8 +4,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
@@ -13,11 +13,11 @@ jupyter:
 ---
 
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Writing good code, Difficulty: Easy, Category: Section
    :keywords: pep8, code style, lint, format, best practices, type hint, documentation, numpydoc, sphinx, typing, annotation, whitespace
-```
+<!-- #endraw -->
 
 # 编写好代码
 
@@ -720,7 +720,7 @@ def get_first_and_last(x):
 
 PLYMI在阅读大部分时候（除了在我们试图使函数简短时）都使用了NumPy风格的docstring。最终而言这只是一个风格/美观上的选择。总而言之，这里最重要的经验是去**选择一个说明文档风格，学习它，并忠诚地使用它**。再次重申一次，我们很难夸张使用清晰和协调的说明文档有多重要。它将帮助你的代码的编写过程。它将允许用户使用和甚至对你的代码做贡献，并将保证你的辛苦工作的长命。
 
-<!-- #region -->
+
 ### NumPy说明文档
 
 NumPy说明文档风格在在[这里](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)完整地列出。在这里我强烈建议你完整阅读这个列表。我们将在这里忽略一些细节来保证阅读的简单度并避免重复以上文档中的内容。我们将专注于为函数编写说明文档的规则，但请注意它们也提供了为[类](https://www.pythonlikeyoumeanit.com/module_4.html)和[模组](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Modules_and_Packages.html#Modules)编写说明文档的规则。
@@ -738,7 +738,6 @@ Parameters
  - 一个更长的函数总结，其为提供更多细节描述。
  - 一个 `Parameters` 部分，其提供了输入参数的类型以及它们的描述。（如果你的函数不接受参数，那这一部分也就没有必要了）。
  - 一个 `Returns` 部分（如果是生成器的话是 `Yields`），其提供了函数返回对象的细节。（如果你的函数永远返回s `None`，那这一部分也就没有必要了）。
-<!-- #endregion -->
 
 <!-- #region -->
 你也可以添加额外的，可选的部分来提升你的说明文档：

@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Informal Introduction to Python, Difficulty: Easy, Category: Tutorial
    :keywords: python, installation, script, introduction, ipython, console, quick introduction
-```
+<!-- #endraw -->
 
 # 非正式的Python介绍
 在你下载好了Anaconda版本的Python之后，让我们来写一些简单的Python代码吧！我们暂时先不编写完整的Python脚本，而只用一个方便的工具——IPython命令行——来快速地尝试一些简单的代码。Anaconda一并安装了IPython命令行；这将帮助你一步步增加代码片段，而不是要一次性执行整个脚本。

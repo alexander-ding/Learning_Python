@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Numpy array broadcasting, Difficulty: Medium, Category: Section
    :keywords: broadcasting, vectorization, rules, mismatched shapes, distances
-```
+<!-- #endraw -->
 
 <!-- #region -->
 # 数组广播
@@ -136,7 +136,7 @@ ValueError: operands could not be broadcast together with shapes (2,) (3,)
 
 </div>
 
-<!-- #region -->
+
 请注意，如果一个数组的维度更高并导致前面有些维度没有和另外一个数组对应，这是没有问题的。任何大小为1的维度或”缺失“的维度都会通过广播来填充。
 
 请考虑前一小节的范例。请根据以上规则思考为什么形状为 (4,3) 和形状为 (3,) 的数组满足广播兼容的规则：
@@ -178,7 +178,6 @@ result-shape: 不兼容
 result-shape: 2 x 1
 ```
 
-<!-- #endregion -->
 
 <!-- #region -->
 NumPy提供函数[broadcast_to](https://docs.scipy.org/doc/numpy/reference/generated/numpy.broadcast_to.html#numpy.broadcast_to)来将数组广播到某个用户提供的形状。这可以用来帮助我们发展对广播的直观理解。让我们将形状为 (3,4) 的数组广播成一个形状为 (2,3,4) 的数组：
