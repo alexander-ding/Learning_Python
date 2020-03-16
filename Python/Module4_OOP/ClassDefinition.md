@@ -92,7 +92,7 @@ class ClassName:
 
 每个 `<statement-j>` 为该类对象定义一个属性（例：`z = "hi"` 定义属性 `z`，而函数定义则创建一个方法）。
 
-就像函数定义一样，类定义在可以包含基本任何Python代码，且其定义有着属于自己的[作用域](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Scope.html)；但是，*任何*在类定义中赋值的变量都可以作为属性来调用。
+就像函数定义一样，类定义在可以包含基本任何Python代码，且其定义有着属于自己的[作用域](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Scope.html)；但是，*任何*在类定义中赋值的变量都可以作为属性来调用。
 
 ```python
 # 任何在类定义中赋值的变量将作为对象类的属性可用。

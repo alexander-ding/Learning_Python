@@ -60,7 +60,7 @@ import numpy as np
 
 Python“模组”指包含函数定义和变量赋值语句的单个 `.py` 文件。导入一个模组将执行这些命令并通过被导入的模组使得命令产生的对象可以被访问。
 
-让我们创建属于自己的模组并将其导入到一个互动式的Python进程中吧。在你计算机中的某个路径中打开一个Jupyter记事本或IPython命令行。使用[IDE](http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html#Integrated-Development-Environments)或简单的文本编辑器（不要用像Microsoft Word这样的软件！）在进程的路径中创建一个名为 `my_module.py` 的文本文件。`my_module.py` 的内容应为：
+让我们创建属于自己的模组并将其导入到一个互动式的Python进程中吧。在你计算机中的某个路径中打开一个Jupyter记事本或IPython命令行。使用[IDE](http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html#Integrated-Development-Environments)或简单的文本编辑器（不要用像Microsoft Word这样的软件！）在进程的路径中创建一个名为 `my_module.py` 的文本文件。`my_module.py` 的内容应为：
 
 ```python
 """
@@ -115,7 +115,7 @@ module
 <!-- #endregion -->
 
 <!-- #region -->
-你一定要理解这就是模组内容能够被导入它的环境访问的方法。知道这点后，了解模组的成员的一个好办法是使用IDE和互动命令行的[自动完成](http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Informal_Intro_Python.html#Dabbling-with-Numbers)功能来列出模组对象的所有属性。内置的 `help` 函数可以用来总结模组的内容：
+你一定要理解这就是模组内容能够被导入它的环境访问的方法。知道这点后，了解模组的成员的一个好办法是使用IDE和互动命令行的[自动完成](http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Informal_Intro_Python.html#Dabbling-with-Numbers)功能来列出模组对象的所有属性。内置的 `help` 函数可以用来总结模组的内容：
 
 ```python
 >>> help(my_module)
@@ -462,7 +462,7 @@ python setup.py develop
 
 ## pip和conda：包管理器
 
-你可以在在全世界共享Python包。市面上有两个常用的包管理器，`pip` 和 `conda`。`pip` 从[The Python Package Index (PyPI)](https://pypi.org/)（Python包索引）下载并安装包, 而 `conda` 从Anaconda Cloud下载并安装包。`conda` 和 `pip` 都已经作为[Anaconda分布](http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html#Installing-Anaconda)的一部分被安装在你的机器上了。
+你可以在在全世界共享Python包。市面上有两个常用的包管理器，`pip` 和 `conda`。`pip` 从[The Python Package Index (PyPI)](https://pypi.org/)（Python包索引）下载并安装包, 而 `conda` 从Anaconda Cloud下载并安装包。`conda` 和 `pip` 都已经作为[Anaconda分布](http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html#Installing-Anaconda)的一部分被安装在你的机器上了。
 
 执行以下来使用 `pip` 安装包：
 

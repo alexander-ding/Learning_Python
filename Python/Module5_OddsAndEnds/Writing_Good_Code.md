@@ -53,7 +53,7 @@ x=x+1
 
 这份文档的最大影响在于它指导Python用户去编写看起来相似的代码。如此，编写符合PEP8的代码将会使得你的代码让其它人更容易阅读它，反之亦然。请注意，在PLYMI各处的代码块均符合此风格指南。
 
-我们将会指出PEP8指南中和本文阅读中的那类代码最相关的一些细则。虽说如此，你应该花一些时间阅读[完整的PEP8](https://www.python.org/dev/peps/pep-0008/#code-lay-out)，并在编写代码时经常参阅它。这样做的话你不会需要太多时间就会自然而然记住大部分细则了。最后，请注意很多[IDE](https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html)有着叫做“linter”的工具来检查你的代码并在代码违反PEP8规则时提出警告。这是一个极佳的保证你代码符合风格指南的功能。
+我们将会指出PEP8指南中和本文阅读中的那类代码最相关的一些细则。虽说如此，你应该花一些时间阅读[完整的PEP8](https://www.python.org/dev/peps/pep-0008/#code-lay-out)，并在编写代码时经常参阅它。这样做的话你不会需要太多时间就会自然而然记住大部分细则了。最后，请注意很多[IDE](https://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html)有着叫做“linter”的工具来检查你的代码并在代码违反PEP8规则时提出警告。这是一个极佳的保证你代码符合风格指南的功能。
 
 ### Python式编程
 我们将会学习一些如何编写地道的Python代码的守则。也就是说，它们将直到我们去使用Python创造者希望我们使用的语法。
@@ -104,7 +104,7 @@ for i in numbers:(
     )
 ```
 
-最后，在条件表达式中使用[非布尔对象的布尔值](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#bool-and-Truth-Values-of-Non-Boolean-Objects)。比如说，你可以使用空序列对象会在条件语句中计算为 `False` 的事实。
+最后，在条件表达式中使用[非布尔对象的布尔值](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/ConditionalStatements.html#bool-and-Truth-Values-of-Non-Boolean-Objects)。比如说，你可以使用空序列对象会在条件语句中计算为 `False` 的事实。
 
 ```python
 # 这么做：
@@ -192,7 +192,7 @@ for thing in x:
 
 在创建缩进时，你应该使用空格而不是tab键。
 
-[限定作用域的缩进](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope)应该永远使用四个空格。
+[限定作用域的缩进](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Introduction.html#Python-Uses-Whitespace-to-Delimit-Scope)应该永远使用四个空格。
 
 ```python
 # 使用四个空格来限定作用域
@@ -340,7 +340,7 @@ sublist = x[1: 4]
 - [isort](https://isort.readthedocs.io/en/latest/)：*“我来处理（I sort）你的Python导入，所以你不需要操心”*
   - 就像工具承诺的一样，它会自动为你管理在我们代码顶端快速变多的导入语句。它将按照字母顺序排序这些导入语句并根据PEP8将它们分组。
 - [black](https://black.readthedocs.io/en/stable/)：*“你喜欢的任何代码风格，只要它是黑色的”*
-  - Black是一个决不妥协的代码格式器。如果你运行black，你不需要花时间来正确地格式化你的代码——它会每次用相同的方法格式化你的代码。虽然这会帮助你解决像分行，缩进，字距，和方括号这类事，但是[编写Python式的代码](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Being-Pythonic)和[使用好的命名规则](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Naming-Conventions)依然是你的责任。
+  - Black是一个决不妥协的代码格式器。如果你运行black，你不需要花时间来正确地格式化你的代码——它会每次用相同的方法格式化你的代码。虽然这会帮助你解决像分行，缩进，字距，和方括号这类事，但是[编写Python式的代码](https://cn.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Being-Pythonic)和[使用好的命名规则](https://cn.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Writing_Good_Code.html#Naming-Conventions)依然是你的责任。
 
 知道这些工具存在是很有用的；当你成为一个越来越高效的Python程序员的同时，考虑将这些工具添加到你的工作流程中。
 </div>
@@ -366,7 +366,7 @@ def count_vowels(x: str) -> int:
     return sum(1 for char in x if char in vowels)
 ```
 
-在这里，我们“暗示”了 `x` 应为字符串类型的对象，以及函数会返回整数类对象。注释过的有着任意多[位置参数](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Arguments)和[默认值参数](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Default-Valued-Arguments)的函数的一般形式如下：
+在这里，我们“暗示”了 `x` 应为字符串类型的对象，以及函数会返回整数类对象。注释过的有着任意多[位置参数](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Arguments)和[默认值参数](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Functions.html#Default-Valued-Arguments)的函数的一般形式如下：
 
 ```
 def func_name(arg: <type>, [...], kwarg: <type> = <value>, [...])) -> <type>:
@@ -427,7 +427,7 @@ max_num: int
 
 请注意，我们的函数并不在乎我们违反了我们类型暗示保证输入的是字符串这一事实。它开心地循环这个空列表并求其零个成员的和，并返回 `0`。这也是为什么这些注释仅仅叫做类型*暗示*，而不是类型*要求*。
 
-虽然CPython直译器就在Python 3的生命周期中将永远不会要求或强制使用类型暗示，但是有第三方模组和工具来使用类型暗示。*那些第三方功能使得类型暗示值得使用*。[如PyCharm和VSCode的IDE](https://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html)可以使用类型暗示来达到很棒的功能。它们会在你向函数输入不符合类型暗示的对象时警告你，且它们会使用这些类型暗示来记录函数返回的对象。
+虽然CPython直译器就在Python 3的生命周期中将永远不会要求或强制使用类型暗示，但是有第三方模组和工具来使用类型暗示。*那些第三方功能使得类型暗示值得使用*。[如PyCharm和VSCode的IDE](https://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html)可以使用类型暗示来达到很棒的功能。它们会在你向函数输入不符合类型暗示的对象时警告你，且它们会使用这些类型暗示来记录函数返回的对象。
 
 比如说，假设我们在我们正在开发的一个代码模组中使用 `count_vowels` 函数，且我们错误地认为函数的输出是一个字符串并试图将其大写化。我们的IDE将会注意到我们试图大写一个整数并如此警告我们：
 
@@ -562,7 +562,7 @@ def compute_student_stats(grade_book: Dict[str, List[float]],
 
 在这里有应注意几个细节。首先，我们没有对 `stat_function` 返回的对象类型没有进行任何假设。它可能会返回单个浮点数的平均值，或包含平均值，中间值，最频繁出现值等等的元组。因此，我们说明它的返回类型是 `Any`；这在我们函数的返回类型中也有显示：`List[Tuple[str, Any]]`。和我们马上要进行的讨论呼应，你应该在类型暗示尽可能细致的前提下做到不丢失任何通用性。然后，`Optional[List[str]]` 用来标记 `student_list` 的默认值是 `None`，但如果不是默认值我们向其输入一个字符串列表。这比起等值的暗示 `Union[None, List[str]]` 更加易读，而且它表达了默认值是 `None` 这个事实。
 
-如果你[定义了自己的类型（既类）](http://www.pythonlikeyoumeanit.com/module_4.html)，你可以在暗示中直接提供这个类对象。这类型暗示了某个变量将接受该类型的一个*实例*。如果你遇到了想要暗示类对象本身（而不是其实例）的稀少情况，你可以使用 `typing.Type` 来表达这一点。
+如果你[定义了自己的类型（既类）](http://cn.pythonlikeyoumeanit.com/module_4.html)，你可以在暗示中直接提供这个类对象。这类型暗示了某个变量将接受该类型的一个*实例*。如果你遇到了想要暗示类对象本身（而不是其实例）的稀少情况，你可以使用 `typing.Type` 来表达这一点。
 
 让我们编写一个简单的例子来演示这些片。我们将定义我们的 `Dog` 类并编写一个接受 `Dog` 类对象（类型暗示为 `Type[Dog]`）的函数。该函数将创建几个 `Dog` 类的*实例*（类型暗示为 `Dog`）并将它们放入列表中返回。
 
@@ -590,7 +590,7 @@ def find_alpha(dogs: Pack) -> Dog:
     ...
 ```
 
-第三方模组定义的对象类型，如NumPy的[N维数组](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html)和我们自己的自定义类行为一样；直接在类型暗示标注中提供[类对象](https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object)就行了：
+第三方模组定义的对象类型，如NumPy的[N维数组](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html)和我们自己的自定义类行为一样；直接在类型暗示标注中提供[类对象](https://cn.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object)就行了：
 
 ```python
 # 类型桉树numpy的N维数组
@@ -610,7 +610,7 @@ def custom_dot_product(x: np.ndarray, y: np.ndarray) -> float:
 
 Python的 `typing` 模组包含了用来创建描述性类型暗示的对象。比如说，虽然 `list` 只能用来类型暗示一个列表，`typing.List[str]` 描述了一个字符串列表。你也可以使用它们来为在代码中重复使用的复杂类型暗示创建简短的代名词。
 
-一般而言，你可以使用[类对象](https://www.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object)来进行类型暗示，且其暗示了一个变量将为该类的一个*实例*。比如说，`numpy.ndarray` 暗示了一个变量将接受一个N维数组。
+一般而言，你可以使用[类对象](https://cn.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object)来进行类型暗示，且其暗示了一个变量将为该类的一个*实例*。比如说，`numpy.ndarray` 暗示了一个变量将接受一个N维数组。
 
 </div>
 
@@ -653,7 +653,7 @@ def count_vowels(x: str, include_y: bool = False) -> int:
 <!-- #endregion -->
 
 <!-- #region -->
-`typing` 模组提供了所谓的[抽象基类](https://docs.python.org/3/glossary.html#term-abstract-base-class) `Iterable`，其为代表任何支持迭代的类的一般类型。因此，我们可以通过使我们的类型暗示更一般化来提升它的描述性。这将包含我们上面演示中的所有使用方法。
+`typing` 模组提供了所谓的[抽象基类](https://docs.python.org/3/glossary.html#term-abstract-base-class) `Iterable`，其为代表任何支持迭代的类的一般类型。因此，我们可以通过使我们的类型暗示更标准化来提升它的描述性。这将包含我们上面演示中的所有使用方法。
 
 ```python
 from typing import Iterable
@@ -666,9 +666,9 @@ def count_vowels(x: Iterable[str], include_y: bool = False) -> int:
     return sum(1 for char in x if char in vowels)
 ```
 
-（如果我们想要完全的一般化，我们可以暗示 `Iterable[Hashable]`，因为我们依赖 `x` 中的成员的可哈希特征来检查它们是否在元音[集](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)中。你应该决定你的鸭子要有多抽象）。
+（如果我们想要完全的标准化，我们可以暗示 `Iterable[Hashable]`，因为我们依赖 `x` 中的成员的可哈希特征来检查它们是否在元音[集](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)中。你应该决定你的鸭子要有多抽象）。
 
-复习[Python集合的抽象基类](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes)（abstract base class（abc））很重要（是的，我在建议你复习你的abc——译者注：abc也可以指小学生学的字母表）。这将帮助你一般性地根据对象的[特殊方法](http://www.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html)分类它们。两个最常用的abc是 `Iterable`：任何支持迭代协议的类，和 `Sequence`：任何有着长度（通过 `__len__`）和支持获取成员语法（通过 `__getitem__`）的集合。
+复习[Python集合的抽象基类](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes)（abstract base class（abc））很重要（是的，我在建议你复习你的abc——译者注：abc也可以指小学生学的字母表）。这将帮助你一般性地根据对象的[特殊方法](http://cn.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html)分类它们。两个最常用的abc是 `Iterable`：任何支持迭代协议的类，和 `Sequence`：任何有着长度（通过 `__len__`）和支持获取成员语法（通过 `__getitem__`）的集合。
 <!-- #endregion -->
 
 <!-- #region -->
@@ -676,7 +676,7 @@ def count_vowels(x: Iterable[str], include_y: bool = False) -> int:
 
 **阅读理解：类型暗示**
 
-阅读以下函数并使用类型暗示标记它的签名。尝试让你的类型暗示足够一般化。
+阅读以下函数并使用类型暗示标记它的签名。尝试让你的类型暗示足够标准化。
 
 ```python
 def get_first_and_last(x):
@@ -723,7 +723,7 @@ PLYMI在阅读大部分时候（除了在我们试图使函数简短时）都使
 
 ### NumPy说明文档
 
-NumPy说明文档风格在在[这里](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)完整地列出。在这里我强烈建议你完整阅读这个列表。我们将在这里忽略一些细节来保证阅读的简单度并避免重复以上文档中的内容。我们将专注于为函数编写说明文档的规则，但请注意它们也提供了为[类](https://www.pythonlikeyoumeanit.com/module_4.html)和[模组](https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Modules_and_Packages.html#Modules)编写说明文档的规则。
+NumPy说明文档风格在在[这里](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)完整地列出。在这里我强烈建议你完整阅读这个列表。我们将在这里忽略一些细节来保证阅读的简单度并避免重复以上文档中的内容。我们将专注于为函数编写说明文档的规则，但请注意它们也提供了为[类](https://cn.pythonlikeyoumeanit.com/module_4.html)和[模组](https://cn.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Modules_and_Packages.html#Modules)编写说明文档的规则。
 
 函数的docstring分为几个部分。大部分这些部分都由一个头行，如“Parameters”，和一行折线限定。
 
@@ -916,7 +916,7 @@ def compute_student_stats(grade_book: Dict[str, Iterable[float]],
 
 [Sphinx](http://www.sphinx-doc.org/en/master/)是一个流行且极其强大的工具。它通过分析你代码中的docstring来为你生成HTML说明文档。Python，NumPy，和几乎所有重要的第三方Python模组都使用Sphinx来发布它们的说明文档页面。[Napolean](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html#napoleon-marching-toward-legible-docstrings)和[numpydoc](https://github.com/numpy/numpydoc)是允许Sphinx分析并好看地渲染遵守NumPy和Google的风格的docstring的Sphinx拓展。
 
-[custom_inherit](https://github.com/meowklaski/custom_inherit)是一个[继承](http://www.pythonlikeyoumeanit.com/Module4_OOP/Inheritance.html)和合并docstring的轻量工具。它提供了合并docstring不同部分的强大功能并原生支持NumPy和Google风格的docstring。它也支持自定义的说明文档风格。
+[custom_inherit](https://github.com/meowklaski/custom_inherit)是一个[继承](http://cn.pythonlikeyoumeanit.com/Module4_OOP/Inheritance.html)和合并docstring的轻量工具。它提供了合并docstring不同部分的强大功能并原生支持NumPy和Google风格的docstring。它也支持自定义的说明文档风格。
 </div>
 
 
@@ -951,5 +951,5 @@ def get_first_and_last(x: Sequence[Any]) -> Tuple[Any, Any]:
     return (x[0], x[-1])
 ```
 
-这个函数仅仅要求 `x` 可以被索引。参考[Python集合的抽象基类](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes)列表，`Sequence` 是最简单的支持 `__getitem__` 语法的抽象基类。确实，如我们所见，这是一个通用于所有[Python序列类型](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html)的属性。最后，请注意，我们对 `x` 的成员不进行任何假设，所以我们使用了通用的 `Any` 类型。
+这个函数仅仅要求 `x` 可以被索引。参考[Python集合的抽象基类](https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes)列表，`Sequence` 是最简单的支持 `__getitem__` 语法的抽象基类。确实，如我们所见，这是一个通用于所有[Python序列类型](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html)的属性。最后，请注意，我们对 `x` 的成员不进行任何假设，所以我们使用了通用的 `Any` 类型。
 <!-- #endregion -->

@@ -31,7 +31,7 @@ jupyter:
 - （根据字母顺序）列出需要购买的物品名字
 - （根据字母顺序）列出已经购买的物品名字
 
-我们不想要在购物清单中有着重复的物品——如果有人输入了“apple”两次，我们应该仅仅列该物品一次。因此，我们将使用存储不重复成员的[集](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)来存储列表中的成员。
+我们不想要在购物清单中有着重复的物品——如果有人输入了“apple”两次，我们应该仅仅列该物品一次。因此，我们将使用存储不重复成员的[集](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/DataStructures_III_Sets_and_More.html#The-%E2%80%9CSet%E2%80%9D-Data-Structure)来存储列表中的成员。
 
 最后，我们想要我们的方法来接受一个为单个物品名（字符串）或多个物品名（一列表/元组/可迭代物的字符串）的变量。为了容纳这两种情况，如果我们仅仅收到了一个字符串，我们将首先将其放入一个列表中。这将保证我们永远都会操作成员为字符串的可迭代物。
 

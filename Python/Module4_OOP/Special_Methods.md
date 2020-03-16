@@ -133,7 +133,7 @@ class ShoppingList:
 |除|`__truediv__(self, other)`|`x / y` 调用 `x.__truediv__(y)`|
 |乘方|`__pow__(self, other)`|`x ** y` 调用 `x.__pow__(y)`|
 
-你可能在好奇为什么除法有着奇怪的名字 `__truediv__`，而其它操作符的名字都很正常。这是从Python 2转型到Python 3的一个产物；[默认的整数除法被浮点数除法提到了](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types)，所以 `__div__` 被 `__truediv__` 代替以保证两个版本的兼容性。
+你可能在好奇为什么除法有着奇怪的名字 `__truediv__`，而其它操作符的名字都很正常。这是从Python 2转型到Python 3的一个产物；[默认的整数除法被浮点数除法提到了](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types)，所以 `__div__` 被 `__truediv__` 代替以保证两个版本的兼容性。
 
 <!-- #region -->
 让我们给 `ShoppingList` 一个 `__add__` 方法来使得我们可以使用 `+` 操作符合并两个购物清单。与其重新定义整个 `ShoppingList` 类，我们可以直接将其定义为一个函数并使用 `setattr` 来将其加入到我们先有的类中。

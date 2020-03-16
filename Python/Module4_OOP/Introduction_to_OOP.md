@@ -21,7 +21,7 @@ jupyter:
 <!-- #region -->
 # 面向对象编程简介
 
-我们首次对Python基础的探索向我们介绍了[基础对象类型：数字，字符串，和列表](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html)。相似的，我们对NumPy的讨论也是围绕着[N维数组](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html)展开的。这些对象类型之间很大的区别和它们绑定的不同函数。绑定（bound）到数组上的函数叫做**方法**（method）。比如说，字符串有着多个旨在操作其储存的字符序列的方法，而NumPy数组有着很多操作数组内置数字数据的方法。
+我们首次对Python基础的探索向我们介绍了[基础对象类型：数字，字符串，和列表](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html)。相似的，我们对NumPy的讨论也是围绕着[N维数组](http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html)展开的。这些对象类型之间很大的区别和它们绑定的不同函数。绑定（bound）到数组上的函数叫做**方法**（method）。比如说，字符串有着多个旨在操作其储存的字符序列的方法，而NumPy数组有着很多操作数组内置数字数据的方法。
 
 ```python
 # 不同类型的对象可以储存不同的方法

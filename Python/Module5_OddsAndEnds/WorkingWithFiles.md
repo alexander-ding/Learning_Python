@@ -53,7 +53,7 @@ my_folder/
 WindowsPath('.')
 ```
 
-如果我在一台Linux或MacOS机器上运行此代码，它则会创建一个 `PosixPath` 对象。幸运得是，这些类会自动处理这些细节，所以我们不需要担心它们！`Path` 类有着很多我们可以使用的有用方法。首先，请注意，它自动重载了 `/` 操作符（通过实现[特殊方法](http://www.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html)）来允许我们创建到子文件夹的路径。让我们看看这是怎么用的：
+如果我在一台Linux或MacOS机器上运行此代码，它则会创建一个 `PosixPath` 对象。幸运得是，这些类会自动处理这些细节，所以我们不需要担心它们！`Path` 类有着很多我们可以使用的有用方法。首先，请注意，它自动重载了 `/` 操作符（通过实现[特殊方法](http://cn.pythonlikeyoumeanit.com/Module4_OOP/Special_Methods.html)）来允许我们创建到子文件夹的路径。让我们看看这是怎么用的：
 
 ```python
 # 创建指向在子文件夹 'data' 中的 'data1.txt' 文件的路径
@@ -275,7 +275,7 @@ data/*.txt
 *number*.py
 ```
 
-`pathlib` 模组提供了glob文件的方便功能。当我们创建了一个 `Path` 后，我们可以直接对其调用 `glob()` 并提供一个glob字符串。这将返回一个生成所有符合规律的文件的[生成器](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Introducing-Generators)。
+`pathlib` 模组提供了glob文件的方便功能。当我们创建了一个 `Path` 后，我们可以直接对其调用 `glob()` 并提供一个glob字符串。这将返回一个生成所有符合规律的文件的[生成器](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Introducing-Generators)。
 
 ``` python
 # glob当前路径下所有开头为“test”和结尾为“.txt“的文本文件

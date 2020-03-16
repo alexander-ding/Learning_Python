@@ -21,7 +21,7 @@ jupyter:
 <!-- #region -->
 # 类实例
 
-到现在为止，我们学习了定义新对象类，提供其名字，属性，和方法（也就是函数属性）的语法。当我们离开类定义的作用域外，一个类对象将被创建——定义创建的*类对象*（class object）是单个包装我们类定义的对象。我们很少会想要在类对象创建后将其作为参数输入或操作它。反而，我们将想要使用它来创建该类的一个个*实例*（instance）。具体来讲，`list` 是一个类对象（请记住，“类”和“类型”是一个意思）——它和 `class` 定义执行后创建的对象是同一种类的。就如你在[模组2](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists)中看到的一样，我们可以使用这个类对象来创建列表类单独的*实例*，而每个实例有着属于自己的对象序列。
+到现在为止，我们学习了定义新对象类，提供其名字，属性，和方法（也就是函数属性）的语法。当我们离开类定义的作用域外，一个类对象将被创建——定义创建的*类对象*（class object）是单个包装我们类定义的对象。我们很少会想要在类对象创建后将其作为参数输入或操作它。反而，我们将想要使用它来创建该类的一个个*实例*（instance）。具体来讲，`list` 是一个类对象（请记住，“类”和“类型”是一个意思）——它和 `class` 定义执行后创建的对象是同一种类的。就如你在[模组2](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists)中看到的一样，我们可以使用这个类对象来创建列表类单独的*实例*，而每个实例有着属于自己的对象序列。
 
 ```python
 # 使用类对象 `list` 来创建列表实例
@@ -136,7 +136,7 @@ False
 True
 ```
 
-Python的[变量引用对象的规则](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html)在此依然成立：向某个变量赋值一个对象，不管是类对象还是其实例，都不会创建该对象的复制品。这个变量仅仅会引用该对象并作为它的一个代名词。
+Python的[变量引用对象的规则](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html)在此依然成立：向某个变量赋值一个对象，不管是类对象还是其实例，都不会创建该对象的复制品。这个变量仅仅会引用该对象并作为它的一个代名词。
 
 ```python
 # `A` 引用 `Dummy`
