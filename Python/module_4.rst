@@ -6,7 +6,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 内容:
 
    Module4_OOP/Introduction_to_OOP.md
    Module4_OOP/ClassDefinition.md

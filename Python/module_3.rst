@@ -10,7 +10,7 @@ NumPy对Python数据处理界的影响毋庸置疑。不管你是在matplotlib�
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 内容:
 
    Module3_IntroducingNumpy/IntroducingTheNDarray.md
    Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.md

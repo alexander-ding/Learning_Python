@@ -7,7 +7,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 内容:
 
    Module3_IntroducingNumpy/Problems/ComputeAccuracy.md
    Module3_IntroducingNumpy/Problems/Approximating_pi.ipynb
