@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Installing Python with Anaconda, Difficulty: Easy, Category: Tutorial
    :keywords: python, anaconda, instructions, environments, beginner, data science, introduction
-```
+<!-- #endraw -->
 
 ## 安装Python
 
@@ -46,7 +46,7 @@ jupyter:
 
 你将会需要知道如何打开一个命令行（Windows用户是cmd.exe），以及如何在命令行中切换文件夹。如果你不知道如何做到这些，请阅读一个和你操作系统相对应的教程。译者注：Windows：[文库](https://wenku.baidu.com/view/35c6365c7cd184254a353526.html)（注意要下载券）或[经验](https://jingyan.baidu.com/article/adc815138b23eef722bf7348.html)（不全面，但够用）。
 
-<!-- #region -->
+
 ### 我刚对我的电脑做了什么？
 
 这创建了一个叫做 `Anaconda3`（或类似）的文件夹。它包含了所以和CPython直译器有关的文件，所有Python标准库的模组，之前提到过的Anaconda包含的第三方模组（例，NumPy，SciPy，Jupyter，iPython），和 `conda` 包管理器。它也包含了这些所有的程序的可执行文件。默认的Anaconda安装路径为：
@@ -101,4 +101,3 @@ conda deactivate
 除了在Python 3和2之间切换，conda环境有着很多其它的作用。很多人喜欢为每一个新的大规模项目创建一个新的conda环境。这样他们可以随意安装任何该项目需要的模组而不用担心和其他项目模组的冲突。读者应当注意学习和使用conda环境。
 
 我非常建议你去阅读[这个管理conda环境的教程](https://conda.io/docs/user-guide/tasks/manage-environments.html)。译者注：同样是英文的文档，可以考虑不看。
-<!-- #endregion -->

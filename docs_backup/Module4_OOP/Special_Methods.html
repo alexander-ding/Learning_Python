@@ -23,14 +23,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="../_static/gtag.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="../_static/gtag.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -92,7 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
@@ -354,7 +354,7 @@
 </tr>
 </tbody>
 </table>
-<p>你可能在好奇为什么除法有着奇怪的名字 <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code>，而其它操作符的名字都很正常。这是从Python 2转型到Python 3的一个产物；<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types">默认的整数除法被浮点数除法提到了</a>，所以 <code class="docutils literal notranslate"><span class="pre">__div__</span></code> 被 <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> 代替以保证两个版本的兼容性。</p>
+<p>你可能在好奇为什么除法有着奇怪的名字 <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code>，而其它操作符的名字都很正常。这是从Python 2转型到Python 3的一个产物；<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Number-Types">默认的整数除法被浮点数除法提到了</a>，所以 <code class="docutils literal notranslate"><span class="pre">__div__</span></code> 被 <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> 代替以保证两个版本的兼容性。</p>
 <p>让我们给 <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> 一个 <code class="docutils literal notranslate"><span class="pre">__add__</span></code> 方法来使得我们可以使用 <code class="docutils literal notranslate"><span class="pre">+</span></code> 操作符合并两个购物清单。与其重新定义整个 <code class="docutils literal notranslate"><span class="pre">ShoppingList</span></code> 类，我们可以直接将其定义为一个函数并使用 <code class="docutils literal notranslate"><span class="pre">setattr</span></code> 来将其加入到我们先有的类中。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; 将另外一个购物清单的未购买和已购买物品添加到这个清单。</span>

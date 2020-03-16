@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Advanced indexing with numpy arrays, Difficulty: Hard, Category: Section
    :keywords: numpy array, integer array indexing, boolean array indexing, copy indexing, advanced
-```
+<!-- #endraw -->
 
 <!-- #region -->
 # 进阶索引
@@ -243,7 +243,7 @@ array([ 3, 23,  4])
 ```
 <!-- #endregion -->
 
-正式来讲，索引数组将通过[行优先顺序](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html)被遍历，而每一个整数索引的组合将被用来索引 `z` 并填入返回数组的对应位置。
+正式来讲，索引数组将通过[行优先顺序](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html)被遍历，而每一个整数索引的组合将被用来索引 `z` 并填入返回数组的对应位置。
 
 
 \begin{equation}
@@ -373,7 +373,7 @@ array([ 0.49,  0.18,  0.43,  0.3 ,  0.29,  0.3 ,  0.28,  0.27])
 >>> np.shares_memory(x, x[bool_ind])
 False
 ```
-在最简单的情况下，布尔索引的行为如下：设 `x` 为 $N$ 维数组，`ind` 为一个和 `x` *一样形状*的布尔数组。那么 `x[ind]` 将返回一个1维数组，根据使用[行优先顺序](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html)遍历 `x` 和 `ind` 产生。每当 `ind` 的一个成员为 `True` 时，就往返回数组添加 `x` 的对应成员。请检查以上范例来确认这个行为是否如这里所描述一样。
+在最简单的情况下，布尔索引的行为如下：设 `x` 为 $N$ 维数组，`ind` 为一个和 `x` *一样形状*的布尔数组。那么 `x[ind]` 将返回一个1维数组，根据使用[行优先顺序](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html)遍历 `x` 和 `ind` 产生。每当 `ind` 的一个成员为 `True` 时，就往返回数组添加 `x` 的对应成员。请检查以上范例来确认这个行为是否如这里所描述一样。
 <!-- #endregion -->
 
 <!-- #region -->
@@ -389,7 +389,7 @@ False
 ...               [-0.29,  0.13, -0.26,  0.33]])
 ```
 
-使用布尔数组索引和NumPy的[逻辑函数](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)来选中 `h` 满足一下条件的成员。因为你在处理浮点数，[你不应该检查两值完全相等](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision)；反而，使用函数[numpy.isclose](https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html)。
+使用布尔数组索引和NumPy的[逻辑函数](https://docs.scipy.org/doc/numpy/reference/routines.logic.html)来选中 `h` 满足一下条件的成员。因为你在处理浮点数，[你不应该检查两值完全相等](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision)；反而，使用函数[numpy.isclose](https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html)。
 
 1. 所有 `h` 的负成员
 2. 所有 `h` “等于” `0.01` 或 `0.33` 的成员
@@ -466,7 +466,7 @@ array([0], dtype=int64)
 <!-- #region -->
 ## 通过进阶索引进行原地和增强赋值
 
-虽然进阶索引不提供[内置数据的*视阈*](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array)，它依然可以用来帮助我们对数组其中的区域进行原地和增强赋值。比如说，假设你想要对数组进行阀值操作，使得其所有负成员都被0代替。通过原地复制，布尔索引将会使得这个工作极其轻松：
+虽然进阶索引不提供[内置数据的*视阈*](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array)，它依然可以用来帮助我们对数组其中的区域进行原地和增强赋值。比如说，假设你想要对数组进行阀值操作，使得其所有负成员都被0代替。通过原地复制，布尔索引将会使得这个工作极其轻松：
 
 ```python
 # 通过进阶索引赋值

@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Understanding imports modules and packages, Difficulty: Easy, Category: Section
    :keywords: custom package, module, script, import, setup, pip, conda, relative import, absolute import 
-```
+<!-- #endraw -->
 
 <!-- #region -->
 # 导入：模组和包
@@ -60,7 +60,7 @@ import numpy as np
 
 Python“模组”指包含函数定义和变量赋值语句的单个 `.py` 文件。导入一个模组将执行这些命令并通过被导入的模组使得命令产生的对象可以被访问。
 
-让我们创建属于自己的模组并将其导入到一个互动式的Python进程中吧。在你计算机中的某个路径中打开一个Jupyter记事本或IPython命令行。使用[IDE](http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html#Integrated-Development-Environments)或简单的文本编辑器（不要用像Microsoft Word这样的软件！）在进程的路径中创建一个名为 `my_module.py` 的文本文件。`my_module.py` 的内容应为：
+让我们创建属于自己的模组并将其导入到一个互动式的Python进程中吧。在你计算机中的某个路径中打开一个Jupyter记事本或IPython命令行。使用[IDE](http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html#Integrated-Development-Environments)或简单的文本编辑器（不要用像Microsoft Word这样的软件！）在进程的路径中创建一个名为 `my_module.py` 的文本文件。`my_module.py` 的内容应为：
 
 ```python
 """
@@ -115,7 +115,7 @@ module
 <!-- #endregion -->
 
 <!-- #region -->
-你一定要理解这就是模组内容能够被导入它的环境访问的方法。知道这点后，了解模组的成员的一个好办法是使用IDE和互动命令行的[自动完成](http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Informal_Intro_Python.html#Dabbling-with-Numbers)功能来列出模组对象的所有属性。内置的 `help` 函数可以用来总结模组的内容：
+你一定要理解这就是模组内容能够被导入它的环境访问的方法。知道这点后，了解模组的成员的一个好办法是使用IDE和互动命令行的[自动完成](http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Informal_Intro_Python.html#Dabbling-with-Numbers)功能来列出模组对象的所有属性。内置的 `help` 函数可以用来总结模组的内容：
 
 ```python
 >>> help(my_module)
@@ -402,7 +402,6 @@ from ..utils import some_util_func
 我们在这里必须指出我们其实省略了一些细节。安装NumPy并不会将它的各个模组和包完整复制到site-packages中。虽然如此，我们并不会更加细致地讨论包安装的技术性细节。你只需要知道包安装的位置以及Python直译器在导入时检查的路径就行了。
 <!-- #endregion -->
 
-<!-- #region -->
 ### 安装你自己的Python包
 
 假设我们对 `face_detector` 项目的工作很满意，并想要安装这个包——将其放置到我们的“site-packages”路径来允许我们无论Python直译器的工作路径都可以导入它。在这里，我们将会创建一个基础的安装脚本来允许我们达成这一点。
@@ -423,7 +422,6 @@ from ..utils import some_util_func
         |-- calibration.py
         |-- config.py
 ```
-<!-- #endregion -->
 
 <!-- #region -->
 最简单的为安装准备你的包的构建脚本 `setup.py` 如下：
@@ -441,7 +439,6 @@ setuptools.setup(
 
 <!-- #endregion -->
 
-<!-- #region -->
 如果你阅读了以上链接的额外材料，你将会注意你可以向这个设置脚本提供更多的可选信息，如作者名字，包的安装要求，等等。
 
 有了这个脚本后，我们可以在本地机器上安装我们的包了！在你的命令行中，导航到包含这个设置脚本和被安装的包的路径中。运行：
@@ -461,12 +458,11 @@ pip uninstall face_detection
 ```shell
 python setup.py develop
 ```
-<!-- #endregion -->
 
-<!-- #region -->
+
 ## pip和conda：包管理器
 
-你可以在在全世界共享Python包。市面上有两个常用的包管理器，`pip` 和 `conda`。`pip` 从[The Python Package Index (PyPI)](https://pypi.org/)（Python包索引）下载并安装包, 而 `conda` 从Anaconda Cloud下载并安装包。`conda` 和 `pip` 都已经作为[Anaconda分布](http://www.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html#Installing-Anaconda)的一部分被安装在你的机器上了。
+你可以在在全世界共享Python包。市面上有两个常用的包管理器，`pip` 和 `conda`。`pip` 从[The Python Package Index (PyPI)](https://pypi.org/)（Python包索引）下载并安装包, 而 `conda` 从Anaconda Cloud下载并安装包。`conda` 和 `pip` 都已经作为[Anaconda分布](http://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html#Installing-Anaconda)的一部分被安装在你的机器上了。
 
 执行以下来使用 `pip` 安装包：
 
@@ -485,7 +481,7 @@ conda install <package_name>
 使用 `conda` 而不是 `pip` 来安装包有着显著的好处。首先，`conda` 有着一个强大的“环境计算器”来记录Python包之间的互相依赖性。因此，它会试图按需安装，升级，并降级包来满足你安装的需求。同时，`conda` 默认提供的包列表由Continuum Analytics，也就是Anaconda的创造者，提供并维持。这样做的好处之一在于，通过 `pip` 安装NumPy会为你提供标准的NumPy版本，而 `conda` 将会安装[mkl优化过的NumPy版本](https://software.intel.com/en-us/articles/numpyscipy-with-intel-mkl)，其执行速度快很多。最后，`conda` 也能作为一个[环境管理器](https://conda.io/docs/user-guide/tasks/manage-environments.html)，其支持你维持多个，互相不冲突的环境来储存不同的Python包安装情况以及甚至不同的Python版本。
 
 话说如此，使用 `pip` 也是有一些好处的。PyPi易用也容易上传包；这很可能是向全世界分布Python包最简单的方法。因此，`pip` 提供了更广阔的包选择。但是，你也可以使用 `conda` 来从自定义频道安装包——如此为你提供Anaconda分布的包列表之外的包。这已经成为了一个流行的安装如PyTorch和TensorFlow的机器学习库的方法。
-<!-- #endregion -->
+
 
 你可以使用 `conda` 来安装一部分包，而用 `pip` 来安装其它包。唯一需要注意的是不要不小心使用两个管理器安装相同的包——这会搞出大麻烦。
 

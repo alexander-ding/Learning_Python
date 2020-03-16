@@ -47,9 +47,9 @@
    "source": [
     "## 相关阅读\n",
     "\n",
-    "你会需要熟悉NumPy的[矢量化操作](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html)和[根据轴求和](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions)。你也很可能会发现[布尔索引](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/AdvancedIndexing.html#Boolean-Array-Indexing)很有用。\n",
+    "你会需要熟悉NumPy的[矢量化操作](http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html)和[根据轴求和](http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#Specifying-the-axis-Keyword-Argument-in-Sequential-NumPy-Functions)。你也很可能会发现[布尔索引](http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/AdvancedIndexing.html#Boolean-Array-Indexing)很有用。\n",
     "\n",
-    "这里强烈建议你使用matplotlib来可视化你对 $\\pi$ 每一轮后的约算值。你可以参阅[PLYMI的这一小节](http://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Matplotlib.html#Plotting-and-Saving-a-Figure)来学习如何创建一个简单的线图。"
+    "这里强烈建议你使用matplotlib来可视化你对 $\\pi$ 每一轮后的约算值。你可以参阅[PLYMI的这一小节](http://cn.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Matplotlib.html#Plotting-and-Saving-a-Figure)来学习如何创建一个简单的线图。"
    ]
   },
   {
@@ -251,7 +251,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "最后，我们想要计算每一轮后落入圆中的总镖数。[请回忆](https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Boolean-Objects-are-Integers)，`True` 的行为类似 `1`，而 `False` 的行为类似 `0`。因此，我们可以对 `in_circle` 进行累计和来计算这个。"
+    "最后，我们想要计算每一轮后落入圆中的总镖数。[请回忆](https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Boolean-Objects-are-Integers)，`True` 的行为类似 `1`，而 `False` 的行为类似 `0`。因此，我们可以对 `in_circle` 进行累计和来计算这个。"
    ]
   },
   {

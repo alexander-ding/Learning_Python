@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: the basics of iterables in python, Difficulty: Medium, Category: Section
    :keywords: iterables, max, min, sum, all, any, itertools, enumerate, unpack
-```
+<!-- #endraw -->
 
 # 可迭代物
 我们之前在讨论for循环的时候介绍了*可迭代物*（iterable）——也就是任何你可以“迭代”（如for循环）的对象。

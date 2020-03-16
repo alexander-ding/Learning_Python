@@ -23,14 +23,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="../_static/gtag.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="../_static/gtag.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -92,7 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
@@ -210,7 +210,7 @@
 <div class="section" id="类实例">
 <h1>类实例<a class="headerlink" href="#类实例" title="永久链接至标题">¶</a></h1>
 <p>到现在为止，我们学习了定义新对象类，提供其名字，属性，和方法（也就是函数属性）的语法。当我们离开类定义的作用域外，一个类对象将被创建——定义创建的<em>类对象</em>（class object）是单个包装我们类定义的对象。我们很少会想要在类对象创建后将其作为参数输入或操作它。反而，我们将想要使用它来创建该类的一个个<em>实例</em>（instance）。具体来讲，<code class="docutils literal notranslate"><span class="pre">list</span></code> 是一个类对象（请记住，“类”和“类型”是一个意思）——它和 <code class="docutils literal notranslate"><span class="pre">class</span></code>
-定义执行后创建的对象是同一种类的。就如你在<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists">模组2</a>中看到的一样，我们可以使用这个类对象来创建列表类单独的<em>实例</em>，而每个实例有着属于自己的对象序列。</p>
+定义执行后创建的对象是同一种类的。就如你在<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Lists">模组2</a>中看到的一样，我们可以使用这个类对象来创建列表类单独的<em>实例</em>，而每个实例有着属于自己的对象序列。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用类对象 `list` 来创建列表实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">()</span>  <span class="c1"># 创建一个空的 `list` 实例</span>
 <span class="p">[]</span>
@@ -308,7 +308,7 @@
 <span class="bp">True</span>
 </pre></div>
 </div>
-<p>Python的<a class="reference external" href="http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html">变量引用对象的规则</a>在此依然成立：向某个变量赋值一个对象，不管是类对象还是其实例，都不会创建该对象的复制品。这个变量仅仅会引用该对象并作为它的一个代名词。</p>
+<p>Python的<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html">变量引用对象的规则</a>在此依然成立：向某个变量赋值一个对象，不管是类对象还是其实例，都不会创建该对象的复制品。这个变量仅仅会引用该对象并作为它的一个代名词。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `A` 引用 `Dummy`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">Dummy</span>
 

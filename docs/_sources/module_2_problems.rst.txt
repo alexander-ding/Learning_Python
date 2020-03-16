@@ -7,7 +7,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 内容:
 
    Module2_EssentialsOfPython/Problems/MergeMaxDicts.md
    Module2_EssentialsOfPython/Problems/Palindrome.md

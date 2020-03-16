@@ -23,14 +23,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
-        <script type="text/javascript" src="../_static/gtag.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
+        <script src="../_static/gtag.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -92,7 +92,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+              <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python Like You Mean It</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1.html">模组1：Python入门</a></li>
@@ -398,7 +398,7 @@
 <span class="n">array</span><span class="p">([</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>正式来讲，索引数组将通过<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">行优先顺序</a>被遍历，而每一个整数索引的组合将被用来索引 <code class="docutils literal notranslate"><span class="pre">z</span></code> 并填入返回数组的对应位置。</p>
+<p>正式来讲，索引数组将通过<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">行优先顺序</a>被遍历，而每一个整数索引的组合将被用来索引 <code class="docutils literal notranslate"><span class="pre">z</span></code> 并填入返回数组的对应位置。</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
    z\big[ind_0[0], ind_1[0], ind_2[0]\big]
@@ -507,7 +507,7 @@ out[2] \\
 <span class="bp">False</span>
 </pre></div>
 </div>
-<p>在最简单的情况下，布尔索引的行为如下：设 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为 <span class="math notranslate nohighlight">\(N\)</span> 维数组，<code class="docutils literal notranslate"><span class="pre">ind</span></code> 为一个和 <code class="docutils literal notranslate"><span class="pre">x</span></code> <em>一样形状</em>的布尔数组。那么 <code class="docutils literal notranslate"><span class="pre">x[ind]</span></code> 将返回一个1维数组，根据使用<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">行优先顺序</a>遍历 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ind</span></code> 产生。每当 <code class="docutils literal notranslate"><span class="pre">ind</span></code> 的一个成员为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 时，就往返回数组添加 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的对应成员。请检查以上范例来确认这个行为是否如这里所描述一样。</p>
+<p>在最简单的情况下，布尔索引的行为如下：设 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为 <span class="math notranslate nohighlight">\(N\)</span> 维数组，<code class="docutils literal notranslate"><span class="pre">ind</span></code> 为一个和 <code class="docutils literal notranslate"><span class="pre">x</span></code> <em>一样形状</em>的布尔数组。那么 <code class="docutils literal notranslate"><span class="pre">x[ind]</span></code> 将返回一个1维数组，根据使用<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">行优先顺序</a>遍历 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ind</span></code> 产生。每当 <code class="docutils literal notranslate"><span class="pre">ind</span></code> 的一个成员为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 时，就往返回数组添加 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的对应成员。请检查以上范例来确认这个行为是否如这里所描述一样。</p>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：布尔索引</strong></p>
 <p>设以下数组：</p>
@@ -516,7 +516,7 @@ out[2] \\
 <span class="gp">... </span>              <span class="p">[</span><span class="o">-</span><span class="mf">0.29</span><span class="p">,</span>  <span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26</span><span class="p">,</span>  <span class="mf">0.33</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>使用布尔数组索引和NumPy的<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">逻辑函数</a>来选中 <code class="docutils literal notranslate"><span class="pre">h</span></code> 满足一下条件的成员。因为你在处理浮点数，<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision">你不应该检查两值完全相等</a>；反而，使用函数<a class="reference external" href="https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html">numpy.isclose</a>。</p>
+<p>使用布尔数组索引和NumPy的<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">逻辑函数</a>来选中 <code class="docutils literal notranslate"><span class="pre">h</span></code> 满足一下条件的成员。因为你在处理浮点数，<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision">你不应该检查两值完全相等</a>；反而，使用函数<a class="reference external" href="https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html">numpy.isclose</a>。</p>
 <ol class="arabic simple">
 <li><p>所有 <code class="docutils literal notranslate"><span class="pre">h</span></code> 的负成员</p></li>
 <li><p>所有 <code class="docutils literal notranslate"><span class="pre">h</span></code> “等于” <code class="docutils literal notranslate"><span class="pre">0.01</span></code> 或 <code class="docutils literal notranslate"><span class="pre">0.33</span></code> 的成员</p></li>
@@ -577,7 +577,7 @@ out[2] \\
 </div>
 <div class="section" id="通过进阶索引进行原地和增强赋值">
 <h2>通过进阶索引进行原地和增强赋值<a class="headerlink" href="#通过进阶索引进行原地和增强赋值" title="永久链接至标题">¶</a></h2>
-<p>虽然进阶索引不提供<a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array">内置数据的*视阈*</a>，它依然可以用来帮助我们对数组其中的区域进行原地和增强赋值。比如说，假设你想要对数组进行阀值操作，使得其所有负成员都被0代替。通过原地复制，布尔索引将会使得这个工作极其轻松：</p>
+<p>虽然进阶索引不提供<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/BasicIndexing.html#Producing-a-View-of-an-Array">内置数据的*视阈*</a>，它依然可以用来帮助我们对数组其中的区域进行原地和增强赋值。比如说，假设你想要对数组进行阀值操作，使得其所有负成员都被0代替。通过原地复制，布尔索引将会使得这个工作极其轻松：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过进阶索引赋值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span>  <span class="mf">0.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.41</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span><span class="o">-</span><span class="mf">0.47</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.49</span><span class="p">],</span>

@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Jupyter notebooks, Difficulty: Easy, Category: Tutorial
    :keywords: jupyter, notebook, kernel, basics, server, console, command line, plot, beginner, data science
-```
+<!-- #endraw -->
 
 # Jupyter记事本
 近年来，Jupyter Notebook（记事本）成为了一个极其流行的帮助用户使用Python和其它语言做实验的工具。它的流行代表着数据科学实验形式的转变。

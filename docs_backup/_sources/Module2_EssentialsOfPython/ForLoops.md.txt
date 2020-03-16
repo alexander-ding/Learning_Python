@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Contorl flow with for-loops and while-loops, Difficulty: Easy, Category: Section
    :keywords: for-loop, while-loop, break, control flow, basic programming
-```
+<!-- #endraw -->
 
 # For循环和While循环
 在本节中我们将会介绍“for循环”控制流以及“可迭代物”（iterable）的正式定义。这些功能极其强大强大。在未来，你会在你编写的Python代码中随处见到这些概念！

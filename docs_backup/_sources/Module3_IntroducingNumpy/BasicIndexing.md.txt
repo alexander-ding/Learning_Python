@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Numpy array basic indexing, Difficulty: Medium, Category: Section
    :keywords: basic index, slice, no copy index, multidimensional array, nd array, view, reverse, axis
-```
+<!-- #endraw -->
 
 <!-- #region -->
 # 基础和进阶索引简介
@@ -55,9 +55,9 @@ array([-5, -7, -1, -3, -3])
 设 $N$ 维数组 `x`，`x[index]` 使用**基础索引**的时候是当 `index` 是一个含有以下任何对象类型组合的*元组*：
 
 - 整数
-- [切片](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Slicing)对象
+- [切片](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Slicing)对象
 - [省略号](https://docs.python.org/3/library/constants.html#Ellipsis)（ellipsis）对象
-- [numpy.newaxis](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/Broadcasting.html#Inserting-Size-1-Dimensions-into-An-Array)对象
+- [numpy.newaxis](http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/Broadcasting.html#Inserting-Size-1-Dimensions-into-An-Array)对象
 
 通过基础索引来访问数组对象*并不会复制数组的成员*。反而，这会创建一个内置数据的“视阈”。
 </div>
@@ -65,7 +65,7 @@ array([-5, -7, -1, -3, -3])
 
 <!-- #region -->
 ### 用整数和切片对象索引
-我们在[访问数组多维度的内容](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html)一节已经提供了完整的使用整数和切片来访问数组成员的教程。根据之前的定义，*这些都是基础索引的范例*。
+我们在[访问数组多维度的内容](http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/AccessingDataAlongMultipleDimensions.html)一节已经提供了完整的使用整数和切片来访问数组成员的教程。根据之前的定义，*这些都是基础索引的范例*。
 
 作为那一节讨论的内容的复习，请回忆，你可以通过提供 $N$ 个整数或切片对象或两种混合来选中 $N$ 维数组的单个成员或“子部分”。我们也了解了当你提供少于 $N$ 个索引时NumPy会自动将剩余位置用末尾切片“填满”。请记住，索引从0开始，所以 `x` 的第4列对应着列3。
 
@@ -85,7 +85,7 @@ array([[-5,  2,  0],
 array([-5,  2,  0, -7])
 ```
 
-请回忆，我们熟悉的[切片](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Slicing)语法其实在“幕后”会创建 `slice` 对象。
+请回忆，我们熟悉的[切片](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Slicing)语法其实在“幕后”会创建 `slice` 对象。
 
 ```python
 # 复习 `slice` 对象
@@ -98,7 +98,7 @@ array([[-5,  2,  0],
 <!-- #endregion -->
 
 ### 将元组作为N维索引使用
-根据基础索引的定义，我们必须将我们的数组索引以元组的形式来提供才能使用基础索引。事实上，我们一直以来都在使用索引元组！也就是说，每当我们使用语法 `x[i, j, k]` 来索引一个数组时，我们其实是在创建一个包含这些索引的[元组](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Tuples)。也就是说，`x[i, j, k]` 等值于 `x[(i, j, k)]`。
+根据基础索引的定义，我们必须将我们的数组索引以元组的形式来提供才能使用基础索引。事实上，我们一直以来都在使用索引元组！也就是说，每当我们使用语法 `x[i, j, k]` 来索引一个数组时，我们其实是在创建一个包含这些索引的[元组](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#Tuples)。也就是说，`x[i, j, k]` 等值于 `x[(i, j, k)]`。
 
 `x[i, j, k]` 将创建元组 `(i, j, k)` 并将其输入到数组的“获取成员”功能中。因此， `x[0, 3]` 等值于 `x[(0, 3)]`。
 
@@ -139,7 +139,7 @@ array([[-1,  9,  3,  8],
 
 <!-- #region -->
 ### 省略号和newaxis对象
-根据从之前对广播的讨论，`numpy.newaxis` 对象可以作为数组的索引使用来[向数组插入大小为1的维度](http://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/Broadcasting.html#Inserting-Size-1-Dimensions-into-An-Array)。
+根据从之前对广播的讨论，`numpy.newaxis` 对象可以作为数组的索引使用来[向数组插入大小为1的维度](http://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/Broadcasting.html#Inserting-Size-1-Dimensions-into-An-Array)。
 
 ```python
 # 通过 `np.newaxis` 插入大小为1的维度
@@ -395,7 +395,7 @@ array([-40,   1, -50,   3])
 
 <!-- #region -->
 ### 增强赋值
-我们对Python基础数学表达式的讨论提到了[增强赋值语句](http://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Augmented-Assignment-Statements)（augmented assignment statement）。它为我们提供了一个方便的更新变量值的简写语法。比如说，赋值表达式 `x = x + 5` 可以通过增强赋值来重写为 `x += 5`。
+我们对Python基础数学表达式的讨论提到了[增强赋值语句](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Augmented-Assignment-Statements)（augmented assignment statement）。它为我们提供了一个方便的更新变量值的简写语法。比如说，赋值表达式 `x = x + 5` 可以通过增强赋值来重写为 `x += 5`。
 
 虽然 `x += 5` 在处理Python基础对象（整数，浮点数，等等）时真的只是一个简写，*但是NumPy数组的增强赋值和它们更长的版本有着根本性不同的行为*。具体来讲，它们会直接更新数组引用的内置数据，而不会创建一个新的不同的数组。因此这会影响所有该数组的视阈。我们在以下演示。
 
@@ -437,7 +437,7 @@ array([[ 0, -2, -4, -6],
 
 <!-- #region -->
 ### 提供 `out` 来原地进行NumPy操作
-我们没有任何理由只能在算数操作时可以原地更新数据。[NumPy的各种数学函数](https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#NumPy%E2%80%99s-Mathematical-Functions)提供了一个可选的关键词参数 `out` 来提供“储存”数学运算结果的地方。默认的情况下，这个操作会在内存中创建一个不同的新数组并不修改输入数据。
+我们没有任何理由只能在算数操作时可以原地更新数据。[NumPy的各种数学函数](https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html#NumPy%E2%80%99s-Mathematical-Functions)提供了一个可选的关键词参数 `out` 来提供“储存”数学运算结果的地方。默认的情况下，这个操作会在内存中创建一个不同的新数组并不修改输入数据。
 
 ```python
 # 在 `numpy.exp` 中提供 'out' 参数来原地更新数组数据

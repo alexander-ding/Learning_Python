@@ -4,19 +4,19 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.0-rc0
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
 ---
 
-```raw_mimetype="text/restructuredtext"
+<!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Introduction to Dictionaries, Difficulty: Medium, Category: Section
    :keywords: dictionary, complexity, key, value, iteration, get item, hashing, lookup, interview preparation
-```
+<!-- #endraw -->
 
 # 数据结构（第二部分）：词典
 Python的词典（dictionary）允许你储存键值对（key-value pair），然后通过提供键来快速地获取其对应的值。具体来讲，你通过描述从键到值的单向对应关系来创建词典。**每个键应该只对应一个值**，也就是说每个键都应该是唯一的。
