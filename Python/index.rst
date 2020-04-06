@@ -2,7 +2,7 @@
 Python Like You Mean It
 =======================
 
-  更新到原文 `Commit 3199f71884fa9b9dc64e9dba829e80905dd93abf <https://github.com/rsokl/Learning_Python/commit/3199f71884fa9b9dc64e9dba829e80905dd93abf>`
+  更新到原文 `Commit 3199f71884fa9b9dc64e9dba829e80905dd93abf <https://github.com/rsokl/Learning_Python/commit/3199f71884fa9b9dc64e9dba829e80905dd93abf>`_ 
 
   作者 `Ryan Soklaski <https://scholar.google.com/citations?hl=en&user=coXsftgAAAAJ&view_op=list_works&gmla=AJsN-F7Eg769ERNBQDKZ5-5xmT9qh2G2chKgH0Lwbd3zujR7FAPiWmVp_57dFPKG_h7ghPeLG8oGysj5YWziwXib4oHb6kr2HA>`_ (Twitter/GitHub:`@rsokl <https://twitter.com/rsokl>`_)
   
