@@ -16,7 +16,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 内容:
 
    Module2_EssentialsOfPython/Basic_Objects.md
    Module2_EssentialsOfPython/SequenceTypes.md
