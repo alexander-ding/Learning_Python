@@ -640,7 +640,7 @@ array([[ 0, 23],
 <!-- #endregion -->
 
 <!-- #region -->
-**Boolean Indexing: Solution**
+**布尔索引：解**
 
 ```python
 >>> h = np.array([[ 0.01,  0.03,  0.1 ,  0.25],
