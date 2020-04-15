@@ -526,7 +526,7 @@ max_num: int
   - 暗示接受整数 `1`：`Literal[1]`
   - 暗示接受字符串 `"sum"` 或字符串 `"mean"`：`Literal["sum", "mean"]`
   - 暗示接受列表 `[1, 2]` 或字符串 `"abc"`：`Literal[[1, 2], "abc"]`
-- **适应性**：`Literal` 类型暗示是在Python 3.8版本加入的——你无法在之前版本的Python中使用它。
+- **兼容性**：`Literal` 类型暗示是在Python 3.8版本加入的——你无法在之前版本的Python中使用它。
 
 <!-- #region -->
 作为一个例子，让我们设一个接受如下的函数：
