@@ -49,25 +49,29 @@ jupyter:
 - 下载即用，无需太多设置就很好用
 - 有职业人员的长期支持，因此很可靠
 - 可以进行深层次的设置
-- 全功能
+- 全功能，包括极棒的调试器，适应语境的“Intellisense”，类型推论
+- 免费的“社区版本”（community version）已经非常强大和活跃
 
 **坏处**
 
  - 很耗资源，特别对手提电脑而言
  - 功能多导致新用户难以上手（但它有很好的教程和说明文件）
- 
+ - 需要付费版的PyCharm才可以支持Jupyter记事本，因此对新用户不友好
+
 [Visual Studio Code](https://code.visualstudio.com/) 以及它的 [Python拓展](https://code.visualstudio.com/docs/languages/python): 一个轻便，宜定制的IDE。
 
 **好处**
 
 - 轻便优雅
-- 支持其它的编程语言，这样你只需要学习使用一个IDE
-- 有极其多的拓展可供下载以提供编辑器新功能；这些拓展是由一个大社区的开源开发者编写的。
+- 完全免费
+- 支持其它的编程语言，就算你经常使用多种编程语言你也只需要学习使用一个IDE
+- 有极其多的拓展可供下载以提供编辑器新功能；这些拓展是由一个大社区的开源开发者编写的
+- [支持Jupyter记事本](https://code.visualstudio.com/docs/python/jupyter-support)，意味着你可以在记事本中享受VSCode的intellisense，调试器，和查看变量的功能
 
 **坏处**
 
-- PyCharm暂时比其更完善和强大，但Visual Studio Code现在正式支持其Python拓展了
-- 可能需要细微的设置才能使用某些功能
+- 设置VSCode来进行Python开发对新手而言可能相对复杂
+- 很多功能，如intellisense和类型推论，在PyCharm中更加完善和强大
 
 
 <div class="alert alert-info">
@@ -75,13 +79,4 @@ jupyter:
 **经验**:
 
 集成开发环境（IDE）提供强大的工具来帮助你编写格式化和无拼写错误的代码。本资源建议你使用PyCharm Community Edition或Visual Studio Code（加上Python拓展）作为你的Python IDE。
-</div>
-
-
-<div class="alert alert-warning">
-
-**Jupyter Lab**:
-
-[Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html)是由Jupyter Notebook团队开发的一个全新的IDE。它的设计宗旨是合并传统IDE的完善和强大和记事本环境的方便和好用。在编写本文时，Jupyter Lab还在beta测试期。鉴于Jupyter Notebook的流行度，Jupyter Lab也可能会快速成为一个常用的IDE。
-
 </div>

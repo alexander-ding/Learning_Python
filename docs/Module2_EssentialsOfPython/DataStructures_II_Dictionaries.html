@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -206,13 +207,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -245,9 +246,9 @@
 <p>Python的词典是其数据结构中一颗闪耀的星；它紧凑，高效，通用，并非常有用。你可以用它来创建多种多样的对应关系。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 记录某3D坐标是否处于空间中某区域之中</span>
 <span class="c1"># 将 (x, y, z) 坐标对应到“是否在区域中”：(x, y, z) -&gt; True/False</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">point_to_region</span> <span class="o">=</span> <span class="p">{(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span><span class="bp">False</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">):</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mf">4.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">):</span><span class="bp">False</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">point_to_region</span> <span class="o">=</span> <span class="p">{(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span><span class="kc">False</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">):</span><span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mf">4.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">):</span><span class="kc">False</span><span class="p">}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">point_to_region</span><span class="p">[(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)]</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 将学生名字对应到考试成绩中：名字 -&gt; 成绩</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">name_to_scores</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Ryan S&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="s2">&quot;Nick S&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">90</span><span class="p">]}</span>
@@ -352,20 +353,20 @@
 <h2>词典可以储存什么？<a class="headerlink" href="#词典可以储存什么？" title="永久链接至标题">¶</a></h2>
 <p>虽然前文的例子中仅仅将字符串对应字符串，但是<em>词典的键和值的类型可以相异</em>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示词典可以使用的多种多样的键值类型</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span><span class="k">print</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">:</span><span class="s2">&quot;cow&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">:[]}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span><span class="nb">print</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">:</span><span class="s2">&quot;cow&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">:[]}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="mi">10</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span><span class="p">[</span><span class="s2">&quot;moo&quot;</span><span class="p">]</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
-<span class="o">&lt;</span><span class="n">function</span> <span class="k">print</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="nb">print</span><span class="o">&gt;</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span><span class="p">[</span><span class="mf">3.4</span><span class="p">]</span>
 <span class="s2">&quot;cow&quot;</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span><span class="p">[</span><span class="bp">False</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">example_dict</span><span class="p">[</span><span class="kc">False</span><span class="p">]</span>
 <span class="p">[]</span>
 </pre></div>
 </div>
@@ -441,11 +442,11 @@
 <p>你也可以使用词典本身来检测某对象是否为它的键：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查某对象是否是词典的键</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;key3&quot;</span> <span class="ow">in</span> <span class="n">example_dict</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 你*不能*用这个方法检查词典的值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;value3&quot;</span> <span class="ow">in</span> <span class="n">example_dict</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">len</span></code> 会返回词典有多少个键：</p>
@@ -464,7 +465,7 @@
 <p>你也可以使用这个函数来检查某对象是否为词典的值：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查某对象是否为词典的值</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;value1&quot;</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p><strong>检查词典的键值对</strong></p>
@@ -477,7 +478,7 @@
 <p>你也可以用这个函数来检测某对象是否为词典的键值对：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查某对象是否为词典的键值对</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;value1&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">example_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <div class="admonition note">

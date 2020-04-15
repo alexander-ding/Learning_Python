@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -202,13 +203,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -225,7 +226,7 @@
 <h1>基础和进阶索引简介<a class="headerlink" href="#基础和进阶索引简介" title="永久链接至标题">¶</a></h1>
 <p>到现在为止，我们看到我们可以通过为数组每一维度提供整数或切片对象来访问NumPy数组的成员。索引和切片数组的维度叫做基础索引（basic indexing）。NumPy也提供了一套成熟的“进阶索引”（advanced indexing）系统来为我们提供强大的不仅限于为轴提供整数和切片的访问数组成员的方法。比如说，我们可以使用进阶索引来访问所有 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的负数成员。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示基本和进阶索引</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span>   <span class="mi">2</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>   <span class="mi">9</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">8</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span>  <span class="o">-</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">6</span><span class="p">]])</span>
@@ -280,7 +281,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 复习 `slice` 对象</span>
 
 <span class="c1"># 等值于：x[:2, :3]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
 <span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">0</span><span class="p">],</span>
        <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]])</span>
 </pre></div>
@@ -298,7 +299,7 @@
 <span class="mi">8</span>
 
 <span class="c1"># 等值于：x[:2, :3]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[(</span><span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">))]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">))]</span>
 <span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">0</span><span class="p">],</span>
        <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]])</span>
 
@@ -331,7 +332,7 @@
 <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># 使用显式的元组来当索引</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="bp">None</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span>
 <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -425,14 +426,14 @@
 <span class="n">array</span><span class="p">([</span> <span class="mf">3.31</span><span class="p">,</span>  <span class="mf">0.21</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.77</span><span class="p">])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">new_subarray</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>通过算数操作符（<code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/,</span> <span class="pre">//,</span> <span class="pre">**</span></code>）使用的数组会返回完全不同，和原本数组不共享内存的数组。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 像 `subarray + 2` 这样的数学表达式将创建不同的数组，</span>
 <span class="c1"># 而不是视阈</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">subarray</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">subarray</span><span class="p">)</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>因此，通过 <code class="docutils literal notranslate"><span class="pre">subarray</span> <span class="pre">=</span> <span class="pre">subarray</span> <span class="pre">+</span> <span class="pre">2</span></code> 更新 <code class="docutils literal notranslate"><span class="pre">subarray</span></code> <em>不</em>会重现 <code class="docutils literal notranslate"><span class="pre">subarray</span></code> 引用的原本数据。反而，<code class="docutils literal notranslate"><span class="pre">subarray</span> <span class="pre">+</span> <span class="pre">2</span></code> 会将新创建的数组赋值给变量 <code class="docutils literal notranslate"><span class="pre">subarray</span></code>。NumPy也提供了直接更新原本数组内置数据而不创建新数组的数学操作。我们将在下一小节讨论这些功能。</p>
@@ -484,7 +485,7 @@
 <span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>为 <code class="docutils literal notranslate"><span class="pre">a</span></code> 的视阈，也就是 <code class="docutils literal notranslate"><span class="pre">a[:]</span></code>，进行操作会告诉NumPy去通过赋值原地代替 <code class="docutils literal notranslate"><span class="pre">a</span></code> 的数据。</p>
@@ -505,7 +506,7 @@
 <span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>这个视阈赋值功能可以用来原地更新数组的一部分。</p>
@@ -546,7 +547,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 使用数学表达式更新 `b` 会创建一个新数组并消除 `a` 和 `c` 的关系</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
@@ -554,7 +555,7 @@
 <span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 
 <span class="c1"># 使用增强赋值更新 `c` 会更新 `c` 引用的内置数据</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">2</span>
@@ -562,7 +563,7 @@
 <span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 请注意，这个更新也会在 `a` 中反映，因为它依然和 `c` 共享内存</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
@@ -581,7 +582,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 提供 &#39;out=a&#39; 将会告诉NumPy去覆盖 `a` 引用的数据</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>

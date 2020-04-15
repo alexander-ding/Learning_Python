@@ -2,7 +2,7 @@
 Python Like You Mean It
 =======================
 
-  更新到原文 `Commit 3199f71884fa9b9dc64e9dba829e80905dd93abf <https://github.com/rsokl/Learning_Python/commit/3199f71884fa9b9dc64e9dba829e80905dd93abf>`_ 
+  更新到原文 `Commit e28bea4c6c29820e28c7d046a357b6f4953838ff <https://github.com/rsokl/Learning_Python/commit/e28bea4c6c29820e28c7d046a357b6f4953838ff>`_ 
 
   作者 `Ryan Soklaski <https://scholar.google.com/citations?hl=en&user=coXsftgAAAAJ&view_op=list_works&gmla=AJsN-F7Eg769ERNBQDKZ5-5xmT9qh2G2chKgH0Lwbd3zujR7FAPiWmVp_57dFPKG_h7ghPeLG8oGysj5YWziwXib4oHb6kr2HA>`_ (Twitter/GitHub:`@rsokl <https://twitter.com/rsokl>`_)
   
@@ -16,7 +16,7 @@ Python Like You Mean It
 --------
 Python Like You Mean It (PLYMI) 是一个免费学习Python和NumPy基础的在线资源，其旨在帮助读者熟练地使用Python。本资源主要讨论的Python特征侧重于对科学应用感兴趣的读者（如数据分析，机器学习，数字相关工作，等等）。
 
-我（作者）对这个资源的定位是一个一站式，零基础的学习Python核心内容的轻量教程。读者会首先学习Python是什么以及安装Python具体意味着什么，且在最后带着对这个语言的核心内容和它的旗舰数字处理模组NumPy的理解离开。我也会注重提供一些常见任务的“最佳做法“。本文使用的Python为写作时的最新版本（3.6）。
+我（作者）对这个资源的定位是一个一站式，零基础的学习Python核心内容的轻量教程。读者会首先学习Python是什么以及安装Python具体意味着什么，且在最后带着对这个语言的核心内容和它的旗舰数字处理模组NumPy的理解离开。我也会注重提供一些常见任务的“最佳做法“。本文使用的Python为写作时的最新版本（3.8）。
 
 
 这不是什么

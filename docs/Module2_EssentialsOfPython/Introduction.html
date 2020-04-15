@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -192,13 +193,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -218,8 +219,8 @@
 <span class="c1"># 代码没有任何逻辑分枝，循环，或代码包装</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">23</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x + y = &quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x - y = &quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x + y = &quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x - y = &quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>但假如你想要让你的代码在 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是偶数时有着不同的行为呢？或者假设你想要为 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 之中的所有数字做一些计算呢？在本模组结尾，你应该会理解如何编写代码来提供这些和其它更多的逻辑分枝。</p>
@@ -281,7 +282,7 @@
 <p>虽然Python的语法比较宽松，但我并不如此：Python缩进的<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#indentation">标准风格</a> 是每一层<strong>使用四个空格</strong>。我强烈建议你遵循这个标准。大部分的IDE和命令行（包括Jupyter记事本）会自动在你进入某个以上的构造体时为你增加四个空格的缩进。</p>
 <p>让我们通过几个例子（包括错误的例子）来复习一下在Python中限定区域的规则。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 可以，但很恶心：使用一个空格使得缩进很难看清。用四个空格</span>
-<span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
+<span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
  <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 一个空格</span>
  <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 一个空格</span>
 </pre></div>
@@ -297,7 +298,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 可以，但很恶心：if区块使用四个空格来限定。而else区块使用两个空格</span>
 <span class="c1"># 来限定。这虽然合法（因为在每个区块中的缩进相同），但是你应该永远</span>
 <span class="c1"># 使用四个空格来缩进</span>
-<span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
+<span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 四个空格</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 四个空格</span>
 <span class="k">else</span><span class="p">:</span>

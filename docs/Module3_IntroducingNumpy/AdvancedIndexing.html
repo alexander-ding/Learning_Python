@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -199,13 +200,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -221,7 +222,7 @@
 <div class="section" id="进阶索引">
 <h1>进阶索引<a class="headerlink" href="#进阶索引" title="永久链接至标题">¶</a></h1>
 <p>我们将通过理解进阶索引来为我们对索引N维NumPy数组的讨论收尾。和允许我们访问数组单个成员和规则切片的基础索引不同，进阶索引相比灵活很多。比如说，我们可以使用整数数组来作为索引访问数组任意多甚至重复的成员：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
@@ -246,9 +247,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用布尔值数组来访问数组对角线的值</span>
 
 <span class="c1"># 在我们想要访问的 `x` 的成员的位置提供 `True`</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">bool_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
-<span class="o">...</span>                        <span class="p">[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
-<span class="o">...</span>                        <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">bool_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+<span class="o">...</span>                        <span class="p">[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+<span class="o">...</span>                        <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">]])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="n">bool_index</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
@@ -305,7 +306,7 @@
 \end{equation}</div><p>和所有进阶索引的结果一样，这将返回数据的<em>复制品</em>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 进阶索引返回复制品</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>索引数组可以有着任意的形状；<em>返回的数组会有着相同的形状</em>。</p>
@@ -494,17 +495,17 @@ out[2] \\
 <span class="c1"># 当 `x` 为正数时是 `True`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bool_ind</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bool_ind</span>
-<span class="n">array</span><span class="p">([[[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
-        <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">]],</span>
+<span class="n">array</span><span class="p">([[[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">],</span>
+        <span class="p">[</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">]],</span>
 
-       <span class="p">[[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
-        <span class="p">[</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+       <span class="p">[[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">],</span>
+        <span class="p">[</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="n">bool_ind</span><span class="p">]</span>
 <span class="n">array</span><span class="p">([</span> <span class="mf">0.49</span><span class="p">,</span>  <span class="mf">0.18</span><span class="p">,</span>  <span class="mf">0.43</span><span class="p">,</span>  <span class="mf">0.3</span> <span class="p">,</span>  <span class="mf">0.29</span><span class="p">,</span>  <span class="mf">0.3</span> <span class="p">,</span>  <span class="mf">0.28</span><span class="p">,</span>  <span class="mf">0.27</span><span class="p">])</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">shares_memory</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">bool_ind</span><span class="p">])</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>在最简单的情况下，布尔索引的行为如下：设 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为 <span class="math notranslate nohighlight">\(N\)</span> 维数组，<code class="docutils literal notranslate"><span class="pre">ind</span></code> 为一个和 <code class="docutils literal notranslate"><span class="pre">x</span></code> <em>一样形状</em>的布尔数组。那么 <code class="docutils literal notranslate"><span class="pre">x[ind]</span></code> 将返回一个1维数组，根据使用<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/ArrayTraversal.html">行优先顺序</a>遍历 <code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ind</span></code> 产生。每当 <code class="docutils literal notranslate"><span class="pre">ind</span></code> 的一个成员为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 时，就往返回数组添加 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的对应成员。请检查以上范例来确认这个行为是否如这里所描述一样。</p>
@@ -528,11 +529,11 @@ out[2] \\
 <p>函数<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html">numpy.where</a>可以用来接受一个布尔值数组并返回一<em>元组</em>的通过整数数组索引（在本节开头讨论过）访问数组中为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 的成员的索引数组。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示 `np.where`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bool_ind</span>
-<span class="n">array</span><span class="p">([[[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
-        <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">]],</span>
+<span class="n">array</span><span class="p">([[[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">],</span>
+        <span class="p">[</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">]],</span>
 
-       <span class="p">[[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
-        <span class="p">[</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+       <span class="p">[[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">],</span>
+        <span class="p">[</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">bool_ind</span><span class="p">)</span>
 <span class="p">(</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">int64</span><span class="p">),</span>
@@ -566,9 +567,9 @@ out[2] \\
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle"><strong>阅读理解：numpy.where</strong></p>
 <p>设数组：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
-<span class="gp">... </span>              <span class="p">[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
-<span class="gp">... </span>              <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><em>预测</em> <code class="docutils literal notranslate"><span class="pre">np.where(b)</span></code> 的输出是什么。</p>
@@ -645,7 +646,7 @@ out[2] \\
 <span class="o">...</span>                <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
 <span class="o">...</span>                <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]]])</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ind0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ind0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
 
 <span class="c1"># 选中页0，所有行，和最后一列</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">z</span><span class="p">[</span><span class="n">ind0</span><span class="p">,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -723,7 +724,7 @@ out[2] \\
        <span class="p">[</span><span class="mi">23</span><span class="p">,</span>  <span class="mi">0</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p><strong>Boolean Indexing: Solution</strong></p>
+<p><strong>布尔索引：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.01</span><span class="p">,</span>  <span class="mf">0.03</span><span class="p">,</span>  <span class="mf">0.1</span> <span class="p">,</span>  <span class="mf">0.25</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.38</span><span class="p">,</span>  <span class="mf">0.22</span><span class="p">,</span>  <span class="mf">0.15</span><span class="p">,</span>  <span class="mf">0.34</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="p">[</span><span class="o">-</span><span class="mf">0.29</span><span class="p">,</span>  <span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26</span><span class="p">,</span>  <span class="mf">0.33</span><span class="p">]])</span>
@@ -742,9 +743,9 @@ out[2] \\
 </div>
 <p><strong>numpy.where：解</strong></p>
 <p>设数组：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
-<span class="gp">... </span>              <span class="p">[</span><span class="bp">False</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
-<span class="gp">... </span>              <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><em>预测</em> <code class="docutils literal notranslate"><span class="pre">np.where(b)</span></code> 的输出是什么。</p>

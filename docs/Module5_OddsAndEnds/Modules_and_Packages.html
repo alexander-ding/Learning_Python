@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -196,13 +197,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -222,7 +223,7 @@
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
 <span class="c1"># 导入整个numpy包并将给其代名词“np”</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 <p>尽管我们经常食用 <code class="docutils literal notranslate"><span class="pre">import</span></code> 语句，我们到现在为止都还没有讨论它具体的运作细节。在这里，我们将给予其足够的注意力并讨论Python的导入系统，也就是代码被组织成模组（module）和包（package）的方法。模组是单独的 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 文件，而我们可以从模组中导入函数和对象；包则是这些模组的集合。具体讨论这个包系统不仅仅将帮助我们理解标准库和其它Python代码集的组织方法，这也将允许我们创建我们自己的代码包。</p>
@@ -246,9 +247,9 @@
 <span class="sd">它并不是该模组必要的一部分，但它对描述你的模组的目的很有用。</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;I am being executed!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am being executed!&quot;</span><span class="p">)</span>
 
-<span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
+<span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
@@ -273,7 +274,7 @@ module
 <p>正如所料，导入我们的模组导致 <code class="docutils literal notranslate"><span class="pre">print</span></code> 语句被执行，因此 <code class="docutils literal notranslate"><span class="pre">'I</span> <span class="pre">am</span> <span class="pre">being</span> <span class="pre">executed!'</span></code> 被打印到了命令行中。然后，对象 <code class="docutils literal notranslate"><span class="pre">some_list</span></code>，<code class="docutils literal notranslate"><span class="pre">square</span></code>，和 <code class="docutils literal notranslate"><span class="pre">cube</span></code> 在剩余的代码被执行时也被定义了。<em>我们可以通过模组对象来访问它们</em>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 我们可以通过模组对象访问模组中定义的所有变量</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_module</span><span class="o">.</span><span class="n">some_list</span>
-<span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my_module</span><span class="o">.</span><span class="n">square</span>
 <span class="o">&lt;</span><span class="n">function</span> <span class="n">my_module</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span>
@@ -322,7 +323,7 @@ module
 <h2>导入语句<a class="headerlink" href="#导入语句" title="永久链接至标题">¶</a></h2>
 <p>Python提供了导入模组和具体模组成员的灵活框架。我们已经在关于NumPy的讨论中见到了我们可以在导入语句提供一个<em>代名词</em>（alias）这一点；这在导入长名字的模组时非常方便：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPy的模组对象由名为 `np` 的变量代表</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
 <span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
 </pre></div>
@@ -445,7 +446,7 @@ module
 </pre></div>
 </div>
 <p>或，使用代名词：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">face_detection.utils</span> <span class="kn">as</span> <span class="nn">utils</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">face_detection.utils</span> <span class="k">as</span> <span class="nn">utils</span>
 </pre></div>
 </div>
 <p>假设我们也想要在 <code class="docutils literal notranslate"><span class="pre">face_detection.camera.calibration</span></code> 中导入 <code class="docutils literal notranslate"><span class="pre">utils</span></code> 模组；绝对导入的语句和之前一样，因为 <code class="docutils literal notranslate"><span class="pre">utils</span></code> 相对顶层包的相对位置不会根据我们导入它的路径改变。</p>

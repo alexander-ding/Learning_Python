@@ -14,7 +14,7 @@ jupyter:
 
 <!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
-   :description: Topic: Working with aths and files, Difficulty: Medium, Category: Section
+   :description: Topic: Working with paths and files, Difficulty: Medium, Category: Section
    :keywords: open file, read file, pathlib, join directory, context manager, close file, rb, binary file, utf-8, encoding, pickle, numpy, load, archive, npy, npz, pkl, glob, read lines, write, save
 <!-- #endraw -->
 
@@ -85,7 +85,8 @@ WindowsPath('C:/Users/TerranceWasabi/Desktop/PLYMI/Module5_OddsAndEnds/data/data
 >>> path_to_data1.name
 'data1.txt'
 
-# 在当前文件夹中创建一个新文件夹
+# 在“root”路径中创建一个名为“new_folder”的文件夹
+>>> new_dir = root / "new_folder"
 >>> root.mkdir("new_folder")
 
 # 使用“glob”来返回所有符合某规律的文件的生成器
@@ -277,6 +278,8 @@ data/*.txt
 
 `pathlib` 模组提供了glob文件的方便功能。当我们创建了一个 `Path` 后，我们可以直接对其调用 `glob()` 并提供一个glob字符串。这将返回一个生成所有符合规律的文件的[生成器](http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Generators_and_Comprehensions.html#Introducing-Generators)。
 
+<!-- #region -->
+
 ``` python
 # glob当前路径下所有开头为“test”和结尾为“.txt“的文本文件
 >>> root_dir = Path('.')
@@ -295,6 +298,8 @@ data/*.txt
 ...         # 进行一些操作
 ...         pass
 ```
+
+<!-- #endregion -->
 
 请查询[官方说明文档](https://docs.python.org/3/library/pathlib.html#pathlib.Path.glob)来阅读更多关于glob的细节。
 

@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -197,13 +198,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -228,12 +229,12 @@
     <span class="sd">&quot;&quot;&quot; 如果 `target` 在 `seq` 中则返回真&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">True</span>
-    <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 </div>
 <p>以上函数和Python在“幕后”使用的C语言成员检测算法（当然，这是假设你在使用CPython直译器，但极大可能是这个情况）是一样的。因为内置的成员检测函数是在“更底层”实现的并因此不需要被直译，所以它比我们在Python中定义的函数更快：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_in</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 在我的机子上花了 980 纳秒</span>
 <span class="go">False</span>
@@ -244,12 +245,12 @@
 </div>
 <p>在此，Python的内置成员检测函数比我们的版本快了三倍。同时，我们应该了解各个数据结构的优势。比如说，集（set）的成员检测比列表还要快：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在列表中检测是否为成员</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>  <span class="c1"># 在我的机子上花了 295 纳秒</span>
-<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>  <span class="c1"># 在我的机子上花了 295 纳秒</span>
+<span class="kc">False</span>
 
 <span class="c1"># 在集中检测是否为成员</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>  <span class="c1"># 在我的机子上花了 65 纳秒</span>
-<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>  <span class="c1"># 在我的机子上花了 65 纳秒</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>通过使用集而不是列表，我们得到了4.5倍的速度优化。这是因为集允许Python使用一个完全不同的成员检测算法。在Python程序员的角度上，我们仅仅将方括号替换成了花括号！我希望以上范例为你提供了足够学习Python数据结构和它们“幕后”使用的算法的理由。</p>
@@ -269,8 +270,8 @@
         <span class="c1"># 我们为seq中的项目重新迭代整个seq！</span>
         <span class="k">for</span> <span class="n">item2</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">True</span>
-    <span class="k">return</span> <span class="bp">False</span>
+                <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 </div>
 <p>我们为 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 中的每个项目重新迭代 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 一次，因此在最坏情况下我们需要迭代 <span class="math notranslate nohighlight">\(n\)</span> 个成员 <span class="math notranslate nohighlight">\(n\)</span> 次——总共在算法中走了 <span class="math notranslate nohighlight">\(n^{2}\)</span> “步”。因此，我们说 <code class="docutils literal notranslate"><span class="pre">is_in_slow</span></code> 是一个 <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2})\)</span> 的算法：当我们将 <code class="docutils literal notranslate"><span class="pre">seq</span></code> 的大小翻倍时，我们的 <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> 算法会花两倍多的时间（线性增加），而我们的 <span class="math notranslate nohighlight">\(\mathcal{O}(n^{2})\)</span> 算法会花四倍多的时间（平方增加）。</p>

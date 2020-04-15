@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -200,13 +201,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -233,7 +234,7 @@
 <h2>使用数组进行基本数学操作<a class="headerlink" href="#使用数组进行基本数学操作" title="永久链接至标题">¶</a></h2>
 <p>你可以在数学表达式中使用N维数组来对数组的成员来进行数学运算。一般来讲，NumPy实现的数学函数会在作用于数组时对数组的<em>每个</em>成员进行该数学操作。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示对NumPy数组进行常用的数学操作</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
 <span class="o">...</span>               <span class="p">[</span> <span class="mf">3.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">],</span>
@@ -304,7 +305,7 @@
 <p>在像Python，Matlab，和R这类的高级语言里，<strong>矢量化</strong>一词指使用高效，提前编译的低级语言（如C）代码来对数据序列进行数学操作。这代替了在同语言中写的显性迭代代码（如Python中的for循环）。</p>
 </div>
 <p>比如说，假设我们想要求数组中存储的整数0-9，999的和，那调用NumPy的 <code class="docutils literal notranslate"><span class="pre">sum</span></code> 函数将使用高效的C代码来迭代数组中的整数并求和。因此，<code class="docutils literal notranslate"><span class="pre">np.sum</span></code> 是一个“矢量化”的函数。让我们计算一下求这个和花了多少时间：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="go"># 使用NumPy的矢量化 &#39;sum&#39; 函数求和</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>  <span class="c1"># 在我的机器上花了11微秒</span>
@@ -322,7 +323,7 @@
 </pre></div>
 </div>
 <p>根据我机器上花的时间，求和<strong>在使用NumPy矢量化的函数时快了超过50倍</strong>！我希望这澄清了我们在计算速度重要时应避免对Python长序列数据（不管是列表还是NumPy数组）使用显性for循环一事。NumPy提供了一整套的矢量化函数。事实上，使用NumPy对数组进行计算的中心围绕着仅仅使用矢量化函数。以下运算全部都调用矢量化函数：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="go"># 对数组中每个数乘以2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -406,7 +407,7 @@
 </tbody>
 </table>
 <p>当然，这完全不是所有可用一元函数的完整列表。比如说，双曲函数和逆三角函数也有着对应的NumPy版本。这些熟悉的函数是为单个数字（也就是“标量”），而不是数字序列，定义的。那么DumPy是如何实现这些函数使得它们对数组操作时依然有条理呢？答案是NumPy将这个函数<strong>映射</strong>（map）到数组上——使用 <span class="math notranslate nohighlight">\(f(x)\)</span> 对数组中的每个成员进行操作，并将结果返回为一个新数组（也就是说输入数组并没有被重写）。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
 
 <span class="c1"># 返回 array([exp(0.), exp(1.), exp(2.)])</span>
@@ -786,14 +787,14 @@
 
 <span class="c1"># 返回布尔类的数组</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">6</span>  <span class="c1"># 等值于：`np.less(x, 6)`</span>
-<span class="n">array</span><span class="p">([[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">],</span>
-       <span class="p">[</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
-       <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
-       <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">],</span>
+       <span class="p">[</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+       <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+       <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 
 <span class="c1"># 对两个数组进行逻辑对比</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span> <span class="o">&lt;=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">array</span><span class="p">([</span> <span class="bp">True</span><span class="p">,</span>  <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>请从Python基础模组回忆，因为浮点数的精度有限，你永远不应该假设两个浮点数会完全相同。反而，你应该检查它们的值是否足够“接近”。相似的，你不应该检查两个浮点类数组是否完全相同。为了达到这个目的，函数 <code class="docutils literal notranslate"><span class="pre">allclose</span></code> 可以用来检查两个数组的对应值是否足够接近：</p>
@@ -802,7 +803,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span> <span class="o">/</span> <span class="mi">10</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 </div>

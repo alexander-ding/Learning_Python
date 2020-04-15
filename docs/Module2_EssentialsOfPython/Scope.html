@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -193,13 +194,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -230,8 +231,8 @@
     <span class="k">return</span> <span class="n">y</span>
 
 <span class="c1"># `func_var` 和 `y` 在此不存在</span>
-<span class="k">print</span><span class="p">(</span><span class="n">func_var</span><span class="p">)</span>  <span class="c1"># 导致 NameError：名字 `func_var` 未定义</span>
-<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>         <span class="c1"># 导致 NameError：名字 `y` 未定义</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">func_var</span><span class="p">)</span>  <span class="c1"># 导致 NameError：名字 `func_var` 未定义</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>         <span class="c1"># 导致 NameError：名字 `y` 未定义</span>
 </pre></div>
 </div>
 <p>Python的作用域规则其实相比其他如C++的语言相当直接。在大部分情况下，Python会给予变量文件作用域。让我们快速总结一下定义变量的不同环境以及它们相对应的作用域规则。假设以下代码代表着Python脚本“example_scope.py”的全部内容：</p>
@@ -246,14 +247,14 @@
 <span class="c1"># `func_block` 有有限作用域</span>
 <span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">in_arg1</span><span class="p">,</span> <span class="n">in_arg2</span><span class="o">=</span><span class="s2">&quot;cat&quot;</span><span class="p">):</span>
     <span class="n">func_block</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">return</span> <span class="kc">None</span>
 
 <span class="c1"># `file_var` 有文件作用域</span>
 <span class="c1"># `comp_var` 有有限作用域</span>
 <span class="n">file_var</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp_var</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">comp_var</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]]</span>
 
 <span class="c1"># `if_block` 有文件作用域</span>
-<span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
+<span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">if_block</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">if_block</span> <span class="o">=</span> <span class="mi">3</span>
@@ -264,8 +265,8 @@
     <span class="n">for_block</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="c1"># `while_block` 有文件作用域</span>
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="n">while_block</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">while_block</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">break</span>
 </pre></div>
 </div>
@@ -305,8 +306,8 @@
 <span class="c1"># `x` 在这里是 2</span>
 <span class="c1"># `y` 在这里是 3</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 打印 0</span>
-<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>      <span class="c1"># 打印 2 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 打印 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>      <span class="c1"># 打印 2 3</span>
 </pre></div>
 </div>
 <p>相似的：</p>
@@ -316,7 +317,7 @@
     <span class="n">it</span> <span class="o">=</span> <span class="s2">&quot;dog&quot;</span> <span class="c1"># 凌驾于文件作用域版本的 `it` 之上</span>
     <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">it</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>  <span class="c1"># 在列表理解中，函数作用域版本的 `it` 被覆盖了</span>
     <span class="c1"># `it` 在这里是 &quot;dog&quot;</span>
-    <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">return</span> <span class="kc">None</span>
 
 <span class="c1"># `it` 在这里是 &quot;cow&quot;</span>
 </pre></div>

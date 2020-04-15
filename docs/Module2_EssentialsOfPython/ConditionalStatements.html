@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -200,13 +201,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -296,26 +297,26 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># `x` 和 `y` 引用两个等值但不同的列表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>因此 <code class="docutils literal notranslate"><span class="pre">is</span></code> 运算符最常用来检查一个变量是否引用 <code class="docutils literal notranslate"><span class="pre">None</span></code> 对象，或两个布尔对象中的一个：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span>
 <span class="go">True</span>
 
 <span class="go"># (2 &lt; 0) 返回对象 `False`</span>
 <span class="go"># 因此这会成为：`False is False`</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span>
 <span class="go">True</span>
 </pre></div>
 </div>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> 来检查两个对象是否不是同一个对象：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -323,22 +324,22 @@
 <div class="section" id="bool-和非布尔类对象的真值">
 <h2><code class="docutils literal notranslate"><span class="pre">bool</span></code> 和非布尔类对象的真值<a class="headerlink" href="#bool-和非布尔类对象的真值" title="永久链接至标题">¶</a></h2>
 <p>请回忆两个布尔对象 <code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code> 严格来讲即属于 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 也属于 <code class="docutils literal notranslate"><span class="pre">int</span></code> 类型，并分别有着值 <code class="docutils literal notranslate"><span class="pre">1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">0</span></code> 这些知识点：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="go">True</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">1</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="go">True</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">0</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">*</span><span class="bp">True</span> <span class="o">-</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">*</span><span class="kc">True</span> <span class="o">-</span> <span class="kc">False</span>
 <span class="go">3</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">/</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="o">/</span> <span class="kc">False</span>
 <span class="go">---------------------------------------------------------------------------</span>
 <span class="go">ZeroDivisionError                         Traceback (most recent call last)</span>
 <span class="go">&lt;ipython-input-4-f8487d9d0863&gt; in &lt;module&gt;()</span>
@@ -351,13 +352,13 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `bool` 来查看非布尔类对象</span>
 <span class="c1"># 的布尔值为 `True` 或 `False`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>任何非0的Python整数对应 <code class="docutils literal notranslate"><span class="pre">True</span></code>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 非0值最后计算为 `True`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>以下的内置Python对象通过 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 对应 <code class="docutils literal notranslate"><span class="pre">False</span></code>：</p>
@@ -417,16 +418,16 @@
 
 <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1"># bool(3 &lt; 2) 返回 False，所以此区块的代码将被跳过</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;`x` has more than three items in it&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;`x` has more than three items in it&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
     <span class="c1"># bool(len(x) == 2) 返回 True，此区块的代码被执行</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;`x` has two items in it&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;`x` has two items in it&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
     <span class="c1"># 此语句根本没有被检查</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;`x` has one items in it&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;`x` has one items in it&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># 此语句根本没有被检查</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;`x` is an empty list&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;`x` is an empty list&quot;</span><span class="p">)</span>
 
 <span class="s2">&quot;`x` has two items in it&quot;</span>
 </pre></div>
@@ -483,7 +484,7 @@
 <ol class="arabic simple">
 <li><p>设 <code class="docutils literal notranslate"><span class="pre">my_list</span></code> 为一个列表。根据以下代码：</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_item</span> <span class="o">=</span> <span class="bp">None</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_item</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="k">if</span> <span class="n">my_list</span><span class="p">:</span>
     <span class="n">first_item</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -548,17 +549,17 @@
 <p>比如说，<code class="docutils literal notranslate"><span class="pre">and</span></code> 运算仅仅会在它两边的表达式都为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 时才会返回 <code class="docutils literal notranslate"><span class="pre">True</span></code>。因此，表达式 <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">&lt;anything&gt;</span></code> 一定会返回 <code class="docutils literal notranslate"><span class="pre">False</span></code>；同时，这个表达式会返回 <code class="docutils literal notranslate"><span class="pre">False</span></code> 而<em>不运算</em> <code class="docutils literal notranslate"><span class="pre">bool(&lt;anything&gt;)</span></code>。</p>
 <p>为了演示这一行为，请见下面的例子：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示短路逻辑表达式</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="ow">and</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>  <span class="c1"># 运算 `1/0` 会导致错误</span>
-<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">False</span> <span class="ow">and</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>  <span class="c1"># 运算 `1/0` 会导致错误</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>根据上文的讨论，<code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span></code> 会短路这个表达式，让它不运算 <code class="docutils literal notranslate"><span class="pre">bool(1/0)</span></code> 就返回。换转参数顺序会明显地揭示这一点。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 表达式是从左到右运算的</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span> <span class="ow">and</span> <span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span> <span class="ow">and</span> <span class="kc">False</span>
 <span class="o">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span>                         <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">3471672109</span><span class="n">ee</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="o">----&gt;</span> <span class="mi">1</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span> <span class="ow">and</span> <span class="bp">False</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span> <span class="ow">and</span> <span class="kc">False</span>
 
 <span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
 </pre></div>

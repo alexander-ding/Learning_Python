@@ -136,7 +136,7 @@ print(sum(a))
 
 int main() {
     std::vector<int> a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    std::cout << std::accumulate(a.begin(), e.end(), 0) << std::endl;
+    std::cout << std::accumulate(a.begin(), a.end(), 0) << std::endl;
 }
 ```
 

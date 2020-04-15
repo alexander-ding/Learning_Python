@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -192,16 +193,16 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
     background: none;
     border: none;
     padding: 0 0;
@@ -210,13 +211,13 @@ div.nboutput div[class*=highlight] pre {
 }
 
 /* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
+div.nboutput.container div[class*=highlight] pre {
     line-height: normal;
 }
 
 /* input/output containers */
-div.nbinput,
-div.nboutput {
+div.nbinput.container,
+div.nboutput.container {
     display: -webkit-flex;
     display: flex;
     align-items: flex-start;
@@ -224,92 +225,91 @@ div.nboutput {
     width: 100%;
 }
 @media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
+    div.nbinput.container,
+    div.nboutput.container {
         flex-direction: column;
     }
 }
 
 /* input container */
-div.nbinput {
+div.nbinput.container {
     padding-top: 5px;
 }
 
 /* last container */
-div.nblast {
+div.nblast.container {
     padding-bottom: 5px;
 }
 
 /* input prompt */
-div.nbinput div.prompt pre {
+div.nbinput.container div.prompt pre {
     color: #307FC1;
 }
 
 /* output prompt */
-div.nboutput div.prompt pre {
+div.nboutput.container div.prompt pre {
     color: #BF5B3D;
 }
 
 /* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
     min-width: 5ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
     text-align: right;
     flex: 0;
 }
 @media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
         text-align: left;
         padding: 0.4em;
     }
-    div.nboutput div.prompt.empty {
+    div.nboutput.container div.prompt.empty {
         padding: 0;
     }
 }
 
 /* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
     overflow: hidden;
 }
 
 /* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
     -webkit-flex: 1;
     flex: 1;
     overflow: auto;
 }
 @media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
         width: 100%;
     }
 }
 
 /* input area */
-div.nbinput div.input_area {
+div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
     background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
+div.nboutput.container div[class*=MathJax] {
     text-align: left !important;
 }
 
 /* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput div.math p {
+div.nboutput.container div.math p {
     text-align: left;
 }
 
 /* standard error */
-div.nboutput div.output_area.stderr {
+div.nboutput.container div.output_area.stderr {
     background: #fdd;
 }
 
@@ -353,6 +353,27 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
 /* Some additional styling taken form the Jupyter notebook CSS */
 div.rendered_html table {
   border: none;
@@ -390,13 +411,13 @@ div.rendered_html tbody tr:hover {
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -413,7 +434,7 @@ div.rendered_html tbody tr:hover {
 <h1>Matplotlib<a class="headerlink" href="#Matplotlib" title="永久链接至标题">¶</a></h1>
 <p>在本节，我们将介绍Matplotlib，最长命的用来绘制数据和图片的Python模组。它旨在和NumPy数组一起使用，并内部使用2维和3维数组来储存图片（分别是黑白和RGB图片）。本节将介绍绘制的基础以及Matplotlib的关键功能。</p>
 <p>市面上有很多使用Matplotlib的教程，“作弊表”，和其它资源。我们在这里的目的在于提供一个比仅仅向你展示如果绘制一个“像这样的图标”该如何做更加深入一点的讨论。具体来讲，我们的目的是介绍Matplotib的<a class="reference external" href="https://matplotlib.org/api/pyplot_summary.html#the-object-oriented-api">面向对象API</a>，而不是它的<a class="reference external" href="https://matplotlib.org/api/pyplot_summary.html#the-pyplot-api">函数API</a>。让我们快速地区分这两个API：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="c1"># 准备50个x坐标和50个y坐标</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -433,7 +454,7 @@ div.rendered_html tbody tr:hover {
 <p>如果对这个绘图模组的其它信息感兴趣，请咨询<a class="reference external" href="https://matplotlib.org/users/index.html">Matplotlib用户指南</a>以及它的<a class="reference external" href="https://matplotlib.org/tutorials/index.html">教程</a>。</p>
 <p>Matplotlib在Anaconda的Python模组分布中自动被包含。Matplotlib的 <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> 子模组包含了所有核心的绘图功能，因此我们将永远需要导入 <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>。在从Matplotlib中导入 <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> 子模组时使用简写“plt”是标准操作：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入matplotlib的pyplot子模组</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 <p>在网上有着很多的演示Matplotlib可视化数据的大量功能的教程和例子。在这里，我们仅仅会取有效为数据科学运用理解Matplotlib所需要的核心内容。</p>
@@ -451,7 +472,7 @@ div.rendered_html tbody tr:hover {
 <h2>使用 <code class="docutils literal notranslate"><span class="pre">pyplot.subplots</span></code> 来创建图表和轴线<a class="headerlink" href="#使用-pyplot.subplots-来创建图表和轴线" title="永久链接至标题">¶</a></h2>
 <p>在Matplotlib中，你有很多方法可以创建空的图表和轴线对象。在这里，我们将介绍函数 <code class="docutils literal notranslate"><span class="pre">pyplot.subplots</span></code>，其创建了含有可以绘制数据的轴线的图表。我们将学习如何使用关键词参数 <code class="docutils literal notranslate"><span class="pre">figsize</span></code> 来控制图表的大小，以及如何使用关键词参数 <code class="docutils literal notranslate"><span class="pre">ncols</span></code> 和 <code class="docutils literal notranslate"><span class="pre">nrows</span></code> 来设置在图表中轴线的分布网格。</p>
 <p>在Matploblib中，<code class="docutils literal notranslate"><span class="pre">Figure</span></code> 对象用来存储一组或多组的 <code class="docutils literal notranslate"><span class="pre">Axes</span></code> 对象。数组在某一组轴线上绘制。<code class="docutils literal notranslate"><span class="pre">subplots</span></code> 可以用来在某个用户提供的轴线分布上创建一个图表。<code class="docutils literal notranslate"><span class="pre">subplots</span></code> 将默认创建只有一组轴线的图表；调用它将返回包含了图表对象和轴线对象的元组：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
 
 <span class="c1"># 创建一个包含一组轴线的图表。`plt.subplots()` 返回</span>
@@ -495,7 +516,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div></div>
+<div class="output_javascript"></div>
 <script type="text/javascript">
 var element = document.currentScript.previousSibling.previousSibling;
 /* Put everything inside the global mpl namespace */
@@ -1293,7 +1314,7 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div></div>
+<div class="output_javascript"></div>
 <script type="text/javascript">
 var element = document.currentScript.previousSibling.previousSibling;
 /* Put everything inside the global mpl namespace */
@@ -2116,7 +2137,7 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div></div>
+<div class="output_javascript"></div>
 <script type="text/javascript">
 var element = document.currentScript.previousSibling.previousSibling;
 /* Put everything inside the global mpl namespace */
@@ -2960,7 +2981,7 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div></div>
+<div class="output_javascript"></div>
 <script type="text/javascript">
 var element = document.currentScript.previousSibling.previousSibling;
 /* Put everything inside the global mpl namespace */
@@ -3839,7 +3860,7 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div></div>
+<div class="output_javascript"></div>
 <script type="text/javascript">
 var element = document.currentScript.previousSibling.previousSibling;
 /* Put everything inside the global mpl namespace */
@@ -4648,7 +4669,7 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div></div>
+<div class="output_javascript"></div>
 <script type="text/javascript">
 var element = document.currentScript.previousSibling.previousSibling;
 /* Put everything inside the global mpl namespace */
@@ -5472,7 +5493,7 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div></div>
+<div class="output_javascript"></div>
 <script type="text/javascript">
 var element = document.currentScript.previousSibling.previousSibling;
 /* Put everything inside the global mpl namespace */
@@ -6274,7 +6295,7 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div></div>
+<div class="output_javascript"></div>
 <script type="text/javascript">
 var element = document.currentScript.previousSibling.previousSibling;
 /* Put everything inside the global mpl namespace */
@@ -7080,8 +7101,8 @@ if (IPython.notebook.kernel != null) {
 <h2>阅读理解答案：<a class="headerlink" href="#阅读理解答案：" title="永久链接至标题">¶</a></h2>
 <p><strong>创建基础的图：解</strong></p>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">pyplot.subplots</span></code> 来创建一个有着两张分别在左右的子图（也就是说它们在两列中）的图表。在左边的子图中，使用100个在域 <span class="math notranslate nohighlight">\([0, 1]\)</span> 之间的点来绘制 <span class="math notranslate nohighlight">\(f(x) = e^{-x}\)</span>。在右边的子图中，使用一条绿色的线来在任何你想要的域上绘制 <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>

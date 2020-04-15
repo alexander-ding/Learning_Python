@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -188,13 +189,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -223,13 +224,13 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 对 `a` 调用append方法只会影响该列表实例。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -272,7 +273,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">Dummy</span><span class="p">()</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">Dummy</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>请回忆，<code class="docutils literal notranslate"><span class="pre">is</span></code> 操作符检查两个变量是否引用了电脑内存中一样的对象。同时，请回忆，内置的 <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> 函数会检查一个对象是否是某一类/类型的实例。这些函数将帮助我们理解类对象，类实例，和对象引用之间的关系。</p>
@@ -287,10 +288,10 @@
 
 <span class="c1"># d1 不是 Dummy；它是 Dummy 的一个实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="ow">is</span> <span class="n">Dummy</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">Dummy</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>请注意，<code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 和 <code class="docutils literal notranslate"><span class="pre">d1</span></code> 的关系就像 <code class="docutils literal notranslate"><span class="pre">list</span></code> 和 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">4,</span> <span class="pre">&quot;a&quot;]</span></code> 的关系一样。</p>
@@ -302,10 +303,10 @@
 <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x2ae8f666f60</span><span class="o">&gt;</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="ow">is</span> <span class="n">d1</span>  <span class="c1"># `d2` 和 `d1` 是 `Dummy` 的不同实例</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="n">Dummy</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>Python的<a class="reference external" href="http://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Variables_and_Assignment.html">变量引用对象的规则</a>在此依然成立：向某个变量赋值一个对象，不管是类对象还是其实例，都不会创建该对象的复制品。这个变量仅仅会引用该对象并作为它的一个代名词。</p>
@@ -313,7 +314,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">Dummy</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="ow">is</span> <span class="n">Dummy</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 使用 `A` 来创建 `Dummy` 的实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dummy_instance</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
@@ -321,13 +322,13 @@
 <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Dummy</span> <span class="n">at</span> <span class="mh">0x2ae8f65fcf8</span><span class="o">&gt;</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dummy_instance</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>  <span class="c1"># 等值于：`isinstance(dummy_instance, Dummy)`</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># `var` 引用 Dummy 的实例 `dummy_instance`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">var</span> <span class="o">=</span> <span class="n">dummy_instance</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">var</span> <span class="ow">is</span> <span class="n">dummy_instance</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 向 `var.x` 设置一个新值等值于向 `dummy_instance.x`</span>
 <span class="c1"># 设置一个新值</span>
@@ -410,8 +411,8 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">list_of_people</span> <span class="o">=</span> <span class="p">[</span><span class="n">Person</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;Fermi&quot;</span><span class="p">,</span> <span class="s2">&quot;Noether&quot;</span><span class="p">,</span> <span class="s2">&quot;Euler&quot;</span><span class="p">)]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">list_of_people</span><span class="p">:</span>
-<span class="o">...</span>    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="o">...</span>    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="o">...</span>    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 <span class="n">Fermi</span>
 <span class="mi">1</span>
 <span class="n">Noether</span>
@@ -426,8 +427,8 @@
 
 <span class="c1"># 这会影响 `Person` 的所有实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">list_of_people</span><span class="p">:</span>
-<span class="o">...</span>    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="o">...</span>    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="o">...</span>    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 <span class="n">Fermi</span>
 <span class="mi">22</span>
 <span class="n">Noether</span>

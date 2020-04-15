@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -186,16 +187,16 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
     background: none;
     border: none;
     padding: 0 0;
@@ -204,13 +205,13 @@ div.nboutput div[class*=highlight] pre {
 }
 
 /* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
+div.nboutput.container div[class*=highlight] pre {
     line-height: normal;
 }
 
 /* input/output containers */
-div.nbinput,
-div.nboutput {
+div.nbinput.container,
+div.nboutput.container {
     display: -webkit-flex;
     display: flex;
     align-items: flex-start;
@@ -218,92 +219,91 @@ div.nboutput {
     width: 100%;
 }
 @media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
+    div.nbinput.container,
+    div.nboutput.container {
         flex-direction: column;
     }
 }
 
 /* input container */
-div.nbinput {
+div.nbinput.container {
     padding-top: 5px;
 }
 
 /* last container */
-div.nblast {
+div.nblast.container {
     padding-bottom: 5px;
 }
 
 /* input prompt */
-div.nbinput div.prompt pre {
+div.nbinput.container div.prompt pre {
     color: #307FC1;
 }
 
 /* output prompt */
-div.nboutput div.prompt pre {
+div.nboutput.container div.prompt pre {
     color: #BF5B3D;
 }
 
 /* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
     min-width: 5ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
     text-align: right;
     flex: 0;
 }
 @media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
         text-align: left;
         padding: 0.4em;
     }
-    div.nboutput div.prompt.empty {
+    div.nboutput.container div.prompt.empty {
         padding: 0;
     }
 }
 
 /* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
     overflow: hidden;
 }
 
 /* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
     -webkit-flex: 1;
     flex: 1;
     overflow: auto;
 }
 @media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
         width: 100%;
     }
 }
 
 /* input area */
-div.nbinput div.input_area {
+div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
     background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
+div.nboutput.container div[class*=MathJax] {
     text-align: left !important;
 }
 
 /* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput div.math p {
+div.nboutput.container div.math p {
     text-align: left;
 }
 
 /* standard error */
-div.nboutput div.output_area.stderr {
+div.nboutput.container div.output_area.stderr {
     background: #fdd;
 }
 
@@ -347,6 +347,27 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
 /* Some additional styling taken form the Jupyter notebook CSS */
 div.rendered_html table {
   border: none;
@@ -384,13 +405,13 @@ div.rendered_html tbody tr:hover {
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -426,10 +447,10 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>5
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5
+</pre></div></div>
 </div>
 <p>这个命令行进程是持久性的，也就是说我们定义的变量可以在这个进程之后的代码重新调用。让我们定义变量 <code class="docutils literal notranslate"><span class="pre">x</span></code> 并向其赋值数值整数 <code class="docutils literal notranslate"><span class="pre">10</span></code>（请在命令行中跟随本教程）</p>
 <div class="nbinput nblast docutils container">
@@ -455,10 +476,10 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>10
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10
+</pre></div></div>
 </div>
 <p>现在，让我们在二次方程 <span class="math notranslate nohighlight">\(x^{2} + 2x + 3\)</span> 中调用 <code class="docutils literal notranslate"><span class="pre">x</span></code>，并计算结果。</p>
 <div class="nbinput docutils container">
@@ -474,10 +495,10 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>123
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+123
+</pre></div></div>
 </div>
 <p>Python的“标准库”——也就是和Python核心语言一起包装的各种工具和函数——包含了很多常见的数学函数。为了组织和结构，Python将这些数学函数存在一个叫做“math”的模组里。我们必须要在代码里导入（import）这个模组来使用这些函数。</p>
 <div class="nbinput nblast docutils container">
@@ -506,10 +527,10 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>10.0
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10.0
+</pre></div></div>
 </div>
 <p>你可能会好奇为什么计算的结果显示的是 <code class="docutils literal notranslate"><span class="pre">10.0</span></code> 而非 <code class="docutils literal notranslate"><span class="pre">10</span></code>；在模组2中我们会了解这两个输出是两种不一样的数据<em>类型</em>。前者被称为浮点数，因为小数点是一个漂浮的点，而后者则是一个整数。函数 <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code> 的定义使得它永远都会返回浮点数。</p>
 <p>当我们想要经常使用math模组里的某个函数时，我们可能希望不需要每次都要打出math模组的前缀 <code class="docutils literal notranslate"><span class="pre">math.</span></code>。我们可以通过从math模组导入单独的函数来达成这个目的。我们将从math模组导入阶乘（factorial）函数。</p>
@@ -518,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">factorial</span>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
 </pre></div>
 </div>
 </div>
@@ -536,10 +557,10 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>120
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+120
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="试试字符串">
@@ -559,10 +580,10 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;the cat in the hat&#39;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;the cat in the hat&#39;
+</pre></div></div>
 </div>
 <p>单引号也可以：</p>
 <div class="nbinput docutils container">
@@ -578,10 +599,10 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;the dog in the sash&#39;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;the dog in the sash&#39;
+</pre></div></div>
 </div>
 <p>译者注：记得切换到英文输入法的引号 ’‘和 。中文的 ‘’ 和 是不会被识别的。</p>
 <p>如果你使用单引号来创建一个字符串，那么那个字符串就可以含有双引号（反之亦然）：</p>
@@ -598,10 +619,10 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;He picked up the phone, &quot;Hello? What do you want?&quot; Bob was a rather impolite dude.&#39;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;He picked up the phone, &#34;Hello? What do you want?&#34; Bob was a rather impolite dude.&#39;
+</pre></div></div>
 </div>
 <p>当然，我们也有专门的特殊字符来帮助我们改变一个字符串的被打印出时的格式。比如说，如果 <code class="docutils literal notranslate"><span class="pre">\n</span></code> 出现在字符串中，它会被当为一个代表回车的字符。这仅仅会在你使用自带的 <code class="docutils literal notranslate"><span class="pre">print</span></code> 函数（一个指示计算机将文本显示在用户电脑屏幕上的函数）来打印这个字符串时才会显示，</p>
 <p>让我们创建一个会被 <code class="docutils literal notranslate"><span class="pre">print</span></code> 显示为三行文字的字符串。</p>
@@ -648,10 +669,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>53
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+53
+</pre></div></div>
 </div>
 <p>我们可以通过切片（slice）这个字符串来查看它的前四个字符，最后六个字符，或者中间的字符。</p>
 <div class="nbinput docutils container">
@@ -667,10 +688,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;Who &#39;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Who &#39;
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -685,10 +706,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;along?&#39;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;along?&#39;
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
@@ -703,10 +724,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;ould have thought&#39;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;ould have thought&#39;
+</pre></div></div>
 </div>
 <p>我们也可以查看是否我们的这个字符串是否包含其它的某个的字符串。字符串 <code class="docutils literal notranslate"><span class="pre">&quot;robot&quot;</span></code> 是否在 <code class="docutils literal notranslate"><span class="pre">sentence</span></code> 中呢（is <code class="docutils literal notranslate"><span class="pre">&quot;robot&quot;</span></code> <strong>in</strong> <code class="docutils literal notranslate"><span class="pre">sentence</span></code>）？</p>
 <div class="nbinput docutils container">
@@ -722,10 +743,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>True
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
 </div>
 <p>为了快速查看所有字符串可以调用的自带函数，我们可以再次使用IPython的自动完成功能。输入 <code class="docutils literal notranslate"><span class="pre">sentence.</span></code>（不要漏掉最后的点）并敲击 <code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code>。我们会看到一列表的函数：</p>
 <p><img alt="Built-in functions for a string" src="../_images/ipython_string.PNG" /></p>
@@ -743,10 +764,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>3
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3
+</pre></div></div>
 </div>
 <p>让我们看看replace函数是做什么用的。IPython提供一个很方便的看看函数说明文档的功能，只需在函数名后输入两个问号。如下：</p>
 <p><img alt="Looking up documentation for a function" src="../_images/ipython_doc1.PNG" /></p>
@@ -764,10 +785,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&#39;Who would have thought that we were computers all along?&#39;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Who would have thought that we were computers all along?&#39;
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="看看列表">
@@ -786,10 +807,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[-1, 0.3333333333333333, 20, 6]
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[-1, 0.3333333333333333, 20, 6]
+</pre></div></div>
 </div>
 <p>列表可以存储任何类型的Python对象；它可以混合存储数字，字符串，其它列表，和任何类型的对象。</p>
 <div class="nbinput docutils container">
@@ -805,10 +826,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[1, 2, &#39;a&#39;, 0.5, &#39;apple and orange&#39;]
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 2, &#39;a&#39;, 0.5, &#39;apple and orange&#39;]
+</pre></div></div>
 </div>
 <p>你可以将两个列表粘连（concatenate）到一起。</p>
 <div class="nbinput docutils container">
@@ -824,10 +845,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[1, 2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+</pre></div></div>
 </div>
 <p>像字符串一样，列表本质上也是一个序列，所以我们可以通过项目在列表中的位置来访问它。这个位置叫做项目的索引（index）；序列第一个成员的索引永远都是0.</p>
 <div class="nbinput nblast docutils container">
@@ -852,10 +873,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>10
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
@@ -870,10 +891,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>20
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+20
+</pre></div></div>
 </div>
 <p>你可以使用负整数来相对于列表结尾（右边）来索引。</p>
 <div class="nbinput docutils container">
@@ -889,10 +910,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>60
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+60
+</pre></div></div>
 </div>
 <p>你也可以通过对列表中的项目赋值来修改列表的内容。</p>
 <div class="nbinput docutils container">
@@ -908,10 +929,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>False
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -935,10 +956,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[10, -5, 30, 40, 50, 60]
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[10, -5, 30, 40, 50, 60]
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
@@ -953,10 +974,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>True
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
 </div>
 <p>我们也同样可以通过切片（slice）这个列表来存取其中的多个项目，就像之前的字符串一样。</p>
 <div class="nbinput docutils container">
@@ -972,10 +993,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[10, -5, 30]
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[10, -5, 30]
+</pre></div></div>
 </div>
 <p>这个切片出的结果可以用来更新列表的前三项内容。</p>
 <div class="nbinput nblast docutils container">
@@ -1000,10 +1021,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 40, 50, 60]
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 40, 50, 60]
+</pre></div></div>
 </div>
 <p>为这个演示收尾，让我们在这个列表的结尾附加（append）一个新成员。</p>
 <div class="nbinput nblast docutils container">
@@ -1028,10 +1049,10 @@ What&#39;s my deal?
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 40, 50, 60, &#39;moo&#39;]
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 40, 50, 60, &#39;moo&#39;]
+</pre></div></div>
 </div>
 </div>
 </div>

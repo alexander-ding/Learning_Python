@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -222,13 +223,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -266,7 +267,7 @@
 
 <span class="c1"># 检测 `x` 是否是整数类（integer）</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>在之后的模组中，你将学习“面对对象”的编程模式。这将允许你创建你自己的定制对象种类！</p>
@@ -346,7 +347,7 @@
 
 <span class="c1"># 检测不等式是否成立</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>请注意：在很多其他的编程语言中（包括Python 2），两个整数相除永远都会返回一个整数——就算数学上的结果应该是个分数。在Python 3中，<em>两个整数相除永远都会返回一个浮点数</em>（一个包含小数点的数字）：</p>
@@ -451,11 +452,11 @@
 
 <span class="c1"># 整数 10 并不是浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 
 <span class="c1"># 但加上一个小数点会让其成为浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mf">10.</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 将字符串转化成浮点数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;10.456&quot;</span><span class="p">)</span>
@@ -507,7 +508,7 @@
 <p>就算有了以上对浮点精度的讨论做铺垫，你也很可能会惊讶于以下浮点运算的结果：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这令人意外的结果源自浮点数的有限精度</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">==</span> <span class="mf">0.</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 
 <span class="c1"># 浮点数的有限精度的效果</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span>
@@ -523,7 +524,7 @@
 <span class="c1"># 检查</span>
 <span class="c1"># | (0.1 + 0.1 + 0.1 - 0.3) - 0 | &lt; 1x10^{-9}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">((</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">),</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>如果你不记住这一课，你未来绝对会导致一些严重，难查的bug。在Python（以及任何其它编程语言）中做和数字有关的工作时，你一定要理解浮点数的有限精度是一个错误源，就像测量工具的不精确一样。因此在错误分析的时候要考虑到它（如果你需要做错误分析的话）。</p>
@@ -536,20 +537,20 @@
 <p>奇奇怪怪的电气工程师用符号 <span class="math notranslate nohighlight">\(j\)</span> 来代替 <span class="math notranslate nohighlight">\(i\)</span>，所以Python会将复数 <span class="math notranslate nohighlight">\(2 + 3i\)</span> 打印成 <code class="docutils literal notranslate"><span class="pre">2+3j</span></code>（实际原因是 <span class="math notranslate nohighlight">\(i\)</span> 一般用来表达电流；我们还是要爱护电气工程师的）。</p>
 <p>除了 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">bj</span></code> 格式之外，内置的 <code class="docutils literal notranslate"><span class="pre">complex</span></code> 类可以用来创建复数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建复数</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3j</span>
-<span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3j</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span>
+<span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3j</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">0j</span><span class="p">)</span>
+<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">)</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3j</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">)</span>
 <span class="nb">complex</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">4j</span><span class="p">,</span> <span class="nb">complex</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="n">j</span><span class="p">,</span> <span class="nb">complex</span><span class="p">)</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>请注意，<code class="docutils literal notranslate"><span class="pre">j</span></code> 自身并不是代表 <span class="math notranslate nohighlight">\(i\)</span> 的特殊字符。只有在一个数字常量（numerical literal）（不是变量的数字）后的 <code class="docutils literal notranslate"><span class="pre">j</span></code> 才会被Python直译器理解为复数。</p>
@@ -624,16 +625,16 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <h3>提升数字的可读性<a class="headerlink" href="#提升数字的可读性" title="永久链接至标题">¶</a></h3>
 <p>Python 3.6版本提供了在数字位数之间插入下划线来视觉上划分它们的功能。这个符号可以用来提升多位数的可读性。比如说，利用 <code class="docutils literal notranslate"><span class="pre">_</span></code> 来区分每三位的数字，<code class="docutils literal notranslate"><span class="pre">662607004</span></code> 可以被重写成为 <code class="docutils literal notranslate"><span class="pre">662_607_004</span></code>。下划线不能出现在数字首位，尾位，或另一个下划线旁边，但除此以外这个符号可以出现在数字常量中间的任何位置。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 利用 `_` 来视觉上划分数字</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="n">_000_000</span>  <span class="c1"># 这很实用！</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1_000_000</span>  <span class="c1"># 这很实用！</span>
 <span class="mi">1000000</span>
 
 <span class="c1"># 虽然看起来挺恶心的，但这是合法的Python代码</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="n">_3_4</span><span class="o">.</span><span class="mi">5</span><span class="n">_6_7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">2_3_4.5_6_7</span>
 <span class="mf">234.567</span>
 
 <span class="c1"># 你可以在任何类型的数字中插入下划线</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="n">_000j</span>
-<span class="mi">10000j</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10_000</span><span class="n">j</span>
+<span class="mi">10000</span><span class="n">j</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -646,12 +647,12 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <h2>布尔类<a class="headerlink" href="#布尔类" title="永久链接至标题">¶</a></h2>
 <p>Python有两种布尔类（boolean）的对象：<code class="docutils literal notranslate"><span class="pre">True</span></code>（真）和 <code class="docutils literal notranslate"><span class="pre">False</span></code>（否）；它们属于内置的 <code class="docutils literal notranslate"><span class="pre">bool</span></code> 类型。我们在之前见到 <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> 函数根据对象是否是某类的实例（instance）而返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> 或 <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 两种布尔类的对象：`True` 和 `False`</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">bool</span>
 
 <span class="c1"># `False` 是一个布尔类的对象</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>在Python中，<code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code> 必须要首字母大写。请不要将它们和字符串搞混；注意布尔值并两边没有引号。</p>
@@ -678,29 +679,29 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 </tbody>
 </table>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示布尔逻辑运算符</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
-<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+<span class="kc">True</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="ow">and</span> <span class="bp">False</span>
-<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+<span class="kc">False</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="bp">False</span>
-<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="kc">False</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>译者注：原文因为 <code class="docutils literal notranslate"><span class="pre">not</span></code>（逻辑否）在英文中很好理解没有多讨论。读者只需知道：<code class="docutils literal notranslate"><span class="pre">not</span></code> 返回输入的布尔值的反值。</p>
 <p>你也可以使用 <code class="docutils literal notranslate"><span class="pre">and</span></code> 和 <code class="docutils literal notranslate"><span class="pre">or</span></code> 对应的运算符号：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示逻辑运算符</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="o">|</span> <span class="bp">True</span>  <span class="c1"># 和 `False or True` 等值</span>
-<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">False</span> <span class="o">|</span> <span class="kc">True</span>  <span class="c1"># 和 `False or True` 等值</span>
+<span class="kc">True</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="bp">False</span> <span class="o">&amp;</span> <span class="bp">True</span>  <span class="c1"># 和 `False and True` 等值</span>
-<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">False</span> <span class="o">&amp;</span> <span class="kc">True</span>  <span class="c1"># 和 `False and True` 等值</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>一般来讲，使用运算名称，而不是符号，是更加“Python风格“的做法（也就是说这个方法在Python编程者之间更时兴）。</p>
 <p>你可以在同行使用多个逻辑运算符，并用括号来细述运算顺序：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="kc">True</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -720,24 +721,24 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <div class="section" id="布尔值对象其实就是整数">
 <h3>布尔值对象其实就是整数<a class="headerlink" href="#布尔值对象其实就是整数" title="永久链接至标题">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code> 这两个布尔值对象正式而言也是 <code class="docutils literal notranslate"><span class="pre">int</span></code> 类型的成员，其分别对应 <code class="docutils literal notranslate"><span class="pre">1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">0</span></code>：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="go">True</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">1</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
 <span class="go">True</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">0</span>
 </pre></div>
 </div>
 <p>因此，在数学运算中它们和 <code class="docutils literal notranslate"><span class="pre">1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">0</span></code> 的作用一样：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">*</span><span class="bp">True</span> <span class="o">-</span> <span class="bp">False</span>  <span class="c1"># 和 3*1 + 0 等值</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">*</span><span class="kc">True</span> <span class="o">-</span> <span class="kc">False</span>  <span class="c1"># 和 3*1 + 0 等值</span>
 <span class="go">3</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">/</span> <span class="bp">False</span>  <span class="c1"># 和 1 / 0 等值</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="o">/</span> <span class="kc">False</span>  <span class="c1"># 和 1 / 0 等值</span>
 <span class="go">---------------------------------------------------------------------------</span>
 <span class="go">ZeroDivisionError                         Traceback (most recent call last)</span>
 <span class="go">&lt;ipython-input-4-f8487d9d0863&gt; in &lt;module&gt;()</span>
@@ -762,7 +763,7 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <h2>None类型<a class="headerlink" href="#None类型" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code>（None类型）仅仅只有一个对象：<code class="docutils literal notranslate"><span class="pre">None</span></code>。<code class="docutils literal notranslate"><span class="pre">None</span></code> 用来表达“无”/“空”，也就是什么都没有的意思。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `None` 是*唯一*属于NoneType的对象</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">NoneType</span>
 </pre></div>
 </div>
@@ -771,16 +772,16 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <span class="c1"># 检查对象是否是NoneType类的实例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">22</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
-<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="kc">False</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
-<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="kc">True</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="ow">is</span> <span class="bp">None</span>
-<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>译者注：<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code> 和 <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(x</span> <span class="pre">is</span> <span class="pre">None)</span></code> 等值，但前者因更符合英文语法而也被支持。</p>
@@ -790,15 +791,15 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <span class="c1"># 在本代码中，我们想要找到列表中第一个大于10的物件</span>
 <span class="c1"># 如果该物件不存在，我们将如实告诉用户</span>
 
-<span class="n">large_num</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">large_num</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
         <span class="n">large_num</span> <span class="o">=</span> <span class="n">number</span>
         <span class="k">break</span>
 
-<span class="k">if</span> <span class="n">large_num</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;The list did not contain any number larger than 10&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">large_num</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The list did not contain any number larger than 10&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -825,13 +826,13 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <span class="nb">str</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;83&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 利用 `str` 类型来将非字符串对象转化成字符串</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mf">10.34</span><span class="p">)</span>
 <span class="s1">&#39;10.34&#39;</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="s1">&#39;True&#39;</span>
 </pre></div>
 </div>
@@ -851,7 +852,7 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <p>我们只会学习一些字符串的基础。如果你想要一个更全面的非正式字符串教程，请查阅<a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">官方Python教程</a>。</p>
 <p>在字符串中，<code class="docutils literal notranslate"><span class="pre">\n</span></code> 被视为一个字符。它代表着字符串的新行（new-line）。在打印时它也会如此显示。相似的 <code class="docutils literal notranslate"><span class="pre">\t</span></code> 会显示为一个tab字符。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `\n` 来创建新行</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;hi...</span><span class="se">\n</span><span class="s2">...bye&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi...</span><span class="se">\n</span><span class="s2">...bye&quot;</span><span class="p">)</span>
 <span class="n">hi</span><span class="o">...</span>
 <span class="o">...</span><span class="n">bye</span>
 </pre></div>
@@ -881,19 +882,19 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 
 <span class="c1"># 该字符串是否以“.py”结尾?</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;script.py&quot;</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.py&quot;</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 该字符串是否以“sc”打头?</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;script.py&quot;</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;sc&quot;</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 在占位符 {} 中将对象转化为字符串并插入</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;x: {}, y: {}, z: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;x: </span><span class="si">{}</span><span class="s2">, y: </span><span class="si">{}</span><span class="s2">, z: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="s1">&#39;x: 3.2, y: 8.4, z: -1.0&#39;</span>
 
 <span class="c1"># 该字符串的字符是否时数字位数？</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;7&quot;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 </div>
@@ -903,11 +904,11 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <p>如果你想要完整（但仍然易懂）的Python字符串格式教程，请查阅<a class="reference external" href="https://pyformat.info">pyformat.info</a>。你也可以查阅<a class="reference external" href="https://docs.python.org/3/library/string.html#format-examples">官方教程</a>。</p>
 <p>在Python 3中，你可以使用 <code class="docutils literal notranslate"><span class="pre">format</span></code> 方法来格式化字符串：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 `format` 来用函数值代替占位符</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;{name} is {age} years old&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bruce&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;</span><span class="si">{name}</span><span class="s2"> is </span><span class="si">{age}</span><span class="s2"> years old&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bruce&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
 <span class="s1">&#39;Bruce is 80 years old&#39;</span>
 
 <span class="c1"># 以下语法会前置空格来保证字符串至少有8字符长</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;{item:&gt;8}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="s2">&quot;stew&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;</span><span class="si">{item:&gt;8}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="s2">&quot;stew&quot;</span><span class="p">)</span>
 <span class="s1">&#39;   stew&#39;</span>
 </pre></div>
 </div>
@@ -923,7 +924,7 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># “f字符串”范例</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">batman</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">catwoman</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s2">&quot;Batman has {batman} apples. Catwoman has {catwoman} apples. Together, they have {batman + catwoman} apples&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">&quot;Batman has </span><span class="si">{</span><span class="n">batman</span><span class="si">}</span><span class="s2"> apples. Catwoman has </span><span class="si">{</span><span class="n">catwoman</span><span class="si">}</span><span class="s2"> apples. Together, they have </span><span class="si">{</span><span class="n">batman</span> <span class="o">+</span> <span class="n">catwoman</span><span class="si">}</span><span class="s2"> apples&quot;</span>
 <span class="s1">&#39;Batman has 12 apples. Catwoman has 10 apples. Together, they have 22 apples&#39;</span>
 </pre></div>
 </div>
@@ -933,13 +934,13 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <span class="s1">&#39;&#39;</span>
 
 <span class="c1"># 这是一个空的f字符串</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s2">&quot;&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">&quot;&quot;</span>
 <span class="s1">&#39;&#39;</span>
 </pre></div>
 </div>
 <p>f字符串的特殊之处在于它允许我们在字符串<em>中</em>编写Python代码；任何在 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 中的表达式都会作为Python代码被执行，其结果将会被转化成字符串并插入在 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 在f字符串中的位置。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">7.9</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="s2">&quot;x is a {type(x)}-number. Its value is {x}. The statement &#39;x is greater than 5&#39; is {x &gt; 5}&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;x is a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">-number. Its value is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">. The statement &#39;x is greater than 5&#39; is </span><span class="si">{</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="go">&quot;x is a &lt;class &#39;float&#39;&gt;-number. Its value is 7.9. The statement &#39;x is greater than 5&#39; is True&quot;</span>
 <span class="go">（“x是一个浮点数类数字。它的值为7.9。表达式‘x大于5’为真”）</span>
 </pre></div>
@@ -983,14 +984,14 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <p>你可以用方括号来创建列表，并用逗号区分其中的成员：<code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2,</span> <span class="pre">...,</span> <span class="pre">itemN]</span></code>。它的成员可以是各种不同的类型。</p>
 <p>译者注：注意使用英文的方括号和逗号。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列表对象可以存储一序列的其它对象</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">]</span>
-<span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="nb">list</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="nb">list</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 空列表</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[]</span>
@@ -1005,7 +1006,7 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建列表时会计算表达式并储存计算后的输出对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-<span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>内置的 <code class="docutils literal notranslate"><span class="pre">list</span></code> 类型可以用来将其它任何类型的序列（更广义来讲，任何<em>可迭代</em>的对象——我们会在之后对其进行讨论）转化成列表：</p>
@@ -1018,8 +1019,8 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <h3>列表是序列<a class="headerlink" href="#列表是序列" title="永久链接至标题">¶</a></h3>
 <p>就像字符串一样，列表内容的排列顺序是很重要的。这也就是说，列表是序列性（sequential）的。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列表是分顺序的</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
-<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 <p>因此，像字符串一样，你可以通过索引（indexing）和切片（slicing）来访问列表的内容。我们将在下一节中更具体地介绍索引和切片。</p>
@@ -1067,7 +1068,7 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <span class="go">[2, 4, 6, 8, 10, &#39;moo&#39;]</span>
 
 <span class="go"># 用 `extend` 在列表结尾添加一序列的对象</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">None</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">[2, 4, 6, 8, 10, &#39;moo&#39;, True, False, None]</span>
 </pre></div>
@@ -1122,7 +1123,7 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mf">3.2</span><span class="p">)</span>
 <span class="go">float</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">bool</span>
 </pre></div>
 </div>
@@ -1133,8 +1134,8 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 </pre></div>
 </div>
 <p>唯一例外的是当你想要检查某个对象是否属于 <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> 类型，因为这类型只有 <code class="docutils literal notranslate"><span class="pre">None</span></code> 一个对象；因此，如下直接检查会更加“干净”：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -1157,16 +1158,16 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <p>最后，Python整数类可以存储任意多的位数，而浮点数只能存储有限的“有效”位数。因此，你可以直接检查两个整数是否完全相等：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查两个整数是否完全相等没有任何问题！</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>但你不应该检测两个浮点数是否完全相等。你应该检查它们的值是否足够接近：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查两个浮点数是否完全相等会有一些奇怪的结果！</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">==</span> <span class="mf">0.</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">abs</span><span class="p">((</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-12</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>切记浮点数的有限精度问题。</p>
@@ -1267,7 +1268,7 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\n\t</span><span class="s2">over there&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\n\t</span><span class="s2">over there&quot;</span><span class="p">)</span>
 <span class="n">Hello</span>
     <span class="n">over</span> <span class="n">there</span>
 </pre></div>
@@ -1286,23 +1287,23 @@ NameError: name &#39;j&#39; is not defined（名字 &#39;j&#39; 未定义）
 <span class="c1">#    时应为 `True`，不然是 `False`。</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alfred&quot;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="s2">&quot;{name} is old enough to watch the movie: {age &gt;= 13}&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is old enough to watch the movie: </span><span class="si">{</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">13</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="s1">&#39;Alfred is old enough to watch the movie: False&#39;</span>
 </pre></div>
 </div>
 <p><strong>列表：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个列表，其唯一的物件是 `None` 对象。</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span>
-<span class="p">[</span><span class="bp">None</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
+<span class="p">[</span><span class="kc">None</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. 向变量 `k` 赋值一个内容为一个整数，一个布尔值，</span>
 <span class="c1">#    和一个字符串（顺序也是如此）的列表。然后在列表结尾</span>
 <span class="c1">#    添加两个项目：一个浮点数和一个复数。</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;moo&quot;</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">k</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">k</span>
-<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="s1">&#39;moo&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">(</span><span class="mi">9</span><span class="o">-</span><span class="mi">2j</span><span class="p">)]</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;moo&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">(</span><span class="mi">9</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="p">)]</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. 根据字母顺序排序以下列表：</span>

@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../../_static/gtag.js"></script>
         <script src="../../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -184,13 +185,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -210,11 +211,11 @@
 </div></blockquote>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 范例行为</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;Step on no pets!&quot;</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;&#39;Tis not a palindrome&quot;</span><span class="p">)</span>
-<span class="bp">False</span>
+<span class="kc">False</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;Hi, I am Mai Ih&quot;</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <div class="section" id="提示">
@@ -261,10 +262,10 @@
 </div>
 <p>生成器表达式不仅更加简短易读，且其对 <code class="docutils literal notranslate"><span class="pre">str.join</span></code> 的使用使得创建新列表更加高效。在以上代码块中每次调用 <code class="docutils literal notranslate"><span class="pre">filtered_str</span> <span class="pre">+=</span> <span class="pre">c.lower()</span></code> 都会在内存中创建一个新字符串，而 <code class="docutils literal notranslate"><span class="pre">str.join</span></code> 在它消耗可迭代物时仅仅使用单个字符串。</p>
 <p>接下来，<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/SequenceTypes.html#切片">请回忆</a>，<code class="docutils literal notranslate"><span class="pre">seq[::-1]</span></code> 使用的步距-1的切片将会返回序列的<em>反向</em>版本。因此，<code class="docutils literal notranslate"><span class="pre">filtered_str</span> <span class="pre">==</span> <span class="pre">filtered_str[::-1]</span></code> 允许我们对比 <code class="docutils literal notranslate"><span class="pre">filtered_str</span></code> 中的第一个字符和原本字符串的倒数第一个字符，如此继续。因此，这等值于：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_equal</span> <span class="o">=</span> <span class="bp">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_equal</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">filtered_str</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">):</span> <span class="c1"># 请回忆：5//2 -&gt; 2, 6//2 -&gt; 3</span>
     <span class="k">if</span> <span class="n">filtered_str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">filtered_str</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)]:</span>
-        <span class="n">is_equal</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">is_equal</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">break</span>
 </pre></div>
 </div>

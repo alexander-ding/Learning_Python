@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -199,13 +200,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -254,7 +255,7 @@
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">item</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>  <span class="c1"># `total` 的值为 1 + 3 + 5 = 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>  <span class="c1"># `total` 的值为 1 + 3 + 5 = 9</span>
 <span class="c1"># `item` 在这里依然被定义，且其值为5</span>
 </pre></div>
 </div>
@@ -274,8 +275,8 @@
 <h3>可能的错误<a class="headerlink" href="#可能的错误" title="永久链接至标题">¶</a></h3>
 <p>注意迭代变量 <code class="docutils literal notranslate"><span class="pre">item</span></code> 在for循环退出之后依然存在。它会引用for循环迭代的最后一个值（在这个例子中 <code class="docutils literal notranslate"><span class="pre">item</span></code> 的值为5）。就算如此，<em>你不应该在for循环外面使用迭代变量</em>。因为如果你循环一个<em>空</em>的可迭代物，迭代变量不会被定义：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[]:</span>         <span class="c1"># 可迭代物是空的——迭代变量 `x` 将不会被定义</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello?&quot;</span><span class="p">)</span>  <span class="c1"># 此代码不会被执行</span>
-<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>             <span class="c1"># 程序报错，因为 `x` 没有被定义</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello?&quot;</span><span class="p">)</span>  <span class="c1"># 此代码不会被执行</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>             <span class="c1"># 程序报错，因为 `x` 没有被定义</span>
 </pre></div>
 </div>
 <p>当我们试图迭代一个空列表时，程序会在变量 <code class="docutils literal notranslate"><span class="pre">x</span></code> 被定义之前立刻收到 <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> 信号。for循环中的代码块一次都没有被执行。因为 <code class="docutils literal notranslate"><span class="pre">x</span></code> 没有被定义，之后的 <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> 语句会导致 <code class="docutils literal notranslate"><span class="pre">NameError</span></code>！</p>
@@ -304,7 +305,7 @@
 <span class="k">while</span> <span class="n">total</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
     <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># 和 `total = total + 1` 等值</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>  <span class="c1"># `total` 现在的值为 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>  <span class="c1"># `total` 现在的值为 2</span>
 </pre></div>
 </div>
 <p>此代码会执行以下步骤：</p>
@@ -335,9 +336,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 提前退出循环</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
 <span class="o">...</span>     <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-<span class="o">...</span>         <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot; ...break!&quot;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot; ...break!&quot;</span><span class="p">)</span>
 <span class="o">...</span>         <span class="k">break</span>
-<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot; ...next iteration&quot;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot; ...next iteration&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1  ...next iteration
@@ -349,11 +350,11 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在循环结尾添加一个else句段</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]:</span>
 <span class="o">...</span>     <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-<span class="o">...</span>         <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot; ...break!&quot;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot; ...break!&quot;</span><span class="p">)</span>
 <span class="o">...</span>         <span class="k">break</span>
-<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot; ...next iteration&quot;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot; ...next iteration&quot;</span><span class="p">)</span>
 <span class="o">...</span> <span class="k">else</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;if you are reading this, then the loop completed without a &#39;break&#39;&quot;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;if you are reading this, then the loop completed without a &#39;break&#39;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>  <span class="o">...</span><span class="n">next</span> <span class="n">iteration</span>
@@ -366,13 +367,13 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演示循环中的 `continue` 语句</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;&gt;&gt; enter loop-body &lt;&lt;&quot;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;&gt;&gt; enter loop-body &lt;&lt;&quot;</span><span class="p">)</span>
 <span class="o">...</span>     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-<span class="o">...</span>         <span class="k">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot; continue...back to the top of the loop!&quot;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot; continue...back to the top of the loop!&quot;</span><span class="p">)</span>
 <span class="o">...</span>         <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="o">...</span>         <span class="k">continue</span>
 <span class="o">...</span>     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;--reached end of loop-body--&quot;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--reached end of loop-body--&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>x =  1 &gt;&gt; enter loop-body &lt;&lt;
@@ -402,7 +403,7 @@ x =  3 &gt;&gt; enter loop-body &lt;&lt;
 <p><strong>简单for循环：解</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s2">&quot;abcdefghij&quot;</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s2">&quot;aeiou&quot;</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>简单while循环：解</strong></p>
@@ -430,7 +431,7 @@ x =  3 &gt;&gt; enter loop-body &lt;&lt;
     <span class="k">if</span> <span class="mi">50</span> <span class="o">&lt;</span> <span class="n">num_loop</span><span class="p">:</span>
         <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

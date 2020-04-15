@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../../_static/gtag.js"></script>
         <script src="../../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -183,13 +184,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -214,8 +215,8 @@
 <li><p>如果对象是任何其它类，附加<code class="docutils literal notranslate"><span class="pre">'&lt;OTHER&gt;'</span></code>。</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 范例行为</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">concat_to_str</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span><span class="o">-</span><span class="mf">14.23</span><span class="p">,</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span>
-<span class="o">...</span>                    <span class="s2">&quot;Aha&quot;</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">concat_to_str</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span><span class="o">-</span><span class="mf">14.23</span><span class="p">,</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span>
+<span class="o">...</span>                    <span class="s2">&quot;Aha&quot;</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
 <span class="s1">&#39;one-two | neg-one-four and float | hello | &lt;OTHER&gt; | Aha | one-zero and float | &lt;OTHER&gt; | five&#39;</span>
 </pre></div>
@@ -325,10 +326,10 @@
 </div>
 <p>在 <code class="docutils literal notranslate"><span class="pre">item_to_transcript</span></code> 中使用单行的 <code class="docutils literal notranslate"><span class="pre">if-return</span></code> 表达式强调了该函数像词典一般的行为：代码的格式很好地对应了其功能。但就算如此，这样的单行语句也要谨慎使用。有些人可能认为这是一个可爱的小技巧。我也觉得它很可爱。这代码很可爱。我写的代码很可爱。</p>
 <p>最后，你可能在代码中注意到一个像是重复的部分：我们的第一个 <code class="docutils literal notranslate"><span class="pre">if</span></code> 语句当 <code class="docutils literal notranslate"><span class="pre">item</span></code> 为 <code class="docutils literal notranslate"><span class="pre">True</span></code> 或 <code class="docutils literal notranslate"><span class="pre">False</span></code>（布尔值）时返回 <code class="docutils literal notranslate"><span class="pre">'&lt;OTHER&gt;'</span></code>，而我们的最后一行代码在以上所有情况都没有满足时（也就是当 <code class="docutils literal notranslate"><span class="pre">item</span></code> 不是 <code class="docutils literal notranslate"><span class="pre">bool</span></code>，<code class="docutils literal notranslate"><span class="pre">int</span></code>，<code class="docutils literal notranslate"><span class="pre">float</span></code>，或 <code class="docutils literal notranslate"><span class="pre">str</span></code> 类型对象时）会返回 <code class="docutils literal notranslate"><span class="pre">'&lt;OTHER&gt;'</span></code>。为什么我们不将最后一行和第一个 <code class="docutils literal notranslate"><span class="pre">if</span></code> 句段合并呢？不这样做的原因是 <code class="docutils literal notranslate"><span class="pre">True</span></code> 和 <code class="docutils literal notranslate"><span class="pre">False</span></code> 不仅仅是布尔类型的实例，它们也是整数！<code class="docutils literal notranslate"><span class="pre">True</span></code> 的行为类似于整数 <code class="docutils literal notranslate"><span class="pre">1</span></code> 而 <code class="docutils literal notranslate"><span class="pre">False</span></code> 像 <code class="docutils literal notranslate"><span class="pre">0</span></code>：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
 <span class="go">True</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">*</span><span class="bp">True</span> <span class="o">+</span> <span class="bp">True</span> <span class="o">-</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">*</span><span class="kc">True</span> <span class="o">+</span> <span class="kc">True</span> <span class="o">-</span> <span class="kc">False</span>
 <span class="go">4</span>
 </pre></div>
 </div>

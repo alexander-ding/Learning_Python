@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -208,13 +209,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -266,10 +267,10 @@
 <div class="section" id="def-语句">
 <h2><code class="docutils literal notranslate"><span class="pre">def</span></code> 语句<a class="headerlink" href="#def-语句" title="永久链接至标题">¶</a></h2>
 <p>类似于 <code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">else</span></code>，和 <code class="docutils literal notranslate"><span class="pre">for</span></code>，Python保留了 <code class="docutils literal notranslate"><span class="pre">def</span></code> 语句来表达函数（以及我们会在之后讨论的其它几个构造体）的定义。以下是Python函数定义的一般形式：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def &lt;function name&gt;(&lt;function signature&gt;):
-    &quot;&quot;&quot; 说明字符串 &quot;&quot;&quot;
-    &lt;encapsulated code&gt;
-    return &lt;object&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">signature</span><span class="o">&gt;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; 说明字符串 &quot;&quot;&quot;</span>
+    <span class="o">&lt;</span><span class="n">encapsulated</span> <span class="n">code</span><span class="o">&gt;</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nb">object</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -338,11 +339,11 @@
 </div>
 <p>所有Python函数都会返回<em>某个对象</em>。就算是内置的 <code class="docutils literal notranslate"><span class="pre">print</span></code> 函数在打印后也会返回 <code class="docutils literal notranslate"><span class="pre">None</span></code>！</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># `print` 函数返回 `None`</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
 <span class="n">hi</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
-<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -418,7 +419,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算：2 &lt;= 3 &lt;= 4</span>
 <span class="c1"># 通过位置来提供输入</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_bounded</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>向函数输入太少或太多参数会导致 <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>。</p>
@@ -436,7 +437,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算：2 &lt;= 3 &lt;= 4</span>
 <span class="c1"># 通过参数名字来提供输入对象</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_bounded</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>你可以混合关键词参数和位置参数，但位置参数应该在前：</p>
@@ -444,7 +445,7 @@
 <span class="c1"># `x` 是位置参数</span>
 <span class="c1"># `lower` 和 `upper` 关键词参数</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_bounded</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p>请注意，如果你提供了一个关键词参数，那么它之后所有的参数都应该是关键词参数：</p>
@@ -457,7 +458,7 @@
 <div class="section" id="有默认值的参数">
 <h3>有默认值的参数<a class="headerlink" href="#有默认值的参数" title="永久链接至标题">¶</a></h3>
 <p>你可以提供参数的默认值。如果用户在调用函数时没有提供此参数，那么函数将会使用定义的默认值。请回忆我们的 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 函数。假设我们想要提供将“y”算为一个元音的选择。因为我们知道人们一般不会将“y”视为元音，所以我们可以默认将“y”除外：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">in_string</span><span class="p">,</span> <span class="n">include_y</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">in_string</span><span class="p">,</span> <span class="n">include_y</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; 返回 `in_string` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="s2">&quot;aeiouAEIOU&quot;</span>
     <span class="k">if</span> <span class="n">include_y</span><span class="p">:</span>
@@ -473,23 +474,23 @@
 </div>
 <p>我们可以提供默认值之外的输入：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 不使用不认值：将y算为元音</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;Happy&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;Happy&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="mi">2</span>
 
 <span class="c1"># 你依然可以通过名字来描述输入参数</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">(</span><span class="n">include_y</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">in_string</span><span class="o">=</span><span class="s2">&quot;Happy&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">count_vowels</span><span class="p">(</span><span class="n">include_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">in_string</span><span class="o">=</span><span class="s2">&quot;Happy&quot;</span><span class="p">)</span>
 <span class="mi">2</span>
 </pre></div>
 </div>
 <p>在函数签名中，有默认值的输入参数必须在所有位置参数之后：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这没问题</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这会导致语法错误</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -522,16 +523,16 @@
 <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
 
 <span class="c1"># 向 `f` 输入3个参数</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">)</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">)</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>你可以将此语法与位置参数和默认参数混合使用。任何在被打包的变量后的变量<em>必须提供参数名</em>：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">seq</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;x is: &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;seq is: &quot;</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;y is: &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is: &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;seq is: &quot;</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y is: &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 必须提供 `y` 的名字</span>
@@ -580,7 +581,7 @@ y   是： &quot;dog&quot;
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number_of_args</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number_of_args</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="go">4</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -616,16 +617,16 @@ y   是： &quot;dog&quot;
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># 向 `f` 输入1个参数</span>
 <span class="go">{&#39;x&#39;: 1}</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">val</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">moo</span><span class="o">=</span><span class="s2">&quot;cow&quot;</span><span class="p">)</span>  <span class="c1"># 向 `f` 输入3个参数</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">val</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">moo</span><span class="o">=</span><span class="s2">&quot;cow&quot;</span><span class="p">)</span>  <span class="c1"># 向 `f` 输入3个参数</span>
 <span class="go">{&#39;moo&#39;: &#39;cow&#39;, &#39;val&#39;: True, &#39;x&#39;: (0, 1)}</span>
 </pre></div>
 </div>
 <p>这一语法可以和位置参数和默认参数混合使用。在函数定义签名中，<code class="docutils literal notranslate"><span class="pre">**</span></code> 后不能有任何额外的参数：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;x 是：&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;y 是：&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;kwargs 是：&quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x 是：&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y 是：&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;kwargs 是：&quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
 
 <span class="c1"># 译者注：kwargs是keyword arguments的缩写，也就是关键词参数。</span>
 <span class="c1"># 译者注：此命名方式是传统，所以请尽量遵循</span>
@@ -654,9 +655,9 @@ kwargs 是： {&#39;z&#39;: 3, &#39;k&#39;: &#39;hi&#39;}
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">y</span><span class="p">):</span>
     <span class="c1"># 所有位置参数都打包成元组 `x`</span>
     <span class="c1"># 所有关键词参数都打包成词典 `y`</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">hi</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">bye</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">sigh</span><span class="o">=-</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -685,7 +686,7 @@ kwargs 是： {&#39;z&#39;: 3, &#39;k&#39;: &#39;hi&#39;}
 <li><p>调用函数并通过解包词典向其输入任意多的关键词参数。</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">print_kwargs</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -694,7 +695,7 @@ kwargs 是： {&#39;z&#39;: 3, &#39;k&#39;: &#39;hi&#39;}
 <span class="gp">&gt;&gt;&gt; </span><span class="n">some_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;hi&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;bye&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
 
 <span class="go"># 解包词典的键值对并将其作为关键词参数输入到函数中</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">print_kwargs</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">umbrella</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">some_dict</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_kwargs</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">umbrella</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">some_dict</span><span class="p">)</span>
 <span class="go">{&#39;a&#39;: 2, &#39;umbrella&#39;: True, &#39;hi&#39;: 1, &#39;bye&#39;: 2}</span>
 </pre></div>
 </div>
@@ -709,7 +710,7 @@ kwargs 是： {&#39;z&#39;: 3, &#39;k&#39;: &#39;hi&#39;}
 </pre></div>
 </div>
 <p>你可以将函数存储到一个列表中：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">count_vowels</span><span class="p">,</span> <span class="k">print</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">count_vowels</span><span class="p">,</span> <span class="nb">print</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
     <span class="n">func</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
@@ -720,16 +721,16 @@ kwargs 是： {&#39;z&#39;: 3, &#39;k&#39;: &#39;hi&#39;}
 </div>
 <p>你也可以在代码任何地方调用函数，且它的返回值会在原地返回：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">count_vowels</span><span class="p">(</span><span class="s2">&quot;pillow&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;that&#39;s a lot of vowels!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;that&#39;s a lot of vowels!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>当然，这在列表理解表达式中也成立：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">count_vowels</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">include_y</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;bye&quot;</span><span class="p">,</span> <span class="s2">&quot;guy&quot;</span><span class="p">,</span> <span class="s2">&quot;sigh&quot;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">count_vowels</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">include_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;bye&quot;</span><span class="p">,</span> <span class="s2">&quot;guy&quot;</span><span class="p">,</span> <span class="s2">&quot;sigh&quot;</span><span class="p">])</span>
 <span class="go">6</span>
 </pre></div>
 </div>
 <p>“打印”一个函数并不会揭露些什么。这仅仅打印此函数对象在内存中的地址：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">count_vowels</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">count_vowels</span><span class="p">)</span>
 <span class="go">&lt;function count_vowels at 0x000002A32898C6A8&gt;</span>
 </pre></div>
 </div>
@@ -786,7 +787,7 @@ kwargs 是： {&#39;z&#39;: 3, &#39;k&#39;: &#39;hi&#39;}
     <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;min&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <p>请注意你其实可以在 <code class="docutils literal notranslate"><span class="pre">mode</span></code> 输入不正确时让你的函数报错（raise an “exception”）。事实上，这才应该是这种情况下更加合理的函数行为。</p>
@@ -797,7 +798,7 @@ kwargs 是： {&#39;z&#39;: 3, &#39;k&#39;: &#39;hi&#39;}
     <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;min&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;`mode` was passed an invalid value: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;`mode` was passed an invalid value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">))</span>
 </pre></div>
 </div>
 <p><strong>任意多的参数：解</strong></p>

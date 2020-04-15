@@ -15,7 +15,7 @@ jupyter:
 <!-- #raw raw_mimetype="text/restructuredtext" -->
 .. meta::
    :description: Topic: Jupyter notebooks, Difficulty: Easy, Category: Tutorial
-   :keywords: jupyter, notebook, kernel, basics, server, console, command line, plot, beginner, data science
+   :keywords: jupyter, jupyter lab, notebook, kernel, basics, server, console, plot, beginner, data science
 <!-- #endraw -->
 
 # Jupyter记事本
@@ -25,10 +25,17 @@ Jupyter记事本类似于IPython命令行，但，相比起IPython每次编写�
 
 通过以上这些方式，Jupyter记事本成为了一个出众的实际应用工具。比如说，你可以在一个记事本上跟随本文的流程，边读边运行本文的代码片段和回答阅读理解问题，并同时使用Markdown标题来视觉上区分记事本的不同区块。当我做研究时，我经常创建Jupyter记事本以编写代码来分析数据，绘制各种实验结果的图表，并撰写详细的Markdown文本来记录我的工作。最后产生的成果是一个我可以分享给我同事的记事本。我可以在几个月后重新打开这个记事本而不会不记得我之前都做了些什么。
 
-安利够了Jupyter记事本后，让我们来使用它吧！
+## JupyterLab
 
+[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html)是由Project Jupyter团队开发的一个全新的网页端交互界面。通过它，你可以在你的浏览器中编辑并运行Jupyter记事本，命令行，和文本编辑器。除了各种功能和相比Jupyter记事本更加成熟的用户界面之外，JupyterLab还提供了可以用来显示数据，图片，和代码输出的在Jupyter记事本之外的可移动窗口。这将允许你高效地进行数据科学工作。
+
+本文在这里推荐你阅读[JupyterLab说明文档](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html)来了解它提供的额外功能。
+
+下文将针对Jupyter记事本来进行讨论，但是运行JupyterLab服务器和操作其中的记事本的方法和Jupyter记事本基本完全一样。Jupyter记事本和JupyterLab都可以[用Anaconda安装](https://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Installing_Python.html)。
 
 ## 运行记事本服务器并创建记事本
+废话不多说，让我们来使用Jupyter记事本吧！
+
 在你的命令行中，导航到随便一个你愿意创建文件的文件夹。如果你不知道怎么做，上网搜一下！
 
 当你的命令行在你想要的文件夹内后，运行（键入以下内容然后回车）：`jupyter notebook`
@@ -162,7 +169,6 @@ ax.legend();
 
 </div>
 
-
 ### 将Jupyter记事本用于其它语言
 Jupyter记事本不只支持Python。你可以在Jupyter中为任何编程语言开发一个“壳”（Kernel）。其实很多重要的编程语言都有着自己相对应的壳：
 
@@ -173,4 +179,7 @@ Jupyter记事本不只支持Python。你可以在Jupyter中为任何编程语言
 - [Haskell](https://github.com/gibiansky/IHaskell)
 - [Go](https://github.com/gopherdata/gophernotes)
 
-越来越长的可用Jupyter壳列表在[这里](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels)列出。请注意并不是所有的这些项目都很成熟。比如说，虽然Python和Julia的壳都比较强健，Haskell的壳不能在Windows机器上本地化运行，而C++的壳在编写本文时还在前期开发中。
+这时刻增长的可用Jupyter壳列表在[这里](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels)列出。请注意并不是所有的这些项目都很成熟。比如说，虽然Python和Julia的壳都比较强健，Haskell的壳不能在Windows机器上本地化运行，而C++的壳在编写本文时还在前期开发中。
+
+### Visual Studio Code的Jupyter记事本支持
+Visual Studio Code在近期[开始官方支持Jupyter记事本](https://devblogs.microsoft.com/python/announcing-support-for-native-editing-of-jupyter-notebooks-in-vs-code/)。这意味着你可以在[Visual Studio Code IDE](https://cn.pythonlikeyoumeanit.com/Module1_GettingStartedWithPython/Getting_Started_With_IDEs_and_Notebooks.html)中直接编辑Jupyter记事本，并可以享受如代码完成，调试，和查看变量的额外功能。

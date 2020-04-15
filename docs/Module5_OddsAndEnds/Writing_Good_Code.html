@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -200,13 +201,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -256,10 +257,10 @@
 <span class="ow">not</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">collections</span>
 
 <span class="c1"># 这么做：</span>
-<span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+<span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
 <span class="c1"># 不这么做：</span>
-<span class="ow">not</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span>
+<span class="ow">not</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <p>不要使用括号来创建不必要的括号组。你应在提供函数签名，调用对象（如调用函数），结合数学表达式，定义生成器表达式，和组合多行表达式时使用括号。</p>
@@ -533,7 +534,7 @@
 <p>让我们修改 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 来添加一个允许用户可选地将 ‘y’ 视作元音的默认值参数。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 默认值参数的类型暗示</span>
 
-<span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;返回 `in_string` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiouAEIOU&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">include_y</span><span class="p">:</span>
@@ -576,7 +577,7 @@
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle"><strong>经验</strong>：</p>
 <p>你可以通过简单的类型暗示语法来标记函数，类方法，和变量；这是一个正式的记录函数输入和输出对象的类型的方法。请记住，类型暗示在Python中<em>永远</em>不会被强迫执行——它们仅仅是一种说明文档。</p>
-<p>虽然如此，IDE有着强大的检查类型暗示并高亮显示代码中的类型冲突的能力。这些功能能够大幅度地帮助你开发代码。同时，你也可以使用像<a class="reference external" href="http://mypy-lang.org/">mypy</a>的第三方模组来对你的代码进行更严苛的类型检查。</p>
+<p>虽然如此，IDE有着强大的检查类型暗示并高亮显示代码中的类型冲突的能力。这些功能能够大幅度地帮助你开发代码。同时，你也可以使用像<a class="reference external" href="http://mypy-lang.org/">mypy</a>和<a class="reference external" href="https://github.com/microsoft/pyright">pyright</a>的第三方模组来对你的代码进行更严苛的类型检查。</p>
 </div>
 </div>
 <div class="section" id="使用-typing-模组">
@@ -669,6 +670,20 @@
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="Literal[&lt;value&gt;,-...]">
+<h4><code class="docutils literal notranslate"><span class="pre">Literal[&lt;value&gt;,</span> <span class="pre">...]</span></code><a class="headerlink" href="#Literal[<value>,-...]" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p><strong>暗示：</strong>具体准确的值</p></li>
+<li><p><strong>例：</strong></p>
+<ul>
+<li><p>暗示接受整数 <code class="docutils literal notranslate"><span class="pre">1</span></code>：<code class="docutils literal notranslate"><span class="pre">Literal[1]</span></code></p></li>
+<li><p>暗示接受字符串 <code class="docutils literal notranslate"><span class="pre">&quot;sum&quot;</span></code> 或字符串 <code class="docutils literal notranslate"><span class="pre">&quot;mean&quot;</span></code>：<code class="docutils literal notranslate"><span class="pre">Literal[&quot;sum&quot;,</span> <span class="pre">&quot;mean&quot;]</span></code></p></li>
+<li><p>暗示接受列表 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code> 或字符串 <code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;</span></code>：<code class="docutils literal notranslate"><span class="pre">Literal[[1,</span> <span class="pre">2],</span> <span class="pre">&quot;abc&quot;]</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>兼容性</strong>：<code class="docutils literal notranslate"><span class="pre">Literal</span></code> 类型暗示是在Python 3.8版本加入的——你无法在之前版本的Python中使用它。</p></li>
+</ul>
 <p>作为一个例子，让我们设一个接受如下的函数：</p>
 <ul class="simple">
 <li><p>包含学生成绩的词典，其将名字（字符串）对应到成绩（浮点数列表）</p></li>
@@ -680,7 +695,7 @@
 
 <span class="k">def</span> <span class="nf">compute_student_stats</span><span class="p">(</span><span class="n">grade_book</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
                           <span class="n">stat_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="n">Any</span><span class="p">],</span>
-                          <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+                          <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
     <span class="sd">&quot;&quot;&quot;计算学生成绩的自定义统计数据。</span>
 
 <span class="sd">    Parameters</span>
@@ -700,7 +715,7 @@
 <span class="sd">    List[Tuple[str, Any]]</span>
 <span class="sd">        每个学生的名字和统计数据元组。</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">student_list</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>               <span class="c1"># 默认所有学生</span>
+    <span class="k">if</span> <span class="n">student_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>               <span class="c1"># 默认所有学生</span>
         <span class="n">student_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">grade_book</span><span class="p">)</span>  <span class="c1"># 迭代词典的键</span>
     <span class="k">return</span> <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="n">stat_function</span><span class="p">(</span><span class="n">grade_book</span><span class="p">[</span><span class="n">name</span><span class="p">]))</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">student_list</span><span class="p">]</span>
 </pre></div>
@@ -732,7 +747,7 @@
 </div>
 <p>第三方模组定义的对象类型，如NumPy的<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/IntroducingTheNDarray.html">N维数组</a>和我们自己的自定义类行为一样；直接在类型暗示标注中提供<a class="reference external" href="https://cn.pythonlikeyoumeanit.com/Module4_OOP/ClassDefinition.html#Defining-a-New-Class-of-Object">类对象</a>就行了：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 类型桉树numpy的N维数组</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">custom_dot_product</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">))</span>
@@ -750,7 +765,7 @@
 <h3>编写好的类型暗示<a class="headerlink" href="#编写好的类型暗示" title="永久链接至标题">¶</a></h3>
 <p>你应该尽量编写通过<a class="reference external" href="https://en.wikipedia.org/wiki/Duck_test">鸭子测试</a>的代码：如果你的函数期待一个鸭子，那么暗示一个走起来像鸭子，叫起来像鸭子，等等的东西。这将帮助你避免编写太过狭隘并因此不符合Python风格的类型暗示。</p>
 <p>具体来讲，让我们复习一下我们的 <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code> 函数：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;返回 `x` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiouAEIOU&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">include_y</span><span class="p">:</span>
@@ -777,7 +792,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">typing</span></code> 模组提供了所谓的<a class="reference external" href="https://docs.python.org/3/glossary.html#term-abstract-base-class">抽象基类</a> <code class="docutils literal notranslate"><span class="pre">Iterable</span></code>，其为代表任何支持迭代的类的一般类型。因此，我们可以通过使我们的类型暗示更标准化来提升它的描述性。这将包含我们上面演示中的所有使用方法。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span>
 
-<span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">include_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;返回 `x` 中元音的数量&quot;&quot;&quot;</span>
     <span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiouAEIOU&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">include_y</span><span class="p">:</span>
@@ -804,7 +819,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">get_first_and_last</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="go">(0, 3)</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">get_first_and_last</span><span class="p">((</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_first_and_last</span><span class="p">((</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
 <span class="go">(True, False)</span>
 </pre></div>
 </div>
@@ -897,7 +912,7 @@
 <p>以下是另外一个符合NumPy风格的范例docstring，但它没有 <code class="docutils literal notranslate"><span class="pre">Notes</span></code> 和 <code class="docutils literal notranslate"><span class="pre">References</span></code> 部分：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_student_stats</span><span class="p">(</span><span class="n">grade_book</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
                           <span class="n">stat_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="n">Any</span><span class="p">],</span>
-                          <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+                          <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
     <span class="sd">&quot;&quot;&quot;计算学生成绩的自定义统计数据。</span>
 
 <span class="sd">    对每个学生的成绩列表调用 ``stat_func``，并将结果作为名字-数据的元组</span>
@@ -960,7 +975,7 @@
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_student_stats</span><span class="p">(</span><span class="n">grade_book</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
                           <span class="n">stat_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="n">Any</span><span class="p">],</span>
-                          <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+                          <span class="n">student_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
     <span class="sd">&quot;&quot;&quot;计算学生成绩的自定义统计数据。</span>
 
 <span class="sd">    对每个学生的成绩列表调用 ``stat_func``，并将结果作为名字-数据的元组</span>

@@ -30,6 +30,7 @@
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
@@ -192,13 +193,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -275,7 +276,7 @@
 <span class="c1"># `inst` 确实被输入到并返回于 `func`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">out</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">func</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">inst</span> <span class="ow">is</span> <span class="n">out</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 </pre></div>
 </div>
 <p><em>请注意，这个“幕后”的行为仅仅在方法通过实例调用的情况才会发生</em>；这就是为什么我们通过 <code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 调用 <code class="docutils literal notranslate"><span class="pre">func</span></code> 时没有遇到这个问题——<code class="docutils literal notranslate"><span class="pre">Dummy</span></code> 是一个类对象，不是一个实例。因此，<code class="docutils literal notranslate"><span class="pre">inst.func()</span></code> 等值于 <code class="docutils literal notranslate"><span class="pre">Dummy.func(inst)</span></code>：</p>
@@ -338,7 +339,7 @@
 <span class="c1"># `Dummy.class_func()` 返回 `Dummy`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">out</span> <span class="o">=</span> <span class="n">Dummy</span><span class="o">.</span><span class="n">class_func</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">out</span> <span class="ow">is</span> <span class="n">Dummy</span>
-<span class="bp">True</span>
+<span class="kc">True</span>
 
 <span class="c1"># 就算我们从实例中调用 `class_func`，`Dummy` 也会自动作为</span>
 <span class="c1"># `cls` 被输入</span>
@@ -357,7 +358,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">dict</span><span class="p">:</span>
     <span class="c1"># 假设所有其他的词典方法都在这里定义了</span>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">fromkeys</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fromkeys</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; 创建一个词典，其键为 `iterable` 的成员。所有值这些键都是`value`。</span>
 
 <span class="sd">        Parameters</span>
@@ -423,7 +424,7 @@
 <div><p>这将导致一个错误，其反应 <code class="docutils literal notranslate"><span class="pre">func</span></code> 期待两个参数但只收到了一个。确实，我们仅仅向其输入了对象 “hi”。Dummy是一个类对象，而不是实例对象。因此，在调用Dummy.func时Python不会自动在“幕后”做任何特别的事情。我们必须为self参数输入些什么。因为这个方法不会使用self做任何事情，我们可以向其输入None，或其它任何对象。</p>
 </div></blockquote>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dummy.func(&quot;hi&quot;) 会导致一个错误</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">Dummy</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Dummy</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">)</span>
 <span class="s1">&#39;hi&#39;</span>
 </pre></div>
 </div>
